@@ -7,8 +7,8 @@ export const locales = {
 	compteEntreprise: {
 		title: {
 			text: 'Compte',
-			highlight: 'entreprise'
+			highlight: 'entreprise',
 		},
-		subTitle: 'Vos démarches maladie et risques professionnels'
-	}
+		subTitle: 'Vos démarches maladie et risques professionnels',
+	},
 };

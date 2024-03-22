@@ -1,3 +1,1 @@
-import DataListItem from './DataListItem.vue'
-
-export default DataListItem
+export { default } from './DataListItem.vue';

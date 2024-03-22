@@ -2,12 +2,12 @@ import {
 	describe,
 	it,
 	expect,
-} from 'vitest'
+} from 'vitest';
 
-import { shallowMount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import BackBtn from '..'
+import BackBtn from '..';
 
 describe('BackBtn', () => {
 	it('renders correctly', () => {
@@ -15,10 +15,10 @@ describe('BackBtn', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+		expect(wrapper.html()).toMatchSnapshot();
+	});
 
 	it('renders correctly in dark mode', () => {
 		const wrapper = shallowMount(BackBtn, {
@@ -28,8 +28,8 @@ describe('BackBtn', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
-})
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+});

@@ -4,4 +4,4 @@ export enum TypeEnum {
 	ANALYTICS = 'analytics',
 }
 
-export const TYPE_ENUM_VALUES = Object.values(TypeEnum)
+export const TYPE_ENUM_VALUES = Object.values(TypeEnum);

@@ -1,3 +1,3 @@
 export const locales = {
-	closeBtn: 'Fermer le menu'
+	closeBtn: 'Fermer le menu',
 };

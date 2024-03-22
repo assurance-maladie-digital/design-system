@@ -1,3 +1,1 @@
-import UserMenuBtn from './UserMenuBtn.vue';
-
-export default UserMenuBtn;
+export { default } from './UserMenuBtn.vue';

@@ -1,5 +1,5 @@
-import { Options } from '@/mixins/customizable'
-import { IndexedObject } from '@/types'
+import { Options } from '@/mixins/customizable';
+import { IndexedObject } from '@/types';
 
 export interface DataListItem {
 	key: string
@@ -11,10 +11,10 @@ export interface DataListItem {
 	class?: string
 }
 
-export type DataList = DataListItem[]
+export type DataList = DataListItem[];
 
 export interface DataListIcons {
 	[iconName: string]: string
 }
 
-export type ItemClass = (string | undefined | IndexedObject<boolean>)[]
+export type ItemClass = (string | undefined | IndexedObject<boolean>)[];

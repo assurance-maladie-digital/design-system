@@ -7,4 +7,4 @@ export const locales = {
 	customizeBtnText: 'Personnaliser mes choix',
 	rejectBtnText: 'Continuer sans accepter',
 	acceptBtnText: 'Tout accepter',
-}
+};

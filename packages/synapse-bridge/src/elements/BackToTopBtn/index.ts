@@ -1,3 +1,1 @@
-import BackToTopBtn from './BackToTopBtn.vue'
-
-export default BackToTopBtn
+export { default } from './BackToTopBtn.vue';

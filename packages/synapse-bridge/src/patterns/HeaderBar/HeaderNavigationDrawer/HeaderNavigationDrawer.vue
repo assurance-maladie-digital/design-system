@@ -1,13 +1,14 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { mdiClose } from "@mdi/js";
-import { config } from "./config";
-import { locales } from "./locales";
-import { NavigationItem } from "../types";
-import { colorMapping } from "../colorMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import { customizable } from "@/mixins/customizable";
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
+import { mdiClose } from '@mdi/js';
+import { NavigationItem } from '../types';
+import { colorMapping } from '../colorMapping';
+import { config } from './config';
+import { locales } from './locales';
+import { ThemeEnum } from '@/constants/enums/ThemeEnum';
+import { customizable } from '@/mixins/customizable';
+
 export default defineComponent({
 	mixins: [customizable(config)],
 	props: {
@@ -32,7 +33,7 @@ export default defineComponent({
 			default: null,
 		},
 	},
-	emits: ["change", "update:tab"],
+	emits: ['change', 'update:tab'],
 	data() {
 		return {
 			closeIcon: mdiClose,
@@ -45,7 +46,7 @@ export default defineComponent({
 		},
 		backgroundColor(): string {
 			return colorMapping[this.theme];
-		}
+		},
 	},
 	methods: {
 		drawerUpdated(value: boolean): void {
@@ -58,55 +59,55 @@ export default defineComponent({
 		},
 		emitTabUpdateEvent(value: number): void {
 			this.$emit('update:tab', value);
-		}
-	}
+		},
+	},
 });
 </script>
 
 <template>
-	<VNavigationDrawer
-		v-if="mobileVersion && items"
-		:color="backgroundColor"
-		:modelValue="drawer"
-		v-bind="options"
-		@input="drawerUpdated"
-	>
-		<slot>
-			<div class="d-flex align-center justify-end mb-8">
-				<VBtn
-					v-bind="options.closeBtn"
-					variant="text"
-					:aria-label="locales.closeBtn"
-					@click="emitChangeEvent"
-				>
-					<VIcon v-bind="options.closeIcon">
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</div>
+  <VNavigationDrawer
+    v-if="mobileVersion && items"
+    :color="backgroundColor"
+    :model-value="drawer"
+    v-bind="options"
+    @input="drawerUpdated"
+  >
+    <slot>
+      <div class="d-flex align-center justify-end mb-8">
+        <VBtn
+          v-bind="options.closeBtn"
+          variant="text"
+          :aria-label="locales.closeBtn"
+          @click="emitChangeEvent"
+        >
+          <VIcon v-bind="options.closeIcon">
+            {{ closeIcon }}
+          </VIcon>
+        </VBtn>
+      </div>
 
-			<slot name="navigation-drawer-prepend" />
+      <slot name="navigation-drawer-prepend" />
 
-			<VTabs
-				v-bind="options.tabs"
-				:modelValue="tab"
-				class="flex-grow-0"
-				@change="emitTabUpdateEvent"
-			>
-				<VTab
-					v-for="(item, index) in items"
-					:key="index"
-					:href="item.href"
-					:to="item.to"
-					v-bind="options.tab"
-				>
-					{{ item.label }}
-				</VTab>
-			</VTabs>
+      <VTabs
+        v-bind="options.tabs"
+        :model-value="tab"
+        class="flex-grow-0"
+        @change="emitTabUpdateEvent"
+      >
+        <VTab
+          v-for="(item, index) in items"
+          :key="index"
+          :href="item.href"
+          :to="item.to"
+          v-bind="options.tab"
+        >
+          {{ item.label }}
+        </VTab>
+      </VTabs>
 
-			<slot name="navigation-drawer-append" />
-		</slot>
-	</VNavigationDrawer>
+      <slot name="navigation-drawer-append" />
+    </slot>
+  </VNavigationDrawer>
 </template>
 
 <style lang="scss" scoped>

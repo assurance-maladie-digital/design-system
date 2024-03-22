@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import { mapActions, mapGetters } from "vuex";
-import { mdiClose, mdiCheckCircleOutline, mdiAlertCircleOutline, mdiInformationOutline, mdiAlertOctagonOutline } from "@mdi/js";
-import { config } from "./config";
-import { locales } from "./locales";
-import { customizable } from "@/mixins/customizable";
-import { IndexedObject } from "@/types";
+import { defineComponent } from 'vue';
+import { mapActions, mapGetters } from 'vuex';
+import { mdiClose, mdiCheckCircleOutline, mdiAlertCircleOutline, mdiInformationOutline, mdiAlertOctagonOutline } from '@mdi/js';
+import { config } from './config';
+import { locales } from './locales';
+import { customizable } from '@/mixins/customizable';
+import { IndexedObject } from '@/types';
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -22,7 +22,7 @@ export default defineComponent({
 	data() {
 		return {
 			closeIcon: mdiClose,
-			snackbarColor: "",
+			snackbarColor: '',
 			snackbar: false,
 			iconMapping: {
 				info: mdiInformationOutline,
@@ -40,19 +40,20 @@ export default defineComponent({
 			if (!this.notification) {
 				return null;
 			}
+
 			return this.notification.icon || this.iconMapping[this.notification.type];
 		},
 		isDarkText(): boolean {
-			return (this.notification?.type === 'success' || this.notification?.type === 'warning');
+			return this.notification?.type === 'success' || this.notification?.type === 'warning';
 		},
 		contentColor(): string {
-			return this.isDarkText ? "grey-darken-80" : "white";
+			return this.isDarkText ? 'grey-darken-80' : 'white';
 		},
 		dividerColor(): string {
-			return this.isDarkText ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)";
+			return this.isDarkText ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)';
 		},
 		mobileVersion(): boolean {
-			return this.$vuetify.display.name === "xs";
+			return this.$vuetify.display.name === 'xs';
 		},
 		isLongText(): boolean {
 			return this.notification ? this.notification.message.length > 50 : false;
@@ -66,13 +67,13 @@ export default defineComponent({
 		actionSlotAttrs(): Record<string, string | boolean> {
 			return {
 				color: this.contentColor,
-				variant: "outlined",
-				class: 'mr-4'
+				variant: 'outlined',
+				class: 'mr-4',
 			};
-		}
+		},
 	},
 	watch: {
-		notification() : void {
+		notification(): void {
 			if (this.notification) {
 				this.snackbar = true;
 				this.snackbarColor = this.options.snackBar.color || this.notification.type;
@@ -80,6 +81,15 @@ export default defineComponent({
 				this.snackbar = false;
 			}
 		},
+	},
+	beforeUnmount() {
+		this.clearNotification();
+	},
+
+	created() {
+		if (this.notification) {
+			this.clearNotification();
+		}
 	},
 	methods: {
 		...mapActions('notification', {
@@ -89,90 +99,84 @@ export default defineComponent({
 			this.dispatchClearNotification();
 		},
 	},
-	created() {
-		if (this.notification) {
-			this.clearNotification();
-		}
-	},
-	beforeUnmount() {
-		this.clearNotification();
-	},
 });
 </script>
 
 <template>
-	<VSnackbar
-		v-bind="options.snackBar"
-		:modelValue="snackbar"
-		:color="snackbarColor"
-		:vertical="mobileVersion && hasLongContent"
-		:multi-line="hasLongContent"
-		:width="mobileVersion ? 'auto' : '960px'"
-		role="status"
-		:location="bottom ? 'bottom' : 'top'"
-		class="vd-notification-bar"
-	>
-		<div
-			:class="'text-' + contentColor"
-			class="vd-notification-content"
-		>
-			<VIcon
-				v-if="!mobileVersion"
-				v-bind="options.icon"
-				:color="contentColor"
-				class="vd-notification-icon"
-			>
-				{{ icon }}
-			</VIcon>
+  <VSnackbar
+    v-bind="options.snackBar"
+    :model-value="snackbar"
+    :color="snackbarColor"
+    :vertical="mobileVersion && hasLongContent"
+    :multi-line="hasLongContent"
+    :width="mobileVersion ? 'auto' : '960px'"
+    role="status"
+    :location="bottom ? 'bottom' : 'top'"
+    class="vd-notification-bar"
+  >
+    <div
+      :class="'text-' + contentColor"
+      class="vd-notification-content"
+    >
+      <VIcon
+        v-if="!mobileVersion"
+        v-bind="options.icon"
+        :color="contentColor"
+        class="vd-notification-icon"
+      >
+        {{ icon }}
+      </VIcon>
 
-			{{ notification?.message }}
+      {{ notification?.message }}
 
-			<VSpacer />
+      <VSpacer />
 
-			<VDivider
-				v-if="mobileVersion && hasLongContent"
-				:color="contentColor"
-				:style="{ borderColor: dividerColor }"
-				class="w-100 my-3"
-			/>
+      <VDivider
+        v-if="mobileVersion && hasLongContent"
+        :color="contentColor"
+        :style="{ borderColor: dividerColor }"
+        class="w-100 my-3"
+      />
 
-			<div class="d-flex flex-row justify-space-between">
-				<VDivider
-					v-if="!mobileVersion && hasLongContent"
-					:color="contentColor"
-					:style="{ borderColor: dividerColor }"
-					class="mx-4"
-					:vertical="true"
-				/>
-				<slot
-					name="action"
-					:attrs="actionSlotAttrs"
-				>
-				</slot>
-				<slot
-					name="default"
-				/>
-				<VBtn
-					v-bind="{
-						...options.btn,
-					}"
-					:color="contentColor"
-					:icon="smallCloseBtn"
-					:class="{ 'ma-0': smallCloseBtn }"
-					class="ml-4"
-					@click="clearNotification"
-				>
-					<span :class="{ 'd-sr-only': smallCloseBtn }">
-						{{ closeBtnText }}
-					</span>
+      <div class="d-flex flex-row justify-space-between">
+        <VDivider
+          v-if="!mobileVersion && hasLongContent"
+          :color="contentColor"
+          :style="{ borderColor: dividerColor }"
+          class="mx-4"
+          :vertical="true"
+        />
+        <slot
+          name="action"
+          :attrs="actionSlotAttrs"
+        />
+        <slot
+          name="default"
+        />
+        <VBtn
+          v-bind="{
+            ...options.btn,
+          }"
+          :color="contentColor"
+          :icon="smallCloseBtn"
+          :class="{ 'ma-0': smallCloseBtn }"
+          class="ml-4"
+          @click="clearNotification"
+        >
+          <span :class="{ 'd-sr-only': smallCloseBtn }">
+            {{ closeBtnText }}
+          </span>
 
-					<VIcon v-if="smallCloseBtn" v-bind="options.closeIcon">
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</div>
-		</div>
-	</VSnackbar>
+          <VIcon
+            v-if="smallCloseBtn"
+            v-bind="options.closeIcon"
+          >
+            {{ closeIcon }}
+          </VIcon>
+        </VBtn>
+      </div>
+    </div>
+  </VSnackbar>
 </template>
 
 <style lang="scss" scoped>

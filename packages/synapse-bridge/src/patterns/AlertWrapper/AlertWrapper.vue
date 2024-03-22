@@ -1,11 +1,6 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from 'vue';
-
-import { propValidator } from "@/helpers/propValidator";
-
-import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
-import { locales } from "./locales";
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
 
 import {
 	mdiAlertOutline,
@@ -13,7 +8,10 @@ import {
 	mdiCheckCircleOutline,
 	mdiInformationOutline,
 	mdiClose,
-} from "@mdi/js";
+} from '@mdi/js';
+import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from './AlertTypeEnum';
+import { locales } from './locales';
+import { propValidator } from '@/helpers/propValidator';
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -21,8 +19,7 @@ export default defineComponent({
 		type: {
 			type: String as PropType<AlertTypeEnum>,
 			default: AlertTypeEnum.INFO,
-			validator: (value: string) =>
-				propValidator("type", ALERT_TYPE_ENUM_VALUES, value),
+			validator: (value: string) => propValidator('type', ALERT_TYPE_ENUM_VALUES, value),
 		},
 		dismissible: {
 			type: Boolean,
@@ -33,6 +30,7 @@ export default defineComponent({
 			default: false,
 		},
 	},
+	emits: ['update:modelValue'],
 	data() {
 		return {
 			locales,
@@ -53,50 +51,56 @@ export default defineComponent({
 	},
 	methods: {
 		dismissAlert() {
-			this.$emit("update:modelValue", false);
+			this.$emit('update:modelValue', false);
 		},
 	},
 });
 </script>
 
 <template>
-	<VAlert
-		v-bind="$attrs"
-		:type="type"
-		:class="type"
-		:style="!outlined ? 'border-left: 4px solid' : ''"
-		:variant="outlined ? 'outlined' : 'tonal'"
-		:closable="dismissible"
-		class="vd-alert-wrapper"
-	>
-		<template #prepend>
-			<VIcon class="vd-alert-icon rounded-circle mr-4">
-				<slot name="icon">
-					{{ alertIcon }}
-				</slot>
-			</VIcon>
-		</template>
+  <VAlert
+    v-bind="$attrs"
+    :type="type"
+    :class="type"
+    :style="!outlined ? 'border-left: 4px solid' : ''"
+    :variant="outlined ? 'outlined' : 'tonal'"
+    :closable="dismissible"
+    class="vd-alert-wrapper"
+  >
+    <template #prepend>
+      <VIcon class="vd-alert-icon rounded-circle mr-4">
+        <slot name="icon">
+          {{ alertIcon }}
+        </slot>
+      </VIcon>
+    </template>
 
-		<template #default>
-			<slot />
-		</template>
+    <template #default>
+      <slot />
+    </template>
 
-		<template v-if="dismissible" #close>
-			<VBtn
-				:color="outlined ? undefined : 'primary'"
-				:ripple="false"
-				variant="text"
-				class="vd-close-btn pl-0 pr-1 ml-4"
-				@click="dismissAlert"
-			>
-				<VIcon size="small" class="mr-1">
-					{{ closeIcon }}
-				</VIcon>
+    <template
+      v-if="dismissible"
+      #close
+    >
+      <VBtn
+        :color="outlined ? undefined : 'primary'"
+        :ripple="false"
+        variant="text"
+        class="vd-close-btn pl-0 pr-1 ml-4"
+        @click="dismissAlert"
+      >
+        <VIcon
+          size="small"
+          class="mr-1"
+        >
+          {{ closeIcon }}
+        </VIcon>
 
-				{{ locales.close }}
-			</VBtn>
-		</template>
-	</VAlert>
+        {{ locales.close }}
+      </VBtn>
+    </template>
+  </VAlert>
 </template>
 
 <style lang="scss" scoped>

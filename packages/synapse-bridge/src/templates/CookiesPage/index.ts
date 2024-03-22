@@ -1,3 +1,1 @@
-import CookiesPage from './CookiesPage.vue'
-
-export default CookiesPage
+export { default } from './CookiesPage.vue';

@@ -1,10 +1,10 @@
-import { describe, it, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, it, expect } from 'vitest';
+import { shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import CookiesTable from '../'
+import CookiesTable from '..';
 
-import { cookies } from '../../tests/fixtures'
+import { cookies } from '../../tests/fixtures';
 
 describe('CookiesTable', () => {
 	it('renders correctly', () => {
@@ -15,8 +15,8 @@ describe('CookiesTable', () => {
 			propsData: {
 				items: cookies,
 			},
-		})
+		});
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
-})
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+});

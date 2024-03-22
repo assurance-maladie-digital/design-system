@@ -1,3 +1,1 @@
-import DataListLoading from './DataListLoading.vue'
-
-export default DataListLoading
+export { default } from './DataListLoading.vue';

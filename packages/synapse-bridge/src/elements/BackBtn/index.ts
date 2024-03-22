@@ -1,3 +1,1 @@
-import BackBtn from './BackBtn.vue'
-
-export default BackBtn
+export { default } from './BackBtn.vue';

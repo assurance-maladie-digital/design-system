@@ -1,3 +1,1 @@
-import DialogBox from './DialogBox.vue'
-
-export default DialogBox
+export { default } from './DialogBox.vue';

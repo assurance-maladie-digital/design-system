@@ -3,7 +3,7 @@ const commonBtnConfig = {
 	height: 'auto',
 	minHeight: '44px',
 	class: 'text-wrap ma-2',
-}
+};
 
 export const config = {
 	sheet: {
@@ -30,4 +30,4 @@ export const config = {
 	acceptBtn: {
 		...commonBtnConfig,
 	},
-}
+};

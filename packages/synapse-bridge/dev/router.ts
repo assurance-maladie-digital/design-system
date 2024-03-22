@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 export const router = createRouter({
 	history: createWebHistory(),
@@ -7,6 +7,6 @@ export const router = createRouter({
 			name: 'home',
 			path: '/',
 			component: () => import('./Playground.vue'),
-		}
+		},
 	],
-})
+});

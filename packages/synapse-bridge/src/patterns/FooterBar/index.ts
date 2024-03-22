@@ -1,3 +1,1 @@
-import FooterBar from './FooterBar.vue';
-
-export default FooterBar;
+export { default } from './FooterBar.vue';

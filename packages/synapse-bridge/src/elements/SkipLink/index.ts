@@ -1,3 +1,1 @@
-import SkipLink from './SkipLink.vue'
-
-export default SkipLink
+export { default } from './SkipLink.vue';

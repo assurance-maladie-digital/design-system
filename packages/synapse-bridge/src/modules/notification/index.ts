@@ -1,6 +1,6 @@
-import { Module, ActionTree, MutationTree, GetterTree } from 'vuex';
+import { Module, ActionTree, MutationTree, GetterTree, Commit } from 'vuex';
 
-import { RootState } from '../';
+import { RootState } from '..';
 import { NotificationState, NotificationObj } from './types';
 
 import { notify } from './notify';
@@ -10,32 +10,31 @@ export const state: NotificationState = {
 };
 
 export const actions: ActionTree<NotificationState, RootState> = {
-	add({ commit, state}: { commit: any, state: any }, notification: NotificationObj) {
+	add({ commit, state }: { commit: Commit; state: NotificationState }, notification: NotificationObj) {
 		notify(commit, state, notification);
 	},
-	addNotification({ commit, state }: { commit: any, state: any }, notification: NotificationObj) {
+	addNotification({ commit, state }: { commit: Commit; state: NotificationState }, notification: NotificationObj) {
 		notify(commit, state, notification);
 	},
-	clear({ commit }: { commit: any}) {
+	clear({ commit }: { commit: Commit }) {
 		commit('CLEAR');
 	},
-	clearNotification({ commit } : { commit: any}) {
+	clearNotification({ commit }: { commit: Commit }) {
 		commit('CLEAR');
 	},
 };
 
-
 export const mutations: MutationTree<NotificationState> = {
-	ADD(state: any, notification: NotificationObj) {
+	ADD(state: NotificationState, notification: NotificationObj) {
 		state.notification = notification;
 	},
-	CLEAR(state: any) {
+	CLEAR(state: NotificationState) {
 		state.notification = null;
 	},
 };
 
 export const getters: GetterTree<NotificationState, RootState> = {
-	notification: (state :any) => state.notification,
+	notification: (state: NotificationState) => state.notification,
 };
 export const notification: Module<NotificationState, RootState> = {
 	namespaced: true,

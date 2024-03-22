@@ -7,6 +7,8 @@ export const stylistic: FlatESLintConfigItem[] = [
 			antfu: pluginAntfu,
 			style: pluginStylistic,
 		},
+		// use for typescript, vue, vue3, react, react-native, etc.
+		files: ['**/*.{ts,js}'],
 		rules: {
 			'antfu/consistent-list-newline': 'error',
 			'antfu/top-level-function': 'error',

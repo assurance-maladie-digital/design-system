@@ -1,3 +1,1 @@
-import MaintenancePage from './MaintenancePage.vue';
-
-export default MaintenancePage;
+export { default } from './MaintenancePage.vue';

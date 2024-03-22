@@ -13,4 +13,4 @@ export const config = {
 	icon: {
 		color: 'grey-darken-2',
 	},
-}
+};

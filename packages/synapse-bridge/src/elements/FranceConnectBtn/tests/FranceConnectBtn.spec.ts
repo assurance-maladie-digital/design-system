@@ -1,8 +1,8 @@
-import { describe, it, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, it, expect } from 'vitest';
+import { shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import FranceConnectBtn from '../'
+import FranceConnectBtn from '..';
 
 describe('FranceConnectBtn', () => {
 	it('renders correctly', () => {
@@ -13,10 +13,10 @@ describe('FranceConnectBtn', () => {
 			propsData: {
 				href: 'https://app.franceconnect.gouv.fr/',
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with connect-plus', () => {
 		const wrapper = shallowMount(FranceConnectBtn, {
@@ -27,8 +27,8 @@ describe('FranceConnectBtn', () => {
 				href: 'https://app.franceconnect.gouv.fr/',
 				connectPlus: true,
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
-})
+		expect(wrapper).toMatchSnapshot();
+	});
+});

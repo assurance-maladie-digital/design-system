@@ -1,4 +1,15 @@
 // @ts-check
-import cnamts from '@cnamts/eslint-config'
+import cnamts from '@cnamts/eslint-config';
 
-export default cnamts()
+export default cnamts([
+	{
+		rules: {
+			'vue/multi-word-component-names': [
+				'error',
+				{
+					ignores: ['Playground', 'Playground.template', 'Logo'],
+				},
+			],
+		},
+	},
+]);

@@ -15,4 +15,4 @@ export const locales = {
 	hideInformation: 'Masquer les cookies',
 	reject: 'Refuser',
 	accept: 'Accepter',
-}
+};

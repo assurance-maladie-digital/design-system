@@ -1,19 +1,19 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { mdiClose } from "@mdi/js";
-import { NavigationItem } from "../types";
-import { config } from "./config";
-import { colorMapping } from "../colorMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import HeaderMenuBtn from "../HeaderMenuBtn/HeaderMenuBtn.vue";
-import { customizable } from "@/mixins/customizable";
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
+import { mdiClose } from '@mdi/js';
+import { NavigationItem } from '../types';
+import { colorMapping } from '../colorMapping';
+import HeaderMenuBtn from '../HeaderMenuBtn/HeaderMenuBtn.vue';
+import { config } from './config';
+import { ThemeEnum } from '@/constants/enums/ThemeEnum';
+import { customizable } from '@/mixins/customizable';
+
 export default defineComponent({
-	mixins: [customizable(config)],
 	components: {
 		HeaderMenuBtn,
 	},
-	emits: ["update:drawer", "update:tab"],
+	mixins: [customizable(config)],
 	props: {
 		theme: {
 			type: String as PropType<ThemeEnum>,
@@ -40,6 +40,7 @@ export default defineComponent({
 			default: null,
 		},
 	},
+	emits: ['update:drawer', 'update:tab'],
 	data() {
 		return {
 			mdiClose,
@@ -51,7 +52,7 @@ export default defineComponent({
 		},
 		backgroundColor(): string {
 			return colorMapping[this.theme];
-		}
+		},
 	},
 	methods: {
 		emitDrawerEvent(): void {
@@ -59,45 +60,52 @@ export default defineComponent({
 		},
 		emitTabUpdateEvent(value: number): void {
 			this.$emit('update:tab', value);
-		}
-	}
+		},
+	},
 });
 </script>
 
 <template>
-	<VSheet
-		v-bind="options.sheet"
-		:color="backgroundColor"
-		:class="spacingClass"
-		class="vd-navigation-bar d-flex align-center justify-center"
-	>
-		<VSheet class="header-navigation-background" v-bind="options.innerSheet" :width="innerWidth">
-			<slot name="navigation-bar-prepend" />
+  <VSheet
+    v-bind="options.sheet"
+    :color="backgroundColor"
+    :class="spacingClass"
+    class="vd-navigation-bar d-flex align-center justify-center"
+  >
+    <VSheet
+      class="header-navigation-background"
+      v-bind="options.innerSheet"
+      :width="innerWidth"
+    >
+      <slot name="navigation-bar-prepend" />
 
-			<slot>
-				<HeaderMenuBtn v-if="mobileVersion" @click="emitDrawerEvent" />
+      <slot>
+        <HeaderMenuBtn
+          v-if="mobileVersion"
+          @click="emitDrawerEvent"
+        />
 
-				<VTabs
-					v-else
-					v-bind="options.tabs"
-					:modelValue="tab"
-					@change="emitTabUpdateEvent"
-				>
-					<VTab
-						v-for="(item, index) in items"
-						:key="index"
-						v-bind="options.tab"
-						:href="item.href"
-						:to="item.to"
-					>
-						{{ item.label }}
-					</VTab>
-				</VTabs>
-			</slot>
+        <VTabs
+          v-else
+          v-bind="options.tabs"
+          :model-value="tab"
+          @change="emitTabUpdateEvent"
+        >
+          <VTab
+            v-for="(item, index) in items"
+            :key="index"
+            v-bind="options.tab"
+            :href="item.href"
+            :to="item.to"
+          >
+            {{ item.label }}
+          </VTab>
+        </VTabs>
+      </slot>
 
-			<slot name="navigation-bar-secondary-content" />
-		</VSheet>
-	</VSheet>
+      <slot name="navigation-bar-secondary-content" />
+    </VSheet>
+  </VSheet>
 </template>
 
 <style lang="scss" scoped>

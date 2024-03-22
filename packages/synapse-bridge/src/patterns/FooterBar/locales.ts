@@ -11,5 +11,5 @@ export const locales = {
 	[A11yComplianceEnum.NON_COMPLIANT]: 'non conforme',
 	[A11yComplianceEnum.PARTIALLY_COMPLIANT]: 'partiellement conforme',
 	[A11yComplianceEnum.FULLY_COMPLIANT]: 'totalement conforme',
-	a11yLabel: (complianceLabel: string): string => `Accessibilité\xa0: ${complianceLabel}`
+	a11yLabel: (complianceLabel: string): string => `Accessibilité\u00A0: ${complianceLabel}`,
 };

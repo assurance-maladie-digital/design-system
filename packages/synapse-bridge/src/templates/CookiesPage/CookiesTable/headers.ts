@@ -11,4 +11,4 @@ export const headers = [
 		label: 'Durée de conservation',
 		width: '180px',
 	},
-]
+];

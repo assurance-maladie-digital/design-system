@@ -1,3 +1,1 @@
-import LogoBrandSection from './LogoBrandSection.vue';
-
-export default LogoBrandSection;
+export { default } from './LogoBrandSection.vue';

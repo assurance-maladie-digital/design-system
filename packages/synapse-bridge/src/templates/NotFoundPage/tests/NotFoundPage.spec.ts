@@ -1,13 +1,13 @@
-import { describe, it, expect } from "vitest";
-import { mount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest';
+import { mount } from '@vue/test-utils';
 
-import NotFoundPage from "../";
 import { vuetify } from '@tests/unit/setup';
+import NotFoundPage from '..';
 import { locales } from '../locales';
 
-describe("NotFoundPage", () => {
-	it("renders correctly", () => {
-		const wrapper = mount(NotFoundPage,{
+describe('NotFoundPage', () => {
+	it('renders correctly', () => {
+		const wrapper = mount(NotFoundPage, {
 			global: {
 				plugins: [
 					vuetify,
@@ -20,11 +20,13 @@ describe("NotFoundPage", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
-	it("display the support ID if provided in the url", () => {
-		history.replaceState({}, "",
-			"/not-found?support_id=1234567890123456789"
+	it('display the support ID if provided in the url', () => {
+		history.replaceState(
+			{},
+			'',
+			'/not-found?support_id=1234567890123456789',
 		);
-		const wrapper = mount(NotFoundPage,{
+		const wrapper = mount(NotFoundPage, {
 			global: {
 				plugins: [
 					vuetify,
@@ -32,7 +34,7 @@ describe("NotFoundPage", () => {
 			},
 		});
 
-		expect(wrapper.text()).toContain("1234 5678 9012 3456 789");
+		expect(wrapper.text()).toContain('1234 5678 9012 3456 789');
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 });

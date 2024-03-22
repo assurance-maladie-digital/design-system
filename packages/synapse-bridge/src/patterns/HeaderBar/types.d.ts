@@ -1,7 +1,7 @@
-import { RawLocation } from "vue-router";
+import { RawLocation } from 'vue-router';
 
 export interface NavigationItem {
-	label: string;
-	href?: string;
-	to?: RawLocation;
+	label: string
+	href?: string
+	to?: RawLocation
 }

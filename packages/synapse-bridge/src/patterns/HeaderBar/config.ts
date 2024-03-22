@@ -2,10 +2,10 @@ export const config = {
 	appBar: {
 		color: 'white',
 		height: 'auto',
-		class: 'w-100'
+		class: 'w-100',
 	},
 	innerSheet: {
-		class: 'd-flex align-center'
+		class: 'd-flex align-center',
 	},
 	menuBtn: {
 		color: 'primary',
@@ -13,9 +13,9 @@ export const config = {
 		height: '42px',
 		spacing: 'px-1',
 		variant: 'text',
-		class: 'text-caption'
+		class: 'text-caption',
 	},
 	spacer: {
-		class: 'h-100 mr-4 mr-md-16'
-	}
+		class: 'h-100 mr-4 mr-md-16',
+	},
 };

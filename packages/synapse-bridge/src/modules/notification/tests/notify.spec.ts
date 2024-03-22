@@ -1,17 +1,17 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi } from 'vitest';
 
-import { NotificationState, NotificationObj } from "../types";
+import { NotificationState, NotificationObj } from '../types';
 
-import { notify } from "../notify";
+import { notify } from '../notify';
 
 const notificationObj: NotificationObj = {
-	type: "success",
-	message: "test",
-	icon: "icon",
+	type: 'success',
+	message: 'test',
+	icon: 'icon',
 };
 
-describe("notify", () => {
-	it("adds a notification", () => {
+describe('notify', () => {
+	it('adds a notification', () => {
 		const commit = vi.fn();
 
 		const state: NotificationState = {
@@ -20,10 +20,10 @@ describe("notify", () => {
 
 		notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith("ADD", notificationObj);
+		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
 	});
 
-	it("removes a previous notification and adds a new one", () => {
+	it('removes a previous notification and adds a new one', () => {
 		vi.useFakeTimers();
 		const commit = vi.fn();
 
@@ -33,9 +33,9 @@ describe("notify", () => {
 
 		notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith("CLEAR");
+		expect(commit).toHaveBeenCalledWith('CLEAR');
 		vi.runAllTimers();
 
-		expect(commit).toHaveBeenCalledWith("ADD", notificationObj);
+		expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
 	});
 });

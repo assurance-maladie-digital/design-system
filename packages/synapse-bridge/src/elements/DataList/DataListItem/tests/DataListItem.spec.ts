@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest'
-import { mount, shallowMount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, it, expect } from 'vitest';
+import { mount, shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import DataListItem from '../'
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
+import DataListItem from '..';
 
 describe('DataListItem', () => {
 	it('renders correctly', () => {
@@ -14,10 +14,10 @@ describe('DataListItem', () => {
 			propsData: {
 				label: 'Test',
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with a value', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -28,10 +28,10 @@ describe('DataListItem', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with a number value', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -42,24 +42,24 @@ describe('DataListItem', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with a NaN value', () => {
 		const wrapper = shallowMount(DataListItem, {
 			propsData: {
 				label: 'Test',
-				value: parseInt('test', 10),
+				value: Number.parseInt('test', 10),
 			},
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly a value with HTML as text', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -70,13 +70,13 @@ describe('DataListItem', () => {
 				label: 'Name',
 				value: 'Paul<br> Dupont',
 			},
-		})
+		});
 
-		const elValue = wrapper.find('.vd-data-list-item-value span')
+		const elValue = wrapper.find('.vd-data-list-item-value span');
 
-		expect(elValue.text()).toBe('Paul<br> Dupont')
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(elValue.text()).toBe('Paul<br> Dupont');
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly a value as plain HTML', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -88,13 +88,13 @@ describe('DataListItem', () => {
 				value: 'Paul<br> Dupont',
 				renderHtmlValue: true,
 			},
-		})
+		});
 
-		const elValue = wrapper.find('.vd-data-list-item-value span')
+		const elValue = wrapper.find('.vd-data-list-item-value span');
 
-		expect(elValue.text()).toBe('Paul Dupont')
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(elValue.text()).toBe('Paul Dupont');
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly value in a chip', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -106,10 +106,10 @@ describe('DataListItem', () => {
 				value: 'value',
 				chip: true,
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with an action', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -120,15 +120,15 @@ describe('DataListItem', () => {
 				label: 'Test',
 				action: 'Action',
 			},
-		})
+		});
 
-		const actionBtn = wrapper.find('.vd-data-list-item-action-btn')
+		const actionBtn = wrapper.find('.vd-data-list-item-action-btn');
 
-		expect(actionBtn.exists()).toBe(true)
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(actionBtn.exists()).toBeTruthy();
+		expect(wrapper).toMatchSnapshot();
+	});
 
-	it('emits click:action event when the action button is pressed', async () => {
+	it('emits click:action event when the action button is pressed', async() => {
 		const wrapper = shallowMount(DataListItem, {
 			global: {
 				plugins: [vuetify],
@@ -138,16 +138,17 @@ describe('DataListItem', () => {
 				value: 'value',
 				action: 'Action',
 			},
-		})
+		});
 
-		const actionBtn = wrapper.find('.vd-data-list-item-action-btn')
-		expect(actionBtn.exists()).toBe(true)
+		const actionBtn = wrapper.find('.vd-data-list-item-action-btn');
 
-		await actionBtn.trigger('click')
+		expect(actionBtn.exists()).toBeTruthy();
 
-		expect(wrapper.emitted('click:action')).toBeTruthy()
-		expect(wrapper).toMatchSnapshot()
-	})
+		await actionBtn.trigger('click');
+
+		expect(wrapper.emitted('click:action')).toBeTruthy();
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly in row mode', () => {
 		const wrapper = shallowMount(DataListItem, {
@@ -160,13 +161,13 @@ describe('DataListItem', () => {
 				action: 'Action',
 				row: true,
 			},
-		})
+		});
 
-		const elExists = wrapper.find('.vd-row').exists()
+		const elExists = wrapper.find('.vd-row').exists();
 
-		expect(elExists).toBe(true)
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(elExists).toBeTruthy();
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly in dark mode', () => {
 		const WrapperComponent = defineComponent({
@@ -182,14 +183,14 @@ describe('DataListItem', () => {
 			components: {
 				DataListItem,
 			},
-		})
+		});
 
 		const wrapper = mount(WrapperComponent, {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
-})
+		expect(wrapper).toMatchSnapshot();
+	});
+});

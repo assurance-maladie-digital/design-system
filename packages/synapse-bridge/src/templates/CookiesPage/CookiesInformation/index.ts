@@ -1,3 +1,1 @@
-import CookiesInformation from './CookiesInformation.vue'
-
-export default CookiesInformation
+export { default } from './CookiesInformation.vue';

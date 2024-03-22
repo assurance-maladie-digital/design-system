@@ -1,5 +1,5 @@
-import { defineConfig, mergeConfig } from 'vitest/config'
-import viteConfig from './vite.config'
+import { defineConfig, mergeConfig } from 'vitest/config';
+import viteConfig from './vite.config';
 
 export default defineConfig(configEnv => mergeConfig(
 	viteConfig(configEnv),
@@ -13,10 +13,10 @@ export default defineConfig(configEnv => mergeConfig(
 			},
 			server: {
 				deps: {
-					inline: ['vuetify']
-				}
+					inline: ['vuetify'],
+				},
 			},
 			setupFiles: ['./tests/unit/setup.ts'],
 		},
 	}),
-))
+));

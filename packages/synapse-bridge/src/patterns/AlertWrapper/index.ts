@@ -1,3 +1,1 @@
-import AlertWrapper from './AlertWrapper.vue';
-
-export default AlertWrapper;
+export { default } from './AlertWrapper.vue';

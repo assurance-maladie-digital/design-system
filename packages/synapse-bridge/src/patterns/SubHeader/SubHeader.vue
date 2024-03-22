@@ -1,28 +1,28 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { mdiKeyboardBackspace } from '@mdi/js';
+import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
+import { config } from './config';
+import { locales } from './locales';
 
-import { customizable } from "@/mixins/customizable";
-import { Widthable } from "@/mixins/widthable";
+import { customizable } from '@/mixins/customizable';
+import { Widthable } from '@/mixins/widthable';
 
-import DataListGroup from "@/patterns/DataListGroup";
+import DataListGroup from '@/patterns/DataListGroup';
 import {
 	DataListActionEvent,
 	DataListGroupItems,
-} from "@/patterns/DataListGroup/types";
+} from '@/patterns/DataListGroup/types';
 
-import { mdiKeyboardBackspace } from "@mdi/js";
 import HeaderLoading from '@/elements/HeaderLoading';
-import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
 
 export default defineComponent({
 	components: {
 		DataListGroup,
 		HeaderLoading,
-		VSkeletonLoader
+		VSkeletonLoader,
 	},
 	mixins: [customizable(config), Widthable],
 	props: {
@@ -55,7 +55,7 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	emits: ["click:list-item", "back"],
+	emits: ['click:list-item', 'back'],
 	data() {
 		return {
 			backArrowIcon: mdiKeyboardBackspace,
@@ -65,106 +65,112 @@ export default defineComponent({
 	computed: {
 		fadeWhite(): string {
 			return 'rgba(255, 255, 255, .7)';
-		}
+		},
 	},
 	methods: {
 		emitItemAction(eventValue: DataListActionEvent): void {
 			this.$emit('click:list-item', eventValue);
-		}
-	}
+		},
+	},
 });
 </script>
 
 <template>
-	<VSheet
-		v-bind="options.sheet"
-		:style="widthStyles"
-		class="vd-sub-header white--text py-6 px-8"
-	>
-		<slot name="back-btn">
-			<VFadeTransition v-if="!hideBackBtn" mode="out-in">
-				<VSkeletonLoader
-					v-if="loading"
-					max-height="28"
-					type="button"
-					color="secondary"
-					class="vd-subheader-loading mb-4"
-				/>
-				<VBtn
-					v-else
-					v-bind="options.backBtn"
-					class="vd-sub-header-back-btn mb-1"
-					@click="$emit('back')"
-				>
-					<slot name="back-btn-icon">
-						<VIcon class="mr-2">
-							{{ backArrowIcon }}
-						</VIcon>
-					</slot>
+  <VSheet
+    v-bind="options.sheet"
+    :style="widthStyles"
+    class="vd-sub-header white--text py-6 px-8"
+  >
+    <slot name="back-btn">
+      <VFadeTransition
+        v-if="!hideBackBtn"
+        mode="out-in"
+      >
+        <VSkeletonLoader
+          v-if="loading"
+          max-height="28"
+          type="button"
+          color="secondary"
+          class="vd-subheader-loading mb-4"
+        />
+        <VBtn
+          v-else
+          v-bind="options.backBtn"
+          class="vd-sub-header-back-btn mb-1"
+          @click="$emit('back')"
+        >
+          <slot name="back-btn-icon">
+            <VIcon class="mr-2">
+              {{ backArrowIcon }}
+            </VIcon>
+          </slot>
 
-					{{ backBtnText }}
-				</VBtn>
-			</VFadeTransition>
-		</slot>
+          {{ backBtnText }}
+        </VBtn>
+      </VFadeTransition>
+    </slot>
 
-		<div class="vd-sub-header-content d-flex justify-space-between">
-			<div
-				class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10"
-			>
-				<slot name="title">
-					<VFadeTransition mode="out-in">
-						<HeaderLoading
-							v-if="loading"
-							width="300"
-							height="2rem"
-							color="secondary"
-						/>
+    <div class="vd-sub-header-content d-flex justify-space-between">
+      <div
+        class="vd-sub-header-informations d-flex flex-column flex-shrink-0 mr-10"
+      >
+        <slot name="title">
+          <VFadeTransition mode="out-in">
+            <HeaderLoading
+              v-if="loading"
+              width="300"
+              height="2rem"
+              color="secondary"
+            />
 
-						<h2
-							v-else-if="titleText"
-							class="text-h5 font-weight-bold"
-						>
-							{{ titleText }}
-						</h2>
-					</VFadeTransition>
-				</slot>
+            <h2
+              v-else-if="titleText"
+              class="text-h5 font-weight-bold"
+            >
+              {{ titleText }}
+            </h2>
+          </VFadeTransition>
+        </slot>
 
-				<slot name="sub-title">
-					<VFadeTransition v-if="subTitleText" mode="out-in">
-						<HeaderLoading
-							v-if="loading"
-							class="mt-1"
-							width="250"
-							height="2rem"
-							color="secondary"
-						/>
+        <slot name="sub-title">
+          <VFadeTransition
+            v-if="subTitleText"
+            mode="out-in"
+          >
+            <HeaderLoading
+              v-if="loading"
+              class="mt-1"
+              width="250"
+              height="2rem"
+              color="secondary"
+            />
 
-						<p
-							v-else
-							class="text-h6 font-weight-bold mt-1 mb-0"
-							:style="{ color: fadeWhite }"
-						>
-							{{ subTitleText }}
-						</p>
-					</VFadeTransition>
-				</slot>
+            <p
+              v-else
+              class="text-h6 font-weight-bold mt-1 mb-0"
+              :style="{ color: fadeWhite }"
+            >
+              {{ subTitleText }}
+            </p>
+          </VFadeTransition>
+        </slot>
 
-				<slot name="additional-informations" />
-			</div>
+        <slot name="additional-informations" />
+      </div>
 
-			<slot name="right-content">
-				<DataListGroup
-					v-if="dataListGroupItems"
-					:items="dataListGroupItems"
-					:loading="loading"
-					:render-html-value="renderHtmlValue"
-					item-width="auto"
-					class="flex-nowrap flex-shrink-0"
-					@click:list-item="emitItemAction"
-				/>
-			</slot>
-		</div>
-	</VSheet>
+      <slot name="right-content">
+        <DataListGroup
+          v-if="dataListGroupItems"
+          :items="dataListGroupItems"
+          :loading="loading"
+          :render-html-value="renderHtmlValue"
+          item-width="auto"
+          class="flex-nowrap flex-shrink-0"
+          @click:list-item="emitItemAction"
+        />
+      </slot>
+    </div>
+  </VSheet>
 </template>
 
 <style lang="scss" scoped>

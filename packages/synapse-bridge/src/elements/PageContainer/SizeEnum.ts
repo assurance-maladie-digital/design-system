@@ -5,4 +5,4 @@ export enum SizeEnum {
 	SMALL = 's',
 }
 
-export const SIZE_ENUM_VALUES = Object.values(SizeEnum)
+export const SIZE_ENUM_VALUES = Object.values(SizeEnum);

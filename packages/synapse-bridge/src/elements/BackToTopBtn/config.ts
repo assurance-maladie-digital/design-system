@@ -10,4 +10,4 @@ export const config = {
 		size: 'small',
 		class: 'ml-0 ml-md-1',
 	},
-}
+};

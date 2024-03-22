@@ -1,3 +1,1 @@
-import NotFoundPage from './NotFoundPage.vue';
-
-export default NotFoundPage;
+export { default } from './NotFoundPage.vue';

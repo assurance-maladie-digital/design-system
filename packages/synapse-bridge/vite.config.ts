@@ -1,38 +1,35 @@
-import { resolve } from 'node:path'
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig, type Plugin } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import dts from 'vite-plugin-dts'
-import { visualizer } from 'rollup-plugin-visualizer'
+import { fileURLToPath, URL } from 'node:url';
+import { defineConfig, type Plugin } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
+import dts from 'vite-plugin-dts';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig(({ mode }) => {
 	const config = {
 		plugins: [
 			vue({
-				template: { transformAssetUrls }
+				template: { transformAssetUrls },
 			}),
-			vuetify(
-				{
-					autoImport: true
-				}
-			),
+			vuetify({
+				autoImport: true,
+			}),
 			dts({
 				rollupTypes: true,
 			}),
 		],
 		define: {
-			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
+			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
 		},
 		resolve: {
 			alias: {
-				'@': fileURLToPath(new URL('./src', import.meta.url)),
-				'@tests': fileURLToPath(new URL('./tests', import.meta.url)),
+				'@': fileURLToPath(new URL('src', import.meta.url)),
+				'@tests': fileURLToPath(new URL('tests', import.meta.url)),
 			},
 		},
 		build: {
 			lib: {
-				entry: resolve(__dirname, 'src/main.ts'),
+				entry: fileURLToPath(new URL('src/main.ts', import.meta.url)),
 				name: 'SynapseBridge',
 				fileName: 'synapse-bridge',
 			},
@@ -46,21 +43,21 @@ export default defineConfig(({ mode }) => {
 				},
 			},
 		},
-	}
+	};
 
 	if (mode === 'development') {
 		config.plugins.push(vuetify({
 			styles: {
 				configFile: 'src/styles/settings.scss',
 			},
-		}) as unknown as Plugin)
+		}) as unknown as Plugin);
 	}
 
 	if (mode === 'analyze') {
 		config.plugins.push(visualizer({
 			filename: 'dist/stats.html',
-		}))
+		}));
 	}
 
-	return config
-})
+	return config;
+});

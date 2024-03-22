@@ -1,33 +1,33 @@
 <script lang="ts">
-	import { defineComponent } from 'vue';
-	import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
+import { defineComponent } from 'vue';
+import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
 
-	export default defineComponent({
-		components: {
-			VSkeletonLoader
+export default defineComponent({
+	components: {
+		VSkeletonLoader,
+	},
+	props: {
+		width: {
+			type: String,
+			default: '100px',
 		},
-		props: {
-			width: {
-				type: String,
-				default: '100px'
-			},
-			height: {
-				type: String,
-				default: '1rem'
-			}
+		height: {
+			type: String,
+			default: '1rem',
 		},
-	})
+	},
+});
 </script>
 
 <template>
-	<VSkeletonLoader
-		v-bind="$attrs"
-		:width="width"
-		:height="height"
-		type="heading"
-		aria-hidden="true"
-		class="vd-header-loading"
-	/>
+  <VSkeletonLoader
+    v-bind="$attrs"
+    :width="width"
+    :height="height"
+    type="heading"
+    aria-hidden="true"
+    class="vd-header-loading"
+  />
 </template>
 
 <style lang="scss" scoped>

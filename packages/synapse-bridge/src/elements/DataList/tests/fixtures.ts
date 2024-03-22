@@ -1,4 +1,4 @@
-import { DataListItem } from '../types'
+import { DataListItem } from '../types';
 
 /** Get DataList fixture */
 export function getDataList(): DataListItem[] {
@@ -15,5 +15,5 @@ export function getDataList(): DataListItem[] {
 			key: 'First name',
 			value: 'Paul',
 		},
-	]
+	];
 }

@@ -1,22 +1,18 @@
-import { ruleMessage } from '../../helpers/ruleMessage'
-import { ValidationRule, ValidationResult, ErrorMessages } from '../types'
+import { ruleMessage } from '../../helpers/ruleMessage';
+import { ValidationRule, ValidationResult, ErrorMessages } from '../types';
 
-import { defaultErrorMessages } from './locales'
+import { defaultErrorMessages } from './locales';
 
-export type Value = string | string[] | null
+export type Value = string | string[] | null;
 
 export function requiredFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule<Value> {
 	return (value: Value): ValidationResult => {
-		let valid: boolean
+		const valid = Array.isArray(value) ?
+			value.length > 0 :
+			Boolean(typeof value === 'string' ? value.trim() : value);
 
-		if (Array.isArray(value)) {
-			valid = value.length !== 0
-		} else {
-			valid = Boolean(typeof value === 'string' ? value.trim() : value)
-		}
-
-		return valid || ruleMessage(errorMessages, 'default')
-	}
+		return valid || ruleMessage(errorMessages, 'default');
+	};
 }
 
-export const required = requiredFn()
+export const required = requiredFn();

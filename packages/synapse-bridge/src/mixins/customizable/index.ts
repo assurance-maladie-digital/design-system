@@ -1,8 +1,8 @@
-import { defineComponent } from 'vue'
-import { type PropType } from 'vue'
-import deepMerge from 'deepmerge'
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
+import deepMerge from 'deepmerge';
 
-import { Customizable, Options } from './types'
+import { Customizable, Options } from './types';
 
 /**
  * Mixin that merge default options with options passed as props
@@ -27,13 +27,13 @@ export function customizable(defaultOptions: Options): Customizable {
 		computed: {
 			options(): Options {
 				if (this.vuetifyOptions) {
-					return deepMerge<Options>(defaultOptions, this.vuetifyOptions)
+					return deepMerge<Options>(defaultOptions, this.vuetifyOptions);
 				}
 
-				return defaultOptions
+				return defaultOptions;
 			},
 		},
-	})
+	});
 }
 
-export type { Options }
+export { type Options } from './types';

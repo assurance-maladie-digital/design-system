@@ -1,3 +1,1 @@
-import ChipList from './ChipList.vue'
-
-export default ChipList
+export { default } from './ChipList.vue';

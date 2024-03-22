@@ -4,5 +4,5 @@
  * will be inserted at the end or the start
  */
 export function insertAt(source: string, index: number, replacement: string): string {
-	return source.substring(0, index) + replacement + source.substring(index);
+	return source.slice(0, Math.max(0, index)) + replacement + source.slice(Math.max(0, index));
 }

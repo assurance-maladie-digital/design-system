@@ -17,10 +17,10 @@
 			"@tests/*": ["./tests/*"]
 		},
 		"resolveJsonModule": true,
+		"typeRoots": ["./types"],
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
-		"isolatedModules": true,
-		"typeRoots" : ["./types"]
+		"isolatedModules": true
 	},
 	"references": [
 		{

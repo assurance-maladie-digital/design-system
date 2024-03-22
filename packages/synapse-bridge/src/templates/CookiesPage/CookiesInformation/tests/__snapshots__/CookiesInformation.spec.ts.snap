@@ -10,12 +10,7 @@ exports[`CookiesInformation > renders correctly 1`] = `
     <cookies-table-stub data-v-7eab3eb5="" items="[object Object],[object Object]" class="mb-2"></cookies-table-stub>
   </details>
   <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
-    let valid;
-    if (Array.isArray(value)) {
-      valid = value.length !== 0;
-    } else {
-      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
-    }
+    const valid = Array.isArray(value) ? value.length > 0 : Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
     return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
   }" focused="false" inline="true" falseicon="$radioOff" trueicon="$radioOn" ripple="true" type="radio" valuecomparator="[Function]" data-test-id="radio-group"></v-radio-group-stub>
 </div>
@@ -95,12 +90,7 @@ exports[`CookiesInformation > renders correctly without items 1`] = `
     <cookies-table-stub data-v-7eab3eb5="" items="" class="mb-2"></cookies-table-stub>
   </details>
   <v-radio-group-stub data-v-7eab3eb5="" class="mt-0" height="auto" centeraffix="true" hidedetails="auto" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="(value) => {
-    let valid;
-    if (Array.isArray(value)) {
-      valid = value.length !== 0;
-    } else {
-      valid = Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
-    }
+    const valid = Array.isArray(value) ? value.length > 0 : Boolean(typeof value === &quot;string&quot; ? value.trim() : value);
     return valid || __vite_ssr_import_0__.ruleMessage(errorMessages, &quot;default&quot;);
   }" focused="false" inline="true" falseicon="$radioOff" trueicon="$radioOn" ripple="true" type="radio" valuecomparator="[Function]" data-test-id="radio-group"></v-radio-group-stub>
 </div>

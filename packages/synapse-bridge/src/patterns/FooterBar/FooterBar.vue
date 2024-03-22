@@ -1,40 +1,39 @@
 <script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import { type RouteLocationRaw } from "vue-router";
-import Logo from "@/elements/Logo/Logo.vue";
-import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
-import SocialMediaLinks from "./SocialMediaLinks";
-import { SocialMediaLink } from "./SocialMediaLinks/types";
+import { type PropType } from 'vue';
+import { defineComponent } from 'vue';
+import { type RouteLocationRaw } from 'vue-router';
+import { mdiArrowUp } from '@mdi/js';
+import SocialMediaLinks from './SocialMediaLinks';
+import { SocialMediaLink } from './SocialMediaLinks/types';
 import {
 	A11Y_COMPLIANCE_ENUM_VALUES,
 	A11yComplianceEnum,
-} from "./A11yComplianceEnum";
-import { config } from "./config";
-import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
-import { locales } from "./locales";
-import { type LinkItem } from "./types";
-import { propValidator } from "@/helpers/propValidator";
-import { customizable } from "@/mixins/customizable";
-import { mdiArrowUp } from "@mdi/js";
+} from './A11yComplianceEnum';
+import { config } from './config';
+import { defaultSocialMediaLinks } from './defaultSocialMediaLinks';
+import { locales } from './locales';
+import { type LinkItem } from './types';
+import { LogoSizeEnum } from '@/elements/Logo/LogoSizeEnum';
+import Logo from '@/elements/Logo/Logo.vue';
+import { propValidator } from '@/helpers/propValidator';
+import { customizable } from '@/mixins/customizable';
 
 export default defineComponent({
-	inheritAttrs: false,
 	components: {
 		SocialMediaLinks,
-		Logo
+		Logo,
 	},
 	mixins: [customizable(config)],
+	inheritAttrs: false,
 	props: {
 		a11yCompliance: {
 			type: String as PropType<A11yComplianceEnum>,
 			default: A11yComplianceEnum.NON_COMPLIANT,
-			validator: (value: A11yComplianceEnum) =>
-				propValidator(
-					"a11y-compliance",
-					A11Y_COMPLIANCE_ENUM_VALUES,
-					value
-				),
+			validator: (value: A11yComplianceEnum) => propValidator(
+				'a11y-compliance',
+				A11Y_COMPLIANCE_ENUM_VALUES,
+				value,
+			),
 		},
 		linkItems: {
 			type: [Array] as PropType<LinkItem[]>,
@@ -42,23 +41,23 @@ export default defineComponent({
 		},
 		sitemapRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "sitemap" }),
+			default: () => ({ name: 'sitemap' }),
 		},
 		cguRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "cgu" }),
+			default: () => ({ name: 'cgu' }),
 		},
 		cookiesRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "cookies" }),
+			default: () => ({ name: 'cookies' }),
 		},
 		legalNoticeRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "legalNotice" }),
+			default: () => ({ name: 'legalNotice' }),
 		},
 		a11yStatementRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "a11yStatement" }),
+			default: () => ({ name: 'a11yStatement' }),
 		},
 		hideSitemapLink: {
 			type: Boolean,
@@ -127,32 +126,32 @@ export default defineComponent({
 				{
 					text: locales.sitemapLabel,
 					to: this.sitemapRoute,
-					hidden: this.hideSitemapLink
+					hidden: this.hideSitemapLink,
 				},
 				{
 					text: locales.cguLabel,
 					to: this.cguRoute,
-					hidden: this.hideCguLink
+					hidden: this.hideCguLink,
 				},
 				{
 					text: locales.cookiesLabel,
 					to: this.cookiesRoute,
-					hidden: this.hideCookiesLink
+					hidden: this.hideCookiesLink,
 				},
 				{
 					text: locales.legalNoticeLabel,
 					to: this.legalNoticeRoute,
-					hidden: this.hideLegalNoticeLink
+					hidden: this.hideLegalNoticeLink,
 				},
 				{
 					text: this.a11yComplianceLabel,
 					to: this.a11yStatementRoute,
-					hidden: this.hideA11yLink
-				}
+					hidden: this.hideA11yLink,
+				},
 			];
 
 			return linksMapping.filter((item) => !item.hidden);
-		}
+		},
 	},
 	methods: {
 		getLinkComponent(item: LinkItem): string {
@@ -162,99 +161,109 @@ export default defineComponent({
 		scrollToTop(): void {
 			window.scrollTo({
 				top: 0,
-				behavior: 'smooth'
+				behavior: 'smooth',
 			});
-		}
-	}
+		},
+	},
 });
 </script>
 
 <template>
-	<VFooter
-		v-bind="{
-			...options.footer,
-			...$attrs,
-		}"
-		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
-		role="contentinfo"
-		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
-	>
-		<div
-			v-if="extendedMode"
-			class="d-flex align-start align-sm-center mb-6"
-		>
-			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
-				<slot name="logo">
-					<Logo
-						v-if="!hideLogo"
-						:size="logoSize"
-						:class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
-					/>
-				</slot>
+  <VFooter
+    v-bind="{
+      ...options.footer,
+      ...$attrs,
+    }"
+    :class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+    role="contentinfo"
+    class="vd-footer-bar flex-column align-stretch pa-3 w-100"
+  >
+    <div
+      v-if="extendedMode"
+      class="d-flex align-start align-sm-center mb-6"
+    >
+      <div class="d-flex flex-grow-1 flex-column flex-sm-row">
+        <slot name="logo">
+          <Logo
+            v-if="!hideLogo"
+            :size="logoSize"
+            :class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
+          />
+        </slot>
 
-				<VSpacer v-bind="options.spacer" />
+        <VSpacer v-bind="options.spacer" />
 
-				<slot name="social-media-links">
-					<SocialMediaLinks
-						v-if="!hideSocialMediaLinks"
-						:links="socialMediaLinks"
-						class="mr-8"
-					/>
-				</slot>
-			</div>
+        <slot name="social-media-links">
+          <SocialMediaLinks
+            v-if="!hideSocialMediaLinks"
+            :links="socialMediaLinks"
+            class="mr-8"
+          />
+        </slot>
+      </div>
 
-			<VBtn
-				v-bind="options.goTopBtn"
-				:aria-label="locales.goTopBtnLabel"
-				@click="scrollToTop"
-			>
-				<VIcon v-bind="options.goTopBtnIcon">
-					{{ arrowTopIcon }}
-				</VIcon>
-			</VBtn>
-		</div>
+      <VBtn
+        v-bind="options.goTopBtn"
+        :aria-label="locales.goTopBtnLabel"
+        @click="scrollToTop"
+      >
+        <VIcon v-bind="options.goTopBtnIcon">
+          {{ arrowTopIcon }}
+        </VIcon>
+      </VBtn>
+    </div>
 
-		<VDivider v-if="extendedMode" v-bind="options.divider" class="mb-3" />
+    <VDivider
+      v-if="extendedMode"
+      v-bind="options.divider"
+      class="mb-3"
+    />
 
-		<slot />
+    <slot />
 
-		<VDivider
-			v-if="extendedMode"
-			v-bind="options.divider"
-			class="mt-3 mb-6"
-		/>
+    <VDivider
+      v-if="extendedMode"
+      v-bind="options.divider"
+      class="mt-3 mb-6"
+    />
 
-		<ul
-			:class="{ 'py-2 py-sm-0': !extendedMode }"
-			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3"
-		>
-			<slot name="prepend" />
+    <ul
+      :class="{ 'py-2 py-sm-0': !extendedMode }"
+      class="
+		vd-footer-bar-links text-sm-center d-flex
+		flex-column flex-sm-row flex-wrap align-start
+		justify-center max-width-none mx-n3 my-n3"
+    >
+      <slot name="prepend" />
 
-			<li
-				v-for="(item, index) in footerLinksMapping"
-				:key="index"
-			>
-				<component
-					:is="getLinkComponent(item)"
-					:href="item.href"
-					:to="item.to"
-					:aria-label="item.ariaLabel"
-					:target="item.openInNewTab ? '_blank' : undefined"
-					:tabindex="index"
-					:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
-					class="text--primary my-3 mx-4"
-				>
-					{{ item.text }}
-				</component>
-			</li>
+      <li
+        v-for="(item, index) in footerLinksMapping"
+        :key="index"
+      >
+        <component
+          :is="getLinkComponent(item)"
+          :href="item.href"
+          :to="item.to"
+          :aria-label="item.ariaLabel"
+          :target="item.openInNewTab ? '_blank' : undefined"
+          :tabindex="index"
+          :rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
+          class="text--primary my-3 mx-4"
+        >
+          {{ item.text }}
+        </component>
+      </li>
 
-			<li v-if="version" class="text--secondary my-3 mx-4">
-				{{ locales.versionLabel }} {{ version }}
-			</li>
+      <li
+        v-if="version"
+        class="text--secondary my-3 mx-4"
+      >
+        {{ locales.versionLabel }} {{ version }}
+      </li>
 
-			<slot name="append" />
-		</ul>
-	</VFooter>
+      <slot name="append" />
+    </ul>
+  </VFooter>
 </template>
 
 <style lang="scss" scoped>

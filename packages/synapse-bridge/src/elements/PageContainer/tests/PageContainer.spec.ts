@@ -2,12 +2,12 @@ import {
 	describe,
 	it,
 	expect,
-} from 'vitest'
+} from 'vitest';
 
-import { shallowMount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import PageContainer from '..'
+import PageContainer from '..';
 
 describe('PageContainer', () => {
 	it('renders correctly', () => {
@@ -15,10 +15,10 @@ describe('PageContainer', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+		expect(wrapper.html()).toMatchSnapshot();
+	});
 
 	it('renders correctly with spacing class', () => {
 		const wrapper = shallowMount(PageContainer, {
@@ -28,8 +28,8 @@ describe('PageContainer', () => {
 			global: {
 				plugins: [vuetify],
 			},
-		})
+		});
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
-})
+		expect(wrapper.html()).toMatchSnapshot();
+	});
+});

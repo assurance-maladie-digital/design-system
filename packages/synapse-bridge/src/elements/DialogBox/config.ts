@@ -23,4 +23,4 @@ export const config = {
 		color: 'primary',
 		class: 'ml-4',
 	},
-}
+};

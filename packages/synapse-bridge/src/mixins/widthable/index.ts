@@ -1,9 +1,9 @@
-import { PropType, defineComponent } from 'vue'
+import { PropType, defineComponent } from 'vue';
 
-import { IndexedObject } from '@/types'
-import { convertToUnit } from '@/helpers/convertToUnit'
+import { IndexedObject } from '@/types';
+import { convertToUnit } from '@/helpers/convertToUnit';
 
-export type NumberOrNumberString = PropType<string | number | undefined>
+export type NumberOrNumberString = PropType<string | number | undefined>;
 
 export const Widthable = defineComponent({
 	props: {
@@ -22,15 +22,15 @@ export const Widthable = defineComponent({
 	},
 	computed: {
 		widthStyles(): IndexedObject<string | undefined> {
-			const minWidth = convertToUnit(this.minWidth)
-			const maxWidth = convertToUnit(this.maxWidth)
-			const width = convertToUnit(this.width)
+			const minWidth = convertToUnit(this.minWidth);
+			const maxWidth = convertToUnit(this.maxWidth);
+			const width = convertToUnit(this.width);
 
 			return {
 				minWidth,
 				maxWidth,
 				width,
-			}
+			};
 		},
 	},
-})
+});

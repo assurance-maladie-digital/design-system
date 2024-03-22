@@ -1,16 +1,16 @@
 <script lang="ts">
-import { defineComponent, getCurrentInstance } from "vue";
-import { dividerDimensionsMapping } from "./dividerDimensionsMapping";
-import { locales } from "./locales";
-import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
-import { secondaryLogoMapping } from "./secondaryLogoMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import { tokens } from "@cnamts/design-tokens";
-import Logo from "../Logo";
+import { defineComponent, getCurrentInstance } from 'vue';
+import { tokens } from '@cnamts/design-tokens';
+import { type PropType } from 'vue';
+import Logo from '../Logo';
+import { dividerDimensionsMapping } from './dividerDimensionsMapping';
+import { locales } from './locales';
+import { secondaryLogoMapping } from './secondaryLogoMapping';
+import { type LogoInfo, type Service } from './types';
+import { LogoSizeEnum } from '@/elements/Logo/LogoSizeEnum';
+import { ThemeEnum } from '@/constants/enums/ThemeEnum';
 
-import type { Dimensions, Next } from "@/types";
-import type { LogoInfo, Service } from "./types";
-import type { PropType } from "vue";
+import { type Dimensions, type Next } from '@/types';
 
 export default defineComponent({
 	components: {
@@ -39,7 +39,7 @@ export default defineComponent({
 		},
 		homeLink: {
 			type: [String, Boolean, Object] as PropType<Next>,
-			default: "/",
+			default: '/',
 		},
 		homeHref: {
 			type: String,
@@ -47,8 +47,8 @@ export default defineComponent({
 		},
 		homeArialabel: {
 			type: String,
-			default: undefined
-		}
+			default: undefined,
+		},
 	},
 	data() {
 		return {
@@ -62,13 +62,13 @@ export default defineComponent({
 
 				return {
 					title,
-					subTitle
+					subTitle,
 				};
 			}
 
 			return {
-				title: this.serviceTitle || "",
-				subTitle: this.serviceSubTitle || "",
+				title: this.serviceTitle || '',
+				subTitle: this.serviceSubTitle || '',
 			};
 		},
 
@@ -97,7 +97,7 @@ export default defineComponent({
 		},
 
 		hideSignature(): boolean {
-			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile);
+			return this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile;
 		},
 
 		secondaryLogo(): LogoInfo | undefined {
@@ -118,22 +118,22 @@ export default defineComponent({
 
 		logoContainerComponent(): string {
 			if (this.homeHref) {
-				return "a";
+				return 'a';
 			}
 
 			if (!this.homeLink) {
-				return "div";
+				return 'div';
 			}
 
-			return this.isNuxt ? "nuxt-link" : "router-link";
+			return this.isNuxt ? 'nuxt-link' : 'router-link';
 		},
 
 		secondaryLogoCtnComponent(): string {
-			return this.hasSecondaryLogoLink ? this.logoContainerComponent : "div";
+			return this.hasSecondaryLogoLink ? this.logoContainerComponent : 'div';
 		},
 
 		secondaryLogoLabel(): string | null {
-			return (this.hasSecondaryLogoLink && this.secondaryLogo) ? `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}` : null;
+			return this.hasSecondaryLogoLink && this.secondaryLogo ? `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}` : null;
 		},
 
 		avatar(): boolean {
@@ -141,19 +141,15 @@ export default defineComponent({
 		},
 
 		hasBrandSlot() {
-			return Boolean(
-				this.$slots["brand-content"] &&
-				(this.$slots["brand-content"]()[0] as any)?.children?.length > 0
-			);
+			return Boolean(this.$slots['brand-content'] &&
+				(this.$slots['brand-content']()[0] as any)?.children?.length > 0);
 		},
 
 		showBrandContent(): boolean {
-			return Boolean(
-				this.service.title ||
+			return Boolean(this.service.title ||
 				this.service.subTitle ||
 				this.hasBrandSlot ||
-				this.hasSecondaryLogo
-			);
+				this.hasSecondaryLogo);
 		},
 
 		showDivider(): boolean {
@@ -165,22 +161,26 @@ export default defineComponent({
 		},
 
 		showServiceSubTitle(): boolean {
-			return Boolean(
-				this.service.title &&
+			return Boolean(this.service.title &&
 				this.service.subTitle &&
-				!this.mobileVersion
-			);
+				!this.mobileVersion);
 		},
 
 		dividerColor(): string {
 			switch (this.theme) {
 				case ThemeEnum.CNAM:
-				case ThemeEnum.AMELI_PRO:
+
+				case ThemeEnum.AMELI_PRO: {
 					return tokens.colors.secondary;
-				case ThemeEnum.COMPTE_ENTREPRISE:
+				}
+
+				case ThemeEnum.COMPTE_ENTREPRISE: {
 					return tokens.colors.brick.base;
-				default:
+				}
+
+				default: {
 					return tokens.colors.primary;
+				}
 			}
 		},
 
@@ -188,6 +188,7 @@ export default defineComponent({
 			if (this.mobileVersion) {
 				return this.hasSecondaryLogo ? dividerDimensionsMapping.xSmall : dividerDimensionsMapping.small;
 			}
+
 			return dividerDimensionsMapping.normal;
 		},
 
@@ -195,6 +196,7 @@ export default defineComponent({
 			if (this.mobileVersion) {
 				return this.hasSecondaryLogo ? LogoSizeEnum.X_SMALL : LogoSizeEnum.SMALL;
 			}
+
 			return LogoSizeEnum.NORMAL;
 		},
 	},
@@ -202,87 +204,93 @@ export default defineComponent({
 </script>
 
 <template>
-	<VSheet :height="height" class="vd-logo-brand-section d-flex">
-		<component
-			:is="logoContainerComponent"
-			:aria-current-value="null"
-			:to="homeLink"
-			:href="homeHref"
-			class="vd-home-link"
-		>
-			<Logo
-				:hide-signature="hideSignature"
-				:hide-organism="isCompteAmeliMobile"
-				:risque-pro="isRisquePro"
-				:aria-label="homeArialabel"
-				:avatar="avatar"
-				:size="logoSize"
-				:class="{ 'mr-2': avatar }"
-			/>
-		</component>
+  <VSheet
+    :height="height"
+    class="vd-logo-brand-section d-flex"
+  >
+    <component
+      :is="logoContainerComponent"
+      :aria-current-value="null"
+      :to="homeLink"
+      :href="homeHref"
+      class="vd-home-link"
+    >
+      <Logo
+        :hide-signature="hideSignature"
+        :hide-organism="isCompteAmeliMobile"
+        :risque-pro="isRisquePro"
+        :aria-label="homeArialabel"
+        :avatar="avatar"
+        :size="logoSize"
+        :class="{ 'mr-2': avatar }"
+      />
+    </component>
 
-		<slot>
-			<svg
-				v-if="showDivider"
-				:width="dividerDimensions.width"
-				:height="dividerDimensions.height"
-				:fill="dividerColor"
-				role="img"
-				focusable="false"
-				aria-hidden="true"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 22 64"
-				class="vd-divider"
-			>
-				<path
-					d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z"
-				/>
-			</svg>
+    <slot>
+      <svg
+        v-if="showDivider"
+        :width="dividerDimensions.width"
+        :height="dividerDimensions.height"
+        :fill="dividerColor"
+        role="img"
+        focusable="false"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 22 64"
+        class="vd-divider"
+      >
+        <path
+          d="M14.3 49.3c-.2 0-.4-.2-.4-.4V14.2c0-.2.2-.4.4-.4.3 0 .5.2.5.4v34.7c0 .2-.2.4-.5.4Z"
+        />
+      </svg>
 
-			<component
-				:is="secondaryLogoCtnComponent"
-				v-if="secondaryLogo"
-				:aria-current-value="null"
-				:aria-label="secondaryLogoLabel"
-				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
-				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
-				class="vd-home-link"
-			>
-				<img :src="secondaryLogo.src" :alt="secondaryLogo.alt" />
-			</component>
+      <component
+        :is="secondaryLogoCtnComponent"
+        v-if="secondaryLogo"
+        :aria-current-value="null"
+        :aria-label="secondaryLogoLabel"
+        :to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
+        :href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
+        class="vd-home-link"
+      >
+        <img
+          :src="secondaryLogo.src"
+          :alt="secondaryLogo.alt"
+        >
+      </component>
 
-			<div
-				v-else-if="showBrandContent"
-				class="vd-title-container d-flex justify-center flex-column text-primary"
-			>
-				<slot name="brand-content">
-					<h1
-						v-if="service.title"
-						:class="{
-							'vd-compte-entreprise-title': isCompteEntreprise,
-						}"
-						class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
-					>
-						<template v-if="typeof service.title === 'string'">
-							{{ service.title }}
-						</template>
+      <div
+        v-else-if="showBrandContent"
+        class="vd-title-container d-flex justify-center flex-column text-primary"
+      >
+        <slot name="brand-content">
+          <h1
+            v-if="service.title"
+            :class="{
+              'vd-compte-entreprise-title': isCompteEntreprise,
+            }"
+            class="vd-title text-caption text-md-subtitle-1 font-weight-medium"
+          >
+            <template v-if="typeof service.title === 'string'">
+              {{ service.title }}
+            </template>
 
-						<template v-else>
-							{{ service.title.text }}
-							<span>{{ service.title.highlight }}</span>
-						</template>
-					</h1>
+            <template v-else>
+              {{ service.title.text }}
+              <span>{{ service.title.highlight }}</span>
+            </template>
+          </h1>
 
-					<h2
-						v-if="showServiceSubTitle"
-						class="vd-title text-caption"
-					>
-						{{ service.subTitle }}
-					</h2>
-				</slot>
-			</div>
-		</slot>
-	</VSheet>
+          <h2
+            v-if="showServiceSubTitle"
+            class="vd-title text-caption"
+          >
+            {{ service.subTitle }}
+          </h2>
+        </slot>
+      </div>
+    </slot>
+  </VSheet>
 </template>
 
 <style lang="scss" scoped>

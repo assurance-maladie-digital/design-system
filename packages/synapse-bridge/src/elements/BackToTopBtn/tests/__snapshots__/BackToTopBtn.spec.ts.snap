@@ -1,24 +1,24 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`BackToTopBtn > renders correctly 1`] = `
-<transition-stub name="fade-transition" appear="false" persisted="false" css="true"><button type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="bottom: 16px; right: 16px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span class="">Retour en haut</span><i class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
+<transition-stub data-v-0fee5ada="" name="fade-transition" appear="false" persisted="false" css="true"><button data-v-0fee5ada="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="bottom: 16px; right: 16px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><span data-v-0fee5ada="" class="">Retour en haut</span><i data-v-0fee5ada="" class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
     <!---->
     <!---->
   </button></transition-stub>
 `;
 
 exports[`BackToTopBtn > renders correctly on mobile 1`] = `
-<transition-stub name="fade-transition" appear="false" persisted="false" css="true"><button type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="bottom: 16px; right: 16px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span class="">Retour en haut</span><i class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
+<transition-stub data-v-0fee5ada="" name="fade-transition" appear="false" persisted="false" css="true"><button data-v-0fee5ada="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="bottom: 16px; right: 16px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><span data-v-0fee5ada="" class="">Retour en haut</span><i data-v-0fee5ada="" class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
     <!---->
     <!---->
   </button></transition-stub>
 `;
 
 exports[`BackToTopBtn > renders correctly when nudgeBottom and nudgeRight are set to invalid values 1`] = `
-<transition-stub name="fade-transition" appear="false" persisted="false" css="true"><button type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="min-width: 36px; bottom: 0px; right: 0px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-    <!----><span class="v-btn__content" data-no-activator=""><span class="d-sr-only">Retour en haut</span><i class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
+<transition-stub data-v-0fee5ada="" name="fade-transition" appear="false" persisted="false" css="true"><button data-v-0fee5ada="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--fixed v-btn--size-default v-btn--variant-outlined text-wrap px-0 px-md-4 vd-back-to-top-btn" style="min-width: 36px; bottom: 0px; right: 0px; display: none;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><span data-v-0fee5ada="" class="d-sr-only">Retour en haut</span><i data-v-0fee5ada="" class="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z mdi v-icon notranslate v-theme--light v-icon--size-small text-primary ml-0 ml-md-1" aria-hidden="true"></i></span>
     <!---->
     <!---->
   </button></transition-stub>

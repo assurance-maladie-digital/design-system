@@ -2,9 +2,9 @@ export const config = {
 	btn: {
 		elevation: 0,
 		height: 'auto',
-		color: 'transparent'
+		color: 'transparent',
 	},
 	icon: {
-		class: 'mr-2'
-	}
+		class: 'mr-2',
+	},
 };

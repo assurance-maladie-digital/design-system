@@ -1,3 +1,1 @@
-import HeaderLoading from './HeaderLoading.vue'
-
-export default HeaderLoading
+export { default } from './HeaderLoading.vue';

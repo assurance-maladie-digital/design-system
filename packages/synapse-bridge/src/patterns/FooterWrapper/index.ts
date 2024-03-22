@@ -1,3 +1,1 @@
-import FooterWrapper from './FooterWrapper.vue'
-
-export default FooterWrapper
+export { default } from './FooterWrapper.vue';

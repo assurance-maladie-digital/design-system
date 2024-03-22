@@ -1,11 +1,11 @@
-import { describe, it, expect } from 'vitest'
-import { DOMWrapper, mount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, it, expect } from 'vitest';
+import { DOMWrapper, mount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import DataList from '../'
-import { getDataList } from './fixtures'
+import DataList from '..';
+import { getDataList } from './fixtures';
 
-const items = getDataList()
+const items = getDataList();
 
 describe('DataList', () => {
 	it('renders correctly', () => {
@@ -16,20 +16,23 @@ describe('DataList', () => {
 			propsData: {
 				items: items,
 			},
-		})
+		});
 
-		const elExists = wrapper.find('.vd-data-list').exists()
-		expect(elExists).toBe(true)
+		const elExists = wrapper.find('.vd-data-list').exists();
+
+		expect(elExists).toBeTruthy();
 
 		// Check items exists
-		const itemsExists = wrapper.find('.vd-data-list-item').exists()
-		expect(itemsExists).toBe(true)
+		const itemsExists = wrapper.find('.vd-data-list-item').exists();
 
-		const titleExists = wrapper.find('h4').exists()
-		expect(titleExists).toBe(false)
+		expect(itemsExists).toBeTruthy();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		const titleExists = wrapper.find('h4').exists();
+
+		expect(titleExists).toBeFalsy();
+
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with a title', () => {
 		const wrapper = mount(DataList, {
@@ -40,13 +43,14 @@ describe('DataList', () => {
 				items: items,
 				listTitle: 'Informations',
 			},
-		})
+		});
 
-		const elExists = wrapper.find('h4').exists()
-		expect(elExists).toBe(true)
+		const elExists = wrapper.find('h4').exists();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(elExists).toBeTruthy();
+
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with an empty list', () => {
 		const wrapper = mount(DataList, {
@@ -56,20 +60,21 @@ describe('DataList', () => {
 			propsData: {
 				items: [],
 			},
-		})
+		});
 
 		// Check items does not exist
-		const itemsExists = wrapper.find('.vd-data-list-item').exists()
-		expect(itemsExists).toBe(false)
+		const itemsExists = wrapper.find('.vd-data-list-item').exists();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(itemsExists).toBeFalsy();
+
+		expect(wrapper).toMatchSnapshot();
+	});
 
 	it('renders correctly with an icon', () => {
-		const listWithIcon = items
+		const listWithIcon = items;
 
 		// Add an action to the second item
-		listWithIcon[1].icon = 'mdiTest'
+		listWithIcon[1].icon = 'mdiTest';
 
 		const wrapper = mount(DataList, {
 			global: {
@@ -81,20 +86,21 @@ describe('DataList', () => {
 					mdiTest: 'test',
 				},
 			},
-		})
+		});
 
 		// Check items does not exist
-		const itemsExists = wrapper.find('.vd-data-list-item .v-icon').exists()
-		expect(itemsExists).toBe(true)
+		const itemsExists = wrapper.find('.vd-data-list-item .v-icon').exists();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(itemsExists).toBeTruthy();
 
-	it('renders correctly with a class', async () => {
-		const listWithClass = items
+		expect(wrapper).toMatchSnapshot();
+	});
+
+	it('renders correctly with a class', async() => {
+		const listWithClass = items;
 
 		// Add a class to the second item
-		listWithClass[1].class = 'custom-class'
+		listWithClass[1].class = 'custom-class';
 
 		const wrapper = mount(DataList, {
 			global: {
@@ -103,19 +109,19 @@ describe('DataList', () => {
 			propsData: {
 				items: listWithClass,
 			},
-		})
+		});
 
 		// Check that items now exist
 		const itemsExists = wrapper
 			.find('.vd-data-list-item.custom-class')
-			.exists()
+			.exists();
 
-		expect(itemsExists).toBe(true)
+		expect(itemsExists).toBeTruthy();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
-	it('renders loading state correctly', async () => {
+	it('renders loading state correctly', async() => {
 		const wrapper = mount(DataList, {
 			global: {
 				plugins: [vuetify],
@@ -126,30 +132,31 @@ describe('DataList', () => {
 				itemsNumberLoading: 3,
 				headingLoading: true,
 			},
-		})
+		});
 
 		// Check that items does not exist
-		let itemsExists = wrapper.find('.vd-data-list-item').exists()
-		expect(itemsExists).toBe(false)
+		let itemsExists = wrapper.find('.vd-data-list-item').exists();
 
-		expect(wrapper).toMatchSnapshot()
+		expect(itemsExists).toBeFalsy();
+
+		expect(wrapper).toMatchSnapshot();
 
 		await wrapper.setProps({
-			loading: false
-		})
+			loading: false,
+		});
 
 		// Check that items now exist
-		itemsExists = wrapper.find('.vd-data-list-item').exists()
-		expect(itemsExists).toBe(true)
+		itemsExists = wrapper.find('.vd-data-list-item').exists();
+		expect(itemsExists).toBeTruthy();
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
-	it('renders correctly with an action', async () => {
-		const listWithAction = items
+	it('renders correctly with an action', async() => {
+		const listWithAction = items;
 
 		// Add an action to the second item
-		listWithAction[1].action = 'Edit'
+		listWithAction[1].action = 'Edit';
 
 		const wrapper = mount(DataList, {
 			global: {
@@ -158,16 +165,16 @@ describe('DataList', () => {
 			propsData: {
 				items: listWithAction,
 			},
-		})
+		});
 
-		expect(wrapper).toMatchSnapshot()
-	})
+		expect(wrapper).toMatchSnapshot();
+	});
 
-	it('emits action event', async () => {
-		const listWithAction = items
+	it('emits action event', async() => {
+		const listWithAction = items;
 
 		// Add an action to the second item
-		listWithAction[2].action = 'Edit'
+		listWithAction[2].action = 'Edit';
 
 		const wrapper = mount(DataList, {
 			global: {
@@ -176,17 +183,19 @@ describe('DataList', () => {
 			propsData: {
 				items: listWithAction,
 			},
-		},)
+		});
 
 		// Find the second item element
-		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(2)
-		expect(itemWithAction?.exists()).toBe(true)
+		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(2);
 
-		const actionBtn = (itemWithAction as DOMWrapper<Element>).find('.vd-data-list-item-action-btn')
-		expect(actionBtn.exists()).toBe(true)
+		expect(itemWithAction?.exists()).toBeTruthy();
 
-		await actionBtn.trigger('click')
+		const actionBtn = (itemWithAction as DOMWrapper<Element>).find('.vd-data-list-item-action-btn');
 
-		expect(wrapper.emitted('click:item-action')).toEqual([[2]])
-	})
-})
+		expect(actionBtn.exists()).toBeTruthy();
+
+		await actionBtn.trigger('click');
+
+		expect(wrapper.emitted('click:item-action')).toEqual([[2]]);
+	});
+});

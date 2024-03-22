@@ -1,3 +1,1 @@
-import CookiesTable from './CookiesTable.vue'
-
-export default CookiesTable
+export { default } from './CookiesTable.vue';

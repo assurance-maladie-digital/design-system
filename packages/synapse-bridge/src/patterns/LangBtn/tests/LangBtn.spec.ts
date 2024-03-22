@@ -1,15 +1,15 @@
-import { describe, it, expect } from "vitest";
-import { shallowMount, mount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest';
+import { shallowMount, mount } from '@vue/test-utils';
 
-import LangBtn from "../";
-import { vuetify } from "@tests/unit/setup";
-import { VList } from "vuetify/components";
+import { vuetify } from '@tests/unit/setup';
+import { VList } from 'vuetify/components';
+import LangBtn from '..';
 
-describe("LangBtn", () => {
-	it("renders correctly", () => {
+describe('LangBtn', () => {
+	it('renders correctly', () => {
 		const wrapper = shallowMount(LangBtn, {
 			propsData: {
-				availableLanguages: ["fr", "en"],
+				availableLanguages: ['fr', 'en'],
 			},
 			global: {
 				plugins: [vuetify],
@@ -19,38 +19,41 @@ describe("LangBtn", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
-	it("open the menu when clicked", async () => {
+	it('open the menu when clicked', async() => {
 		const wrapper = mount(LangBtn, {
 			propsData: {
-				availableLanguages: ["fr", "en"],
+				availableLanguages: ['fr', 'en'],
 			},
 			global: {
 				plugins: [vuetify],
 			},
 		});
 
-		const button = wrapper.find("button");
-		await button.trigger("click");
+		const button = wrapper.find('button');
+
+		await button.trigger('click');
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('emit an event when the langage is updated', async () => {
+	it('emit an event when the langage is updated', async() => {
 		const wrapper = mount(LangBtn, {
 			global: {
 				plugins: [vuetify],
 			},
 		});
 
-		const button = wrapper.find("button");
-		await button.trigger("click");
+		const button = wrapper.find('button');
+
+		await button.trigger('click');
 		const vList = wrapper.findComponent(VList);
 		const menuItem = vList.find('[aria-label="English"]');
-		await menuItem.trigger("click");
-		expect(wrapper.emitted()).toHaveProperty("update:modelValue");
-		expect(wrapper.emitted("update:modelValue")).toEqual([["en"]]);
+
+		await menuItem.trigger('click');
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue');
+		expect(wrapper.emitted('update:modelValue')).toEqual([['en']]);
 	});
 
-	it('renders properly when all the languages are displayed', async () => {
+	it('renders properly when all the languages are displayed', async() => {
 		const wrapper = mount(LangBtn, {
 			propsData: {
 				availableLanguages: '*',
@@ -61,16 +64,17 @@ describe("LangBtn", () => {
 			},
 		});
 
-		const button = wrapper.find("button");
-		await button.trigger("click");
+		const button = wrapper.find('button');
+
+		await button.trigger('click');
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('update the current lang to a valid value', async () => {
-		const wrapper: any = mount(LangBtn, {
+	it('update the current lang to a valid value', async() => {
+		const wrapper = mount(LangBtn, {
 			propsData: {
-				availableLanguages: ["fr", "en"],
-				modelValue: "fr",
+				'availableLanguages': ['fr', 'en'],
+				'modelValue': 'fr',
 				// https://test-utils.vuejs.org/fr/guide/advanced/v-model.html#Un-Exemple-Simple
 				'onUpdate:modelValue': (e) => wrapper.setProps({ modelValue: e }),
 			},
@@ -80,9 +84,9 @@ describe("LangBtn", () => {
 		});
 
 		// Update modelValue to a non valid value
-		await wrapper.setValue("es");
+		await wrapper.setValue('es');
 
-		expect(wrapper.emitted()).toHaveProperty("update:modelValue");
-		expect(wrapper.emitted("update:modelValue")?.at(-1)).toEqual(["fr"]);
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue');
+		expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual(['fr']);
 	});
 });

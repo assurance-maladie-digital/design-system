@@ -1,37 +1,34 @@
 <script lang="ts">
 
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { config } from "./config";
-import { locales } from "./locales";
-import type {
-	Languages,
-	AllLanguagesChar,
-	CurrentLangData
-} from "./types";
+import { defineComponent } from 'vue';
+import { type PropType } from 'vue';
+import languages from 'languages';
+import { mdiChevronDown } from '@mdi/js';
+import { config } from './config';
+import { locales } from './locales';
+import {
+	type Languages,
+	type AllLanguagesChar,
+	type CurrentLangData,
+} from './types';
 
 // ISO 639-1 language database in a JSON object
-import languages from "languages";
 
-import { customizable } from "@/mixins/customizable";
-import { mdiChevronDown } from "@mdi/js";
+import { customizable } from '@/mixins/customizable';
 
 export default defineComponent({
+	mixins: [customizable(config)],
 	props: {
 		availableLanguages: {
 			type: [Array, String] as PropType<string[] | AllLanguagesChar>,
-			default: () => ["fr", "en"],
+			default: () => ['fr', 'en'],
 			validator: (value: string[] | AllLanguagesChar): boolean => {
-				if (Array.isArray(value)) {
-					return value.length > 0;
-				} else {
-					return value === "*";
-				}
+				return Array.isArray(value) ? value.length > 0 : value === '*';
 			},
 		},
 		modelValue: {
 			type: String,
-			default: "fr",
+			default: 'fr',
 		},
 		hideDownArrow: {
 			type: Boolean,
@@ -42,15 +39,7 @@ export default defineComponent({
 			default: locales.label,
 		},
 	},
-	mixins: [customizable(config)],
 	emits: ['update:modelValue'],
-	watch: {
-		modelValue(value: string, oldValue: string): void {
-			if (this.availableLanguages !== '*' && !this.availableLanguages.includes(value)) {
-				this.$emit('update:modelValue', oldValue);
-			}
-		}
-	},
 	data() {
 		return {
 			downArrowIcon: mdiChevronDown,
@@ -64,16 +53,16 @@ export default defineComponent({
 		languages(): Languages {
 			let data: Languages = {};
 
-			if (this.availableLanguages !== '*') {
-				const availableLanguages = this.availableLanguages;
-
-				availableLanguages.forEach((language) => {
-					data[language] = languages.getLanguageInfo(language);
-				});
-			} else {
+			if (this.availableLanguages === '*') {
 				// This method computes all the 138 languages,
 				// only call it when necessary
 				data = this.getFormattedLanguages();
+			} else {
+				const availableLanguages = this.availableLanguages;
+
+				for (const language of availableLanguages) {
+					data[language] = languages.getLanguageInfo(language);
+				}
 			}
 
 			return data;
@@ -82,9 +71,16 @@ export default defineComponent({
 		currentLangData(): CurrentLangData {
 			return {
 				name: this.languages[this.modelValue].nativeName,
-				label: `${this.label} ${this.languages[this.modelValue].nativeName}`
+				label: `${this.label} ${this.languages[this.modelValue].nativeName}`,
 			};
-		}
+		},
+	},
+	watch: {
+		modelValue(value: string, oldValue: string): void {
+			if (this.availableLanguages !== '*' && !this.availableLanguages.includes(value)) {
+				this.$emit('update:modelValue', oldValue);
+			}
+		},
 	},
 	methods: {
 		getFormattedLanguages(): Languages {
@@ -92,7 +88,7 @@ export default defineComponent({
 
 			languages
 				.getAllLanguageCode()
-				.forEach((language: string) => {
+				.forEach((language: string) => { // eslint-disable-line unicorn/no-array-for-each
 					data[language] = languages.getLanguageInfo(language);
 				});
 
@@ -101,56 +97,59 @@ export default defineComponent({
 
 		updateLang(lang: string): void {
 			this.$emit('update:modelValue', lang);
-		}
+		},
 	},
 });
 </script>
 
 <template>
-	<VMenu
-		v-if="Object.keys(languages).length"
-		v-bind="options.menu"
-		class="vd-lang-btn"
-		content-class="vd-lang-menu"
-	>
-		<template #activator="{ props }">
-			<VBtn
-				v-if="currentLangData"
-				:aria-label="currentLangData.label"
-				v-bind="{
-					...props,
-					...options.btn
-				}"
-				id='lang-menu-btn'
-			>
-				<span :class="currentLangClass">
-					{{ currentLangData.name }}
-				</span>
+  <VMenu
+    v-if="Object.keys(languages).length > 0"
+    v-bind="options.menu"
+    class="vd-lang-btn"
+    content-class="vd-lang-menu"
+  >
+    <template #activator="{ props }">
+      <VBtn
+        v-if="currentLangData"
+        v-bind="{
+          ...props,
+          ...options.btn
+        }"
+        id="lang-menu-btn"
+        :aria-label="currentLangData.label"
+      >
+        <span :class="currentLangClass">
+          {{ currentLangData.name }}
+        </span>
 
-				<VIcon v-if="!hideDownArrow" v-bind="options.icon">
-					{{ downArrowIcon }}
-				</VIcon>
-			</VBtn>
-		</template>
+        <VIcon
+          v-if="!hideDownArrow"
+          v-bind="options.icon"
+        >
+          {{ downArrowIcon }}
+        </VIcon>
+      </VBtn>
+    </template>
 
-		<VList
-			v-bind="options.list"
-			aria-labelledby='lang-menu-btn'
-		>
-			<VListItem
-				v-for="(item, lang) in languages"
-				:key="lang"
-				v-bind="options.listTile"
-				role='option'
-				:aria-label="item.nativeName"
-				@click="updateLang(lang as string)"
-			>
-				<VListItemTitle v-bind="options.listTileTitle">
-					{{ item.nativeName }}
-				</VListItemTitle>
-			</VListItem>
-		</VList>
-	</VMenu>
+    <VList
+      v-bind="options.list"
+      aria-labelledby="lang-menu-btn"
+    >
+      <VListItem
+        v-for="(item, lang) in languages"
+        :key="lang"
+        v-bind="options.listTile"
+        role="option"
+        :aria-label="item.nativeName"
+        @click="updateLang(lang as string)"
+      >
+        <VListItemTitle v-bind="options.listTileTitle">
+          {{ item.nativeName }}
+        </VListItemTitle>
+      </VListItem>
+    </VList>
+  </VMenu>
 </template>
 
 <style lang="scss" scoped>
