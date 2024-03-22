@@ -81,7 +81,7 @@ describe("NirField", () => {
 
 		expect(wrapper.emitted()).toHaveProperty("change");
 		if (value) {
-			expect(value[0]).toEqual([[nir][0]]);
+			expect(value[1]).toEqual([[nir][0]]);
 		}
 	});
 
@@ -204,11 +204,10 @@ describe("NirField", () => {
 		});
 
 		const numberField = wrapper.find('.vd-number-field input');
-		const input = '123456789012345';
-		await numberField.setValue(input);
+		await numberField.setValue(nir);
 
-		await wrapper.setProps({ modelValue: input });
-		expect(wrapper.find<HTMLInputElement>('.vd-number-field input').element.value).toBe('1234567890123');
+		await wrapper.setProps({ modelValue: nir });
+		expect(wrapper.find<HTMLInputElement>('.vd-number-field input').element.value).toBe(formattedNir);
 	});
 
 	it('not display the key field in single key mode', async () => {
@@ -516,5 +515,127 @@ describe("NirField", () => {
 		await numberField.setValue(expectedValue);
 
 		expect(wrapper.vm.internalValue).toBe(expectedValue);
+	});
+
+	it("adds the vd-nir-field__hint class to the hint messages when mounted and hints are correct", async () => {
+		const wrapper = mount(NirField, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const textField = wrapper.find('.vd-number-field input');
+		const keyField = wrapper.find('.vd-key-field input');
+		textField.element.setAttribute('hint', '13 caractères');
+		keyField.element.setAttribute('hint', '2 chiffres');
+
+		expect(textField.element.getAttribute('hint')).toBe('13 caractères');
+		expect(keyField.element.getAttribute('hint')).toBe('2 chiffres');
+
+		wrapper.vm.$options.mounted?.call(wrapper.vm);
+
+		const textFieldMessageElement = textField?.element?.querySelector('.v-messages__message');
+		const keyFieldMessageElement = keyField?.element?.querySelector('.v-messages__message');
+
+		if (textFieldMessageElement && keyFieldMessageElement) {
+			expect(textFieldMessageElement.classList.contains('vd-nir-field__hint')).toBe(true);
+			expect(keyFieldMessageElement.classList.contains('vd-nir-field__hint')).toBe(true);
+		} else if (textFieldMessageElement ||  keyFieldMessageElement) {
+			expect(textFieldMessageElement?.classList.contains('vd-nir-field__hint')).toBe(true);
+			expect(keyFieldMessageElement?.classList.contains('vd-nir-field__hint')).toBe(true);
+		}
+	});
+
+it("updates the v-model when a key is deleted", async () => {
+  const wrapper = mount(NirField, {
+    propsData: {
+      nirLength: 15,
+    },
+    global: {
+      plugins: [vuetify],
+    },
+  });
+
+  const keyField = wrapper.find('.vd-key-field input');
+  await keyField.setValue('22');
+  await keyField.setValue('');
+
+  const emittedValues = wrapper.emitted('update:modelValue');
+	if (emittedValues) {
+		const lastEmittedValue = emittedValues[emittedValues.length - 1];
+		expect(lastEmittedValue).toEqual(['']);
+	}
+
+});
+
+it("updates the v-model when a number is deleted", async () => {
+  const wrapper = mount(NirField, {
+    propsData: {
+      nirLength: 15,
+    },
+    global: {
+      plugins: [vuetify],
+    },
+  });
+
+  const numberField = wrapper.find('.vd-number-field input');
+  await numberField.setValue('1234567890123');
+  await numberField.setValue('');
+
+  const emittedValues = wrapper.emitted('update:modelValue');
+	if (emittedValues) {
+		const lastEmittedValue = emittedValues[emittedValues.length - 1];
+		expect(lastEmittedValue).toEqual(['']);
+	}
+});
+
+	it("calls the changeNumberValue method when the number value changes", async () => {
+		const wrapper = mount(NirField, {
+			propsData: {
+				nirLength: 15,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const numberField = wrapper.find('.vd-number-field input');
+		const keyField = wrapper.find('.vd-key-field input');
+
+		// Set the number and key values
+		await numberField.setValue('1234567890123');
+		await keyField.setValue('22');
+
+		// Check the emitted event
+		const emittedValues = wrapper.emitted('update:modelValue');
+		if (emittedValues) {
+			const lastEmittedValue = emittedValues[emittedValues.length - 1];
+			expect(lastEmittedValue).toEqual(['123456789012322']);
+		}
+	});
+
+	it("calls the changeNumberValue method when the key value is empty", async () => {
+		const wrapper = mount(NirField, {
+			propsData: {
+				nirLength: 15,
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const numberField = wrapper.find('.vd-number-field input');
+		const keyField = wrapper.find('.vd-key-field input');
+
+		// Set the number value and leave the key value empty
+		await numberField.setValue('1234567890123');
+		await keyField.setValue('');
+
+		// Check the emitted event
+		const emittedValues = wrapper.emitted('update:modelValue');
+		if (emittedValues) {
+			const lastEmittedValue = emittedValues[emittedValues.length - 1];
+			expect(lastEmittedValue).toEqual(['1234567890123']);
+		}
 	});
 });

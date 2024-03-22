@@ -85,14 +85,38 @@ export default defineComponent({
 				isInputFocused: false,
 			};
 		},
+	watch: {
+		keyValue(newVal: string) {
+			this.$emit("update:modelValue", this.maskaNumberValue.unmasked + newVal);
+		},
+		modelValue: {
+			immediate: true,
+			handler(newValue) {
+				if (!newValue) {
+					return;
+				}
+				if (newValue.length >= NUMBER_LENGTH) {
+					this.numberValue = newValue.slice(0, NUMBER_LENGTH);
+					this.keyValue = newValue.slice(NUMBER_LENGTH);
+				} else {
+					this.maskaNumberValue.unmasked = newValue;
+				}
+				if (newValue.length === NUMBER_LENGTH + KEY_LENGTH || !this.isSingleField) {
+					this.validateKeyValue();
+				}
+			}
+		}
+	},
 		created(): void {
 			this.isSingleField = this.nirLength === SINGLE_FIELD;
 		},
 		mounted(): void {
 			const textField = this.$refs.numberField as any;
-			if(textField.hint === '13 caractères') {
+			const keyField = this.$refs.keyField as any;
+			if(textField.hint === '13 caractères' || keyField?.hint === '2 chiffres') {
 				// add a class to hint
 				textField.$el.querySelector('.v-messages__message').classList.add('vd-nir-field__hint');
+				keyField?.$el.querySelector('.v-messages__message').classList.add('vd-nir-field__hint');
 			}
 		},
 		computed: {
@@ -139,7 +163,7 @@ export default defineComponent({
 			},
 
 			errors(): string | never[] {
-				return this.isInputFocused ? [] : [...this.numberErrors, ...this.keyErrors].join('\n');
+				return [...this.numberErrors, ...this.keyErrors].join('\n');
 			},
 
 			internalValue(): string | null {
@@ -154,34 +178,9 @@ export default defineComponent({
 				return this.maskaNumberValue.unmasked + this.keyValue as string;
 			}
 		},
-		watch: {
-			modelValue: {
-				immediate: true,
-				handler(newValue) {
-					if (!newValue) {
-						return;
-					}
-
-					if (newValue.length >= NUMBER_LENGTH) {
-						this.numberValue = newValue;
-					}
-
-					if (newValue.length === NUMBER_LENGTH + KEY_LENGTH) {
-						this.numberValue = newValue.slice(0, -KEY_LENGTH);
-						this.keyValue = newValue.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
-					}
-
-					this.validateNumberValue();
-
-					if (!this.isSingleField) {
-						this.validateKeyValue();
-					}
-				}
-			}
-		},
 		methods: {
 			changeNumberValue(): void {
-				this.$emit('update:modelValue', this.numberValue);
+				this.$emit("update:modelValue", this.keyValue ? this.maskaNumberValue.unmasked + this.keyValue : this.maskaNumberValue.unmasked);
 			},
 
 			changeKeyValue(): void {
@@ -189,7 +188,7 @@ export default defineComponent({
 					return;
 				}
 
-				this.$emit("update:modelValue", this.internalValue);
+				this.$emit("update:modelValue", this.keyValue ? this.maskaNumberValue.unmasked + this.keyValue : this.keyValue);
 			},
 
 			/**
@@ -201,7 +200,7 @@ export default defineComponent({
 					this.numberRules
 						.map(rule => rule(this.maskaNumberValue.unmasked))
 						.filter((error) : error is string => typeof error === 'string');
-				this.$emit('update:modelValue', this.numberValue);
+				this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
 			},
 
 			/**
@@ -277,10 +276,10 @@ export default defineComponent({
 				:variant="outlined ? 'outlined' : 'underlined'"
 				:label="locales.numberLabel"
 				:hint="locales.numberHint"
-				:persistent-hint="true"
+				persistent-hint
 				:hide-details="false"
 				:color="numberFilled ? 'success' : 'primary'"
-				:base-color="numberFilled ? 'success' : 'primary'"
+				:base-color="numberFilled ? 'success' : ''"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
 				:aria-errormessage="numberErrors.length > 0 ? 'number-field-errors' : undefined"
@@ -302,19 +301,19 @@ export default defineComponent({
 				<VTextField
 					ref="keyField"
 					v-maska:[keyMask]
-					v-bind="textFieldOptions"
 					v-model="keyValue"
+					v-bind="textFieldOptions"
 					:variant="outlined ? 'outlined' : 'underlined'"
 					:label="locales.keyLabel"
 					:hint="locales.keyHint"
-					:persistent-hint="keyErrors.length > 0"
+					persistent-hint
 					:hide-details="false"
 					:color="keyFilled ? 'success' : 'primary'"
-					:base-color="numberFilled ? 'success' : 'primary'"
+					:base-color="keyFilled ? 'success' : ''"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
 					:aria-errormessage="keyErrors.length > 0 ? 'key-field-errors' : undefined"
-					class="vd-key-field flex-grow-0"
+					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
 					@update:model-value="changeKeyValue"
 					@blur="validateKeyValue"
@@ -354,7 +353,7 @@ export default defineComponent({
 	white-space: pre-line !important;
 }
 :deep(.vd-nir-field__hint) {
-	color: rgba(0, 0, 0, 0.54) !important;
+	color: rgba(0, 0, 0, 1) !important;
 }
 .vd-number-field {
 	width: 296px;
@@ -365,10 +364,13 @@ export default defineComponent({
 
 // Don't allow resize for these elements
 .vd-nir-field :deep(.v-input__append-inner),
-.vd-key-field,
 .vd-tooltip-icon {
 	flex: none;
 	color: rgba(0, 0, 0, 0.54);
+}
+
+.vd-key-field {
+	flex: none;
 }
 
 .vd-nir-field--outlined :deep(.v-messages.error--text) {

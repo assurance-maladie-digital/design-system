@@ -33,7 +33,7 @@ exports[`NirField > renders correctly 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
@@ -49,7 +49,7 @@ exports[`NirField > renders correctly 1`] = `
         </div>
       </div>
       <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
-      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -77,7 +77,7 @@ exports[`NirField > renders correctly 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
                 <!---->Clé
               </label>
@@ -87,7 +87,7 @@ exports[`NirField > renders correctly 1`] = `
         <!---->
         <div class="v-input__details">
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
-            <!---->
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
           </transition-stub>
           <!---->
         </div>
@@ -139,7 +139,7 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
@@ -202,7 +202,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
@@ -218,7 +218,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
         </div>
       </div>
       <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
-      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
@@ -246,7 +246,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
                 <!---->Clé
               </label>
@@ -256,7 +256,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
         <!---->
         <div class="v-input__details">
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
-            <!---->
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
           </transition-stub>
           <!---->
         </div>
@@ -309,7 +309,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <div class="v-field__outline__start"></div>
               <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                   <!---->Numéro de sécurité sociale
@@ -328,7 +328,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
         </div>
       </div>
       <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
-      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-key-field flex-grow-0">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
@@ -356,7 +356,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
             </div>
             <!---->
             <!---->
-            <div class="v-field__outline text-primary">
+            <div class="v-field__outline">
               <div class="v-field__outline__start"></div>
               <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
                   <!---->Clé
@@ -369,7 +369,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
         <!---->
         <div class="v-input__details">
           <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
-            <!---->
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
           </transition-stub>
           <!---->
         </div>
