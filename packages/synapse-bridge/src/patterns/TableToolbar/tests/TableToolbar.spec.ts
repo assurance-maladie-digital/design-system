@@ -76,8 +76,7 @@ describe("TableToolbar", () => {
 				nbTotal: 0,
 			},
 		});
-
-		expect(wrapper.vm.computedNbRows).toBe("0");
+		expect(wrapper.vm.computedNbRows[0]).toBe("0");
 	});
 
 	it("use showRowsNumber computed", () => {

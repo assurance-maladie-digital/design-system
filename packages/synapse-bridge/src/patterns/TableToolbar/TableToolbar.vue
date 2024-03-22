@@ -76,7 +76,7 @@ export default defineComponent({
 				fieldClass += " mr-6";
 			}
 
-			return `${fieldClass} flex-grow-0`;
+			return !this.isXs ? `${fieldClass} flex-grow-0` : `${fieldClass} flex-grow-1` ;
 		},
 
 		isXs(): boolean {
@@ -87,45 +87,51 @@ export default defineComponent({
 </script>
 
 <template>
-	<VToolbar v-bind="options.toolbar" class="vd-table-toolbar">
-		<p v-if="showRowsNumber" class="mb-0 font-weight-bold mr-4">
-			{{ computedNbRows }} {{ computedRowsText }}
-		</p>
+	<VToolbar v-bind="options.toolbar" class="vd-table-toolbar px-2 d-flex flex-wrap align-center justify-space-between">
+			<p v-if="showRowsNumber" class="mb-0 font-weight-bold mr-4 ml-3 my-3">
+				{{ computedNbRows }} {{ computedRowsText }}
+			</p>
 
-		<VSpacer />
+		<div class="d-flex align-end justify-end flex-grow-1">
+			<slot name="search-left" />
+			<VTextField
+				v-bind="options.textField"
+				color="primary"
+				:model-value="search"
+				:disabled="loading"
+				:append-inner-icon="searchIcon"
+				:label="searchLabel"
+				:class="[textFieldClasses, { 'loading': loading }]"
+				@update:modelValue="$emit('update:search', $event)"
+			/>
+			<VBtn
+				v-if="showAddBtn"
+				v-bind="options.addBtn"
+				:disabled="loading"
+				@click="$emit('click')"
+				class="ml-3 mb-0"
+			>
+				<VIcon v-bind="options.addIcon">
+					{{ addIcon }}
+				</VIcon>
 
-		<slot name="search-left" />
+				<span v-show="!isXs" v-bind="options.addIconLabel">
+			  {{ addBtnLabel }}
+			 </span>
+			</VBtn>
 
-		<VTextField
-			v-bind="options.textField"
-			color="primary"
-			:model-value="search"
-			:disabled="loading"
-			:append-inner-icon="searchIcon"
-			:label="searchLabel"
-			:class="textFieldClasses"
-			@update:modelValue="$emit('update:search', $event)"
-		/>
-		<VBtn
-			v-if="showAddBtn"
-			v-bind="options.addBtn"
-			:disabled="loading"
-			@click="$emit('click')"
-		>
-			<VIcon v-bind="options.addIcon">
-				{{ addIcon }}
-			</VIcon>
-
-			<span v-show="!isXs" v-bind="options.addIconLabel">
-				{{ addBtnLabel }}
-			</span>
-		</VBtn>
-
-		<slot name="search-right" />
+			<slot name="search-right" />
+		</div>
 	</VToolbar>
 </template>
 
 <style lang="scss" scoped>
+.loading :deep(.v-field__append-inner) {
+	opacity: 0.6 !important;
+}
+:deep(.v-field--disabled) {
+	opacity: 0.7 !important;
+}
 .vd-table-toolbar {
 	z-index: 1; // Display content above the table on mobile
 	contain: none; // Allow fixed elements to be displayed properly
