@@ -1,21 +1,16 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { VueWrapper, DOMWrapper, mount } from '@vue/test-utils';
-import { vuetify, createNotificationStore } from '@tests/unit/setup';
+import { DOMWrapper, mount } from '@vue/test-utils'
+import { vuetify, createNotificationStore } from '@tests/unit/setup'
 
-import { filePromise, filePromiseError, filePromiseNoHeaders } from './data/filePromise.ts';
-import DownloadBtn from '../';
-import { StateEnum } from "@/constants/enums/StateEnum.ts";
-import { downloadFile } from "@/functions/downloadFile";
+import { filePromise, filePromiseError, filePromiseNoHeaders } from './data/filePromise.ts'
+import DownloadBtn from '../'
+import { StateEnum } from "@/constants/enums/StateEnum.ts"
 
 
 describe('DownloadBtn', () => {
-	let wrapper: VueWrapper<typeof DownloadBtn>
+	let wrapper: any
 	let element: DOMWrapper<Element>
 	beforeEach(() => {
-		vi.spyOn(DownloadBtn.methods, 'getFileInfo')
-		vi.spyOn(DownloadBtn.methods, 'download')
-		vi.spyOn(DownloadBtn.methods, 'notifyUser')
-
 		wrapper = mount(DownloadBtn, {
 			props: {
 				filePromise
@@ -24,6 +19,11 @@ describe('DownloadBtn', () => {
 				plugins: [vuetify, createNotificationStore()]
 			}
 		})
+
+		vi.spyOn(wrapper.vm, 'getFileInfo')
+		vi.spyOn(wrapper.vm, 'download')
+		vi.spyOn(wrapper.vm, 'notifyUser')
+
 		element = wrapper.find('[data-testid="download-btn"]')
 		global.URL.createObjectURL = vi.fn()
 		global.URL.revokeObjectURL = vi.fn()
@@ -31,13 +31,12 @@ describe('DownloadBtn', () => {
 	afterEach(() => {
 		wrapper.unmount()
 		vi.restoreAllMocks()
-	});
+	})
 
 	it('renders correctly', async () => {
 		expect(DownloadBtn).toBeTruthy()
 
-		const elExists = element.exists()
-		expect(elExists).toBe(true)
+		expect(element.exists()).toBe(true)
 
 		expect(wrapper).toMatchSnapshot()
 	})
@@ -49,8 +48,7 @@ describe('DownloadBtn', () => {
 		expect(wrapper.vm.state).toBe(StateEnum.IDLE)
 		await element.trigger('click')
 		expect(wrapper.vm.state).toBe(StateEnum.RESOLVED)
-		expect(DownloadBtn.methods.download).toHaveBeenCalledTimes(1)
-		expect(DownloadBtn.methods.getFileInfo).toHaveBeenCalledTimes(1)
+		expect(wrapper.vm.getFileInfo).toHaveBeenCalledTimes(1)
 	})
 
 	it('emit error event', async () => {
@@ -86,7 +84,7 @@ describe('DownloadBtn', () => {
 		await wrapper.setProps({notification: true})
 
 		await element.trigger('click')
-		expect(DownloadBtn.methods.notifyUser).toHaveBeenCalledTimes(1)
+		expect(wrapper.vm.notifyUser).toHaveBeenCalledTimes(1)
 	})
 
 	it('with fallbackFilename', async () => {
@@ -95,13 +93,13 @@ describe('DownloadBtn', () => {
 		await wrapper.setProps({filePromise: filePromiseNoHeaders})
 
 		await element.trigger('click')
-		expect(DownloadBtn.methods.download).toHaveBeenCalledTimes(1)
+		expect(wrapper.vm.download).toHaveBeenCalledTimes(1)
 	})
 
 	it('without header', async () => {
 		await wrapper.setProps({filePromise: filePromiseNoHeaders})
 
 		await element.trigger('click')
-		expect(DownloadBtn.methods.download).toHaveBeenCalledTimes(1)
+		expect(wrapper.vm.download).toHaveBeenCalledTimes(1)
 	})
 })

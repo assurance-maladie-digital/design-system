@@ -18,7 +18,7 @@ export function filePromise(): Promise<AxiosResponse<Blob>> {
 }
 
 export function filePromiseError(): Promise<AxiosResponse<Blob>> {
-	return new Promise((resolve, reject) => {
+	return new Promise((_, reject) => {
 		reject({
 			response: {
 				data: 'error',

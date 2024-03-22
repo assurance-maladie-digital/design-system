@@ -9,4 +9,4 @@ const instance = axios.create({
 	},
 });
 
-export { instance as axios, AxiosResponse };
+export { instance as axios, type AxiosResponse };

@@ -4,6 +4,8 @@ import { downloadFile } from "../";
 
 
 describe('downloadFile', () => {
+	// https://stackoverflow.com/questions/69552023/after-update-typescript-3-7-2-to-latest-typescript-4-4-4-error-ts2339
+	const nav = window.navigator as any;
 	const mockCreateObjectURL = vi.fn();
 	const mockRevokeObjectURL = vi.fn();
 
@@ -51,7 +53,7 @@ describe('downloadFile', () => {
 
 	it('download a file on Internet Explorer', () => {
 		const mockSaveOrOpenBlob = vi.fn();
-		window.navigator.msSaveOrOpenBlob = mockSaveOrOpenBlob;
+		nav.msSaveOrOpenBlob = mockSaveOrOpenBlob;
 		downloadFile(file, file.name, file.type);
 		expect(mockSaveOrOpenBlob).toHaveBeenCalledWith(new Blob([file], { type: file.type }), file.name);
 	});

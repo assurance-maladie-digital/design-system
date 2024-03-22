@@ -87,6 +87,7 @@ export default defineComponent({
 		},
 		async download(): Promise<void> {
 			this.state = StateEnum.PENDING;
+
 			try {
 				const { data, headers } = await this.filePromise();
 				const { name, type } = this.getFileInfo(headers);
