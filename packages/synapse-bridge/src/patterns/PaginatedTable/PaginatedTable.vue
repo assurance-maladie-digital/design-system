@@ -64,7 +64,7 @@ export default defineComponent({
 
 <template>
 	<VDataTable v-if="$attrs" v-bind="$attrs" @update:options="(options: DataOptions) => localOptions = options">
-		<template v-for="slot of $slots" v-slot:[slot]="scope">
+		<template v-for="(slot, index) of Object.keys($slots)" :key="index" v-slot:[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
 	</VDataTable>
