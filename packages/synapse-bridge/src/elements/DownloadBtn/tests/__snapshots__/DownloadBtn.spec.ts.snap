@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DownloadBtn > renders correctly 1`] = `
+<button data-v-7802df62="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined text-wrap vd-download-btn" style="height: auto; min-height: 36px;" data-testid="download-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><i data-v-7802df62="" class="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z mdi v-icon notranslate v-theme--light v-icon--size-default text-primary mr-3" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`DownloadBtn > with slots 1`] = `
+<button data-v-7802df62="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined text-wrap vd-download-btn" style="height: auto; min-height: 36px;" data-testid="download-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><i data-v-7802df62="" class="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z mdi v-icon notranslate v-theme--light v-icon--size-default text-primary mr-3" aria-hidden="true"></i>Download</span>
+  <!---->
+  <!---->
+</button>
+`;
