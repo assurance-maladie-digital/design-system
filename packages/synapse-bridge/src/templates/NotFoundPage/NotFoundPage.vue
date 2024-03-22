@@ -49,29 +49,29 @@ export default defineComponent({
 </script>
 
 <template>
-  <ErrorPage
-    :code="locales.code"
-    :page-title="locales.pageTitle"
-    :message="locales.message"
-  >
-    <template
-      v-if="supportId"
-      #additional-content
-    >
-      <p class="mt-4">
-        {{ locales.supportIdMessage }}
+	<ErrorPage
+		:code="locales.code"
+		:page-title="locales.pageTitle"
+		:message="locales.message"
+	>
+		<template
+			v-if="supportId"
+			#additional-content
+		>
+			<p class="mt-4">
+				{{ locales.supportIdMessage }}
 
-        <b>{{ supportId }}</b>.
-      </p>
-    </template>
+				<b>{{ supportId }}</b>.
+			</p>
+		</template>
 
-    <template #illustration>
-      <img
-        src="@/assets/images/not-found.svg"
-        :alt="locales.pageTitle"
-      >
-    </template>
-  </ErrorPage>
+		<template #illustration>
+			<img
+				src="@/assets/images/not-found.svg"
+				:alt="locales.pageTitle"
+			>
+		</template>
+	</ErrorPage>
 </template>
 
 <style lang="scss" scoped>

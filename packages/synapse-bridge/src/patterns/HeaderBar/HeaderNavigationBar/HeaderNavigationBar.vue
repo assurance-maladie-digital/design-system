@@ -66,46 +66,46 @@ export default defineComponent({
 </script>
 
 <template>
-  <VSheet
-    v-bind="options.sheet"
-    :color="backgroundColor"
-    :class="spacingClass"
-    class="vd-navigation-bar d-flex align-center justify-center"
-  >
-    <VSheet
-      class="header-navigation-background"
-      v-bind="options.innerSheet"
-      :width="innerWidth"
-    >
-      <slot name="navigation-bar-prepend" />
+	<VSheet
+		v-bind="options.sheet"
+		:color="backgroundColor"
+		:class="spacingClass"
+		class="vd-navigation-bar d-flex align-center justify-center"
+	>
+		<VSheet
+			class="header-navigation-background"
+			v-bind="options.innerSheet"
+			:width="innerWidth"
+		>
+			<slot name="navigation-bar-prepend" />
 
-      <slot>
-        <HeaderMenuBtn
-          v-if="mobileVersion"
-          @click="emitDrawerEvent"
-        />
+			<slot>
+				<HeaderMenuBtn
+					v-if="mobileVersion"
+					@click="emitDrawerEvent"
+				/>
 
-        <VTabs
-          v-else
-          v-bind="options.tabs"
-          :model-value="tab"
-          @change="emitTabUpdateEvent"
-        >
-          <VTab
-            v-for="(item, index) in items"
-            :key="index"
-            v-bind="options.tab"
-            :href="item.href"
-            :to="item.to"
-          >
-            {{ item.label }}
-          </VTab>
-        </VTabs>
-      </slot>
+				<VTabs
+					v-else
+					v-bind="options.tabs"
+					:model-value="tab"
+					@change="emitTabUpdateEvent"
+				>
+					<VTab
+						v-for="(item, index) in items"
+						:key="index"
+						v-bind="options.tab"
+						:href="item.href"
+						:to="item.to"
+					>
+						{{ item.label }}
+					</VTab>
+				</VTabs>
+			</slot>
 
-      <slot name="navigation-bar-secondary-content" />
-    </VSheet>
-  </VSheet>
+			<slot name="navigation-bar-secondary-content" />
+		</VSheet>
+	</VSheet>
 </template>
 
 <style lang="scss" scoped>

@@ -22,31 +22,31 @@ export default defineComponent({
 </script>
 
 <template>
-  <VTable class="vd-cookie-table">
-    <thead>
-      <tr>
-        <th
-          v-for="(item, index) in headers"
-          :key="index"
-          :style="{ width: item.width }"
-          class="text-left"
-        >
-          {{ item.label }}
-        </th>
-      </tr>
-    </thead>
+	<VTable class="vd-cookie-table">
+		<thead>
+			<tr>
+				<th
+					v-for="(item, index) in headers"
+					:key="index"
+					:style="{ width: item.width }"
+					class="text-left"
+				>
+					{{ item.label }}
+				</th>
+			</tr>
+		</thead>
 
-    <tbody>
-      <tr
-        v-for="(cookie, index) in items"
-        :key="index"
-      >
-        <td>{{ cookie.name }}</td>
-        <td>{{ cookie.description }}</td>
-        <td>{{ cookie.conservation }}</td>
-      </tr>
-    </tbody>
-  </VTable>
+		<tbody>
+			<tr
+				v-for="(cookie, index) in items"
+				:key="index"
+			>
+				<td>{{ cookie.name }}</td>
+				<td>{{ cookie.description }}</td>
+				<td>{{ cookie.conservation }}</td>
+			</tr>
+		</tbody>
+	</VTable>
 </template>
 
 <style lang="scss" scoped>

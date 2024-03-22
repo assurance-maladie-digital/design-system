@@ -76,23 +76,23 @@ export default defineComponent({
 </script>
 
 <template>
-  <VTextField
-    v-maska:[phonemask]
-    v-bind="textFieldOptions"
-    :model-value="computedValue"
-    :rules="rules"
-    :counter="counter"
-    :counter-value="noSpacesCounter"
-    :label="locales.label"
-    :variant="outlined ? 'outlined' : 'underlined'"
-    color="primary"
-    @input="setInternalValue"
-    @change="emitChangeEvent"
-  >
-    <template #append-inner>
-      <VIcon>
-        {{ phoneIcon }}
-      </VIcon>
-    </template>
-  </VTextField>
+	<VTextField
+		v-maska:[phonemask]
+		v-bind="textFieldOptions"
+		:model-value="computedValue"
+		:rules="rules"
+		:counter="counter"
+		:counter-value="noSpacesCounter"
+		:label="locales.label"
+		:variant="outlined ? 'outlined' : 'underlined'"
+		color="primary"
+		@input="setInternalValue"
+		@change="emitChangeEvent"
+	>
+		<template #append-inner>
+			<VIcon>
+				{{ phoneIcon }}
+			</VIcon>
+		</template>
+	</VTextField>
 </template>

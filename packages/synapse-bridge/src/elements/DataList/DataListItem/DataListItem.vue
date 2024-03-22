@@ -62,64 +62,64 @@ export default defineComponent({
 </script>
 
 <template>
-  <li class="vd-data-list-item d-flex flex-wrap">
-    <slot name="icon">
-      <VIcon
-        v-if="icon"
-        v-bind="options.icon"
-      >
-        {{ icon }}
-      </VIcon>
-    </slot>
+	<li class="vd-data-list-item d-flex flex-wrap">
+		<slot name="icon">
+			<VIcon
+				v-if="icon"
+				v-bind="options.icon"
+			>
+				{{ icon }}
+			</VIcon>
+		</slot>
 
-    <div class="vd-data-list-item-content">
-      <div :class="{ 'vd-row': row }">
-        <div
-          class="vd-data-list-item-label text-caption"
-          :style="{ color: labelColor }"
-        >
-          {{ label }}
-        </div>
+		<div class="vd-data-list-item-content">
+			<div :class="{ 'vd-row': row }">
+				<div
+					class="vd-data-list-item-label text-caption"
+					:style="{ color: labelColor }"
+				>
+					{{ label }}
+				</div>
 
-        <div class="vd-data-list-item-value">
-          <slot
-            name="value"
-            v-bind="{ itemValue }"
-          >
-            <VChip
-              v-if="chip"
-              v-bind="options.chip"
-            >
-              {{ itemValue }}
-            </VChip>
+				<div class="vd-data-list-item-value">
+					<slot
+						name="value"
+						v-bind="{ itemValue }"
+					>
+						<VChip
+							v-if="chip"
+							v-bind="options.chip"
+						>
+							{{ itemValue }}
+						</VChip>
 
-            <span
-              v-else-if="renderHtmlValue"
-              class="text-body-1"
-              v-html="itemValue"
-            />
+						<span
+							v-else-if="renderHtmlValue"
+							class="text-body-1"
+							v-html="itemValue"
+						/>
 
-            <span
-              v-else
-              class="text-body-1"
-              v-text="itemValue"
-            />
-          </slot>
-        </div>
-      </div>
+						<span
+							v-else
+							class="text-body-1"
+							v-text="itemValue"
+						/>
+					</slot>
+				</div>
+			</div>
 
-      <slot name="action">
-        <VBtn
-          v-if="action"
-          v-bind="options.actionBtn"
-          class="vd-data-list-item-action-btn"
-          @click="$emit('click:action')"
-        >
-          {{ action }}
-        </VBtn>
-      </slot>
-    </div>
-  </li>
+			<slot name="action">
+				<VBtn
+					v-if="action"
+					v-bind="options.actionBtn"
+					class="vd-data-list-item-action-btn"
+					@click="$emit('click:action')"
+				>
+					{{ action }}
+				</VBtn>
+			</slot>
+		</div>
+	</li>
 </template>
 
 <style lang="scss" scoped>

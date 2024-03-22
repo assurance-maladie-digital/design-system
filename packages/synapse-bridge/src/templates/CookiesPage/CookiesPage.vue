@@ -65,68 +65,68 @@ export default defineComponent({
 </script>
 
 <template>
-  <PageContainer
-    v-if="items"
-    size="m"
-    class="vd-cookies-page"
-  >
-    <VCard class="pa-4 pa-md-8">
-      <VForm ref="form">
-        <h2 class="text-h5 font-weight-bold mb-6">
-          {{ locales.title }}
-        </h2>
+	<PageContainer
+		v-if="items"
+		size="m"
+		class="vd-cookies-page"
+	>
+		<VCard class="pa-4 pa-md-8">
+			<VForm ref="form">
+				<h2 class="text-h5 font-weight-bold mb-6">
+					{{ locales.title }}
+				</h2>
 
-        <p class="mb-4">
-          {{ locales.description }}
-        </p>
+				<p class="mb-4">
+					{{ locales.description }}
+				</p>
 
-        <p class="mb-4">
-          {{ locales.cookieDefinition }}
-        </p>
+				<p class="mb-4">
+					{{ locales.cookieDefinition }}
+				</p>
 
-        <div class="d-flex flex-wrap justify-end mx-n2 mt-n2 mb-6">
-          <VBtn
-            data-test-id="reject-all"
-            color="primary"
-            variant="outlined"
-            class="ma-2"
-            @click="setGlobalPreferences(false)"
-          >
-            {{ locales.rejectAll }}
-          </VBtn>
+				<div class="d-flex flex-wrap justify-end mx-n2 mt-n2 mb-6">
+					<VBtn
+						data-test-id="reject-all"
+						color="primary"
+						variant="outlined"
+						class="ma-2"
+						@click="setGlobalPreferences(false)"
+					>
+						{{ locales.rejectAll }}
+					</VBtn>
 
-          <VBtn
-            data-test-id="accept-all"
-            color="primary"
-            variant="outlined"
-            class="ma-2"
-            @click="setGlobalPreferences(true)"
-          >
-            {{ locales.acceptAll }}
-          </VBtn>
-        </div>
+					<VBtn
+						data-test-id="accept-all"
+						color="primary"
+						variant="outlined"
+						class="ma-2"
+						@click="setGlobalPreferences(true)"
+					>
+						{{ locales.acceptAll }}
+					</VBtn>
+				</div>
 
-        <CookiesInformation
-          v-for="(cookies, key) in items"
-          :key="key"
-          v-model="preferences[key]"
-          :type="key"
-          :table-items="cookies"
-          class="mb-6"
-        />
+				<CookiesInformation
+					v-for="(cookies, key) in items"
+					:key="key"
+					v-model="preferences[key]"
+					:type="key"
+					:table-items="cookies"
+					class="mb-6"
+				/>
 
-        <div class="d-flex mt-16">
-          <VSpacer />
+				<div class="d-flex mt-16">
+					<VSpacer />
 
-          <VBtn
-            data-test-id="submit"
-            color="primary"
-            @click="submitForm"
-          >
-            {{ locales.saveBtn }}
-          </VBtn>
-        </div>
-      </VForm>
-    </VCard>
-  </PageContainer>
+					<VBtn
+						data-test-id="submit"
+						color="primary"
+						@click="submitForm"
+					>
+						{{ locales.saveBtn }}
+					</VBtn>
+				</div>
+			</VForm>
+		</VCard>
+	</PageContainer>
 </template>

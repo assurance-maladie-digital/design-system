@@ -35,19 +35,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <VBtn
-    v-bind="{
-      ...options.btn,
-      ...$attrs,
-    }"
-    :aria-label="menuBtnActionLabel"
-    :class="spacing"
-    class="vd-header-menu-btn"
-  >
-    <VIcon v-bind="options.icon">
-      {{ menuIcon }}
-    </VIcon>
+	<VBtn
+		v-bind="{
+			...options.btn,
+			...$attrs,
+		}"
+		:aria-label="menuBtnActionLabel"
+		:class="spacing"
+		class="vd-header-menu-btn"
+	>
+		<VIcon v-bind="options.icon">
+			{{ menuIcon }}
+		</VIcon>
 
-    {{ locales.menu }}
-  </VBtn>
+		{{ locales.menu }}
+	</VBtn>
 </template>

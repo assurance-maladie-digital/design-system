@@ -90,32 +90,32 @@ export default defineComponent({
 </script>
 
 <template>
-  <VFadeTransition>
-    <VBtn
-      v-show="showBtn"
-      v-scroll:[targetSelector]="onScroll"
-      v-bind="{
-        ...options.btn,
-        ...$attrs
-      }"
-      :style="btnStyle"
-      :min-width="minWidth"
-      class="vd-back-to-top-btn"
-      @click="scrollToTop"
-    >
-      <span :class="labelClasses">
-        <slot>
-          {{ locales.label }}
-        </slot>
-      </span>
+	<VFadeTransition>
+		<VBtn
+			v-show="showBtn"
+			v-scroll:[targetSelector]="onScroll"
+			v-bind="{
+				...options.btn,
+				...$attrs
+			}"
+			:style="btnStyle"
+			:min-width="minWidth"
+			class="vd-back-to-top-btn"
+			@click="scrollToTop"
+		>
+			<span :class="labelClasses">
+				<slot>
+					{{ locales.label }}
+				</slot>
+			</span>
 
-      <slot name="icon">
-        <VIcon v-bind="options.icon">
-          {{ topIcon }}
-        </VIcon>
-      </slot>
-    </VBtn>
-  </VFadeTransition>
+			<slot name="icon">
+				<VIcon v-bind="options.icon">
+					{{ topIcon }}
+				</VIcon>
+			</slot>
+		</VBtn>
+	</VFadeTransition>
 </template>
 
 <style lang="scss" scoped>

@@ -103,53 +103,53 @@ export default defineComponent({
 </script>
 
 <template>
-  <VMenu
-    v-if="Object.keys(languages).length > 0"
-    v-bind="options.menu"
-    class="vd-lang-btn"
-    content-class="vd-lang-menu"
-  >
-    <template #activator="{ props }">
-      <VBtn
-        v-if="currentLangData"
-        v-bind="{
-          ...props,
-          ...options.btn
-        }"
-        id="lang-menu-btn"
-        :aria-label="currentLangData.label"
-      >
-        <span :class="currentLangClass">
-          {{ currentLangData.name }}
-        </span>
+	<VMenu
+		v-if="Object.keys(languages).length > 0"
+		v-bind="options.menu"
+		class="vd-lang-btn"
+		content-class="vd-lang-menu"
+	>
+		<template #activator="{ props }">
+			<VBtn
+				v-if="currentLangData"
+				v-bind="{
+					...props,
+					...options.btn
+				}"
+				id="lang-menu-btn"
+				:aria-label="currentLangData.label"
+			>
+				<span :class="currentLangClass">
+					{{ currentLangData.name }}
+				</span>
 
-        <VIcon
-          v-if="!hideDownArrow"
-          v-bind="options.icon"
-        >
-          {{ downArrowIcon }}
-        </VIcon>
-      </VBtn>
-    </template>
+				<VIcon
+					v-if="!hideDownArrow"
+					v-bind="options.icon"
+				>
+					{{ downArrowIcon }}
+				</VIcon>
+			</VBtn>
+		</template>
 
-    <VList
-      v-bind="options.list"
-      aria-labelledby="lang-menu-btn"
-    >
-      <VListItem
-        v-for="(item, lang) in languages"
-        :key="lang"
-        v-bind="options.listTile"
-        role="option"
-        :aria-label="item.nativeName"
-        @click="updateLang(lang as string)"
-      >
-        <VListItemTitle v-bind="options.listTileTitle">
-          {{ item.nativeName }}
-        </VListItemTitle>
-      </VListItem>
-    </VList>
-  </VMenu>
+		<VList
+			v-bind="options.list"
+			aria-labelledby="lang-menu-btn"
+		>
+			<VListItem
+				v-for="(item, lang) in languages"
+				:key="lang"
+				v-bind="options.listTile"
+				role="option"
+				:aria-label="item.nativeName"
+				@click="updateLang(lang as string)"
+			>
+				<VListItemTitle v-bind="options.listTileTitle">
+					{{ item.nativeName }}
+				</VListItemTitle>
+			</VListItem>
+		</VList>
+	</VMenu>
 </template>
 
 <style lang="scss" scoped>

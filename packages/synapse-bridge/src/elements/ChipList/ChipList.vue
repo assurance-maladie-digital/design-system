@@ -48,54 +48,54 @@ export default defineComponent({
 </script>
 
 <template>
-  <div
-    v-if="items.length > 0"
-    :class="{
-      'flex-column': showOverflowChip,
-    }"
-    class="vd-chip-list d-flex flex-wrap max-width-none mx-n1 mt-n1"
-  >
-    <div class="d-flex flex-wrap align-center mr-1">
-      <VChip
-        v-for="(item, index) in filteredItems"
-        :key="index"
-        :close-icon="deleteIcon"
-        :close-label="locales.closeBtnLabel"
-        color="cyan-darken-40"
-        text-color="white"
-        closable
-        size="small"
-        variant="flat"
-        class="ma-1"
-        @click:close="emitRemoveEvent(item)"
-      >
-        {{ item.text }}
-      </VChip>
-    </div>
+	<div
+		v-if="items.length > 0"
+		:class="{
+			'flex-column': showOverflowChip,
+		}"
+		class="vd-chip-list d-flex flex-wrap max-width-none mx-n1 mt-n1"
+	>
+		<div class="d-flex flex-wrap align-center mr-1">
+			<VChip
+				v-for="(item, index) in filteredItems"
+				:key="index"
+				:close-icon="deleteIcon"
+				:close-label="locales.closeBtnLabel"
+				color="cyan-darken-40"
+				text-color="white"
+				closable
+				size="small"
+				variant="flat"
+				class="ma-1"
+				@click:close="emitRemoveEvent(item)"
+			>
+				{{ item.text }}
+			</VChip>
+		</div>
 
-    <div>
-      <VChip
-        v-if="showOverflowChip"
-        color="cyan-lighten-90"
-        size="small"
-        variant="flat"
-        class="vd-overflow-chip text-cyan-darken-40 ma-1"
-      >
-        {{ overflowText }}
-      </VChip>
+		<div>
+			<VChip
+				v-if="showOverflowChip"
+				color="cyan-lighten-90"
+				size="small"
+				variant="flat"
+				class="vd-overflow-chip text-cyan-darken-40 ma-1"
+			>
+				{{ overflowText }}
+			</VChip>
 
-      <VBtn
-        data-test-id="reset-btn"
-        color="primary"
-        size="small"
-        variant="text"
-        class="vd-overflow-btn px-1 ml-0 my-1"
-        @click="emitResetEvent"
-      >
-        {{ locales.reset }}
-      </VBtn>
-    </div>
-  </div>
+			<VBtn
+				data-test-id="reset-btn"
+				color="primary"
+				size="small"
+				variant="text"
+				class="vd-overflow-btn px-1 ml-0 my-1"
+				@click="emitResetEvent"
+			>
+				{{ locales.reset }}
+			</VBtn>
+		</div>
+	</div>
 </template>
 
 <style lang="scss" scoped>

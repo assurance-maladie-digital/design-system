@@ -43,31 +43,31 @@ export default defineComponent({
 </script>
 
 <template>
-  <ul
-    v-if="items.length > 0"
-    class="vd-contextual-menu"
-  >
-    <li
-      v-for="{ text, hash, level } in items"
-      :key="hash"
-    >
-      <a
-        :href="hash"
-        :class="{
-          'text-primary active': $route.hash === hash,
-          'text-medium-emphasis': $route.hash !== hash,
-          'ps-4': level === 2,
-          'ps-6': level === 3,
-          'ps-9': level === 4,
-          'ps-12': level === 5,
-          'ps-14': level === 6
-        }"
-        class="d-flex align-center text-decoration-none text-body-1 px-4 py-2"
-        @click.prevent.stop="setHash(hash)"
-        v-text="text"
-      />
-    </li>
-  </ul>
+	<ul
+		v-if="items.length > 0"
+		class="vd-contextual-menu"
+	>
+		<li
+			v-for="{ text, hash, level } in items"
+			:key="hash"
+		>
+			<a
+				:href="hash"
+				:class="{
+					'text-primary active': $route.hash === hash,
+					'text-medium-emphasis': $route.hash !== hash,
+					'ps-4': level === 2,
+					'ps-6': level === 3,
+					'ps-9': level === 4,
+					'ps-12': level === 5,
+					'ps-14': level === 6
+				}"
+				class="d-flex align-center text-decoration-none text-body-1 px-4 py-2"
+				@click.prevent.stop="setHash(hash)"
+				v-text="text"
+			/>
+		</li>
+	</ul>
 </template>
 
 <style lang="scss" scoped>

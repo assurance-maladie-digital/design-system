@@ -178,119 +178,119 @@ export default defineComponent({
 </script>
 
 <template>
-  <VLayout>
-    <div
-      :style="mainContentMargin"
-      class="vd-header-bar-container w-100"
-    >
-      <VToolbar
-        v-bind="{ ...options.appBar, ...$attrs }"
-        ref="appBar"
-        v-scroll:[targetSelector]="onScroll"
-        :height="height"
-        :absolute="sticky"
-        :elevation="8"
-        role="banner"
-        class="vd-header-bar"
-      >
-        <VSheet
-          v-bind="options.contentSheet"
-          :height="contentSheetHeight"
-          :class="spacingClass"
-          class="vd-header-bar-content d-flex justify-center"
-        >
-          <VSheet
-            v-bind="options.innerSheet"
-            :width="innerWidth"
-          >
-            <slot name="logo">
-              <LogoBrandSection
-                v-bind="options.brandSection"
-                :theme="theme"
-                :service-title="serviceTitle"
-                :service-sub-title="serviceSubTitle"
-                :mobile-version="isMobileVersion"
-                :reduce-logo="isMiniVersion"
-                :home-link="homeLink"
-                :home-href="homeHref"
-                :home-arialabel="homeArialabel"
-              >
-                <template #brand-content>
-                  <slot name="brand-content" />
-                </template>
+	<VLayout>
+		<div
+			:style="mainContentMargin"
+			class="vd-header-bar-container w-100"
+		>
+			<VToolbar
+				v-bind="{ ...options.appBar, ...$attrs }"
+				ref="appBar"
+				v-scroll:[targetSelector]="onScroll"
+				:height="height"
+				:absolute="sticky"
+				:elevation="8"
+				role="banner"
+				class="vd-header-bar"
+			>
+				<VSheet
+					v-bind="options.contentSheet"
+					:height="contentSheetHeight"
+					:class="spacingClass"
+					class="vd-header-bar-content d-flex justify-center"
+				>
+					<VSheet
+						v-bind="options.innerSheet"
+						:width="innerWidth"
+					>
+						<slot name="logo">
+							<LogoBrandSection
+								v-bind="options.brandSection"
+								:theme="theme"
+								:service-title="serviceTitle"
+								:service-sub-title="serviceSubTitle"
+								:mobile-version="isMobileVersion"
+								:reduce-logo="isMiniVersion"
+								:home-link="homeLink"
+								:home-href="homeHref"
+								:home-arialabel="homeArialabel"
+							>
+								<template #brand-content>
+									<slot name="brand-content" />
+								</template>
 
-                <slot name="secondary-logo" />
-              </LogoBrandSection>
-            </slot>
+								<slot name="secondary-logo" />
+							</LogoBrandSection>
+						</slot>
 
-            <VSpacer
-              v-if="showSpacer"
-              v-bind="options.spacer"
-            />
+						<VSpacer
+							v-if="showSpacer"
+							v-bind="options.spacer"
+						/>
 
-            <slot />
+						<slot />
 
-            <HeaderMenuBtn
-              v-if="showHeaderMenuBtn"
-              :vuetify-options="options.menuBtn"
-              @click="updateDrawer(!drawer)"
-            />
-          </VSheet>
-        </VSheet>
+						<HeaderMenuBtn
+							v-if="showHeaderMenuBtn"
+							:vuetify-options="options.menuBtn"
+							@click="updateDrawer(!drawer)"
+						/>
+					</VSheet>
+				</VSheet>
 
-        <VFadeTransition v-if="showNavigationBar">
-          <HeaderNavigationBar
-            :tab="tab"
-            :drawer="drawer"
-            :theme="theme"
-            :mobile-version="isMobileVersion"
-            :items="navigationItems"
-            :inner-width="innerWidth"
-            :show-menu-btn="showNavBarMenuBtn"
-            :vuetify-options="options.navigationBar"
-            @update:tab="tab = $event"
-            @update:drawer="drawer = $event"
-          >
-            <template #navigation-bar-prepend>
-              <slot name="navigation-bar-prepend" />
-            </template>
+				<VFadeTransition v-if="showNavigationBar">
+					<HeaderNavigationBar
+						:tab="tab"
+						:drawer="drawer"
+						:theme="theme"
+						:mobile-version="isMobileVersion"
+						:items="navigationItems"
+						:inner-width="innerWidth"
+						:show-menu-btn="showNavBarMenuBtn"
+						:vuetify-options="options.navigationBar"
+						@update:tab="tab = $event"
+						@update:drawer="drawer = $event"
+					>
+						<template #navigation-bar-prepend>
+							<slot name="navigation-bar-prepend" />
+						</template>
 
-            <slot name="navigation-bar-content" />
+						<slot name="navigation-bar-content" />
 
-            <template #navigation-bar-secondary-content>
-              <slot name="navigation-bar-secondary-content" />
-            </template>
-          </HeaderNavigationBar>
-        </VFadeTransition>
-      </VToolbar>
+						<template #navigation-bar-secondary-content>
+							<slot name="navigation-bar-secondary-content" />
+						</template>
+					</HeaderNavigationBar>
+				</VFadeTransition>
+			</VToolbar>
 
-      <slot
-        name="navigation-drawer"
-        v-bind="{ drawer, updateDrawer }"
-      >
-        <HeaderNavigationDrawer
-          v-model="drawer"
-          :tab="tab"
-          :theme="theme"
-          :items="navigationItems"
-          :mobile-version="isMobileVersion"
-          :vuetify-options="options.navigationDrawer"
-          @update:tab="tab = $event"
-          @change="updateDrawer(!drawer)"
-        >
-          <template #navigation-drawer-prepend>
-            <slot name="navigation-drawer-prepend" />
-          </template>
+			<slot
+				name="navigation-drawer"
+				v-bind="{ drawer, updateDrawer }"
+			>
+				<HeaderNavigationDrawer
+					v-model="drawer"
+					:tab="tab"
+					:theme="theme"
+					:items="navigationItems"
+					:mobile-version="isMobileVersion"
+					:vuetify-options="options.navigationDrawer"
+					@update:tab="tab = $event"
+					@change="updateDrawer(!drawer)"
+				>
+					<template #navigation-drawer-prepend>
+						<slot name="navigation-drawer-prepend" />
+					</template>
 
-          <slot name="navigation-drawer-content" />
+					<slot name="navigation-drawer-content" />
 
-          <template #navigation-drawer-append>
-            <slot name="navigation-drawer-append" />
-          </template>
-        </HeaderNavigationDrawer>
-      </slot>
-    </div>
-  </VLayout>
+					<template #navigation-drawer-append>
+						<slot name="navigation-drawer-append" />
+					</template>
+				</HeaderNavigationDrawer>
+			</slot>
+		</div>
+	</VLayout>
 </template>
 
 <style lang="scss" scoped>

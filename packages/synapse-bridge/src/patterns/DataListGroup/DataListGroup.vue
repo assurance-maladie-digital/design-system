@@ -49,20 +49,20 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4">
-    <DataList
-      v-for="(dataList, index) in items"
-      :key="`vd-data-list-${index}`"
-      :loading="loading"
-      :render-html-value="renderHtmlValue"
-      :list-title="dataList.title"
-      :items="dataList.items"
-      :items-number-loading="dataList.itemsNumberLoading"
-      :heading-loading="dataList.headingLoading"
-      :width="itemWidth"
-      :icons="icons"
-      class="ma-4"
-      @click:item-action="emitItemAction(index, $event)"
-    />
-  </div>
+	<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4">
+		<DataList
+			v-for="(dataList, index) in items"
+			:key="`vd-data-list-${index}`"
+			:loading="loading"
+			:render-html-value="renderHtmlValue"
+			:list-title="dataList.title"
+			:items="dataList.items"
+			:items-number-loading="dataList.itemsNumberLoading"
+			:heading-loading="dataList.headingLoading"
+			:width="itemWidth"
+			:icons="icons"
+			class="ma-4"
+			@click:item-action="emitItemAction(index, $event)"
+		/>
+	</div>
 </template>

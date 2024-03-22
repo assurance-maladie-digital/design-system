@@ -2,11 +2,11 @@
 import { defineComponent } from 'vue';
 
 import { mdiAccount, mdiLoginVariant } from '@mdi/js';
+import { VIcon } from 'vuetify/components';
 
 import { config } from './config';
 import { locales } from './locales';
 import { customizable } from '@/mixins/customizable';
-import { type Refs } from '@/types';
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -62,96 +62,96 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="vd-user-menu-btn-ctn d-inline-block">
-    <VMenu
-      v-bind="options.menu"
-      :disabled="!hasListContent"
-      transition="fade-transition"
-      location="bottom end"
-      z-index="9999"
-    >
-      <template #activator="{ props }">
-        <VBtn
-          v-bind="{
-            ...props,
-            ...options.btn
-          }"
-          :class="btnPadding"
-          :icon="isMobileWithIcon"
-          :size="isMobileWithIcon ? 'x-large' : 'default'"
-          :height="isMobileWithIcon ? undefined : 'auto'"
-          class="vd-user-menu-btn"
-        >
-          <span class="d-sr-only">
-            {{ label }}
-          </span>
+	<div class="vd-user-menu-btn-ctn d-inline-block">
+		<VMenu
+			v-bind="options.menu"
+			:disabled="!hasListContent"
+			transition="fade-transition"
+			location="bottom end"
+			z-index="9999"
+		>
+			<template #activator="{ props }">
+				<VBtn
+					v-bind="{
+						...props,
+						...options.btn
+					}"
+					:class="btnPadding"
+					:icon="isMobileWithIcon"
+					:size="isMobileWithIcon ? 'x-large' : 'default'"
+					:height="isMobileWithIcon ? undefined : 'auto'"
+					class="vd-user-menu-btn"
+				>
+					<span class="d-sr-only">
+						{{ label }}
+					</span>
 
-          <span
-            v-if="!isMobileVersion"
-            class="d-flex flex-column align-end"
-          >
-            <span class="font-weight-bold">
-              {{ fullName }}
-            </span>
+					<span
+						v-if="!isMobileVersion"
+						class="d-flex flex-column align-end"
+					>
+						<span class="font-weight-bold">
+							{{ fullName }}
+						</span>
 
-            <span class="text-grey text-darken-2 font-weight-medium">
-              {{ additionalInformation }}
-            </span>
-          </span>
+						<span class="text-grey text-darken-2 font-weight-medium">
+							{{ additionalInformation }}
+						</span>
+					</span>
 
-          <span
-            v-if="isMobileVersion && hideUserIcon"
-            class="font-weight-bold text-sm-caption"
-          >
-            {{ fullName }}
-          </span>
+					<span
+						v-if="isMobileVersion && hideUserIcon"
+						class="font-weight-bold text-sm-caption"
+					>
+						{{ fullName }}
+					</span>
 
-          <slot name="icon">
-            <VIcon
-              v-if="!hideUserIcon"
-              v-bind="options.icon"
-              :class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2 pa-2'"
-              :size="isMobileWithIcon ? 'x-large' : 'default'"
-              class="vd-user-icon"
-            >
-              {{ userIcon }}
-            </VIcon>
-          </slot>
-        </VBtn>
-      </template>
+					<slot name="icon">
+						<VIcon
+							v-if="!hideUserIcon"
+							v-bind="options.icon"
+							:class="isMobileVersion ? 'ml-0 pa-2' : 'ml-2 pa-2'"
+							:size="isMobileWithIcon ? 'x-large' : 'default'"
+							class="vd-user-icon"
+						>
+							{{ userIcon }}
+						</VIcon>
+					</slot>
+				</VBtn>
+			</template>
 
-      <slot name="content">
-        <VList
-          v-if="hasListContent"
-          v-bind="options.list"
-        >
-          <slot />
+			<slot name="content">
+				<VList
+					v-if="hasListContent"
+					v-bind="options.list"
+				>
+					<slot />
 
-          <slot name="logout-item">
-            <VListItem
-              v-if="!hideLogoutBtn"
-              v-bind="options.logoutListItem"
-              class="logout"
-              @click="$emit('logout')"
-            >
-              <div class="d-flex">
-                <VIcon
-                  v-bind="options.logoutIcon"
-                  class="mr-4"
-                >
-                  {{ logoutIcon }}
-                </VIcon>
+					<slot name="logout-item">
+						<VListItem
+							v-if="!hideLogoutBtn"
+							v-bind="options.logoutListItem"
+							class="logout"
+							@click="$emit('logout')"
+						>
+							<div class="d-flex">
+								<VIcon
+									v-bind="options.logoutIcon"
+									class="mr-4"
+								>
+									{{ logoutIcon }}
+								</VIcon>
 
-                <VListItemTitle>
-                  {{ locales.logout }}
-                </VListItemTitle>
-              </div>
-            </VListItem>
-          </slot>
-        </VList>
-      </slot>
-    </VMenu>
-  </div>
+								<VListItemTitle>
+									{{ locales.logout }}
+								</VListItemTitle>
+							</div>
+						</VListItem>
+					</slot>
+				</VList>
+			</slot>
+		</VMenu>
+	</div>
 </template>
 
 <style lang="scss" scoped>

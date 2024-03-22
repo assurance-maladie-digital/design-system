@@ -169,101 +169,101 @@ export default defineComponent({
 </script>
 
 <template>
-  <VFooter
-    v-bind="{
-      ...options.footer,
-      ...$attrs,
-    }"
-    :class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
-    role="contentinfo"
-    class="vd-footer-bar flex-column align-stretch pa-3 w-100"
-  >
-    <div
-      v-if="extendedMode"
-      class="d-flex align-start align-sm-center mb-6"
-    >
-      <div class="d-flex flex-grow-1 flex-column flex-sm-row">
-        <slot name="logo">
-          <Logo
-            v-if="!hideLogo"
-            :size="logoSize"
-            :class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
-          />
-        </slot>
+	<VFooter
+		v-bind="{
+			...options.footer,
+			...$attrs,
+		}"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		role="contentinfo"
+		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
+	>
+		<div
+			v-if="extendedMode"
+			class="d-flex align-start align-sm-center mb-6"
+		>
+			<div class="d-flex flex-grow-1 flex-column flex-sm-row">
+				<slot name="logo">
+					<Logo
+						v-if="!hideLogo"
+						:size="logoSize"
+						:class="{ 'mb-2 mb-sm-0': !hideSocialMediaLinks }"
+					/>
+				</slot>
 
-        <VSpacer v-bind="options.spacer" />
+				<VSpacer v-bind="options.spacer" />
 
-        <slot name="social-media-links">
-          <SocialMediaLinks
-            v-if="!hideSocialMediaLinks"
-            :links="socialMediaLinks"
-            class="mr-8"
-          />
-        </slot>
-      </div>
+				<slot name="social-media-links">
+					<SocialMediaLinks
+						v-if="!hideSocialMediaLinks"
+						:links="socialMediaLinks"
+						class="mr-8"
+					/>
+				</slot>
+			</div>
 
-      <VBtn
-        v-bind="options.goTopBtn"
-        :aria-label="locales.goTopBtnLabel"
-        @click="scrollToTop"
-      >
-        <VIcon v-bind="options.goTopBtnIcon">
-          {{ arrowTopIcon }}
-        </VIcon>
-      </VBtn>
-    </div>
+			<VBtn
+				v-bind="options.goTopBtn"
+				:aria-label="locales.goTopBtnLabel"
+				@click="scrollToTop"
+			>
+				<VIcon v-bind="options.goTopBtnIcon">
+					{{ arrowTopIcon }}
+				</VIcon>
+			</VBtn>
+		</div>
 
-    <VDivider
-      v-if="extendedMode"
-      v-bind="options.divider"
-      class="mb-3"
-    />
+		<VDivider
+			v-if="extendedMode"
+			v-bind="options.divider"
+			class="mb-3"
+		/>
 
-    <slot />
+		<slot />
 
-    <VDivider
-      v-if="extendedMode"
-      v-bind="options.divider"
-      class="mt-3 mb-6"
-    />
+		<VDivider
+			v-if="extendedMode"
+			v-bind="options.divider"
+			class="mt-3 mb-6"
+		/>
 
-    <ul
-      :class="{ 'py-2 py-sm-0': !extendedMode }"
-      class="
+		<ul
+			:class="{ 'py-2 py-sm-0': !extendedMode }"
+			class="
 		vd-footer-bar-links text-sm-center d-flex
 		flex-column flex-sm-row flex-wrap align-start
 		justify-center max-width-none mx-n3 my-n3"
-    >
-      <slot name="prepend" />
+		>
+			<slot name="prepend" />
 
-      <li
-        v-for="(item, index) in footerLinksMapping"
-        :key="index"
-      >
-        <component
-          :is="getLinkComponent(item)"
-          :href="item.href"
-          :to="item.to"
-          :aria-label="item.ariaLabel"
-          :target="item.openInNewTab ? '_blank' : undefined"
-          :tabindex="index"
-          :rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
-          class="text--primary my-3 mx-4"
-        >
-          {{ item.text }}
-        </component>
-      </li>
+			<li
+				v-for="(item, index) in footerLinksMapping"
+				:key="index"
+			>
+				<component
+					:is="getLinkComponent(item)"
+					:href="item.href"
+					:to="item.to"
+					:aria-label="item.ariaLabel"
+					:target="item.openInNewTab ? '_blank' : undefined"
+					:tabindex="index"
+					:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
+					class="text--primary my-3 mx-4"
+				>
+					{{ item.text }}
+				</component>
+			</li>
 
-      <li
-        v-if="version"
-        class="text--secondary my-3 mx-4"
-      >
-        {{ locales.versionLabel }} {{ version }}
-      </li>
+			<li
+				v-if="version"
+				class="text--secondary my-3 mx-4"
+			>
+				{{ locales.versionLabel }} {{ version }}
+			</li>
 
-      <slot name="append" />
-    </ul>
-  </VFooter>
+			<slot name="append" />
+		</ul>
+	</VFooter>
 </template>
 
 <style lang="scss" scoped>

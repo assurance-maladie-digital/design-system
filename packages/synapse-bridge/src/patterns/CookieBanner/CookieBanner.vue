@@ -49,69 +49,69 @@ export default defineComponent({
 </script>
 
 <template>
-  <VSheet
-    v-if="active"
-    v-bind="options.sheet"
-    :aria-label="locales.label"
-    role="region"
-    class="vd-cookie-banner"
-  >
-    <div class="d-flex align-start flex-nowrap pa-0 mb-6">
-      <h2 class="text-h5 font-weight-bold">
-        {{ locales.title }}
-      </h2>
+	<VSheet
+		v-if="active"
+		v-bind="options.sheet"
+		:aria-label="locales.label"
+		role="region"
+		class="vd-cookie-banner"
+	>
+		<div class="d-flex align-start flex-nowrap pa-0 mb-6">
+			<h2 class="text-h5 font-weight-bold">
+				{{ locales.title }}
+			</h2>
 
-      <VSpacer v-bind="options.spacer" />
+			<VSpacer v-bind="options.spacer" />
 
-      <VBtn
-        v-bind="options.closeBtn"
-        :aria-label="locales.closeBtn"
-        @click="reject"
-      >
-        <VIcon v-bind="options.icon">
-          {{ closeIcon }}
-        </VIcon>
-      </VBtn>
-    </div>
+			<VBtn
+				v-bind="options.closeBtn"
+				:aria-label="locales.closeBtn"
+				@click="reject"
+			>
+				<VIcon v-bind="options.icon">
+					{{ closeIcon }}
+				</VIcon>
+			</VBtn>
+		</div>
 
-    <slot>
-      <p>
-        {{ locales.description }}
-      </p>
-    </slot>
+		<slot>
+			<p>
+				{{ locales.description }}
+			</p>
+		</slot>
 
-    <div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
-      <VSpacer v-bind="options.actionsSpacer" />
+		<div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
+			<VSpacer v-bind="options.actionsSpacer" />
 
-      <VBtn
-        v-bind="options.customizeBtn"
-        data-test-id="customize"
-        :width="btnWidth"
-        :to="cookiesRoute"
-        @click="active = false"
-      >
-        {{ locales.customizeBtnText }}
-      </VBtn>
+			<VBtn
+				v-bind="options.customizeBtn"
+				data-test-id="customize"
+				:width="btnWidth"
+				:to="cookiesRoute"
+				@click="active = false"
+			>
+				{{ locales.customizeBtnText }}
+			</VBtn>
 
-      <VBtn
-        v-bind="options.rejectBtn"
-        data-test-id="reject"
-        :width="btnWidth"
-        @click="reject"
-      >
-        {{ locales.rejectBtnText }}
-      </VBtn>
+			<VBtn
+				v-bind="options.rejectBtn"
+				data-test-id="reject"
+				:width="btnWidth"
+				@click="reject"
+			>
+				{{ locales.rejectBtnText }}
+			</VBtn>
 
-      <VBtn
-        v-bind="options.acceptBtn"
-        data-test-id="accept"
-        :width="btnWidth"
-        @click="accept"
-      >
-        {{ locales.acceptBtnText }}
-      </VBtn>
-    </div>
-  </VSheet>
+			<VBtn
+				v-bind="options.acceptBtn"
+				data-test-id="accept"
+				:width="btnWidth"
+				@click="accept"
+			>
+				{{ locales.acceptBtnText }}
+			</VBtn>
+		</div>
+	</VSheet>
 </template>
 
 <style lang="scss" scoped>

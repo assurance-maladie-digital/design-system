@@ -109,7 +109,10 @@ export const vue: FlatESLintConfigItem[] = [
 			'vue/html-closing-bracket-newline': 'warn',
 			'vue/html-closing-bracket-spacing': 'warn',
 			'vue/html-end-tags': 'warn',
-			'vue/html-indent': 'warn',
+			'vue/html-indent': [
+				'error',
+				'tab'
+			],
 			'vue/html-quotes': 'warn',
 			'vue/html-self-closing': 'warn',
 			'vue/max-attributes-per-line': 'warn',
@@ -141,6 +144,41 @@ export const vue: FlatESLintConfigItem[] = [
 			'vue/no-v-html': 'warn',
 			'vue/order-in-components': 'warn',
 			'vue/this-in-template': 'warn',
+			'vue/block-order': [
+				'error',
+				{
+					order: [
+						'script',
+						'template',
+						'style:not([scoped])',
+						'style[scoped]',
+					],
+				},
+			],
+			'style/max-len': 'off',
+			'vue/max-len': [
+				'error',
+				{
+					code: 120,
+					template: 120,
+					tabWidth: 2,
+					ignoreUrls: true,
+					ignoreStrings: true,
+					ignoreTemplateLiterals: true,
+					ignoreRegExpLiterals: true,
+					ignoreHTMLAttributeValues: true,
+					ignoreHTMLTextContents: true,
+				},
+			],
+			'vue/block-tag-newline': [
+				'error',
+				{
+					singleline: 'always',
+					multiline: 'always',
+					maxEmptyLines: 1,
+				},
+			],
+			'vue/padding-line-between-blocks': ['error', 'always'],
 		},
 	},
 ];

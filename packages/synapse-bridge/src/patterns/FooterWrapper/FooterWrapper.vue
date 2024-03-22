@@ -11,21 +11,21 @@ export default defineComponent({
 </script>
 
 <template>
-  <VLayout>
-    <VFooter
-      width="100%"
-      elevation="1"
-      color="#fafafa"
-      class="vd-footer-wrapper"
-    >
-      <VRow
-        justify="center"
-        class="ma-0"
-      >
-        <slot />
-      </VRow>
-    </VFooter>
-  </VLayout>
+	<VLayout>
+		<VFooter
+			width="100%"
+			elevation="1"
+			color="#fafafa"
+			class="vd-footer-wrapper"
+		>
+			<VRow
+				justify="center"
+				class="ma-0"
+			>
+				<slot />
+			</VRow>
+		</VFooter>
+	</VLayout>
 </template>
 
 <style lang="scss" scoped>

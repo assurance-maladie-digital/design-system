@@ -78,56 +78,56 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="vd-cookies-information">
-    <h2 class="text-subtitle-1 font-weight-bold mb-2">
-      {{ locales[type].title }}
-    </h2>
+	<div class="vd-cookies-information">
+		<h2 class="text-subtitle-1 font-weight-bold mb-2">
+			{{ locales[type].title }}
+		</h2>
 
-    <p class="mb-4">
-      {{ locales[type].description }}
-    </p>
+		<p class="mb-4">
+			{{ locales[type].description }}
+		</p>
 
-    <details @toggle="toggleDetails">
-      <summary class="mb-1">
-        {{ detailsLabel }}
+		<details @toggle="toggleDetails">
+			<summary class="mb-1">
+				{{ detailsLabel }}
 
-        <VIcon class="mr-2">
-          {{ arrowIcon }}
-        </VIcon>
-      </summary>
+				<VIcon class="mr-2">
+					{{ arrowIcon }}
+				</VIcon>
+			</summary>
 
-      <CookiesTable
-        :items="tableItems"
-        class="mb-2"
-      />
-    </details>
+			<CookiesTable
+				:items="tableItems"
+				class="mb-2"
+			/>
+		</details>
 
-    <VRadioGroup
-      v-if="showRadios"
-      :model-value="parsedValue"
-      :rules="rules"
-      data-test-id="radio-group"
-      inline
-      hide-details="auto"
-      class="mt-0"
-      @change="emitChangeEvent"
-    >
-      <VSpacer />
+		<VRadioGroup
+			v-if="showRadios"
+			:model-value="parsedValue"
+			:rules="rules"
+			data-test-id="radio-group"
+			inline
+			hide-details="auto"
+			class="mt-0"
+			@change="emitChangeEvent"
+		>
+			<VSpacer />
 
-      <VRadio
-        :label="locales.reject"
-        :value="RadioValuesEnum.REJECT"
-        color="primary"
-      />
+			<VRadio
+				:label="locales.reject"
+				:value="RadioValuesEnum.REJECT"
+				color="primary"
+			/>
 
-      <VRadio
-        :label="locales.accept"
-        :value="RadioValuesEnum.ACCEPT"
-        class="mr-0"
-        color="primary"
-      />
-    </VRadioGroup>
-  </div>
+			<VRadio
+				:label="locales.accept"
+				:value="RadioValuesEnum.ACCEPT"
+				class="mr-0"
+				color="primary"
+			/>
+		</VRadioGroup>
+	</div>
 </template>
 
 <style lang="scss" scoped>

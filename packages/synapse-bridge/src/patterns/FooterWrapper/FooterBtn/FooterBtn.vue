@@ -23,19 +23,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <VBtn
-    v-bind="$attrs"
-    :disabled="inert"
-    :tag="tag"
-    :class="{ 'vd-footer-btn--inert': inert }"
-    rounded="0"
-    width="180px"
-    height="32px"
-    variant="tonal"
-    class="vd-footer-btn overflow-hidden text-subtitle-2 grey-lighten-80 mx-4 my-2"
-  >
-    <slot />
-  </VBtn>
+	<VBtn
+		v-bind="$attrs"
+		:disabled="inert"
+		:tag="tag"
+		:class="{ 'vd-footer-btn--inert': inert }"
+		rounded="0"
+		width="180px"
+		height="32px"
+		variant="tonal"
+		class="vd-footer-btn overflow-hidden text-subtitle-2 grey-lighten-80 mx-4 my-2"
+	>
+		<slot />
+	</VBtn>
 </template>
 
 <style lang="scss" scoped>

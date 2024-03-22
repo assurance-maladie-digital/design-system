@@ -58,49 +58,49 @@ export default defineComponent({
 </script>
 
 <template>
-  <VAlert
-    v-bind="$attrs"
-    :type="type"
-    :class="type"
-    :style="!outlined ? 'border-left: 4px solid' : ''"
-    :variant="outlined ? 'outlined' : 'tonal'"
-    :closable="dismissible"
-    class="vd-alert-wrapper"
-  >
-    <template #prepend>
-      <VIcon class="vd-alert-icon rounded-circle mr-4">
-        <slot name="icon">
-          {{ alertIcon }}
-        </slot>
-      </VIcon>
-    </template>
+	<VAlert
+		v-bind="$attrs"
+		:type="type"
+		:class="type"
+		:style="!outlined ? 'border-left: 4px solid' : ''"
+		:variant="outlined ? 'outlined' : 'tonal'"
+		:closable="dismissible"
+		class="vd-alert-wrapper"
+	>
+		<template #prepend>
+			<VIcon class="vd-alert-icon rounded-circle mr-4">
+				<slot name="icon">
+					{{ alertIcon }}
+				</slot>
+			</VIcon>
+		</template>
 
-    <template #default>
-      <slot />
-    </template>
+		<template #default>
+			<slot />
+		</template>
 
-    <template
-      v-if="dismissible"
-      #close
-    >
-      <VBtn
-        :color="outlined ? undefined : 'primary'"
-        :ripple="false"
-        variant="text"
-        class="vd-close-btn pl-0 pr-1 ml-4"
-        @click="dismissAlert"
-      >
-        <VIcon
-          size="small"
-          class="mr-1"
-        >
-          {{ closeIcon }}
-        </VIcon>
+		<template
+			v-if="dismissible"
+			#close
+		>
+			<VBtn
+				:color="outlined ? undefined : 'primary'"
+				:ripple="false"
+				variant="text"
+				class="vd-close-btn pl-0 pr-1 ml-4"
+				@click="dismissAlert"
+			>
+				<VIcon
+					size="small"
+					class="mr-1"
+				>
+					{{ closeIcon }}
+				</VIcon>
 
-        {{ locales.close }}
-      </VBtn>
-    </template>
-  </VAlert>
+				{{ locales.close }}
+			</VBtn>
+		</template>
+	</VAlert>
 </template>
 
 <style lang="scss" scoped>

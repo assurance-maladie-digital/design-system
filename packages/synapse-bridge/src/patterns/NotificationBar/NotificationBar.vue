@@ -103,80 +103,80 @@ export default defineComponent({
 </script>
 
 <template>
-  <VSnackbar
-    v-bind="options.snackBar"
-    :model-value="snackbar"
-    :color="snackbarColor"
-    :vertical="mobileVersion && hasLongContent"
-    :multi-line="hasLongContent"
-    :width="mobileVersion ? 'auto' : '960px'"
-    role="status"
-    :location="bottom ? 'bottom' : 'top'"
-    class="vd-notification-bar"
-  >
-    <div
-      :class="'text-' + contentColor"
-      class="vd-notification-content"
-    >
-      <VIcon
-        v-if="!mobileVersion"
-        v-bind="options.icon"
-        :color="contentColor"
-        class="vd-notification-icon"
-      >
-        {{ icon }}
-      </VIcon>
+	<VSnackbar
+		v-bind="options.snackBar"
+		:model-value="snackbar"
+		:color="snackbarColor"
+		:vertical="mobileVersion && hasLongContent"
+		:multi-line="hasLongContent"
+		:width="mobileVersion ? 'auto' : '960px'"
+		role="status"
+		:location="bottom ? 'bottom' : 'top'"
+		class="vd-notification-bar"
+	>
+		<div
+			:class="'text-' + contentColor"
+			class="vd-notification-content"
+		>
+			<VIcon
+				v-if="!mobileVersion"
+				v-bind="options.icon"
+				:color="contentColor"
+				class="vd-notification-icon"
+			>
+				{{ icon }}
+			</VIcon>
 
-      {{ notification?.message }}
+			{{ notification?.message }}
 
-      <VSpacer />
+			<VSpacer />
 
-      <VDivider
-        v-if="mobileVersion && hasLongContent"
-        :color="contentColor"
-        :style="{ borderColor: dividerColor }"
-        class="w-100 my-3"
-      />
+			<VDivider
+				v-if="mobileVersion && hasLongContent"
+				:color="contentColor"
+				:style="{ borderColor: dividerColor }"
+				class="w-100 my-3"
+			/>
 
-      <div class="d-flex flex-row justify-space-between">
-        <VDivider
-          v-if="!mobileVersion && hasLongContent"
-          :color="contentColor"
-          :style="{ borderColor: dividerColor }"
-          class="mx-4"
-          :vertical="true"
-        />
-        <slot
-          name="action"
-          :attrs="actionSlotAttrs"
-        />
-        <slot
-          name="default"
-        />
-        <VBtn
-          v-bind="{
-            ...options.btn,
-          }"
-          :color="contentColor"
-          :icon="smallCloseBtn"
-          :class="{ 'ma-0': smallCloseBtn }"
-          class="ml-4"
-          @click="clearNotification"
-        >
-          <span :class="{ 'd-sr-only': smallCloseBtn }">
-            {{ closeBtnText }}
-          </span>
+			<div class="d-flex flex-row justify-space-between">
+				<VDivider
+					v-if="!mobileVersion && hasLongContent"
+					:color="contentColor"
+					:style="{ borderColor: dividerColor }"
+					class="mx-4"
+					:vertical="true"
+				/>
+				<slot
+					name="action"
+					:attrs="actionSlotAttrs"
+				/>
+				<slot
+					name="default"
+				/>
+				<VBtn
+					v-bind="{
+						...options.btn,
+					}"
+					:color="contentColor"
+					:icon="smallCloseBtn"
+					:class="{ 'ma-0': smallCloseBtn }"
+					class="ml-4"
+					@click="clearNotification"
+				>
+					<span :class="{ 'd-sr-only': smallCloseBtn }">
+						{{ closeBtnText }}
+					</span>
 
-          <VIcon
-            v-if="smallCloseBtn"
-            v-bind="options.closeIcon"
-          >
-            {{ closeIcon }}
-          </VIcon>
-        </VBtn>
-      </div>
-    </div>
-  </VSnackbar>
+					<VIcon
+						v-if="smallCloseBtn"
+						v-bind="options.closeIcon"
+					>
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
+			</div>
+		</div>
+	</VSnackbar>
 </template>
 
 <style lang="scss" scoped>

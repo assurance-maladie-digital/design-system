@@ -64,56 +64,56 @@ export default defineComponent({
 </script>
 
 <template>
-  <PageContainer size="m">
-    <VCard
-      :elevation="mobileVersion ? 0 : 2"
-      class="pa-6 pa-sm-16"
-    >
-      <VRow class="max-width-none">
-        <VCol
-          :sm="$slots.illustration ? 6 : 12"
-          cols="12"
-          class="order-last order-sm-first text-center text-sm-left"
-        >
-          <div class="vd-code font-weight-thin text-primary mb-4">
-            <span class="d-sr-only">{{ codeErrorText }}</span> {{ code }}
-          </div>
+	<PageContainer size="m">
+		<VCard
+			:elevation="mobileVersion ? 0 : 2"
+			class="pa-6 pa-sm-16"
+		>
+			<VRow class="max-width-none">
+				<VCol
+					:sm="$slots.illustration ? 6 : 12"
+					cols="12"
+					class="order-last order-sm-first text-center text-sm-left"
+				>
+					<div class="vd-code font-weight-thin text-primary mb-4">
+						<span class="d-sr-only">{{ codeErrorText }}</span> {{ code }}
+					</div>
 
-          <h2 class="mb-2 font-weight-bold text-h5 mb-4">
-            {{ pageTitle }}
-          </h2>
+					<h2 class="mb-2 font-weight-bold text-h5 mb-4">
+						{{ pageTitle }}
+					</h2>
 
-          <p>
-            {{ message }}
-          </p>
+					<p>
+						{{ message }}
+					</p>
 
-          <slot name="additional-content" />
+					<slot name="additional-content" />
 
-          <slot name="action">
-            <VBtn
-              v-if="!noBtn && btnText && (route || btnHref)"
-              :to="route"
-              :href="btnHref"
-              color="primary"
-              exact
-              class="mt-6"
-            >
-              {{ btnText }}
-            </VBtn>
-          </slot>
-        </VCol>
+					<slot name="action">
+						<VBtn
+							v-if="!noBtn && btnText && (route || btnHref)"
+							:to="route"
+							:href="btnHref"
+							color="primary"
+							exact
+							class="mt-6"
+						>
+							{{ btnText }}
+						</VBtn>
+					</slot>
+				</VCol>
 
-        <VCol
-          v-if="$slots.illustration"
-          cols="12"
-          sm="6"
-          class="d-flex align-center justify-center"
-        >
-          <slot name="illustration" />
-        </VCol>
-      </VRow>
-    </VCard>
-  </PageContainer>
+				<VCol
+					v-if="$slots.illustration"
+					cols="12"
+					sm="6"
+					class="d-flex align-center justify-center"
+				>
+					<slot name="illustration" />
+				</VCol>
+			</VRow>
+		</VCard>
+	</PageContainer>
 </template>
 
 <style lang="scss" scoped>

@@ -23,19 +23,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="vd-skip-link-container">
-    <span
-      ref="skipLinkSpan"
-      tabindex="-1"
-    />
+	<div class="vd-skip-link-container">
+		<span
+			ref="skipLinkSpan"
+			tabindex="-1"
+		/>
 
-    <a
-      :href="target"
-      class="vd-skip-link text-primary d-block d-sr-only-focusable px-2"
-    >
-      <slot>{{ label }}</slot>
-    </a>
-  </div>
+		<a
+			:href="target"
+			class="vd-skip-link text-primary d-block d-sr-only-focusable px-2"
+		>
+			<slot>{{ label }}</slot>
+		</a>
+	</div>
 </template>
 
 <style lang="scss" scoped>

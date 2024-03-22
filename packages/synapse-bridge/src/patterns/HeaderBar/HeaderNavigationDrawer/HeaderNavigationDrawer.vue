@@ -65,49 +65,49 @@ export default defineComponent({
 </script>
 
 <template>
-  <VNavigationDrawer
-    v-if="mobileVersion && items"
-    :color="backgroundColor"
-    :model-value="drawer"
-    v-bind="options"
-    @input="drawerUpdated"
-  >
-    <slot>
-      <div class="d-flex align-center justify-end mb-8">
-        <VBtn
-          v-bind="options.closeBtn"
-          variant="text"
-          :aria-label="locales.closeBtn"
-          @click="emitChangeEvent"
-        >
-          <VIcon v-bind="options.closeIcon">
-            {{ closeIcon }}
-          </VIcon>
-        </VBtn>
-      </div>
+	<VNavigationDrawer
+		v-if="mobileVersion && items"
+		:color="backgroundColor"
+		:model-value="drawer"
+		v-bind="options"
+		@input="drawerUpdated"
+	>
+		<slot>
+			<div class="d-flex align-center justify-end mb-8">
+				<VBtn
+					v-bind="options.closeBtn"
+					variant="text"
+					:aria-label="locales.closeBtn"
+					@click="emitChangeEvent"
+				>
+					<VIcon v-bind="options.closeIcon">
+						{{ closeIcon }}
+					</VIcon>
+				</VBtn>
+			</div>
 
-      <slot name="navigation-drawer-prepend" />
+			<slot name="navigation-drawer-prepend" />
 
-      <VTabs
-        v-bind="options.tabs"
-        :model-value="tab"
-        class="flex-grow-0"
-        @change="emitTabUpdateEvent"
-      >
-        <VTab
-          v-for="(item, index) in items"
-          :key="index"
-          :href="item.href"
-          :to="item.to"
-          v-bind="options.tab"
-        >
-          {{ item.label }}
-        </VTab>
-      </VTabs>
+			<VTabs
+				v-bind="options.tabs"
+				:model-value="tab"
+				class="flex-grow-0"
+				@change="emitTabUpdateEvent"
+			>
+				<VTab
+					v-for="(item, index) in items"
+					:key="index"
+					:href="item.href"
+					:to="item.to"
+					v-bind="options.tab"
+				>
+					{{ item.label }}
+				</VTab>
+			</VTabs>
 
-      <slot name="navigation-drawer-append" />
-    </slot>
-  </VNavigationDrawer>
+			<slot name="navigation-drawer-append" />
+		</slot>
+	</VNavigationDrawer>
 </template>
 
 <style lang="scss" scoped>

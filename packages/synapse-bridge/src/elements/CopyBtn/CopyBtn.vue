@@ -54,35 +54,35 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="vd-copy-btn">
-    <VMenu
-      v-model="tooltip"
-      v-bind="options.menu"
-      :disabled="hideTooltip"
-    >
-      <template #activator="{ props }">
-        <VBtn
-          v-bind="{
-            ...props,
-            ...options.btn
-          }"
-          :aria-label="label"
-          data-test-id="copy-btn"
-          @click="copy"
-        >
-          <slot name="icon">
-            <VIcon v-bind="options.icon">
-              {{ copyIcon }}
-            </VIcon>
-          </slot>
-        </VBtn>
-      </template>
+	<div class="vd-copy-btn">
+		<VMenu
+			v-model="tooltip"
+			v-bind="options.menu"
+			:disabled="hideTooltip"
+		>
+			<template #activator="{ props }">
+				<VBtn
+					v-bind="{
+						...props,
+						...options.btn
+					}"
+					:aria-label="label"
+					data-test-id="copy-btn"
+					@click="copy"
+				>
+					<slot name="icon">
+						<VIcon v-bind="options.icon">
+							{{ copyIcon }}
+						</VIcon>
+					</slot>
+				</VBtn>
+			</template>
 
-      <slot name="tooltip">
-        {{ locales.tooltip }}
-      </slot>
-    </VMenu>
-  </div>
+			<slot name="tooltip">
+				{{ locales.tooltip }}
+			</slot>
+		</VMenu>
+	</div>
 </template>
 
 <style lang="scss">

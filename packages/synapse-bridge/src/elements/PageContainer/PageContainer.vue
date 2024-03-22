@@ -63,15 +63,15 @@ export default defineComponent({
 </script>
 
 <template>
-  <div
-    :class="spacingClass"
-    class="vd-page-container d-flex justify-center"
-  >
-    <VSheet
-      :width="containerSize"
-      :color="color"
-    >
-      <slot />
-    </VSheet>
-  </div>
+	<div
+		:class="spacingClass"
+		class="vd-page-container d-flex justify-center"
+	>
+		<VSheet
+			:width="containerSize"
+			:color="color"
+		>
+			<slot />
+		</VSheet>
+	</div>
 </template>

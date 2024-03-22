@@ -84,51 +84,51 @@ export default defineComponent({
 </script>
 
 <template>
-  <div
-    :aria-label="label"
-    :style="widthStyles"
-    class="vd-data-list"
-  >
-    <VFadeTransition mode="out-in">
-      <DataListLoading
-        v-if="loading"
-        :items-number="itemsNumberLoading"
-        :heading="headingLoading"
-        :title-class="titleClass"
-        :row="row"
-      />
+	<div
+		:aria-label="label"
+		:style="widthStyles"
+		class="vd-data-list"
+	>
+		<VFadeTransition mode="out-in">
+			<DataListLoading
+				v-if="loading"
+				:items-number="itemsNumberLoading"
+				:heading="headingLoading"
+				:title-class="titleClass"
+				:row="row"
+			/>
 
-      <div v-else>
-        <slot name="title">
-          <h4
-            v-if="listTitle"
-            :class="titleClass"
-          >
-            {{ listTitle }}
-          </h4>
-        </slot>
+			<div v-else>
+				<slot name="title">
+					<h4
+						v-if="listTitle"
+						:class="titleClass"
+					>
+						{{ listTitle }}
+					</h4>
+				</slot>
 
-        <ul v-if="items.length > 0">
-          <DataListItem
-            v-for="(item, index) in items"
-            :key="index"
-            :label="item.key"
-            :value="item.value"
-            :action="item.action"
-            :chip="item.chip"
-            :row="row"
-            :render-html-value="renderHtmlValue"
-            :icon="getIcon(item.icon)"
-            :placeholder="placeholder"
-            :vuetify-options="item.options"
-            :class="getItemClass(index, item.class)"
-            class="vd-data-list-item text-body-1"
-            @click:action="$emit('click:item-action', index)"
-          />
-        </ul>
-      </div>
-    </VFadeTransition>
-  </div>
+				<ul v-if="items.length > 0">
+					<DataListItem
+						v-for="(item, index) in items"
+						:key="index"
+						:label="item.key"
+						:value="item.value"
+						:action="item.action"
+						:chip="item.chip"
+						:row="row"
+						:render-html-value="renderHtmlValue"
+						:icon="getIcon(item.icon)"
+						:placeholder="placeholder"
+						:vuetify-options="item.options"
+						:class="getItemClass(index, item.class)"
+						class="vd-data-list-item text-body-1"
+						@click:action="$emit('click:item-action', index)"
+					/>
+				</ul>
+			</div>
+		</VFadeTransition>
+	</div>
 </template>
 
 <style lang="scss" scoped>
