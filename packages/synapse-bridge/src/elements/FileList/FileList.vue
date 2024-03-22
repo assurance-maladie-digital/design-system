@@ -5,7 +5,7 @@ import type { PropType } from "vue";
 import { config } from "./config";
 import { locales } from "./locales";
 
-import { FileItem, IconInfo } from "./types";
+import { FileItem, IconInfo, FileState } from "./types";
 
 import { FileStateEnum } from "./FileStateEnum";
 
@@ -65,7 +65,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		getIconInfo(state: FileStateEnum): IconInfo {
+		getIconInfo(state?: FileState): IconInfo {
 			switch (state) {
 				case FileStateEnum.ERROR: {
 					return {

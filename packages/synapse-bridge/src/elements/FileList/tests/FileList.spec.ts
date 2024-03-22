@@ -1,98 +1,60 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { shallowMount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import FileList from "../";
 
-const files = [
-	{
-		id: "0",
-		title: "test",
-		state: "success",
-	},
-] as any;
-
-const files2 = [
-	{
-		id: "1",
-		title: "test",
-		state: "error",
-	},
-] as any;
-
-const files3 = [
-	{
-		id: "2",
-		title: "test",
-	},
-] as any;
 
 describe("FileList", () => {
-	it("renders correctly", () => {
-		const wrapper = shallowMount(FileList, {
+	let wrapper: any;
+
+	beforeEach(() => {
+		wrapper = shallowMount(FileList, {
 			propsData: {
-				files,
+				files: [
+					{
+						id: "0",
+						title: "test",
+						state: "success",
+					},
+				],
 			},
 			global: {
 				plugins: [vuetify],
 			},
 		});
+	});
 
+	it("renders correctly", () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
 	it("renders iconColor grey correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		expect(wrapper.vm.iconColor).toBe("grey");
 	});
 
 	it("renders iconColor correctly with dark theme", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		wrapper.vm.$vuetify.theme.current.dark = true;
 
 		expect(wrapper.vm.iconColor).toBe("grey-lighten-40");
 	});
 
 	it("returns success icon info correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		expect(wrapper.vm.getIconInfo("success")).toEqual({
 			icon: "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z",
 			color: "success",
 		});
 	});
 
-	it("returns error icon info correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files2,
-			},
-			global: {
-				plugins: [vuetify],
-			},
+	it("returns error icon info correctly", async () => {
+		await wrapper.setProps({
+			files: [
+				{
+					id: "1",
+					title: "test",
+					state: "error",
+				},
+			]
 		});
 
 		expect(wrapper.vm.getIconInfo("error")).toEqual({
@@ -104,7 +66,12 @@ describe("FileList", () => {
 	it("returns default icon info correctly", () => {
 		const wrapper = shallowMount(FileList, {
 			propsData: {
-				files3,
+				files: [
+					{
+						id: "2",
+						title: "test",
+					},
+				] as any
 			},
 			global: {
 				plugins: [vuetify],
@@ -118,54 +85,19 @@ describe("FileList", () => {
 	});
 
 	it("returns success color correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		expect(wrapper.vm.getItemColor("success")).toBe(undefined);
 	});
 
 	it("returns other color correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		expect(wrapper.vm.getItemColor("error")).toBe("text-grey");
 	});
 
 	it("returns showDivider correctly", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
-
 		expect(wrapper.vm.showDivider(0)).toBe(true);
 	});
 
-	it("returns showDivider correctly with hideLastDivider", () => {
-		const wrapper = shallowMount(FileList, {
-			propsData: {
-				files,
-				hideLastDivider: true,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		});
+	it("returns showDivider correctly with hideLastDivider", async () => {
+		await wrapper.setProps({hideLastDivider: true});
 
 		expect(wrapper.vm.showDivider(0)).toBe(false);
 	});
