@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import Components from 'unplugin-vue-components/vite'
 
 export default defineConfig(({ mode }) => {
 	const config = {
@@ -19,7 +20,8 @@ export default defineConfig(({ mode }) => {
 			),
 			dts({
 				rollupTypes: true
-			})
+			}),
+			Components ({dirs: ["src/elements","src/patterns", "src/templates"] }),
 		],
 		define: {
 			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
