@@ -107,7 +107,6 @@ export default defineComponent({
 	.vd-close-btn {
 		font-size: 1rem;
 		width: auto;
-		height: auto;
 		height: 36px;
 		min-width: 64px;
 		padding: 0 16px;
@@ -159,6 +158,9 @@ export default defineComponent({
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		:deep(.v-alert__content) {
+			align-self: flex-start !important;
+		}
 	}
 
 	.vd-close-btn {

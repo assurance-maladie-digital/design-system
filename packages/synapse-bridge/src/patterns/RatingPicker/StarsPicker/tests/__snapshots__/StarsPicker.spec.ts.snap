@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StarsPicker > renders correctly 1`] = `
+<fieldset data-v-e2cb1ead="" class="vd-stars-picker">
+  <legend data-v-e2cb1ead="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
+  <div data-v-e2cb1ead="" class="v-rating v-theme--light d-flex flex-wrap max-width-none mx-n3"><label for="v-rating-0-0" class=""><span class="v-rating__hidden">Rating 0 of 5</span>
+      <!---->
+    </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" tabindex="-1" value="0">
+    <div class="v-rating__wrapper">
+      <!---->
+      <div class="v-rating__item"><label for="v-rating-0-1" class=""><span class="v-rating__hidden">Rating 1 of 5</span><!-- Using click event on VIcon will convert it into a button --><button data-v-e2cb1ead="" aria-pressed="false"><i data-v-e2cb1ead="" class="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z mdi v-icon notranslate v-theme--light text-am-blue-lighten-60 py-0 px-2" style="font-size: 36px; height: 36px; width: 36px;" aria-hidden="true"></i></button></label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-1" type="radio" tabindex="-1" value="1"></div>
+      <!---->
+    </div>
+    <div class="v-rating__wrapper">
+      <!---->
+      <div class="v-rating__item"><label for="v-rating-0-2" class=""><span class="v-rating__hidden">Rating 2 of 5</span><!-- Using click event on VIcon will convert it into a button --><button data-v-e2cb1ead="" aria-pressed="false"><i data-v-e2cb1ead="" class="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z mdi v-icon notranslate v-theme--light text-am-blue-lighten-60 py-0 px-2" style="font-size: 36px; height: 36px; width: 36px;" aria-hidden="true"></i></button></label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-2" type="radio" tabindex="-1" value="2"></div>
+      <!---->
+    </div>
+    <div class="v-rating__wrapper">
+      <!---->
+      <div class="v-rating__item"><label for="v-rating-0-3" class=""><span class="v-rating__hidden">Rating 3 of 5</span><!-- Using click event on VIcon will convert it into a button --><button data-v-e2cb1ead="" aria-pressed="false"><i data-v-e2cb1ead="" class="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z mdi v-icon notranslate v-theme--light text-am-blue-lighten-60 py-0 px-2" style="font-size: 36px; height: 36px; width: 36px;" aria-hidden="true"></i></button></label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-3" type="radio" tabindex="-1" value="3"></div>
+      <!---->
+    </div>
+    <div class="v-rating__wrapper">
+      <!---->
+      <div class="v-rating__item"><label for="v-rating-0-4" class=""><span class="v-rating__hidden">Rating 4 of 5</span><!-- Using click event on VIcon will convert it into a button --><button data-v-e2cb1ead="" aria-pressed="false"><i data-v-e2cb1ead="" class="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z mdi v-icon notranslate v-theme--light text-am-blue-lighten-60 py-0 px-2" style="font-size: 36px; height: 36px; width: 36px;" aria-hidden="true"></i></button></label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-4" type="radio" tabindex="-1" value="4"></div>
+      <!---->
+    </div>
+    <div class="v-rating__wrapper">
+      <!---->
+      <div class="v-rating__item"><label for="v-rating-0-5" class=""><span class="v-rating__hidden">Rating 5 of 5</span><!-- Using click event on VIcon will convert it into a button --><button data-v-e2cb1ead="" aria-pressed="false"><i data-v-e2cb1ead="" class="M12,15.39L8.24,17.66L9.23,13.38L5.91,10.5L10.29,10.13L12,6.09L13.71,10.13L18.09,10.5L14.77,13.38L15.76,17.66M22,9.24L14.81,8.63L12,2L9.19,8.63L2,9.24L7.45,13.97L5.82,21L12,17.27L18.18,21L16.54,13.97L22,9.24Z mdi v-icon notranslate v-theme--light text-am-blue-lighten-60 py-0 px-2" style="font-size: 36px; height: 36px; width: 36px;" aria-hidden="true"></i></button></label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-5" type="radio" tabindex="-1" value="5"></div>
+      <!---->
+    </div>
+  </div>
+</fieldset>
+`;
