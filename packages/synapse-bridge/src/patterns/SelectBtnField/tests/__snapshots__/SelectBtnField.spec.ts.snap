@@ -1,0 +1,116 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SelectBtnField > display correctly in dark mode with an error 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div>
+      <div data-v-044548c4="" class="vd-select-btn-field">
+        <div data-v-044548c4="" class="v-btn-group v-theme--dark v-btn-group--density-default v-btn-toggle vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Test" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--dark v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center text-error justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--dark v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" aria-hidden="true"></i></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--dark v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center text-error justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--dark v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" aria-hidden="true"></i></span>
+            <!---->
+            <!---->
+          </button></div>
+        <p data-v-044548c4="" class="theme--dark v-messages text-error px-3 mt-2 mb-0">Test</p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectBtnField > display correctly with an error 1`] = `
+<div data-v-044548c4="" class="vd-form-input vd-select-btn-field">
+  <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Test" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center text-error justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center text-error justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center text-error justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test3"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 3</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button></div>
+  <p data-v-044548c4="" class="theme--light v-messages text-error px-3 mt-2 mb-0">Test</p>
+</div>
+`;
+
+exports[`SelectBtnField > display correctly with in dark mode with an hint 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div>
+      <div data-v-044548c4="" class="vd-select-btn-field">
+        <div data-v-044548c4="" class="v-btn-group v-theme--dark v-btn-group--density-default v-btn-toggle vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Test" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--dark v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--dark v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" aria-hidden="true"></i></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--dark v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--dark v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" aria-hidden="true"></i></span>
+            <!---->
+            <!---->
+          </button></div>
+        <p data-v-044548c4="" class="theme--dark v-messages px-3 mt-2 mb-0">Test</p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectBtnField > render correctly in multiple mode 1`] = `
+<div data-v-044548c4="" class="vd-form-input vd-select-btn-field">
+  <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Test" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value=""><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test3"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 3</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button></div>
+  <p data-v-044548c4="" class="theme--light v-messages px-3 mt-2 mb-0">Test</p>
+</div>
+`;
+
+exports[`SelectBtnField > renders correctly 1`] = `
+<div data-v-044548c4="" class="vd-form-input vd-select-btn-field">
+  <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" role="listbox"></div>
+  <!--v-if-->
+</div>
+`;
+
+exports[`SelectBtnField > renders correctly with props 1`] = `
+<div data-v-044548c4="" class="vd-form-input vd-select-btn-field">
+  <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Test" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value=""><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 2</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="test3"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+      <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Test 3</span>
+      <!--v-if--></span>
+      <!---->
+      <!---->
+    </button></div>
+  <p data-v-044548c4="" class="theme--light v-messages px-3 mt-2 mb-0">Test</p>
+</div>
+`;
