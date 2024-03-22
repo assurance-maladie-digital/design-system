@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LangBtn > open the menu when clicked 1`] = `
+<button data-v-4a841ee1="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined" aria-label="Choix de la langue. Actuellement Français" targetref="[object Object]" aria-haspopup="menu" aria-expanded="true" aria-owns="v-menu-0" id="lang-menu-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-4a841ee1="" class="ml-1">Français</span><i data-v-4a841ee1="" class="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z mdi v-icon notranslate v-theme--light v-icon--size-default ml-1" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+<!--teleport start-->
+<!--teleport end-->
+`;
+
+exports[`LangBtn > renders correctly 1`] = `<v-menu-stub data-v-4a841ee1="" class="vd-lang-btn" contentclass="vd-lang-menu" attach="false" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="2000" activatorprops="[object Object]" openonhover="false" closeoncontentclick="true" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="[object Object]" offsety="true"></v-menu-stub>`;
+
+exports[`LangBtn > renders properly when all the languages are displayed 1`] = `
+<button data-v-4a841ee1="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-outlined" aria-label="Choix de la langue. Actuellement Français" targetref="[object Object]" aria-haspopup="menu" aria-expanded="true" aria-owns="v-menu-0" id="lang-menu-btn"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-4a841ee1="" class="">Français</span>
+  <!--v-if--></span>
+  <!---->
+  <!---->
+</button>
+<!--teleport start-->
+<!--teleport end-->
+`;

@@ -1,0 +1,208 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PhoneField > renders correctly 1`] = `
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined">
+  <!---->
+  <div class="v-input__control">
+    <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
+      <div class="v-field__overlay"></div>
+      <div class="v-field__loader">
+        <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+          <!---->
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+          <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+            <div class="v-progress-linear__indeterminate">
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
+            </div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <!---->
+      <div class="v-field__field" data-no-activator="">
+        <!----><label class="v-label v-field-label" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+        <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" validateonblur="true" class="v-field__input">
+        <!---->
+      </div>
+      <!---->
+      <div class="v-field__append-inner"><i class="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i>
+        <!---->
+      </div>
+      <div class="v-field__outline">
+        <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <div class="v-input__details">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <!---->
+    </transition-stub>
+    <!----><span></span>
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+      <div class="v-counter" style="display: none;">0 / 10</div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`PhoneField > renders correctly with outlined prop 1`] = `
+<div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field">
+  <!---->
+  <div class="v-input__control">
+    <div class="v-field v-field--appended v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+      <div class="v-field__overlay"></div>
+      <div class="v-field__loader">
+        <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+          <!---->
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+          <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+            <div class="v-progress-linear__indeterminate">
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
+            </div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <!---->
+      <div class="v-field__field" data-no-activator="">
+        <!----><label class="v-label v-field-label" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+        <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" validateonblur="true" class="v-field__input">
+        <!---->
+      </div>
+      <!---->
+      <div class="v-field__append-inner"><i class="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i>
+        <!---->
+      </div>
+      <div class="v-field__outline">
+        <div class="v-field__outline__start"></div>
+        <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+            <!---->Numéro de téléphone
+          </label></div>
+        <div class="v-field__outline__end"></div>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <!---->
+  <div class="v-input__details">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <!---->
+    </transition-stub>
+    <!----><span></span>
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+      <div class="v-counter" style="display: none;">0 / 10</div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`PhoneField > renders correctly with required prop 1`] = `
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined">
+  <!---->
+  <div class="v-input__control">
+    <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
+      <div class="v-field__overlay"></div>
+      <div class="v-field__loader">
+        <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+          <!---->
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+          <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+            <div class="v-progress-linear__indeterminate">
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
+            </div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <!---->
+      <div class="v-field__field" data-no-activator="">
+        <!----><label class="v-label v-field-label" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+        <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" validateonblur="true" class="v-field__input">
+        <!---->
+      </div>
+      <!---->
+      <div class="v-field__append-inner"><i class="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i>
+        <!---->
+      </div>
+      <div class="v-field__outline">
+        <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <div class="v-input__details">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <!---->
+    </transition-stub>
+    <!----><span></span>
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+      <div class="v-counter" style="display: none;">0 / 10</div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`PhoneField > renders correctly with value prop 1`] = `
+<div class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined">
+  <!---->
+  <div class="v-input__control">
+    <div class="v-field v-field--active v-field--appended v-field--dirty v-field--variant-underlined v-theme--light v-locale--is-ltr">
+      <div class="v-field__overlay"></div>
+      <div class="v-field__loader">
+        <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+          <!---->
+          <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+          <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+            <div class="v-progress-linear__indeterminate">
+              <div class="v-progress-linear__indeterminate long bg-primary"></div>
+              <div class="v-progress-linear__indeterminate short bg-primary"></div>
+            </div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <!---->
+      <div class="v-field__field" data-no-activator="">
+        <!----><label class="v-label v-field-label" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+        <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" validateonblur="true" class="v-field__input" data-maska-value="12 34 56 78 90">
+        <!---->
+      </div>
+      <!---->
+      <div class="v-field__append-inner"><i class="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i>
+        <!---->
+      </div>
+      <div class="v-field__outline">
+        <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+          <!---->Numéro de téléphone
+        </label>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <div class="v-input__details">
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <!---->
+    </transition-stub>
+    <!----><span></span>
+    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true">
+      <div class="v-counter" style="display: none;">10 / 10</div>
+    </transition-stub>
+  </div>
+</div>
+`;

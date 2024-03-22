@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderMenuBtn > renders correctly 1`] = `<v-btn-stub elevation="0" height="auto" color="transparent" class="px-2 mx-n2 vd-header-menu-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="false" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" tile="false" replace="false" exact="false" size="default" tag="button" variant="elevated" aria-label="Ouvrir le menu"></v-btn-stub>`;
+
+exports[`HeaderMenuBtn > renders correctly with props 1`] = `<v-btn-stub elevation="0" height="auto" color="primary" class="px-2 mx-n2 vd-header-menu-btn" symbol="Symbol(vuetify:v-btn-toggle)" flat="false" icon="mdi-menu" block="false" slim="false" stacked="false" ripple="true" border="false" density="default" disabled="false" loading="false" tile="false" replace="false" exact="false" size="default" tag="button" variant="elevated" aria-label="Ouvrir le menu"></v-btn-stub>`;

@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FooterBar > renders correctly 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <footer data-v-4fc2321c="" class="v-footer v-theme--light elevation-3 vd-footer-bar flex-column align-stretch pa-3 w-100" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); caret-color: #000; height: auto;" minheight="40px" role="contentinfo">
+      <!--v-if-->
+      <!--v-if-->
+      <!--v-if-->
+      <ul data-v-4fc2321c="" class="py-2 py-sm-0 vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3">
+        <li data-v-4fc2321c="">
+          <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="0" class="text--primary my-3 mx-4">Plan du site</routerlink>
+        </li>
+        <li data-v-4fc2321c="">
+          <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="1" class="text--primary my-3 mx-4">Conditions générales d’utilisation</routerlink>
+        </li>
+        <li data-v-4fc2321c="">
+          <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="2" class="text--primary my-3 mx-4">Gestion des cookies</routerlink>
+        </li>
+        <li data-v-4fc2321c="">
+          <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="3" class="text--primary my-3 mx-4">Mentions légales</routerlink>
+        </li>
+        <li data-v-4fc2321c="">
+          <routerlink data-v-4fc2321c="" to="[object Object]" tabindex="4" class="text--primary my-3 mx-4">Accessibilité&nbsp;: non conforme</routerlink>
+        </li>
+        <!--v-if-->
+      </ul>
+    </footer>
+  </div>
+</div>
+`;

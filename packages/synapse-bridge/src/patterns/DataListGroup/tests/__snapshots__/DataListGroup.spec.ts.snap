@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DataListGroup > renders correctly 1`] = `
+<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4">
+  <data-list-stub items="[object Object],[object Object]" listtitle="Catégorie 1" titleclass="text-subtitle-1 font-weight-bold mb-3" row="false" loading="false" itemsnumberloading="2" headingloading="true" renderhtmlvalue="false" width="200px" class="ma-4"></data-list-stub>
+  <data-list-stub items="[object Object],[object Object]" listtitle="Catégorie 2" titleclass="text-subtitle-1 font-weight-bold mb-3" row="false" loading="false" itemsnumberloading="2" headingloading="true" renderhtmlvalue="false" width="200px" class="ma-4"></data-list-stub>
+</div>
+`;
+
+exports[`DataListGroup > renders loading state correctly 1`] = `
+<div class="vd-data-list-group d-flex flex-wrap max-width-none ma-n4">
+  <data-list-stub items="[object Object],[object Object]" listtitle="Catégorie 1" titleclass="text-subtitle-1 font-weight-bold mb-3" row="false" loading="true" itemsnumberloading="2" headingloading="true" renderhtmlvalue="false" width="200px" class="ma-4"></data-list-stub>
+  <data-list-stub items="[object Object],[object Object]" listtitle="Catégorie 2" titleclass="text-subtitle-1 font-weight-bold mb-3" row="false" loading="true" itemsnumberloading="2" headingloading="true" renderhtmlvalue="false" width="200px" class="ma-4"></data-list-stub>
+</div>
+`;
