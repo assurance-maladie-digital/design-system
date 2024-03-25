@@ -324,6 +324,14 @@ export const drawerItems: DrawerItem[] = [
 		icon: mdiCogs,
 		items: [
 			{
+				title: 'CustomIcon',
+				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
+			},
+			{
 				title: 'Questionnaires',
 				items: [
 					{
@@ -524,14 +532,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
-			},
-			{
-				title: 'CustomIcon',
-				to: '/composants-techniques/custom-icon'
-			},
-			{
-				title: 'Module de notification',
-				to: '/composants-techniques/module-notification'
 			}
 		]
 	},
