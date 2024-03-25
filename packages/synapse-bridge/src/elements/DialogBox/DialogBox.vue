@@ -69,7 +69,7 @@ export default defineComponent({
 		async getSelectableElements(): Promise<HTMLElement[]> {
 			await this.$nextTick();
 
-			const parentNode = this.$refs.dialogContent?.$el; // Is undefined when dialog is closed
+			const parentNode = (this.$refs.dialogContent as VDialog)?.$el; // Is undefined when dialog is closed
 
 			if (!parentNode) {
 				return [];

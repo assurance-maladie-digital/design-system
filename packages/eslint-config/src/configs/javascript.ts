@@ -1,9 +1,13 @@
 import { type FlatESLintConfigItem } from 'eslint-define-config';
 import globals from 'globals';
+
+// @ts-expect-error missing types
+import js from '@eslint/js';
 import { pluginAntfu, pluginUnusedImports } from '../plugins';
 import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
 
 export const javascript: FlatESLintConfigItem[] = [
+	js.configs.recommended,
 	{
 		languageOptions: {
 			ecmaVersion: 2022,
@@ -29,7 +33,13 @@ export const javascript: FlatESLintConfigItem[] = [
 			'unused-imports': pluginUnusedImports,
 		},
 		rules: {
-			// TODO: configure
+			'no-fallthrough': 'off',
+			'no-console': [
+				'error',
+				{
+					allow: ['warn', 'error'],
+				},
+			],
 		},
 	},
 	{

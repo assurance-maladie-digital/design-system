@@ -2,7 +2,6 @@
 import { defineComponent } from 'vue';
 
 import { mdiAccount, mdiLoginVariant } from '@mdi/js';
-import { VIcon } from 'vuetify/components';
 
 import { config } from './config';
 import { locales } from './locales';

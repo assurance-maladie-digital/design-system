@@ -1,4 +1,4 @@
-import { type Parser, type FlatESLintConfigItem } from 'eslint-define-config';
+import { type FlatESLintConfigItem, type Parser } from 'eslint-define-config';
 import { parserTs, parserVue, pluginVue } from '../plugins';
 import { GLOB_VUE } from '../globs';
 import { hasTypeScript } from '../env';
@@ -111,7 +111,7 @@ export const vue: FlatESLintConfigItem[] = [
 			'vue/html-end-tags': 'warn',
 			'vue/html-indent': [
 				'error',
-				'tab'
+				'tab',
 			],
 			'vue/html-quotes': 'warn',
 			'vue/html-self-closing': 'warn',

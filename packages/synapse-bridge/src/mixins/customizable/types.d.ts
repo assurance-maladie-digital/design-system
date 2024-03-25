@@ -15,13 +15,13 @@ type Computed = {
 	options(): Options
 };
 
-type Methods = Record<string, never>;
+type Methods = Record<string, any>;
 
 type Mixins = ComponentOptionsMixin;
 
 type Extends = ComponentOptionsMixin;
 
-type Emits = Record<string, never>;
+type Emits = Record<string, any>;
 
 type EE = string;
 

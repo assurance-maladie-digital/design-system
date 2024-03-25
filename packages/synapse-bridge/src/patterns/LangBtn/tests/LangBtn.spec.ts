@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { shallowMount, mount } from '@vue/test-utils';
+import { shallowMount, mount, VueWrapper } from '@vue/test-utils';
 
 import { vuetify } from '@tests/unit/setup';
 import { VList } from 'vuetify/components';
@@ -71,7 +71,7 @@ describe('LangBtn', () => {
 	});
 
 	it('update the current lang to a valid value', async() => {
-		const wrapper = mount(LangBtn, {
+		const wrapper: VueWrapper = mount(LangBtn, {
 			propsData: {
 				'availableLanguages': ['fr', 'en'],
 				'modelValue': 'fr',

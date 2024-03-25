@@ -15,7 +15,7 @@ export const jsonc: FlatESLintConfigItem[] = [
 			parser: parserJsonc,
 		},
 		rules: {
-			// base rules
+			// Base rules
 			'jsonc/no-bigint-literals': 'error',
 			'jsonc/no-binary-expression': 'error',
 			'jsonc/no-binary-numeric-literals': 'error',
@@ -34,7 +34,7 @@ export const jsonc: FlatESLintConfigItem[] = [
 			'jsonc/no-unicode-codepoint-escapes': 'error',
 			'jsonc/valid-json-number': 'error',
 			'jsonc/vue-custom-block/no-parsing-error': 'error',
-			// extension rules
+			// Extension rules
 			'jsonc/array-bracket-newline': ['error', {
 				multiline: true,
 				minItems: null,

@@ -127,7 +127,6 @@ export default defineComponent({
 
 		toggleItem(item: SelectBtnItem): void {
 			this.internalValue = this.getNewValue(item);
-			console.log('toto');
 
 			this.$emit('update:error', false);
 			this.$emit('update:error-messages');

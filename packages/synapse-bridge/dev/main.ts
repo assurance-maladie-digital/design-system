@@ -39,7 +39,7 @@ const store = createStore({
 });
 
 createApp(Playground)
-	.use(store as any)
+	.use(store)
 	.use(vuetify)
 	.use(router)
 	.mount('#app');

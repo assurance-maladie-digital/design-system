@@ -4,9 +4,9 @@ export const GLOB_SRC = '**/*.?([cm])[jt]s?(x)';
 export const GLOB_JS = '**/*.?([cm])js';
 export const GLOB_TS = '**/*.?([cm])ts';
 
-// export const GLOB_STYLE = '**/*.{c,sc}ss'
-// export const GLOB_CSS = '**/*.css'
-// export const GLOB_SCSS = '**/*.scss'
+// Export const GLOB_STYLE = '**/*.{c,sc}ss'
+// Export const GLOB_CSS = '**/*.css'
+// Export const GLOB_SCSS = '**/*.scss'
 
 export const GLOB_JSON = '**/*.json';
 export const GLOB_JSON5 = '**/*.json5';
@@ -15,7 +15,7 @@ export const GLOB_JSONC = '**/*.jsonc';
 export const GLOB_MARKDOWN = '**/*.md';
 export const GLOB_VUE = '**/*.vue';
 export const GLOB_YAML = '**/*.y?(a)ml';
-// export const GLOB_HTML = '**/*.htm?(l)'
+// Export const GLOB_HTML = '**/*.htm?(l)'
 
 export const GLOB_TESTS = [
 	`**/__tests__/**/*.${GLOB_SRC_EXT}`,

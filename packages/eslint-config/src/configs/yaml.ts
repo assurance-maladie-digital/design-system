@@ -17,7 +17,7 @@ export const yaml: FlatESLintConfigItem[] = [
 		rules: {
 			'style/spaced-comment': 'off',
 
-			// base rules
+			// Base rules
 			'yaml/block-mapping-question-indicator-newline': 'error',
 			'yaml/block-mapping': 'error',
 			'yaml/block-sequence-hyphen-indicator-newline': 'error',
@@ -32,7 +32,7 @@ export const yaml: FlatESLintConfigItem[] = [
 			'yaml/plain-scalar': 'error',
 			'yaml/quotes': ['error', { avoidEscape: false, prefer: 'single' }],
 			'yaml/vue-custom-block/no-parsing-error': 'error',
-			// extension rules
+			// Extension rules
 			'yaml/flow-mapping-curly-newline': 'error',
 			'yaml/flow-mapping-curly-spacing': 'error',
 			'yaml/flow-sequence-bracket-newline': 'error',

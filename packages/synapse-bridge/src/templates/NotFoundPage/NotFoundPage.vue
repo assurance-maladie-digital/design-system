@@ -1,5 +1,4 @@
 <script lang="ts">
-import { URLSearchParams } from 'node:url';
 import { defineComponent } from 'vue';
 
 import { locales } from './locales';
@@ -25,6 +24,7 @@ export default defineComponent({
 			const SUPPORT_ID_PARAM_NAME = 'support_id';
 			const SPACE_CHARACTER = ' ';
 
+			// eslint-disable-next-line node/prefer-global/url-search-params
 			const params = new URLSearchParams(document.location.search);
 			let supportId = params.get(SUPPORT_ID_PARAM_NAME);
 

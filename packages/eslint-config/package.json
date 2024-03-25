@@ -30,7 +30,7 @@
 	},
 	"scripts": {
 		"lint": "eslint .",
-		"lint:fix": "eslint --fix .",
+		"lint:fix": "eslint . --fix",
 		"build": "tsup"
 	},
 	"peerDependencies": {
@@ -63,6 +63,7 @@
 	},
 	"devDependencies": {
 		"@cnamts/eslint-config": "workspace:*",
+		"@eslint/js": "^8.57.0",
 		"eslint": "8.57.0",
 		"tsup": "8.0.2"
 	},
