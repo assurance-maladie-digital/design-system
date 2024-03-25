@@ -37,7 +37,7 @@ exports[`NirField displays an error message when the fields are not totally fill
       </div>
       <div class="v-messages theme--light error--text" role="alert">
         <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-          <div class="v-messages__message">La longueur du numéro de sécurité social doit être de 13 caractères.</div>
+          <div class="v-messages__message">La longueur du numéro de sécurité sociale doit être de 13 caractères.</div>
           <div class="v-messages__message">La longueur de la clé doit être de 2 caractères.</div>
         </transition-group-stub>
       </div>
