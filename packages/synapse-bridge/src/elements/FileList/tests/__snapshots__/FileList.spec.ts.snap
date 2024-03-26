@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FileList > renders correctly 1`] = `<v-list-stub data-v-e73e8a82="" class="vd-file-list" disabled="false" lines="one" slim="false" nav="false" activatable="false" selectable="false" selectstrategy="single-leaf" openstrategy="list" mandatory="false" border="false" style="width: 100%;" density="default" itemtype="type" items="" itemtitle="title" itemvalue="value" itemchildren="children" itemprops="props" returnobject="false" valuecomparator="[Function]" tile="false" tag="div" variant="text"></v-list-stub>`;
