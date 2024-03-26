@@ -9,6 +9,12 @@ Ce composant est déprécié en faveur du composant [`FooterBar`](/composants/st
 
 </doc-alert>
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

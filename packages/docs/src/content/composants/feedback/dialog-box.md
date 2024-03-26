@@ -3,6 +3,12 @@ title: DialogBox
 description: L’élément `DialogBox` est utilisé pour afficher une boîte de dialogue avec des boutons d’actions.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

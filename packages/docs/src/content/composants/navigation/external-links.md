@@ -3,6 +3,12 @@ title: ExternalLinks
 description: L’élément `ExternalLinks` est utilisé pour afficher un menu avec une liste vers des liens externes.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

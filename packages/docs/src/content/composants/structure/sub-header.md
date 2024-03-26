@@ -3,6 +3,12 @@ title: SubHeader
 description: Le pattern `SubHeader` est utilisé pour afficher un bloc d’informations sous l’en-tête principale.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

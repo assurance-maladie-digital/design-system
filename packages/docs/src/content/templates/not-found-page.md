@@ -3,6 +3,12 @@ title: NotFoundPage
 description: Le template `NotFoundPage` est utilisé pour afficher une page d’erreur lors d’une erreur 404.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -3,6 +3,12 @@ title: HeaderBar
 description: Le pattern `HeaderBar` est utilisé pour afficher l’en-tête d’une page ainsi qu’une barre de navigation.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

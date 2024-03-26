@@ -1,5 +1,6 @@
 export enum ComponentStatusEnum {
 	READY = 'ready',
 	NEW = 'new',
-	DEPRECATED = 'deprecated'
+	DEPRECATED = 'deprecated',
+	BRIDGE = 'bridge'
 }

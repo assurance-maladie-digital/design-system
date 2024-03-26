@@ -53,6 +53,15 @@
 						>
 							Déprécié
 						</VChip>
+						<VChip
+							v-if="component.status === ComponentStatusEnum.BRIDGE || component.status === ComponentStatusEnum.DEPRECATED_BRIDGE"
+							outlined
+							small
+							color="#edad23"
+							class="ma-2"
+						>
+							Bridge
+						</VChip>
 					</VCardText>
 				</VCard>
 			</li>

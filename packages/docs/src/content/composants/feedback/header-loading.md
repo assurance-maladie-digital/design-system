@@ -3,6 +3,12 @@ title: HeaderLoading
 description: L’élément `HeaderLoading` est une extension du composant [`VSkeletonLoader`](https://vuetifyjs.com/en/components/skeleton-loaders/) de Vuetify, il est utilisé pour afficher un élément de chargement avec des dimensions personnalisées.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
