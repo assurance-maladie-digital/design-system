@@ -5,7 +5,7 @@ exports[`CookiesInformation > renders correctly 1`] = `
   <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
   <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
   <details data-v-7eab3eb5="">
-    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" start="false" end="false" size="default" tag="i"></v-icon-stub>
+    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" disabled="false" start="false" end="false" size="default" tag="i"></v-icon-stub>
     </summary>
     <cookies-table-stub data-v-7eab3eb5="" items="[object Object],[object Object]" class="mb-2"></cookies-table-stub>
   </details>
@@ -90,7 +90,7 @@ exports[`CookiesInformation > renders correctly without items 1`] = `
   <h2 data-v-7eab3eb5="" class="text-subtitle-1 font-weight-bold mb-2">Cookies fonctionnels</h2>
   <p data-v-7eab3eb5="" class="mb-4">Ces cookies sont utilisés pour capturer vos préférences sur notre site. Ils permettent de vous assurer un confort dans votre navigation.</p>
   <details data-v-7eab3eb5="">
-    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" start="false" end="false" size="default" tag="i"></v-icon-stub>
+    <summary data-v-7eab3eb5="" class="mb-1">Afficher les cookies <v-icon-stub data-v-7eab3eb5="" class="mr-2" disabled="false" start="false" end="false" size="default" tag="i"></v-icon-stub>
     </summary>
     <cookies-table-stub data-v-7eab3eb5="" items="" class="mb-2"></cookies-table-stub>
   </details>
