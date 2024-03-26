@@ -53,15 +53,13 @@
 						>
 							Déprécié
 						</VChip>
-						<VChip
-							v-if="component.status === ComponentStatusEnum.BRIDGE || component.status === ComponentStatusEnum.DEPRECATED_BRIDGE"
-							outlined
-							small
-							color="#edad23"
-							class="ma-2"
+						<VIcon
+							v-if="component.status === ComponentStatusEnum.BRIDGE"
+							color="#004439"
+							class="bridge"
 						>
-							Bridge
-						</VChip>
+							{{ bridgeIcon }}
+						</VIcon>
 					</VCardText>
 				</VCard>
 			</li>
@@ -75,6 +73,9 @@
 
 	import { ComponentDescription } from '../types/components';
 	import { ComponentStatusEnum } from '../constants/ComponentStatusEnum';
+	import {
+		mdiBridge
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -90,6 +91,7 @@
 	@Component
 	export default class DocComponentList extends MixinsDeclaration {
 		ComponentStatusEnum = ComponentStatusEnum;
+		bridgeIcon = mdiBridge;
 	}
 </script>
 
@@ -106,5 +108,11 @@
 
 	img {
 		object-fit: cover;
+	}
+
+	.bridge {
+		position: absolute;
+		bottom: 16px;
+		right: 16px;
 	}
 </style>
