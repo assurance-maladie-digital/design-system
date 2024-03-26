@@ -1,12 +1,19 @@
 <template>
 	<div class="doc-home-page-list">
-		<DocTextIcon
-			v-for="(item, index) in items"
-			:key="index"
-			:icon="item.icon"
-			:content="item.content"
-			:class="{ 'mt-6 mt-md-10': index > 0 }"
-		/>
+		<VRow>
+			<VCol
+				v-for="(item, index) in items"
+				:key="index"
+				cols="12"
+				sm="6"
+				class="m-2 p-2 v-col-auto background"
+			>
+				<DocTextHighlight
+					:title="item.title"
+					:content="item.content"
+				/>
+			</VCol>
+		</VRow>
 	</div>
 </template>
 
@@ -14,16 +21,25 @@
 	import Vue from 'vue';
 	import Component from 'vue-class-component';
 
-	import DocTextIcon from '../page/DocTextIcon.vue';
+	import DocTextHighlight from '../page/DocTextHighlight.vue';
 
 	import { homePageListItems } from '../../data/homePageListItems';
 
 	@Component({
 		components: {
-			DocTextIcon
+			DocTextHighlight
 		}
 	})
 	export default class DocHomePageList extends Vue {
 		items = homePageListItems;
 	}
 </script>
+
+
+<style lang="scss" scoped>
+.background {
+	background-color: rgba(#0c419a, 0.1);
+	border: 3px solid white;
+	border-radius: 10px;
+}
+</style>
