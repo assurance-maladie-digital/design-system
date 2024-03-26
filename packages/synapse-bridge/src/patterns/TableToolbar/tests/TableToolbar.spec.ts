@@ -181,7 +181,7 @@ describe("TableToolbar", () => {
 		wrapper.vm.$vuetify.display.name = "xs";
 
 		expect(wrapper.vm.textFieldClasses).toContain(
-			"vd-form-input-s mr-6 flex-grow-0"
+			"vd-form-input-s mr-6 flex-grow-1"
 		);
 	});
 
