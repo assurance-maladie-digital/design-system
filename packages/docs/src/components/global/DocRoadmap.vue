@@ -54,6 +54,10 @@
 			</VListItem>
 		</VSheet>
 
+		<div class="d-flex justify-center">
+			<img src="@/assets/images/bridge.png" alt="Roadmap Bridge" class="w-75 mb-8" />
+		</div>
+
 		<VSheet
 			outlined
 			rounded
