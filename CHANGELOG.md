@@ -28,7 +28,7 @@
   - **follow-redirects:** Mise à jour vers la `v1.15.6` ([#3448](https://github.com/assurance-maladie-digital/design-system/pull/3448))
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3414](https://github.com/assurance-maladie-digital/design-system/pull/3414))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3467](https://github.com/assurance-maladie-digital/design-system/pull/3467))
 
 - ⬆️ **Dépendances**
   - **@rushstack/eslint-patch:** Mise à jour vers la `v1.8.0` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
