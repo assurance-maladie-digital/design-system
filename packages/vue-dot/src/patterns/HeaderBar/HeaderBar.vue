@@ -35,6 +35,7 @@
 							:reduce-logo="isMiniVersion"
 							:home-link="homeLink"
 							:home-href="homeHref"
+							:home-arialabel="homeArialabel"
 						>
 							<template #brand-content>
 								<slot name="brand-content" />
@@ -159,6 +160,10 @@
 				default: undefined
 			},
 			homeHref: {
+				type: String,
+				default: undefined
+			},
+			homeArialabel: {
 				type: String,
 				default: undefined
 			},

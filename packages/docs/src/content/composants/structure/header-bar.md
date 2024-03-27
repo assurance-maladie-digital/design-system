@@ -26,6 +26,12 @@ Le sous-titre sera automatiquement masqué sur les écrans mobiles.
 
 <doc-example file="header-bar/title-sub-title"></doc-example>
 
+#### Accessibilité
+
+Vous pouvez personnaliser la propriété `aria-label` du lien de retour à l’accueil en utilisant la prop `home-arialabel`.
+
+<doc-example file="header-bar/ally"></doc-example>
+
 #### Menu de navigation
 
 Vous pouvez afficher un menu de navigation en utilisant la prop `navigation-items`.
