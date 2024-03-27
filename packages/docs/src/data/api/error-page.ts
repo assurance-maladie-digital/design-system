@@ -22,6 +22,12 @@ export const api: Api = {
 				description: 'Le code HTTP de l’erreur.'
 			},
 			{
+				name: 'codeErrorText',
+				type: 'string',
+				default: `'Code d’erreur\xa0:'`,
+				description: 'Le texte à afficher avant le code d’erreur pour les liseuses d’écran.'
+			},
+			{
 				name: 'btn-text',
 				type: 'string',
 				default: `'Retour à l’accueil'`,
