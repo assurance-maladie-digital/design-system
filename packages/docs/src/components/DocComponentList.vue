@@ -55,8 +55,8 @@
 						</VChip>
 						<VIcon
 							v-if="component.status === ComponentStatusEnum.BRIDGE"
-							color="#004439"
-							class="bridge"
+							color="#0c419a"
+							class="bridge rounded-circle"
 						>
 							{{ bridgeIcon }}
 						</VIcon>
@@ -114,5 +114,7 @@
 		position: absolute;
 		bottom: 16px;
 		right: 16px;
+		padding: 2px;
+		box-shadow: #000 1px 1px 9px -4px;
 	}
 </style>
