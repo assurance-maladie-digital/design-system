@@ -57,35 +57,36 @@
 			class="mt-3 mb-6"
 		/>
 
-		<div
+		<ul
 			:class="{ 'py-2 py-sm-0': !extendedMode }"
-			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3"
+			class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 pa-0"
 		>
 			<slot name="prepend" />
-
-			<component
-				:is="getLinkComponent(item)"
+			<li
 				v-for="(item, index) in footerLinksMapping"
 				:key="index"
-				:href="item.href"
-				:to="item.to"
-				:aria-label="item.ariaLabel"
-				:target="item.openInNewTab ? '_blank' : undefined"
-				:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
-				class="text--primary my-3 mx-4"
+				class="my-3 mx-4"
 			>
-				{{ item.text }}
-			</component>
-
-			<p
+				<component
+					:is="getLinkComponent(item)"
+					:href="item.href"
+					:to="item.to"
+					:aria-label="item.ariaLabel"
+					:target="item.openInNewTab ? '_blank' : undefined"
+					:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
+					class="text--primary"
+				>
+					{{ item.text }}
+				</component>
+			</li>
+			<li
 				v-if="version"
 				class="text--secondary my-3 mx-4"
 			>
 				{{ locales.versionLabel }} {{ version }}
-			</p>
-
+			</li>
 			<slot name="append" />
-		</div>
+		</ul>
 	</VFooter>
 </template>
 
@@ -283,6 +284,11 @@
 	}
 
 	.vd-footer-bar-links :deep() {
+		li {
+			list-style: none;
+			display: flex;
+		}
+
 		a {
 			transition: .15s;
 			text-decoration: none;

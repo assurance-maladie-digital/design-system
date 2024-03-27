@@ -4,22 +4,25 @@
 			{{ locales.followUs }}
 		</span>
 
-		<div class="d-flex justify-start justify-sm-end max-width-none mx-n2">
-			<VBtn
+		<ul class="d-flex justify-start justify-sm-end max-width-none mx-n2">
+			<li
 				v-for="social in links"
 				:key="social.index"
-				:href="social.href"
-				target="_blank"
-				rel="noopener noreferrer"
-				color="grey darken-2"
-				icon
-				class="mx-1"
 			>
-				<VIcon size="30px">
-					{{ social.icon }}
-				</VIcon>
-			</VBtn>
-		</div>
+				<VBtn
+					:href="social.href"
+					target="_blank"
+					rel="noopener noreferrer"
+					color="grey darken-2"
+					icon
+					class="mx-1"
+				>
+					<VIcon size="30px">
+						{{ social.icon }}
+					</VIcon>
+				</VBtn>
+			</li>
+		</ul>
 	</div>
 </template>
 
@@ -51,3 +54,10 @@
 		}
 	}
 </script>
+
+<style scoped>
+	li {
+		display: flex;
+		list-style: none;
+	}
+</style>

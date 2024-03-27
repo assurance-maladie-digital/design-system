@@ -5,23 +5,33 @@ exports[`FooterBar renders correctly 1`] = `
   <!---->
   <!---->
   <!---->
-  <div class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 py-2 py-sm-0">
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Plan du site
-    </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Conditions générales d’utilisation
-    </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Gestion des cookies
-    </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Mentions légales
-    </routerlink-stub>
-    <routerlink-stub to="[object Object]" class="text--primary my-3 mx-4">
-      Accessibilité&nbsp;: non conforme
-    </routerlink-stub>
+  <ul class="vd-footer-bar-links text-sm-center d-flex flex-column flex-sm-row flex-wrap align-start justify-center max-width-none mx-n3 my-n3 pa-0 py-2 py-sm-0">
+    <li class="my-3 mx-4">
+      <routerlink-stub to="[object Object]" class="text--primary">
+        Plan du site
+      </routerlink-stub>
+    </li>
+    <li class="my-3 mx-4">
+      <routerlink-stub to="[object Object]" class="text--primary">
+        Conditions générales d’utilisation
+      </routerlink-stub>
+    </li>
+    <li class="my-3 mx-4">
+      <routerlink-stub to="[object Object]" class="text--primary">
+        Gestion des cookies
+      </routerlink-stub>
+    </li>
+    <li class="my-3 mx-4">
+      <routerlink-stub to="[object Object]" class="text--primary">
+        Mentions légales
+      </routerlink-stub>
+    </li>
+    <li class="my-3 mx-4">
+      <routerlink-stub to="[object Object]" class="text--primary">
+        Accessibilité&nbsp;: non conforme
+      </routerlink-stub>
+    </li>
     <!---->
-  </div>
+  </ul>
 </vfooter-stub>
 `;
