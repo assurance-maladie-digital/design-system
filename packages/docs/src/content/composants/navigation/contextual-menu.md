@@ -3,6 +3,12 @@ title: ContextualMenu
 description: L’élément `ContextualMenu` est utilisé pour afficher un menu avec une liste d’ancres pour la navigation.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

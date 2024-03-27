@@ -8,7 +8,8 @@ import {
 	mdiHumanMaleBoard,
 	mdiSecurity,
 	mdiBookOpenPageVariantOutline,
-	mdiHammerWrench
+	mdiHammerWrench,
+	mdiBridge
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -84,19 +85,23 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'HeaderBar',
-						to: '/composants/structure/header-bar'
+						to: '/composants/structure/header-bar',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'SubHeader',
-						to: '/composants/structure/sub-header'
+						to: '/composants/structure/sub-header',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FooterBar',
-						to: '/composants/structure/footer-bar'
+						to: '/composants/structure/footer-bar',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FooterWrapper',
-						to: '/composants/structure/footer-wrapper'
+						to: '/composants/structure/footer-wrapper',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -105,7 +110,8 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'PageContainer',
-						to: '/composants/layout/page-container'
+						to: '/composants/layout/page-container',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -114,15 +120,18 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'ExternalLinks',
-						to: '/composants/navigation/external-links'
+						to: '/composants/navigation/external-links',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'ContextualMenu',
-						to: '/composants/navigation/contextual-menu'
+						to: '/composants/navigation/contextual-menu',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'SkipLink',
-						to: '/composants/navigation/skip-link'
+						to: '/composants/navigation/skip-link',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -131,31 +140,38 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'BackBtn',
-						to: '/composants/boutons/back-btn'
+						to: '/composants/boutons/back-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'BackToTopBtn',
-						to: '/composants/boutons/back-to-top-btn'
+						to: '/composants/boutons/back-to-top-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'CopyBtn',
-						to: '/composants/boutons/copy-btn'
+						to: '/composants/boutons/copy-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'LangBtn',
-						to: '/composants/boutons/lang-btn'
+						to: '/composants/boutons/lang-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'DownloadBtn',
-						to: '/composants/boutons/download-btn'
+						to: '/composants/boutons/download-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FranceConnectBtn',
-						to: '/composants/boutons/france-connect-btn'
+						to: '/composants/boutons/france-connect-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'UserMenuBtn',
-						to: '/composants/boutons/user-menu-btn'
+						to: '/composants/boutons/user-menu-btn',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -172,7 +188,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'NirField',
-						to: '/composants/formulaires/nir-field'
+						to: '/composants/formulaires/nir-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'PasswordField',
@@ -184,7 +201,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'PhoneField',
-						to: '/composants/formulaires/phone-field'
+						to: '/composants/formulaires/phone-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'RangeField',
@@ -239,15 +257,18 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'ChipList',
-						to: '/composants/donnees/chip-list'
+						to: '/composants/donnees/chip-list',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'DataList',
-						to: '/composants/donnees/data-list'
+						to: '/composants/donnees/data-list',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'DataListGroup',
-						to: '/composants/donnees/data-list-group'
+						to: '/composants/donnees/data-list-group',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FilePreview',
@@ -264,27 +285,33 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'AlertWrapper',
-						to: '/composants/feedback/alert-wrapper'
+						to: '/composants/feedback/alert-wrapper',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'DialogBox',
-						to: '/composants/feedback/dialog-box'
+						to: '/composants/feedback/dialog-box',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'NotificationBar',
-						to: '/composants/feedback/notification-bar'
+						to: '/composants/feedback/notification-bar',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'CookieBanner',
-						to: '/composants/feedback/cookie-banner'
+						to: '/composants/feedback/cookie-banner',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'HeaderLoading',
-						to: '/composants/feedback/header-loading'
+						to: '/composants/feedback/header-loading',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'RatingPicker',
-						to: '/composants/feedback/rating-picker'
+						to: '/composants/feedback/rating-picker',
+						appendIcon: mdiBridge
 					}
 				]
 			}
@@ -303,19 +330,23 @@ export const drawerItems: DrawerItem[] = [
 			},
 			{
 				title: 'CookiesPage',
-				to: '/templates/cookies-page'
+				to: '/templates/cookies-page',
+				appendIcon: mdiBridge
 			},
 			{
 				title: 'ErrorPage',
-				to: '/templates/error-page'
+				to: '/templates/error-page',
+				appendIcon: mdiBridge
 			},
 			{
 				title: 'NotFoundPage',
-				to: '/templates/not-found-page'
+				to: '/templates/not-found-page',
+				appendIcon: mdiBridge
 			},
 			{
 				title: 'MaintenancePage',
-				to: '/templates/maintenance-page'
+				to: '/templates/maintenance-page',
+				appendIcon: mdiBridge
 			}
 		]
 	},
@@ -323,6 +354,14 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Composants techniques',
 		icon: mdiCogs,
 		items: [
+			{
+				title: 'CustomIcon',
+				to: '/composants-techniques/custom-icon'
+			},
+			{
+				title: 'Module de notification',
+				to: '/composants-techniques/module-notification'
+			},
 			{
 				title: 'Questionnaires',
 				items: [
@@ -524,14 +563,6 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'Classes utilitaires CSS',
 				to: '/composants-techniques/classes-utilitaires-css'
-			},
-			{
-				title: 'CustomIcon',
-				to: '/composants-techniques/custom-icon'
-			},
-			{
-				title: 'Module de notification',
-				to: '/composants-techniques/module-notification'
 			}
 		]
 	},

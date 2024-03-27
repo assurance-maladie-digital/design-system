@@ -3,6 +3,12 @@ title: DownloadBtn
 description: L’élément `DownloadBtn` est utilisé pour permettre à l’utilisateur de télécharger un document provenant d’une API.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <!-- NotificationBar is required to display notifications from DownloadBtn -->
 <notification-bar></notification-bar>
 

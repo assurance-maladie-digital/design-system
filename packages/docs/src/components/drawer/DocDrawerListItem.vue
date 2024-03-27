@@ -20,6 +20,12 @@
 			<VListItemTitle>
 				{{ item.title }}
 			</VListItemTitle>
+			<VListItemIcon
+				v-if="item.appendIcon"
+				class="icon"
+			>
+				<VIcon v-text="item.appendIcon" />
+			</VListItemIcon>
 		</VListItemContent>
 	</VListItem>
 </template>
@@ -53,5 +59,10 @@
 			margin-bottom: 6px;
 			margin-top: 6px;
 		}
+	}
+	.icon {
+		position: absolute;
+		top: -4px;
+		right: 15px;
 	}
 </style>

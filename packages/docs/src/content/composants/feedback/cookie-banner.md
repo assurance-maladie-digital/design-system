@@ -3,6 +3,12 @@ title: CookieBanner
 description: Le pattern `CookieBanner` est utilisé pour permettre à l’utilisateur d’accepter ou non les cookies.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

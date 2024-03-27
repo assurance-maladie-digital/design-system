@@ -3,6 +3,12 @@ title: ChipList
 description: L’élément `ChipList` est utilisé pour afficher une liste de puces.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -53,6 +53,13 @@
 						>
 							Déprécié
 						</VChip>
+						<VIcon
+							v-if="component.status === ComponentStatusEnum.BRIDGE"
+							color="#0c419a"
+							class="bridge rounded-circle"
+						>
+							{{ bridgeIcon }}
+						</VIcon>
 					</VCardText>
 				</VCard>
 			</li>
@@ -66,6 +73,9 @@
 
 	import { ComponentDescription } from '../types/components';
 	import { ComponentStatusEnum } from '../constants/ComponentStatusEnum';
+	import {
+		mdiBridge
+	} from '@mdi/js';
 
 	const Props = Vue.extend({
 		props: {
@@ -81,6 +91,7 @@
 	@Component
 	export default class DocComponentList extends MixinsDeclaration {
 		ComponentStatusEnum = ComponentStatusEnum;
+		bridgeIcon = mdiBridge;
 	}
 </script>
 
@@ -97,5 +108,13 @@
 
 	img {
 		object-fit: cover;
+	}
+
+	.bridge {
+		position: absolute;
+		bottom: 16px;
+		right: 16px;
+		padding: 2px;
+		box-shadow: #000 1px 1px 9px -4px;
 	}
 </style>

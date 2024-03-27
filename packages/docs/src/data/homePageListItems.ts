@@ -1,22 +1,26 @@
-import { mdiTimerOutline, mdiApplicationCogOutline, mdiAccountCheck } from '@mdi/js';
-
 export const homePageListItems = [
 	{
-		icon: mdiTimerOutline,
+		title: 'Qui sont nos principaux utilisateurs ?',
 		content: [
-			'Notre Design System permet de **concevoir rapidement des prototypes et des interfaces des produits numériques de l’Assurance Maladie**. Cette optimisation, en matière de réduction des temps de production, est relative au niveau de développement du Design System. En tant que référentiel, il est nécessaire pour permettre son amélioration de l’intégrer puis de l’évaluer avec le plus de nouveaux produits possible au sein de l’Assurance Maladie. C’est parce qu’il se déploie et s’étoffe de chaque nouvelle expérience de projet qu’il peut acquérir de la pertinence et ainsi assurer un gain de rapidité. Lorsqu’il aura atteint un haut niveau opérationnel, nos estimations montrent qu’il pourrait permettre **jusqu’à 50% d’économie de temps** par rapport à un projet qui en est dépourvu.'
+			'Respectant les règles graphiques de la charte graphique de la CNAM, ce design system couvre prioritairement les produits à destination des assurés, des entreprises et des agents.'
 		]
 	},
 	{
-		icon: mdiApplicationCogOutline,
+		title: 'Comment accéder au design system ?',
 		content: [
-			'Notre Design System permet une **harmonisation des applications et une simplification des processus de conception et d’implémentation**. Cette cohérence est bénéfique pour l’industrialisation des applications puisqu’elle favorise l’automatisation des procédés et des méthodes de conception. En suivant cette notion d’automatisation, les composants du Design System respectent le principe de réutilisabilité : un composant pour s’adapter aux besoins des nouveaux projets numériques et non l’inverse. Grâce à cela, le Design System **favorise une excellente collaboration** entre les équipes de design et de développement puisqu’il propose un langage commun à construire puis améliorer ensemble.'
+			'Afin d’améliorer la collaboration, il est disponible pour les développeurs depuis GitHub (accès open source) et pour les designers depuis Figma (accès sur demande). '
 		]
 	},
 	{
-		icon: mdiAccountCheck,
+		title: 'Est-ce que le design system est complet ?',
 		content: [
-			'Notre Design System permet d’**assurer auprès des usagers de l’Assurance Maladie un bon niveau d’utilisabilité avec chaque nouveau produit numérique**. Fondé sur les besoins des utilisateurs, il rend quasi-opérationnel les nouveaux parcours d’utilisation en leurs évitant un grand nombre d’écueils. En écho au bénéfice temporel sur la durée du projet, l’efficacité ergonomique croît avec le niveau de maturité du Design System. En effet, dès qu’un projet le permet, une sélection de composants fait l’objet d’évaluations de la part des utilisateurs afin d’en vérifier leurs qualités. Le cas échéant, une actualisation des composants déficients est mise en place pour en corriger les erreurs et assurer à nouveau **un haut niveau d’efficacité**.'
+			'Face à l’ampleur des composants et des fonctionnalités nécessaires au bon fonctionnement d’un produit, le design system ne suffit pas seul. Vous devez composer avec la librairie vuetify et le framework vue.js.'
+		]
+	},
+	{
+		title: 'Quels sont les bénéfices du design system ?',
+		content: [
+			'Utiliser un design system permet d’accélérer la fabrication, la collaboration et la prise de décision puisqu’il suffit à l’équipe-produit de piocher directement dans une collection de composants déjà adaptés aux besoins de CNAM.'
 		]
 	}
 ];

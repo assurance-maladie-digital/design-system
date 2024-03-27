@@ -3,6 +3,12 @@ title: NotificationBar
 description: Le pattern `NotificationBar` est utilisé avec le module Vuex `notification` pour afficher des notifications à l’utilisateur.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

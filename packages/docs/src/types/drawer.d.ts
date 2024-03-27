@@ -7,6 +7,7 @@ export interface DrawerItem {
 	items?: DrawerItem[];
 	item?: boolean;
 	divider?: boolean;
+	appendIcon?: string;
 }
 
 export interface SurroundItemsPaths {

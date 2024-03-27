@@ -3,6 +3,12 @@ title: RatingPicker
 description: L’élément `RatingPicker` permet de recueillir l’avis d’un utilisateur.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

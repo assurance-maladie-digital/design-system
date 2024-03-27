@@ -3,6 +3,12 @@ title: FooterBar
 description: Le pattern `FooterBar` est utilisé pour afficher un pied de page.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

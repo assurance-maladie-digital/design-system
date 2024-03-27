@@ -3,6 +3,12 @@ title: BackBtn
 description: L’élément `BackBtn` est utilisé pour permettre à l’utilisateur de revenir à la page précédente.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

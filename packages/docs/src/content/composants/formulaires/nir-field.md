@@ -3,6 +3,12 @@ title: NirField
 description: Le pattern `NirField` est utilisé pour permettre à l’utilisateur de saisir un numéro de Sécurité sociale (NIR).
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
