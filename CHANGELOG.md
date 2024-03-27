@@ -1,4 +1,44 @@
-## v2.15.1
+## v2.16.1
+
+**Version publiée le 28/03/2024.**
+
+### Vue Dot
+
+- ✨ **Nouvelles fonctionnalités**
+  - **HeaderBar:** Optimisation de l'accessibilité et ajout d'une prop `home-arialabel` permettant de personnaliser l'aria-label du lien vers la page d'accueil ([#3438](https://github.com/assurance-maladie-digital/design-system/pull/3438))
+  - **RatingPicker:** Optimisation de l'accessibilité et ajout d'un slot `label` pour permettre l'affichage du label avec des balises HTML. ([#3428](https://github.com/assurance-maladie-digital/design-system/pull/3428))
+- 🐛 **Corrections de bugs**
+  - **HeaderBar:** Correction d'un bug sur la balise `alt`pour le logo secondaire ([#3425](https://github.com/assurance-maladie-digital/design-system/pull/3425))
+  - **NirField:** Correction d'une erreur d'orthographe sur un message d'erreur ([#3459](https://github.com/assurance-maladie-digital/design-system/pull/3459))
+  - **UploadWorkflow:** Correction d'un bug sur la visualisation de fichier en mode sélection libre ([#3439](https://github.com/assurance-maladie-digital/design-system/pull/3439))
+  - **ErrorPage:** Correction d'un problème d'accessibilité sur le code d'erreur ([#3436](https://github.com/assurance-maladie-digital/design-system/pull/3436))
+  - **NirField:** Correction d'un bug d'affichage sur la tooltip ([#3418](https://github.com/assurance-maladie-digital/design-system/pull/3418))
+  - **FooterBar:** Optimisation de l'accessibilité par l'utilsation de listes pour l'affichage des liens ([#3431](https://github.com/assurance-maladie-digital/design-system/pull/3431))
+
+### Documentation
+
+- 📝 **Documentation**
+  - Mise à jour de la page d'accueil + Ajout d'informations visuelles (tags/banners) pour les composants disponibles dans la version bridge ([#3465](https://github.com/assurance-maladie-digital/design-system/pull/3465))
+  - **HeaderBar:** Aajout d'une prop `home-arialabel` permettant de personnaliser l'aria-label du lien vers la page d'accueil ([#3438](https://github.com/assurance-maladie-digital/design-system/pull/3438))
+  - **RatingPicker:** Ajout d'un slot `label` pour permettre l'affichage du label avec des balises HTML. ([#3428](https://github.com/assurance-maladie-digital/design-system/pull/3428))
+
+### Interne
+
+- 🔒 **Sécurité**
+  - **follow-redirects:** Mise à jour vers la `v1.15.6` ([#3448](https://github.com/assurance-maladie-digital/design-system/pull/3448))
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3467](https://github.com/assurance-maladie-digital/design-system/pull/3467))
+
+- ⬆️ **Dépendances**
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.8.0` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
+  - **@babel/core:** Mise à jour vers la `v7.24.3` ([#3453](https://github.com/assurance-maladie-digital/design-system/pull/3453))
+  - **core-js:** Mise à jour vers la `v3.36.1` ([#3451](https://github.com/assurance-maladie-digital/design-system/pull/3451))
+  - **axios:** Mise à jour vers la `v1.6.8` ([#3447](https://github.com/assurance-maladie-digital/design-system/pull/3447)) 
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.24.0` ([#3441](https://github.com/assurance-maladie-digital/design-system/pull/3441))
+  - **@types/node:** Mise à jour vers la `v16.18.91` ([#3440](https://github.com/assurance-maladie-digital/design-system/pull/3440))
+
+## v2.16.0
 
 **Version publiée le 06/03/2024.**
 
