@@ -21,7 +21,7 @@
 					</VListItemTitle>
 
 					<VListItemSubtitle>
-						La version 2 du Design System est en maintenance jusqu’à fin 2023.
+						La version 2 du Design System est en maintenance jusqu’à août 2024.
 					</VListItemSubtitle>
 				</VListItemContent>
 			</VListItem>
@@ -44,7 +44,7 @@
 
 				<VListItemContent>
 					<VListItemTitle class="mb-1">
-						Version 2.0.0-bridge.x
+						Version Bridge
 					</VListItemTitle>
 
 					<VListItemSubtitle>
@@ -83,7 +83,7 @@
 					</VListItemTitle>
 
 					<VListItemSubtitle>
-						La version 3 du Design System est en cours de conception et son développement commencera fin 2023.
+						La version 3 du Design System est en cours de conception et son développement commencera T3 2024.
 					</VListItemSubtitle>
 				</VListItemContent>
 

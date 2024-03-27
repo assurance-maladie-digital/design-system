@@ -11,15 +11,9 @@ Nous travaillons actuellement au développement d’une nouvelle version compati
 
 </doc-alert>
 
-<doc-alert type="info" outlined>
-
-Pour répondre aux urgences des produits, nous avons décidé de livrer le bridge progressivement par groupe de package de composants.<br/>Vous trouverez la liste ainsi que les dates de publication sur la page roadmap.
-
-</doc-alert>
-
 <doc-alert-bridge>
 
-En attendant une nouvelle version de la librairie appelée Synapse, comportant uniquement des composants en composition API, il est demandé à tous les produits d’utiliser la librairie Bridge. Tous les composants disponibles sur le Bridge sont indiqués sur la documentation avec l’icône présente à gauche.
+En attendant une nouvelle version de la librairie appelée Synapse, comportant uniquement des composants en composition API, il est demandé à tous les produits d’utiliser la librairie Bridge. Tous les composants disponibles sur le Bridge sont indiqués sur la documentation avec l’icône présente à gauche. Vous trouverez le détail des version sur <a href="/demarrer/roadmap">la roadmap</a>.
 
 </doc-alert-bridge>
 
