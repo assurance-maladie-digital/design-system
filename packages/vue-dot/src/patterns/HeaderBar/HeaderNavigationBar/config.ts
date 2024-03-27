@@ -1,7 +1,6 @@
 export const config = {
 	sheet: {
 		height: '48px',
-		dense: true,
 		dark: true
 	},
 	innerSheet: {
