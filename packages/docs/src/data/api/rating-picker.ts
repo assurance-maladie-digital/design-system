@@ -4,7 +4,7 @@ const ratingMixinProps: Props = [
 	{
 		name: 'label',
 		type: 'string',
-		required: true,
+		default: null,
 		description: 'Le label du champ.'
 	},
 	{
@@ -42,7 +42,7 @@ export const api: Api = {
 			{
 				name: 'label',
 				type: 'string',
-				required: true,
+				default: null,
 				description: 'Le label du champ.'
 			},
 			{
@@ -80,6 +80,10 @@ export const api: Api = {
 			{
 				name: 'default',
 				description: 'Slot pour ajouter du contenu affiché après la sélection de l’utilisateur.<br> Le contenu s’affichera si la note n’est pas optimale.'
+			},
+			{
+				name: 'label',
+				description: 'Slot pour changer la valeur par défaut de la légende. Ce slot écrase la valeur de la props `label`.'
 			}
 		],
 		events: [

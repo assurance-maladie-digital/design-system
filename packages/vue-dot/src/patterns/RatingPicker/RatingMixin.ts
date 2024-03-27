@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import Component, { mixins } from 'vue-class-component';
 
 export interface RatingMixinInterface extends Vue {
@@ -16,8 +16,8 @@ export const RATING_ENUM_VALUES = Object.values(RatingEnum);
 const Props = Vue.extend({
 	props: {
 		label: {
-			type: String,
-			required: true
+			type: String as PropType<string | null>,
+			default: null
 		},
 		readonly: {
 			type: Boolean,

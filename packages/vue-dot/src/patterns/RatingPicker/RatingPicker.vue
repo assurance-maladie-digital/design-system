@@ -8,7 +8,13 @@
 			:item-labels="itemLabels || undefined"
 			:value="internalValue"
 			@input="setValue"
-		/>
+		>
+			<template #label>
+				<slot name="label">
+					{{ label }}
+				</slot>
+			</template>
+		</component>
 
 		<template v-if="hasAnswered">
 			<AlertWrapper
@@ -48,8 +54,8 @@
 				validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
 			},
 			label: {
-				type: String,
-				required: true
+				type: String as PropType<string | null>,
+				default: null
 			},
 			readonly: {
 				type: Boolean,
