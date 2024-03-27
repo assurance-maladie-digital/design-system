@@ -4,7 +4,9 @@
 		:style="widthStyles"
 		class="vd-file-list"
 	>
-		<template v-for="(file, index) in files">
+		<template
+			v-for="(file, index) in files"
+		>
 			<VListItem
 				:key="index"
 				v-bind="options.listItem"
@@ -12,15 +14,15 @@
 				<VListItemAvatar v-bind="options.listItemAvatar">
 					<VIcon
 						v-bind="options.listItemAvatarIcon"
-						:color="getIconInfo(file.state).color"
+						:color="getIconInfo(file).color"
 					>
-						{{ getIconInfo(file.state).icon }}
+						{{ getIconInfo(file).icon }}
 					</VIcon>
 				</VListItemAvatar>
 
 				<VListItemContent v-bind="options.listItemContent">
 					<VListItemTitle
-						v-if="file.title"
+						v-if="isFileItem(file) && file.title"
 						v-bind="options.listItemTitle"
 						:class="[
 							options.listItemTitle.class,
@@ -31,7 +33,7 @@
 					</VListItemTitle>
 
 					<VListItemSubtitle
-						v-if="file.optional"
+						v-if="isFileItem(file) && file.optional"
 						v-bind="options.listItemSubtitle"
 					>
 						{{ optionalFileText }}
@@ -47,7 +49,7 @@
 
 				<VListItemAction v-bind="options.listItemAction">
 					<VBtn
-						v-if="file.state === FileStateEnum.INITIAL && !hideUploadBtn"
+						v-if="isFileItem(file) && file.state === FileStateEnum.INITIAL && !hideUploadBtn"
 						v-bind="options.uploadBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('upload', file.id)"
@@ -61,7 +63,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="file.state === FileStateEnum.ERROR"
+						v-if="isFileItem(file) && file.state === FileStateEnum.ERROR"
 						v-bind="options.retryBtn"
 						:aria-label="locales.uploadFile"
 						@click="$emit('retry', index)"
@@ -75,7 +77,7 @@
 					</VBtn>
 
 					<VBtn
-						v-if="showViewBtn && file.state === FileStateEnum.SUCCESS"
+						v-if="showViewBtn && (!isFileItem(file) || file.state === FileStateEnum.SUCCESS)"
 						v-bind="options.viewFileBtn"
 						:aria-label="locales.viewFile"
 						:class="{ 'mr-0': hideDeleteBtn }"
@@ -140,7 +142,7 @@
 	const Props = Vue.extend({
 		props: {
 			files: {
-				type: Array as PropType<FileItem[]>,
+				type: Array as PropType<FileItem[] | File[]>,
 				required: true
 			},
 			hideUploadBtn: {
@@ -186,15 +188,20 @@
 			return this.$vuetify.theme.dark ? 'grey-lighten-40' : 'grey';
 		}
 
-		shouldDisplayDeleteBtn(file: FileItem): boolean {
+		isFileItem(file: FileItem | File): file is FileItem {
+			return !(file instanceof File);
+		}
+
+		shouldDisplayDeleteBtn(file: FileItem | File): boolean {
 			if (this.hideDeleteBtn) {
 				return false;
 			}
 
-			return file.state !== FileStateEnum.INITIAL || this.alwaysShowDeleteBtn;
+			return (this.isFileItem(file) && file.state !== FileStateEnum.INITIAL) || this.alwaysShowDeleteBtn;
 		}
 
-		getIconInfo(state: FileStateEnum): IconInfo {
+		getIconInfo(file: FileItem | File): IconInfo {
+			const state = this.isFileItem(file) ? file.state : '';
 			switch (state) {
 				case FileStateEnum.ERROR: {
 					return {

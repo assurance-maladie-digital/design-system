@@ -38,7 +38,10 @@ const MixinsDeclaration = mixins(Props, UpdateFileModel);
 	watch: {
 		value: {
 			handler(): void {
-				this.setInternalModel();
+				// if unrestricted, do not set internal model
+				if (this.unrestricted !== true) {
+					this.setInternalModel();
+				}
 			},
 			immediate: true,
 			deep: true
@@ -161,7 +164,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		this.$emit('change', this.fileList);
 	}
 
-	async previewFile(file: FileListItem): Promise<void> {
+	async previewFile(file: FileListItem | File): Promise<void> {
 		if (!this.showViewBtn) {
 			consola.warn('Using `vuetify-options` for this functionality is deprecated since v2.16.0, use the `show-view-btn` prop instead.');
 
@@ -169,11 +172,19 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			this.$emit('view-file', file);
 		}
 
-		if (!file.file) {
+		let fileToPreview: File | null = null;
+
+		if ('file' in file && file.file) {
+			// if file is of type FileListItem
+			fileToPreview = file.file;
+		} else if (file instanceof File) {
+			// if file is of type File (free mode)
+			fileToPreview = file;
+		} else {
 			return;
 		}
 
-		this.fileToPreview = file.file;
+		this.fileToPreview = fileToPreview;
 		this.previewDialog = true;
 	}
 

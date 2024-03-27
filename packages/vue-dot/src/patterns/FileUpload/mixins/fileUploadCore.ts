@@ -32,7 +32,7 @@ export class FileUploadCore extends MixinsDeclaration {
 		}
 
 		for (let i = 0; i < files.length; i++) {
-			this.validateFile(files[i]);
+			this.validateAndSaveFiles(files[i]);
 		}
 
 		this.emitChangeEvent();
@@ -41,7 +41,6 @@ export class FileUploadCore extends MixinsDeclaration {
 	emitChangeEvent(): void {
 		if (!this.error) {
 			const eventValue = this.multiple ? this.files : this.files[0];
-
 			this.$emit('change', eventValue);
 		}
 
@@ -74,13 +73,13 @@ export class FileUploadCore extends MixinsDeclaration {
 						return;
 					}
 
-					this.validateFile(file);
+					this.validateAndSaveFiles(file);
 				}
 			}
 		} else {
 			// Use DataTransfer interface to access the file(s)
 			for (let i = 0; i < data.files.length; i++) {
-				this.validateFile(data.files[i]);
+				this.validateAndSaveFiles(data.files[i]);
 			}
 		}
 

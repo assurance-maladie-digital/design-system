@@ -60,7 +60,7 @@ export class FileValidation extends MixinsDeclaration {
 		return accept.join(',');
 	}
 
-	validateFile(file: File): boolean {
+	validateAndSaveFiles(file: File): boolean {
 		if (file.size >= this.fileSizeMax) {
 			this.error = true;
 

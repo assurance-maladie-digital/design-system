@@ -28,7 +28,7 @@ interface TestComponent extends Vue {
 	fileSelected(): void;
 	selectItems: SelectItem[];
 	uploadError(error: string): void;
-	previewFile(file: FileListItem): Promise<void>;
+	previewFile(file: FileListItem | File): Promise<void>;
 	showViewBtn: boolean;
 	vuetifyOptions: Options;
 	fileToPreview: File | null;
@@ -60,7 +60,7 @@ const testFile = {
 } as File;
 
 /** Create the wrapper */
-function createWrapper(fileListItems = fileList, showFilePreview = false, propsData?: Partial<TestComponent>) {
+function createWrapper(fileListItems: FileListItem[] | File[] = fileList, showFilePreview = false, propsData?: Partial<TestComponent>) {
 	const component = Vue.component('TestComponent', {
 		mixins: [
 			UploadWorkflowCore
@@ -291,6 +291,28 @@ describe('EventsFileFired', () => {
 
 		expect(wrapper.vm.dialog).toBeTruthy();
 		expect(wrapper.vm.selectedItem).toEqual(fileListItem.id);
+	});
+
+	it('open the dialog in unrectricted mode for preview file', async() => {
+		const items = [
+			new File(
+				[''],
+				'avatar.png',
+				{ type: 'image/png' }
+			),
+			new File(
+				[''],
+				'avatar.png',
+				{ type: 'image/png' }
+			)
+		];
+		const wrapper = createWrapper(items, true) as Wrapper<TestComponent>;
+
+		wrapper.vm.uploadedFile = testFile;
+		await wrapper.vm.previewFile(items[0]);
+
+		expect(wrapper.vm.previewDialog).toBeTruthy();
+		expect(wrapper.vm.fileToPreview).toEqual(items[0]);
 	});
 
 	// uploadError
