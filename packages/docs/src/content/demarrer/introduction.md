@@ -19,7 +19,7 @@ Pour répondre aux urgences des produits, nous avons décidé de livrer le bridg
 
 <doc-alert-bridge>
 
-En attendant une nouvelle version de la librairie appelée Synapse, comportant uniquement des composants en composition API, il est demandé à tous les produits d’utiliser la librairie Bridge. Tous les composants disponible sur le Bridge sont indiqués sur la documentation avec l’icône présent à gauche.
+En attendant une nouvelle version de la librairie appelée Synapse, comportant uniquement des composants en composition API, il est demandé à tous les produits d’utiliser la librairie Bridge. Tous les composants disponibles sur le Bridge sont indiqués sur la documentation avec l’icône présente à gauche.
 
 </doc-alert-bridge>
 

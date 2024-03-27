@@ -15,9 +15,7 @@
 	@Component({
 		inheritAttrs: false
 	})
-	export default class DocAlert extends Vue {
-		attrs = this.$attrs;
-	}
+	export default class DocAlert extends Vue {}
 </script>
 
 <style lang="scss" scoped>
