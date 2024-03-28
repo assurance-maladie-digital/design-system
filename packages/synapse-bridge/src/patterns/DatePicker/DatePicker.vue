@@ -36,6 +36,7 @@
 			<div v-if="birthdate">
 				<VueDatePicker
 					v-model="date"
+					ref="myDatePicker"
 					calendar-cell-class-name="dp-custom-cell"
 					hide-offset-dates
 					locale="fr"
@@ -57,6 +58,7 @@
 			</div>
 			<div v-if="period">
 				<VueDatePicker
+					ref="myDatePicker"
 					append-icon="mdi-calendar"
 					v-model="startDate"
 					:format="format"
@@ -71,6 +73,7 @@
 				/>
 
 				<VueDatePicker
+					ref="myDatePicker"
 					append-icon="mdi-calendar"
 					v-model="date"
 					:placeholder="placeholder"
@@ -199,17 +202,16 @@ export default defineComponent({
 		},
 		applyDisallowOutlined(disallowOutlined: boolean): void {
 			const input = this.$el.querySelector('.dp__input');
-			const borderBottomStyle = '2px solid #ced4da';
+			const borderBottomStyle = '1.5px solid #ced4da';
 			const noBorderStyle = 'none';
 
 			if (input) {
-				console.log(input.style)
 				input.style.borderBottomLeftRadius = '0';
 				input.style.borderBottomRightRadius = '0';
 				input.style.border = disallowOutlined ? noBorderStyle : '';
 				input.style.borderBottom = disallowOutlined ? borderBottomStyle : '';
 			}
-		}
+		},
 	}
 })
 </script>
@@ -239,9 +241,10 @@ export default defineComponent({
 .hint {
 	color: #888;
 	font-size: 0.8em;
+	margin-top: 0.5em;
 }
 .placeholder-no-icon {
-	.dp__input_icon_pad{
+	.dp__input_icon_pad {
 		padding-inline-start: 0 !important;
 	}
 }
@@ -249,6 +252,14 @@ export default defineComponent({
 .dp__disabled {
 	background: transparent;
 	opacity: 0.8;
+}
+
+.dp--tp-wrap{
+	display: none;
+}
+
+.dp__button_bottom {
+	display: none !important;
 }
 
 </style>
