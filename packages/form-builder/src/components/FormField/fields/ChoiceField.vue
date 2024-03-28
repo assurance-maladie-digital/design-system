@@ -68,7 +68,7 @@
 
 	import { IFieldMap } from '../mixins/fieldMap';
 
-	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField, ChoiceFieldErrorMessages } from '../types';
+	import { ChoiceValue, OtherFieldValue, ChoiceFieldValue, OtherField, ChoiceFieldErrorMessages, FieldItemValue } from '../types';
 
 	const MixinsDeclaration = mixins(FieldComponent);
 
@@ -128,19 +128,21 @@
 		};
 
 		get otherField(): OtherField | undefined {
-			return this.field.other;
+			return Array.isArray(this.field.other) ? this.field.other.find(element => element.selectedChoice === this.choiceValue.value) : this.field.other;
+		}
+
+		get selectedChoice(): FieldItemValue {
+			return this.otherField?.selectedChoice;
 		}
 
 		get showOtherTextareaField(): boolean {
-			const otherSelectedChoice = this.otherField?.selectedChoice;
-
-			if (!this.choiceSelected && !otherSelectedChoice) {
+			if (!this.choiceSelected && !this.selectedChoice) {
 				return false;
 			}
 
 			const choiceFieldValue = this.choiceValue.value;
 
-			if (choiceFieldValue === otherSelectedChoice) {
+			if (choiceFieldValue === this.selectedChoice) {
 				return true;
 			}
 
@@ -148,7 +150,7 @@
 				return false;
 			}
 
-			if (choiceFieldValue.includes(otherSelectedChoice)) {
+			if (choiceFieldValue.includes(this.selectedChoice)) {
 				return true;
 			}
 
@@ -156,19 +158,18 @@
 		}
 
 		get choiceSelected(): boolean {
-			return this.otherField?.selectedChoice !== undefined && this.otherField?.selectedChoice !== null;
+			return !!this.selectedChoice;
 		}
 
 		get otherActive(): boolean {
 			const choiceFieldValue = this.choiceValue?.value;
-			const selectedChoice = this.field.other?.selectedChoice;
 
 			if (!this.choiceSelected) {
 				return false;
 			} else if (Array.isArray(choiceFieldValue)) {
-				return choiceFieldValue.includes(selectedChoice);
+				return choiceFieldValue.includes(this.selectedChoice);
 			} else {
-				return choiceFieldValue === selectedChoice;
+				return choiceFieldValue === this.selectedChoice;
 			}
 		}
 
@@ -213,7 +214,7 @@
 		choiceUpdated(choiceFieldValue: ChoiceFieldValue): void {
 			this.choiceValue.value = choiceFieldValue;
 
-			if (this.choiceValue.value && !this.otherField?.selectedChoice) {
+			if (this.choiceValue.value && !this.selectedChoice) {
 				this.otherFieldValue = null;
 			}
 

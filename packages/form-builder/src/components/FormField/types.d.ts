@@ -61,7 +61,7 @@ export interface Field {
 	multiple?: boolean;
 	fieldOptions?: FieldOptions;
 	items?: FieldItem[];
-	other?: OtherField;
+	other?: OtherField | OtherField[];
 	mask?: string;
 	dynamic?: boolean;
 }
