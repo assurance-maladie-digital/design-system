@@ -1,109 +1,97 @@
 <template>
-	<div class="d-flex">
-		<v-col cols="6">
-			<div v-if="!birthdate && !period">
-				<VueDatePicker
-					v-model="date"
-					ref="myDatePicker"
-					:placeholder="placeholder"
-					:enable-time-picker="false"
-					:hide-input-icon="noPrependIcon"
-					:format="format"
-					:disabled="disabled"
-					:clearable="clearable"
-					:text-input="noCalendar ? textInputOptions : false"
-					:class="{'placeholder-no-icon': noPrependIcon || appendIcon }"
-					calendar-cell-class-name="dp-custom-cell"
-					auto-apply
-					hide-offset-dates
-					locale="fr"
-					@open="blockOpenOnclick"
-					@close="handleClose"
-				>
-					<template #input-icon>
-						<VIcon @click="handleIconClick">
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
-					<template #day="{ date }">
-						<div :class="showWeekends && isWeekend(date) ? 'week-ends' : ''">
-							{{ date.getDate() }}
-						</div>
-					</template>
-				</VueDatePicker>
-				<p class="hint">Format JJ/MM/AAAA</p>
-			</div>
-			<div v-if="birthdate">
-				<VueDatePicker
-					v-model="date"
-					calendar-cell-class-name="dp-custom-cell"
-					hide-offset-dates
-					locale="fr"
-					auto-apply
-					:format="format"
-					:enable-time-picker="false"
-					:flow="['year', 'month', 'calendar']"
-					:placeholder="placeholder"
-					@open="blockOpenOnclick"
-					@close="handleClose"
-				>
-					<template #input-icon>
-						<VIcon @click="handleIconClick">
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
-				</VueDatePicker>
-				<p class="hint">Format JJ/MM/AAAA</p>
-			</div>
-			<div v-if="period">
-				<VueDatePicker
-					append-icon="mdi-calendar"
-					v-model="startDate"
-					:format="format"
-					:placeholder="placeholder"
-					:enable-time-picker="false"
-					calendar-cell-class-name="dp-custom-cell"
-					auto-apply
-					hide-offset-dates
-					locale="fr"
-					@open="blockOpenOnclick"
-					@close="handleClose"
-				/>
+	<div v-if="!rangeIsUsed">
+		<VueDatePicker
+			v-if="!rangeIsUsed && !birthdate"
+			v-model="date"
+			ref="myDatePicker"
+			placeholder="Date"
+			:enable-time-picker="false"
+			text-input
+			:hide-input-icon="noPrependIcon"
+			:format="format"
+			:disabled="disabled"
+			:clearable="clearable"
+			:class="{
+        'placeholder-no-icon': noPrependIcon || appendIcon,
+        'myDatePicker': datePickerClass
+      }"
+			calendar-cell-class-name="dp-custom-cell"
+			auto-apply
+			hide-offset-dates
+			locale="fr"
+			@open="blockOpenOnclick"
+			@close="handleClose"
+			@input="handleInput"
+		>
+			<template #input-icon>
+				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
+			</template>
+			<template #day="{ date }">
+				<div :class="showWeekends && isWeekend(date) ? 'week-ends' : ''">
+					{{ date.getDate() }}
+				</div>
+			</template>
+			<template #dp-input="{}">
+				<input type="text" :value="inputHistory" class="dp__input" />
+			</template>
+		</VueDatePicker>
 
-				<VueDatePicker
-					append-icon="mdi-calendar"
-					v-model="date"
-					:placeholder="placeholder"
-					:enable-time-picker="false"
-					calendar-cell-class-name="dp-custom-cell"
-					auto-apply
-					hide-offset-dates
-					locale="fr"
-					range
-					@open="blockOpenOnclick"
-					@close="handleClose"
-				>
-					<template #input-icon>
-						<VIcon @click="handleIconClick">
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
-				</VueDatePicker>
-			</div>
-		</v-col>
+		<VueDatePicker
+			v-else
+			v-model="date"
+			ref="myDatePicker"
+			calendar-cell-class-name="dp-custom-cell"
+			placeholder="Date de naissance"
+			hide-offset-dates
+			locale="fr"
+			auto-apply
+			:format="format"
+			:enable-time-picker="false"
+			:flow="['year', 'month', 'calendar']"
+			text-input
+			@open="blockOpenOnclick"
+			@close="handleClose"
+		>
+			<template #input-icon>
+				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
+			</template>
+		</VueDatePicker>
+
+		<p class="hint">Format JJ/MM/AAAA</p>
+	</div>
+
+	<div v-else>
+		<VueDatePicker v-model="startDate" auto-apply locale="fr" placeholder="Début" :format="format">
+			<template #input-icon>
+				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
+			</template>
+		</VueDatePicker>
+
+		<VueDatePicker v-model="date" auto-apply range locale="fr" placeholder="Fin" :format="format">
+			<template #input-icon>
+				<VIcon>{{ calendarIcon }}</VIcon>
+			</template>
+			<template #dp-input="{}">
+				<input placeholder="Fin" type="text" :value="formatDate(endDate)" class="dp__pointer dp__input_readonly dp__input dp__input_icon_pad dp__input_reg" />
+			</template>
+		</VueDatePicker>
 	</div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
-import {mdiCalendar} from "@mdi/js";
+import { mdiCalendar } from "@mdi/js";
 
 export default defineComponent({
 	components: { VueDatePicker },
 	props: {
 		birthdate: {
+			type: Boolean,
+			default: false
+		},
+		rangeIsUsed: {
 			type: Boolean,
 			default: false
 		},
@@ -138,112 +126,164 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			date: '',
-			dateStart: new Date(),
+			date: null,
 			placeholder: 'Date',
 			format: 'dd/MM/yyyy',
 			clearable: false,
 			period: false,
-			startDate: new Date(),
+			startDate: null,
+			endDate: null,
 			textInputOptions: {
 				openMenu: false,
 				format: 'dd/MM/yyyy',
 			},
 			isCalOpen: false,
 			calendarIcon: mdiCalendar,
-			disallowOutlined:true
-		}
+			disallowOutlined: true,
+			hasError: false,
+			hasWarning: false,
+			inputHistory: ''
+		};
 	},
 	watch: {
-		appendIcon(newVal: boolean) {
+		appendIcon(newVal) {
 			this.applyIconStyle(newVal);
 		},
-		disallowOutlined(newVal: boolean) {
+		disallowOutlined(newVal) {
 			this.applyDisallowOutlined(newVal);
 		},
-		startDate(newVal: Date) {
-			const startDate = this.dateStart || new Date();
-			this.date = [startDate];
+		startDate(newVal) {
+			if (newVal)
+				this.date = [newVal];
+		},
+		date() {
+			if (this.date && Array.isArray(this.date) && this.date.length > 1) {
+				this.endDate = this.date[1];
+			}
+		},
+		inputHistory(newVal) {
+			if (newVal.length > 10) {
+				this.inputHistory = newVal.slice(0, 10);
+			}
 		},
 	},
 	mounted() {
-			this.applyIconStyle(this.appendIcon);
-			this.applyIconStyle(this.appendIcon);
-			// outline is true by default in lib
-			this.applyDisallowOutlined(!this.outlined);
-			this.applyDisallowOutlined(!this.outlined);
+		this.applyIconStyle(this.appendIcon);
+		this.applyDisallowOutlined(!this.outlined);
+	},
+	computed: {
+		datePickerClass() {
+			return this.hasError ? 'error' : this.hasWarning ? 'warning' : '';
+		}
 	},
 	methods: {
-		isWeekend(date: Date): boolean {
+		isWeekend(date) {
 			const dayOfWeek = date.getDay();
 			return dayOfWeek === 0 || dayOfWeek === 6;
 		},
-		handleIconClick(event: Event) {
-			const myDatePicker = this.$refs.myDatePicker as typeof VueDatePicker;
-				event.stopPropagation();
-				this.isCalOpen = !this.isCalOpen;
-				this.isCalOpen && !this.noCalendar ? myDatePicker.openMenu() : myDatePicker.closeMenu();
+		handleIconClick(event) {
+			const myDatePicker = this.$refs.myDatePicker;
+			event.stopPropagation();
+			this.isCalOpen = !this.isCalOpen;
+			if (!this.noCalendar) {
+				this.isCalOpen ? myDatePicker.openMenu() : myDatePicker.closeMenu();
+			}
 		},
 		blockOpenOnclick() {
-			const myDatePicker = this.$refs.myDatePicker as typeof VueDatePicker;
-			return !this.isCalOpen && !this.textFieldActivator && !this.noPrependIcon ? myDatePicker.closeMenu() : this.isCalOpen = !this.isCalOpen
+			const myDatePicker = this.$refs.myDatePicker;
+
+			if (!this.isCalOpen && !this.textFieldActivator && !this.noPrependIcon) {
+				myDatePicker.closeMenu();
+			} else {
+				this.isCalOpen = !this.isCalOpen;
+			}
 		},
 		handleClose() {
 			this.isCalOpen = false;
 		},
-		applyIconStyle(appendIcon: boolean): void {
+		applyIconStyle(appendIcon) {
 			const icon = this.$el.querySelector('.dp__input_icon');
 			if (icon) {
-				icon.style.marginLeft = appendIcon ? '95%' : '';
+				icon.style.marginLeft = appendIcon ? '95%' : '0';
 			}
 		},
-		applyDisallowOutlined(disallowOutlined: boolean): void {
+		applyDisallowOutlined(disallowOutlined) {
 			const input = this.$el.querySelector('.dp__input');
-			const borderBottomStyle = '2px solid #ced4da';
+			const borderBottomStyle = '1.5px solid #ced4da';
 			const noBorderStyle = 'none';
 
 			if (input) {
-				console.log(input.style)
 				input.style.borderBottomLeftRadius = '0';
 				input.style.borderBottomRightRadius = '0';
 				input.style.border = disallowOutlined ? noBorderStyle : '';
 				input.style.borderBottom = disallowOutlined ? borderBottomStyle : '';
 			}
-		}
+		},
+		formatDate(date) {
+			if (!date) return '';
+
+			const d = new Date(date);
+			const month = (d.getMonth() + 1).toString().padStart(2, '0');
+			const day = d.getDate().toString().padStart(2, '0');
+			const year = d.getFullYear();
+
+			return `${day}/${month}/${year}`;
+		},
+		handleInput(value) {
+			if (!this.noCalendar) return;
+
+			if (value.data === null) {
+				this.inputHistory = this.inputHistory.slice(0, -1);
+				return;
+			}
+
+			if (this.inputHistory.length === 2 || this.inputHistory.length === 5) {
+				this.inputHistory += '/';
+			}
+
+			if (this.inputHistory.length > 10) return;
+
+			this.inputHistory += value.data;
+		},
 	}
-})
+});
 </script>
 
-<style lang="scss">
+<style scoped>
 .week-ends {
-	background-color: #B3B4B5;
+	background-color: #b3b4b5;
 	border-radius: 55%;
 	width: 27px;
 	height: 25px;
 	display: inline-block;
 	padding-bottom: 1px;
 }
+
 .dp-custom-cell {
 	border-radius: 50%;
 }
+
 .dp__today {
-	border: 1px solid #2EB5E4;
+	border: 1px solid #2eb5e4;
 }
+
 .dp__active_date {
-	background: #2EB5E4;
+	background: #2eb5e4;
 	color: var(--dp-primary-text-color);
 }
+
 .dp__input::placeholder {
 	margin-left: -10px !important;
 }
+
 .hint {
 	color: #888;
 	font-size: 0.8em;
+	margin-top: 0.5em;
 }
-.placeholder-no-icon {
-	.dp__input_icon_pad{
-		padding-inline-start: 0 !important;
-	}
+
+.placeholder-no-icon .dp__input_icon_pad {
+	padding-inline-start: 0 !important;
 }
 
 .dp__disabled {
@@ -251,4 +291,23 @@ export default defineComponent({
 	opacity: 0.8;
 }
 
+.dp--tp-wrap {
+	display: none;
+}
+
+.dp__button_bottom {
+	display: none !important;
+}
+
+.myDatePicker .dp__input:focus {
+	border: solid 2px #0c419a;
+}
+
+.myDatePicker.error .dp__input:focus {
+	border: solid 2px red;
+}
+
+.myDatePicker.warning .dp__input:focus {
+	border: solid 2px orange;
+}
 </style>
