@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { Form } from '../../types';
 
 const scheduleItems = [
@@ -313,6 +314,47 @@ export const questionForm: Form = {
 				fieldOptions: {
 					label: 'Classic field',
 					outlined: true
+				}
+			},
+			questionChoiceOtherArraySelected: {
+				title: 'Question choix oui ou non conditionnel',
+				description: 'Visible quand le choix « Oui » ou « Non » est sélectionné',
+				multiple: true,
+				type: 'select',
+				value: {
+					value: 'oui',
+					other: 'justification'
+				},
+				items: [
+					{
+						text: 'Oui',
+						value: 'oui'
+					},
+					{
+						text: 'Non',
+						value: 'non'
+					}
+				],
+				other: [
+					{
+						label: 'Merci d\'expliquer les raisons de votre réponse affirmative ?',
+						selectedChoice: 'oui',
+						fieldOptions: {
+							hint: 'Veuillez entrez votre réponse'
+						}
+					},
+					{
+						label: 'Merci de clarifier les raisons de votre réponse négative ?',
+						selectedChoice: 'non',
+						fieldOptions: {
+							hint: 'Veuillez entrez votre réponse'
+						}
+					}
+				],
+				fieldOptions: {
+					outlined: true,
+					type: 'choiceButton',
+					inline: true
 				}
 			}
 		}
