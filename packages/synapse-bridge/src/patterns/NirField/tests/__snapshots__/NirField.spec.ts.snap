@@ -1,0 +1,389 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NirField > renders correctly 1`] = `
+<div data-v-f9b525c5="" class="vd-nir-field d-flex align-start">
+  <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty vd-nir-field__fields-wrapper multi-line">
+    <!---->
+    <div class="v-input__control">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+            <div class="v-messages__message vd-nir-field__hint">13 caractères</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-3">
+                <!---->Clé
+              </label>
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
+                <!---->Clé
+              </label>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="key-field-errors" class="d-sr-only"></div>
+      <!--v-if-->
+    </div>
+    <!---->
+    <div class="v-input__details">
+      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+        <!---->
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NirField > renders correctly with 13 characters 1`] = `
+<div data-v-f9b525c5="" class="vd-nir-field d-flex align-start">
+  <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty vd-nir-field__fields-wrapper multi-line">
+    <!---->
+    <div class="v-input__control">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+            <div class="v-messages__message vd-nir-field__hint">13 caractères</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+    <!---->
+    <div class="v-input__details">
+      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+        <!---->
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NirField > renders correctly with a tooltip 1`] = `
+<div data-v-f9b525c5="" class="vd-nir-field d-flex align-start">
+  <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty vd-nir-field__fields-wrapper multi-line">
+    <!---->
+    <div class="v-input__control">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+            <div class="v-messages__message vd-nir-field__hint">13 caractères</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-3">
+                <!---->Clé
+              </label>
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
+                <!---->Clé
+              </label>
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="key-field-errors" class="d-sr-only"></div><i data-v-f9b525c5="" class="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z mdi v-icon notranslate v-theme--light v-icon--size-default vd-tooltip-icon mt-4 ml-2" aria-hidden="true" targetref="[object Object]" aria-describedby="v-tooltip-5"></i>
+      <!--teleport start-->
+      <!--teleport end-->
+    </div>
+    <!---->
+    <div class="v-input__details">
+      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+        <!---->
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NirField > renders correctly with outlined prop 1`] = `
+<div data-v-f9b525c5="" class="vd-nir-field d-flex align-start">
+  <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty vd-nir-field__fields-wrapper multi-line">
+    <!---->
+    <div class="v-input__control">
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-number-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-1">
+                <!---->Numéro de sécurité sociale
+              </label>
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <div class="v-field__outline__start"></div>
+              <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
+                  <!---->Numéro de sécurité sociale
+                </label></div>
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+            <div class="v-messages__message vd-nir-field__hint">13 caractères</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="number-field-errors" class="d-sr-only"></div>
+      <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-key-field flex-grow-0 mr-2 mr-sm-4">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-3">
+                <!---->Clé
+              </label>
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline">
+              <div class="v-field__outline__start"></div>
+              <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
+                  <!---->Clé
+                </label></div>
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+            <div class="v-messages__message vd-nir-field__hint">2 chiffres</div>
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <div data-v-f9b525c5="" id="key-field-errors" class="d-sr-only"></div>
+      <!--v-if-->
+    </div>
+    <!---->
+    <div class="v-input__details">
+      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+        <!---->
+      </transition-stub>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
