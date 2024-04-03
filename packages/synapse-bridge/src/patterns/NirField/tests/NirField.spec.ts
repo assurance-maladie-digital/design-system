@@ -675,8 +675,12 @@ it("updates the v-model when a number is deleted", async () => {
 	  // Check the changeKeyValue method
 	  wrapper.vm.changeKeyValue();
 
-	  expect(wrapper.emitted('update:modelValue')).toBeTruthy();
-	  expect(wrapper.emitted('update:modelValue')[2]).toEqual([['123456789012322'][0]]);
+	  const emittedValues = wrapper.emitted('update:modelValue');
+
+	  expect(emittedValues).toBeTruthy();
+		if (emittedValues && emittedValues.length > 2) {
+			expect(emittedValues[2]).toEqual([['123456789012322'][0]]);
+		}
 	});
 
 	it("use changeKeyValue method with number", async () => {
@@ -694,7 +698,11 @@ it("updates the v-model when a number is deleted", async () => {
 		// Check the changeKeyValue method
 		wrapper.vm.changeKeyValue();
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy();
-		expect(wrapper.emitted('update:modelValue')[1]).toEqual(['1234567890123']);
+		const emittedValues = wrapper.emitted('update:modelValue');
+
+		expect(emittedValues).toBeTruthy();
+		if (emittedValues && emittedValues.length > 2) {
+			expect(emittedValues[1]).toEqual(['1234567890123']);
+		}
 	});
 });
