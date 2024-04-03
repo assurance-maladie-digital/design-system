@@ -3,17 +3,16 @@
 		<VueDatePicker
 			v-if="!rangeIsUsed && !birthdate"
 			v-model="date"
-			ref="myDatePicker"
+			ref="datePicker"
 			placeholder="Date"
 			:enable-time-picker="false"
-			text-input
 			:hide-input-icon="noPrependIcon"
 			:format="format"
 			:disabled="disabled"
 			:clearable="clearable"
 			:class="{
         'placeholder-no-icon': noPrependIcon || appendIcon,
-        'myDatePicker': datePickerClass
+        'datePicker': datePickerClass
       }"
 			calendar-cell-class-name="dp-custom-cell"
 			auto-apply
@@ -21,7 +20,7 @@
 			locale="fr"
 			@open="blockOpenOnclick"
 			@close="handleClose"
-			@input="handleInput"
+			@input="getDateFromInput"
 		>
 			<template #input-icon>
 				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
@@ -32,14 +31,19 @@
 				</div>
 			</template>
 			<template #dp-input="{}">
-				<input type="text" :value="inputHistory" class="dp__input" />
+				<input
+					type="text"
+					:value="inputHistory"
+					class="dp__input dp__input_icon_pad"
+					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
+					placeholder="Date"/>
 			</template>
 		</VueDatePicker>
 
 		<VueDatePicker
 			v-else
 			v-model="date"
-			ref="myDatePicker"
+			ref="datePicker"
 			calendar-cell-class-name="dp-custom-cell"
 			placeholder="Date de naissance"
 			hide-offset-dates
@@ -51,9 +55,19 @@
 			text-input
 			@open="blockOpenOnclick"
 			@close="handleClose"
+			@input="getDateFromInput"
+			@update:model-value="getBirthdateFromCalendar"
 		>
 			<template #input-icon>
 				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
+			</template>
+			<template #dp-input="{}">
+				<input
+					type="text"
+					:value="inputHistory"
+					class="dp__input dp__input_icon_pad"
+					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
+					placeholder="Date"/>
 			</template>
 		</VueDatePicker>
 
@@ -61,18 +75,40 @@
 	</div>
 
 	<div v-else>
-		<VueDatePicker v-model="startDate" auto-apply locale="fr" placeholder="Début" :format="format">
+		<VueDatePicker v-model="startDate" auto-apply locale="fr" placeholder="Début" :format="format" text-input>
 			<template #input-icon>
 				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
 			</template>
+			<template #dp-input="{}">
+				<input
+					type="text"
+					:value="inputHistory"
+					class="dp__input dp__input_icon_pad"
+					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
+					placeholder="Debut"/>
+			</template>
 		</VueDatePicker>
 
-		<VueDatePicker v-model="date" auto-apply range locale="fr" placeholder="Fin" :format="format">
+		<VueDatePicker
+			v-model="date"
+			auto-apply
+			range
+			locale="fr"
+			placeholder="Fin"
+			:format="format"
+			text-input
+		>
 			<template #input-icon>
 				<VIcon>{{ calendarIcon }}</VIcon>
 			</template>
 			<template #dp-input="{}">
-				<input placeholder="Fin" type="text" :value="formatDate(endDate)" class="dp__pointer dp__input_readonly dp__input dp__input_icon_pad dp__input_reg" />
+				<input
+					placeholder="Fin"
+					type="text"
+					:value="formatDate(endDate)"
+					class="dp__input dp__input_icon_pad"
+					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
+				/>
 			</template>
 		</VueDatePicker>
 	</div>
@@ -162,6 +198,14 @@ export default defineComponent({
 			}
 		},
 		inputHistory(newVal) {
+			if (!/^[\d/]+$/.test(newVal)) {
+				this.inputHistory = newVal.slice(0, -1);
+			}
+			if (newVal.length === 10) {
+				const [day, month, year] = newVal.split('/');
+				const date = new Date(`${year}-${month}-${day}`);
+				this.date = date;
+			}
 			if (newVal.length > 10) {
 				this.inputHistory = newVal.slice(0, 10);
 			}
@@ -182,18 +226,18 @@ export default defineComponent({
 			return dayOfWeek === 0 || dayOfWeek === 6;
 		},
 		handleIconClick(event) {
-			const myDatePicker = this.$refs.myDatePicker;
+			const datePicker = this.$refs.datePicker;
 			event.stopPropagation();
 			this.isCalOpen = !this.isCalOpen;
 			if (!this.noCalendar) {
-				this.isCalOpen ? myDatePicker.openMenu() : myDatePicker.closeMenu();
+				this.isCalOpen ? datePicker.openMenu() : datePicker.closeMenu();
 			}
 		},
 		blockOpenOnclick() {
-			const myDatePicker = this.$refs.myDatePicker;
+			const datePicker = this.$refs.datePicker;
 
 			if (!this.isCalOpen && !this.textFieldActivator && !this.noPrependIcon) {
-				myDatePicker.closeMenu();
+				datePicker.closeMenu();
 			} else {
 				this.isCalOpen = !this.isCalOpen;
 			}
@@ -229,9 +273,7 @@ export default defineComponent({
 
 			return `${day}/${month}/${year}`;
 		},
-		handleInput(value) {
-			if (!this.noCalendar) return;
-
+		getDateFromInput(value) {
 			if (value.data === null) {
 				this.inputHistory = this.inputHistory.slice(0, -1);
 				return;
@@ -245,6 +287,9 @@ export default defineComponent({
 
 			this.inputHistory += value.data;
 		},
+		getBirthdateFromCalendar() {
+			this.inputHistory = this.formatDate(this.date);
+		}
 	}
 });
 </script>
@@ -286,6 +331,10 @@ export default defineComponent({
 	padding-inline-start: 0 !important;
 }
 
+:deep(.dp__button) {
+	display: none !important;
+}
+
 .dp__disabled {
 	background: transparent;
 	opacity: 0.8;
@@ -299,15 +348,20 @@ export default defineComponent({
 	display: none !important;
 }
 
-.myDatePicker .dp__input:focus {
-	border: solid 2px #0c419a;
-}
-
-.myDatePicker.error .dp__input:focus {
+.datePicker.error .v-input__slot:focus {
 	border: solid 2px red;
 }
 
-.myDatePicker.warning .dp__input:focus {
+.datePicker.warning .v-input__slot:focus {
 	border: solid 2px orange;
 }
+
+.v-input__slot:focus {
+	border-bottom: solid 2px #0c419a !important;
+}
+
+.dp__input:focus {
+	border: solid 2px #0c419a;
+}
+
 </style>
