@@ -19,7 +19,8 @@
 			"import": "./dist/synapse-bridge.js",
 			"require": "./dist/synapse-bridge.umd.cjs"
 		},
-		"./style.css": "./dist/style.css"
+		"./style.css": "./dist/style.css",
+		"./modules/notification": "./src/modules/notification/index.js"
 	},
 	"types": "./dist/index.d.ts",
 	"scripts": {
