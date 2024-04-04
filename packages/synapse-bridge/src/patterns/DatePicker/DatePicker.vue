@@ -7,8 +7,8 @@
 			placeholder="Date"
 			:enable-time-picker="false"
 			:hide-input-icon="noPrependIcon"
-			:format="format"
 			:disabled="disabled"
+			:format="format"
 			:clearable="clearable"
 			:class="{
         'placeholder-no-icon': noPrependIcon || appendIcon,
@@ -31,9 +31,10 @@
 				</div>
 			</template>
 			<template #dp-input="{}">
+				{{ inputHistory }}
 				<input
 					type="text"
-					:value="inputHistory"
+					:value="inputHistory || formatDate(date)"
 					class="dp__input dp__input_icon_pad"
 					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
 					placeholder="Date"
@@ -77,14 +78,22 @@
 	</div>
 
 	<div v-else>
-		<VueDatePicker v-model="startDate" auto-apply locale="fr" placeholder="Début" :format="format" text-input>
+		<VueDatePicker
+			v-model="startDate"
+			auto-apply
+			locale="fr"
+			placeholder="Début"
+			:format="format"
+			text-input
+			calendar-cell-class-name="dp-custom-cell"
+		>
 			<template #input-icon>
 				<VIcon @click="handleIconClick">{{ calendarIcon }}</VIcon>
 			</template>
 			<template #dp-input="{}">
 				<input
 					type="text"
-					:value="inputHistory"
+					:value="inputHistory || formatDate(date)"
 					class="dp__input dp__input_icon_pad"
 					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
 					placeholder="Debut"/>
@@ -306,17 +315,19 @@ export default defineComponent({
 	padding-bottom: 1px;
 }
 
-.dp-custom-cell {
+:deep(.dp__today) {
+	border: 1px solid #2eb5e4 !important;
 	border-radius: 50%;
 }
 
-.dp__today {
-	border: 1px solid #2eb5e4;
-}
-
-.dp__active_date {
+:deep(.dp__active_date) {
 	background: #2eb5e4;
 	color: var(--dp-primary-text-color);
+	border-radius: 50%;
+}
+
+:deep(.dp__date:hover) {
+	border-radius: 50%;
 }
 
 .dp__input::placeholder {
