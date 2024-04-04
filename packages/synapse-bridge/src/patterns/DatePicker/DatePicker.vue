@@ -36,7 +36,9 @@
 					:value="inputHistory"
 					class="dp__input dp__input_icon_pad"
 					:class="outlined ? '.dp__input:focus' : 'v-input__slot'"
-					placeholder="Date"/>
+					placeholder="Date"
+					:disabled="disabled"
+				/>
 			</template>
 		</VueDatePicker>
 
