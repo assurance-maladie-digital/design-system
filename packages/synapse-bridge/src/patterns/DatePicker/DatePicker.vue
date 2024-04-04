@@ -326,7 +326,7 @@ export default defineComponent({
 	border-radius: 50%;
 }
 
-:deep(.dp__date:hover) {
+:deep(.dp__date_hover:hover) {
 	border-radius: 50%;
 }
 
