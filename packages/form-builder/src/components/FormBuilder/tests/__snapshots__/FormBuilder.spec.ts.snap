@@ -519,18 +519,55 @@ exports[`FormBuilder renders correctly 1`] = `
             </div>
           </div>
         </div>
+        <div class="v-input vd-form-input v-input--is-label-active v-input--is-dirty v-input--dense theme--dark v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+          <div class="v-input__control">
+            <div class="v-input__slot accent">
+              <fieldset aria-hidden="true">
+                <legend style="width: 0px;"><span class="notranslate">​</span></legend>
+              </fieldset>
+              <div class="v-text-field__slot"><input id="input-163" placeholder="Entrez votre taille" type="text"></div>
+            </div>
+            <div class="v-text-field__details">
+              <div class="v-messages theme--dark">
+                <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vd-form-field">
+      <h4 class="text-body-1 mb-2"><span>Question choix oui ou non conditionnel</span>
+        <!---->
+      </h4>
+      <p class="text-body-2 grey--text">
+        Visible quand le choix « Oui » ou « Non » est sélectionné
+      </p>
+      <div>
+        <div class="vd-select-btn-field" outlined="true" type="choiceButton">
+          <div class="vd-select-btn-field-toggle d-flex overflow-y-auto primary--text v-item-group theme--light v-btn-toggle" role="listbox"><button type="button" value="oui" class="v-btn white--text v-btn--active v-btn--has-bg theme--light elevation-0 v-size--default primary" style="height: auto; min-height: 40px;" aria-selected="true" role="option"><span class="v-btn__content"><span class="text-body-1">
+				Oui
+			</span>
+              <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate theme--light white--text flex-shrink-0 ml-1" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
+            </button><button type="button" value="non" class="v-btn v-btn--outlined theme--light elevation-0 v-size--default primary--text" style="height: auto; min-height: 40px;" role="option"><span class="v-btn__content"><span class="text-body-1">
+				Non
+			</span>
+              <div class="spacer"></div> <span aria-hidden="true" class="v-icon notranslate theme--light white--text flex-shrink-0 ml-1" style="visibility: hidden;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true" class="v-icon__svg"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></span>
+            </button></div>
+          <!---->
+        </div>
         <transition-stub name="expand-transition">
           <div class="vd-other-field mt-4">
             <h4 class="text-body-1 mb-1">
-              Autre choix
+              Merci d'expliquer les raisons de votre réponse affirmative ?
             </h4>
-            <div class="v-input vd-form-input v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined v-text-field--placeholder">
+            <div class="v-input vd-form-input v-textarea v-textarea--auto-grow v-textarea--no-resize v-input--is-label-active v-input--is-dirty theme--light v-text-field v-text-field--enclosed v-text-field--outlined">
               <div class="v-input__control">
                 <div class="v-input__slot">
                   <fieldset aria-hidden="true">
                     <legend style="width: 0px;"><span class="notranslate">​</span></legend>
                   </fieldset>
-                  <div class="v-text-field__slot"><textarea id="input-164" placeholder="Entrez votre taille" rows="1"></textarea></div>
+                  <div class="v-text-field__slot"><textarea id="input-176" rows="1"></textarea></div>
                 </div>
                 <div class="v-text-field__details">
                   <div class="v-messages theme--light">

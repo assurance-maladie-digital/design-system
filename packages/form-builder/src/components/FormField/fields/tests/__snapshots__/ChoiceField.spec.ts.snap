@@ -28,6 +28,20 @@ exports[`ChoiceField renders the other field when the corresponding choice is se
 </div>
 `;
 
+exports[`ChoiceField renders the other field when the corresponding choice is selected and type of other is array 1`] = `
+<div>
+  <choicebuttonfield-stub items="[object Object],[object Object]" value="oui" options="[object Object]"></choicebuttonfield-stub>
+  <vexpandtransition-stub mode="in-out" hide-on-leave="">
+    <div class="vd-other-field mt-4">
+      <h4 class="text-body-1 mb-1">
+        Merci d'expliquer les raisons de votre réponse affirmative ?
+      </h4>
+      <vtextarea-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" value="justification" backgroundcolor="" hint="Veuillez entrez votre réponse" loaderheight="2" clearicon="$clear" outlined="true" type="text" autogrow="true" rowheight="24" rows="1" class="vd-form-input"></vtextarea-stub>
+    </div>
+  </vexpandtransition-stub>
+</div>
+`;
+
 exports[`ChoiceField renders with multiple error messages 1`] = `
 <div>
   <div class="vd-select-btn-field vd-form-input" type="choiceButton">

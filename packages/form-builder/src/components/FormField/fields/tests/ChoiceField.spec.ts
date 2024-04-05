@@ -92,6 +92,54 @@ describe('ChoiceField', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it('renders the other field when the corresponding choice is selected and type of other is array', () => {
+		wrapper = mountComponent(ChoiceField, {
+			propsData: {
+				field: {
+					type: 'select',
+					title: 'Question choix multiple conditionnel',
+					items: [
+						{
+							text: 'Oui',
+							value: 'oui'
+						},
+						{
+							text: 'Non',
+							value: 'non'
+						}
+					],
+					fieldOptions: {
+						outlined: true,
+						type: 'choiceButton',
+						inline: true
+					},
+					value: {
+						value: 'oui',
+						other: 'justification'
+					},
+					other: [
+						{
+							label: 'Merci d\'expliquer les raisons de votre réponse affirmative ?',
+							selectedChoice: 'oui',
+							fieldOptions: {
+								hint: 'Veuillez entrez votre réponse'
+							}
+						},
+						{
+							label: 'Merci de clarifier les raisons de votre réponse négative ?',
+							selectedChoice: 'non',
+							fieldOptions: {
+								hint: 'Veuillez entrez votre réponse'
+							}
+						}
+					]
+				}
+			}
+		});
+
+		expect(wrapper).toMatchSnapshot();
+	});
+
 	it('renders with single error message', () => {
 		wrapper = mountComponent(
 			ChoiceField,
