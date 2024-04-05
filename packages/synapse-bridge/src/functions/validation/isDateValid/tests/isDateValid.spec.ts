@@ -1,4 +1,4 @@
-import { isDateValid } from '../';
+import { isDateValid } from '../index.ts';
 import { describe, it, expect } from 'vitest';
 
 describe('isDateValid', () => {

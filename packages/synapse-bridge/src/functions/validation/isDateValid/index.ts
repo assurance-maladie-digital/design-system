@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { parseDate } from '../../../helpers/parseDate';
+import { parseDate } from '@/helpers/parseDate';
 
 import isLeapYear from 'dayjs/plugin/isLeapYear';
 
