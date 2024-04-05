@@ -73,6 +73,8 @@
 	$skeleton-loader-actions-button-margin: 0px,
 	$alert-border-opacity: 1,
 	$tooltip-background-color: rgba(97, 97, 97, 0.9),
+	$table-header-font-size: 14px !important,
+	$table-header-font-weight: 700,
 );
 
 @import './fonts.scss';
@@ -166,4 +168,69 @@ a {
 	min-width: 1px;
 	position: relative;
 	color: rgba(0,0,0,.6);
+}
+
+// VDataTable: Custom styles
+.vd-data-table {
+	border-top: thin solid rgba(0, 0, 0, .12);
+
+	thead {
+		background: $vd-am-blue-lighten-97;
+	}
+
+	table thead tr {
+		white-space: nowrap;
+	}
+
+	&.row-clickable table tbody tr {
+		cursor: pointer;
+	}
+
+	&.fixed-min-height {
+		.v-data-table__wrapper {
+			min-height: 540px;
+		}
+	}
+
+	&.no-mobile-header {
+		.v-data-table-header-mobile {
+			display: none;
+		}
+
+		table {
+			border-top: 2px solid #eee;
+		}
+	}
+}
+
+// Input : Custom styles
+.v-input, .v-input input, .v-input textarea {
+	color: rgba(0,0,0,.87);
+}
+
+// Field : Custom styles
+.v-field {
+	&--active {
+		.v-field__prepend-inner > .v-icon, .v-field__append-inner > .v-icon, .v-field__clearable > .v-icon {
+			opacity: 1;
+			color: $vd-primary;
+		}
+	}
+}
+
+// Form Input : Custom sizes
+.vd-form-input {
+	width: $vd-input-medium;
+
+	&-s {
+		width: $vd-input-small;
+	}
+
+	&-l {
+		width: $vd-input-large;
+	}
+
+	&-xl {
+		width: $vd-input-x-large;
+	}
 }
