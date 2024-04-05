@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RangeField > renders correctly 1`] = `
+<div class="vd-range-field">
+  <div class="d-flex flex-wrap max-width-none ma-n3">
+    <v-text-field-stub class="ma-3" modelvalue="50" label="Valeur min" autofocus="false" counter="false" persistentplaceholder="false" persistentcounter="false" type="number" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" focused="false" clearable="false" clearicon="$clear" active="false" dirty="false" flat="false" persistentclear="false" reverse="false" singleline="false" variant="filled" loading="false" tile="false" inputmode="numeric"></v-text-field-stub>
+    <v-text-field-stub class="ma-3" modelvalue="80" label="Valeur max" autofocus="false" counter="false" persistentplaceholder="false" persistentcounter="false" type="number" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" focused="false" clearable="false" clearicon="$clear" active="false" dirty="false" flat="false" persistentclear="false" reverse="false" singleline="false" variant="filled" loading="false" tile="false" ripple="false" inputmode="numeric"></v-text-field-stub>
+  </div>
+  <v-range-slider-stub class="align-center mt-2 mb-6" color="primary" focused="false" centeraffix="true" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" modelvalue="50,80" max="100" min="0" step="0" thumbsize="20" showticks="false" ticksize="2" tracksize="4" reverse="false" tile="false" elevation="2" ripple="true" strict="false"></v-range-slider-stub>
+</div>
+`;
+
+exports[`RangeField > renders correctly with outlined prop 1`] = `
+<div class="vd-range-field">
+  <div class="d-flex flex-wrap max-width-none ma-n3">
+    <v-text-field-stub class="ma-3" modelvalue="50" label="Valeur min" autofocus="false" counter="false" persistentplaceholder="false" persistentcounter="false" type="number" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" focused="false" clearable="false" clearicon="$clear" active="false" dirty="false" flat="false" persistentclear="false" reverse="false" singleline="false" variant="outlined" loading="false" tile="false" inputmode="numeric"></v-text-field-stub>
+    <v-text-field-stub class="ma-3" modelvalue="80" label="Valeur max" autofocus="false" counter="false" persistentplaceholder="false" persistentcounter="false" type="number" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" focused="false" clearable="false" clearicon="$clear" active="false" dirty="false" flat="false" persistentclear="false" reverse="false" singleline="false" variant="outlined" loading="false" tile="false" ripple="false" inputmode="numeric"></v-text-field-stub>
+  </div>
+  <v-range-slider-stub class="align-center mt-2 mb-6" color="primary" focused="false" centeraffix="true" hidedetails="true" hidespinbuttons="false" persistenthint="false" messages="" direction="horizontal" density="default" error="false" errormessages="" maxerrors="1" rules="" modelvalue="50,80" max="0" min="0" step="0" thumbsize="20" showticks="false" ticksize="2" tracksize="4" reverse="false" tile="false" elevation="2" ripple="true" strict="false"></v-range-slider-stub>
+</div>
+`;
