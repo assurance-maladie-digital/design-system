@@ -10,7 +10,7 @@
 ### Interne
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3467](https://github.com/assurance-maladie-digital/design-system/pull/3467))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3478](https://github.com/assurance-maladie-digital/design-system/pull/3478))
 
 - ⬆️ **Dépendances**
   - **@types/eslint:** Mise à jour vers la `v8.56.7` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
