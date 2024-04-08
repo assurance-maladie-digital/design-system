@@ -1,3 +1,22 @@
+## v2.16.2
+
+**Version publiée le 08/04/2024.**
+
+### Form Builder
+
+- ✨ **Nouvelles fonctionnalités**
+  - **FormBuilder:** Le champ `other` peux être désormais multiple ([#3469](https://github.com/assurance-maladie-digital/design-system/pull/3469))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3467](https://github.com/assurance-maladie-digital/design-system/pull/3467))
+
+- ⬆️ **Dépendances**
+  - **@types/eslint:** Mise à jour vers la `v8.56.7` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.10.1` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
+  - **@babel/core:** Mise à jour vers la `v7.24.4` ([#3453](https://github.com/assurance-maladie-digital/design-system/pull/3453))
+
 ## v2.16.1
 
 **Version publiée le 28/03/2024.**
