@@ -101,6 +101,10 @@ body {
 	display: none;
 }
 
+.v-ripple__container {
+	width: fit-content;
+}
+
 /* Apply default transition to links */
 a {
 	transition: .25s;
