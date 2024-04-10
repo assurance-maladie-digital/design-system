@@ -1,0 +1,8 @@
+[
+  {
+    "name": "all",
+    "path": "/*",
+    "component": "/Users/davidfyon/Desktop/cnam/design-system/packages/docs/src/pages/_.vue",
+    "chunkName": "pages/_"
+  }
+]

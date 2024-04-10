@@ -1,0 +1,86 @@
+{
+  "DocA11yCriteria": {
+    "description": "Auto imported from components/global/DocA11yCriteria.vue"
+  },
+  "DocAlert": {
+    "description": "Auto imported from components/global/DocAlert.vue"
+  },
+  "DocAlertBridge": {
+    "description": "Auto imported from components/global/DocAlertBridge.vue"
+  },
+  "DocApi": {
+    "description": "Auto imported from components/global/DocApi.vue"
+  },
+  "DocApiTable": {
+    "description": "Auto imported from components/global/DocApiTable.vue"
+  },
+  "DocColorPalette": {
+    "description": "Auto imported from components/global/DocColorPalette.vue"
+  },
+  "DocComponentOverview": {
+    "description": "Auto imported from components/global/DocComponentOverview.vue"
+  },
+  "DocComponentOverviewBtn": {
+    "description": "Auto imported from components/global/DocComponentOverviewBtn.vue"
+  },
+  "DocDesignPrinciplesPage": {
+    "description": "Auto imported from components/global/DocDesignPrinciplesPage.vue"
+  },
+  "DocEcoDesign": {
+    "description": "Auto imported from components/global/DocEcoDesign.vue"
+  },
+  "DocExample": {
+    "description": "Auto imported from components/global/DocExample.vue"
+  },
+  "DocExpansionPanel": {
+    "description": "Auto imported from components/global/DocExpansionPanel.vue"
+  },
+  "DocExpansionPanels": {
+    "description": "Auto imported from components/global/DocExpansionPanels.vue"
+  },
+  "DocHomePageContributors": {
+    "description": "Auto imported from components/global/DocHomePageContributors.vue"
+  },
+  "DocHomePageHeader": {
+    "description": "Auto imported from components/global/DocHomePageHeader.vue"
+  },
+  "DocHomePageList": {
+    "description": "Auto imported from components/global/DocHomePageList.vue"
+  },
+  "DocHomePageTeam": {
+    "description": "Auto imported from components/global/DocHomePageTeam.vue"
+  },
+  "DocImage": {
+    "description": "Auto imported from components/global/DocImage.vue"
+  },
+  "DocMarkup": {
+    "description": "Auto imported from components/global/DocMarkup.vue"
+  },
+  "DocMaterialLoader": {
+    "description": "Auto imported from components/global/DocMaterialLoader.vue"
+  },
+  "DocReleaseNotes": {
+    "description": "Auto imported from components/global/DocReleaseNotes.vue"
+  },
+  "DocRoadmap": {
+    "description": "Auto imported from components/global/DocRoadmap.vue"
+  },
+  "DocTabItem": {
+    "description": "Auto imported from components/global/DocTabItem.vue"
+  },
+  "DocTabs": {
+    "description": "Auto imported from components/global/DocTabs.vue"
+  },
+  "DocTemplateOverview": {
+    "description": "Auto imported from components/global/DocTemplateOverview.vue"
+  },
+  "DocUsage": {
+    "description": "Auto imported from components/global/DocUsage.vue"
+  },
+  "ExampleError": {
+    "description": "Auto imported from components/global/ExampleError.vue"
+  },
+  "VueFile": {
+    "description": "Auto imported from components/global/VueFile.vue"
+  }
+}
