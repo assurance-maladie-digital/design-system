@@ -25,7 +25,7 @@ export default defineComponent({
 			{{ locales.followUs }}
 		</span>
 
-		<ul class="d-flex justify-start justify-sm-end max-width-none mx-n2">
+		<ul class="d-flex justify-start justify-sm-end max-width-none ml-n2">
 			<li
 				v-for="(social, index) in links"
 				:key="index"
@@ -63,9 +63,10 @@ export default defineComponent({
 		color: tokens.$vd-grey-base;
 	}
 
-	.v-btn--icon.v-btn--density-default {
+	.v-btn--icon {
 		width: calc(var(--v-btn-height) + 5px);
 		height: calc(var(--v-btn-height) + 5px);
+		border: 0;
 	}
 
 	.theme--dark .v-btn--variant-text:hover :deep() {

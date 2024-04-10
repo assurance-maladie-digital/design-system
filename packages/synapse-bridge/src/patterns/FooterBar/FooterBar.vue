@@ -274,6 +274,10 @@ a {
 	color: rgba(0,0,0, .6);
 }
 
+.v-btn--icon {
+	border: 0;
+}
+
 // Fix footer bar height in SK
 .v-footer {
 	flex-grow: 0 !important;

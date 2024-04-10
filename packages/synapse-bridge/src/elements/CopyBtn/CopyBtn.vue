@@ -93,5 +93,6 @@
 		box-shadow: none;
 		margin-top: 2px;
 		background: rgba(97, 97, 97, 0.9);
+		color: white;
 	}
 </style>
