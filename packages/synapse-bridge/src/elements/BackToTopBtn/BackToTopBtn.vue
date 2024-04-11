@@ -45,7 +45,7 @@
 			},
 
 			isMobile(): boolean {
-				return this.$vuetify.display.name === 'sm'
+				return this.$vuetify.display.name === 'xs' || this.$vuetify.display.name === 'sm'
 			},
 
 			btnStyle(): Record<string, string> {
