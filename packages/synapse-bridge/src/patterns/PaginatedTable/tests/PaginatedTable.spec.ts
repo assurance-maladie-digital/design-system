@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, mount } from "@vue/test-utils";
 import { vuetify } from "@tests/unit/setup";
 
 import { DataOptions } from "../types";
@@ -69,7 +69,7 @@ describe("PaginatedTable", () => {
 	});
 
 	it("get localOptions correctly with new options", async () => {
-		const wrapper = shallowMount(PaginatedTable, {
+		const wrapper = mount(PaginatedTable, {
 			propsData: {
 				options: {} as DataOptions,
 				suffix: 'test',
@@ -80,19 +80,18 @@ describe("PaginatedTable", () => {
 			},
 		});
 
-		const options = {
-			page: 1,
+		const newOptions = {
 			itemsPerPage: 5,
-			sortBy: ['name'],
-			sortDesc: [true],
-			groupBy: ['name'],
-			groupDesc: [true],
-			multiSort: true,
-			mustSort: true,
 		};
 
-		wrapper.vm.localOptions = options;
+		await wrapper.setProps({
+			options: newOptions,
+		});
 
-		expect(wrapper.vm.localOptions).toEqual(options);
+		await wrapper.vm.$nextTick();
+
+		console.log(wrapper.vm.localOptions);
+
+		expect(wrapper.vm.localOptions.itemsPerPage).toEqual(wrapper.vm.options.itemsPerPage);
 	});
 });

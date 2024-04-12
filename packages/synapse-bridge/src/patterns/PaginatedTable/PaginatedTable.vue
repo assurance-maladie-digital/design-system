@@ -26,7 +26,7 @@ export default defineComponent({
 		},
 		shouldPersistOptions: {
 			type: Boolean,
-			default: false
+			default: true
 		}
 	},
 	data() {
@@ -36,11 +36,9 @@ export default defineComponent({
 		};
 	},
 	watch: {
-		localOptions(newOptions: DataOptions): void {
+		localOptions(): void {
 			if (this.shouldPersistOptions) {
-				this.localStorageUtility.setItem(this.storageKey, newOptions);
-			} else {
-				this.localStorageUtility.removeItem(this.storageKey);
+				this.localStorageUtility.setItem(this.storageKey, this.options);
 			}
 		},
 	},
