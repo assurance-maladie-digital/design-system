@@ -39,6 +39,20 @@ describe("PaginatedTable", () => {
 		expect(wrapper.html()).toMatchSnapshot();
 	});
 
+	it("get storageKey computed correctly without localOptions", async () => {
+		const wrapper = shallowMount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+				suffix: 'test',
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.vm.storageKey).toEqual('pagination-test');
+	});
+
 	it("get storageKey computed correctly with localOptions", async () => {
 		const wrapper = shallowMount(PaginatedTable, {
 			propsData: {
@@ -52,5 +66,33 @@ describe("PaginatedTable", () => {
 		});
 
 		expect(wrapper.vm.storageKey).toEqual('pagination-test');
+	});
+
+	it("get localOptions correctly with new options", async () => {
+		const wrapper = shallowMount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+				suffix: 'test',
+				shouldPersistOptions: true
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const options = {
+			page: 1,
+			itemsPerPage: 5,
+			sortBy: ['name'],
+			sortDesc: [true],
+			groupBy: ['name'],
+			groupDesc: [true],
+			multiSort: true,
+			mustSort: true,
+		};
+
+		wrapper.vm.localOptions = options;
+
+		expect(wrapper.vm.localOptions).toEqual(options);
 	});
 });

@@ -40,7 +40,7 @@ export default defineComponent({
 			if (this.shouldPersistOptions) {
 				this.localStorageUtility.setItem(this.storageKey, newOptions);
 			} else {
-				this.localStorageUtility.getItem(this.storageKey);
+				this.localStorageUtility.removeItem(this.storageKey);
 			}
 		},
 	},
