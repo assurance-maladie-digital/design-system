@@ -38,7 +38,9 @@ export default defineComponent({
 	watch: {
 		localOptions(newOptions: DataOptions): void {
 			if (this.shouldPersistOptions) {
-				this.localStorageUtility.setItem(this.storageKey, newOptions);				
+				this.localStorageUtility.setItem(this.storageKey, newOptions);
+			} else {
+				this.localStorageUtility.getItem(this.storageKey);
 			}
 		},
 	},
@@ -63,7 +65,12 @@ export default defineComponent({
 </script>
 
 <template>
-	<VDataTable v-if="$attrs" v-bind="$attrs" @update:options="(options: DataOptions) => localOptions = options">
+	<VDataTable
+		v-if="$attrs"
+		v-bind="$attrs"
+		@update:options="(options: DataOptions) => localOptions = options"
+		class="vd-data-table"
+	>
 		<template v-for="(slot, index) of Object.keys($slots)" :key="index" v-slot:[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
