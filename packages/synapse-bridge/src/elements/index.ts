@@ -12,3 +12,4 @@ export { default as PageContainer } from './PageContainer'
 export { default as SkipLink } from './SkipLink'
 export { default as UserMenuBtn } from './UserMenuBtn'
 export { default as DownloadBtn } from "./DownloadBtn";
+export { default as CustomIcon } from './CustomIcon'
