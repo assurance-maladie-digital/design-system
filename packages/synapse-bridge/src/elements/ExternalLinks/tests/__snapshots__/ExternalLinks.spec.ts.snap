@@ -1,0 +1,151 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExternalLinks > opens the menu when the button is clicked 1`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(0); position: absolute; flex-direction: row; top: 0px; left: 0px; z-index: 4;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="true" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="mr-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+<!--teleport start-->
+<div class="v-overlay v-overlay--absolute v-overlay--active v-theme--light v-locale--is-ltr v-menu vd-external-links" style="z-index: 4;" id="v-menu-0" data-v-519bcf8b="" tile="true">
+  <transition-stub name="fade-transition" appear="true" persisted="false" css="true">
+    <!---->
+  </transition-stub>
+  <transition-stub name="fade-transition" appear="true" persisted="true" css="true" target="[object HTMLButtonElement]">
+    <div class="v-overlay__content" style="max-height: 0px; max-width: 0px; min-width: 0px; --v-overlay-anchor-origin: top right; transform-origin: bottom right; top: 12px; left: 12px;">
+      <div data-v-519bcf8b="" class="v-list v-theme--light v-list--density-default v-list--one-line py-0 vd-external-links-list" tabindex="0" role="listbox"><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.ameli.fr" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">ameli.fr</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.github.com" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">Github</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.twitter.com" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">Twitter</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a></div>
+    </div>
+  </transition-stub>
+</div>
+<!--teleport end-->
+`;
+
+exports[`ExternalLinks > renders correctly 1`] = `<v-menu-stub data-v-519bcf8b="" class="vd-external-links" attach="true" closeonback="true" contained="false" disabled="false" noclickanimation="false" modelvalue="false" persistent="false" scrim="false" zindex="4" activatorprops="[object Object]" openonhover="false" closeoncontentclick="true" closedelay="250" opendelay="300" eager="false" locationstrategy="connected" location="bottom" origin="auto" scrollstrategy="reposition" transition="fade-transition" tile="true"></v-menu-stub>`;
+
+exports[`ExternalLinks > renders correctly with fixed prop 1`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(calc(100% - 48px)); position: fixed; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`ExternalLinks > renders correctly with fixed prop 2`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(0); position: fixed; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="true" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+<!--teleport start-->
+<div class="v-overlay v-overlay--absolute v-overlay--active v-theme--light v-locale--is-ltr v-menu vd-external-links" style="z-index: 24;" id="v-menu-0" data-v-519bcf8b="" tile="true">
+  <transition-stub name="fade-transition" appear="true" persisted="false" css="true">
+    <!---->
+  </transition-stub>
+  <transition-stub name="fade-transition" appear="true" persisted="true" css="true" target="[object HTMLButtonElement]">
+    <div class="v-overlay__content" style="position: fixed; top: 12px; left: 12px; max-height: 0px; max-width: 0px; min-width: 0px; --v-overlay-anchor-origin: bottom right; transform-origin: top right;">
+      <div data-v-519bcf8b="" class="v-list v-theme--light v-list--density-default v-list--one-line py-0 vd-external-links-list" tabindex="0" role="listbox"><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.ameli.fr" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">ameli.fr</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.github.com" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">Github</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a><a data-v-519bcf8b="" class="v-list-item v-list-item--link v-theme--light v-list-item--density-default v-list-item--one-line v-list-item--variant-text" href="https://www.twitter.com" tabindex="-2" target="_blank" rel="noopener noreferrer"><span class="v-list-item__overlay"></span><span class="v-list-item__underlay"></span>
+          <!---->
+          <div class="v-list-item__content" data-no-activator="">
+            <!---->
+            <!---->
+            <div data-v-519bcf8b="" class="d-flex flex-row justify-space-between">
+              <div data-v-519bcf8b="" class="v-list-item-title">Twitter</div><i data-v-519bcf8b="" class="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z mdi v-icon notranslate v-theme--light v-icon--size-default" style="color: rgba(0, 0, 0, 0.54); caret-color: rgba(0, 0, 0, .54);" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!---->
+        </a></div>
+    </div>
+  </transition-stub>
+</div>
+<!--teleport end-->
+`;
+
+exports[`ExternalLinks > slides on hover or focus 1`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(calc(100% - 48px)); position: absolute; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`ExternalLinks > slides on hover or focus 2`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(0); position: absolute; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`ExternalLinks > slides on hover or focus 3`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(calc(100% - 48px)); position: absolute; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`ExternalLinks > slides on hover or focus 4`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(0); position: absolute; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`ExternalLinks > slides on hover or focus 5`] = `
+<button data-v-519bcf8b="" type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default rounded-0 v-btn--size-default v-btn--variant-elevated d-flex px-3 vd-external-links-btn" style="background-color: rgb(117, 140, 192); color: rgb(255, 255, 255); caret-color: #fff; min-height: 48px; min-width: 328px; transform: translateX(calc(100% - 48px)); position: absolute; flex-direction: row-reverse; bottom: 0px; right: 0px; z-index: 5;" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator=""><span data-v-519bcf8b="" class="ml-3 vd-external-links-btn-text white--text">Consulter les données externes</span><i data-v-519bcf8b="" class="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white" aria-hidden="true"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
