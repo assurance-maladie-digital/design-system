@@ -128,7 +128,7 @@ exports[`PaginatedTable > render correctly in server mode 1`] = `
 
 exports[`PaginatedTable > renders correctly in local mode 1`] = `
 <div>
-  <div class="v-table v-table--has-top v-table--has-bottom v-theme--light v-table--density-default v-data-table">
+  <div class="v-table v-table--has-top v-table--has-bottom v-theme--light v-table--density-default v-data-table" itemslength="0">
     <!---->
     <div class="v-table__wrapper">
       <table>
