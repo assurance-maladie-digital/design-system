@@ -155,13 +155,11 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'LangBtn',
-						to: '/composants/boutons/lang-btn',
-						appendIcon: mdiBridge
+						to: '/composants/boutons/lang-btn'
 					},
 					{
 						title: 'DownloadBtn',
-						to: '/composants/boutons/download-btn',
-						appendIcon: mdiBridge
+						to: '/composants/boutons/download-btn'
 					},
 					{
 						title: 'FranceConnectBtn',
@@ -193,7 +191,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'PasswordField',
-						to: '/composants/formulaires/password-field'
+						to: '/composants/formulaires/password-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'PeriodField',
@@ -206,7 +205,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'RangeField',
-						to: '/composants/formulaires/range-field'
+						to: '/composants/formulaires/range-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'SearchListField',
@@ -214,7 +214,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'SelectBtnField',
-						to: '/composants/formulaires/select-btn-field'
+						to: '/composants/formulaires/select-btn-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'UploadWorkflow',
@@ -227,11 +228,13 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'PaginatedTable',
-						to: '/composants/tableaux/paginated-table'
+						to: '/composants/tableaux/paginated-table',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'TableToolbar',
-						to: '/composants/tableaux/table-toolbar'
+						to: '/composants/tableaux/table-toolbar',
+						appendIcon: mdiBridge
 					}
 				]
 			},

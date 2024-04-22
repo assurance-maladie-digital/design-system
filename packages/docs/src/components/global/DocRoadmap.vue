@@ -58,6 +58,18 @@
 			<img src="@/assets/images/bridge.png" alt="Roadmap Bridge" class="w-75 mb-8" />
 		</div>
 
+		<div class="d-flex justify-center mb-8">
+			<v-progress-linear
+				v-model="progress"
+				color="primary"
+				height="25"
+			>
+				<template v-slot:default="{ value }">
+					<span class="white--text font-weight-bold">{{ Math.ceil(value) }}%</span>
+				</template>
+			</v-progress-linear>
+		</div>
+
 		<VSheet
 			outlined
 			rounded
@@ -106,6 +118,7 @@
 		newTabIcon = mdiOpenInNew;
 		tagIcon = mdiTagOutline;
 		tagHiddenIcon = mdiTagHidden;
+		progress = 68;
 	}
 </script>
 

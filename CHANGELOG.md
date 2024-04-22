@@ -1,3 +1,18 @@
+## v2.16.3
+
+**Version publiée le 22/04/2024.**
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3481](https://github.com/assurance-maladie-digital/design-system/pull/3481))
+  - Mise à jour de la liste des composants disponibles dans la version Bridge ([#3481](https://github.com/assurance-maladie-digital/design-system/pull/3481))
+
+- ⬆️ **Dépendances**
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.10.2` ([#3455](https://github.com/assurance-maladie-digital/design-system/pull/3455))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.25.0` ([#3441](https://github.com/assurance-maladie-digital/design-system/pull/3441))
+  - **@types/node:** Mise à jour vers la `v16.18.96` ([#3440](https://github.com/assurance-maladie-digital/design-system/pull/3440))
+
 ## v2.16.2
 
 **Version publiée le 08/04/2024.**

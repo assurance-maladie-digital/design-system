@@ -5,7 +5,8 @@ description: Le pattern `NotificationBar` est utilisé avec le module Vuex `noti
 
 <doc-alert-bridge class="mb-8">
 
-Ce composant est disponible sur la version Bridge.
+Ce composant est disponible sur la version Bridge.<br/>
+<span class="text--disabled text-caption">Nb : ce composant n'est pas encore compatible avec le Starter Kit Vue3/composition API qui utilise le store Pinia.</span>
 
 </doc-alert-bridge>
 
