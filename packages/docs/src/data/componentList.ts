@@ -102,14 +102,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de choisir la langue de l’application',
 				href: '/composants/boutons/lang-btn',
 				image: 'components/lang-btn.svg',
-				status: ComponentStatusEnum.BRIDGE
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'DownloadBtn',
 				description: 'Utilisé pour permettre à l’utilisateur de télécharger un document provenant d’une API.',
 				href: '/composants/boutons/download-btn',
 				image: 'components/download-btn.svg',
-				status: ComponentStatusEnum.BRIDGE
+				status: ComponentStatusEnum.READY
 			},
 			{
 				name: 'FranceConnectBtn',
@@ -156,7 +156,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de saisir un mot de passe.',
 				href: '/composants/formulaires/password-field',
 				image: 'components/password-field.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'PeriodField',
@@ -170,7 +170,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner un intervalle.',
 				href: '/composants/formulaires/range-field',
 				image: 'components/range-field.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'PhoneField',
@@ -191,7 +191,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
 				href: '/composants/formulaires/select-btn-field',
 				image: 'components/select-btn-field.svg',
-				status: ComponentStatusEnum.NEW
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'UploadWorkflow',
@@ -210,14 +210,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher une VDataTable de Vuetify avec une pagination persistante.',
 				href: '/composants/tableaux/paginated-table',
 				image: 'components/paginated-table.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'TableToolbar',
 				description: 'Utilisé pour afficher une barre au-dessus des tableaux.',
 				href: '/composants/tableaux/table-toolbar',
 				image: 'components/table-toolbar.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			}
 		]
 	},
