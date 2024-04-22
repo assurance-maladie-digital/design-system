@@ -60,7 +60,7 @@
 
 		<div class="d-flex justify-center mb-8">
 			<v-progress-linear
-				v-model="progress"
+				:value="progress"
 				color="primary"
 				height="25"
 			>
