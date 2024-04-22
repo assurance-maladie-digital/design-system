@@ -3,8 +3,6 @@ import { defineComponent } from "vue";
 import type { PropType } from "vue";
 import type { DataOptions, SortOption, GroupOption } from "./types";
 import { LocalStorageUtility } from "@/helpers/localStorageUtility";
-import { VDataTableServer } from "vuetify/components";
-
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -20,6 +18,9 @@ export default defineComponent({
 		suffix: {
 			type: String,
 			default: undefined,
+		},
+		itemsPerPage: {
+			type: Number
 		},
 	},
 	data() {
@@ -50,6 +51,15 @@ export default defineComponent({
 
 			return this.suffix ? `${prefix}-${this.suffix}` : prefix
 		},
+		headers(): undefined | { title?: string, value: string }[] {
+			if (!Array.isArray(this.$attrs['headers'])) {
+				return undefined;
+			}
+			return this.$attrs['headers'].map((header) => ({
+				...header,
+				title: header.title ?? header.text,
+			}))
+		},
 		optionsFacade() {
 			const sortBy =
 				!this.options.sortBy ?
@@ -79,8 +89,8 @@ export default defineComponent({
 						}];
 
 			return {
-				page: this.options.page,
-				itemsPerPage: this.options.itemsPerPage,
+				page: this.options.page || this.$attrs['page'],
+				itemsPerPage: this.options.itemsPerPage || this.itemsPerPage,
 				sortBy,
 				groupBy,
 				multiSort: this.options.multiSort,
@@ -96,6 +106,7 @@ export default defineComponent({
 			return {
 				...attrs,
 				itemsLength: this.serverItemsLength ?? 0,
+				headers: this.headers,
 				...this.localOptions,
 			};
 		},
@@ -137,7 +148,7 @@ export default defineComponent({
 			return options.groupBy
 				.filter((group: any) => group.key)
 				.map((group: any) => group?.order === 'desc');
-		},
+		}
 	},
 	created() {
 		this.localOptions =
