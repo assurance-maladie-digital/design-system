@@ -62,6 +62,55 @@ describe("PaginatedTable", () => {
 		expect(wrapper.text()).toContain("John Doe");
 	});
 
+	it("renders correctly with no headers", () => {
+		const wrapper = mount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+				items: fakeItems,
+			} as any,
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.text()).toContain("John Doe");
+		expect(wrapper.text()).not.toContain("ID");
+		expect(wrapper.text()).toContain("Id");
+	});
+
+	it("accepts both old and new headers format", () => {
+		const wrapper = mount(PaginatedTable, {
+			propsData: {
+				options: {} as DataOptions,
+				items: fakeItems,
+				itemsPerPage: 2,
+				headers: [
+					{
+						text: "ID",
+						key: "id",
+					},
+					{
+						title: "NAME",
+						key: "name",
+					},
+					{
+						key: "age",
+					},
+				],
+			} as any,
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.text()).toContain("John Doe");
+		expect(wrapper.text()).toContain("ID");
+		expect(wrapper.text()).toContain("NAME");
+		expect(wrapper.find('.v-data-table__td:nth-child(3)').text()).not.toMatch(/age/i);
+
+		expect(wrapper.findAll("tbody .v-data-table__tr").length).toBe(2);
+	});
+
 	it('Sort items correctly in local mode', async () => {
 		const wrapper = mount(PaginatedTable, {
 			propsData: {
@@ -281,6 +330,35 @@ describe("PaginatedTable", () => {
 				expect.objectContaining({
 					sortBy: ['name'],
 					sortDesc: [true]
+				})
+			]
+		);
+	});
+
+	it('define the order at asc by default in server mode', async () => {
+		const wrapper = mount(PaginatedTable, {
+			propsData: {
+				options: {
+					sortBy: 'id',
+					groupBy: 'name',
+				},
+				items: [],
+				serverItemsLength: 0,
+				suffix: 'test 7',
+				headers: headers
+			} as any,
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		expect(wrapper.emitted('update:options')?.at(-1))
+			.toEqual([
+				expect.objectContaining({
+					sortBy: ['id'],
+					sortDesc: [false],
+					groupBy: ['name'],
+					groupDesc: [false]
 				})
 			]
 		);
