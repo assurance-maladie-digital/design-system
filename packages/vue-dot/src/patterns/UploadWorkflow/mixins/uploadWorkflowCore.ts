@@ -80,7 +80,7 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 		return [this.uploadedFile];
 	}
 
-	selectedItem = '';
+	selectedItem: string | number = '';
 
 	internalFileListItems = [] as FileListItem[];
 
