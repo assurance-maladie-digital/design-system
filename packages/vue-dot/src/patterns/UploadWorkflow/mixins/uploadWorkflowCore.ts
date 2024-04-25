@@ -122,7 +122,9 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 			return;
 		}
 
-		const index = this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
+		const index = typeof this.selectedItem === 'number' ?
+			this.selectedItem :
+			this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
 
 		if (index === -1) {
 			return;
@@ -207,6 +209,8 @@ export class UploadWorkflowCore extends MixinsDeclaration {
 	}
 
 	fileSelected(): void {
+		this.error = false;
+
 		if (this.showFilePreview) {
 			if (this.singleMode) {
 				this.selectedItem = this.selectItems[0].value;
