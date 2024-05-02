@@ -21,8 +21,7 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"typeRoots" : ["./types"],
-		"allowSyntheticDefaultImports": true,
-		"allowJs": true
+		"allowSyntheticDefaultImports": true
 	},
 	"include": [
 		"dev/**/*.ts",
