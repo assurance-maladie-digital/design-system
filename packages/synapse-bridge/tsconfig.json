@@ -13,15 +13,14 @@
 			"@/*": ["./src/*"],
 			"@tests/*": ["./tests/*"]
 		},
-
-		/* Bundler mode */
-		"moduleResolution": "bundler",
+		"moduleResolution": "node",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"typeRoots" : ["./types"],
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true
 	},
 	"include": [
 		"dev/**/*.ts",
