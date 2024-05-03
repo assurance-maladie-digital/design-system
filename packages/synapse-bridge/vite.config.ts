@@ -6,6 +6,52 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
 
+function generateVuetifyGlobals() {
+	const components = [
+		'VForm',
+		'VBtn',
+		'VIcon',
+		'VChip',
+		'VMenu',
+		'VRadioGroup',
+		'VRadio',
+		'VTable',
+		'VDataTable',
+		'VBtnToggle',
+		'VCheckbox',
+		'VSelect',
+		'VRating',
+		'VRangeSlider',
+		'VSnackbar',
+		'VTooltip',
+		'VTextField',
+		'VInput',
+		'VToolbar',
+		'VNavigationDrawer',
+		'VTabs',
+		'VLayout',
+		'VFooter',
+		'VAlert',
+		'VDivider',
+		'VSheet',
+		'VList',
+		'VGrid',
+		'VDialog',
+		'VCard',
+		'VSkeletonLoader',
+		'transitions',
+	];
+
+	const globals = {};
+
+	for (const component of components) {
+		globals[`vuetify/lib/components/${component}/index.mjs`] = component;
+	}
+	globals['vuetify/components/VSkeletonLoader'] = 'VSkeletonLoader';
+	globals['vuetify/lib/directives/index.mjs'] = 'vuetifyDirectives';
+
+	return globals;
+}
 export default defineConfig(({ mode }) => {
 	const config = {
 		plugins: [
@@ -39,12 +85,15 @@ export default defineConfig(({ mode }) => {
 			rollupOptions: {
 				external: [
 					'vue',
-					/vuetify/
+					/vuetify/,
 				],
 				output: {
 					globals: {
 						vue: 'Vue',
-						vuetify: 'Vuetify'
+						vuetify: 'Vuetify',
+						'vuetify/directives': 'vuetifyDirectives',
+						'vuetify/lib/directives': 'vuetifyDirectives',
+						...generateVuetifyGlobals(),
 					}
 				}
 			}
