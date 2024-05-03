@@ -8,12 +8,9 @@ export const config = {
 		class: 'd-flex align-center'
 	},
 	menuBtn: {
-		color: 'primary',
-		minWidth: 0,
-		height: '42px',
-		spacing: 'px-1',
-		variant: 'text',
-		class: 'text-caption'
+		btn: {
+			color: 'default',
+		}
 	},
 	spacer: {
 		class: 'h-100 mr-4 mr-md-16'

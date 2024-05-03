@@ -5,13 +5,14 @@ import LogoBrandSection from "@/elements/LogoBrandSection";
 import HeaderMenuBtn from "./HeaderMenuBtn/HeaderMenuBtn.vue";
 import HeaderNavigationBar from "./HeaderNavigationBar/HeaderNavigationBar.vue";
 import HeaderNavigationDrawer from "./HeaderNavigationDrawer";
-import { NavigationItem } from "./types";
+import type { NavigationItem } from "./types";
 import { ThemeEnum, THEME_ENUM_VALUES } from "@/constants/enums/ThemeEnum";
 import { config } from "./config.ts";
 import { propValidator } from "@/helpers/propValidator";
 import { customizable } from "@/mixins/customizable";
-import { Next } from "@/types";
+import type { Next } from "@/types";
 import { Scroll } from 'vuetify/directives';
+
 export default defineComponent({
 	inheritAttrs: false,
 	components: {

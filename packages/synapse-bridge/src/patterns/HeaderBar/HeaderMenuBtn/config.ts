@@ -5,6 +5,7 @@ export const config = {
 		color: 'transparent'
 	},
 	icon: {
-		class: 'mr-2'
+		class: 'mr-2',
+		size: '24px'
 	}
 };
