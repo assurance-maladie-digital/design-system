@@ -315,7 +315,7 @@ L'API de Vitest est similaire a celle de Jest, pour faire des mocks il faut dés
 Pour l'utilisation de `@nuxt/test-utils`, voir la [documentation](https://nuxt.com/docs/getting-started/testing).
 
 
-# FAQ
+<!-- # FAQ
 
 
-<doc-migration-faq class="mt-4"></doc-migration-faq>
+<doc-migration-faq class="mt-4"></doc-migration-faq> -->

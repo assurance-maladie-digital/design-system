@@ -10,7 +10,7 @@ import {
 	mdiBookOpenPageVariantOutline,
 	mdiHammerWrench,
 	mdiBridge,
-	mdiChevronDoubleUp
+	mdiChevronDoubleRight
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -643,7 +643,7 @@ export const drawerItems: DrawerItem[] = [
 	},
 	{
 		title: 'Consignes de migration',
-		icon: mdiChevronDoubleUp,
+		icon: mdiChevronDoubleRight,
 		to: '/migration-bridge'
 	},
 	{
