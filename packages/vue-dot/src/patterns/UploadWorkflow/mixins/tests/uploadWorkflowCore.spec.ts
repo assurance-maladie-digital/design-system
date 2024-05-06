@@ -22,7 +22,7 @@ interface TestComponent extends Vue {
 	error: boolean;
 	dialog: boolean;
 	inlineSelect: boolean;
-	selectedItem: string;
+	selectedItem: string | number;
 	internalFileListItems: FileListItem[] | null;
 	singleMode(): boolean;
 	fileSelected(): void;
@@ -133,6 +133,21 @@ describe('EventsFileFired', () => {
 	it('sets list item name and file and emits change event', async() => {
 		const wrapper = createWrapper() as Wrapper<TestComponent>;
 		wrapper.vm.selectedItem = 'file1';
+
+		wrapper.vm.uploadedFile = testFile;
+
+		wrapper.vm.setFileInList();
+
+		await wrapper.vm.$nextTick();
+
+		expect(wrapper.vm.fileList[0].name).toBe('avatar.png');
+		expect(wrapper.vm.fileList[0].file).toEqual(testFile);
+		expect(wrapper.emitted('change')).toBeTruthy();
+	});
+
+	it('replace the file in the list when the id is a number', async() => {
+		const wrapper = createWrapper() as Wrapper<TestComponent>;
+		wrapper.vm.selectedItem = 0;
 
 		wrapper.vm.uploadedFile = testFile;
 
