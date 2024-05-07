@@ -22,8 +22,8 @@
 				@change="emitChangeEvent"
 			>
 				<VListItem
-					v-for="(item, index) in filteredItems"
-					:key="index"
+					v-for="(item) in filteredItems"
+					:key="item.label + item.value"
 					:value="item.value"
 				>
 					<template #default="{ active }">
