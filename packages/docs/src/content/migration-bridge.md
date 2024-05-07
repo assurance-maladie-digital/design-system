@@ -174,7 +174,7 @@ metaInfo(): MetaInfo {
 }
 ```
 
-Deviens
+Devient :
 
 ```typescript
 export default defineNuxtComponent({
@@ -274,9 +274,3 @@ Ils utilisent désormais `vitest` et `@nuxt/test-utils` pour les tests de compos
 L'API de Vitest est similaire a celle de Jest, pour faire des mocks il faut désormais utiliser `vi` au lieu de `jest`.
 
 Pour l'utilisation de `@nuxt/test-utils`, voir la [documentation](https://nuxt.com/docs/getting-started/testing).
-
-
-<!-- # FAQ
-
-
-<doc-migration-faq class="mt-4"></doc-migration-faq> -->
