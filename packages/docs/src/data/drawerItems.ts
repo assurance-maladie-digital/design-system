@@ -9,7 +9,8 @@ import {
 	mdiSecurity,
 	mdiBookOpenPageVariantOutline,
 	mdiHammerWrench,
-	mdiBridge
+	mdiBridge,
+	mdiChevronDoubleRight
 } from '@mdi/js';
 
 export const drawerItems: DrawerItem[] = [
@@ -639,6 +640,11 @@ export const drawerItems: DrawerItem[] = [
 		title: 'Outils de développement',
 		icon: mdiHammerWrench,
 		to: '/outils-de-developpement'
+	},
+	{
+		title: 'Consignes de migration',
+		icon: mdiChevronDoubleRight,
+		to: '/migration-bridge'
 	},
 	{
 		title: 'Politique de sécurité',
