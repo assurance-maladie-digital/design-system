@@ -20,7 +20,20 @@
 			"require": "./dist/synapse-bridge.umd.cjs"
 		},
 		"./style.css": "./dist/style.css",
-		"./modules/notification": "./src/modules/notification/index.js"
+		"./functions/calcHumanFileSize": "./src/functions/calcHumanFileSize/index.js",
+		"./functions/copyToClipboard": "./src/functions/copyToClipboard/index.js",
+		"./functions/downloadFile": "./src/functions/downloadFile/index.js",
+		"./functions/formatDate": "./src/functions/formatDate/index.js",
+		"./functions/formatNir": "./src/functions/formatNir/index.js",
+		"./functions/getFileExtension": "./src/functions/getFileExtension/index.js",
+		"./functions/insertAt": "./src/functions/insertAt/index.js",
+		"./modules/overlay": "./src/modules/overlay/index.js",
+		"./helpers/convertToUnit": "./src/helpers/convertToUnit/index.ts",
+		"./helpers/localStorageUtility": "./src/helpers/localStorageUtility/index.ts",
+		"./helpers/propValidator": "./src/helpers/propValidator/index.ts",
+		"./helpers/ruleMessage": "./src/helpers/ruleMessage/index.ts",
+		"./rules/exactLength": "./src/rules/exactLength/index.ts",
+		"./rules/required": "./src/rules/required/index.ts"
 	},
 	"types": "./dist/index.d.ts",
 	"scripts": {
