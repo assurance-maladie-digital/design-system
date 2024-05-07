@@ -27,12 +27,22 @@
 		"./functions/formatNir": "./src/functions/formatNir/index.ts",
 		"./functions/getFileExtension": "./src/functions/getFileExtension/index.ts",
 		"./functions/insertAt": "./src/functions/insertAt/index.ts",
+		"./functions/validation": "./src/functions/validation/index.ts",
 		"./modules/notification": "./src/modules/notification/index.ts",
 		"./helpers/convertToUnit": "./src/helpers/convertToUnit/index.ts",
+		"./helpers/deepCopy": "./src/helpers/deepCopy/index.ts",
+		"./helpers/deepRemoveKeys": "./src/helpers/deepRemoveKeys/index.ts",
 		"./helpers/localStorageUtility": "./src/helpers/localStorageUtility/index.ts",
+		"./helpers/parseDate": "./src/helpers/parseDate/index.ts",
 		"./helpers/propValidator": "./src/helpers/propValidator/index.ts",
 		"./helpers/ruleMessage": "./src/helpers/ruleMessage/index.ts",
+		"./helpers/scrollBehavior": "./src/helpers/scrollBehavior/index.ts",
+		"./rules/email": "./src/rules/email/index.ts",
 		"./rules/exactLength": "./src/rules/exactLength/index.ts",
+		"./rules/matchPattern": "./src/rules/matchPattern/index.ts",
+		"./rules/maxLength": "./src/rules/maxLength/index.ts",
+		"./rules/minLength": "./src/rules/minLength/index.ts",
+		"./notBeforeDate": "./src/rules/notBeforeDate/index.ts",
 		"./rules/required": "./src/rules/required/index.ts"
 	},
 	"types": "./dist/index.d.ts",
@@ -52,7 +62,7 @@
 	"dependencies": {
 		"@cnamts/design-tokens": "2.12.0",
 		"consola": "2.15.3",
-		"vue-router": "4.2.5"
+		"vue-router": "4"
 	},
 	"devDependencies": {
 		"@mdi/js": "7.2.96",
