@@ -71,13 +71,30 @@ voir [cette page de documentation de Nuxt](https://nuxt.com/docs/guide/going-fur
 - `Route` devient `RouteLocationNormalized`.
 
 
-## 3 - Animations des pages
+## 3 - Migration des stores VueX
+
+
+3.1 - Importer l'instance de store VueX dans le fichier '/plugins/vuex.ts'.
+
+```typescript
+import { store } from '@/store';
+
+export default defineNuxtPlugin((nuxtApp) => {
+	nuxtApp.vueApp.use(store);
+});
+```
+
+3.2 - Suivre les étapes de migration [de VueX 3 vers VueX 4](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html).
+
+
+
+## 4 - Animations des pages
 
 Si le projet utise des transitions de page,
 
-3.1 - Retirer le composant `<transition>` dans le fichier 'app.vue'
+4.1 - Retirer le composant `<transition>` dans le fichier 'app.vue'
 
-3.2 - Configurer une transition de page dans le fichier 'nuxt.config.ts'
+4.2 - Configurer une transition de page dans le fichier 'nuxt.config.ts'
 
 ```typescript
 // nuxt.config.ts
@@ -92,7 +109,7 @@ export default defineNuxtConfig({
 	}
 ```
 
-3.3 - Définir le style de la transition dans un fichier de style global.
+4.3 - Définir le style de la transition dans un fichier de style global.
 
 ```css
 .page-enter-active,
@@ -108,18 +125,18 @@ export default defineNuxtConfig({
 }
 ```
 
-	
-## 4 - Utilisation du script [vue-class-migrator](https://github.com/getyourguide/vue-class-migrator)
+
+## 5 - Utilisation du script [vue-class-migrator](https://github.com/getyourguide/vue-class-migrator)
 
 vue-class-migrator est un script permettant de migrer automatiquement les composants vueJs écris avec vue-class-component à la syntaxe native VueJs Option API
 
-4.1 - Supprimer tous les décorateurs personnalisés, ils ne seront pas reconnus par vue-class-migrator et causeront l'échec de la migration du composant.
+5.1 - Supprimer tous les décorateurs personnalisés, ils ne seront pas reconnus par vue-class-migrator et causeront l'échec de la migration du composant.
 
-4.2 - Executer la commande `npx vue-class-migrator -d .` à la racine de votre projet.
+5.2 - Executer la commande `npx vue-class-migrator -d .` à la racine de votre projet.
 
-4.3 - Consulter les logs dans le terminal pour repérer les éventuels composants causant des erreurs et n'ayant pas pu être migré automatiquement.
+5.3 - Consulter les logs dans le terminal pour repérer les éventuels composants causant des erreurs et n'ayant pas pu être migré automatiquement.
 
-4.4 - Si vous avez déclaré vos props en tant que mixins dans vos composants en utilisant le helper 'mixin' de vue-class-componant, modifier l'import de la mixin dans le composant.
+5.4 - Si vous avez déclaré vos props en tant que mixins dans vos composants en utilisant le helper 'mixin' de vue-class-componant, modifier l'import de la mixin dans le composant.
 
 
 ```typescript
@@ -138,7 +155,7 @@ vue-class-migrator est un script permettant de migrer automatiquement les compos
 		extends: MixinsDeclaration,
 ```
 
-deviens
+devient :
 
 ```typescript
 	const Props = defineComponent({
@@ -155,7 +172,7 @@ deviens
 		...
 ```
 
-4.5 - Implémenter les fonctionnalités  qui utilisaient des décorateurs retiré à l'étape 1 en utilisant l'option API, des mixins ou des composables.
+5.5 - Implémenter les fonctionnalités  qui utilisaient des décorateurs retiré à l'étape 1 en utilisant l'option API, des mixins ou des composables.
 
 Par example : la gestion des [tag metas](https://nuxt.com/docs/migration/meta#options-api)
 ```typescript
@@ -210,7 +227,7 @@ Pour localiser les informations :
 	}
 ```
 
-## 5 - Migration des composants Vuetify
+## 6 - Migration des composants Vuetify
 
 Pour faciliter la migration des composants Vuetify, ce starter kit intègre le
 plugin [eslint-plugin-vuetify](https://github.com/vuetifyjs/eslint-plugin-vuetify).
@@ -266,7 +283,7 @@ Voici un aperçu des changements qui seront effectués par le script :
 Ces changements seront uniquement effectués sur les composants Vuetify.
 
 
-## 6 - Migration des tests unitaires et de composants
+## 7 - Migration des tests unitaires et de composants
 
 Les tests unitaires et de composants doivent être mis à jour pour être compatibles avec VueJS 3.
 Ils utilisent désormais `vitest` et `@nuxt/test-utils` pour les tests de composants.
