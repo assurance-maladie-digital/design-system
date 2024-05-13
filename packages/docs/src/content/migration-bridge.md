@@ -74,18 +74,24 @@ voir [cette page de documentation de Nuxt](https://nuxt.com/docs/guide/going-fur
 ## 3 - Migration des stores VueX
 
 
-3.1 - Importer l'instance de store VueX dans le fichier '/plugins/vuex.ts'.
+3.1 - Importer les modules VueX dans le fichier '/store/index.ts'.
 
 ```typescript
-import { store } from '@/store';
-
-export default defineNuxtPlugin((nuxtApp) => {
-	nuxtApp.vueApp.use(store);
+const store = createStore({
+	state: {},
+	modules: {
+		notification,
+		// Ajouter vos modules ici
+	},
+	plugins: [
+		vuexLocal.plugin
+	]
 });
 ```
 
-3.2 - Suivre les étapes de migration [de VueX 3 vers VueX 4](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html).
+3.2 - Suivre les étapes de migration [de VueX 3 vers VueX 4](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html) si besoin.
 
+3.3 - Suprimer votre ancien store VueX dans le dossier src.
 
 
 ## 4 - Animations des pages
