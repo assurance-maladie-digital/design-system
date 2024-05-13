@@ -1,3 +1,18 @@
+## v2.16.4
+
+**Version publiée le 13/05/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **UploadWorkflow:** Correction de la mise à jour de l'affichage des erreurs lors de l'ajout d'un nouveau fichier ([#3484](https://github.com/assurance-maladie-digital/design-system/pull/3484))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3481](https://github.com/assurance-maladie-digital/design-system/pull/3481))
+  - Mise à jour de la documentation de migration ([#3489](https://github.com/assurance-maladie-digital/design-system/pull/3489))
+
 ## v2.16.3
 
 **Version publiée le 22/04/2024.**
