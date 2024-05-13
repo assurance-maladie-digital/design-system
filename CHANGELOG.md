@@ -10,7 +10,7 @@
 ### Interne
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3481](https://github.com/assurance-maladie-digital/design-system/pull/3481))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3497](https://github.com/assurance-maladie-digital/design-system/pull/3497))
   - Mise à jour de la documentation de migration ([#3489](https://github.com/assurance-maladie-digital/design-system/pull/3489))
 
 ## v2.16.3
