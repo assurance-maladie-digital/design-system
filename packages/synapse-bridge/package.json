@@ -42,7 +42,7 @@
 		"./rules/matchPattern": "./src/rules/matchPattern/index.ts",
 		"./rules/maxLength": "./src/rules/maxLength/index.ts",
 		"./rules/minLength": "./src/rules/minLength/index.ts",
-		"./notBeforeDate": "./src/rules/notBeforeDate/index.ts",
+		"./rules/notBeforeDate": "./src/rules/notBeforeDate/index.ts",
 		"./rules/required": "./src/rules/required/index.ts"
 	},
 	"types": "./dist/index.d.ts",
