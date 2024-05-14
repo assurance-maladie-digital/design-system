@@ -60,7 +60,7 @@
 	const Props = Vue.extend({
 		props: {
 			value: {
-				type: Array as PropType<string[]>,
+				type: Array as PropType<unknown[]>,
 				default: () => []
 			},
 			items: {
