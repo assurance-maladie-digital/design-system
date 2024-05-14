@@ -27,6 +27,23 @@ export default defineNuxtConfig({
 })
 ```
 
+1.5 - Dans le fichier `nuxt.config.ts`, ajouter les variables de configurations.
+
+```typescript
+// nuxt.config.ts
+export default defineNuxtConfig({
+	runtimeConfig: {
+		public: {
+			// ajouter les variables de configuration public ici
+			version: process.env.VUE_APP_VERSION,
+		},
+		...
+	},
+	...
+})
+```
+
+Pour modifier ces variables sans regenerer le projet, il faut les ecraser dans le fichier `.output/public/json/config.env.json`.
 
 
 ## 2 - Migration du routeur
@@ -289,7 +306,57 @@ Voici un aperçu des changements qui seront effectués par le script :
 Ces changements seront uniquement effectués sur les composants Vuetify.
 
 
-## 7 - Migration des tests unitaires et de composants
+## 7 - Migration de la localisation
+
+
+Le plugin `vue-i18n` a été remplacé par `@nuxtjs/i18n`. ( https://v8.i18n.nuxtjs.org/getting-started/basic-usage )
+
+7.1 - Mettre à jour le fichier `nuxt.config.ts` pour configurer le plugin `@nuxtjs/i18n`.
+
+```typescript
+  modules: [
+    '@nuxtjs/i18n',
+    ...
+  ],
+  i18n: {
+		vueI18n: './nuxt-i18n.ts'
+	},
+```
+
+7.2 - Créer un fichier `nuxt-i18n.ts` à la racine du projet, importer les traductions et les configurer.
+
+```typescript
+import translationFR from "@/translations/fr";
+
+export default {
+	legacy: false,
+	locale: 'fr',
+	messages : {
+		fr: translationFR
+	}
+}
+```
+
+
+7.3 - Dans les composants, quand un object est import' avec la fonction `$t`, il faut le remplacer par `$tm`.
+
+7.4 - Remplacer l'usage du composant `<i18n>` par `<i18n-t>`.
+
+```html
+<i18n path="my.path" tag="p">My default text</i18n>
+```
+
+devient :
+
+```html
+<i18n-t keypath="my.path" tag="p">My default text</i18n-t>
+```
+
+plus de détails sur la page de [migration vue-i18n](https://vue-i18n.intlify.dev/guide/migration/breaking.html)
+
+
+## 8 - Migration des tests unitaires et de composants
+
 
 Les tests unitaires et de composants doivent être mis à jour pour être compatibles avec VueJS 3.
 Ils utilisent désormais `vitest` et `@nuxt/test-utils` pour les tests de composants.
