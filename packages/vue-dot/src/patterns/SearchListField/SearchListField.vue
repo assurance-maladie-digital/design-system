@@ -16,14 +16,14 @@
 
 		<VList class="pb-0">
 			<VListItemGroup
-				:value="value"
+				:value="selectedItems"
 				multiple
 				active-class="am-blue-lighten-90"
 				@change="emitChangeEvent"
 			>
 				<VListItem
-					v-for="(item, index) in filteredItems"
-					:key="index"
+					v-for="(item, i) in filteredItems"
+					:key="`item-${i}`"
 					:value="item.value"
 				>
 					<template #default="{ active }">
@@ -44,6 +44,7 @@
 				</VListItem>
 			</VListItemGroup>
 		</VList>
+		{{ selectedItems }}
 	</div>
 </template>
 
@@ -59,7 +60,7 @@
 	const Props = Vue.extend({
 		props: {
 			value: {
-				type: Array as PropType<unknown[]>,
+				type: Array as PropType<string[]>,
 				default: () => []
 			},
 			items: {
@@ -83,18 +84,24 @@
 		searchIcon = mdiMagnify;
 
 		search: string | null = null;
+		selectedItems: string[] = [];
 
 		get filteredItems(): SearchListItem[] {
 			if (this.search === null) {
 				return this.items;
 			}
 
-			return this.items.filter(item => {
-				return item.label.toLowerCase().includes((this.search as string).toLowerCase());
+			const lowercaseSearch = this.search.toLowerCase();
+
+			return this.items.filter((item) => {
+				const lowercaseLabel = item.label.toLowerCase();
+
+				return lowercaseLabel.includes(lowercaseSearch);
 			});
 		}
 
-		emitChangeEvent(value: unknown[]): void {
+		emitChangeEvent(value: string[]): void {
+			this.selectedItems = value;
 			this.$emit('change', value);
 		}
 	}
