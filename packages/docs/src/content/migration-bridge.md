@@ -46,6 +46,7 @@ export default defineNuxtConfig({
 })
 ```
 
+
 Pour modifier ces variables sans regénérer le projet, il faut les écrasers dans le fichier `.output/public/json/config.env.json`.
 
 Pour utiliser ces variables dans un composant, il faut les importer et les utiliser comme suit :
