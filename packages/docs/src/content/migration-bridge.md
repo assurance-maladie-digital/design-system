@@ -11,7 +11,10 @@ Pour réaliser la migration d'un produit VueJS 2 vers VueJS 3, vous pouvez suivr
 
 1.2 - Copier le contenu dossier `src` de votre projet VueJS 2 dans le dossier `src` du projet `starter-kit-vue-bridge`
 
-1.3 - Ajouter les dépendances à jour de votre projet VueJS 2 dans le nouveau projet `starter-kit-vue-bridge`
+1.3 - Identifier les dépendances à conserver dans la nouvelle version, il faut choisir la version vue3 de la librairie et la version Nuxt si elle existe.
+Ajouter ces dépendances dans le nouveau projet `starter-kit-vue-bridge`.
+Le package `@cnamts/vue-dot` à été remplacé par `@cnamts/synapse-bridge`,
+le package `vue-i18n` à été remplacé par `@nuxtjs/i18n`.
 
 1.4 - Dans le fichier `nuxt.config.ts`, ajouter le lien vers votre fichier de style global.
 
@@ -43,7 +46,27 @@ export default defineNuxtConfig({
 })
 ```
 
-Pour modifier ces variables sans regenerer le projet, il faut les ecraser dans le fichier `.output/public/json/config.env.json`.
+
+Pour modifier ces variables sans regénérer le projet, il faut les écrasers dans le fichier `.output/public/json/config.env.json`.
+
+Pour utiliser ces variables dans un composant, il faut les importer et les utiliser comme suit :
+
+```typescript
+
+<script lang="ts">
+  export default defineNuxtComponent({
+    mounted() {
+      console.log(this.$config.public.version)
+    }
+  })
+</script>
+
+<template>
+  <div>
+    {{ $config.public.version }}
+  </div>
+</template>
+```
 
 
 ## 2 - Migration du routeur
