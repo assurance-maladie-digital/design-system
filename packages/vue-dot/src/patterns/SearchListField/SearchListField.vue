@@ -15,36 +15,33 @@
 		</VTextField>
 
 		<VList class="pb-0">
-			<VListItemGroup
-				:value="selectedItems"
-				multiple
+			<VListItem
+				v-for="(item) in filteredItems"
+				:key="`item-${item.value}`"
+				:input-value="selectedItems.includes(item.label)"
 				active-class="am-blue-lighten-90"
-				@change="emitChangeEvent"
+				@click="toggleItem(item)"
 			>
-				<VListItem
-					v-for="(item, i) in filteredItems"
-					:key="`item-${i}`"
-					:value="item.value"
-				>
-					<template #default="{ active }">
-						<VListItemAction>
-							<VCheckbox :input-value="active">
-								<template #label>
-									<span class="d-sr-only">
-										{{ locales.checkboxLabel }}
-									</span>
-								</template>
-							</VCheckbox>
-						</VListItemAction>
+				<template #default="{ active, toggle }">
+					<VListItemAction>
+						<VCheckbox
+							:input-value="active"
+							@change="toggle"
+						>
+							<template #label>
+								<span class="d-sr-only">
+									{{ locales.checkboxLabel }}
+								</span>
+							</template>
+						</VCheckbox>
+					</VListItemAction>
 
-						<VListItemContent>
-							<VListItemTitle>{{ item.label }}</VListItemTitle>
-						</VListItemContent>
-					</template>
-				</VListItem>
-			</VListItemGroup>
+					<VListItemContent>
+						<VListItemTitle>{{ item.label }}</VListItemTitle>
+					</VListItemContent>
+				</template>
+			</VListItem>
 		</VList>
-		{{ selectedItems }}
 	</div>
 </template>
 
@@ -60,7 +57,7 @@
 	const Props = Vue.extend({
 		props: {
 			value: {
-				type: Array as PropType<unknown[]>,
+				type: Array as PropType<string[]>,
 				default: () => []
 			},
 			items: {
@@ -98,6 +95,19 @@
 
 				return lowercaseLabel.includes(lowercaseSearch);
 			});
+		}
+
+		toggleItem(value: SearchListItem): void {
+			const index = this.selectedItems.findIndex((item) => item.toLowerCase() === value.label.toLowerCase());
+
+			if (index === -1) {
+				this.emitChangeEvent([...this.value, value.label]);
+			} else {
+				this.emitChangeEvent([
+					...this.selectedItems.slice(0, index),
+					...this.selectedItems.slice(index + 1)
+				]);
+			}
 		}
 
 		emitChangeEvent(value: string[]): void {
