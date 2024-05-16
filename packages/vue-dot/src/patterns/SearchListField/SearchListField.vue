@@ -17,8 +17,8 @@
 		<VList class="pb-0">
 			<VListItem
 				v-for="(item) in filteredItems"
-				:key="`item-${item.value}`"
-				:input-value="selectedItems.includes(item.label)"
+				:key="`item-${item.label}`"
+				:input-value="selectedItems.includes(item.value)"
 				active-class="am-blue-lighten-90"
 				@click="toggleItem(item)"
 			>
@@ -57,7 +57,7 @@
 	const Props = Vue.extend({
 		props: {
 			value: {
-				type: Array as PropType<string[]>,
+				type: Array as PropType<unknown[]>,
 				default: () => []
 			},
 			items: {
@@ -81,7 +81,7 @@
 		searchIcon = mdiMagnify;
 
 		search: string | null = null;
-		selectedItems: string[] = [];
+		selectedItems: unknown[] = [];
 
 		get filteredItems(): SearchListItem[] {
 			if (this.search === null) {
@@ -97,11 +97,11 @@
 			});
 		}
 
-		toggleItem(value: SearchListItem): void {
-			const index = this.selectedItems.findIndex((item) => item.toLowerCase() === value.label.toLowerCase());
+		toggleItem(toggledItem: SearchListItem): void {
+			const index = this.selectedItems.findIndex((item) => item === toggledItem.value);
 
 			if (index === -1) {
-				this.emitChangeEvent([...this.value, value.label]);
+				this.emitChangeEvent([...this.value, toggledItem.value]);
 			} else {
 				this.emitChangeEvent([
 					...this.selectedItems.slice(0, index),
@@ -110,9 +110,9 @@
 			}
 		}
 
-		emitChangeEvent(value: string[]): void {
-			this.selectedItems = value;
-			this.$emit('change', value);
+		emitChangeEvent(newValue: unknown[]): void {
+			this.selectedItems = newValue;
+			this.$emit('change', newValue);
 		}
 	}
 </script>
