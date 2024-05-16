@@ -60,6 +60,7 @@
 			v-model="tooltip"
 			v-bind="options.menu"
 			:disabled="hideTooltip"
+			transition="fade-transition"
 		>
 			<template #activator="{ props }">
 				<VBtn
