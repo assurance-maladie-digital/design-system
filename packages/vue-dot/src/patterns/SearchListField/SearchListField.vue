@@ -15,34 +15,32 @@
 		</VTextField>
 
 		<VList class="pb-0">
-			<VListItemGroup
-				:value="value"
-				multiple
+			<VListItem
+				v-for="(item) in filteredItems"
+				:key="`item-${item.label}`"
+				:input-value="selectedItems.includes(item.value)"
 				active-class="am-blue-lighten-90"
-				@change="emitChangeEvent"
+				@click="toggleItem(item)"
 			>
-				<VListItem
-					v-for="(item, index) in filteredItems"
-					:key="index"
-					:value="item.value"
-				>
-					<template #default="{ active }">
-						<VListItemAction>
-							<VCheckbox :input-value="active">
-								<template #label>
-									<span class="d-sr-only">
-										{{ locales.checkboxLabel }}
-									</span>
-								</template>
-							</VCheckbox>
-						</VListItemAction>
+				<template #default="{ active, toggle }">
+					<VListItemAction>
+						<VCheckbox
+							:input-value="active"
+							@change="toggle"
+						>
+							<template #label>
+								<span class="d-sr-only">
+									{{ locales.checkboxLabel }}
+								</span>
+							</template>
+						</VCheckbox>
+					</VListItemAction>
 
-						<VListItemContent>
-							<VListItemTitle>{{ item.label }}</VListItemTitle>
-						</VListItemContent>
-					</template>
-				</VListItem>
-			</VListItemGroup>
+					<VListItemContent>
+						<VListItemTitle>{{ item.label }}</VListItemTitle>
+					</VListItemContent>
+				</template>
+			</VListItem>
 		</VList>
 	</div>
 </template>
@@ -83,19 +81,38 @@
 		searchIcon = mdiMagnify;
 
 		search: string | null = null;
+		selectedItems: unknown[] = [];
 
 		get filteredItems(): SearchListItem[] {
 			if (this.search === null) {
 				return this.items;
 			}
 
-			return this.items.filter(item => {
-				return item.label.toLowerCase().includes((this.search as string).toLowerCase());
+			const lowercaseSearch = this.search.toLowerCase();
+
+			return this.items.filter((item) => {
+				const lowercaseLabel = item.label.toLowerCase();
+
+				return lowercaseLabel.includes(lowercaseSearch);
 			});
 		}
 
-		emitChangeEvent(value: unknown[]): void {
-			this.$emit('change', value);
+		toggleItem(toggledItem: SearchListItem): void {
+			const index = this.selectedItems.findIndex((item) => item === toggledItem.value);
+
+			if (index === -1) {
+				this.emitChangeEvent([...this.value, toggledItem.value]);
+			} else {
+				this.emitChangeEvent([
+					...this.selectedItems.slice(0, index),
+					...this.selectedItems.slice(index + 1)
+				]);
+			}
+		}
+
+		emitChangeEvent(newValue: unknown[]): void {
+			this.selectedItems = newValue;
+			this.$emit('change', newValue);
 		}
 	}
 </script>
