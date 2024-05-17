@@ -257,7 +257,7 @@ export default defineComponent({
 <template>
 	<div
 		class="vd-nir-field d-flex align-start"
-		:class="{ 'vd-nir-field--outlined': $attrs.hasOwnProperty('outlined') }"
+		:class="{ 'vd-nir-field--outlined': 'outlined' in $attrs }"
 	>
 		<VInput
 			:model-value="[numberValue, keyValue]"
