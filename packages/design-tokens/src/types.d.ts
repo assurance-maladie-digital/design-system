@@ -46,7 +46,22 @@ export interface Palette {
 	grey: Color;
 }
 
-export type Colors = Theme & Palette;
+export interface PaletteBootstrap {
+	amBlue: Color;
+	cyan: Color;
+	frostedBlue: Color;
+	parme: Color;
+	mauve: Color;
+	pink: Color;
+	brick: Color;
+	orange: Color;
+	yellow: Color;
+	green: Color;
+	turquoise: Color;
+	grey: Color;
+}
+
+export type Colors = Theme & Palette & PaletteBootstrap;
 
 export interface Tokens {
 	dialogWidth: {
