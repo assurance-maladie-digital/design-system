@@ -1,6 +1,5 @@
-import { isDateAfter } from '../';
-import { describe, it, expect } from 'vitest';
-
+import { isDateAfter } from '../index.ts';
+import { describe, it, expect } from 'vitest'
 import dayjs from 'dayjs';
 import { formatDate } from '../../../formatDate';
 

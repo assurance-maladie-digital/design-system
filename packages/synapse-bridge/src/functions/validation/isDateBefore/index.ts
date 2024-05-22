@@ -1,4 +1,4 @@
-import { parseDate } from '../../../helpers/parseDate';
+import { parseDate } from '@/helpers/parseDate';
 
 /** Check if a date is before another date (DD/MM/YYYY format) */
 export function isDateBefore(minDate: string, value: string): boolean {
