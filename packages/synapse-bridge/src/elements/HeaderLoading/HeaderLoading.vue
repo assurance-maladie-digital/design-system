@@ -38,7 +38,7 @@
 		height: 100%;
 		border-radius: 35px;
 		margin: 0;
-		background: rgba(white, var(--v-border-opacity));
+		background: rgba(grey, var(--v-border-opacity));
 	}
 }
 
