@@ -75,7 +75,7 @@ export default defineComponent({
 			<VBtn
 				v-bind="options.btn"
 				:aria-label="btnLabel"
-				class="mt-n2"
+				class="mx-auto"
 				@click="showEyeIcon = !showEyeIcon"
 			>
 				<VIcon v-bind="options.icon">
