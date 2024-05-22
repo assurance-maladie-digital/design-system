@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`HeaderLoading > renders correctly 1`] = `<vskeletonloader data-v-cb4098f7="" width="100px" height="1rem" type="heading" aria-hidden="true" class="vd-header-loading"></vskeletonloader>`;
