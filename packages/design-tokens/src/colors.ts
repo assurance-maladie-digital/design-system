@@ -1,5 +1,6 @@
 import { toKebabCase } from './utils';
 import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
+import { paletteBootstrap } from './boostrapColors';
 
 export const palette: Palette = {
 	amBlue: {
@@ -170,10 +171,21 @@ export const lightTheme: VuetifyTheme = {
 	warning: palette.yellow.base,
 	risquePro: palette.brick.base
 };
-
+export const boostrapTheme: VuetifyTheme = {
+	primary: paletteBootstrap.amBlue.darken40,
+	secondary: paletteBootstrap.pink.darken40,
+	accent: paletteBootstrap.cyan.base,
+	error: paletteBootstrap.brick.darken20,
+	info: paletteBootstrap.amBlue.darken60,
+	success: paletteBootstrap.green.lighten40,
+	warning: paletteBootstrap.yellow.lighten90,
+	risquePro: palette.brick.base,
+	light: palette.grey.lighten60,
+	dark: palette.grey.darken80
+};
 export const colorClasses: IndexedObject = {};
-
-Object.entries(palette).forEach(([colorName, colorValues]) => {
+const palettesObj = { palette, paletteBootstrap };
+Object.entries(palettesObj).forEach(([colorName, colorValues]) => {
 	Object.entries(colorValues).forEach(([variationName, colorValue]) => {
 		const colorClass = toKebabCase(`${colorName}-${variationName}`
 			.replace(/\d+/, '-$&')
@@ -184,12 +196,6 @@ Object.entries(palette).forEach(([colorName, colorValues]) => {
 	});
 });
 
-export const colors: Colors = {
-	...palette,
-	...lightTheme
-};
-
-export const colorTheme: VuetifyTheme = {
-	...colorClasses,
-	...lightTheme
-};
+export const colors: Colors = { ...palette, ...lightTheme, ...boostrapTheme };
+export const colorTheme: VuetifyTheme = { ...colorClasses, ...lightTheme };
+export const colorBoostrapTheme: VuetifyTheme = { ...colorClasses, ...boostrapTheme };
