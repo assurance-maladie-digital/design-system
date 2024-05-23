@@ -102,14 +102,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de choisir la langue de l’application',
 				href: '/composants/boutons/lang-btn',
 				image: 'components/lang-btn.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'DownloadBtn',
 				description: 'Utilisé pour permettre à l’utilisateur de télécharger un document provenant d’une API.',
 				href: '/composants/boutons/download-btn',
 				image: 'components/download-btn.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'FranceConnectBtn',
@@ -135,7 +135,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner ou de saisir une date.',
 				href: '/composants/formulaires/date-picker',
 				image: 'components/date-picker.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'FileUpload',
@@ -163,7 +163,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de saisir une période.',
 				href: '/composants/formulaires/period-field',
 				image: 'components/period-field.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'RangeField',
@@ -184,7 +184,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une valeur dans une liste.',
 				href: '/composants/formulaires/search-list-field',
 				image: 'components/search-list-field.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'SelectBtnField',
@@ -276,7 +276,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher une liste de fichiers.',
 				href: '/composants/donnees/file-list',
 				image: 'components/file-list.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			}
 		]
 	},

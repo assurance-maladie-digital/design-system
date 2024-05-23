@@ -3,6 +3,12 @@ title: FileList
 description: L’élément `FileList` est utilisé pour afficher une liste de fichiers.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -3,6 +3,12 @@ title: CustomIcon
 description: L’élément `CustomIcon` est utilisé pour afficher une icône personnalisée parmi celles définies dans les options de Vue Dot.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -6,6 +6,12 @@ description: L’élément `DownloadBtn` est utilisé pour permettre à l’util
 <!-- NotificationBar is required to display notifications from DownloadBtn -->
 <notification-bar></notification-bar>
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -156,11 +156,13 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'LangBtn',
-						to: '/composants/boutons/lang-btn'
+						to: '/composants/boutons/lang-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'DownloadBtn',
-						to: '/composants/boutons/download-btn'
+						to: '/composants/boutons/download-btn',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FranceConnectBtn',
@@ -179,7 +181,8 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'DatePicker',
-						to: '/composants/formulaires/date-picker'
+						to: '/composants/formulaires/date-picker',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FileUpload',
@@ -197,7 +200,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'PeriodField',
-						to: '/composants/formulaires/period-field'
+						to: '/composants/formulaires/period-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'PhoneField',
@@ -211,7 +215,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'SearchListField',
-						to: '/composants/formulaires/search-list-field'
+						to: '/composants/formulaires/search-list-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'SelectBtnField',
@@ -280,7 +285,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'FileList',
-						to: '/composants/donnees/file-list'
+						to: '/composants/donnees/file-list',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -360,11 +366,13 @@ export const drawerItems: DrawerItem[] = [
 		items: [
 			{
 				title: 'CustomIcon',
-				to: '/composants-techniques/custom-icon'
+				to: '/composants-techniques/custom-icon',
+				appendIcon: mdiBridge
 			},
 			{
 				title: 'Module de notification',
-				to: '/composants-techniques/module-notification'
+				to: '/composants-techniques/module-notification',
+				appendIcon: mdiBridge
 			},
 			{
 				title: 'Questionnaires',
