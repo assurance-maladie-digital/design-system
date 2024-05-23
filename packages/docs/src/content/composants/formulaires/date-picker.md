@@ -104,4 +104,12 @@ Vous pouvez personnaliser les composants Vuetify contenus dans le pattern `DateP
 
 </doc-tab-item>
 
+<doc-tab-item label="Bridge">
+
+### API
+
+<doc-api name="date-picker-bridge"></doc-api>
+
+</doc-tab-item>
+
 </doc-tabs>

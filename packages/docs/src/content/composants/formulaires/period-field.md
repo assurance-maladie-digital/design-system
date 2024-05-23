@@ -22,4 +22,12 @@ Ce composant est disponible sur la version Bridge.
 <doc-api name="period-field"></doc-api>
 </doc-tab-item>
 
+<doc-tab-item label="Bridge">
+
+### API
+
+<doc-api name="period-field-bridge"></doc-api>
+
+</doc-tab-item>
+
 </doc-tabs>
