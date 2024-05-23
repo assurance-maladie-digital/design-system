@@ -186,7 +186,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'FileUpload',
-						to: '/composants/formulaires/file-upload'
+						to: '/composants/formulaires/file-upload',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'NirField',
@@ -281,7 +282,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'FilePreview',
-						to: '/composants/donnees/file-preview'
+						to: '/composants/donnees/file-preview',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FileList',
