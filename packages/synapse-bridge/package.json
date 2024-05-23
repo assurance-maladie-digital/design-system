@@ -43,7 +43,9 @@
 		"./rules/maxLength": "./src/rules/maxLength/index.ts",
 		"./rules/minLength": "./src/rules/minLength/index.ts",
 		"./rules/notBeforeDate": "./src/rules/notBeforeDate/index.ts",
-		"./rules/required": "./src/rules/required/index.ts"
+		"./rules/required": "./src/rules/required/index.ts",
+		"./rules/notAfterToday": "./src/rules/notAfterToday/index.ts",
+		"./rules/notBeforeToday": "./src/rules/notBeforeToday/index.ts"
 	},
 	"types": "./dist/index.d.ts",
 	"scripts": {
