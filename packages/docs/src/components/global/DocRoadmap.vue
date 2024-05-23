@@ -118,7 +118,7 @@
 		newTabIcon = mdiOpenInNew;
 		tagIcon = mdiTagOutline;
 		tagHiddenIcon = mdiTagHidden;
-		progress = 68;
+		progress = 80;
 	}
 </script>
 
