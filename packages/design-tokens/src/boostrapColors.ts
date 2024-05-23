@@ -12,7 +12,7 @@ export const paletteBootstrap: PaletteBootstrap = {
 		lighten60: '#6EA7FD',
 		lighten80: '#9EC5FE',
 		lighten90: '#CFE1FE',
-		lighten97: '#031733'
+		lighten97: '#f8f9fc'
 	},
 	cyan: {
 		darken80: '#032830',

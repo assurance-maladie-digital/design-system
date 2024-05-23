@@ -184,7 +184,7 @@ export const boostrapTheme: VuetifyTheme = {
 	dark: palette.grey.darken80
 };
 export const colorClasses: IndexedObject = {};
-const palettes = { ...palette, ...paletteBootstrap };
+const palettes = { ...palette };
 Object.entries(palettes).forEach(([colorName, colorValues]) => {
 	Object.entries(colorValues).forEach(([variationName, colorValue]) => {
 		const colorClass = toKebabCase(`${colorName}-${variationName}`
@@ -198,8 +198,7 @@ Object.entries(palettes).forEach(([colorName, colorValues]) => {
 
 export const colors: Colors = {
 	...palette,
-	...lightTheme,
-	...boostrapTheme
+	...lightTheme
 };
 export const colorTheme: VuetifyTheme = {
 	...colorClasses,

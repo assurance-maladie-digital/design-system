@@ -3,6 +3,12 @@ title: DatePicker
 description: Le pattern `DatePicker` est un composant utilisé pour permettre à l’utilisateur de sélectionner ou de saisir une date.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

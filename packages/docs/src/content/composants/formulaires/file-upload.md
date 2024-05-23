@@ -3,6 +3,12 @@ title: FileUpload
 description: Le pattern `FileUpload` est utilisé pour permettre à l’utilisateur de sélectionner ou de glisser-déposer des fichiers.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
