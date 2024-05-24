@@ -1,4 +1,4 @@
-import { ruleMessage } from '@/helpers/ruleMessage';
+import { ruleMessage } from '../../helpers/ruleMessage';
 import { ValidationRule, ValidationResult, Value } from '@/rules/types';
 
 import { defaultErrorMessages } from './locales';
