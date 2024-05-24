@@ -1,3 +1,27 @@
+## v2.16.5
+
+**Version publiée le 24/05/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **SearchListField:** Correction de l'affichage lorsque des items sont déjà sélectionnés ([#3502](https://github.com/assurance-maladie-digital/design-system/pull/3502))
+
+### Interne
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3497](https://github.com/assurance-maladie-digital/design-system/pull/3497))
+  - Mise à jour de la documentation de migration ([#3511](https://github.com/assurance-maladie-digital/design-system/pull/3511))
+  - Mise à jour de la liste des composants disponibles dans la version Bridge ([#3509](https://github.com/assurance-maladie-digital/design-system/pull/3509))
+
+- ⬆️ **Dépendances**
+  - **@rushstack/eslint-patch:** Mise à jour vers la `v1.10.3` ([#3456](https://github.com/assurance-maladie-digital/design-system/pull/3456))
+  - **@babel/core:** Mise à jour vers la `v7.24.5` ([#3453](https://github.com/assurance-maladie-digital/design-system/pull/3453))
+  - **core-js:** Mise à jour vers la `v3.37.1` ([#3451](https://github.com/assurance-maladie-digital/design-system/pull/3451))
+  - **follow-redirects:** Mise à jour vers la `v1.15.61` ([#3448](https://github.com/assurance-maladie-digital/design-system/pull/3448))
+  - **eslint-plugin-vue:** Mise à jour vers la `v9.26.0` ([#3441](https://github.com/assurance-maladie-digital/design-system/pull/3441))
+  - **@types/node:** Mise à jour vers la `v16.18.97` ([#3440](https://github.com/assurance-maladie-digital/design-system/pull/3440))
+
 ## v2.16.4
 
 **Version publiée le 13/05/2024.**
