@@ -6,9 +6,8 @@ import HeaderMenuBtn from "./HeaderMenuBtn/HeaderMenuBtn.vue";
 import HeaderNavigationBar from "./HeaderNavigationBar/HeaderNavigationBar.vue";
 import HeaderNavigationDrawer from "./HeaderNavigationDrawer";
 import type { NavigationItem } from "./types";
-import { ThemeEnum, THEME_ENUM_VALUES } from "@/constants/enums/ThemeEnum";
+import { ThemeEnum } from "../../constants/enums/ThemeEnum";
 import { config } from "./config.ts";
-import { propValidator } from "@/helpers/propValidator";
 import { customizable } from "@/mixins/customizable";
 import type { Next } from "@/types";
 import { Scroll } from 'vuetify/directives';
@@ -27,10 +26,11 @@ export default defineComponent({
 	mixins: [customizable(config)],
 	props: {
 		theme: {
-			type: String as PropType<ThemeEnum>,
+			type: [String, Number] as any,
 			default: ThemeEnum.DEFAULT,
-			validator: (value: ThemeEnum) =>
-				propValidator("theme", THEME_ENUM_VALUES, value)
+			validator: (value: any) => {
+				return Object.values(ThemeEnum).includes(value);
+			},
 		},
 		serviceTitle: {
 			type: String,
