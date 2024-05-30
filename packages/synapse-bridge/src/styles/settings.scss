@@ -246,20 +246,3 @@ a {
 		}
 	}
 }
-
-// Form Input : Custom sizes
-.vd-form-input {
-	width: $vd-input-medium;
-
-	&-s {
-		width: $vd-input-small;
-	}
-
-	&-l {
-		width: $vd-input-large;
-	}
-
-	&-xl {
-		width: $vd-input-x-large;
-	}
-}
