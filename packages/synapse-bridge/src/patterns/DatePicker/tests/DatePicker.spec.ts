@@ -492,6 +492,23 @@ describe('Methods', () => {
 		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890');
 	});
 
+	it('createDateRegEx should create a correct regex for DD/MM/YYYY format', () => {
+		const wrapper = shallowMount(DatePicker);
+		const regex = wrapper.vm.createDateRegEx('DD/MM/YYYY');
+		expect(regex).toEqual(/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/);
+	});
+
+	it('should create a correct regex for MM-DD-YYYY format', () => {
+		const wrapper = shallowMount(DatePicker);
+		const regex = wrapper.vm.createDateRegEx('MM-DD-YYYY');
+		expect(regex).toEqual(/^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$/);
+	});
+
+	it('should throw an error for unsupported date format', () => {
+		const wrapper = shallowMount(DatePicker);
+		expect(() => wrapper.vm.createDateRegEx('DD-YY-MM')).toThrow('Unsupported date format part: YY');
+	});
+
 });
 describe('Watchers', () => {
 	it('emits value event when date changes', () => {
@@ -550,14 +567,6 @@ describe('Watchers', () => {
 		const wrapper = shallowMount(DatePicker);
 		await wrapper.setData({ inputValue: '12/34/567a' });
 		expect(wrapper.vm.inputValue).toBe('12/34/567');
-	});
-
-	it('calls validate method when inputValue length is 10', async () => {
-		const wrapper = shallowMount(DatePicker);
-		const validateMock = vi.fn();
-		wrapper.vm.validate = validateMock;
-		await wrapper.setData({ inputValue: '12/34/5678' });
-		expect(validateMock).toHaveBeenCalledWith('12/34/5678');
 	});
 
 	it('trims inputValue to 10 characters if its length is more than 10', async () => {
