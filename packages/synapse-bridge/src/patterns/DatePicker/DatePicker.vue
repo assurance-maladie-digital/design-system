@@ -225,9 +225,6 @@ export default defineComponent({
 			if (!/^[\d/-]+$/.test(newVal)) {
 				this.inputValue = newVal.slice(0, -1);
 			}
-			if (newVal.length === 10) {
-				this.validate(newVal);
-			}
 			if (newVal.length > 10) {
 				this.inputValue = newVal.slice(0, 10);
 			}
@@ -304,41 +301,79 @@ export default defineComponent({
 			}
 			return dayjs(date).format(this.dateFormat);
 		},
+		createDateRegEx(format: string) {
+			const day = "(0[1-9]|[12][0-9]|3[01])";
+			const month = "(0[1-9]|1[012])";
+			const year = "(19|20)\\d\\d";
+
+			const formatMapping: { [key: string]: string } = {
+				"DD": day,
+				"MM": month,
+				"YYYY": year
+			};
+
+			// Determine the position of the separator based on the date format
+			const separatorPosition = format.indexOf("/") !== -1 ? format.indexOf("/") : format.indexOf("-");
+			const separator = format[separatorPosition];
+
+			const parts = format.split(separator);
+
+			const regexParts = parts.map(part => formatMapping[part]);
+
+			// Check if all parts are supported
+			for (const part of parts) {
+				if (!formatMapping.hasOwnProperty(part)) {
+					throw new Error(`Unsupported date format part: ${part}`);
+				}
+			}
+
+			const regexString = `^${regexParts.join('[- /.]')}$`;
+
+			return new RegExp(regexString);
+		},
 		updateInputValue(value: { data: string | null }, historyKey: string): void {
-			// if value is null, it means that the user has cleared the input
+			// If the input is cleared, remove the last character from the current value
 			if (value.data === null) {
 				this.indexedThis[historyKey] = this.indexedThis[historyKey].slice(0, -1);
 				return;
 			}
-			// if the value is already at 10 characters, we don't add more
-			if (this.indexedThis[historyKey].length > 10) {
-				this.indexedThis[historyKey] = this.indexedThis[historyKey].slice(0, 10);
+
+			// If the current value is already 10 characters long, don't add more
+			if (this.indexedThis[historyKey].length >= 10) {
 				return;
 			}
-			// if the value is at 2 or 5 characters, we add a slash or a dash
+
+			// If the current value is at 2 or 5 characters, add a separator (slash or dash)
 			if (this.indexedThis[historyKey].length === 2 || this.indexedThis[historyKey].length === 5) {
 				const separator = this.dateFormat.includes('/') ? '/' : '-';
 				this.indexedThis[historyKey] += separator;
 			}
-			// if key code slash key is pressed, we don't add more
-			if (value.data === '/' || value.data === '-') {
-				return;
-			}
-			// if the value is not null, it means that the user has typed something
-			this.indexedThis[historyKey] += value.data;
 
-			// Convert the input value to a date
-			const date = dayjs(this.indexedThis[historyKey], this.dateFormat);
-			// If the date is valid, format it using formatDate
+			// If the input is a slash or dash, don't add it to the current value
+			if (value.data !== '/' && value.data !== '-') {
+				this.indexedThis[historyKey] += value.data;
+			}
+
+			// If the current value is 10 characters long, validate and format the date
 			if (this.indexedThis[historyKey].length === 10) {
-				// Assigner la date d'entrée à la valeur qui s'affiche dans l'input
-				this.inputValue = this.indexedThis[historyKey];
-				this.indexedThis[historyKey] = this.formatDate(date);
+				const date = dayjs(this.indexedThis[historyKey], this.dateFormat);
 				const formattedDateReturn = dayjs(date).format(this.dateFormatReturn);
+
+				// If the date format is not 'DD/MM/YY', validate the date format and the date itself
 				if (this.dateFormatReturn !== 'DD/MM/YY') {
-					this.date = date.toDate();
+					let dateRegEx = this.createDateRegEx(this.dateFormat);
+					const isValidFormat = dateRegEx.test(this.inputValue);
+
+					// If the date format and the date are valid, update the date and emit an update event
+					if (isValidFormat){
+						this.date = this.inputValue;
+						this.$emit('update:model-value', this.indexedThis[historyKey]);
+					} else {
+						// If the date format or the date is not valid, add an error message
+						this.errorMessages.push('La date saisie n\'est pas valide');
+					}
 				} else {
-					// Assigner la date de sortie à sa valeur
+					// If the date format is 'DD/MM/YY', emit an update event with the formatted date
 					this.$emit('update:model-value', formattedDateReturn);
 					this.$emit('input', formattedDateReturn);
 				}
@@ -456,7 +491,7 @@ export default defineComponent({
 					:class="['textFieldClasses', {'warning-style': errorMessages.length > 0, 'error-style': hasError, 'range': range}]"
 					:clearable="clearable"
 					:disabled="disabled"
-					:error-messages="errorMessages || textFieldOptions.errorMessages"
+					:error-messages="errorMessages"
 					:hint="hint"
 					:label="label"
 					:prepend-icon="!outlined ? prependIconValue : undefined"
@@ -466,7 +501,6 @@ export default defineComponent({
 					:value="lastTypeAddedDate === 'date' ? formatDate(date) : inputValue"
 					:variant="getVariant"
 					@blur="emitUpdateEvent"
-					@input="errorMessages = []"
 					@keydown="handleKeyDown"
 					@click:append="handleIconClick"
 					@click:append-inner="handleIconClick"
