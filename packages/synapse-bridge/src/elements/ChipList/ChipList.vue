@@ -57,8 +57,8 @@
 	>
 		<div class="d-flex flex-wrap align-center mr-1">
 			<VChip
-				v-for="(item, index) in filteredItems"
-				:key="index"
+				v-for="item in filteredItems"
+				:key="item.text"
 				:close-icon="deleteIcon"
 				:close-label="locales.closeBtnLabel"
 				color="cyan-darken-40"
