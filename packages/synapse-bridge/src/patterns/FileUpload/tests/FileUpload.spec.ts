@@ -116,5 +116,35 @@ describe("FileUpload", () => {
 
 		wrapper.vm.inputValueChanged = inputValueChanged;
 	});
+
+	it('retries the upload of a file', () => {
+		const wrapper = shallowMount(FileUpload, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const mockRetry = vi.fn();
+		wrapper.vm.retry = mockRetry;
+
+		wrapper.vm.retry();
+
+		expect(mockRetry).toHaveBeenCalled();
+	});
+
+	it('clicks the input', () => {
+		const wrapper = shallowMount(FileUpload, {
+			global: {
+				plugins: [vuetify],
+			},
+		});
+
+		const mockClick = vi.fn();
+		wrapper.vm.$refs.vdInputEl.click = mockClick;
+
+		wrapper.vm.retry();
+
+		expect(mockClick).toHaveBeenCalled();
+	});
 });
 

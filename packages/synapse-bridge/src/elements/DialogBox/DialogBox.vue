@@ -15,6 +15,8 @@
 
 		mixins: [customizable(config)],
 
+		emits: ["cancel", "confirm", "update:modelValue"],
+
 		props: {
 			modelValue: {
 				type: Boolean,
@@ -45,8 +47,6 @@
 				default: false,
 			},
 		},
-
-		emits: ['update:modelValue', 'cancel', 'confirm'],
 
 		data() {
 			return {
