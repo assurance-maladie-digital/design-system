@@ -380,7 +380,6 @@ export default defineComponent({
 }
 
 .vd-nir-field {
-	container-type: inline-size;
 	container-name: nirFieldwrapper;
 }
 

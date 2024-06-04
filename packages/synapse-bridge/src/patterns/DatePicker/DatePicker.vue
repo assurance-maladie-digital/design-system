@@ -453,7 +453,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<div>
+	<div class="vd-date-picker">
 		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
 			v-model="date"
