@@ -1,5 +1,5 @@
 import { toKebabCase } from './utils';
-import { Palette, VuetifyTheme, Colors, IndexedObject } from './types';
+import { Palette, VuetifyTheme, Colors, IndexedObject, ColorsBootstrap } from './types';
 import { paletteBootstrap } from './boostrapColors';
 
 export const palette: Palette = {
@@ -171,7 +171,7 @@ export const lightTheme: VuetifyTheme = {
 	warning: palette.yellow.base,
 	risquePro: palette.brick.base
 };
-export const boostrapTheme: VuetifyTheme = {
+export const bootstrapTheme: VuetifyTheme = {
 	primary: paletteBootstrap.amBlue.darken40,
 	secondary: paletteBootstrap.pink.darken40,
 	accent: paletteBootstrap.cyan.base,
@@ -200,11 +200,17 @@ export const colors: Colors = {
 	...palette,
 	...lightTheme
 };
+
+export const colorsBootstrap: ColorsBootstrap = {
+	...paletteBootstrap,
+	...bootstrapTheme
+};
+
 export const colorTheme: VuetifyTheme = {
 	...colorClasses,
 	...lightTheme
 };
-export const colorBoostrapTheme: VuetifyTheme = {
+export const colorBootstrapTheme: VuetifyTheme = {
 	...colorClasses,
-	...boostrapTheme
+	...bootstrapTheme
 };

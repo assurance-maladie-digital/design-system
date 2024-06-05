@@ -1,4 +1,4 @@
-import { tokens, colorTheme, colorBoostrapTheme } from '../src';
+import { tokens, colorTheme, colorBootstrapTheme } from '../src';
 
 describe('tokens', () => {
 	it('registers all tokens', () => {
@@ -10,6 +10,6 @@ describe('tokens', () => {
 	});
 
 	it('creates bootstrap color theme', () => {
-		expect(colorBoostrapTheme).toMatchSnapshot();
+		expect(colorBootstrapTheme).toMatchSnapshot();
 	});
 });
