@@ -97,6 +97,9 @@ body {
 
 body.bootstrap {
 	font-family: 'Calibri', sans-serif;
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Tahoma', sans-serif;
+	}
 }
 
 /* Hide the application while Vue.js is loading */
