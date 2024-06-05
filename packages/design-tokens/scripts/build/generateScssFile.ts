@@ -1,10 +1,32 @@
 import fs from 'fs-extra';
 import consola from 'consola';
 
-import { getToken, getColorToken, partition, toKebabCase } from './utils';
+import { getColorToken, getToken, partition, toKebabCase } from './utils';
 
-import { Color, Tokens, TokensBootstrap, Colors, ColorsBootstrap } from '../../src/types';
-import {paletteBootstrap} from "../../src/boostrapColors";
+import { Color, Colors, ColorsBootstrap, Tokens, TokensBootstrap } from '../../src/types';
+
+function getBootstrapColors(colors: Colors): string {
+	let content = '';
+
+	const [theme, palette] = partition(Object.entries(colors), ([_, value]) => typeof value === 'string');
+
+	content += '// theme\n';
+
+	(theme as [string, string][]).forEach(([name, value]) => {
+		content += getToken(name, value);
+	});
+
+	content += '\n// colors';
+
+	(palette as [string, Color][]).forEach(([colorName, colorValues]) => {
+		content += `\n// ${toKebabCase(colorName)}\n`;
+		Object.entries(colorValues).forEach(([variationName, colorValue]) => {
+			content += getColorToken(colorName, variationName, colorValue);
+		});
+	});
+
+	return content;
+}
 
 function getColors(colors: Colors): string {
 	let content = '';
@@ -21,31 +43,6 @@ function getColors(colors: Colors): string {
 
 	(palette as [string, Color][]).forEach(([colorName, colorValues]) => {
 		content += `\n// ${toKebabCase(colorName)}\n`;
-
-		Object.entries(colorValues).forEach(([variationName, colorValue]) => {
-			content += getColorToken(colorName, variationName, colorValue);
-		});
-	});
-
-	return content;
-}
-
-function getBootstrapColors(colors: ColorsBootstrap): string {
-	let content = '';
-
-	const [theme, palette] = partition(Object.entries(colors), ([_, value]) => typeof value === 'string');
-
-	content += '// theme\n';
-
-	(theme as [string, string][]).forEach(([name, value]) => {
-		content += getToken(name, value);
-	});
-
-	content += '\n// colors';
-
-	(palette as [string, ColorsBootstrap][]).forEach(([colorName, colorValues]) => {
-		content += `\n// ${toKebabCase(colorName)}\n`;
-
 		Object.entries(colorValues).forEach(([variationName, colorValue]) => {
 			content += getColorToken(colorName, variationName, colorValue);
 		});
@@ -88,7 +85,7 @@ export function generateBootstrapScssFile(tokens: TokensBootstrap, distPath: str
 	let content = '';
 
 	Object.entries(tokens).forEach(([tokenName, tokenValue]) => {
-		if (tokenName === 'colors') {
+		if (tokenName === 'colorsBootstrap') {
 			content += getBootstrapColors(tokenValue);
 			return;
 		}
@@ -109,4 +106,3 @@ export function generateBootstrapScssFile(tokens: TokensBootstrap, distPath: str
 
 	fs.writeFileSync(`${distPath}/bootstrap-tokens.scss`, content);
 }
-

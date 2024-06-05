@@ -1,4 +1,4 @@
-import {Tokens, TokensBootstrap} from './types';
+import { Tokens, TokensBootstrap } from './types';
 
 import { colors, colorsBootstrap } from './colors';
 
