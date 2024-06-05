@@ -203,7 +203,7 @@ export const colors: Colors = {
 
 export const colorsBootstrap: ColorsBootstrap = {
 	...paletteBootstrap,
-	...lightTheme
+	...boostrapTheme
 };
 
 export const colorTheme: VuetifyTheme = {
