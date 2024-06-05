@@ -95,6 +95,10 @@ body {
 	font-size: 100%;
 }
 
+body.bootstrap {
+	font-family: 'Calibri', sans-serif;
+}
+
 /* Hide the application while Vue.js is loading */
 [v-cloak] {
 	display: none;
