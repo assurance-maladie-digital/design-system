@@ -142,7 +142,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner ou de glisser-déposer des fichiers.',
 				href: '/composants/formulaires/file-upload',
 				image: 'components/file-upload.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'NirField',
