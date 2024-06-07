@@ -5,7 +5,7 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3515](https://github.com/assurance-maladie-digital/design-system/pull/3515))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3534](https://github.com/assurance-maladie-digital/design-system/pull/3534))
   - Mise à jour de la documentation de migration et de la liste des composants disponibles dans la version Bridge ([#3531](https://github.com/assurance-maladie-digital/design-system/pull/3531))
 
 
