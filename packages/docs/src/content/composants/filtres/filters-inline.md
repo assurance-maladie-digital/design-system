@@ -3,6 +3,12 @@ title: FiltersInline
 description: Le pattern `FiltersInline` est utilisé pour permettre à l’utilisateur de sélectionner des filtres directement dans la page.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

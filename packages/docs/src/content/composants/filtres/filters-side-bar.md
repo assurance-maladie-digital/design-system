@@ -3,6 +3,12 @@ title: FiltersSideBar
 description: Le pattern `FiltersSideBar` est utilisé pour permettre à l’utilisateur de sélectionner des filtres dans un panel dédié.
 ---
 
+<doc-alert-bridge class="mb-8">
+
+Ce composant est disponible sur la version Bridge.
+
+</doc-alert-bridge>
+
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
