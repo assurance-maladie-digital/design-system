@@ -198,7 +198,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.',
 				href: '/composants/formulaires/upload-workflow',
 				image: 'components/upload-workflow.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			}
 		]
 	},
@@ -229,14 +229,14 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour afficher des filtres directement dans la page.',
 				href: '/composants/filtres/filters-inline',
 				image: 'components/filters-inline.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'FiltersSidebar',
 				description: 'Utilisé pour afficher des filtres dans un panel dédié.',
 				href: '/composants/filtres/filters-side-bar',
 				image: 'components/filters-sidebar.svg',
-				status: ComponentStatusEnum.READY
+				status: ComponentStatusEnum.BRIDGE
 			},
 			{
 				name: 'FilterModule',

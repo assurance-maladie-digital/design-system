@@ -226,7 +226,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'UploadWorkflow',
-						to: '/composants/formulaires/upload-workflow'
+						to: '/composants/formulaires/upload-workflow',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -250,11 +251,13 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'FiltersInline',
-						to: '/composants/filtres/filters-inline'
+						to: '/composants/filtres/filters-inline',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FiltersSideBar',
-						to: '/composants/filtres/filters-side-bar'
+						to: '/composants/filtres/filters-side-bar',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FilterModule',

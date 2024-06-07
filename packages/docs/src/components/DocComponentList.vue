@@ -18,7 +18,8 @@
 						width="234px"
 						height="154px"
 						class="d-block"
-					>
+						:alt="component.name"
+					/>
 
 					<VCardTitle class="font-weight-bold">
 						{{ component.name }}
