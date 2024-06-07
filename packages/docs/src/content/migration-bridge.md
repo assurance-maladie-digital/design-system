@@ -4,6 +4,7 @@ description: Guide de migration pour les développeurs.
 ---
 
 <img src="migration.jpg" alt="drawing" width="100%" style="margin-top: 10px; margin-bottom: 20px"/>
+<p style="opacity: 50%"><i>NB : Pour toute question complémentaire sur la migration, vous pouvez vous rapprocher de l'équipe du Design System.</i></p>
 
 ## 1 - Débuter la migration
 
