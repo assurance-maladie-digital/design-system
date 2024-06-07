@@ -3,6 +3,8 @@ title: Guide de migration
 description: Guide de migration pour les développeurs.
 ---
 
+<img src="migration.jpg" alt="drawing" width="100%" style="margin-top: 10px; margin-bottom: 20px"/>
+
 ## 1 - Débuter la migration
 
 Pour réaliser la migration d'un produit VueJS 2 vers VueJS 3, vous pouvez suivre les étapes suivantes :
