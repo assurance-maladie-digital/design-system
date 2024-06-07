@@ -1,3 +1,14 @@
+## v2.16.6
+
+**Version publiée le 07/06/2024.**
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3515](https://github.com/assurance-maladie-digital/design-system/pull/3515))
+  - Mise à jour de la documentation de migration et de la liste des composants disponibles dans la version Bridge ([#3531](https://github.com/assurance-maladie-digital/design-system/pull/3531))
+
+
 ## v2.16.5
 
 **Version publiée le 24/05/2024.**
