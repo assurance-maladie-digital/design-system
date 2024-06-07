@@ -1,41 +1,56 @@
+import {PropType} from "vue";
+
 interface FieldTypeMixinThis {
 	field: {
 		type: string;
+		value: any;
+		maxLength: number;
 	};
 }
+
 export default {
 	props: {
 		field: {
-			type: Object,
+			type: Object as PropType<FieldTypeMixinThis['field']>,
 			required: true
 		}
 	},
+	watch: {
+		'field.value'(this: FieldTypeMixinThis, newValue: any, oldValue: any) {
+			if (this.field.type === 'number') {
+				if (isNaN(Number(newValue))) {
+					this.field.value = oldValue;
+				}
+				if (newValue.toString().length > this.field.maxLength) {
+					this.field.value = oldValue;
+				}
+			}
+		},
+	},
 	computed: {
 		fieldType(this: FieldTypeMixinThis) {
-			switch (this.field.type) {
-				case "nir":
-					return "NirField";
-				case "textarea":
-					return "VTextarea";
-				case "text":
-					return "VTextField";
-				case "number":
-					return "VInput";
-				case "password":
-					return "PasswordField";
-				case "date":
-					return "DatePicker";
-				case "period":
-					return "PeriodField";
-				case "range":
-					return "RangeField";
-				case "select":
-					return "VSelect";
-				case "choiceButton":
-					return "SelectBtnField";
-				default:
-					return "VTextField";
+			const typeMap: Record<string, string> = {
+				"nir": "NirField",
+				"textarea": "VTextarea",
+				"text": "VTextField",
+				"number": "VTextField",
+				"password": "PasswordField",
+				"date": "DatePicker",
+				"period": "PeriodField",
+				"range": "RangeField",
+				"select": "VSelect",
+				"choiceButton": "SelectBtnField",
+			};
+			return typeMap[this.field.type] || "VTextField";
+		},
+		fieldRules(this: FieldTypeMixinThis) {
+			if (this.field.type === 'number') {
+				return [
+					(v:any) => !isNaN(parseFloat(v)),
+					(v:any) => (v && v.toString().length <= this.field.maxLength) || `Input must be less than ${this.field.maxLength} characters`,
+				];
 			}
+			return [];
 		},
 	},
 };

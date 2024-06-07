@@ -3,6 +3,7 @@
 		:is="fieldType"
 		v-bind="field.fieldOptions"
 		v-model="field.value"
+		:rules="fieldRules"
 		@update:model-value="updateFieldValue"
 	/>
 </template>
@@ -27,6 +28,7 @@ export default defineComponent({
 			default: () => ({
 				type: "VTextField",
 				fieldOptions: {},
+				maxLength: 3,
 				value: "",
 			}),
 		},
