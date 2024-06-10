@@ -77,12 +77,8 @@ describe("NirField", () => {
 			keyCode: 9,
 		});
 
-		const value = wrapper.emitted('update:modelValue');
-
-		expect(wrapper.emitted()).toHaveProperty("change");
-		if (value) {
-			expect(value[1]).toEqual([[nir][0]]);
-		}
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue');
+		expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([[nir][0]]);
 	});
 
 	it("emits a change event when a correct NIR is entered in dual field mode", async () => {
