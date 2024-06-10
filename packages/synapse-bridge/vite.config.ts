@@ -39,6 +39,8 @@ function generateVuetifyGlobals() {
 		'VDialog',
 		'VCard',
 		'VSkeletonLoader',
+		'VBadge',
+		'VExpansionPanel',
 		'transitions',
 	];
 
