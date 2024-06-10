@@ -198,7 +198,7 @@ export default defineComponent({
 				this.numberRules
 					.map(rule => rule(this.maskaNumberValue.unmasked))
 					.filter((error): error is string => typeof error === 'string');
-			this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
+			//this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
 		},
 
 		/**
@@ -268,7 +268,7 @@ export default defineComponent({
 			<VTextField
 				ref="numberField"
 				v-maska:[numberMask]="maskaNumberValue"
-				v-model='numberValue'
+				v-model="numberValue"
 				v-bind="textFieldOptions"
 				:variant="outlined ? 'outlined' : 'underlined'"
 				:label="locales.numberLabel"
@@ -282,7 +282,7 @@ export default defineComponent({
 				:aria-errormessage="numberErrors.length > 0 ? 'number-field-errors' : undefined"
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
-				@update:model-value="changeNumberValue"
+				@maska="changeNumberValue"
 				@blur="validateNumberValue"
 				@focus="isInputFocused = true"
 			/>
@@ -312,7 +312,7 @@ export default defineComponent({
 					:aria-errormessage="keyErrors.length > 0 ? 'key-field-errors' : undefined"
 					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
-					@update:model-value="changeKeyValue"
+					@maska="changeKeyValue"
 					@blur="validateKeyValue"
 				/>
 				<div
