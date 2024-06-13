@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`CookiesPage > renders correctly 1`] = `
-<div class="py-10 px-8 vd-page-container d-flex justify-center vd-cookies-page">
-  <div class="v-sheet v-theme--light bg-transparent" style="width: 800px;">
+<div data-v-3e1b6721="" class="py-10 px-8 vd-page-container d-flex justify-center vd-cookies-page">
+  <div data-v-3e1b6721="" class="v-sheet v-theme--light bg-transparent" style="width: 800px;">
     <div class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-4 pa-md-8">
       <!---->
       <div class="v-card__loader">
