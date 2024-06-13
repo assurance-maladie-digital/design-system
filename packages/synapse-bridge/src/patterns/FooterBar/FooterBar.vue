@@ -266,12 +266,12 @@ a {
 	cursor: pointer;
 }
 
-:deep() .text--primary {
-	color: rgba(0,0,0, .87);
+:deep() .text-primary {
+	color: rgba(0,0,0, .87) !important;
 }
 
-:deep() .text--secondary {
-	color: rgba(0,0,0, .6);
+:deep() .text-secondary {
+	color: rgba(0,0,0, .6) !important;
 }
 
 .v-btn--icon {
@@ -292,11 +292,11 @@ a {
 	}
 
 	p,
-	.text--primary {
+	.text-primary {
 		color: rgba($white, 0.6) !important;
 	}
 
-	a.text--primary {
+	a.text-primary {
 		color: $white !important;
 	}
 

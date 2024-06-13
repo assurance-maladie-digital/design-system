@@ -70,3 +70,9 @@
 		</VSheet>
 	</div>
 </template>
+
+<style lang="scss" scoped>
+.vd-page-container {
+	flex: 1;
+}
+</style>
