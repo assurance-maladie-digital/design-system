@@ -102,7 +102,7 @@ export default defineConfig(({ mode }) => {
 		}
 	}
 
-	if (mode === 'development' || mode === 'production') {
+	if (mode === 'development') {
 		config.plugins.push(vuetify({
 			styles: {
 				configFile: 'src/styles/settings.scss'
