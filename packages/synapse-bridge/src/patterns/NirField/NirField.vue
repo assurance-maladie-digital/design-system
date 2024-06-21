@@ -95,6 +95,9 @@ export default defineComponent({
 				if (!newValue) {
 					return;
 				}
+				if (newValue.length === NUMBER_LENGTH) {
+					this.validateNumberValue()
+				}
 				if (newValue.length >= NUMBER_LENGTH) {
 					this.numberValue = newValue.slice(0, NUMBER_LENGTH);
 					this.keyValue = newValue.slice(NUMBER_LENGTH);
