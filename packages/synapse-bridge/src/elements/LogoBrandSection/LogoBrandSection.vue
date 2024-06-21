@@ -244,7 +244,7 @@ export default defineComponent({
 				v-if="secondaryLogo"
 				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
-				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : undefined"
+				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : '/'"
 				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
 				class="vd-home-link"
 			>
@@ -312,6 +312,9 @@ export default defineComponent({
 	svg,
 	.vd-home-link {
 		flex: none;
+	}
+	.vd-home-link {
+		cursor: pointer;
 	}
 }
 </style>
