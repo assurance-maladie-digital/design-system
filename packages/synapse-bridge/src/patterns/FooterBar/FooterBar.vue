@@ -96,6 +96,10 @@ export default defineComponent({
 			type: Array as PropType<SocialMediaLink[]>,
 			default: () => defaultSocialMediaLinks,
 		},
+		dark: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -175,7 +179,7 @@ export default defineComponent({
 			...options.footer,
 			...$attrs,
 		}"
-		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode }"
+		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode, 'theme--dark': dark}"
 		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
@@ -242,13 +246,13 @@ export default defineComponent({
 					:target="item.openInNewTab ? '_blank' : undefined"
 					:tabindex="index"
 					:rel="item.openInNewTab ? 'noopener noreferrer' : undefined"
-					class="text--primary my-3 mx-4"
+					class="text-primary my-3 mx-4"
 				>
 					{{ item.text }}
 				</component>
 			</li>
 
-			<li v-if="version" class="text--secondary my-3 mx-4">
+			<li v-if="version" class="text-secondary my-3 mx-4">
 				{{ locales.versionLabel }} {{ version }}
 			</li>
 
