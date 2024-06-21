@@ -133,7 +133,6 @@ export default defineComponent({
 				persistentHint: true,
 				color: "#0C419A",
 				rules: this.rules,
-				class: ['textFieldClasses', {'warning-style': this.errorMessages.length > 0}],
 				errorMessages: errorMessages || [],
 			};
 		},
@@ -479,7 +478,7 @@ export default defineComponent({
 					hide-details="auto"
 					:append-inner-icon="(outlined || appendIcon) ? calendarIcon : undefined"
 					:aria-describedby="label"
-					:class="['textFieldClasses', {'warning-style': errorMessages.length > 0, 'error-style': hasError, 'range': range}]"
+					:class="[textFieldClasses, {'warning-style': errorMessages.length > 0, 'error-style': hasError, 'range': range}]"
 					:clearable="clearable"
 					:disabled="disabled"
 					:error-messages="errorMessages"

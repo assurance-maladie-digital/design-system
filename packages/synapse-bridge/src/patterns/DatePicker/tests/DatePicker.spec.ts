@@ -161,7 +161,6 @@ describe('Computed', () => {
 			persistentHint: true,
 			color: "#0C419A",
 			rules: [],
-			class: ['textFieldClasses', {'warning-style': wrapper.vm.errorMessages.length > 0}],
 			errorMessages: [],
 		};
 
