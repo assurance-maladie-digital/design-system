@@ -313,5 +313,8 @@ export default defineComponent({
 	.vd-home-link {
 		flex: none;
 	}
+	.vd-home-link {
+		cursor: pointer;
+	}
 }
 </style>
