@@ -6,5 +6,6 @@ export const locales = {
 	errorRequiredNumber: 'Le numéro de sécurité sociale est obligatoire',
 	errorRequiredKey: 'La clé de validation est obligatoire',
 	errorLengthNumber: (length: number): string => `La longueur du numéro de sécurité sociale doit être de ${length} caractères.`,
-	errorLengthKey: (length: number): string => `La longueur de la clé doit être de ${length} caractères.`
+	errorLengthKey: (length: number): string => `La longueur de la clé doit être de ${length} caractères.`,
+	errorCorsican: 'Le chiffre précédant A ou B doit être 1 ou 2.'
 } as const;
