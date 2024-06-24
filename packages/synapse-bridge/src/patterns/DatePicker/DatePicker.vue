@@ -165,7 +165,11 @@ export default defineComponent({
 			// If it is, add an error message
 			this.errorMessages.push('Une erreur est survenue');
 		}
-		this.$emit('update:model-value', this.formatDate(this.date));
+		if(this.date) {
+			this.$emit('update:model-value', this.formatDate(this.date));
+		} else {
+			this.$emit('update:model-value', null);
+		}
 	},
 	watch: {
 		date(newVal, oldVal) {

@@ -647,7 +647,7 @@ describe('Mounted', () => {
 		wrapper.vm.handleKeyDown(<KeyboardEvent>mockEvent);
 		expect(handleKeyDownMock).toHaveBeenCalledWith(mockEvent);
 
-		expect(wrapper.emitted('update:model-value')).toStrictEqual([[undefined]] );
+		expect(wrapper.emitted('update:model-value')).toStrictEqual([[null]] );
 		expect(wrapper.vm.date).toBe(null);
 		expect(wrapper.vm.inputValue).toBe('');
 	});
