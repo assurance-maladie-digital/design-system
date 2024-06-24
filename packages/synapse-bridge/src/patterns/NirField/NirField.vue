@@ -179,6 +179,7 @@ export default defineComponent({
 	methods: {
 		changeNumberValue(): void {
 			this.$emit("update:modelValue", this.keyValue ? this.maskaNumberValue.unmasked + this.keyValue : this.maskaNumberValue.unmasked);
+			this.validateNumberValue();
 		},
 
 		changeKeyValue(): void {
@@ -198,7 +199,13 @@ export default defineComponent({
 				this.numberRules
 					.map(rule => rule(this.maskaNumberValue.unmasked))
 					.filter((error): error is string => typeof error === 'string');
-			//this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
+
+			// Add custom validation for 'A' or 'B' (For the Corsican departments)
+			const seventhChar = this.maskaNumberValue.unmasked.charAt(5);
+			const eighthChar = this.maskaNumberValue.unmasked.charAt(6);
+			if ((eighthChar === 'A' || eighthChar === 'B') && seventhChar !== '1' && seventhChar !== '2') {
+				this.numberErrors.push(this.locales.errorCorsican);
+			}
 		},
 
 		/**
