@@ -1,3 +1,3 @@
-import EmotionPicker from './EmotionPicker.vue';
+import EmotionPicker from './EmotionPicker.vue'
 
-export default EmotionPicker;
+export default EmotionPicker

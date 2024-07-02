@@ -1,15 +1,15 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { RatingMixin } from "../RatingMixin";
-import { locales } from "./locales";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { RatingMixin } from '../RatingMixin'
+import { locales } from './locales'
 interface SelectItem {
-	title: string;
-	value: number;
+	title: string
+	value: number
 }
 export default defineComponent({
 	mixins: [RatingMixin],
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	props: {
 		length: {
 			type: Number,
@@ -23,28 +23,28 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-		};
+		}
 	},
 	computed: {
 		selectItems(): SelectItem[] {
 			return [...Array(this.length)].map((_, index) => ({
 				title: `${index + 1}`,
-				value: index + 1
-			}));
+				value: index + 1,
+			}))
 		},
 		shouldDisplayLabels(): boolean {
-			return this.itemLabels.length === 2;
+			return this.itemLabels.length === 2
 		},
 		hasAnswered(): boolean {
-			return this.modelValue !== -1;
-		}
+			return this.modelValue !== -1
+		},
 	},
 	methods: {
 		setValue(value: string | number): void {
-			this.emitInputEvent(value);
-		}
-	}
-});
+			this.emitInputEvent(value)
+		},
+	},
+})
 </script>
 
 <template>
@@ -130,7 +130,7 @@ export default defineComponent({
 	</fieldset>
 </template>
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 .vd-number-picker {
 	border: 0;
 }

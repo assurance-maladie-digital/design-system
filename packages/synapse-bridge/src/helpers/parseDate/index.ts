@@ -1,8 +1,8 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 
-dayjs.extend(customParseFormat);
+dayjs.extend(customParseFormat)
 
 /** Parse a date with dayjs */
 export function parseDate(value: string, format = 'DD/MM/YYYY'): dayjs.Dayjs {
@@ -11,18 +11,18 @@ export function parseDate(value: string, format = 'DD/MM/YYYY'): dayjs.Dayjs {
 	// so we don't go back or forward multiple hours
 
 	/** Timezone offset in minutes */
-	const timezoneOffset = (new Date()).getTimezoneOffset();
+	const timezoneOffset = new Date().getTimezoneOffset()
 
-	let offset = '00';
+	let offset = '00'
 
 	if (timezoneOffset > 0) {
-		offset = '14';
+		offset = '14'
 	} else {
-		offset = '04';
+		offset = '04'
 	}
 
-	const dateWithTime = `${value} ${offset}:00:00`;
-	const formatWithTime = `${format} HH:mm:ss`;
+	const dateWithTime = `${value} ${offset}:00:00`
+	const formatWithTime = `${format} HH:mm:ss`
 
-	return dayjs(dateWithTime, formatWithTime, true);
+	return dayjs(dateWithTime, formatWithTime, true)
 }

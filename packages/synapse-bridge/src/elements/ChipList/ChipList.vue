@@ -1,50 +1,50 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-	import { locales } from './locales'
-	import { ChipItem } from './types'
+import { locales } from './locales'
+import { ChipItem } from './types'
 
-	import { mdiChevronUp, mdiWindowClose } from '@mdi/js'
+import { mdiChevronUp, mdiWindowClose } from '@mdi/js'
 
-	export default defineComponent({
-		props: {
-			items: {
-				type: Array as PropType<ChipItem[]>,
-				default: () => [],
-			},
-			overflowLimit: {
-				type: Number,
-				default: 4,
-			},
+export default defineComponent({
+	props: {
+		items: {
+			type: Array as PropType<ChipItem[]>,
+			default: () => [],
 		},
-		data() {
-			return {
-				locales,
-				deleteIcon: mdiWindowClose,
-				upIcon: mdiChevronUp,
-			}
+		overflowLimit: {
+			type: Number,
+			default: 4,
 		},
-		computed: {
-			showOverflowChip(): boolean {
-				return this.items.length >= this.overflowLimit
-			},
-			overflowText(): string {
-				return `+${this.items.length - this.overflowLimit + 1}`
-			},
-			filteredItems(): ChipItem[] {
-				return this.items.slice(0, this.overflowLimit - 1)
-			},
+	},
+	data() {
+		return {
+			locales,
+			deleteIcon: mdiWindowClose,
+			upIcon: mdiChevronUp,
+		}
+	},
+	computed: {
+		showOverflowChip(): boolean {
+			return this.items.length >= this.overflowLimit
 		},
-		methods: {
-			emitRemoveEvent(item: ChipItem): void {
-				this.$emit('remove', item)
-			},
-			emitResetEvent(): void {
-				this.$emit('reset')
-			},
+		overflowText(): string {
+			return `+${this.items.length - this.overflowLimit + 1}`
 		},
-	})
+		filteredItems(): ChipItem[] {
+			return this.items.slice(0, this.overflowLimit - 1)
+		},
+	},
+	methods: {
+		emitRemoveEvent(item: ChipItem): void {
+			this.$emit('remove', item)
+		},
+		emitResetEvent(): void {
+			this.$emit('reset')
+		},
+	},
+})
 </script>
 
 <template>
@@ -99,14 +99,14 @@
 </template>
 
 <style lang="scss" scoped>
-	@import '@cnamts/design-tokens/dist/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
-	.vd-overflow-chip {
-		border: 1px solid $vd-cyan-lighten-90 !important;
-	}
+.vd-overflow-chip {
+	border: 1px solid $vd-cyan-lighten-90 !important;
+}
 
-	// Disable overflow button hover state
-	.vd-overflow-btn :deep(.v-btn__overlay) {
-		display: none;
-	}
+// Disable overflow button hover state
+.vd-overflow-btn :deep(.v-btn__overlay) {
+	display: none;
+}
 </style>

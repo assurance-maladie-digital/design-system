@@ -1,3 +1,3 @@
-import FilePreview from './FilePreview.vue';
+import FilePreview from './FilePreview.vue'
 
-export default FilePreview;
+export default FilePreview

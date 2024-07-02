@@ -1,3 +1,3 @@
-import NirField from './NirField.vue';
+import NirField from './NirField.vue'
 
-export default NirField;
+export default NirField

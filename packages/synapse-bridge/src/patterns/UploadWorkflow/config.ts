@@ -1,29 +1,29 @@
 export const config = {
 	fileUpload: {
-		class: 'mt-6'
+		class: 'mt-6',
 	},
 	dialog: {
 		persistent: true,
-		width: '550'
+		width: '550',
 	},
 	card: {
-		class: 'pa-4'
+		class: 'pa-4',
 	},
 	select: {
 		variant: 'outlined',
 		validateOnBlur: true,
-		label: 'Nature du fichier'
+		label: 'Nature du fichier',
 	},
 	layout: {
 		wrap: true,
-		class: 'mt-2'
+		class: 'mt-2',
 	},
 	cancelBtn: {
 		text: true,
 		class: 'mr-4',
-		color: 'accent'
+		color: 'accent',
 	},
 	confirmBtn: {
-		color: 'accent'
-	}
-};
+		color: 'accent',
+	},
+}

@@ -1,19 +1,19 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { mdiClose } from "@mdi/js";
-import { NavigationItem } from "../types";
-import { config } from "./config";
-import { colorMapping } from "../colorMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import HeaderMenuBtn from "../HeaderMenuBtn/HeaderMenuBtn.vue";
-import { customizable } from "@/mixins/customizable";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { mdiClose } from '@mdi/js'
+import { NavigationItem } from '../types'
+import { config } from './config'
+import { colorMapping } from '../colorMapping'
+import { ThemeEnum } from '@/constants/enums/ThemeEnum'
+import HeaderMenuBtn from '../HeaderMenuBtn/HeaderMenuBtn.vue'
+import { customizable } from '@/mixins/customizable'
 export default defineComponent({
 	mixins: [customizable(config)],
 	components: {
 		HeaderMenuBtn,
 	},
-	emits: ["update:drawer", "update:tab"],
+	emits: ['update:drawer', 'update:tab'],
 	props: {
 		theme: {
 			type: String as PropType<ThemeEnum>,
@@ -43,25 +43,25 @@ export default defineComponent({
 	data() {
 		return {
 			mdiClose,
-		};
+		}
 	},
 	computed: {
 		spacingClass(): string {
-			return this.mobileVersion ? 'px-4' : 'px-14';
+			return this.mobileVersion ? 'px-4' : 'px-14'
 		},
 		backgroundColor(): string {
-			return colorMapping[this.theme];
-		}
+			return colorMapping[this.theme]
+		},
 	},
 	methods: {
 		emitDrawerEvent(): void {
-			this.$emit('update:drawer', !this.drawer);
+			this.$emit('update:drawer', !this.drawer)
 		},
 		emitTabUpdateEvent(value: number): void {
-			this.$emit('update:tab', value);
-		}
-	}
-});
+			this.$emit('update:tab', value)
+		},
+	},
+})
 </script>
 
 <template>
@@ -71,7 +71,11 @@ export default defineComponent({
 		:class="spacingClass"
 		class="vd-navigation-bar d-flex align-center justify-center"
 	>
-		<VSheet class="header-navigation-background" v-bind="options.innerSheet" :width="innerWidth">
+		<VSheet
+			class="header-navigation-background"
+			v-bind="options.innerSheet"
+			:width="innerWidth"
+		>
 			<slot name="navigation-bar-prepend" />
 
 			<slot>

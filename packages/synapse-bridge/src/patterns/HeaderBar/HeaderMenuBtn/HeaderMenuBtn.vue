@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import { mdiMenu } from "@mdi/js";
-import { locales } from "./locales";
-import { config } from "./config.ts";
-import { customizable } from "@/mixins/customizable";
+import { defineComponent } from 'vue'
+import { mdiMenu } from '@mdi/js'
+import { locales } from './locales'
+import { config } from './config.ts'
+import { customizable } from '@/mixins/customizable'
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
@@ -14,22 +14,22 @@ export default defineComponent({
 		},
 		spacing: {
 			type: String,
-			default: "px-2 mx-n2",
+			default: 'px-2 mx-n2',
 		},
 	},
 	data() {
 		return {
 			locales,
 			menuIcon: mdiMenu,
-		};
+		}
 	},
 	computed: {
 		menuBtnActionLabel(): string {
-			const action = this.drawer ? locales.close : locales.open;
-			return locales.menuBtnLabel(action);
-		}
-	}
-});
+			const action = this.drawer ? locales.close : locales.open
+			return locales.menuBtnLabel(action)
+		},
+	},
+})
 </script>
 
 <template>

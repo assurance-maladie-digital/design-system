@@ -135,7 +135,7 @@ describe('DataList', () => {
 		expect(wrapper).toMatchSnapshot()
 
 		await wrapper.setProps({
-			loading: false
+			loading: false,
 		})
 
 		// Check that items now exist
@@ -176,13 +176,15 @@ describe('DataList', () => {
 			propsData: {
 				items: listWithAction,
 			},
-		},)
+		})
 
 		// Find the second item element
 		const itemWithAction = wrapper.findAll('.vd-data-list-item').at(2)
 		expect(itemWithAction?.exists()).toBe(true)
 
-		const actionBtn = (itemWithAction as DOMWrapper<Element>).find('.vd-data-list-item-action-btn')
+		const actionBtn = (itemWithAction as DOMWrapper<Element>).find(
+			'.vd-data-list-item-action-btn'
+		)
 		expect(actionBtn.exists()).toBe(true)
 
 		await actionBtn.trigger('click')

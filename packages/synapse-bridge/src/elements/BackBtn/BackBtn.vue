@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import { mdiArrowLeft } from '@mdi/js'
+import { defineComponent } from 'vue'
+import { mdiArrowLeft } from '@mdi/js'
 
-	import { locales } from './locales'
+import { locales } from './locales'
 
-	export default defineComponent({
-		props: {
-			hideBackIcon: {
-				type: Boolean,
-				default: false
-			},
-			dark: {
-				type: Boolean,
-				default: false
-			}
+export default defineComponent({
+	props: {
+		hideBackIcon: {
+			type: Boolean,
+			default: false,
 		},
-		data() {
-			return {
-				backIcon: mdiArrowLeft,
-				locales
-			}
+		dark: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	data() {
+		return {
+			backIcon: mdiArrowLeft,
+			locales,
 		}
-	})
+	},
+})
 </script>
 
 <template>
@@ -33,7 +33,7 @@
 		:outlined="dark"
 		:class="{
 			'px-0': !dark,
-			'pr-1': !dark && !hideBackIcon
+			'pr-1': !dark && !hideBackIcon,
 		}"
 		class="vd-back-btn text-none"
 	>
@@ -55,11 +55,11 @@
 </template>
 
 <style lang="scss" scoped>
-	// Disable hover state on light theme
-	.v-btn.v-theme--light:deep() {
-		.v-btn__underlay,
-		.v-btn__overlay {
-			display: none;
-		}
+// Disable hover state on light theme
+.v-btn.v-theme--light:deep() {
+	.v-btn__underlay,
+	.v-btn__overlay {
+		display: none;
 	}
+}
 </style>

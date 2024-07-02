@@ -1,3 +1,3 @@
-import CustomIcon from './CustomIcon.vue';
+import CustomIcon from './CustomIcon.vue'
 
-export default CustomIcon;
+export default CustomIcon

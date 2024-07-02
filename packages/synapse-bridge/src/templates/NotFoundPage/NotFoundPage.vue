@@ -1,10 +1,10 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { locales } from "./locales";
-import { insertAt } from "@/functions/insertAt";
+import { locales } from './locales'
+import { insertAt } from '@/functions/insertAt'
 
-import ErrorPage from "@/templates/ErrorPage";
+import ErrorPage from '@/templates/ErrorPage'
 
 export default defineComponent({
 	components: {
@@ -13,7 +13,7 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-		};
+		}
 	},
 	computed: {
 		/**
@@ -21,30 +21,30 @@ export default defineComponent({
 		 * This should be displayed to the user so it can be used to track down the error
 		 */
 		supportId(): string | null {
-			const SUPPORT_ID_PARAM_NAME = "support_id";
-			const SPACE_CHARACTER = " ";
+			const SUPPORT_ID_PARAM_NAME = 'support_id'
+			const SPACE_CHARACTER = ' '
 
-			const params = new URLSearchParams(document.location.search);
-			let supportId = params.get(SUPPORT_ID_PARAM_NAME);
+			const params = new URLSearchParams(document.location.search)
+			let supportId = params.get(SUPPORT_ID_PARAM_NAME)
 
 			if (!supportId) {
-				return null;
+				return null
 			}
 
-			const SPACE_POSITIONS = [4, 9, 14, 19];
+			const SPACE_POSITIONS = [4, 9, 14, 19]
 
 			SPACE_POSITIONS.forEach((position) => {
 				supportId = insertAt(
 					supportId as string,
 					position,
 					SPACE_CHARACTER
-				);
-			});
+				)
+			})
 
-			return supportId.trim();
+			return supportId.trim()
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -57,8 +57,8 @@ export default defineComponent({
 			<p class="mt-4">
 				{{ locales.supportIdMessage }}
 
-				<b>{{ supportId }}</b
-				>.
+				<b>{{ supportId }}</b>
+				.
 			</p>
 		</template>
 

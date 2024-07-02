@@ -1,5 +1,5 @@
-import { AxiosResponse } from 'axios';
-import { ContentHeadersEnum } from '../../ContentHeadersEnum';
+import { AxiosResponse } from 'axios'
+import { ContentHeadersEnum } from '../../ContentHeadersEnum'
 
 /** Returns a promise that returns a file */
 export function filePromise(): Promise<AxiosResponse<Blob>> {
@@ -10,15 +10,16 @@ export function filePromise(): Promise<AxiosResponse<Blob>> {
 			statusText: 'OK',
 			headers: {
 				[ContentHeadersEnum.TYPE]: 'text/plain',
-				[ContentHeadersEnum.DISPOSITION]: 'attachment; filename="attestation.txt"'
+				[ContentHeadersEnum.DISPOSITION]:
+					'attachment; filename="attestation.txt"',
 			},
 			config: {
 				headers: {
-					'Accept': 'application/json, text/plain, */*'
-				} as any
-			}
-		});
-	});
+					Accept: 'application/json, text/plain, */*',
+				} as any,
+			},
+		})
+	})
 }
 
 export function filePromiseError(): Promise<AxiosResponse<Blob>> {
@@ -29,10 +30,10 @@ export function filePromiseError(): Promise<AxiosResponse<Blob>> {
 				status: 500,
 				statusText: 'Internal Server Error',
 				headers: {},
-				config: {}
-			}
-		});
-	});
+				config: {},
+			},
+		})
+	})
 }
 
 export function filePromiseNoHeaders(): Promise<AxiosResponse<Blob>> {
@@ -44,9 +45,9 @@ export function filePromiseNoHeaders(): Promise<AxiosResponse<Blob>> {
 			headers: {},
 			config: {
 				headers: {
-					'Accept': 'application/json, text/plain, */*'
-				} as any
-			}
-		});
-	});
+					Accept: 'application/json, text/plain, */*',
+				} as any,
+			},
+		})
+	})
 }

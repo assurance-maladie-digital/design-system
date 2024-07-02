@@ -1,183 +1,181 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
 
-import FilePreview from "../";
-import { vuetify } from "@tests/unit/setup";
-import { locales } from "../locales";
+import FilePreview from '../'
+import { vuetify } from '@tests/unit/setup'
+import { locales } from '../locales'
 
 const testFileImg = {
-	name: "avatar.png",
+	name: 'avatar.png',
 	size: 1000,
-	type: "image/png",
-} as File;
+	type: 'image/png',
+} as File
 
 const testFilePdf = {
-	name: "document.pdf",
+	name: 'document.pdf',
 	size: 1000,
-	type: "application/pdf",
-} as File;
+	type: 'application/pdf',
+} as File
 
-describe("FilePreview", async () => {
-	let wrapper: any;
-	global.URL.createObjectURL = vi.fn();
+describe('FilePreview', async () => {
+	let wrapper: any
+	global.URL.createObjectURL = vi.fn()
 
 	beforeEach(() => {
 		wrapper = shallowMount(FilePreview, {
 			global: {
 				plugins: [vuetify],
-			}
-		});
-	});
+			},
+		})
+	})
 
-	it("renders correctly with an image", async () => {
-		await wrapper.setProps({ file: testFileImg });
+	it('renders correctly with an image', async () => {
+		await wrapper.setProps({ file: testFileImg })
 
-		expect(wrapper).toMatchSnapshot();
-	});
+		expect(wrapper).toMatchSnapshot()
+	})
 
-	it("renders correctly with a pdf", async () => {
-		await wrapper.setProps({ file: testFilePdf });
+	it('renders correctly with a pdf', async () => {
+		await wrapper.setProps({ file: testFilePdf })
 
-		expect(wrapper).toMatchSnapshot();
-	});
+		expect(wrapper).toMatchSnapshot()
+	})
 
-	it("render corectly with a file that is not an image or pdf", async () => {
+	it('render corectly with a file that is not an image or pdf', async () => {
 		await wrapper.setProps({
 			file: {
-				name: "document.txt",
+				name: 'document.txt',
 				size: 1000,
-				type: "text/plain",
-			} as File
-		});
+				type: 'text/plain',
+			} as File,
+		})
 
-		expect(wrapper.text()).toContain(locales.previewTypeNotAvailable);
-	});
+		expect(wrapper.text()).toContain(locales.previewTypeNotAvailable)
+	})
 
-	it("updates the preveiw when the file changes", async () => {
-		await wrapper.setProps({ file: testFileImg, });
+	it('updates the preveiw when the file changes', async () => {
+		await wrapper.setProps({ file: testFileImg })
 
-		expect(wrapper.find("img").exists()).toBe(true);
+		expect(wrapper.find('img').exists()).toBe(true)
 
 		await wrapper.setProps({
 			file: testFilePdf,
-		});
+		})
 
-		expect(wrapper.find("img").exists()).toBe(false);
-		expect(wrapper.find("object").exists()).toBe(true);
+		expect(wrapper.find('img').exists()).toBe(false)
+		expect(wrapper.find('object').exists()).toBe(true)
 
 		await wrapper.setProps({
 			file: null,
-		});
+		})
 
-		expect(wrapper.find("img").exists()).toBe(false);
-		expect(wrapper.find("object").exists()).toBe(false);
-		expect(wrapper.text()).toBe("");
-	});
+		expect(wrapper.find('img').exists()).toBe(false)
+		expect(wrapper.find('object').exists()).toBe(false)
+		expect(wrapper.text()).toBe('')
+	})
 
-	it("returns true when the file is a pdf", async () => {
-		await wrapper.setProps({ file: testFilePdf });
+	it('returns true when the file is a pdf', async () => {
+		await wrapper.setProps({ file: testFilePdf })
 
-		expect(wrapper.vm.isPdf).toBe(true);
-	});
+		expect(wrapper.vm.isPdf).toBe(true)
+	})
 
-	it("returns false when the file is not a pdf", async () => {
-		await wrapper.setProps({ file: testFileImg });
+	it('returns false when the file is not a pdf', async () => {
+		await wrapper.setProps({ file: testFileImg })
 
-		expect(wrapper.vm.isPdf).toBe(false);
-	});
+		expect(wrapper.vm.isPdf).toBe(false)
+	})
 
-	it("returns true when the file is an image", async () => {
-		await wrapper.setProps({ file: testFileImg });
+	it('returns true when the file is an image', async () => {
+		await wrapper.setProps({ file: testFileImg })
 
-		expect(wrapper.vm.isImage).toBe(true);
-	});
+		expect(wrapper.vm.isImage).toBe(true)
+	})
 
-	it("returns false when the file is not an image", async () => {
-		await wrapper.setProps({ file: testFilePdf });
+	it('returns false when the file is not an image', async () => {
+		await wrapper.setProps({ file: testFilePdf })
 
-		expect(wrapper.vm.isImage).toBe(false);
-	});
+		expect(wrapper.vm.isImage).toBe(false)
+	})
 
-	it("returns false when the file is undefined", async () => {
-		await wrapper.setProps({ file: undefined });
+	it('returns false when the file is undefined', async () => {
+		await wrapper.setProps({ file: undefined })
 
-		expect(wrapper.vm.isImage).toBe(false);
-		expect(wrapper.vm.isPdf).toBe(false);
-	});
+		expect(wrapper.vm.isImage).toBe(false)
+		expect(wrapper.vm.isPdf).toBe(false)
+	})
 
-	it("with options", async () => {
+	it('with options', async () => {
 		await wrapper.setProps({
 			file: testFileImg,
 			options: {
 				image: {
-					alt: 'Photo de paysage montagneux du site Picsum.'
-				}
-			}
-		});
+					alt: 'Photo de paysage montagneux du site Picsum.',
+				},
+			},
+		})
 
-		expect(wrapper).toMatchSnapshot();
-	});
+		expect(wrapper).toMatchSnapshot()
+	})
 
-	it("filePreviewOptions returns", async () => {
+	it('filePreviewOptions returns', async () => {
 		await wrapper.setProps({
 			file: testFileImg,
 			options: {
 				image: {
-					alt: 'Photo de paysage montagneux du site Picsum.'
-				}
-			}
-		});
+					alt: 'Photo de paysage montagneux du site Picsum.',
+				},
+			},
+		})
 
 		expect(wrapper.vm.filePreviewOptions).toStrictEqual({
 			image: {
 				alt: 'Photo de paysage montagneux du site Picsum.',
-				style: 'width: 100%;'
+				style: 'width: 100%;',
 			},
 			pdf: {
 				height: '556px',
-				width: '100%'
+				width: '100%',
 			},
+		})
+	})
 
-		});
-	});
+	it('getFileURL is called when the file changes', async () => {
+		const getFileURL = vi.spyOn(wrapper.vm, 'getFileURL')
 
-	it("getFileURL is called when the file changes", async () => {
-		const getFileURL = vi.spyOn(wrapper.vm, "getFileURL");
+		await wrapper.setProps({ file: testFileImg })
 
-		await wrapper.setProps({ file: testFileImg });
+		expect(getFileURL).toHaveBeenCalled()
+		expect(getFileURL).toHaveReturnedWith(undefined)
+	})
 
-		expect(getFileURL).toHaveBeenCalled();
-		expect(getFileURL).toHaveReturnedWith(undefined);
-	});
+	it('getFileURL return false when the file is undefined', async () => {
+		const getFileURL = vi.spyOn(wrapper.vm, 'getFileURL')
 
-	it("getFileURL return false when the file is undefined", async () => {
-		const getFileURL = vi.spyOn(wrapper.vm, "getFileURL");
+		await wrapper.setProps({ file: undefined })
+		wrapper.vm.getFileURL()
 
-		await wrapper.setProps({ file: undefined });
-		wrapper.vm.getFileURL();
+		expect(getFileURL).toHaveBeenCalled()
+		expect(getFileURL).toHaveReturnedWith(undefined)
+	})
 
-		expect(getFileURL).toHaveBeenCalled();
-		expect(getFileURL).toHaveReturnedWith(undefined);
-	});
+	it('revokes the file URL when the component is destroyed', async () => {
+		const revokeFileURL = vi.spyOn(wrapper.vm, 'revokeFileURL')
+		await wrapper.setProps({ file: testFileImg })
 
-	it("revokes the file URL when the component is destroyed", async () => {
-		const revokeFileURL = vi.spyOn(wrapper.vm, "revokeFileURL");
-		await wrapper.setProps({ file: testFileImg });
+		const mockRevokeObjectURL = vi.fn()
+		const originalRevokeObjectURL = URL.revokeObjectURL
 
-		const mockRevokeObjectURL = vi.fn();
-		const originalRevokeObjectURL = URL.revokeObjectURL;
+		URL.revokeObjectURL = mockRevokeObjectURL
 
-		URL.revokeObjectURL = mockRevokeObjectURL;
+		wrapper.vm.revokeFileURL()
+		wrapper.unmount()
 
-		wrapper.vm.revokeFileURL();
-		wrapper.unmount();
-
-		expect(mockRevokeObjectURL).toHaveBeenCalled();
-		expect(revokeFileURL).toHaveBeenCalled();
-		expect(revokeFileURL).toHaveReturnedWith(undefined);
-
+		expect(mockRevokeObjectURL).toHaveBeenCalled()
+		expect(revokeFileURL).toHaveBeenCalled()
+		expect(revokeFileURL).toHaveReturnedWith(undefined)
 
 		// Restore the original implementation after the test
-		URL.revokeObjectURL = originalRevokeObjectURL;
-	});
-});
+		URL.revokeObjectURL = originalRevokeObjectURL
+	})
+})

@@ -1,12 +1,12 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { mdiMagnify, mdiPlus } from "@mdi/js";
+import { mdiMagnify, mdiPlus } from '@mdi/js'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { customizable } from "@/mixins/customizable";
+import { customizable } from '@/mixins/customizable'
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -44,53 +44,58 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	emits: ["update:search", "click"],
+	emits: ['update:search', 'click'],
 	data() {
 		return {
 			locales,
 			searchIcon: mdiMagnify,
 			addIcon: mdiPlus,
-		};
+		}
 	},
 	computed: {
 		showRowsNumber(): boolean {
-			return Boolean(this.nbTotal);
+			return Boolean(this.nbTotal)
 		},
 
 		computedNbRows(): string {
 			if (this.nbFiltered !== undefined && this.nbFiltered > 0) {
-				return `${this.nbFiltered}/${this.nbTotal}`;
+				return `${this.nbFiltered}/${this.nbTotal}`
 			} else {
-				return `${this.nbTotal}/${this.nbTotal}`;
+				return `${this.nbTotal}/${this.nbTotal}`
 			}
 		},
 
 		computedRowsText(): string {
-			return locales.rowText(this.rowText, this.nbTotal > 1);
+			return locales.rowText(this.rowText, this.nbTotal > 1)
 		},
 
 		textFieldClasses(): string {
-			let fieldClass = this.isXs ? "vd-form-input-s" : "vd-form-input";
+			let fieldClass = this.isXs ? 'vd-form-input-s' : 'vd-form-input'
 
 			if (this.showAddBtn) {
-				fieldClass += " mr-6";
+				fieldClass += ' mr-6'
 			}
 
-			return !this.isXs ? `${fieldClass} flex-grow-0` : `${fieldClass} flex-grow-1` ;
+			return !this.isXs
+				? `${fieldClass} flex-grow-0`
+				: `${fieldClass} flex-grow-1`
 		},
 
 		isXs(): boolean {
-			return this.$vuetify.display.name === "xs";
+			return this.$vuetify.display.name === 'xs'
 		},
 	},
-});
+})
 </script>
 
 <template>
-	<VToolbar v-bind="options.toolbar" class="vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between">
-			<p v-if="showRowsNumber" class="mb-0 font-weight-bold mr-4 my-3">
-				{{ computedNbRows }} {{ computedRowsText }}
-			</p>
+	<VToolbar
+		v-bind="options.toolbar"
+		class="vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between"
+	>
+		<p v-if="showRowsNumber" class="mb-0 font-weight-bold mr-4 my-3">
+			{{ computedNbRows }} {{ computedRowsText }}
+		</p>
 
 		<div class="d-flex align-end justify-end flex-grow-1">
 			<slot name="search-left" />
@@ -101,7 +106,7 @@ export default defineComponent({
 				:disabled="loading"
 				:append-inner-icon="searchIcon"
 				:label="searchLabel"
-				:class="[textFieldClasses, { 'loading': loading }]"
+				:class="[textFieldClasses, { loading: loading }]"
 				@update:modelValue="$emit('update:search', $event)"
 			/>
 			<VBtn
@@ -116,8 +121,8 @@ export default defineComponent({
 				</VIcon>
 
 				<span v-show="!isXs" v-bind="options.addIconLabel">
-			  {{ addBtnLabel }}
-			 </span>
+					{{ addBtnLabel }}
+				</span>
 			</VBtn>
 
 			<slot name="search-right" />

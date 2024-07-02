@@ -1,59 +1,59 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { FilterItem } from "./types.ts";
+import { FilterItem } from './types.ts'
 
-import { deepCopy } from "../../helpers/deepCopy";
+import { deepCopy } from '../../helpers/deepCopy'
 
-import { ChipItem } from "../../elements/ChipList/types";
+import { ChipItem } from '../../elements/ChipList/types'
 
-import slugify from "slugify";
+import slugify from 'slugify'
 
 export const Filterable = defineComponent({
-	name: "Filterable",
+	name: 'Filterable',
 	props: {
 		modelValue: {
 			type: Array as PropType<FilterItem[]>,
 			default: () => [],
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	data() {
 		return {
 			filters: [] as FilterItem[],
-		};
+		}
 	},
 	watch: {
 		modelValue: {
 			handler(newValue: FilterItem[]) {
-				this.filters = deepCopy(newValue);
+				this.filters = deepCopy(newValue)
 			},
 			immediate: true,
 		},
 	},
 	methods: {
 		getFilterCount(filter: FilterItem): number {
-			return this.getChips(filter).length;
+			return this.getChips(filter).length
 		},
 
 		formatFilterName(name: string): string {
-			return slugify(name, { lower: true });
+			return slugify(name, { lower: true })
 		},
 
 		getChips({ value, formatChip }: FilterItem): ChipItem[] {
 			if (value !== undefined && formatChip) {
-				return formatChip(value);
+				return formatChip(value)
 			}
 
-			const isString = typeof value === "string";
-			const isNumber = typeof value === "number";
-			const isObject = typeof value === "object";
-			const isArray = Array.isArray(value);
+			const isString = typeof value === 'string'
+			const isNumber = typeof value === 'number'
+			const isObject = typeof value === 'object'
+			const isArray = Array.isArray(value)
 
 			if (isString || isNumber) {
-				if (value === "") {
-					return [];
+				if (value === '') {
+					return []
 				}
 
 				return [
@@ -61,34 +61,33 @@ export const Filterable = defineComponent({
 						text: value.toString(),
 						value: value,
 					},
-				];
+				]
 			}
 
 			if (isArray) {
 				return value.map((item) => {
-					if (typeof item !== "object") {
+					if (typeof item !== 'object') {
 						return {
 							text: item.toString(),
 							value: item,
-						};
+						}
 					}
 
 					return {
 						text: item.text || item.value.toString(),
 						value: item,
-					};
-				});
+					}
+				})
 			}
 
 			if (isObject) {
-				const typedValue = value as Record<string, any>;
+				const typedValue = value as Record<string, any>
 				const isPeriodField =
-					typedValue.from !== undefined &&
-					typedValue.to !== undefined;
+					typedValue.from !== undefined && typedValue.to !== undefined
 
 				if (isPeriodField) {
 					if (typedValue.from === null || typedValue.to === null) {
-						return [];
+						return []
 					}
 
 					return [
@@ -96,7 +95,7 @@ export const Filterable = defineComponent({
 							text: `${typedValue.from} – ${typedValue.to}`,
 							value: typedValue,
 						},
-					];
+					]
 				}
 
 				// Any object
@@ -105,85 +104,84 @@ export const Filterable = defineComponent({
 					const text =
 						typedValue[key].text ||
 						typedValue[key].value?.toString() ||
-						typedValue[key].toString();
+						typedValue[key].toString()
 
 					return {
 						text,
 						value: typedValue[key],
-					};
-				});
+					}
+				})
 			}
 
-			return [];
+			return []
 		},
 
 		removeChip(filter: FilterItem, chip: ChipItem): void {
-			const value = filter.value;
-			const isString = typeof value === "string";
-			const isNumber = typeof value === "number";
-			const isObject = typeof value === "object";
-			const isArray = Array.isArray(value);
+			const value = filter.value
+			const isString = typeof value === 'string'
+			const isNumber = typeof value === 'number'
+			const isObject = typeof value === 'object'
+			const isArray = Array.isArray(value)
 
 			if (isString || isNumber) {
-				filter.value = undefined;
+				filter.value = undefined
 			}
 
 			if (isArray) {
-				const typedValue = value as any[];
-				const chipValue = chip.value as any;
+				const typedValue = value as any[]
+				const chipValue = chip.value as any
 
 				const filteredValue = typedValue.filter((item) => {
 					if (Array.isArray(chipValue)) {
-						return !chipValue.includes(item);
+						return !chipValue.includes(item)
 					}
 
-					if (typeof item === "object") {
-						return item.value !== chipValue.value;
+					if (typeof item === 'object') {
+						return item.value !== chipValue.value
 					}
 
-					return item !== chipValue;
-				});
+					return item !== chipValue
+				})
 
 				const newValue = filteredValue.length
 					? filteredValue
-					: undefined;
+					: undefined
 
-				filter.value = newValue;
+				filter.value = newValue
 
-				return;
+				return
 			}
 
 			if (isObject) {
-				const typedValue = value as Record<string, any>;
-				const chipValue = chip.value as any;
+				const typedValue = value as Record<string, any>
+				const chipValue = chip.value as any
 				const isPeriodField =
-					typedValue.from !== undefined &&
-					typedValue.to !== undefined;
+					typedValue.from !== undefined && typedValue.to !== undefined
 
 				if (isPeriodField) {
-					filter.value = undefined;
+					filter.value = undefined
 
-					return;
+					return
 				}
 
-				delete typedValue[chipValue];
-				filter.value = typedValue;
+				delete typedValue[chipValue]
+				filter.value = typedValue
 			}
 		},
 
 		resetFilter(filter: FilterItem): void {
-			filter.value = undefined;
+			filter.value = undefined
 		},
 
 		resetAllFilters(): void {
 			this.filters.forEach((filter) => {
-				filter.value = undefined;
-			});
-			this.updateValue();
+				filter.value = undefined
+			})
+			this.updateValue()
 		},
 
 		updateValue(): void {
-			this.$emit("update:modelValue", this.filters);
+			this.$emit('update:modelValue', this.filters)
 		},
 	},
-});
+})

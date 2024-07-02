@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import type { PropType } from 'vue';
-import { customizable } from '@/mixins/customizable';
-import { config } from './config';
-import type { SelectBtnValue, SelectBtnItem } from './types';
-import { mdiCheck } from '@mdi/js';
-import { useTheme } from 'vuetify';
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { customizable } from '@/mixins/customizable'
+import { config } from './config'
+import type { SelectBtnValue, SelectBtnItem } from './types'
+import { mdiCheck } from '@mdi/js'
+import { useTheme } from 'vuetify'
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -44,19 +44,19 @@ export default defineComponent({
 		},
 		readonly: {
 			type: Boolean,
-			default: false
-		}
+			default: false,
+		},
 	},
 	watch: {
 		modelValue: {
 			handler(value: SelectBtnValue): void {
 				if (value === null && this.multiple) {
-					this.internalValue = [];
+					this.internalValue = []
 
-					return;
+					return
 				}
 
-				this.internalValue = value;
+				this.internalValue = value
 			},
 			immediate: true,
 			deep: true,
@@ -68,69 +68,74 @@ export default defineComponent({
 			checkIcon: mdiCheck,
 			internalValue: null as SelectBtnValue,
 			darktheme: useTheme().current.value.dark as boolean,
-		};
+		}
 	},
 	computed: {
 		filteredItems(): SelectBtnItem[] {
 			return this.items.filter((item) => {
-				return item.value !== null && item.value !== undefined;
-			});
+				return item.value !== null && item.value !== undefined
+			})
 		},
 	},
 	methods: {
 		isSelected(value: number | string): boolean {
 			if (this.multiple) {
-				return Array.isArray(this.internalValue) && this.internalValue.includes(value);
+				return (
+					Array.isArray(this.internalValue) &&
+					this.internalValue.includes(value)
+				)
 			}
-			return this.internalValue === value;
+			return this.internalValue === value
 		},
 
 		getIconStyles(item: SelectBtnItem): Record<string, string> {
 			return {
 				visibility: this.isSelected(item.value) ? 'visible' : 'hidden',
-			};
+			}
 		},
 
 		getNewValue(item: SelectBtnItem): SelectBtnValue {
 			if (this.multiple) {
-				const typedValue = this.internalValue as Array<string | number>;
+				const typedValue = this.internalValue as Array<string | number>
 
 				// If the item is unique, remove all other items from the array
 				const hasUniqueItemSelected = this.filteredItems.some(
-					(filteredItem) => filteredItem.unique && typedValue.includes(filteredItem.value)
-				);
+					(filteredItem) =>
+						filteredItem.unique &&
+						typedValue.includes(filteredItem.value)
+				)
 
 				if (item.unique || hasUniqueItemSelected) {
-					return [item.value];
+					return [item.value]
 				}
 
 				// If the item is not already selected, add it to the array
 				if (!typedValue.includes(item.value)) {
-					return [...typedValue, item.value];
+					return [...typedValue, item.value]
 				}
 
 				// If the item is already selected, remove it from the array
-				return typedValue.filter((value) => value !== item.value);
+				return typedValue.filter((value) => value !== item.value)
 			}
 
 			// If the item is already selected, deselect it
 			if (this.internalValue === item.value) {
-				return null;
+				return null
 			}
 
 			// Select the item
-			return item.value;
-	},
+			return item.value
+		},
 
 		toggleItem(item: SelectBtnItem): void {
-			this.internalValue = this.getNewValue(item);
+			this.internalValue = this.getNewValue(item)
 
-			this.$emit('update:error', false);
-			this.$emit('update:error-messages', undefined);
-			this.$emit('update:modelValue', this.internalValue);
+			this.$emit('update:error', false)
+			this.$emit('update:error-messages', undefined)
+			this.$emit('update:modelValue', this.internalValue)
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -198,7 +203,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 
 .vd-select-btn-field-toggle {
 	background: none !important;

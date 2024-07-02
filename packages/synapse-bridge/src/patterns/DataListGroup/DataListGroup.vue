@@ -1,12 +1,12 @@
 <script lang="ts">
-import type { PropType } from "vue";
+import type { PropType } from 'vue'
 
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import type { DataListIcons } from "@/elements/DataList/types";
-import type { DataListGroupItems, DataListActionEvent } from "./types";
+import type { DataListIcons } from '@/elements/DataList/types'
+import type { DataListGroupItems, DataListActionEvent } from './types'
 
-import DataList from "@/elements/DataList/DataList.vue";
+import DataList from '@/elements/DataList/DataList.vue'
 
 export default defineComponent({
 	components: {
@@ -24,7 +24,7 @@ export default defineComponent({
 		},
 		itemWidth: {
 			type: String,
-			default: "200px",
+			default: '200px',
 		},
 		loading: {
 			type: Boolean,
@@ -39,13 +39,13 @@ export default defineComponent({
 		emitItemAction(dataListIndex: number, itemIndex: number): void {
 			const eventValue: DataListActionEvent = {
 				dataListIndex,
-				itemIndex
-			};
+				itemIndex,
+			}
 
-			this.$emit('click:list-item', eventValue);
-		}
+			this.$emit('click:list-item', eventValue)
+		},
 	},
-});
+})
 </script>
 
 <template>

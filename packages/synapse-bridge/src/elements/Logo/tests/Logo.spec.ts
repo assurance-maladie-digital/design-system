@@ -1,11 +1,11 @@
-import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
-import { vuetify } from "@tests/unit/setup";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
+import { vuetify } from '@tests/unit/setup'
 
-import Logo from "../";
+import Logo from '../'
 
-describe("Logo", () => {
-	it("renders correctly", () => {
+describe('Logo', () => {
+	it('renders correctly', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				hideSignature: false,
@@ -13,17 +13,17 @@ describe("Logo", () => {
 				risquePro: false,
 				avatar: false,
 				dark: false,
-				size: "normal",
+				size: 'normal',
 			},
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper).toMatchSnapshot();
-	});
+		expect(wrapper).toMatchSnapshot()
+	})
 
-	it("renders correctly with fillColor", () => {
+	it('renders correctly with fillColor', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				dark: true,
@@ -31,40 +31,40 @@ describe("Logo", () => {
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper.vm.fillColor).toBe("#fff");
-	});
+		expect(wrapper.vm.fillColor).toBe('#fff')
+	})
 
-	it("renders correctly with small size", () => {
+	it('renders correctly with small size', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
-				size: "small",
+				size: 'small',
 				avatar: true,
 			},
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper.vm.dimensions.width).toBe("40");
-	});
+		expect(wrapper.vm.dimensions.width).toBe('40')
+	})
 
-	it("renders correctly with small viewBox", () => {
+	it('renders correctly with small viewBox', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
-				size: "small",
+				size: 'small',
 				avatar: true,
 			},
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper.vm.viewBox).toBe("0 0 64 64");
-	});
+		expect(wrapper.vm.viewBox).toBe('0 0 64 64')
+	})
 
-	it("renders correctly with no signature viewBox", () => {
+	it('renders correctly with no signature viewBox', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				hideSignature: true,
@@ -72,12 +72,12 @@ describe("Logo", () => {
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper.vm.viewBox).toBe("0 0 206 64");
-	});
+		expect(wrapper.vm.viewBox).toBe('0 0 206 64')
+	})
 
-	it("renders correctly with label", () => {
+	it('renders correctly with label', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				risquePro: true,
@@ -85,24 +85,24 @@ describe("Logo", () => {
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
 		expect(wrapper.vm.label).toBe(
-			"Sécurité sociale, l’Assurance Maladie : Agir ensemble, protéger chacun : Risques Professionnels"
-		);
-	});
+			'Sécurité sociale, l’Assurance Maladie : Agir ensemble, protéger chacun : Risques Professionnels'
+		)
+	})
 
-	it("renders correctly with ariaLabel", () => {
+	it('renders correctly with ariaLabel', () => {
 		const wrapper = shallowMount(Logo, {
 			propsData: {
 				risquePro: true,
-				ariaLabel: "test",
+				ariaLabel: 'test',
 			},
 			global: {
 				plugins: [vuetify],
 			},
-		});
+		})
 
-		expect(wrapper.vm.label).toBe("test");
-	});
-});
+		expect(wrapper.vm.label).toBe('test')
+	})
+})

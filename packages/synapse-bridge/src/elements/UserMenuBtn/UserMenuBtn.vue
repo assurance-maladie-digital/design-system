@@ -1,67 +1,74 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { mdiAccount, mdiLoginVariant } from '@mdi/js';
+import { mdiAccount, mdiLoginVariant } from '@mdi/js'
 
-import { customizable } from '@/mixins/customizable';
-import type { Refs } from '@/types';
+import { customizable } from '@/mixins/customizable'
+import type { Refs } from '@/types'
 
-import { config } from './config';
-import { locales } from './locales';
+import { config } from './config'
+import { locales } from './locales'
 
 export default defineComponent({
 	mixins: [customizable(config)],
 	props: {
 		fullName: {
 			type: String,
-			required: true
+			required: true,
 		},
 		additionalInformation: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		label: {
 			type: String,
-			default: locales.label
+			default: locales.label,
 		},
 		hideUserIcon: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		hideLogoutBtn: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		mobileVersion: {
 			type: Boolean,
-			default: false
-		}
+			default: false,
+		},
 	},
 	data() {
 		return {
 			$refs: {} as Refs<{
-				btn?: HTMLButtonElement;
+				btn?: HTMLButtonElement
 			}>,
 			locales,
 			userIcon: mdiAccount,
 			logoutIcon: mdiLoginVariant,
-		};
+		}
 	},
 	computed: {
 		btnPadding(): string {
-      		return this.hideUserIcon ? 'pa-1 pa-sm-2' : this.isMobileVersion ? 'pa-0' : 'pa-1 pa-sm-3';
+			return this.hideUserIcon
+				? 'pa-1 pa-sm-2'
+				: this.isMobileVersion
+					? 'pa-0'
+					: 'pa-1 pa-sm-3'
 		},
 		hasListContent(): boolean {
-			return Boolean(this.$slots.default || !this.hideLogoutBtn);
+			return Boolean(this.$slots.default || !this.hideLogoutBtn)
 		},
 		isMobileVersion(): boolean {
-      		return this.mobileVersion || ['xs', 'sm'].includes(this.$vuetify.display.name);
+			return (
+				this.mobileVersion ||
+				['xs', 'sm'].includes(this.$vuetify.display.name)
+			)
 		},
 		isMobileWithIcon(): boolean {
-			return this.isMobileVersion && !this.hideUserIcon;
-		}
-	}
-});
+			return this.isMobileVersion && !this.hideUserIcon
+		},
+	},
+})
 </script>
 
 <template>
@@ -77,7 +84,7 @@ export default defineComponent({
 				<VBtn
 					v-bind="{
 						...props,
-						...options.btn
+						...options.btn,
 					}"
 					:class="btnPadding"
 					:icon="isMobileWithIcon"
@@ -97,7 +104,9 @@ export default defineComponent({
 							{{ fullName }}
 						</span>
 
-						<span class="text-grey text-darken-2 font-weight-medium">
+						<span
+							class="text-grey text-darken-2 font-weight-medium"
+						>
 							{{ additionalInformation }}
 						</span>
 					</span>
@@ -124,10 +133,7 @@ export default defineComponent({
 			</template>
 
 			<slot name="content">
-				<VList
-					v-if="hasListContent"
-					v-bind="options.list"
-				>
+				<VList v-if="hasListContent" v-bind="options.list">
 					<slot />
 
 					<slot name="logout-item">
@@ -137,7 +143,6 @@ export default defineComponent({
 							class="logout"
 							@click="$emit('logout')"
 						>
-
 							<div class="d-flex">
 								<VIcon v-bind="options.logoutIcon" class="mr-4">
 									{{ logoutIcon }}
@@ -156,35 +161,36 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-	@import '@cnamts/design-tokens/dist/tokens';
-	.vd-user-menu-btn-ctn {
-		position: relative;
+@import '@cnamts/design-tokens/dist/tokens';
+.vd-user-menu-btn-ctn {
+	position: relative;
+}
+.vd-user-menu-btn {
+	outline: none;
+	&:hover:before {
+		background: #000;
+		opacity: 0.05;
 	}
-	.vd-user-menu-btn {
-		outline: none;
-		&:hover:before {
-			background: #000;
-			opacity: 0.05;
-		}
-		&:focus:before {
-			background: $vd-primary;
-			opacity: 0.08;
-		}
-		&:focus {
-			background: rgba($vd-primary, 0.08) !important;
-		}
+	&:focus:before {
+		background: $vd-primary;
+		opacity: 0.08;
 	}
-	:deep(.vd-user-menu-btn:focus > .v-btn__overlay) {
-		opacity: 0 !important;
+	&:focus {
+		background: rgba($vd-primary, 0.08) !important;
 	}
-	.vd-user-icon {
-		width: 40px;
-		height: 40px;
-		background: $vd-grey-lighten-90;
-		border-radius: 50%;
-		svg, .v-icon__svg {
-			width: 24px;
-			height: 24px;
-		}
+}
+:deep(.vd-user-menu-btn:focus > .v-btn__overlay) {
+	opacity: 0 !important;
+}
+.vd-user-icon {
+	width: 40px;
+	height: 40px;
+	background: $vd-grey-lighten-90;
+	border-radius: 50%;
+	svg,
+	.v-icon__svg {
+		width: 24px;
+		height: 24px;
 	}
+}
 </style>

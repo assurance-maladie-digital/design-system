@@ -1,5 +1,5 @@
 export const locales = {
-	errorCodeText: 'Code d\'erreur\xa0: ',
+	errorCodeText: "Code d'erreur\xa0: ",
 	supportIdMessage: 'Votre identifiant de support\xa0:',
-	btnText: 'Retour à l’accueil'
+	btnText: 'Retour à l’accueil',
 }

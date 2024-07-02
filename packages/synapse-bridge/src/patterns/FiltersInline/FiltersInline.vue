@@ -1,24 +1,24 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import { locales } from './locales';
-import { Filterable } from '@/mixins/filterable';
-import ChipList from '@/elements/ChipList';
-import { mdiChevronDown } from '@mdi/js';
-import { type ChipItem } from "@/mixins/filterable/types";
+import { defineComponent } from 'vue'
+import { locales } from './locales'
+import { Filterable } from '@/mixins/filterable'
+import ChipList from '@/elements/ChipList'
+import { mdiChevronDown } from '@mdi/js'
+import { type ChipItem } from '@/mixins/filterable/types'
 
 export default defineComponent({
 	name: 'FiltersInline',
 	components: {
-		ChipList
+		ChipList,
 	},
 	mixins: [Filterable],
 	data() {
 		return {
 			locales,
-			downIcon: mdiChevronDown
-		};
-	}
-});
+			downIcon: mdiChevronDown,
+		}
+	},
+})
 </script>
 
 <template>
@@ -32,7 +32,7 @@ export default defineComponent({
 			offset="12"
 			nudge-bottom="10px"
 		>
-			<template #activator="{props}">
+			<template #activator="{ props }">
 				<VBtn
 					v-bind="props"
 					:class="`vd-filter-${filter.name}`"
@@ -51,19 +51,13 @@ export default defineComponent({
 
 					{{ filter.title }}
 
-					<VIcon
-						size="small"
-						class="ml-1"
-					>
+					<VIcon size="small" class="ml-1">
 						{{ downIcon }}
 					</VIcon>
 				</VBtn>
 			</template>
 
-			<VSheet
-				color="white"
-				class="pa-4"
-			>
+			<VSheet color="white" class="pa-4">
 				<ChipList
 					:items="getChips(filter)"
 					:overflow-limit="filter.chipOverflowLimit"
@@ -75,7 +69,8 @@ export default defineComponent({
 				<slot
 					:attrs="{
 						modelValue: filter.value,
-						'onUpdate:modelValue': (value: ChipItem) => filter['value'] = value
+						'onUpdate:modelValue': (value: ChipItem) =>
+							(filter['value'] = value),
 					}"
 					:name="`${formatFilterName(filter.name)}`"
 				/>
@@ -85,10 +80,10 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-	@import '@cnamts/design-tokens/dist/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
-	.v-badge :deep(.v-badge__badge) {
-		color: $vd-secondary !important;
-		background-color: white;
-	}
+.v-badge :deep(.v-badge__badge) {
+	color: $vd-secondary !important;
+	background-color: white;
+}
 </style>

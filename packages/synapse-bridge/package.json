@@ -61,7 +61,7 @@
 		"analyze": "vite build --mode analyze",
 		"build": "vue-tsc && vite build",
 		"lint": "pnpm lint:eslint && pnpm lint:prettier",
-		"lint:eslint": "eslint .",
+		"lint:eslint": "eslint . --ignore-pattern 'dist/*'",
 		"lint:prettier": "pnpm exec prettier . --write",
 		"lint:fix": "eslint . --fix && prettier --write --list-different ."
 	},

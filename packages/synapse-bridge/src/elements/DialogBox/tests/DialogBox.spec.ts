@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import {mount, shallowMount} from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
 import DialogBox from '../'
@@ -26,7 +26,7 @@ describe('DialogBox', () => {
 			})
 
 			expect(wrapper.html()).toMatchSnapshot()
-		});
+		})
 
 		it('is closed when model value is false', async () => {
 			const wrapper = mount(DialogBox, {
@@ -244,7 +244,7 @@ describe('DialogBox', () => {
 
 			const modal = wrapper.getComponent(VCard)
 
-			const confirmBtn= modal.find('[data-test-id="confirm-btn"]')
+			const confirmBtn = modal.find('[data-test-id="confirm-btn"]')
 			await confirmBtn.trigger('click')
 
 			expect(wrapper.emitted('confirm')).toBeTruthy()
@@ -271,9 +271,9 @@ describe('DialogBox', () => {
 				},
 			})
 
-			const spy = vi.spyOn(wrapper.vm, 'setEventListeners').mockReturnValue(
-				Promise.resolve()
-			)
+			const spy = vi
+				.spyOn(wrapper.vm, 'setEventListeners')
+				.mockReturnValue(Promise.resolve())
 
 			await wrapper.vm.setEventListeners()
 			await wrapper.vm.$nextTick()

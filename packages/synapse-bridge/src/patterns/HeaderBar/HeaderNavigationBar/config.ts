@@ -1,7 +1,7 @@
 export const config = {
 	innerSheet: {
 		color: 'transparent',
-		class: 'd-flex align-center'
+		class: 'd-flex align-center',
 	},
 	sheet: {
 		height: '48px',
@@ -10,9 +10,9 @@ export const config = {
 		width: '100%',
 	},
 	tab: {
-		exact: true
+		exact: true,
 	},
 	tabs: {
-		backgroundColor: 'transparent'
-	}
-};
+		backgroundColor: 'transparent',
+	},
+}
