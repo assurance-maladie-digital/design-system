@@ -65,7 +65,8 @@ export default defineConfig(({ mode }) => {
 			}),
 			vuetify(
 				{
-					autoImport: true
+					autoImport: true,
+					styles: 'sass'
 				}
 			),
 			dts({
