@@ -27,4 +27,8 @@ export interface PaginatedTableProps {
 	options: DataOptions;
 }
 
-export type DataTableHeaders = VDataTable['$props']['headers']
+export type DataTableHeaders = {
+	title?: string,
+	value?: string,
+	key?: string
+}

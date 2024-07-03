@@ -5,6 +5,7 @@ export const config = {
 	},
 	rangeSlider: {
 		hideDetails: true,
-		class: 'align-center mt-2 mb-6'
+		class: 'align-center mt-2 mb-6',
+		step: 1
 	}
 };

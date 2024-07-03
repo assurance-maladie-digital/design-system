@@ -24,7 +24,7 @@ describe("PeriodField", () => {
 		});
 		await wrapper.setData({ date: [dayjs().format('DD/MM/YYYY'), dayjs().add(4, 'day').format('DD/MM/YYYY')] });
 
-		expect(wrapper.emitted().change).toBeTruthy();
+		expect(wrapper.emitted()['update:modelValue']).toBeTruthy();
 	});
 	it("emits change event when date is updated", async () => {
 		const wrapper = mount(PeriodField, {
@@ -36,9 +36,9 @@ describe("PeriodField", () => {
 		await wrapper.setData({ date: [dayjs().format('DD/MM/YYYY'), dayjs().add(4, 'day').format('DD/MM/YYYY')] });
 		await wrapper.setData({ date: [dayjs().add(2, 'day').format('DD/MM/YYYY'), dayjs().add(6, 'day').format('DD/MM/YYYY')] });
 
-		expect(wrapper.emitted().change).toBeTruthy();
-		expect(wrapper.emitted().change.length).toBe(2);
-		expect(wrapper.emitted().change[1]).toEqual([[dayjs().add(2, 'day').format('DD/MM/YYYY'), dayjs().add(6, 'day').format('DD/MM/YYYY')]]);
+		expect(wrapper.emitted()['update:modelValue']).toBeTruthy();
+		expect(wrapper.emitted()['update:modelValue'].length).toBe(2);
+		expect(wrapper.emitted()['update:modelValue'][1]).toEqual([[dayjs().add(2, 'day').format('DD/MM/YYYY'), dayjs().add(6, 'day').format('DD/MM/YYYY')]]);
 	});
 	it("updates date when v-model changes", async () => {
 		const wrapper = mount(PeriodField, {

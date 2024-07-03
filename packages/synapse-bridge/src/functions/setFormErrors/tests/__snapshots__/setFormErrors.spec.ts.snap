@@ -1,0 +1,151 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`setFormErrors > does not sets an error on unknown fields 1`] = `
+{
+  "section1": {
+    "questions": {
+      "questionChoiceButton": {
+        "fieldOptions": {
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": {
+        "fieldOptions": {
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceOtherSelected": {
+        "items": [],
+        "type": "select",
+      },
+      "questionPassword": {
+        "type": "password",
+      },
+      "questionPeriod": {
+        "fieldOptions": {
+          "notExist": {
+            "errorMessages": "Sub field does not exist",
+          },
+        },
+        "type": "period",
+      },
+      "questionString": {
+        "fieldOptions": {
+          "errorMessages": "Incorrect value",
+        },
+        "type": "text",
+      },
+    },
+  },
+}
+`;
+
+exports[`setFormErrors > sets error messages on fields 1`] = `
+{
+  "section1": {
+    "questions": {
+      "questionChoiceButton": {
+        "fieldOptions": {
+          "errorMessages": [
+            "Erreur 1",
+            "Erreur 2",
+          ],
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": {
+        "fieldOptions": {
+          "errorMessages": "Erreur",
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceOtherSelected": {
+        "fieldOptions": {
+          "errorMessages": {
+            "other": "test",
+            "value": "test",
+          },
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionPassword": {
+        "fieldOptions": {
+          "errorMessages": "Erreur",
+        },
+        "type": "password",
+      },
+      "questionPeriod": {
+        "fieldOptions": {
+          "from": {
+            "errorMessages": [
+              "Erreur from 1",
+              "Erreur from 2",
+            ],
+          },
+          "to": {
+            "errorMessages": [
+              "Erreur to 1",
+              "Erreur to 2",
+            ],
+          },
+        },
+        "type": "period",
+      },
+      "questionString": {
+        "fieldOptions": {
+          "errorMessages": [
+            "Erreur 1",
+            "Erreur 2",
+          ],
+        },
+        "type": "text",
+      },
+    },
+  },
+}
+`;
+
+exports[`setFormErrors > skips errors with wrong types 1`] = `
+{
+  "section1": {
+    "questions": {
+      "questionChoiceButton": {
+        "fieldOptions": {
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceButtonMultiple": {
+        "fieldOptions": {
+          "type": "choiceButton",
+        },
+        "items": [],
+        "type": "select",
+      },
+      "questionChoiceOtherSelected": {
+        "items": [],
+        "type": "select",
+      },
+      "questionPassword": {
+        "type": "password",
+      },
+      "questionPeriod": {
+        "type": "period",
+      },
+      "questionString": {
+        "type": "text",
+      },
+    },
+  },
+}
+`;
