@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FilterModule > renders correctly closed 1`] = `
+<div class="vd-filter-module">
+  <!--v-if--><button type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-default v-btn--variant-text" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+    <!----><span class="v-btn__content" data-no-activator=""><i class="M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z mdi v-icon notranslate v-theme--light v-icon--size-default text-primary mr-2" aria-hidden="true"></i> Filtres</span>
+    <!---->
+    <!---->
+  </button>
+  <!---->
+  <!---->
+  <!---->
+</div>
+`;
