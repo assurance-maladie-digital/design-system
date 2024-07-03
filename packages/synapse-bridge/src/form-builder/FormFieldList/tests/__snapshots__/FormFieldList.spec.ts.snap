@@ -1,0 +1,382 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormFieldList > renders correctly 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div class="vd-field-list w-100">
+      <h3 class="text-h6 font-weight-bold mb-2">title</h3>
+      <!--v-if-->
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-form-input">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                      <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="input-0">
+                  <!---->Numéro de voie
+                </label>
+                <!----><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" mask="#####" class="v-field__input">
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <div class="v-field__outline__start"></div>
+                <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+                    <!---->Numéro de voie
+                  </label></div>
+                <div class="v-field__outline__end"></div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+              <!---->
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-60156eea="" data-v-9067cb71="">
+          <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field v-select v-select--single vd-form-input">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                    <!---->
+                    <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                    <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                        <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator="">
+                  <!----><label class="v-label v-field-label" for="input-2">
+                    <!---->Complément de voie
+                  </label>
+                  <!---->
+                  <div class="v-field__input" data-no-activator="">
+                    <!---->
+                    <!----><input size="1" type="text" id="input-2" aria-describedby="input-2-messages" inputmode="none" aria-label="Open" title="Open">
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+                <div class="v-field__append-inner">
+                  <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <div class="v-field__outline__start"></div>
+                  <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-2">
+                      <!---->Complément de voie
+                    </label></div>
+                  <div class="v-field__outline__end"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="v-input__details">
+              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-2-messages">
+                <!---->
+              </transition-stub>
+              <!---->
+            </div>
+          </div>
+          <!--v-if-->
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-60156eea="" data-v-9067cb71="">
+          <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field v-autocomplete v-autocomplete--single vd-form-input">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--appended v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                    <!---->
+                    <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                    <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                        <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator="">
+                  <!----><label class="v-label v-field-label" for="input-5">
+                    <!---->Type de voie
+                  </label>
+                  <!---->
+                  <div class="v-field__input" data-no-activator="">
+                    <!---->
+                    <!----><input size="1" type="text" id="input-5" aria-describedby="input-5-messages">
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+                <div class="v-field__append-inner">
+                  <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--clickable v-autocomplete__menu-icon" role="button" aria-hidden="false" tabindex="0" aria-label="Open" title="Open"></i>
+                  <!---->
+                </div>
+                <div class="v-field__outline">
+                  <div class="v-field__outline__start"></div>
+                  <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-5">
+                      <!---->Type de voie
+                    </label></div>
+                  <div class="v-field__outline__end"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="v-input__details">
+              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-5-messages">
+                <!---->
+              </transition-stub>
+              <!---->
+            </div>
+          </div>
+          <!--v-if-->
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-form-input">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                      <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="input-8">
+                  <!---->Libellé de la voie
+                </label>
+                <!----><input size="1" type="text" id="input-8" aria-describedby="input-8-messages" class="v-field__input">
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <div class="v-field__outline__start"></div>
+                <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-8">
+                    <!---->Libellé de la voie
+                  </label></div>
+                <div class="v-field__outline__end"></div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-8-messages">
+              <!---->
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-form-input">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                      <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="input-10">
+                  <!---->Complément d’adresse
+                </label>
+                <!----><input size="1" type="text" id="input-10" aria-describedby="input-10-messages" class="v-field__input">
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <div class="v-field__outline__start"></div>
+                <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-10">
+                    <!---->Complément d’adresse
+                  </label></div>
+                <div class="v-field__outline__end"></div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-10-messages">
+              <!---->
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-form-input">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                      <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="input-12">
+                  <!---->Code postal
+                </label>
+                <!----><input size="1" type="text" id="input-12" aria-describedby="input-12-messages" mask="#####" class="v-field__input">
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <div class="v-field__outline__start"></div>
+                <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-12">
+                    <!---->Code postal
+                  </label></div>
+                <div class="v-field__outline__end"></div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-12-messages">
+              <!---->
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+      </div>
+      <div data-v-9067cb71="" class="vd-form-field">
+        <!--v-if-->
+        <!--v-if-->
+        <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-form-input">
+          <!---->
+          <div class="v-input__control">
+            <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+              <div class="v-field__overlay"></div>
+              <div class="v-field__loader">
+                <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                  <!---->
+                  <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                  <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                    <div class="v-progress-linear__indeterminate">
+                      <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                      <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                    </div>
+                  </transition-stub>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+              <div class="v-field__field" data-no-activator="">
+                <!----><label class="v-label v-field-label" for="input-14">
+                  <!---->Ville
+                </label>
+                <!----><input size="1" type="text" id="input-14" aria-describedby="input-14-messages" class="v-field__input">
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="v-field__outline">
+                <div class="v-field__outline__start"></div>
+                <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-14">
+                    <!---->Ville
+                  </label></div>
+                <div class="v-field__outline__end"></div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+          <div class="v-input__details">
+            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-14-messages">
+              <!---->
+            </transition-stub>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

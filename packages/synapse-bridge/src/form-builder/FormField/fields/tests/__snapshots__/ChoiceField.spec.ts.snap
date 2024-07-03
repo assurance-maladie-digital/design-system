@@ -1,0 +1,349 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChoiceField > renders correctly 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-60156eea="">
+      <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected vd-form-input">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-0">
+                <!---->Classic field
+              </label>
+              <!---->
+              <div class="v-field__input" data-no-activator="">
+                <!---->
+                <!---->
+                <div class="v-select__selection"><span class="v-select__selection-text">0<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+              </div>
+              <!---->
+            </div>
+            <!---->
+            <div class="v-field__append-inner">
+              <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+              <!---->
+            </div>
+            <div class="v-field__outline">
+              <div class="v-field__outline__start"></div>
+              <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+                  <!---->Classic field
+                </label></div>
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+            <!---->
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceField > renders the other field 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-60156eea="">
+      <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected vd-form-input">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-0">
+                <!---->Classic field
+              </label>
+              <!---->
+              <div class="v-field__input" data-no-activator="">
+                <!---->
+                <!---->
+                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+              </div>
+              <!---->
+            </div>
+            <!---->
+            <div class="v-field__append-inner">
+              <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+              <!---->
+            </div>
+            <div class="v-field__outline">
+              <div class="v-field__outline__start"></div>
+              <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+                  <!---->Classic field
+                </label></div>
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+            <!---->
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <transition-stub data-v-60156eea="" name="expand-transition" appear="false" persisted="false" css="true" hide-on-leave="">
+        <!--v-if-->
+      </transition-stub>
+      <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-locale--is-ltr v-text-field vd-form-input">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--center-affix v-field--no-label v-field--variant-outlined v-theme--light v-locale--is-ltr">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-white" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-white"></div>
+                    <div class="v-progress-linear__indeterminate short bg-white"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-3">
+                <!---->
+                <!---->
+              </label>
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" class="v-field__input">
+              <!---->
+            </div>
+            <!---->
+            <!---->
+            <div class="v-field__outline text-white">
+              <div class="v-field__outline__start"></div>
+              <!---->
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+            <!---->
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceField > renders the other field when the corresponding choice is selected 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-60156eea="">
+      <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--single v-select--selected vd-form-input">
+        <!---->
+        <div class="v-input__control">
+          <div class="v-field v-field--active v-field--appended v-field--center-affix v-field--dirty v-field--variant-outlined v-theme--light v-locale--is-ltr" role="combobox">
+            <div class="v-field__overlay"></div>
+            <div class="v-field__loader">
+              <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                <!---->
+                <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                  <div class="v-progress-linear__indeterminate">
+                    <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                    <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                  </div>
+                </transition-stub>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div class="v-field__field" data-no-activator="">
+              <!----><label class="v-label v-field-label" for="input-0">
+                <!---->Classic field
+              </label>
+              <!---->
+              <div class="v-field__input" data-no-activator="">
+                <!---->
+                <!---->
+                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+              </div>
+              <!---->
+            </div>
+            <!---->
+            <div class="v-field__append-inner">
+              <!----><i class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default v-select__menu-icon" aria-hidden="true"></i>
+              <!---->
+            </div>
+            <div class="v-field__outline">
+              <div class="v-field__outline__start"></div>
+              <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-0">
+                  <!---->Classic field
+                </label></div>
+              <div class="v-field__outline__end"></div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="v-input__details">
+          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+            <!---->
+          </transition-stub>
+          <!---->
+        </div>
+      </div>
+      <transition-stub data-v-60156eea="" name="expand-transition" appear="false" persisted="false" css="true" hide-on-leave="">
+        <div data-v-60156eea="" class="vd-other-field mt-4">
+          <h4 data-v-60156eea="" class="text-body-1 mb-1">Autre taille</h4>
+          <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-textarea v-text-field v-textarea--auto-grow v-textarea--no-resize vd-form-input">
+            <!---->
+            <div class="v-input__control">
+              <div class="v-field v-field--center-affix v-field--no-label v-field--variant-outlined v-theme--light v-locale--is-ltr">
+                <div class="v-field__overlay"></div>
+                <div class="v-field__loader">
+                  <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
+                    <!---->
+                    <div class="v-progress-linear__background bg-primary" style="width: 100%;"></div>
+                    <transition-stub name="fade-transition" appear="false" persisted="false" css="true">
+                      <div class="v-progress-linear__indeterminate">
+                        <div class="v-progress-linear__indeterminate long bg-primary"></div>
+                        <div class="v-progress-linear__indeterminate short bg-primary"></div>
+                      </div>
+                    </transition-stub>
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div class="v-field__field" data-no-activator="">
+                  <!----><label class="v-label v-field-label" for="input-3">
+                    <!---->
+                    <!---->
+                  </label>
+                  <!----><textarea class="v-field__input" rows="1" id="input-3" aria-describedby="input-3-messages"></textarea><textarea class="v-field__input v-textarea__sizer" id="input-3-sizer" readonly="" aria-hidden="true"></textarea>
+                  <!---->
+                </div>
+                <!---->
+                <!---->
+                <div class="v-field__outline">
+                  <div class="v-field__outline__start"></div>
+                  <!---->
+                  <div class="v-field__outline__end"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="v-input__details">
+              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+                <!---->
+              </transition-stub>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </transition-stub>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceField > renders with multiple error messages 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-60156eea="">
+      <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field" type="choiceButton" color="primary">
+        <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">S</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">M</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="autre"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Autre</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button></div>
+        <p data-v-044548c4="" class="theme--light v-messages text-error px-3 mt-2 mb-0">Erreur 1</p>
+        <p data-v-044548c4="" class="theme--light v-messages text-error px-3 mt-2 mb-0">Erreur 2</p>
+      </div>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChoiceField > renders with single error message 1`] = `
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <div data-v-60156eea="">
+      <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field" type="choiceButton" color="primary">
+        <div data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" role="listbox"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">S</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">M</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" role="option" value="autre"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+            <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Autre</span>
+            <!--v-if--></span>
+            <!---->
+            <!---->
+          </button></div>
+        <p data-v-044548c4="" class="theme--light v-messages text-error px-3 mt-2 mb-0">Erreur</p>
+      </div>
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
