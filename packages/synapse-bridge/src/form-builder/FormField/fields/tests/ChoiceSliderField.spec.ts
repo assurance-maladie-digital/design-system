@@ -77,7 +77,7 @@ describe('ChoiceSliderField', () => {
 				],
 				options: {
 					label: 'Classic field',
-					outlined: true,
+					variant: 'outlined',
 					labelMin: 'Min',
 					labelMax: 'Max',
 					thumbLabel: true,

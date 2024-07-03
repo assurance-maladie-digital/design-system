@@ -22,7 +22,7 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			label: 'Numéro de voie',
 			mask: '#####',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	streetNumberComplement: {
@@ -31,7 +31,7 @@ export const addressFields: Fields = {
 		items: defaultItem,
 		fieldOptions: {
 			label: 'Complément de voie',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	streetType: {
@@ -41,7 +41,7 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			type: 'choiceAutocomplete',
 			label: 'Type de voie',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	streetLabel: {
@@ -49,7 +49,7 @@ export const addressFields: Fields = {
 		value: null,
 		fieldOptions: {
 			label: 'Libellé de la voie',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	streetComplement: {
@@ -57,7 +57,7 @@ export const addressFields: Fields = {
 		value: null,
 		fieldOptions: {
 			label: 'Complément d’adresse',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	postalCode: {
@@ -66,7 +66,7 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			mask: '#####',
 			label: 'Code postal',
-			outlined: true
+			variant: 'outlined'
 		}
 	},
 	city: {
@@ -74,7 +74,7 @@ export const addressFields: Fields = {
 		value: null,
 		fieldOptions: {
 			label: 'Ville',
-			outlined: true
+			variant: 'outlined'
 		}
 	}
 };

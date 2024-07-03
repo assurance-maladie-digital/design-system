@@ -27,7 +27,7 @@ const testField: Field = {
 	],
 	fieldOptions: {
 		label: "Classic field",
-		outlined: true,
+		variant: 'outlined',
 	},
 };
 
@@ -376,7 +376,7 @@ describe("ChoiceField", () => {
 						fieldOptions: {
 							type: 'choiceButton',
 							label: "Classic field",
-							outlined: true,
+							variant: 'outlined',
 							errorMessages: {
 								value: ["Erreur 1"],
 								other: ["Erreur 2"],
@@ -422,7 +422,7 @@ describe("ChoiceField", () => {
 							}
 						],
 						fieldOptions: {
-							outlined: true,
+							variant: 'outlined',
 							type: 'choiceButton',
 							inline: true
 						},
@@ -488,7 +488,7 @@ describe("ChoiceField", () => {
 							}
 						],
 						fieldOptions: {
-							outlined: true,
+							variant: 'outlined',
 							type: 'choiceButton',
 							inline: true,
 						},

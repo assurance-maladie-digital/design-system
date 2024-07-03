@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`FormBuilder > renders correctly 1`] = `
-<div data-v-9067cb71="" class="vd-form-field">
-  <!--v-if-->
-  <!--v-if-->
-  <anonymous-stub data-v-9067cb71="" field="[object Object]"></anonymous-stub>
-</div>
-`;

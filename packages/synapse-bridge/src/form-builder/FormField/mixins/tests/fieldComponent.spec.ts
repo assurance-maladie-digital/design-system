@@ -12,7 +12,7 @@ const testField = {
 	modelValue: null,
 	fieldOptions: {
 		label: "Field",
-		outlined: true,
+		variant: 'outlined',
 	},
 };
 

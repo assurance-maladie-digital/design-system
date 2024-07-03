@@ -41,6 +41,9 @@ function generateVuetifyGlobals() {
 		'VSkeletonLoader',
 		'VBadge',
 		'VExpansionPanel',
+		'VAutocomplete',
+		'VSlider',
+		'VTextarea',
 		'transitions',
 	];
 

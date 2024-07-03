@@ -10,7 +10,7 @@ const testField = {
 	value: null,
 	fieldOptions: {
 		label: "Classic field",
-		outlined: true,
+		variant: 'outlined',
 	},
 };
 

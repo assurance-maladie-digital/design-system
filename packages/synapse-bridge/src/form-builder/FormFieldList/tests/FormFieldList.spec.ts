@@ -64,7 +64,7 @@ describe("FormFieldList", () => {
 							fieldOptions: {
 								label: "Numéro de voie",
 								mask: "#####",
-								outlined: true,
+								variant: 'outlined',
 							},
 						}
 					},

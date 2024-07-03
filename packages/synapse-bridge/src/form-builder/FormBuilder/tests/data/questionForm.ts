@@ -29,7 +29,7 @@ export const questionForm: Form = {
 				value: null,
 				fieldOptions: {
 					label: 'Votre nom',
-					outlined: true
+					variant: 'outlined'
 				}
 			},
 			questionPassword: {
@@ -39,7 +39,7 @@ export const questionForm: Form = {
 				fieldOptions: {
 					type: 'password',
 					label: 'Votre mot de passe',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionNumber: {
@@ -47,7 +47,7 @@ export const questionForm: Form = {
 				value: null,
 				fieldOptions: {
 					label: 'Le nombre de personnes',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionNumberMask: {
@@ -56,7 +56,7 @@ export const questionForm: Form = {
 				fieldOptions: {
 					label: 'Votre âge',
 					mask: '###',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionTextarea: {
@@ -67,14 +67,14 @@ export const questionForm: Form = {
 				value: null,
 				fieldOptions: {
 					label: 'Vos symptômes',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionDate: {
 				type: 'date',
 				value: null,
 				fieldOptions: {
-					outlined: true,
+					variant: 'outlined',
 					birthdate: true,
 					textField: {
 						label: 'Votre date de naissance'
@@ -96,7 +96,7 @@ export const questionForm: Form = {
 				items: scheduleItems,
 				fieldOptions: {
 					label: 'Votre horaire de rendez-vous',
-					outlined: true,
+					variant: 'outlined',
 					menuProps: {
 						offsetY: true
 					}
@@ -111,7 +111,7 @@ export const questionForm: Form = {
 				items: scheduleItems,
 				fieldOptions: {
 					label: 'Vos horaires de rendez-vous',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionSelectSliderTick: {
@@ -155,7 +155,7 @@ export const questionForm: Form = {
 				items: scheduleItems,
 				fieldOptions: {
 					type: 'choiceAutocomplete',
-					outlined: true,
+					variant: 'outlined',
 					chips: true,
 					menuProps: {
 						offsetY: true
@@ -276,7 +276,7 @@ export const questionForm: Form = {
 				fieldOptions: {
 					type: 'choiceButton',
 					label: 'Classic field',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionChoiceOtherSelected: {
@@ -321,7 +321,7 @@ export const questionForm: Form = {
 				},
 				fieldOptions: {
 					label: 'Classic field',
-					outlined: true
+					variant: 'outlined',
 				}
 			},
 			questionRange: {
@@ -341,7 +341,7 @@ export const questionForm: Form = {
 				value: null,
 				fieldOptions: {
 					label: 'Question personnalisée',
-					outlined: true
+					variant: 'outlined',
 				}
 			}
 		}
