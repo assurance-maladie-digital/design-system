@@ -1,12 +1,12 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import FieldComponent from '../mixins/fieldComponent';
+import FieldComponent from '../mixins/fieldComponent'
 
 export default defineComponent({
 	emits: ['update:modelValue'],
 	mixins: [FieldComponent],
-});
+})
 </script>
 
 <template>

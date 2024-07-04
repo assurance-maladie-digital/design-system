@@ -1,57 +1,57 @@
-import { FormErrors } from "./types";
-import { Form } from "@/form-builder/FormBuilder/types";
+import { FormErrors } from './types'
+import { Form } from '@/form-builder/FormBuilder/types'
 import {
 	ChoiceFieldErrorMessages,
 	FieldOptions,
-} from "@/form-builder/FormField/types";
+} from '@/form-builder/FormField/types'
 
-import { deepCopy } from "@/helpers/deepCopy";
+import { deepCopy } from '@/helpers/deepCopy'
 
 /** Set error-messages prop on the fields in error */
 export function setFormErrors(formErrors: FormErrors, form: Form): Form {
-	const newForm = deepCopy<Form>(form);
+	const newForm = deepCopy<Form>(form)
 
 	for (const [sectionName] of Object.entries(newForm)) {
 		for (const [fieldName, errors] of Object.entries(formErrors)) {
-			const field = newForm[sectionName].questions[fieldName];
+			const field = newForm[sectionName].questions[fieldName]
 
 			if (!field || !errors) {
-				continue;
+				continue
 			}
 
-			const fieldOptions = field.fieldOptions || {};
+			const fieldOptions = field.fieldOptions || {}
 
-			if (typeof errors === "string" || Array.isArray(errors)) {
-				(fieldOptions as FieldOptions).errorMessages = errors;
-			} else if (typeof errors === "object") {
+			if (typeof errors === 'string' || Array.isArray(errors)) {
+				;(fieldOptions as FieldOptions).errorMessages = errors
+			} else if (typeof errors === 'object') {
 				for (const [subFieldName, subErrors] of Object.entries(
 					errors
 				)) {
-					if (subFieldName === "value" || subFieldName === "other") {
+					if (subFieldName === 'value' || subFieldName === 'other') {
 						if (!fieldOptions.errorMessages) {
-							fieldOptions.errorMessages = {};
+							fieldOptions.errorMessages = {}
 						}
 
-						(
+						;(
 							fieldOptions.errorMessages as ChoiceFieldErrorMessages
-						)[subFieldName] = subErrors;
-						continue;
+						)[subFieldName] = subErrors
+						continue
 					}
 
-					const subFieldOptions = fieldOptions[subFieldName] || {};
+					const subFieldOptions = fieldOptions[subFieldName] || {}
 
-					(subFieldOptions as FieldOptions).errorMessages = subErrors;
+					;(subFieldOptions as FieldOptions).errorMessages = subErrors
 
-					fieldOptions[subFieldName] = subFieldOptions;
+					fieldOptions[subFieldName] = subFieldOptions
 				}
 			} else {
-				continue;
+				continue
 			}
 
 			newForm[sectionName].questions[fieldName].fieldOptions =
-				fieldOptions;
+				fieldOptions
 		}
 	}
 
-	return newForm;
+	return newForm
 }

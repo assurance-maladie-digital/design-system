@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import FieldComponent from '../mixins/fieldComponent';
+import FieldComponent from '../mixins/fieldComponent'
 
-import { vMaska } from "maska";
+import { vMaska } from 'maska'
 
 export default defineComponent({
 	mixins: [FieldComponent],
@@ -12,11 +12,11 @@ export default defineComponent({
 	computed: {
 		maskaOptions(): any {
 			return {
-				mask: this.field.fieldOptions?.mask as string || '',
-			};
+				mask: (this.field.fieldOptions?.mask as string) || '',
+			}
 		},
-	}
-});
+	},
+})
 </script>
 
 <template>

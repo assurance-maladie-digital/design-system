@@ -1,21 +1,21 @@
 <script lang="ts">
-import { PropType, defineComponent } from 'vue';
-import { config } from './config';
-import { locales } from './locales';
+import { PropType, defineComponent } from 'vue'
+import { config } from './config'
+import { locales } from './locales'
 
-import { customizable } from '../../../mixins/customizable';
+import { customizable } from '../../../mixins/customizable'
 
-import { mdiCloseCircle, mdiWindowClose, mdiPencil } from '@mdi/js';
+import { mdiCloseCircle, mdiWindowClose, mdiPencil } from '@mdi/js'
 
-import type { FilterManagerItem } from './types';
-import type { Field } from '@/form-builder/FormField/types';
+import type { FilterManagerItem } from './types'
+import type { Field } from '@/form-builder/FormField/types'
 
 export default defineComponent({
 	props: {
 		appliedFilters: {
 			type: Array as PropType<Field[]>,
-			required: true
-		}
+			required: true,
+		},
 	},
 	mixins: [customizable(config)],
 	emits: ['edit-filter', 'clear-filter', 'reset-filters'],
@@ -24,45 +24,44 @@ export default defineComponent({
 			locales: locales,
 			closeIcon: mdiCloseCircle,
 			deleteIcon: mdiWindowClose,
-			editIcon: mdiPencil
-		};
+			editIcon: mdiPencil,
+		}
 	},
 	computed: {
 		filters(): FilterManagerItem[] {
-			const displayedFilters: FilterManagerItem[] = [];
+			const displayedFilters: FilterManagerItem[] = []
 
 			this.appliedFilters.forEach((filter, index) => {
 				const item = {
 					index,
-					filter
-				};
+					filter,
+				}
 
 				if (filter.value) {
-					displayedFilters.push(item);
+					displayedFilters.push(item)
 				}
-			});
+			})
 
-			return displayedFilters;
+			return displayedFilters
 		},
 		filtersCount(): string {
-			const plural = this.filters.length > 1;
+			const plural = this.filters.length > 1
 
-			return `${this.filters.length} ${locales.filter(plural)}`;
-		}
+			return `${this.filters.length} ${locales.filter(plural)}`
+		},
 	},
 	methods: {
 		editFilter(index: number): void {
-			this.$emit('edit-filter', index);
+			this.$emit('edit-filter', index)
 		},
 		clearFilter(index: number): void {
-			this.$emit('clear-filter', index);
+			this.$emit('clear-filter', index)
 		},
 		resetFilters(): void {
-			this.$emit('reset-filters');
-		}
-	}
-});
-
+			this.$emit('reset-filters')
+		},
+	},
+})
 </script>
 
 <template>
@@ -71,7 +70,7 @@ export default defineComponent({
 			<VBtn
 				v-bind="{
 					...props,
-					...options.closeBtn
+					...options.closeBtn,
 				}"
 			>
 				{{ filtersCount }}
@@ -83,7 +82,11 @@ export default defineComponent({
 		</template>
 
 		<VList v-bind="options.list">
-			<VListItem v-for="(item, index) in filters" :key="index" v-bind="options.listItem">
+			<VListItem
+				v-for="(item, index) in filters"
+				:key="index"
+				v-bind="options.listItem"
+			>
 				<div class="d-flex align-center">
 					<VListItemTitle>
 						<div class="vd-filter-manager my-2">
@@ -92,13 +95,19 @@ export default defineComponent({
 					</VListItemTitle>
 
 					<VListItemAction>
-						<VBtn v-bind="options.editBtn" @click="editFilter(item.index)">
+						<VBtn
+							v-bind="options.editBtn"
+							@click="editFilter(item.index)"
+						>
 							<VIcon v-bind="options.editIcon">
 								{{ editIcon }}
 							</VIcon>
 						</VBtn>
 
-						<VBtn v-bind="options.deleteBtn" @click="clearFilter(item.index)">
+						<VBtn
+							v-bind="options.deleteBtn"
+							@click="clearFilter(item.index)"
+						>
 							<VIcon v-bind="options.deleteIcon">
 								{{ deleteIcon }}
 							</VIcon>
@@ -109,8 +118,6 @@ export default defineComponent({
 		</VList>
 	</VMenu>
 </template>
-
-
 
 <style lang="scss" scoped>
 .vd-filter-manager {

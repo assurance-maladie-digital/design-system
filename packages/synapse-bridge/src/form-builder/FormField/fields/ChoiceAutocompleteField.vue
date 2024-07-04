@@ -1,12 +1,12 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import ChoiceComponent from '../mixins/choiceComponent';
+import ChoiceComponent from '../mixins/choiceComponent'
 
 export default defineComponent({
 	mixins: [ChoiceComponent],
-	emits: ['update:modelValue']
-});
+	emits: ['update:modelValue'],
+})
 </script>
 
 <template>

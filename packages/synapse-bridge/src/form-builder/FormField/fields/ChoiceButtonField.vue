@@ -1,14 +1,14 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import SelectBtnField from '@/patterns/SelectBtnField';
+import SelectBtnField from '@/patterns/SelectBtnField'
 
-import ChoiceComponent from '../mixins/choiceComponent';
-import type { SelectBtnItem } from '@/patterns/SelectBtnField/types';
+import ChoiceComponent from '../mixins/choiceComponent'
+import type { SelectBtnItem } from '@/patterns/SelectBtnField/types'
 
 export default defineComponent({
 	components: {
-		SelectBtnField
+		SelectBtnField,
 	},
 	mixins: [ChoiceComponent],
 	computed: {
@@ -16,15 +16,15 @@ export default defineComponent({
 			// Rename alone prop to unique for backward compatibility
 			return this.items.map((item) => {
 				if (item.alone) {
-					delete item.alone;
-					(item as SelectBtnItem).unique = true;
+					delete item.alone
+					;(item as SelectBtnItem).unique = true
 				}
 
-				return item as SelectBtnItem;
-			});
-		}
-	}
-});
+				return item as SelectBtnItem
+			})
+		},
+	},
+})
 </script>
 
 <template>

@@ -1,56 +1,56 @@
-import { describe, it, expect } from "vitest";
-import { shallowMount } from "@vue/test-utils";
+import { describe, it, expect } from 'vitest'
+import { shallowMount } from '@vue/test-utils'
 
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { Field } from "../../types";
+import { Field } from '../../types'
 
-import FieldComponent from "../fieldComponent";
+import FieldComponent from '../fieldComponent'
 
 const testField = {
-	type: "text",
+	type: 'text',
 	modelValue: null,
 	fieldOptions: {
-		label: "Field",
+		label: 'Field',
 		variant: 'outlined',
 	},
-};
+}
 
 /** Create the wrapper */
 function createWrapper(field: Field) {
 	const component = defineComponent({
 		mixins: [FieldComponent],
-		template: "<div />",
-	});
+		template: '<div />',
+	})
 
 	return shallowMount(component, {
 		propsData: {
 			field,
 		},
-	});
+	})
 }
 
-describe("fieldComponent", () => {
-	it("emits change event", async () => {
-		const wrapper = createWrapper(testField);
+describe('fieldComponent', () => {
+	it('emits change event', async () => {
+		const wrapper = createWrapper(testField)
 
-		wrapper.vm.emitChangeEvent(testField.modelValue);
+		wrapper.vm.emitChangeEvent(testField.modelValue)
 
-		await wrapper.vm.$nextTick();
+		await wrapper.vm.$nextTick()
 
-		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-	});
+		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
+	})
 
-	it("emits change event without fieldOptions", async () => {
+	it('emits change event without fieldOptions', async () => {
 		const wrapper = createWrapper({
 			...testField,
 			fieldOptions: undefined,
-		});
+		})
 
-		wrapper.vm.emitChangeEvent(testField.modelValue);
+		wrapper.vm.emitChangeEvent(testField.modelValue)
 
-		await wrapper.vm.$nextTick();
+		await wrapper.vm.$nextTick()
 
-		expect(wrapper.emitted("update:modelValue")).toBeTruthy();
-	});
-});
+		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
+	})
+})

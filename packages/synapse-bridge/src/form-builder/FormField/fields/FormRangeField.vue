@@ -1,22 +1,24 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import RangeField from '@/patterns/RangeField';
+import RangeField from '@/patterns/RangeField'
 
-import FieldComponent from '../mixins/fieldComponent';
+import FieldComponent from '../mixins/fieldComponent'
 
 export default defineComponent({
 	components: {
 		RangeField,
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	mixins: [FieldComponent],
 	computed: {
 		value() {
-			return Array.isArray(this.field.value) ? this.field.value.filter(el=>!isNaN(el)) : null;
+			return Array.isArray(this.field.value)
+				? this.field.value.filter((el) => !isNaN(el))
+				: null
 		},
 	},
-});
+})
 </script>
 
 <template>

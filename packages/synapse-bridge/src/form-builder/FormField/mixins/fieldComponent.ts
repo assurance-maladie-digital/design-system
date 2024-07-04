@@ -1,10 +1,10 @@
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import type { Field, FieldValue, FieldOptions } from "../types";
+import type { Field, FieldValue, FieldOptions } from '../types'
 
-import { deepCopy } from "@/helpers/deepCopy";
-import { deepRemoveKeys } from "@/helpers/deepRemoveKeys";
+import { deepCopy } from '@/helpers/deepCopy'
+import { deepRemoveKeys } from '@/helpers/deepRemoveKeys'
 
 export default defineComponent({
 	props: {
@@ -13,31 +13,31 @@ export default defineComponent({
 			required: true,
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	computed: {
 		fieldOptions(): FieldOptions | undefined {
-			return this.field.fieldOptions;
+			return this.field.fieldOptions
 		},
 	},
 	methods: {
 		async emitChangeEvent(value: FieldValue): Promise<void> {
 			const fieldOptions = this.fieldOptions
 				? this.clearErrorMessages(deepCopy(this.fieldOptions))
-				: undefined;
+				: undefined
 
 			const updatedField = {
 				...this.field,
 				fieldOptions,
 				value,
-			};
+			}
 
-			await this.$nextTick(); // Await to respect event order
+			await this.$nextTick() // Await to respect event order
 
-			this.$emit("update:modelValue", updatedField);
+			this.$emit('update:modelValue', updatedField)
 		},
 
 		clearErrorMessages(fieldOptions: FieldOptions): FieldOptions {
-			return deepRemoveKeys(fieldOptions, "errorMessages");
+			return deepRemoveKeys(fieldOptions, 'errorMessages')
 		},
 	},
-});
+})

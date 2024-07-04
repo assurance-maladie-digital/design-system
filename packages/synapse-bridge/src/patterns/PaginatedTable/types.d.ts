@@ -28,7 +28,7 @@ export interface PaginatedTableProps {
 }
 
 export type DataTableHeaders = {
-	title?: string,
-	value?: string,
+	title?: string
+	value?: string
 	key?: string
 }

@@ -1,19 +1,19 @@
-import type { Form } from "../../../../form-builder/FormBuilder/types";
+import type { Form } from '../../../../form-builder/FormBuilder/types'
 
 const defaultItem = [
 	{
 		text: 'bis',
-		value: 1
+		value: 1,
 	},
 	{
 		text: 'ter',
-		value: 2
+		value: 2,
 	},
 	{
 		text: 'quarter',
-		value: 3
-	}
-];
+		value: 3,
+	},
+]
 
 export const formWithNullValues = {
 	section1: {
@@ -24,27 +24,27 @@ export const formWithNullValues = {
 				mask: '#####',
 				fieldOptions: {
 					type: 'text',
-					label: 'Numéro de voie'
-				}
+					label: 'Numéro de voie',
+				},
 			},
 			streetNumberComplement: {
 				type: 'select',
 				value: null,
 				items: defaultItem,
 				fieldOptions: {
-					label: 'Complément de voie'
-				}
+					label: 'Complément de voie',
+				},
 			},
 			streetLabel: {
 				type: 'text',
 				value: null,
 				fieldOptions: {
-					label: 'Libellé de la voie'
-				}
-			}
-		}
-	}
-} satisfies Form;
+					label: 'Libellé de la voie',
+				},
+			},
+		},
+	},
+} satisfies Form
 
 export const form = {
 	section1: {
@@ -52,17 +52,17 @@ export const form = {
 			streetNumber: {
 				type: 'number',
 				value: 1,
-				mask: '#####'
+				mask: '#####',
 			},
 			streetNumberComplement: {
 				type: 'select',
 				value: 'bis',
-				items: defaultItem
+				items: defaultItem,
 			},
 			streetLabel: {
 				type: 'text',
-				value: 'streetLabel'
-			}
-		}
-	}
-} satisfies Form;
+				value: 'streetLabel',
+			},
+		},
+	},
+} satisfies Form

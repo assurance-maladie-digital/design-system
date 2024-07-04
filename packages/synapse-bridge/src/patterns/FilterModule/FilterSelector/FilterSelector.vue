@@ -1,38 +1,33 @@
-
 <script lang="ts">
+import { PropType, defineComponent } from 'vue'
+import { config } from './config'
+import { locales } from './locales'
 
-import { PropType, defineComponent } from 'vue';
-import { config } from './config';
-import { locales } from './locales';
+import { customizable } from '../../../mixins/customizable'
 
-import { customizable } from '../../../mixins/customizable';
-
-import { mdiFilterVariant } from '@mdi/js';
-import type { Field } from '@/form-builder/FormField/types';
-
-
+import { mdiFilterVariant } from '@mdi/js'
+import type { Field } from '@/form-builder/FormField/types'
 
 export default defineComponent({
 	props: {
 		filters: {
 			type: Array as PropType<Field[]>,
-			required: true
-		}
+			required: true,
+		},
 	},
 	mixins: [customizable(config)],
 	data() {
 		return {
 			locales: locales,
-			filterIcon: mdiFilterVariant
-		};
+			filterIcon: mdiFilterVariant,
+		}
 	},
 	methods: {
 		emitFilterSelectedEvent(index: number): void {
-			this.$emit('filter-selected', index);
-		}
-	}
-});
-
+			this.$emit('filter-selected', index)
+		},
+	},
+})
 </script>
 
 <template>
@@ -41,7 +36,7 @@ export default defineComponent({
 			<VBtn
 				v-bind="{
 					...props,
-					...options.btn
+					...options.btn,
 				}"
 			>
 				<VIcon v-bind="options.icon">

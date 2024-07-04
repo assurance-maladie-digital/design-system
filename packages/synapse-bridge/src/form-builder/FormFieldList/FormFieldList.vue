@@ -1,12 +1,12 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import FormField from "../FormField";
-import type { Field } from "../FormField/types";
-import type { Fields } from "./types";
+import FormField from '../FormField'
+import type { Field } from '../FormField/types'
+import type { Fields } from './types'
 
-import { useTheme } from "vuetify";
+import { useTheme } from 'vuetify'
 
 export default defineComponent({
 	components: {
@@ -26,27 +26,27 @@ export default defineComponent({
 			default: undefined,
 		},
 	},
-	emits: ["update:modelValue", "refresh"],
+	emits: ['update:modelValue', 'refresh'],
 	data() {
 		return {
 			theme: useTheme(),
-		};
+		}
 	},
 	methods: {
 		fieldUpdated(field: Field, fieldName: string): void {
-			const fields = { ...this.modelValue };
-			fields[fieldName] = field;
+			const fields = { ...this.modelValue }
+			fields[fieldName] = field
 
 			this.$nextTick(() => {
-				this.$emit("update:modelValue", fields);
+				this.$emit('update:modelValue', fields)
 
 				if (field.dynamic) {
-					this.$emit("refresh");
+					this.$emit('refresh')
 				}
-			});
+			})
 		},
 	},
-});
+})
 </script>
 
 <template>

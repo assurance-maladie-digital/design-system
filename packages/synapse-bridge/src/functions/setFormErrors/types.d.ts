@@ -2,8 +2,11 @@ import {
 	ChoiceFieldErrorMessages,
 	ErrorMessages,
 	PeriodErrorMessages,
-} from "@/form-builder/FormField/types";
+} from '@/form-builder/FormField/types'
 
 export interface FormErrors {
-	[fieldName: string]: ErrorMessages | ChoiceFieldErrorMessages | PeriodErrorMessages;
+	[fieldName: string]:
+		| ErrorMessages
+		| ChoiceFieldErrorMessages
+		| PeriodErrorMessages
 }

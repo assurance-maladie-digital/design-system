@@ -14,7 +14,15 @@ export * from './rules/notBeforeToday'
 export * from './rules/notAfterDate'
 export * from './rules/notBeforeDate'
 export * from './rules/required'
-export type {Value, ValidationResult, ValidationRule, ValidationRules, GenericFnOpt, GenericFn, ErrorMessages} from './rules/types'
+export type {
+	Value,
+	ValidationResult,
+	ValidationRule,
+	ValidationRules,
+	GenericFnOpt,
+	GenericFn,
+	ErrorMessages,
+} from './rules/types'
 export * from './functions/calcHumanFileSize'
 export * from './functions/copyToClipboard'
 export * from './functions/downloadFile'
@@ -36,4 +44,9 @@ export * from './helpers/propValidator'
 export * from './helpers/ruleMessage'
 export * from './helpers/scrollBehavior'
 export * from './modules/notification'
-export type {NotificationTypes, NotificationObj, NotificationState, NotificationModule} from './modules/notification/types'
+export type {
+	NotificationTypes,
+	NotificationObj,
+	NotificationState,
+	NotificationModule,
+} from './modules/notification/types'
