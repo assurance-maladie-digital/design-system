@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FilterManager > renders correctly 1`] = `
+<button data-v-81300aef="" type="button" class="v-btn v-btn--elevated v-theme--light bg-secondary v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-elevated text-lowercase mr-2" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator="">2 filtres <i data-v-81300aef="" class="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white v-icon--clickable ml-2" role="button" aria-hidden="false" tabindex="0" arialabel="reset filters"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
+
+exports[`FilterManager > renders correctly with a single filter 1`] = `
+<button data-v-81300aef="" type="button" class="v-btn v-btn--elevated v-theme--light bg-secondary v-btn--density-default v-btn--rounded v-btn--size-default v-btn--variant-elevated text-lowercase mr-2" targetref="[object Object]" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
+  <!----><span class="v-btn__content" data-no-activator="">1 filtre <i data-v-81300aef="" class="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white v-icon--clickable ml-2" role="button" aria-hidden="false" tabindex="0" arialabel="reset filters"></i></span>
+  <!---->
+  <!---->
+</button>
+`;
