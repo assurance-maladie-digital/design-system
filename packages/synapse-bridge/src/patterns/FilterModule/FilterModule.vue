@@ -6,9 +6,9 @@ import { locales } from './locales';
 import FilterManager from './FilterManager';
 import FilterSelector from './FilterSelector';
 
-import { customizable } from '../../mixins/customizable';
+import { customizable } from '@/mixins/customizable';
 
-import { deepCopy } from '../../helpers/deepCopy';
+import { deepCopy } from '@/helpers/deepCopy';
 import FormField from '@/form-builder/FormField/FormField.vue';
 import type { Field } from '@/form-builder/FormField/types';
 import DialogBox from '@/elements/DialogBox/DialogBox.vue';
