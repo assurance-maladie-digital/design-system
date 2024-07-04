@@ -98,6 +98,10 @@ export default defineComponent({
 			type: String as PropType<string>,
 			default: 'DD/MM/YYYY',
 		},
+		customErrorMessages: {
+			type: Array as PropType<Array<string>>,
+			default: () => [],
+		},
 	},
 	data(): DatePickerData {
 		return {
@@ -138,7 +142,9 @@ export default defineComponent({
 		},
 
 		hasError() {
-			return this.errorMessages.includes('La date saisie n\'est pas valide') || this.errorMessages.includes('Une erreur est survenue');
+			return this.errorMessages.includes('La date saisie n\'est pas valide') ||
+					this.errorMessages.includes('Une erreur est survenue')||
+				    this.errorMessages.includes(this.customErrorMessages);
 		},
 		textFieldClasses() {
 			const textFieldClasses = this.buildTextFieldClasses();
@@ -373,7 +379,7 @@ export default defineComponent({
 						this.$emit('update:model-value', this.indexedThis[historyKey]);
 					} else {
 						// If the date format or the date is not valid, add an error message
-						this.errorMessages.push('La date saisie n\'est pas valide');
+						this.errorMessages.push(this.customErrorMessages.length > 0 ? this.customErrorMessages :  'La date saisie n\'est pas valide');
 					}
 				} else {
 					// If the date format is 'DD/MM/YY', emit an update event with the formatted date
