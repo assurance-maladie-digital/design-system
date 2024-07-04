@@ -379,7 +379,7 @@ export default defineComponent({
 						this.$emit('update:model-value', this.indexedThis[historyKey]);
 					} else {
 						// If the date format or the date is not valid, add an error message
-						this.errorMessages.push(this.customErrorMessages || 'La date saisie n\'est pas valide');
+						this.errorMessages.push(this.customErrorMessages.length > 0 ? this.customErrorMessages :  'La date saisie n\'est pas valide');
 					}
 				} else {
 					// If the date format is 'DD/MM/YY', emit an update event with the formatted date
@@ -454,9 +454,6 @@ export default defineComponent({
 
 <template>
 	<div class="vd-date-picker">
-		{{ errorMessages }}
-		{{ customErrorMessages }}
-		{{ hasError }}
 		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
 			v-model="date"
