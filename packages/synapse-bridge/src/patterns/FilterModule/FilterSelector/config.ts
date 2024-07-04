@@ -9,5 +9,5 @@ export const config = {
 	btn: {
 		color: 'primary',
 		variant: 'text'
-	}
+	},
 };

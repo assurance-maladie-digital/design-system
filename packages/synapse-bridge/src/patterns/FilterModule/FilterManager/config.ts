@@ -22,6 +22,7 @@ export const config = {
 	closeBtn: {
 		color: 'secondary',
 		rounded: true,
+		variant: 'elevated',
 		class: 'text-lowercase mr-2'
 	},
 	resetFiltersBtn: {

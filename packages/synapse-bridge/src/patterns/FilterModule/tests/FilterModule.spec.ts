@@ -5,7 +5,6 @@ import FilterModule from '../';
 import { vuetify } from '@tests/unit/setup';
 import { VBtn, VCard, VList, VListItem, VTextField } from 'vuetify/components';
 
-
 describe('FilterModule', () => {
 	it('renders correctly closed', () => {
 		const wrapper = mount(FilterModule, {
