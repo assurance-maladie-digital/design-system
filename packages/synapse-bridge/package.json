@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/synapse-bridge",
-	"version": "1.4.3-alpha.0",
+	"version": "1.4.4-alpha.0",
 	"description": "Portage of our components to Vue 3 without breaking changes",
 	"license": "MIT",
 	"author": {
