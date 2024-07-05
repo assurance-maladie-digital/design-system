@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from 'vue';
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { propValidator } from "@/helpers/propValidator";
+import { propValidator } from '@/helpers/propValidator'
 
-import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from "./AlertTypeEnum";
-import { locales } from "./locales";
+import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from './AlertTypeEnum'
+import { locales } from './locales'
 
 import {
 	mdiAlertOutline,
@@ -13,7 +13,7 @@ import {
 	mdiCheckCircleOutline,
 	mdiInformationOutline,
 	mdiClose,
-} from "@mdi/js";
+} from '@mdi/js'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -22,7 +22,7 @@ export default defineComponent({
 			type: String as PropType<AlertTypeEnum>,
 			default: AlertTypeEnum.INFO,
 			validator: (value: string) =>
-				propValidator("type", ALERT_TYPE_ENUM_VALUES, value),
+				propValidator('type', ALERT_TYPE_ENUM_VALUES, value),
 		},
 		dismissible: {
 			type: Boolean,
@@ -37,7 +37,7 @@ export default defineComponent({
 		return {
 			locales,
 			closeIcon: mdiClose,
-		};
+		}
 	},
 	computed: {
 		alertIcon(): string {
@@ -46,17 +46,17 @@ export default defineComponent({
 				success: mdiCheckCircleOutline,
 				warning: mdiAlertOutline,
 				error: mdiAlertOctagonOutline,
-			};
+			}
 
-			return icons[this.type];
+			return icons[this.type]
 		},
 	},
 	methods: {
 		dismissAlert() {
-			this.$emit("update:modelValue", false);
+			this.$emit('update:modelValue', false)
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -100,7 +100,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 
 :deep(.v-alert__close) {
 	align-self: center;
@@ -174,82 +174,82 @@ export default defineComponent({
 
 @mixin redesign($type, $map) {
 	&.#{$type}.v-alert--variant-tonal {
-		background: map-get($map, "background") !important;
-		color: map-get($map, "outline-color") !important;
+		background: map-get($map, 'background') !important;
+		color: map-get($map, 'outline-color') !important;
 	}
 
 	&.#{$type}.v-alert--variant-outlined {
 		background: transparent !important;
-		border-color: map-get($map, "border") !important;
+		border-color: map-get($map, 'border') !important;
 	}
 
 	&.#{$type},
 	&.text-#{$type} {
 		.v-alert__prepend > .v-icon {
-			background: map-get($map, "icon-bg");
+			background: map-get($map, 'icon-bg');
 			:deep(svg) {
-				fill: map-get($map, "accent");
+				fill: map-get($map, 'accent');
 			}
 		}
 	}
 
 	&.text-#{$type} {
-		color: map-get($map, "accent") !important;
-		border-color: map-get($map, "accent") !important;
+		color: map-get($map, 'accent') !important;
+		border-color: map-get($map, 'accent') !important;
 
 		.vd-close-btn {
-			color: map-get($map, "accent") !important;
-			border-color: map-get($map, "accent") !important;
+			color: map-get($map, 'accent') !important;
+			border-color: map-get($map, 'accent') !important;
 		}
 	}
 }
 
 .v-alert {
 	@include redesign(
-		"warning",
+		'warning',
 		(
-			"background": $vd-yellow-lighten-80,
-			"accent": $vd-yellow-darken-60,
-			"border": $vd-yellow-darken-60,
-			"icon": $vd-yellow-darken-60,
-			"icon-bg": $vd-yellow-lighten-90,
-			"outline-color": $vd-grey-darken-80,
+			'background': $vd-yellow-lighten-80,
+			'accent': $vd-yellow-darken-60,
+			'border': $vd-yellow-darken-60,
+			'icon': $vd-yellow-darken-60,
+			'icon-bg': $vd-yellow-lighten-90,
+			'outline-color': $vd-grey-darken-80,
 		)
 	);
 
 	@include redesign(
-		"success",
+		'success',
 		(
-			"background": $vd-turquoise-lighten-80,
-			"accent": $vd-turquoise-darken-60,
-			"border": $vd-turquoise-darken-60,
-			"icon": $vd-turquoise-darken-60,
-			"icon-bg": $vd-turquoise-lighten-90,
-			"outline-color": $vd-grey-darken-80,
+			'background': $vd-turquoise-lighten-80,
+			'accent': $vd-turquoise-darken-60,
+			'border': $vd-turquoise-darken-60,
+			'icon': $vd-turquoise-darken-60,
+			'icon-bg': $vd-turquoise-lighten-90,
+			'outline-color': $vd-grey-darken-80,
 		)
 	);
 
 	@include redesign(
-		"error",
+		'error',
 		(
-			"background": $vd-orange-lighten-80,
-			"accent": $vd-orange-darken-20,
-			"border": $vd-orange-darken-20,
-			"icon": $vd-orange-darken-20,
-			"icon-bg": $vd-orange-lighten-90,
-			"outline-color": $vd-grey-darken-80,
+			'background': $vd-orange-lighten-80,
+			'accent': $vd-orange-darken-20,
+			'border': $vd-orange-darken-20,
+			'icon': $vd-orange-darken-20,
+			'icon-bg': $vd-orange-lighten-90,
+			'outline-color': $vd-grey-darken-80,
 		)
 	);
 
 	@include redesign(
-		"info",
+		'info',
 		(
-			"background": $vd-am-blue-lighten-80,
-			"accent": $vd-am-blue-base,
-			"border": $vd-am-blue-base,
-			"icon": $vd-am-blue-base,
-			"icon-bg": $vd-am-blue-lighten-90,
-			"outline-color": $vd-grey-darken-80,
+			'background': $vd-am-blue-lighten-80,
+			'accent': $vd-am-blue-base,
+			'border': $vd-am-blue-base,
+			'icon': $vd-am-blue-base,
+			'icon-bg': $vd-am-blue-lighten-90,
+			'outline-color': $vd-grey-darken-80,
 		)
 	);
 }

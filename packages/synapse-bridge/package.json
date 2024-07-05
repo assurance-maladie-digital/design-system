@@ -59,7 +59,11 @@
 		"test:unit": "vitest run",
 		"preview": "vite preview",
 		"analyze": "vite build --mode analyze",
-		"build": "vue-tsc && vite build"
+		"build": "vue-tsc && vite build",
+		"lint": "pnpm lint:eslint && pnpm lint:prettier",
+		"lint:eslint": "eslint . --ignore-pattern 'dist/*'",
+		"lint:prettier": "pnpm exec prettier . --write",
+		"lint:fix": "eslint . --fix && prettier --write --list-different ."
 	},
 	"peerDependencies": {
 		"vue": "^3.4.21",
@@ -81,10 +85,14 @@
 		"content-disposition-header": "^0.6.0",
 		"dayjs": "^1.8.0",
 		"deepmerge": "4.3.1",
+		"eslint": "^9.5.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
 		"jest-serializer-vue": "3.1.0",
 		"jsdom": "22.1.0",
 		"languages": "^0.1.3",
 		"maska": "^2.1.10",
+		"prettier": "^3.3.2",
 		"resize-observer-polyfill": "1.5.1",
 		"rollup-plugin-visualizer": "5.9.2",
 		"sass": "1.67.0",

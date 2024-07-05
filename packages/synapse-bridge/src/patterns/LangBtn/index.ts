@@ -1,3 +1,3 @@
-import LangBtn from './LangBtn.vue';
+import LangBtn from './LangBtn.vue'
 
-export default LangBtn;
+export default LangBtn

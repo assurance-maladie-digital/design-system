@@ -1,21 +1,21 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import ChoiceComponent from '../mixins/choiceComponent';
+import ChoiceComponent from '../mixins/choiceComponent'
 
 export default defineComponent({
 	mixins: [ChoiceComponent],
 	computed: {
-		formattedItems: function() {
+		formattedItems: function () {
 			return this.items.map((item) => {
 				return {
 					title: item.title || item.text,
 					value: item.value,
-				};
-			});
+				}
+			})
 		},
-	}
-});
+	},
+})
 </script>
 
 <template>

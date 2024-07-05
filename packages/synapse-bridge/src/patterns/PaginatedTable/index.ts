@@ -1,3 +1,3 @@
-import PaginatedTable from './PaginatedTable.vue';
+import PaginatedTable from './PaginatedTable.vue'
 
-export default PaginatedTable;
+export default PaginatedTable

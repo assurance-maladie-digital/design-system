@@ -1,4 +1,4 @@
-import { A11yComplianceEnum } from './A11yComplianceEnum';
+import { A11yComplianceEnum } from './A11yComplianceEnum'
 
 export const locales = {
 	goTopBtnLabel: 'Retour en haut de la page',
@@ -11,5 +11,6 @@ export const locales = {
 	[A11yComplianceEnum.NON_COMPLIANT]: 'non conforme',
 	[A11yComplianceEnum.PARTIALLY_COMPLIANT]: 'partiellement conforme',
 	[A11yComplianceEnum.FULLY_COMPLIANT]: 'totalement conforme',
-	a11yLabel: (complianceLabel: string): string => `Accessibilité\xa0: ${complianceLabel}`
-};
+	a11yLabel: (complianceLabel: string): string =>
+		`Accessibilité\xa0: ${complianceLabel}`,
+}

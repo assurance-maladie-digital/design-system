@@ -8,8 +8,8 @@ describe('BackBtn', () => {
 	it('renders correctly', () => {
 		const wrapper = shallowMount(BackBtn, {
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
@@ -18,11 +18,11 @@ describe('BackBtn', () => {
 	it('renders correctly in dark mode', () => {
 		const wrapper = shallowMount(BackBtn, {
 			props: {
-				dark: true
+				dark: true,
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()

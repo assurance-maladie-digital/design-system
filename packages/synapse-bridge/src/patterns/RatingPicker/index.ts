@@ -1,4 +1,3 @@
+import RatingPicker from './RatingPicker.vue'
 
-import RatingPicker from './RatingPicker.vue';
-
-export default RatingPicker;
+export default RatingPicker

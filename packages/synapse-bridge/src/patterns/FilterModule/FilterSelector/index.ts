@@ -1,3 +1,3 @@
-import FilterSelector from './FilterSelector.vue';
+import FilterSelector from './FilterSelector.vue'
 
-export default FilterSelector;
+export default FilterSelector

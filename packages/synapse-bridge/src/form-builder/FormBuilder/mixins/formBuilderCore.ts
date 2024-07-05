@@ -1,8 +1,8 @@
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import type { Form } from "../types";
-import type { Fields } from "../../FormFieldList/types";
+import type { Form } from '../types'
+import type { Fields } from '../../FormFieldList/types'
 
 export default defineComponent({
 	props: {
@@ -11,16 +11,15 @@ export default defineComponent({
 			required: true,
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	methods: {
 		sectionUpdated(fields: Fields, sectionName: string): void {
-
-			const form = { ...this.modelValue };
-			form[sectionName].questions = fields;
+			const form = { ...this.modelValue }
+			form[sectionName].questions = fields
 
 			this.$nextTick(() => {
-				this.$emit("update:modelValue", form);
-			});
+				this.$emit('update:modelValue', form)
+			})
 		},
 	},
-});
+})

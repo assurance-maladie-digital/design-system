@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { mdiClose } from "@mdi/js";
-import { config } from "./config";
-import { locales } from "./locales";
-import { NavigationItem } from "../types";
-import { colorMapping } from "../colorMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import { customizable } from "@/mixins/customizable";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { mdiClose } from '@mdi/js'
+import { config } from './config'
+import { locales } from './locales'
+import { NavigationItem } from '../types'
+import { colorMapping } from '../colorMapping'
+import { ThemeEnum } from '@/constants/enums/ThemeEnum'
+import { customizable } from '@/mixins/customizable'
 export default defineComponent({
 	mixins: [customizable(config)],
 	props: {
@@ -32,35 +32,35 @@ export default defineComponent({
 			default: null,
 		},
 	},
-	emits: ["change", "update:tab"],
+	emits: ['change', 'update:tab'],
 	data() {
 		return {
 			closeIcon: mdiClose,
 			locales,
-		};
+		}
 	},
 	computed: {
 		spacingClass(): string {
-			return this.mobileVersion ? 'px-4' : 'px-14';
+			return this.mobileVersion ? 'px-4' : 'px-14'
 		},
 		backgroundColor(): string {
-			return colorMapping[this.theme];
-		}
+			return colorMapping[this.theme]
+		},
 	},
 	methods: {
 		drawerUpdated(value: boolean): void {
 			if (!value) {
-				this.$emit('change', false);
+				this.$emit('change', false)
 			}
 		},
 		emitChangeEvent(): void {
-			this.$emit('change', !this.drawer);
+			this.$emit('change', !this.drawer)
 		},
 		emitTabUpdateEvent(value: number): void {
-			this.$emit('update:tab', value);
-		}
-	}
-});
+			this.$emit('update:tab', value)
+		},
+	},
+})
 </script>
 
 <template>
@@ -120,7 +120,7 @@ export default defineComponent({
 		}
 		.v-tab {
 			text-transform: uppercase;
-			letter-spacing: .0892857143em;
+			letter-spacing: 0.0892857143em;
 		}
 		.v-tab--selected {
 			background: rgba($color: #fff, $alpha: 0.1);

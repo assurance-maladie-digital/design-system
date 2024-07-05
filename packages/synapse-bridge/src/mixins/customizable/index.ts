@@ -20,18 +20,21 @@ export function customizable(defaultOptions: Options): Customizable {
 		props: {
 			vuetifyOptions: {
 				type: Object as PropType<Options>,
-				default: undefined
-			}
+				default: undefined,
+			},
 		},
 		computed: {
 			options(): Options {
 				if (this.vuetifyOptions) {
-					return deepMerge<Options>(defaultOptions, this.vuetifyOptions)
+					return deepMerge<Options>(
+						defaultOptions,
+						this.vuetifyOptions
+					)
 				}
 
 				return defaultOptions
-			}
-		}
+			},
+		},
 	})
 }
 

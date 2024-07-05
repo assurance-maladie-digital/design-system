@@ -1,3 +1,3 @@
-import CollapseList from './CollapsibleList.vue';
+import CollapseList from './CollapsibleList.vue'
 
-export default CollapseList;
+export default CollapseList

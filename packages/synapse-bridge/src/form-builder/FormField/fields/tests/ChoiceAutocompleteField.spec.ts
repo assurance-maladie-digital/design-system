@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
-import ChoiceAutocompleteField from '../ChoiceAutocompleteField.vue';
-import { VAutocomplete } from 'vuetify/lib/components/index.mjs';
+import ChoiceAutocompleteField from '../ChoiceAutocompleteField.vue'
+import { VAutocomplete } from 'vuetify/lib/components/index.mjs'
 
 describe('ChoiceAutocompleteField', () => {
 	it('emits an event when the value is updated', async () => {
@@ -25,13 +25,13 @@ describe('ChoiceAutocompleteField', () => {
 						value: 'autre',
 					},
 				],
-				modelValue: 1
+				modelValue: 1,
 			},
-		});
+		})
 
-		const VAutocompleteField = wrapper.findComponent(VAutocomplete);
-		await VAutocompleteField.setValue(0);
-		expect(wrapper.emitted()).toHaveProperty('update:modelValue');
-		expect(wrapper.emitted()['update:modelValue']).toEqual([[0]]);
+		const VAutocompleteField = wrapper.findComponent(VAutocomplete)
+		await VAutocompleteField.setValue(0)
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue')
+		expect(wrapper.emitted()['update:modelValue']).toEqual([[0]])
 	})
-});
+})

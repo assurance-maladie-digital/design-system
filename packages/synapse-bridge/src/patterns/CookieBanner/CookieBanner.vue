@@ -1,49 +1,49 @@
 <script lang="ts">
-	import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
-	import { RouteRecordRaw } from 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
 
-	import { config } from './config'
-	import { locales } from './locales'
+import { config } from './config'
+import { locales } from './locales'
 
-	import { customizable } from '../../mixins/customizable'
+import { customizable } from '../../mixins/customizable'
 
-	import { mdiClose } from '@mdi/js'
+import { mdiClose } from '@mdi/js'
 
-	export default defineComponent({
-		mixins: [customizable(config)],
-		props: {
-			cookiesRoute: {
-				type: [Array, Object, String] as PropType<RouteRecordRaw | string>,
-				default: () => ({
-					name: 'cookies'
-				}),
-			},
+export default defineComponent({
+	mixins: [customizable(config)],
+	props: {
+		cookiesRoute: {
+			type: [Array, Object, String] as PropType<RouteRecordRaw | string>,
+			default: () => ({
+				name: 'cookies',
+			}),
 		},
-		data() {
-			return {
-				locales: locales,
-				closeIcon: mdiClose,
-				active: true
-			}
+	},
+	data() {
+		return {
+			locales: locales,
+			closeIcon: mdiClose,
+			active: true,
+		}
+	},
+	computed: {
+		btnWidth(): string {
+			return this.$vuetify.display.name === 'sm' ? '100%' : 'auto'
 		},
-		computed: {
-			btnWidth(): string {
-				return this.$vuetify.display.name === 'sm' ? '100%' : 'auto'
-			},
+	},
+	methods: {
+		reject(): void {
+			this.active = false
+			this.$emit('reject')
 		},
-		methods: {
-			reject(): void {
-				this.active = false
-				this.$emit('reject')
-			},
 
-			accept(): void {
-				this.active = false
-				this.$emit('accept')
-			},
+		accept(): void {
+			this.active = false
+			this.$emit('accept')
 		},
-	})
+	},
+})
 </script>
 
 <template>
@@ -78,7 +78,9 @@
 			</p>
 		</slot>
 
-		<div class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2">
+		<div
+			class="vd-cookie-banner-action-ctn d-flex align-center flex-wrap max-width-none mt-6 mb-n2 mx-n2"
+		>
 			<VSpacer v-bind="options.actionsSpacer" />
 
 			<VBtn
@@ -113,21 +115,21 @@
 </template>
 
 <style lang="scss" scoped>
-	.vd-cookie-banner {
-		position: absolute;
-		bottom: 40px;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 20;
-	}
+.vd-cookie-banner {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 20;
+}
 
-	.vd-cookie-banner-action-ctn .v-btn {
-		flex: 1 1 auto;
-	}
+.vd-cookie-banner-action-ctn .v-btn {
+	flex: 1 1 auto;
+}
 
-	.v-btn--icon {
-		color: rgba(0, 0, 0, 0.54);
-		position: absolute;
-		right: 24px;
-	}
+.v-btn--icon {
+	color: rgba(0, 0, 0, 0.54);
+	position: absolute;
+	right: 24px;
+}
 </style>

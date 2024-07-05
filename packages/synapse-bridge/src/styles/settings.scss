@@ -1,80 +1,89 @@
 @forward 'vuetify/settings' with (
 	$color-pack: false,
-	$body-font-family: ('Source Sans 3', 'Source Sans Pro', sans-serif),
-	$heading-font-family: ('Mic 32 New', 'Source Sans 3', 'Source Sans Pro', sans-serif),
+	$body-font-family: (
+		'Source Sans 3',
+		'Source Sans Pro',
+		sans-serif,
+	),
+	$heading-font-family: (
+		'Mic 32 New',
+		'Source Sans 3',
+		'Source Sans Pro',
+		sans-serif,
+	),
 	$typography: (
 		'h1': (
 			'size': 4.5rem,
 			'letter-spacing': -0.015em,
-			'weight': 700
+			'weight': 700,
 		),
 		'h2': (
 			'size': 3rem,
 			'letter-spacing': 0.015em,
-			'weight': 500
+			'weight': 500,
 		),
 		'h3': (
 			'size': 2.125rem,
 			'letter-spacing': 0.0025em,
-			'weight': 700
+			'weight': 700,
 		),
 		'h4': (
 			'size': 1.5rem,
 			'letter-spacing': normal,
-			'weight': 500
+			'weight': 500,
 		),
 		'h5': (
 			'size': 1.5rem,
 			'letter-spacing': 0.01em,
-			'weight': 300
+			'weight': 300,
 		),
 		'h6': (
 			'size': 1.25rem,
 			'letter-spacing': 0.0015em,
-			'weight': 600
+			'weight': 600,
 		),
 		'subtitle-1': (
 			'size': 1.125rem,
 			'letter-spacing': 0.0015em,
-			'weight': 600
+			'weight': 600,
 		),
 		'subtitle-2': (
 			'size': 1rem,
 			'letter-spacing': 0.001em,
-			'weight': 600
+			'weight': 600,
 		),
 		'body-1': (
 			'size': 1.125rem,
 			'letter-spacing': 0.005em,
-			'weight': 400
+			'weight': 400,
 		),
 		'body-2': (
 			'size': 1rem,
 			'letter-spacing': 0.0025em,
-			'weight': 400
+			'weight': 400,
 		),
 		'button': (
 			'size': 1rem,
 			'letter-spacing': 0.005em,
 			'weight': 600,
-			'text-transform': none
+			'text-transform': none,
 		),
 		'caption': (
-			'size': .875rem,
+			'size': 0.875rem,
 			'letter-spacing': 0.004em,
-			'weight': 400
+			'weight': 400,
 		),
 		'overline': (
-			'size': .75rem,
+			'size': 0.75rem,
 			'letter-spacing': 0.015em,
-			'weight': 400
+			'weight': 400,
 		),
 	),
 	$skeleton-loader-actions-button-margin: 0px,
 	$alert-border-opacity: 1,
 	$table-header-font-size: 14px !important,
 	$table-header-font-weight: 700,
-	$menu-content-border-radius: 0,
+	$menu-content-border-radius: 0
 );
 
 @import './fonts.scss';
@@ -106,7 +115,7 @@ body {
 
 /* Apply default transition to links */
 a {
-	transition: .25s;
+	transition: 0.25s;
 }
 
 .v-alert {
@@ -137,7 +146,9 @@ a {
 }
 
 // Global Colors
-.bg-primary, .bg-secondary, .bg-error {
+.bg-primary,
+.bg-secondary,
+.bg-error {
 	--v-theme-overlay-multiplier: 0 !important;
 }
 
@@ -155,7 +166,8 @@ a {
 }
 
 // Global Colors
-.bg-primary, .bg-error {
+.bg-primary,
+.bg-error {
 	--v-theme-overlay-multiplier: 0 !important;
 }
 
@@ -170,23 +182,24 @@ a {
 	min-height: 14px;
 	min-width: 1px;
 	position: relative;
-	color: rgba(0,0,0,.6);
+	color: rgba(0, 0, 0, 0.6);
 }
 
 // VDataTable: Custom styles
-.vd-data-table, .v-data-table {
+.vd-data-table,
+.v-data-table {
 	table thead tr {
 		white-space: nowrap;
 	}
 
 	table thead th {
-		color: rgba(0, 0, 0, .6);
-		font-size: .875rem;
+		color: rgba(0, 0, 0, 0.6);
+		font-size: 0.875rem;
 	}
 
 	table :not(thead) tr {
 		&:hover {
-			background-color: rgba(0, 0, 0, .1);
+			background-color: rgba(0, 0, 0, 0.1);
 		}
 	}
 
@@ -214,20 +227,25 @@ a {
 	.v-progress-linear {
 		height: 4px !important;
 	}
-	.v-progress-linear__background, .v-progress-linear__indeterminate {
+	.v-progress-linear__background,
+	.v-progress-linear__indeterminate {
 		background: $vd-primary;
 	}
 }
 
 // Input : Custom styles
-.v-input, .v-input input, .v-input textarea {
-	color: rgba(0,0,0,.87);
+.v-input,
+.v-input input,
+.v-input textarea {
+	color: rgba(0, 0, 0, 0.87);
 }
 
 // Field : Custom styles
 .v-field {
 	&--active {
-		.v-field__prepend-inner > .v-icon, .v-field__append-inner > .v-icon, .v-field__clearable > .v-icon {
+		.v-field__prepend-inner > .v-icon,
+		.v-field__append-inner > .v-icon,
+		.v-field__clearable > .v-icon {
 			opacity: 1;
 			color: $vd-primary;
 		}

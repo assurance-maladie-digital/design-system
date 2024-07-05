@@ -1,37 +1,37 @@
 export const config = {
 	listItem: {
 		twoLine: true,
-		class: "flex-wrap",
+		class: 'flex-wrap',
 	},
 	listItemAvatar: {
-		class: "my-2",
+		class: 'my-2',
 	},
 	listItemAvatarIcon: {
 		size: 24,
 	},
 	listItemTitle: {
-		class: "text-wrap",
+		class: 'text-wrap',
 	},
 	listItemAction: {
-		class: "flex-row",
+		class: 'flex-row',
 	},
 	divider: {
 		inset: true,
 	},
 	retryBtn: {
 		icon: true,
-		variant: "text",
+		variant: 'text',
 	},
 	uploadBtn: {
 		icon: true,
-		variant: "text",
+		variant: 'text',
 	},
 	viewFileBtn: {
 		icon: true,
-		variant: "text",
+		variant: 'text',
 	},
 	deleteFileBtn: {
 		icon: true,
-		variant: "text",
+		variant: 'text',
 	},
-};
+}

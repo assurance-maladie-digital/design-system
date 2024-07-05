@@ -1,10 +1,10 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { customizable } from "@/mixins/customizable";
+import { customizable } from '@/mixins/customizable'
 
-import { locales } from "./locales";
-import { config } from "./config";
+import { locales } from './locales'
+import { config } from './config'
 
 enum RangeEnum {
 	MIN = 0,
@@ -35,25 +35,32 @@ export default defineComponent({
 		return {
 			locales,
 			rangeValue: [] as number[],
-		};
+		}
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	watch: {
 		modelValue: {
 			handler(value: number[] | null): void {
 				if (!value) {
-					this.rangeValue = [this.min, this.max];
+					this.rangeValue = [this.min, this.max]
 
-					return;
+					return
 				}
 
-				if (isNaN(value[RangeEnum.MIN]) || isNaN(value[RangeEnum.MAX])) {
-					return;
+				if (
+					isNaN(value[RangeEnum.MIN]) ||
+					isNaN(value[RangeEnum.MAX])
+				) {
+					return
 				}
 
-				this.rangeValue = value;
-				this.rangeValue[RangeEnum.MIN] = Math.round(this.rangeValue[RangeEnum.MIN]);
-				this.rangeValue[RangeEnum.MAX] = Math.round(this.rangeValue[RangeEnum.MAX]);
+				this.rangeValue = value
+				this.rangeValue[RangeEnum.MIN] = Math.round(
+					this.rangeValue[RangeEnum.MIN]
+				)
+				this.rangeValue[RangeEnum.MAX] = Math.round(
+					this.rangeValue[RangeEnum.MAX]
+				)
 			},
 			immediate: true,
 			deep: true,
@@ -61,66 +68,78 @@ export default defineComponent({
 	},
 	computed: {
 		minValue(): number {
-			return Math.round(this.rangeValue[RangeEnum.MIN]);
+			return Math.round(this.rangeValue[RangeEnum.MIN])
 		},
 		maxValue(): number {
-			return Math.round(this.rangeValue[RangeEnum.MAX]);
+			return Math.round(this.rangeValue[RangeEnum.MAX])
 		},
 		mobileVersion(): boolean {
-			return this.$vuetify.display.name === "xs";
+			return this.$vuetify.display.name === 'xs'
 		},
 	},
 	methods: {
 		updateMinValue(value: string): void {
-			this.updateRange(RangeEnum.MIN, Number(value));
+			this.updateRange(RangeEnum.MIN, Number(value))
 		},
 
 		updateMaxValue(value: string): void {
-			this.updateRange(RangeEnum.MAX, Number(value));
+			this.updateRange(RangeEnum.MAX, Number(value))
 		},
 
 		updateRange(index: RangeEnum, value: number): void {
 			if (index === RangeEnum.MIN && value < this.min) {
-				this.setRangeValue(RangeEnum.MIN, this.min);
-				this.emitChangeEvent();
+				this.setRangeValue(RangeEnum.MIN, this.min)
+				this.emitChangeEvent()
 
-				return;
+				return
 			}
 
-			if (index === RangeEnum.MIN && value > this.rangeValue[RangeEnum.MAX]) {
-				this.setRangeValue(RangeEnum.MIN, this.rangeValue[RangeEnum.MAX]);
-				this.emitChangeEvent();
+			if (
+				index === RangeEnum.MIN &&
+				value > this.rangeValue[RangeEnum.MAX]
+			) {
+				this.setRangeValue(
+					RangeEnum.MIN,
+					this.rangeValue[RangeEnum.MAX]
+				)
+				this.emitChangeEvent()
 
-				return;
+				return
 			}
 
 			if (index === RangeEnum.MAX && value > this.max) {
-				this.setRangeValue(RangeEnum.MAX, this.max);
-				this.emitChangeEvent();
+				this.setRangeValue(RangeEnum.MAX, this.max)
+				this.emitChangeEvent()
 
-				return;
+				return
 			}
 
-			if (index === RangeEnum.MAX && value < this.rangeValue[RangeEnum.MIN]) {
-				this.setRangeValue(RangeEnum.MAX, this.rangeValue[RangeEnum.MIN]);
-				this.emitChangeEvent();
+			if (
+				index === RangeEnum.MAX &&
+				value < this.rangeValue[RangeEnum.MIN]
+			) {
+				this.setRangeValue(
+					RangeEnum.MAX,
+					this.rangeValue[RangeEnum.MIN]
+				)
+				this.emitChangeEvent()
 
-				return;
+				return
 			}
 
-			this.setRangeValue(index, value);
-			this.emitChangeEvent();
+			this.setRangeValue(index, value)
+			this.emitChangeEvent()
 		},
 
 		setRangeValue(index: RangeEnum, value: number): void {
-			this.rangeValue[index] = value;
+			this.rangeValue[index] = value
 		},
 
 		emitChangeEvent(): void {
-			this.$emit("update:modelValue", this.rangeValue);
+			this.$emit('update:modelValue', this.rangeValue)
 		},
 	},
-});
+})
 </script>
 
 <template>

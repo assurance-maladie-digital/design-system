@@ -1,3 +1,3 @@
-import NumberPicker from './NumberPicker.vue';
+import NumberPicker from './NumberPicker.vue'
 
-export default NumberPicker;
+export default NumberPicker

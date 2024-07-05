@@ -1,8 +1,8 @@
 <script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import { locales } from "../locales";
-import type { SocialMediaLink } from "./types";
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import { locales } from '../locales'
+import type { SocialMediaLink } from './types'
 
 export default defineComponent({
 	props: {
@@ -14,9 +14,9 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-		};
+		}
 	},
-});
+})
 </script>
 
 <template>
@@ -26,17 +26,14 @@ export default defineComponent({
 		</span>
 
 		<ul class="d-flex justify-start justify-sm-end max-width-none ml-n2">
-			<li
-				v-for="(social, index) in links"
-				:key="index"
-			>
+			<li v-for="(social, index) in links" :key="index">
 				<VBtn
 					:href="social.href"
 					target="_blank"
 					rel="noopener noreferrer"
 					:icon="true"
 					class="mx-1"
-					elevation='0'
+					elevation="0"
 					variant="text"
 				>
 					<VIcon size="30px" class="vd-social-media-links-icon">
@@ -49,27 +46,27 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-	@use "@cnamts/design-tokens/dist/tokens";
+@use '@cnamts/design-tokens/dist/tokens';
 
-	li {
-		list-style: none;
-	}
+li {
+	list-style: none;
+}
 
-	.vd-social-media-links-label.text--primary {
-		color: tokens.$vd-primary;
-	}
+.vd-social-media-links-label.text--primary {
+	color: tokens.$vd-primary;
+}
 
-	.vd-social-media-links-icon {
-		color: tokens.$vd-grey-base;
-	}
+.vd-social-media-links-icon {
+	color: tokens.$vd-grey-base;
+}
 
-	.v-btn--icon {
-		width: calc(var(--v-btn-height) + 5px);
-		height: calc(var(--v-btn-height) + 5px);
-		border: 0;
-	}
+.v-btn--icon {
+	width: calc(var(--v-btn-height) + 5px);
+	height: calc(var(--v-btn-height) + 5px);
+	border: 0;
+}
 
-	.theme--dark .v-btn--variant-text:hover :deep() {
-		background: rgba(white , 0.1);
-	}
+.theme--dark .v-btn--variant-text:hover :deep() {
+	background: rgba(white, 0.1);
+}
 </style>

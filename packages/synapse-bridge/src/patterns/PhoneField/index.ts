@@ -1,3 +1,3 @@
-import PhoneField from './PhoneField.vue';
+import PhoneField from './PhoneField.vue'
 
-export default PhoneField;
+export default PhoneField

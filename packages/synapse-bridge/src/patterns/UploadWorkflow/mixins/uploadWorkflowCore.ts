@@ -1,27 +1,27 @@
-import type {PropType} from "vue";
-import {defineComponent} from "vue";
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
 
-import consola from 'consola';
+import consola from 'consola'
 
-import UpdateFileModel from "./updateFileModel";
+import UpdateFileModel from './updateFileModel'
 
-import {Refs} from "../../../types";
-import {FileListItem, SelectedFile, SelectItem} from "../types";
+import { Refs } from '../../../types'
+import { FileListItem, SelectedFile, SelectItem } from '../types'
 
-import FileUpload from "../../FileUpload";
-import {ErrorEvent} from "../../FileUpload/types";
+import FileUpload from '../../FileUpload'
+import { ErrorEvent } from '../../FileUpload/types'
 
 export default defineComponent({
 	mixins: [UpdateFileModel],
-	emits: ["change", "view-file", "error"],
+	emits: ['change', 'view-file', 'error'],
 	props: {
 		value: {
 			type: Array as PropType<File[] | SelectedFile[]>,
-			default: () => ([])
+			default: () => [],
 		},
 		fileListItems: {
 			type: Array as PropType<FileListItem[]>,
-			default: () => ([])
+			default: () => [],
 		},
 		showFilePreview: {
 			type: Boolean,
@@ -29,14 +29,14 @@ export default defineComponent({
 		},
 		showViewBtn: {
 			type: Boolean,
-			default: false
-		}
+			default: false,
+		},
 	},
 	data() {
 		return {
 			$refs: {} as Refs<{
-				fileUpload: typeof FileUpload;
-				form: HTMLFormElement;
+				fileUpload: typeof FileUpload
+				form: HTMLFormElement
 			}>,
 			dialog: false,
 			previewDialog: false,
@@ -47,208 +47,219 @@ export default defineComponent({
 			fileToPreview: null as File | null,
 			selectedItem: null as string | number | null,
 			internalFileListItems: [] as FileListItem[],
-		};
+		}
 	},
 	watch: {
 		value: {
 			handler(): void {
-				this.setInternalModel();
+				this.setInternalModel()
 			},
 			immediate: true,
 			deep: true,
 		},
 		fileListItems: {
 			handler(): void {
-				this.setInternalModel();
+				this.setInternalModel()
 			},
 		},
 	},
 	computed: {
 		uploadedFiles(): File[] {
 			if (!this.uploadedFile) {
-				return [];
+				return []
 			}
 
 			if (Array.isArray(this.uploadedFile)) {
-				return this.uploadedFile;
+				return this.uploadedFile
 			}
 
-			return [this.uploadedFile];
+			return [this.uploadedFile]
 		},
 
 		singleMode(): boolean {
-			return this.internalFileListItems.length === 1;
+			return this.internalFileListItems.length === 1
 		},
 
 		selectItems(): SelectItem[] {
 			if (this.unrestricted) {
-				return [];
+				return []
 			}
 
 			return this.internalFileListItems.map((file) => {
 				return {
 					text: file.title,
-					value: file.id
-				};
-			});
+					value: file.id,
+				}
+			})
 		},
 	},
 	methods: {
 		setInternalModel(): void {
-			this.internalFileListItems = this.fileListItems ?? this.value;
+			this.internalFileListItems = this.fileListItems ?? this.value
 
 			if (this.fileListItems === null && !this.value) {
-				this.resetInternalModel();
+				this.resetInternalModel()
 			}
 
 			if (this.internalFileListItems.length) {
-				this.initFileList(this.internalFileListItems);
+				this.initFileList(this.internalFileListItems)
 			} else {
-				this.unrestricted = true;
+				this.unrestricted = true
 			}
 		},
 
 		setFileInList(): void {
 			if (this.unrestricted) {
-				return;
+				return
 			}
 
-			const index = this.internalFileListItems.findIndex((file) => file.id === this.selectedItem);
+			const index = this.internalFileListItems.findIndex(
+				(file) => file.id === this.selectedItem
+			)
 
 			if (index === -1) {
-				return;
+				return
 			}
 
-			this.updateFileModel(index, 'state', this.error ? 'error' : 'success');
+			this.updateFileModel(
+				index,
+				'state',
+				this.error ? 'error' : 'success'
+			)
 
 			if (this.uploadedFiles.length) {
 				this.uploadedFiles.forEach((file) => {
-					this.updateFileModel(index, 'name', file.name);
-					this.updateFileModel(index, 'file', file);
-				});
+					this.updateFileModel(index, 'name', file.name)
+					this.updateFileModel(index, 'file', file)
+				})
 			}
 
-			this.error = false;
+			this.error = false
 
-			this.emitChangeEvent();
+			this.emitChangeEvent()
 		},
 
 		resetFile(index: number): void {
 			if (!this.internalFileListItems.length) {
-				this.fileList.splice(index, 1);
+				this.fileList.splice(index, 1)
 			} else {
-				this.updateFileModel(index, "state", "initial");
-				this.updateFileModel(index, "name", undefined);
-				this.updateFileModel(index, "file", undefined);
+				this.updateFileModel(index, 'state', 'initial')
+				this.updateFileModel(index, 'name', undefined)
+				this.updateFileModel(index, 'file', undefined)
 			}
 
-			this.emitChangeEvent();
+			this.emitChangeEvent()
 		},
 
 		resetInternalModel(): void {
-			this.fileList = [];
-			this.internalFileListItems = [];
+			this.fileList = []
+			this.internalFileListItems = []
 		},
 
 		emitChangeEvent(): void {
 			this.$nextTick(() => {
-				this.$emit("change", this.fileList);
-			}).then(r => r);
+				this.$emit('change', this.fileList)
+			}).then((r) => r)
 		},
 
 		async previewFile(file: FileListItem | File): Promise<void> {
 			if (!this.showViewBtn) {
-				consola.warn('Using `vuetify-options` for this functionality is deprecated since v2.16.0, use the `show-view-btn` prop instead.');
+				consola.warn(
+					'Using `vuetify-options` for this functionality is deprecated since v2.16.0, use the `show-view-btn` prop instead.'
+				)
 
-				await this.$nextTick();
-				this.$emit('view-file', file);
+				await this.$nextTick()
+				this.$emit('view-file', file)
 			}
 
-			let fileToPreview: File | null = null;
+			let fileToPreview: File | null = null
 
 			if ('file' in file && file.file) {
 				// if file is of type FileListItem
-				fileToPreview = file.file;
+				fileToPreview = file.file
 			} else if (file instanceof File) {
 				// if file is of type File (free mode)
-				fileToPreview = file;
+				fileToPreview = file
 			} else {
-				return;
+				return
 			}
 
-			this.fileToPreview = fileToPreview;
-			this.previewDialog = true;
+			this.fileToPreview = fileToPreview
+			this.previewDialog = true
 		},
 
 		async dialogConfirm(): Promise<void> {
-			await this.$nextTick();
+			await this.$nextTick()
 
 			if (
 				this.showFilePreview &&
 				!this.internalFileListItems.length &&
 				this.uploadedFile
 			) {
-				this.fileList.push(this.uploadedFile);
-				this.emitChangeEvent();
-				this.dialog = false;
+				this.fileList.push(this.uploadedFile)
+				this.emitChangeEvent()
+				this.dialog = false
 
-				return;
+				return
 			}
 
 			if (this.$refs.form.validate()) {
-				this.dialog = false;
-				this.setFileInList();
-				this.$refs.form.reset();
+				this.dialog = false
+				this.setFileInList()
+				this.$refs.form.reset()
 			}
 		},
 
 		fileSelected(): void {
-			this.error = false;
+			this.error = false
 
 			if (this.showFilePreview) {
-				if (this.singleMode || this.selectedItem === null && this.selectItems.length) {
-					this.selectedItem = this.selectItems[0].value;
+				if (
+					this.singleMode ||
+					(this.selectedItem === null && this.selectItems.length)
+				) {
+					this.selectedItem = this.selectItems[0].value
 				}
 
-				this.dialog = true;
+				this.dialog = true
 
-				return;
+				return
 			}
 
 			if (this.unrestricted && this.uploadedFiles.length) {
-				this.fileList.push(...this.uploadedFiles);
-				this.emitChangeEvent();
+				this.fileList.push(...this.uploadedFiles)
+				this.emitChangeEvent()
 
-				return;
+				return
 			}
 
 			if (this.singleMode) {
-				this.selectedItem = this.selectItems[0].value;
-				this.setFileInList();
+				this.selectedItem = this.selectItems[0].value
+				this.setFileInList()
 
-				return;
+				return
 			}
 
 			if (this.inlineSelect) {
-				this.setFileInList();
-				this.inlineSelect = false;
-				this.selectedItem = "";
+				this.setFileInList()
+				this.inlineSelect = false
+				this.selectedItem = ''
 
-				return;
+				return
 			}
 
-			this.selectedItem = this.selectItems[0].value;
-			this.dialog = true;
+			this.selectedItem = this.selectItems[0].value
+			this.dialog = true
 		},
 
 		async uploadError(error: ErrorEvent): Promise<void> {
-			this.error = true;
-			this.uploadedFile = null;
+			this.error = true
+			this.uploadedFile = null
 
-			this.setFileInList();
+			this.setFileInList()
 
-			await this.$nextTick();
-			this.$emit("error", error);
+			await this.$nextTick()
+			this.$emit('error', error)
 		},
 	},
-});
+})

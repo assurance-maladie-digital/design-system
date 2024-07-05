@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
-	import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-	import { headers } from './headers'
+import { headers } from './headers'
 
-	import { CookiesList } from './types'
+import { CookiesList } from './types'
 
-	export default defineComponent({
-		props: {
-			items: {
-				type: Array as PropType<CookiesList[]>,
-				required: true,
-			},
+export default defineComponent({
+	props: {
+		items: {
+			type: Array as PropType<CookiesList[]>,
+			required: true,
 		},
-		data() {
-			return {
-				headers,
-			}
-		},
-	})
+	},
+	data() {
+		return {
+			headers,
+		}
+	},
+})
 </script>
 
 <template>
@@ -37,10 +37,7 @@
 		</thead>
 
 		<tbody>
-			<tr
-				v-for="(cookie, index) in items"
-				:key="index"
-			>
+			<tr v-for="(cookie, index) in items" :key="index">
 				<td>{{ cookie.name }}</td>
 				<td>{{ cookie.description }}</td>
 				<td>{{ cookie.conservation }}</td>
@@ -50,7 +47,7 @@
 </template>
 
 <style lang="scss" scoped>
-	.vd-cookie-table :deep(table) {
-		table-layout: fixed;
-	}
+.vd-cookie-table :deep(table) {
+	table-layout: fixed;
+}
 </style>

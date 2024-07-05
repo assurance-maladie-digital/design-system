@@ -4,7 +4,7 @@ import { ErrorMessages, GenericFnOpt } from '@/rules/types'
 export function ruleMessage<T>(
 	errorMessages: ErrorMessages<T>,
 	key: string,
-	args: T[] = [],
+	args: T[] = []
 ): string {
 	if (typeof errorMessages[key] === 'function') {
 		return (errorMessages[key] as GenericFnOpt<T>)(...args)

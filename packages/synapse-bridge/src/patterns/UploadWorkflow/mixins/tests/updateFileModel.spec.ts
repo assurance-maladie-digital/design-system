@@ -1,16 +1,16 @@
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 
-import { FileListItem } from "../../types";
+import { FileListItem } from '../../types'
 
-import UpdateFileModel from "../updateFileModel";
+import UpdateFileModel from '../updateFileModel'
 
-const testComponent = defineComponent( {
-	name: "TestComponent",
+const testComponent = defineComponent({
+	name: 'TestComponent',
 	mixins: [UpdateFileModel],
-	template: "<div/>",
-});
+	template: '<div/>',
+})
 
 /** Get list of files */
 function getFileList(): FileListItem[] {
@@ -19,58 +19,58 @@ function getFileList(): FileListItem[] {
 			id: 'file1',
 			title: 'UploadWorkflow',
 			name: 'avatar.png',
-			file: {} as File
-		}
-	];
+			file: {} as File,
+		},
+	]
 }
 
-describe("updateFileModel", () => {
-	it("inits the file list", () => {
-		const wrapper = shallowMount(testComponent);
+describe('updateFileModel', () => {
+	it('inits the file list', () => {
+		const wrapper = shallowMount(testComponent)
 
-		wrapper.vm.initFileList(getFileList());
+		wrapper.vm.initFileList(getFileList())
 
-		expect(wrapper.vm.fileList).toMatchSnapshot();
-	});
+		expect(wrapper.vm.fileList).toMatchSnapshot()
+	})
 
-	it("does not overwrite existing state", () => {
-		const wrapper = shallowMount(testComponent);
+	it('does not overwrite existing state', () => {
+		const wrapper = shallowMount(testComponent)
 
-		const fileListState = getFileList();
-		fileListState[0].state = "success";
+		const fileListState = getFileList()
+		fileListState[0].state = 'success'
 
-		wrapper.vm.initFileList(fileListState);
+		wrapper.vm.initFileList(fileListState)
 
-		expect(wrapper.vm.fileList).toMatchSnapshot();
-	});
+		expect(wrapper.vm.fileList).toMatchSnapshot()
+	})
 
-	it("returns undefined if the file does not exists", () => {
-		const wrapper = shallowMount(testComponent);
+	it('returns undefined if the file does not exists', () => {
+		const wrapper = shallowMount(testComponent)
 
-		wrapper.vm.fileList = getFileList();
+		wrapper.vm.fileList = getFileList()
 
 		expect(
-			wrapper.vm.updateFileModel(1, "state", "initial")
-		).toBeUndefined();
-	});
+			wrapper.vm.updateFileModel(1, 'state', 'initial')
+		).toBeUndefined()
+	})
 
-	it("deletes the key if the value is undefined", () => {
-		const wrapper = shallowMount(testComponent);
+	it('deletes the key if the value is undefined', () => {
+		const wrapper = shallowMount(testComponent)
 
-		wrapper.vm.fileList = getFileList();
+		wrapper.vm.fileList = getFileList()
 
-		wrapper.vm.updateFileModel(0, "name", undefined);
+		wrapper.vm.updateFileModel(0, 'name', undefined)
 
-		expect(wrapper.vm.fileList[0]).toMatchSnapshot();
-	});
+		expect(wrapper.vm.fileList[0]).toMatchSnapshot()
+	})
 
-	it("updates the value of the corresponding key", () => {
-		const wrapper = shallowMount(testComponent);
+	it('updates the value of the corresponding key', () => {
+		const wrapper = shallowMount(testComponent)
 
-		wrapper.vm.fileList = getFileList();
+		wrapper.vm.fileList = getFileList()
 
-		wrapper.vm.updateFileModel(0, "state", "updated");
+		wrapper.vm.updateFileModel(0, 'state', 'updated')
 
-		expect(wrapper.vm.fileList[0].state).toBe("updated");
-	});
-});
+		expect(wrapper.vm.fileList[0].state).toBe('updated')
+	})
+})

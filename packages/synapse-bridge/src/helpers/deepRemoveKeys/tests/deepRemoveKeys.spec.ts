@@ -1,72 +1,68 @@
-import { deepRemoveKeys } from '../';
-import { describe, it, expect } from 'vitest';
+import { deepRemoveKeys } from '../'
+import { describe, it, expect } from 'vitest'
 
-import { deepCopy } from '../../deepCopy';
+import { deepCopy } from '../../deepCopy'
 
 const BASE_OBJECT = {
 	b: 'b',
 	c: [
 		{
-			e: 'e'
-		}
-	]
-};
+			e: 'e',
+		},
+	],
+}
 
 const DEEP_OBJECT = {
-	a: BASE_OBJECT
-};
+	a: BASE_OBJECT,
+}
 
-const DEEP_ARRAY = [
-	BASE_OBJECT
-];
+const DEEP_ARRAY = [BASE_OBJECT]
 
 describe('deepRemoveKeys', () => {
 	it('deletes a key', () => {
-		const deepObject = deepCopy(DEEP_OBJECT);
+		const deepObject = deepCopy(DEEP_OBJECT)
 
-		const newCollection = deepRemoveKeys(deepObject, 'c');
-
-		expect(newCollection).toEqual({
-			a: {
-				b: 'b'
-			}
-		});
-	});
-
-	it('deletes multiple keys', () => {
-		const deepObject = deepCopy(DEEP_OBJECT);
-
-		const newCollection = deepRemoveKeys(deepObject, ['b', 'c']);
-
-		expect(newCollection).toEqual({
-			a: {}
-		});
-	});
-
-	it('deletes deep key in object', () => {
-		const deepObject = deepCopy(DEEP_OBJECT);
-
-		const newCollection = deepRemoveKeys(deepObject, 'e');
+		const newCollection = deepRemoveKeys(deepObject, 'c')
 
 		expect(newCollection).toEqual({
 			a: {
 				b: 'b',
-				c: [
-					{}
-				]
-			}
-		});
-	});
+			},
+		})
+	})
+
+	it('deletes multiple keys', () => {
+		const deepObject = deepCopy(DEEP_OBJECT)
+
+		const newCollection = deepRemoveKeys(deepObject, ['b', 'c'])
+
+		expect(newCollection).toEqual({
+			a: {},
+		})
+	})
+
+	it('deletes deep key in object', () => {
+		const deepObject = deepCopy(DEEP_OBJECT)
+
+		const newCollection = deepRemoveKeys(deepObject, 'e')
+
+		expect(newCollection).toEqual({
+			a: {
+				b: 'b',
+				c: [{}],
+			},
+		})
+	})
 
 	it('deletes deep key in array', () => {
-		const deepArray = deepCopy(DEEP_ARRAY);
+		const deepArray = deepCopy(DEEP_ARRAY)
 
-		const newCollection = deepRemoveKeys(deepArray, 'c');
+		const newCollection = deepRemoveKeys(deepArray, 'c')
 
 		expect(newCollection).toEqual([
 			{
-				b: 'b'
-			}
-		]);
-	});
-});
+				b: 'b',
+			},
+		])
+	})
+})

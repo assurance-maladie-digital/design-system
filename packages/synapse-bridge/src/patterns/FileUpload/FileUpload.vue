@@ -1,20 +1,20 @@
 <script lang="ts">
-import type {PropType} from "vue";
-import {defineComponent} from "vue";
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
 
-import {config} from "./config";
-import {locales} from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import FileUploadCore from "./mixins/fileUploadCore";
-import {Widthable} from "@/mixins/widthable";
+import FileUploadCore from './mixins/fileUploadCore'
+import { Widthable } from '@/mixins/widthable'
 
-import {customizable} from "@/mixins/customizable";
-import {calcHumanFileSize} from "@/functions/calcHumanFileSize";
+import { customizable } from '@/mixins/customizable'
+import { calcHumanFileSize } from '@/functions/calcHumanFileSize'
 
-import {mdiCloudUpload} from "@mdi/js";
+import { mdiCloudUpload } from '@mdi/js'
 
-import type {IndexedObject} from "@/types";
-import type {HTMLInputEvent} from "@/patterns/FileUpload/types";
+import type { IndexedObject } from '@/types'
+import type { HTMLInputEvent } from '@/patterns/FileUpload/types'
 
 export default defineComponent({
 	mixins: [customizable(config), FileUploadCore, Widthable],
@@ -26,10 +26,8 @@ export default defineComponent({
 			default: null,
 			/** @see https://github.com/vuetifyjs/vuetify/blob/9e4daa81bfe3046fcf7e4a731809c3d554b3df54/packages/vuetify/src/components/VFileInput/VFileInput.tsx#L72C13-L72C13 */
 			validator(val): boolean {
-				const value = Array.isArray(val) ? val : [val];
-				return value.every(
-					(v) => v !== null && typeof v === "object"
-				);
+				const value = Array.isArray(val) ? val : [val]
+				return value.every((v) => v !== null && typeof v === 'object')
 			},
 		},
 		multiple: {
@@ -45,34 +43,34 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	data() {
 		return {
 			locales,
-			uploadIcon: mdiCloudUpload
-		};
+			uploadIcon: mdiCloudUpload,
+		}
 	},
 	computed: {
 		colors(): IndexedObject {
 			return {
 				label: 'text-primary',
 				multiple: 'text-black',
-				info: 'text-grey'
-			};
+				info: 'text-grey',
+			}
 		},
 		maxSizeReadable(): string {
-			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits);
+			return calcHumanFileSize(this.fileSizeMax, this.fileSizeUnits)
 		},
 		extensions(): string {
-			return this.allowedExtensions.join(', ').toUpperCase();
-		}
+			return this.allowedExtensions.join(', ').toUpperCase()
+		},
 	},
 	methods: {
 		retry(): void {
-			this.$refs.vdInputEl.click();
-		}
-	}
-});
+			this.$refs.vdInputEl.click()
+		},
+	},
+})
 </script>
 
 <template>
@@ -98,7 +96,7 @@ export default defineComponent({
 			:multiple="multiple"
 			:accept="computedAccept"
 			class="vd-file-upload-input"
-			@change="e=>inputValueChanged(e as HTMLInputEvent)"
+			@change="(e) => inputValueChanged(e as HTMLInputEvent)"
 		/>
 
 		<slot name="placeholder">
@@ -113,8 +111,8 @@ export default defineComponent({
 					<slot name="action-text" :multiple="multiple">
 						{{
 							multiple
-								? "Placez vos fichiers ici"
-								: "Placez votre fichier ici"
+								? 'Placez vos fichiers ici'
+								: 'Placez votre fichier ici'
 						}}
 					</slot>
 				</span>
@@ -157,7 +155,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 .vd-file-upload {
 	cursor: pointer;
 	position: relative;

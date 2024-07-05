@@ -1,3 +1,3 @@
-import FilterModule from './FilterModule.vue';
+import FilterModule from './FilterModule.vue'
 
-export default FilterModule;
+export default FilterModule

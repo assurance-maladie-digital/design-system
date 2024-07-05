@@ -5,11 +5,11 @@ import ContextualMenu from '../'
 
 describe('ContextualMenu', () => {
 	const mockRoute = {
-		hash: '#example-1'
+		hash: '#example-1',
 	}
 
 	const mockRouter = {
-		replace: vi.fn()
+		replace: vi.fn(),
 	}
 
 	const mocks = {
@@ -24,7 +24,7 @@ describe('ContextualMenu', () => {
 	it('renders correctly with items', () => {
 		const wrapper = shallowMount(ContextualMenu, {
 			global: {
-				mocks
+				mocks,
 			},
 			propsData: {
 				items: [
@@ -56,7 +56,7 @@ describe('ContextualMenu', () => {
 	it('sets hash', () => {
 		const wrapper = shallowMount(ContextualMenu, {
 			global: {
-				mocks
+				mocks,
 			},
 			propsData: {
 				items: [
@@ -84,7 +84,7 @@ describe('ContextualMenu', () => {
 	it('does not sets hash if hash is equal to current hash', () => {
 		const wrapper = shallowMount(ContextualMenu, {
 			global: {
-				mocks
+				mocks,
 			},
 			propsData: {
 				items: [
@@ -108,7 +108,7 @@ describe('ContextualMenu', () => {
 	it('sets hash from default value', () => {
 		shallowMount(ContextualMenu, {
 			global: {
-				mocks
+				mocks,
 			},
 			propsData: {
 				items: [

@@ -1,3 +1,3 @@
-import HeaderMenuBtn from './HeaderMenuBtn.vue';
+import HeaderMenuBtn from './HeaderMenuBtn.vue'
 
-export default HeaderMenuBtn;
+export default HeaderMenuBtn

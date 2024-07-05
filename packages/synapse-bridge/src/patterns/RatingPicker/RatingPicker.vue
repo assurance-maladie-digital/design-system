@@ -1,52 +1,53 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import EmotionPicker from './EmotionPicker';
-import NumberPicker from './NumberPicker';
-import StarsPicker from './StarsPicker';
-import AlertWrapper from '@/patterns/AlertWrapper/AlertWrapper.vue';
-import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin';
-import { propValidator } from '@/helpers/propValidator';
-import { locales } from './locales';
-import { AlertTypeEnum } from "../AlertWrapper/AlertTypeEnum";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import EmotionPicker from './EmotionPicker'
+import NumberPicker from './NumberPicker'
+import StarsPicker from './StarsPicker'
+import AlertWrapper from '@/patterns/AlertWrapper/AlertWrapper.vue'
+import { RATING_ENUM_VALUES, RatingEnum } from './RatingMixin'
+import { propValidator } from '@/helpers/propValidator'
+import { locales } from './locales'
+import { AlertTypeEnum } from '../AlertWrapper/AlertTypeEnum'
 export default defineComponent({
 	components: {
 		EmotionPicker,
 		NumberPicker,
 		StarsPicker,
-		AlertWrapper
+		AlertWrapper,
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	props: {
 		type: {
 			type: String,
 			required: true,
-			validator: (value: string) => propValidator('type', RATING_ENUM_VALUES, value)
+			validator: (value: string) =>
+				propValidator('type', RATING_ENUM_VALUES, value),
 		},
 		label: {
 			type: String as PropType<string | null>,
-			default: null
+			default: null,
 		},
 		readonly: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		itemLabels: {
 			type: Array as PropType<string[]>,
-			default: null
+			default: null,
 		},
 		twoEmotions: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		hideAlert: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		modelValue: {
 			type: Number,
-			default: -1
-		}
+			default: -1,
+		},
 	},
 	data() {
 		return {
@@ -54,46 +55,48 @@ export default defineComponent({
 			AlertTypeEnum: AlertTypeEnum,
 			internalValue: -1,
 			displayAdditionalContent: false,
-		};
+		}
 	},
 	computed: {
 		ratingComponent(): string {
 			if (this.type === RatingEnum.EMOTION) {
-				return 'EmotionPicker';
+				return 'EmotionPicker'
 			} else if (this.type === RatingEnum.NUMBER) {
-				return 'NumberPicker';
+				return 'NumberPicker'
 			} else {
-				return 'StarsPicker';
+				return 'StarsPicker'
 			}
 		},
 		length(): number | undefined {
 			if (this.type === RatingEnum.EMOTION) {
-				return this.twoEmotions ? 2 : 3;
+				return this.twoEmotions ? 2 : 3
 			}
-			return undefined;
+			return undefined
 		},
 		hasAnswered(): boolean {
-			return this.modelValue !== -1;
-		}
+			return this.modelValue !== -1
+		},
 	},
 	methods: {
 		showAdditionalContent(value: number): void {
-			const starsUnsatisfied = this.type === RatingEnum.STARS && value <= 3;
-			const numberUnsatisfied = this.type === RatingEnum.NUMBER && value <= 7;
-			const isEmotion = this.type === RatingEnum.EMOTION;
-			const isEmotionLow = this.twoEmotions ? value < 2 : value < 3;
-			const emotionUnsatisfied = isEmotion && isEmotionLow;
+			const starsUnsatisfied =
+				this.type === RatingEnum.STARS && value <= 3
+			const numberUnsatisfied =
+				this.type === RatingEnum.NUMBER && value <= 7
+			const isEmotion = this.type === RatingEnum.EMOTION
+			const isEmotionLow = this.twoEmotions ? value < 2 : value < 3
+			const emotionUnsatisfied = isEmotion && isEmotionLow
 			if (starsUnsatisfied || numberUnsatisfied || emotionUnsatisfied) {
-				this.displayAdditionalContent = true;
+				this.displayAdditionalContent = true
 			}
 		},
 		setValue(value: number): void {
-			this.internalValue = value;
-			this.showAdditionalContent(value);
-			this.$emit('update:modelValue', value);
-		}
-	}
-});
+			this.internalValue = value
+			this.showAdditionalContent(value)
+			this.$emit('update:modelValue', value)
+		},
+	},
+})
 </script>
 
 <template>

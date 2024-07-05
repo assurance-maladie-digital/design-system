@@ -1,7 +1,7 @@
-import { describe, it, expect } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { vuetify } from '@tests/unit/setup';
-import FilterManager from '../';
+import { describe, it, expect } from 'vitest'
+import { mount } from '@vue/test-utils'
+import { vuetify } from '@tests/unit/setup'
+import FilterManager from '../'
 
 const filters = [
 	{
@@ -11,8 +11,8 @@ const filters = [
 			label: 'Nom',
 			filterTitle: 'Nom',
 			hideDetails: true,
-			outlined: true
-		}
+			outlined: true,
+		},
 	},
 	{
 		type: 'number',
@@ -22,35 +22,35 @@ const filters = [
 			filterTitle: 'Nombre de fichiers',
 			hideDetails: true,
 			outlined: true,
-			mask: '###'
-		}
-	}
-];
+			mask: '###',
+		},
+	},
+]
 
 describe('FilterManager', () => {
 	it('renders correctly', () => {
 		const wrapper = mount(FilterManager, {
 			propsData: {
-				appliedFilters: filters
+				appliedFilters: filters,
 			},
 			global: {
-				plugins: [vuetify]
-			}
-		});
+				plugins: [vuetify],
+			},
+		})
 
-		expect(wrapper).toMatchSnapshot();
-	});
+		expect(wrapper).toMatchSnapshot()
+	})
 
 	it('renders correctly with a single filter', () => {
 		const wrapper = mount(FilterManager, {
 			propsData: {
-				appliedFilters: [filters[0]]
+				appliedFilters: [filters[0]],
 			},
 			global: {
-				plugins: [vuetify]
-			}
-		});
+				plugins: [vuetify],
+			},
+		})
 
-		expect(wrapper).toMatchSnapshot();
-	});
-});
+		expect(wrapper).toMatchSnapshot()
+	})
+})

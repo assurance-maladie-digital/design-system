@@ -22,7 +22,7 @@ describe('ExternalLinks', () => {
 					{
 						text: 'Twitter',
 						href: 'https://www.twitter.com',
-					}
+					},
 				],
 				btnText: 'External Links',
 				nudgeTop: '0px',
@@ -69,7 +69,7 @@ describe('ExternalLinks', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 
-	it('renders correctly without items', async() => {
+	it('renders correctly without items', async () => {
 		const wrapper = mount(ExternalLinks, {
 			propsData: {
 				position: 'top left',

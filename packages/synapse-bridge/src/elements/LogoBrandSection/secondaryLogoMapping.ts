@@ -1,12 +1,12 @@
-import { IndexedObject } from "@/types";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import { locales } from "./locales";
-import { LogoInfo } from "./types";
+import { IndexedObject } from '@/types'
+import { ThemeEnum } from '@/constants/enums/ThemeEnum'
+import { locales } from './locales'
+import { LogoInfo } from './types'
 
-import logoCnam from "../../assets/images/cnam.svg";
-import logoAmeli from "../../assets/images/ameli.svg";
-import logoAmeliPro from "../../assets/images/ameli-pro.svg";
-import logoCompteAmeli from "../../assets/images/compte-ameli.svg";
+import logoCnam from '../../assets/images/cnam.svg'
+import logoAmeli from '../../assets/images/ameli.svg'
+import logoAmeliPro from '../../assets/images/ameli-pro.svg'
+import logoCompteAmeli from '../../assets/images/compte-ameli.svg'
 
 export const secondaryLogoMapping: IndexedObject<LogoInfo> = {
 	[ThemeEnum.CNAM]: {
@@ -25,4 +25,4 @@ export const secondaryLogoMapping: IndexedObject<LogoInfo> = {
 		src: logoCompteAmeli,
 		alt: locales.logoCompteAmeli,
 	},
-};
+}

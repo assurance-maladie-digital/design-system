@@ -1,21 +1,32 @@
-import { ruleMessage } from '../../helpers/ruleMessage';
-import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types';
+import { ruleMessage } from '../../helpers/ruleMessage'
+import {
+	ValidationRule,
+	ValidationResult,
+	ErrorMessages,
+	Value,
+} from '../types'
 
-import { defaultErrorMessages } from './locales';
+import { defaultErrorMessages } from './locales'
 
 /** Check that the value does not exceeds the specified length */
-export function maxLengthFn(max: number, ignoreSpaces = false, errorMessages: ErrorMessages<number> = defaultErrorMessages): ValidationRule {
+export function maxLengthFn(
+	max: number,
+	ignoreSpaces = false,
+	errorMessages: ErrorMessages<number> = defaultErrorMessages
+): ValidationRule {
 	return (value: Value): ValidationResult => {
 		if (!value) {
-			return true;
+			return true
 		}
 
 		if (ignoreSpaces) {
-			value = value.replace(/\s/g, '');
+			value = value.replace(/\s/g, '')
 		}
 
-		return value.length <= max || ruleMessage(errorMessages, 'default', [max]);
-	};
+		return (
+			value.length <= max || ruleMessage(errorMessages, 'default', [max])
+		)
+	}
 }
 
-export const maxLength = maxLengthFn;
+export const maxLength = maxLengthFn

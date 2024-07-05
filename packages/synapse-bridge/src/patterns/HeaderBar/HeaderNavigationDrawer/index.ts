@@ -1,3 +1,3 @@
-import HeaderNavigationDrawer from './HeaderNavigationDrawer.vue';
+import HeaderNavigationDrawer from './HeaderNavigationDrawer.vue'
 
-export default HeaderNavigationDrawer;
+export default HeaderNavigationDrawer

@@ -1,3 +1,3 @@
-import FormField from './FormField.vue';
+import FormField from './FormField.vue'
 
-export default FormField;
+export default FormField

@@ -1,16 +1,16 @@
 <script lang="ts">
-import { defineComponent, getCurrentInstance } from "vue";
-import { dividerDimensionsMapping } from "./dividerDimensionsMapping";
-import { locales } from "./locales";
-import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
-import { secondaryLogoMapping } from "./secondaryLogoMapping";
-import { ThemeEnum } from "@/constants/enums/ThemeEnum";
-import { tokens } from "@cnamts/design-tokens";
-import Logo from "../Logo";
+import { defineComponent, getCurrentInstance } from 'vue'
+import { dividerDimensionsMapping } from './dividerDimensionsMapping'
+import { locales } from './locales'
+import { LogoSizeEnum } from '@/elements/Logo/LogoSizeEnum'
+import { secondaryLogoMapping } from './secondaryLogoMapping'
+import { ThemeEnum } from '@/constants/enums/ThemeEnum'
+import { tokens } from '@cnamts/design-tokens'
+import Logo from '../Logo'
 
-import type { Dimensions, Next } from "@/types";
-import type { LogoInfo, Service } from "./types";
-import type { PropType } from "vue";
+import type { Dimensions, Next } from '@/types'
+import type { LogoInfo, Service } from './types'
+import type { PropType } from 'vue'
 
 export default defineComponent({
 	components: {
@@ -39,7 +39,7 @@ export default defineComponent({
 		},
 		homeLink: {
 			type: [String, Boolean, Object] as PropType<Next>,
-			default: "/",
+			default: '/',
 		},
 		homeHref: {
 			type: String,
@@ -47,158 +47,175 @@ export default defineComponent({
 		},
 		homeArialabel: {
 			type: String,
-			default: undefined
-		}
+			default: undefined,
+		},
 	},
 	data() {
 		return {
 			locales,
-		};
+		}
 	},
 	computed: {
 		service(): Service {
 			if (this.theme === ThemeEnum.COMPTE_ENTREPRISE) {
-				const { title, subTitle } = locales.compteEntreprise;
+				const { title, subTitle } = locales.compteEntreprise
 
 				return {
 					title,
-					subTitle
-				};
+					subTitle,
+				}
 			}
 
 			return {
-				title: this.serviceTitle || "",
-				subTitle: this.serviceSubTitle || "",
-			};
+				title: this.serviceTitle || '',
+				subTitle: this.serviceSubTitle || '',
+			}
 		},
 
 		mobileWithSecondaryLogo(): boolean {
-			return this.mobileVersion && this.hasSecondaryLogo;
+			return this.mobileVersion && this.hasSecondaryLogo
 		},
 
 		height(): string {
 			if (this.mobileWithSecondaryLogo) {
-				return '32px';
+				return '32px'
 			}
 
-			return this.mobileVersion ? '40px' : '64px';
+			return this.mobileVersion ? '40px' : '64px'
 		},
 
 		isRisquePro(): boolean {
-			return !this.reduceLogo && this.theme === ThemeEnum.RISQUE_PRO;
+			return !this.reduceLogo && this.theme === ThemeEnum.RISQUE_PRO
 		},
 
 		isCompteEntreprise(): boolean {
-			return this.theme === ThemeEnum.COMPTE_ENTREPRISE;
+			return this.theme === ThemeEnum.COMPTE_ENTREPRISE
 		},
 
 		isCompteAmeliMobile(): boolean {
-			return this.theme === ThemeEnum.COMPTE_AMELI && this.mobileVersion;
+			return this.theme === ThemeEnum.COMPTE_AMELI && this.mobileVersion
 		},
 
 		hideSignature(): boolean {
-			return (this.reduceLogo || this.isCompteEntreprise || this.isCompteAmeliMobile);
+			return (
+				this.reduceLogo ||
+				this.isCompteEntreprise ||
+				this.isCompteAmeliMobile
+			)
 		},
 
 		secondaryLogo(): LogoInfo | undefined {
-			return secondaryLogoMapping[this.theme];
+			return secondaryLogoMapping[this.theme]
 		},
 
 		hasSecondaryLogo(): boolean {
-			return Boolean(this.secondaryLogo);
+			return Boolean(this.secondaryLogo)
 		},
 
 		hasSecondaryLogoLink(): boolean {
-			return this.theme === ThemeEnum.AMELI_PRO || this.theme === ThemeEnum.AMELI;
+			return (
+				this.theme === ThemeEnum.AMELI_PRO ||
+				this.theme === ThemeEnum.AMELI
+			)
 		},
 
 		isNuxt(): boolean {
-			return !!getCurrentInstance()?.appContext.config.globalProperties.$nuxt;
+			return !!getCurrentInstance()?.appContext.config.globalProperties
+				.$nuxt
 		},
 
 		logoContainerComponent(): string {
 			if (this.homeHref) {
-				return "a";
+				return 'a'
 			}
 
 			if (!this.homeLink) {
-				return "div";
+				return 'div'
 			}
 
-			return this.isNuxt ? "nuxt-link" : "router-link";
+			return this.isNuxt ? 'nuxt-link' : 'router-link'
 		},
 
 		secondaryLogoCtnComponent(): string {
-			return this.hasSecondaryLogoLink ? this.logoContainerComponent : "div";
+			return this.hasSecondaryLogoLink
+				? this.logoContainerComponent
+				: 'div'
 		},
 
 		secondaryLogoLabel(): string | null {
-			return (this.hasSecondaryLogoLink && this.secondaryLogo) ? `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}` : null;
+			return this.hasSecondaryLogoLink && this.secondaryLogo
+				? `${locales.homeLinkPrefix} ${this.secondaryLogo.alt}`
+				: null
 		},
 
 		avatar(): boolean {
-			return this.reduceLogo ? this.hasSecondaryLogo : false;
+			return this.reduceLogo ? this.hasSecondaryLogo : false
 		},
 
 		hasBrandSlot() {
 			return Boolean(
-				this.$slots["brand-content"] &&
-				(this.$slots["brand-content"]()[0] as any)?.children?.length > 0
-			);
+				this.$slots['brand-content'] &&
+					(this.$slots['brand-content']()[0] as any)?.children
+						?.length > 0
+			)
 		},
 
 		showBrandContent(): boolean {
 			return Boolean(
 				this.service.title ||
-				this.service.subTitle ||
-				this.hasBrandSlot ||
-				this.hasSecondaryLogo
-			);
+					this.service.subTitle ||
+					this.hasBrandSlot ||
+					this.hasSecondaryLogo
+			)
 		},
 
 		showDivider(): boolean {
 			if (this.reduceLogo) {
-				return false;
+				return false
 			}
 
-			return this.showBrandContent;
+			return this.showBrandContent
 		},
 
 		showServiceSubTitle(): boolean {
 			return Boolean(
 				this.service.title &&
-				this.service.subTitle &&
-				!this.mobileVersion
-			);
+					this.service.subTitle &&
+					!this.mobileVersion
+			)
 		},
 
 		dividerColor(): string {
 			switch (this.theme) {
 				case ThemeEnum.CNAM:
 				case ThemeEnum.AMELI_PRO:
-					return tokens.colors.secondary;
+					return tokens.colors.secondary
 				case ThemeEnum.COMPTE_ENTREPRISE:
-					return tokens.colors.brick.base;
+					return tokens.colors.brick.base
 				default:
-					return tokens.colors.primary;
+					return tokens.colors.primary
 			}
 		},
 
 		dividerDimensions(): Dimensions {
 			if (this.mobileVersion) {
-				return this.hasSecondaryLogo ? dividerDimensionsMapping.xSmall : dividerDimensionsMapping.small;
+				return this.hasSecondaryLogo
+					? dividerDimensionsMapping.xSmall
+					: dividerDimensionsMapping.small
 			}
-			return dividerDimensionsMapping.normal;
+			return dividerDimensionsMapping.normal
 		},
 
 		logoSize(): LogoSizeEnum {
 			if (this.mobileVersion) {
-				return this.hasSecondaryLogo ? LogoSizeEnum.X_SMALL : LogoSizeEnum.SMALL;
+				return this.hasSecondaryLogo
+					? LogoSizeEnum.X_SMALL
+					: LogoSizeEnum.SMALL
 			}
-			return LogoSizeEnum.NORMAL;
+			return LogoSizeEnum.NORMAL
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -245,7 +262,9 @@ export default defineComponent({
 				:aria-current-value="null"
 				:aria-label="secondaryLogoLabel"
 				:to="secondaryLogoCtnComponent !== 'div' ? homeLink : '/'"
-				:href="secondaryLogoCtnComponent !== 'div' ? homeHref : undefined"
+				:href="
+					secondaryLogoCtnComponent !== 'div' ? homeHref : undefined
+				"
 				class="vd-home-link"
 			>
 				<img :src="secondaryLogo.src" :alt="secondaryLogo.alt" />

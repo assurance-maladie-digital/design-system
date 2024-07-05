@@ -1,40 +1,40 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
-	import { locales } from './locales'
+import { locales } from './locales'
 
-	import { mdiOpenInNew } from '@mdi/js'
+import { mdiOpenInNew } from '@mdi/js'
 
-	export default defineComponent({
-		props: {
-			href: {
-				type: String,
-				required: true,
-			},
-			connectPlus: {
-				type: Boolean,
-				default: false,
-			}
+export default defineComponent({
+	props: {
+		href: {
+			type: String,
+			required: true,
 		},
-		data() {
-			return {
-				locales,
-				linkIcon: mdiOpenInNew,
-			}
+		connectPlus: {
+			type: Boolean,
+			default: false,
 		},
-		computed: {
-			btnWidth(): string {
-				return this.connectPlus ? '245' : '209'
-			},
-			btnViewBox(): string {
-				return `0 0 ${this.btnWidth} 56`
-			},
-			infoLinkUrl(): string {
-				const baseUrl = 'https://franceconnect.gouv.fr/'
-				return this.connectPlus ? baseUrl + 'france-connect-plus' : baseUrl
-			},
+	},
+	data() {
+		return {
+			locales,
+			linkIcon: mdiOpenInNew,
+		}
+	},
+	computed: {
+		btnWidth(): string {
+			return this.connectPlus ? '245' : '209'
 		},
-	})
+		btnViewBox(): string {
+			return `0 0 ${this.btnWidth} 56`
+		},
+		infoLinkUrl(): string {
+			const baseUrl = 'https://franceconnect.gouv.fr/'
+			return this.connectPlus ? baseUrl + 'france-connect-plus' : baseUrl
+		},
+	},
+})
 </script>
 
 <template>
@@ -91,11 +91,7 @@
 		>
 			{{ locales.infoLinkLabel(connectPlus) }}
 
-			<VIcon
-				size="1em"
-				color="#000091"
-				class="ml-1 mb-1"
-			>
+			<VIcon size="1em" color="#000091" class="ml-1 mb-1">
 				{{ linkIcon }}
 			</VIcon>
 		</a>
@@ -103,32 +99,31 @@
 </template>
 
 <style lang="scss" scoped>
-	.vd-france-connect-btn a {
-		color: #000091;
+.vd-france-connect-btn a {
+	color: #000091;
+}
+
+.vd-france-connect-link {
+	background: #000091;
+	&:hover,
+	&:focus {
+		background: #1212ff;
+		transition: all 0.2s ease-in-out;
 	}
 
-	.vd-france-connect-link {
-
-		background: #000091;
-		&:hover,
-		&:focus {
-			background: #1212ff;
-			transition: all 0.2s ease-in-out;
-		}
-
-		&:active {
-			background: #2323ff;
-		}
+	&:active {
+		background: #2323ff;
 	}
+}
 
-	.vd-france-connect-info-link {
-		background-image: linear-gradient(currentColor, currentColor);
-		background-position: 0% 100%;
-		background-repeat: no-repeat;
-		background-size: 100% 1px;
+.vd-france-connect-info-link {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 1px;
 
-		&:hover {
-			background-size: 100% 2px;
-		}
+	&:hover {
+		background-size: 100% 2px;
 	}
+}
 </style>

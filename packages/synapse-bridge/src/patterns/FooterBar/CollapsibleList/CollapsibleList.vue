@@ -1,8 +1,8 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { ListItem } from "./types";
+import { ListItem } from './types'
 
 export default defineComponent({
 	props: {
@@ -17,10 +17,10 @@ export default defineComponent({
 	},
 	computed: {
 		isMobile(): boolean {
-			return this.$vuetify.display.smAndDown;
+			return this.$vuetify.display.smAndDown
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -30,12 +30,10 @@ export default defineComponent({
 		variant="accordion"
 		flat
 	>
-		<VExpansionPanel
-			class="vd-panel"
-			elevation="0"
-			bg-color="transparent"
-		>
-			<VExpansionPanelTitle class="vd-panel-title text-subtitle-2 pl-0 py-4">
+		<VExpansionPanel class="vd-panel" elevation="0" bg-color="transparent">
+			<VExpansionPanelTitle
+				class="vd-panel-title text-subtitle-2 pl-0 py-4"
+			>
 				{{ listTitle }}
 			</VExpansionPanelTitle>
 
@@ -83,7 +81,6 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-
 .vd-panel {
 	background-color: transparent;
 }
@@ -116,7 +113,10 @@ a {
 }
 
 .vd-collapse-list.theme--dark :deep() {
-	h4, ul, a, button {
+	h4,
+	ul,
+	a,
+	button {
 		color: white !important;
 	}
 }

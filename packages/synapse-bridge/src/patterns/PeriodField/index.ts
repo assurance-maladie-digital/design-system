@@ -1,3 +1,3 @@
-import PeriodField from './PeriodField.vue';
+import PeriodField from './PeriodField.vue'
 
-export default PeriodField;
+export default PeriodField

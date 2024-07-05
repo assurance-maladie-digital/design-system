@@ -29,8 +29,8 @@ describe('customizable', () => {
 
 		const wrapper = mount(testComponent, {
 			props: {
-				vuetifyOptions: CUSTOM_OPTIONS
-			}
+				vuetifyOptions: CUSTOM_OPTIONS,
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()

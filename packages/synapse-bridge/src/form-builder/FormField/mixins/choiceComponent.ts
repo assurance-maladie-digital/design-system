@@ -1,12 +1,12 @@
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
 import type {
 	ChoiceFieldValue,
 	FieldItem,
 	FieldOptions,
 	FieldItemValue,
-} from "../types";
+} from '../types'
 
 export default defineComponent({
 	props: {
@@ -36,12 +36,12 @@ export default defineComponent({
 			handler(value: ChoiceFieldValue): void {
 				if (value !== null && value !== undefined) {
 					if (this.multiple && !Array.isArray(value)) {
-						this.choiceFieldValue = [value];
+						this.choiceFieldValue = [value]
 					} else {
-						this.choiceFieldValue = value;
+						this.choiceFieldValue = value
 					}
 				} else {
-					this.choiceFieldValue = this.multiple ? [] : null;
+					this.choiceFieldValue = this.multiple ? [] : null
 				}
 			},
 			immediate: true,
@@ -50,74 +50,72 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			choiceFieldValue: this.multiple ? [] : null as ChoiceFieldValue,
-		};
+			choiceFieldValue: this.multiple ? [] : (null as ChoiceFieldValue),
+		}
 	},
 	methods: {
 		toggleItem(item: FieldItem): void {
-			const active = this.isSelected(item.value);
+			const active = this.isSelected(item.value)
 
-			let newChoiceValue: ChoiceFieldValue;
+			let newChoiceValue: ChoiceFieldValue
 
 			if (!this.multiple) {
-				newChoiceValue = active ? null : item.value;
+				newChoiceValue = active ? null : item.value
 			} else {
 				newChoiceValue = [
 					...(this.choiceFieldValue as FieldItemValue[]),
-				];
+				]
 
 				if (active && Array.isArray(this.choiceFieldValue)) {
 					// Unselect the item
-					const valueIndex = this.choiceFieldValue.indexOf(
-						item.value
-					);
+					const valueIndex = this.choiceFieldValue.indexOf(item.value)
 
-					newChoiceValue.splice(valueIndex, 1);
+					newChoiceValue.splice(valueIndex, 1)
 				} else {
 					if (item.value === undefined || item.value === null) {
-						return;
+						return
 					}
 
-					const isAlone = Boolean(item.alone);
+					const isAlone = Boolean(item.alone)
 
 					if (isAlone) {
-						newChoiceValue = [item.value];
+						newChoiceValue = [item.value]
 					} else {
-						let index = newChoiceValue.length - 1;
+						let index = newChoiceValue.length - 1
 
 						while (index >= 0) {
 							const valueSelected = (
 								newChoiceValue as FieldItemValue[]
-							)[index];
+							)[index]
 
 							const isItemSelectedAlone = this.items.find(
 								(element) => {
 									return (
 										element.value === valueSelected &&
 										element.alone
-									);
+									)
 								}
-							);
+							)
 
 							if (isItemSelectedAlone) {
-								newChoiceValue.splice(index, 1);
+								newChoiceValue.splice(index, 1)
 							}
 
-							index -= 1;
+							index -= 1
 						}
 
-						newChoiceValue.push(item.value);
+						newChoiceValue.push(item.value)
 					}
 				}
 			}
 
-			this.choiceFieldValue = newChoiceValue;
+			this.choiceFieldValue = newChoiceValue
 
-			this.emitChangeEvent(this.choiceFieldValue);
+			this.emitChangeEvent(this.choiceFieldValue)
 		},
 
 		emitChangeEvent(newValue: ChoiceFieldValue): void {
-			this.$emit("update:modelValue", newValue);
+			this.$emit('update:modelValue', newValue)
 		},
 
 		isSelected(value: FieldItemValue): boolean {
@@ -125,14 +123,14 @@ export default defineComponent({
 				this.choiceFieldValue === undefined ||
 				this.choiceFieldValue === null
 			) {
-				return false;
+				return false
 			}
 
 			if (this.multiple && Array.isArray(this.choiceFieldValue)) {
-				return this.choiceFieldValue.includes(value);
+				return this.choiceFieldValue.includes(value)
 			} else {
-				return this.choiceFieldValue === value;
+				return this.choiceFieldValue === value
 			}
 		},
 	},
-});
+})

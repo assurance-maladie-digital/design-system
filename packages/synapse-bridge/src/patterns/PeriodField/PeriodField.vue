@@ -1,13 +1,12 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import VueDatePicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css';
-import {mdiCalendar} from '@mdi/js';
-
+import { defineComponent } from 'vue'
+import VueDatePicker from '@vuepic/vue-datepicker'
+import '@vuepic/vue-datepicker/dist/main.css'
+import { mdiCalendar } from '@mdi/js'
 
 interface PeriodFieldData {
-	date: Date[] | null;
-	calendarIcon: string,
+	date: Date[] | null
+	calendarIcon: string
 }
 
 export default defineComponent({
@@ -35,11 +34,11 @@ export default defineComponent({
 		},
 		hint: {
 			type: String,
-			default: 'DD/MM/YYYY'
+			default: 'DD/MM/YYYY',
 		},
 		label: {
 			type: String,
-			default: ''
+			default: '',
 		},
 		dateFormat: {
 			type: String,
@@ -54,33 +53,35 @@ export default defineComponent({
 		return {
 			date: null,
 			calendarIcon: mdiCalendar,
-		};
+		}
 	},
 	computed: {
 		formattedDateFormat() {
-			return this.dateFormat.replace(/D/g, 'd').replace(/Y/g, 'y');
+			return this.dateFormat.replace(/D/g, 'd').replace(/Y/g, 'y')
 		},
 		formattedDateFormatReturn() {
-			return this.dateFormatReturn.replace(/D/g, 'd').replace(/Y/g, 'y');
+			return this.dateFormatReturn.replace(/D/g, 'd').replace(/Y/g, 'y')
 		},
 		prependIconValue() {
 			if (!this.appendIcon && !this.noPrependIcon) {
-				return this.calendarIcon;
+				return this.calendarIcon
 			}
-			return undefined;
+			return undefined
 		},
 		getVariant() {
-			return (this.disabled || this.noPrependIcon || !this.outlined) ? 'underlined' : 'outlined';
+			return this.disabled || this.noPrependIcon || !this.outlined
+				? 'underlined'
+				: 'outlined'
 		},
 	},
 	watch: {
 		date(newVal, oldVal) {
 			if (newVal !== oldVal) {
-				this.$emit('update:modelValue', newVal);
+				this.$emit('update:modelValue', newVal)
 			}
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -105,7 +106,9 @@ export default defineComponent({
 				:aria-describedby="label"
 				:label="label"
 				:prepend-icon="!outlined ? prependIconValue : undefined"
-				:append-inner-icon="(outlined || appendIcon) ? calendarIcon : undefined"
+				:append-inner-icon="
+					outlined || appendIcon ? calendarIcon : undefined
+				"
 			/>
 		</template>
 	</VueDatePicker>
@@ -156,7 +159,10 @@ export default defineComponent({
 	height: calc(100% - 1px);
 }
 
-:deep(.v-field--variant-outlined.v-field--focused .v-field__outline__notch::after) {
+:deep(
+		.v-field--variant-outlined.v-field--focused
+			.v-field__outline__notch::after
+	) {
 	height: calc(100% - 2px);
 }
 
@@ -168,51 +174,51 @@ export default defineComponent({
 	min-width: 16px;
 }
 
-:deep(.vd-append-icon ~.dp__clear_icon) {
+:deep(.vd-append-icon ~ .dp__clear_icon) {
 	right: 35px;
 }
 
 .warning-style {
 	:deep(.v-icon) {
-		color: #F0B323 !important;
+		color: #f0b323 !important;
 	}
 
 	:deep(.v-label) {
-		color: #F0B323 !important;
+		color: #f0b323 !important;
 	}
 
 	:deep(.v-messages) {
-		color: #F0B323 !important;
+		color: #f0b323 !important;
 	}
 
 	:deep(.v-text-field) {
-		border-color: #F0B323 !important;
+		border-color: #f0b323 !important;
 	}
 
 	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #F0B323;
+		color: #f0b323;
 	}
 }
 
 .error-style {
 	:deep(.v-icon) {
-		color: #B33F2E !important;
+		color: #b33f2e !important;
 	}
 
 	:deep(.v-label) {
-		color: #B33F2E !important;
+		color: #b33f2e !important;
 	}
 
 	:deep(.v-messages) {
-		color: #B33F2E !important;
+		color: #b33f2e !important;
 	}
 
 	:deep(.v-text-field) {
-		border-color: #B33F2E !important;
+		border-color: #b33f2e !important;
 	}
 
 	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #B33F2E;
+		color: #b33f2e;
 	}
 }
 </style>

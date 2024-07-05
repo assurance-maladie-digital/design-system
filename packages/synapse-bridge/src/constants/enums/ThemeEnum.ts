@@ -5,7 +5,7 @@ export enum ThemeEnum {
 	COMPTE_AMELI = 'compte-ameli',
 	COMPTE_ENTREPRISE = 'compte-entreprise',
 	DEFAULT = 'default',
-	RISQUE_PRO = 'risque-pro'
+	RISQUE_PRO = 'risque-pro',
 }
 
-export const THEME_ENUM_VALUES = Object.values(ThemeEnum);
+export const THEME_ENUM_VALUES = Object.values(ThemeEnum)

@@ -1,8 +1,8 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import type { DataOptions, SortOption, GroupOption } from "./types";
-import { LocalStorageUtility } from "@/helpers/localStorageUtility";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import type { DataOptions, SortOption, GroupOption } from './types'
+import { LocalStorageUtility } from '@/helpers/localStorageUtility'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -20,40 +20,41 @@ export default defineComponent({
 			default: undefined,
 		},
 		itemsPerPage: {
-			type: Number
+			type: Number,
 		},
 	},
 	data() {
 		return {
-			localStorageUtility: this.newLocalStorageInstance() as LocalStorageUtility,
+			localStorageUtility:
+				this.newLocalStorageInstance() as LocalStorageUtility,
 			localOptions: {},
-			slotNames: Object.keys(this.$slots)  as "default"[]
-		};
+			slotNames: Object.keys(this.$slots) as 'default'[],
+		}
 	},
 	watch: {
 		options: {
 			deep: true,
 			handler() {
-				if(this.serverItemsLength !== 0) {
+				if (this.serverItemsLength !== 0) {
 					this.localStorageUtility.setItem(this.storageKey, {
 						...this.optionsFacade,
 						itemsLength: this.serverItemsLength ?? 0,
-					});
+					})
 
-					this.localOptions = this.optionsFacade;
+					this.localOptions = this.optionsFacade
 				}
 			},
 		},
 	},
 	computed: {
 		storageKey(): string {
-			const prefix = 'pagination';
+			const prefix = 'pagination'
 
 			return this.suffix ? `${prefix}-${this.suffix}` : prefix
 		},
-		headers(): undefined | { title?: string, value: string }[] {
+		headers(): undefined | { title?: string; value: string }[] {
 			if (!Array.isArray(this.$attrs['headers'])) {
-				return undefined;
+				return undefined
 			}
 			return this.$attrs['headers'].map((header) => ({
 				...header,
@@ -61,32 +62,44 @@ export default defineComponent({
 			}))
 		},
 		optionsFacade() {
-			const sortBy =
-				!this.options.sortBy ?
-					[] :
-					Array.isArray(this.options.sortBy) ?
-						this.options.sortBy
+			const sortBy = !this.options.sortBy
+				? []
+				: Array.isArray(this.options.sortBy)
+					? this.options.sortBy
 							.filter((key: string) => key)
-							.map((key: string, index: number) => (
-								{ key, order: this.options?.sortDesc?.[index] ? 'desc' : 'asc' as 'desc' | 'asc'}
-							)) :
-						[{
-							key: this.options.sortBy,
-							order: this.options.sortDesc ? 'desc' : 'asc' as 'desc' | 'asc',
-						}];
-			const groupBy =
-				!this.options.groupBy ?
-					[] :
-					Array.isArray(this.options.groupBy) ?
-						this.options.groupBy
+							.map((key: string, index: number) => ({
+								key,
+								order: this.options?.sortDesc?.[index]
+									? 'desc'
+									: ('asc' as 'desc' | 'asc'),
+							}))
+					: [
+							{
+								key: this.options.sortBy,
+								order: this.options.sortDesc
+									? 'desc'
+									: ('asc' as 'desc' | 'asc'),
+							},
+						]
+			const groupBy = !this.options.groupBy
+				? []
+				: Array.isArray(this.options.groupBy)
+					? this.options.groupBy
 							.filter((key: string) => key)
-							.map((key: string, index: number) => (
-								{key, order: this.options?.groupDesc?.[index] ? 'desc' : 'asc'  as 'desc' | 'asc'}
-							)) :
-						[{
-							key: this.options.groupBy,
-							order: this.options.groupDesc ? 'desc' : 'asc' as 'desc' | 'asc',
-						}];
+							.map((key: string, index: number) => ({
+								key,
+								order: this.options?.groupDesc?.[index]
+									? 'desc'
+									: ('asc' as 'desc' | 'asc'),
+							}))
+					: [
+							{
+								key: this.options.groupBy,
+								order: this.options.groupDesc
+									? 'desc'
+									: ('asc' as 'desc' | 'asc'),
+							},
+						]
 
 			return {
 				page: this.options.page || this.$attrs['page'],
@@ -95,28 +108,26 @@ export default defineComponent({
 				groupBy,
 				multiSort: this.options.multiSort,
 				mustSort: this.options.mustSort,
-			};
+			}
 		},
-		propsFacade() : any {
-			const {
-				"onUpdate:options": _,
-				...attrs
-			}: Record<string, any> = this.$attrs;
+		propsFacade(): any {
+			const { 'onUpdate:options': _, ...attrs }: Record<string, any> =
+				this.$attrs
 
 			return {
 				...attrs,
 				itemsLength: this.serverItemsLength ?? 0,
 				headers: this.headers,
 				...this.localOptions,
-			};
+			}
 		},
 	},
 	methods: {
 		newLocalStorageInstance(): LocalStorageUtility {
-			return new LocalStorageUtility();
+			return new LocalStorageUtility()
 		},
 		updateOptions(options: SortOption[] | GroupOption[]): void {
-			this.$emit('update:options', this.createUpdatedOptions(options));
+			this.$emit('update:options', this.createUpdatedOptions(options))
 		},
 		createUpdatedOptions(options: any): DataOptions {
 			return {
@@ -127,34 +138,35 @@ export default defineComponent({
 				sortDesc: this.createSortDesc(options),
 				groupBy: this.createGroupBy(options),
 				groupDesc: this.createGroupDesc(options),
-			};
+			}
 		},
 		createSortBy(options: any): string[] {
 			return options.sortBy
 				.filter((sort: any) => sort.key)
-				.map((sort: any) => sort.key);
+				.map((sort: any) => sort.key)
 		},
 		createSortDesc(options: any): boolean[] {
 			return options.sortBy
 				.filter((sort: any) => sort.key)
-				.map((sort: any) => sort.order === 'desc');
+				.map((sort: any) => sort.order === 'desc')
 		},
 		createGroupBy(options: any): string[] {
 			return options.groupBy
 				.filter((group: any) => group.key)
-				.map((group: any) => group?.key);
+				.map((group: any) => group?.key)
 		},
 		createGroupDesc(options: any): boolean[] {
 			return options.groupBy
 				.filter((group: any) => group.key)
-				.map((group: any) => group?.order === 'desc');
-		}
+				.map((group: any) => group?.order === 'desc')
+		},
 	},
 	created() {
 		this.localOptions =
-			this.localStorageUtility.getItem(this.storageKey) ?? this.optionsFacade;
+			this.localStorageUtility.getItem(this.storageKey) ??
+			this.optionsFacade
 	},
-});
+})
 </script>
 
 <template>
@@ -166,7 +178,7 @@ export default defineComponent({
 			@update:options="updateOptions"
 		>
 			<template
-				v-for="(slotName) in slotNames"
+				v-for="slotName in slotNames"
 				v-slot:[slotName]="slotProps"
 			>
 				<slot :name="slotName" v-bind="slotProps ?? {}" />
@@ -178,7 +190,7 @@ export default defineComponent({
 			@update:options="updateOptions"
 		>
 			<template
-				v-for="(slotName) in slotNames"
+				v-for="slotName in slotNames"
 				v-slot:[slotName]="slotProps"
 			>
 				<slot :name="slotName" v-bind="slotProps ?? {}" />

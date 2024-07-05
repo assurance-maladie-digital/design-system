@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import DatePicker from '@/patterns/DatePicker';
+import DatePicker from '@/patterns/DatePicker'
 
-import FieldComponent from '../mixins/fieldComponent';
+import FieldComponent from '../mixins/fieldComponent'
 
 export default defineComponent({
 	components: {
-		DatePicker
+		DatePicker,
 	},
 	mixins: [FieldComponent],
 	data() {
@@ -18,12 +18,12 @@ export default defineComponent({
 	methods: {
 		dateUpdated(e: string) {
 			if (e !== this.oldValue) {
-				this.oldValue = e;
-				this.emitChangeEvent(e);
+				this.oldValue = e
+				this.emitChangeEvent(e)
 			}
-		}
-	}
-});
+		},
+	},
+})
 </script>
 
 <template>

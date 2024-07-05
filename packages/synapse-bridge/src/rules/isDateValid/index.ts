@@ -1,22 +1,32 @@
-import { ruleMessage } from '@/helpers/ruleMessage';
-import { ValidationRule, ValidationResult, ErrorMessages, Value } from '../types';
+import { ruleMessage } from '@/helpers/ruleMessage'
+import {
+	ValidationRule,
+	ValidationResult,
+	ErrorMessages,
+	Value,
+} from '../types'
 
-import { defaultErrorMessages } from './locales';
+import { defaultErrorMessages } from './locales'
 
-import { isDateValid as checkIfDateValid } from '../../functions/validation/isDateValid/index.ts';
+import { isDateValid as checkIfDateValid } from '../../functions/validation/isDateValid/index.ts'
 
 /** Check that the value is a valid date (DD/MM/YYYY format) */
-export function isDateValidFn(errorMessages: ErrorMessages = defaultErrorMessages): ValidationRule {
+export function isDateValidFn(
+	errorMessages: ErrorMessages = defaultErrorMessages
+): ValidationRule {
 	return (value: Value): ValidationResult => {
 		if (!value) {
-			return true;
+			return true
 		}
 
-		const validationResult = checkIfDateValid(value);
-		const errorMessage = typeof validationResult === 'string' ? ruleMessage(errorMessages, validationResult) : true;
+		const validationResult = checkIfDateValid(value)
+		const errorMessage =
+			typeof validationResult === 'string'
+				? ruleMessage(errorMessages, validationResult)
+				: true
 
-		return errorMessage || ruleMessage(errorMessages, 'default');
-	};
+		return errorMessage || ruleMessage(errorMessages, 'default')
+	}
 }
 
-export const isDateValid = isDateValidFn();
+export const isDateValid = isDateValidFn()

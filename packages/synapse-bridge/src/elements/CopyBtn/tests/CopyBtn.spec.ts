@@ -10,8 +10,8 @@ describe('CopyBtn', () => {
 	beforeEach(() => {
 		const navigator = {
 			clipboard: {
-				writeText: copy
-			}
+				writeText: copy,
+			},
 		} as unknown as Navigator
 
 		vi.spyOn(window, 'navigator', 'get').mockReturnValue(navigator)
@@ -27,11 +27,11 @@ describe('CopyBtn', () => {
 		const wrapper = shallowMount(CopyBtn, {
 			propsData: {
 				label: 'test',
-				textToCopy: 'test'
+				textToCopy: 'test',
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
@@ -41,11 +41,11 @@ describe('CopyBtn', () => {
 		const wrapper = mount(CopyBtn, {
 			propsData: {
 				label: 'test',
-				textToCopy: 'test'
+				textToCopy: 'test',
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		await wrapper.find('[data-test-id="copy-btn"]').trigger('click')
@@ -53,7 +53,7 @@ describe('CopyBtn', () => {
 		expect(copy).toHaveBeenCalledWith('test')
 
 		await wrapper.setProps({
-			textToCopy: () => 'function test'
+			textToCopy: () => 'function test',
 		})
 
 		await wrapper.find('[data-test-id="copy-btn"]').trigger('click')
@@ -65,11 +65,11 @@ describe('CopyBtn', () => {
 		const wrapper = mount(CopyBtn, {
 			propsData: {
 				label: 'test',
-				textToCopy: 'test'
+				textToCopy: 'test',
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		await wrapper.find('[data-test-id="copy-btn"]').trigger('click')
@@ -85,11 +85,11 @@ describe('CopyBtn', () => {
 			propsData: {
 				label: 'test',
 				textToCopy: 'test',
-				hideTooltip: true
+				hideTooltip: true,
 			},
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		await wrapper.find('[data-test-id="copy-btn"]').trigger('click')

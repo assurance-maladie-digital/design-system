@@ -1,39 +1,39 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import { RatingMixin } from '../RatingMixin';
-import { mdiStarOutline, mdiStar } from '@mdi/js';
+import { defineComponent } from 'vue'
+import { RatingMixin } from '../RatingMixin'
+import { mdiStarOutline, mdiStar } from '@mdi/js'
 export default defineComponent({
 	mixins: [RatingMixin],
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	props: {
 		length: {
 			type: Number,
-			default: 5
-		}
+			default: 5,
+		},
 	},
 	data() {
 		return {
 			starOutlineIcon: mdiStarOutline,
 			starIcon: mdiStar,
-			hoverIndex: -1
-		};
+			hoverIndex: -1,
+		}
 	},
 	computed: {
 		hasAnswered(): boolean {
-			return this.modelValue !== -1;
-		}
+			return this.modelValue !== -1
+		},
 	},
 	methods: {
 		isActive(index: number): boolean {
-			return this.modelValue - 1 === index;
+			return this.modelValue - 1 === index
 		},
 		isFilled(index: number): boolean {
-			const isHovered = this.hoverIndex >= index;
-			const isActive = this.modelValue - 1 >= index;
-			return isHovered || isActive;
-		}
-	}
-});
+			const isHovered = this.hoverIndex >= index
+			const isActive = this.modelValue - 1 >= index
+			return isHovered || isActive
+		},
+	},
+})
 </script>
 
 <template>
@@ -62,7 +62,11 @@ export default defineComponent({
 					:aria-pressed="isActive(index)"
 				>
 					<VIcon
-						:class="isFilled(index) ? 'text-am-blue' : 'text-am-blue-lighten-60'"
+						:class="
+							isFilled(index)
+								? 'text-am-blue'
+								: 'text-am-blue-lighten-60'
+						"
 						size="36px"
 						class="py-0 px-2"
 					>

@@ -1,5 +1,5 @@
 export interface ListItem {
-	text: string;
-	href: string;
-	ariaLabel?: string;
+	text: string
+	href: string
+	ariaLabel?: string
 }

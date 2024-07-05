@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { Options } from "@/mixins/customizable";
+import { Options } from '@/mixins/customizable'
 
-import deepMerge from "deepmerge";
+import deepMerge from 'deepmerge'
 
 export default defineComponent({
 	props: {
@@ -18,7 +18,7 @@ export default defineComponent({
 			default: null,
 			/** @see https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/components/VFileInput/VFileInput.ts#L71 */
 			validator(value): boolean {
-				return typeof value === "object";
+				return typeof value === 'object'
 			},
 		},
 		options: {
@@ -29,40 +29,40 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-			fileURL: "",
-		};
+			fileURL: '',
+		}
 	},
 	watch: {
 		file: {
 			handler(): void {
-				this.getFileURL();
+				this.getFileURL()
 			},
 			immediate: true,
 		},
 	},
 	computed: {
 		filePreviewOptions(): Options {
-			return deepMerge<Options>(config, this.options);
+			return deepMerge<Options>(config, this.options)
 		},
 		isPdf(): boolean {
-			return this.file?.type === "application/pdf";
+			return this.file?.type === 'application/pdf'
 		},
 		isImage(): boolean {
-			return this.file ? /^image\/.*$/.test(this.file.type) : false;
+			return this.file ? /^image\/.*$/.test(this.file.type) : false
 		},
 	},
 	methods: {
 		getFileURL(): void {
 			if (!this.file) {
-				return;
+				return
 			}
-			this.fileURL = window.URL.createObjectURL(this.file);
+			this.fileURL = window.URL.createObjectURL(this.file)
 		},
 		revokeFileURL(): void {
-			URL.revokeObjectURL(this.fileURL);
+			URL.revokeObjectURL(this.fileURL)
 		},
 	},
-});
+})
 </script>
 
 <template>

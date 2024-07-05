@@ -1,28 +1,28 @@
 <script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import { type RouteLocationRaw } from "vue-router";
-import Logo from "@/elements/Logo/Logo.vue";
-import { LogoSizeEnum } from "@/elements/Logo/LogoSizeEnum";
-import SocialMediaLinks from "./SocialMediaLinks";
-import { SocialMediaLink } from "./SocialMediaLinks/types";
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
+import { type RouteLocationRaw } from 'vue-router'
+import Logo from '@/elements/Logo/Logo.vue'
+import { LogoSizeEnum } from '@/elements/Logo/LogoSizeEnum'
+import SocialMediaLinks from './SocialMediaLinks'
+import { SocialMediaLink } from './SocialMediaLinks/types'
 import {
 	A11Y_COMPLIANCE_ENUM_VALUES,
 	A11yComplianceEnum,
-} from "./A11yComplianceEnum";
-import { config } from "./config";
-import { defaultSocialMediaLinks } from "./defaultSocialMediaLinks";
-import { locales } from "./locales";
-import { type LinkItem } from "./types";
-import { propValidator } from "@/helpers/propValidator";
-import { customizable } from "@/mixins/customizable";
-import { mdiArrowUp } from "@mdi/js";
+} from './A11yComplianceEnum'
+import { config } from './config'
+import { defaultSocialMediaLinks } from './defaultSocialMediaLinks'
+import { locales } from './locales'
+import { type LinkItem } from './types'
+import { propValidator } from '@/helpers/propValidator'
+import { customizable } from '@/mixins/customizable'
+import { mdiArrowUp } from '@mdi/js'
 
 export default defineComponent({
 	inheritAttrs: false,
 	components: {
 		SocialMediaLinks,
-		Logo
+		Logo,
 	},
 	mixins: [customizable(config)],
 	props: {
@@ -31,7 +31,7 @@ export default defineComponent({
 			default: A11yComplianceEnum.NON_COMPLIANT,
 			validator: (value: A11yComplianceEnum) =>
 				propValidator(
-					"a11y-compliance",
+					'a11y-compliance',
 					A11Y_COMPLIANCE_ENUM_VALUES,
 					value
 				),
@@ -42,23 +42,23 @@ export default defineComponent({
 		},
 		sitemapRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "sitemap" }),
+			default: () => ({ name: 'sitemap' }),
 		},
 		cguRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "cgu" }),
+			default: () => ({ name: 'cgu' }),
 		},
 		cookiesRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "cookies" }),
+			default: () => ({ name: 'cookies' }),
 		},
 		legalNoticeRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "legalNotice" }),
+			default: () => ({ name: 'legalNotice' }),
 		},
 		a11yStatementRoute: {
 			type: [Array, Object, String] as PropType<RouteLocationRaw>,
-			default: () => ({ name: "a11yStatement" }),
+			default: () => ({ name: 'a11yStatement' }),
 		},
 		hideSitemapLink: {
 			type: Boolean,
@@ -105,72 +105,75 @@ export default defineComponent({
 		return {
 			locales,
 			arrowTopIcon: mdiArrowUp,
-		};
+		}
 	},
 	computed: {
 		a11yComplianceLabel(): string {
-			const complianceLabel = locales[this.a11yCompliance as A11yComplianceEnum];
+			const complianceLabel =
+				locales[this.a11yCompliance as A11yComplianceEnum]
 
-			return locales.a11yLabel(complianceLabel);
+			return locales.a11yLabel(complianceLabel)
 		},
 
 		extendedMode(): boolean {
-			return Boolean(this.$slots.default);
+			return Boolean(this.$slots.default)
 		},
 
 		logoSize(): LogoSizeEnum {
-			return this.$vuetify.display.smAndDown ? LogoSizeEnum.SMALL : LogoSizeEnum.NORMAL;
+			return this.$vuetify.display.smAndDown
+				? LogoSizeEnum.SMALL
+				: LogoSizeEnum.NORMAL
 		},
 
 		footerLinksMapping(): LinkItem[] {
 			if (this.linkItems) {
-				return this.linkItems;
+				return this.linkItems
 			}
 
 			const linksMapping = [
 				{
 					text: locales.sitemapLabel,
 					to: this.sitemapRoute,
-					hidden: this.hideSitemapLink
+					hidden: this.hideSitemapLink,
 				},
 				{
 					text: locales.cguLabel,
 					to: this.cguRoute,
-					hidden: this.hideCguLink
+					hidden: this.hideCguLink,
 				},
 				{
 					text: locales.cookiesLabel,
 					to: this.cookiesRoute,
-					hidden: this.hideCookiesLink
+					hidden: this.hideCookiesLink,
 				},
 				{
 					text: locales.legalNoticeLabel,
 					to: this.legalNoticeRoute,
-					hidden: this.hideLegalNoticeLink
+					hidden: this.hideLegalNoticeLink,
 				},
 				{
 					text: this.a11yComplianceLabel,
 					to: this.a11yStatementRoute,
-					hidden: this.hideA11yLink
-				}
-			];
+					hidden: this.hideA11yLink,
+				},
+			]
 
-			return linksMapping.filter((item) => !item.hidden);
-		}
+			return linksMapping.filter((item) => !item.hidden)
+		},
 	},
 	methods: {
 		getLinkComponent(item: LinkItem): string {
-			return item.href ? 'a' : 'RouterLink';
+			return item.href ? 'a' : 'RouterLink'
 		},
 
 		scrollToTop(): void {
 			window.scrollTo({
 				top: 0,
-				behavior: 'smooth'
-			});
-		}
-	}
-});
+				behavior: 'smooth',
+			})
+		},
+	},
+})
 </script>
 
 <template>
@@ -179,7 +182,10 @@ export default defineComponent({
 			...options.footer,
 			...$attrs,
 		}"
-		:class="{ 'py-4 py-sm-7 px-4 px-md-14': extendedMode, 'theme--dark': dark}"
+		:class="{
+			'py-4 py-sm-7 px-4 px-md-14': extendedMode,
+			'theme--dark': dark,
+		}"
 		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
 	>
@@ -234,10 +240,7 @@ export default defineComponent({
 		>
 			<slot name="prepend" />
 
-			<li
-				v-for="(item, index) in footerLinksMapping"
-				:key="index"
-			>
+			<li v-for="(item, index) in footerLinksMapping" :key="index">
 				<component
 					:is="getLinkComponent(item)"
 					:href="item.href"
@@ -262,7 +265,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 
 $white: #fff;
 
@@ -271,11 +274,11 @@ a {
 }
 
 :deep() .text-primary {
-	color: rgba(0,0,0, .87) !important;
+	color: rgba(0, 0, 0, 0.87) !important;
 }
 
 :deep() .text-secondary {
-	color: rgba(0,0,0, .6) !important;
+	color: rgba(0, 0, 0, 0.6) !important;
 }
 
 .v-btn--icon {
@@ -336,6 +339,6 @@ a {
 	}
 }
 .theme--dark button.v-btn:hover :deep() {
-	background: rgba(white , 0.1);
+	background: rgba(white, 0.1);
 }
 </style>

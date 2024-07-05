@@ -1,39 +1,36 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
-	import HeaderLoading from '@/elements/HeaderLoading'
+import HeaderLoading from '@/elements/HeaderLoading'
 
-	export default defineComponent({
-		components: {
-			HeaderLoading,
+export default defineComponent({
+	components: {
+		HeaderLoading,
+	},
+	props: {
+		itemsNumber: {
+			type: Number,
+			default: 1,
 		},
-		props: {
-			itemsNumber: {
-				type: Number,
-				default: 1,
-			},
-			heading: {
-				type: Boolean,
-				default: false,
-			},
-			row: {
-				type: Boolean,
-				default: false,
-			},
+		heading: {
+			type: Boolean,
+			default: false,
 		},
-		computed: {
-			itemWidth(): string {
-				return this.row ? '150px' : '90px'
-			},
+		row: {
+			type: Boolean,
+			default: false,
 		},
-	})
+	},
+	computed: {
+		itemWidth(): string {
+			return this.row ? '150px' : '90px'
+		},
+	},
+})
 </script>
 
 <template>
-	<div
-		aria-hidden="true"
-		class="vd-data-list-loading"
-	>
+	<div aria-hidden="true" class="vd-data-list-loading">
 		<HeaderLoading
 			v-if="heading"
 			width="100px"
@@ -55,10 +52,7 @@
 					class="mb-1"
 				/>
 
-				<HeaderLoading
-					:width="itemWidth"
-					height="1.5rem"
-				/>
+				<HeaderLoading :width="itemWidth" height="1.5rem" />
 			</li>
 		</ul>
 	</div>

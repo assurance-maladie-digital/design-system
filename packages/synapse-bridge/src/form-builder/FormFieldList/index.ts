@@ -1,3 +1,3 @@
-import FormFieldList from './FormFieldList.vue';
+import FormFieldList from './FormFieldList.vue'
 
-export default FormFieldList;
+export default FormFieldList
