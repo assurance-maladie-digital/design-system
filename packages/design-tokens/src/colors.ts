@@ -1,5 +1,5 @@
 import { toKebabCase } from './utils';
-import { Palette, VuetifyTheme, Colors, IndexedObject, ColorsBootstrap } from './types';
+import type { Palette, VuetifyTheme, Colors, IndexedObject, ColorsBootstrap } from './types';
 import { paletteBootstrap } from './boostrapColors';
 
 export const palette: Palette = {
