@@ -1,4 +1,4 @@
-import { Module, ActionTree, MutationTree, GetterTree } from 'vuex'
+import type { Module, ActionTree, MutationTree, GetterTree } from 'vuex'
 
 import type { RootState } from '../'
 import type { NotificationState, NotificationObj } from './types'
