@@ -1,4 +1,4 @@
-import { Commit } from 'vuex'
+import type { Commit } from 'vuex'
 
 import type { NotificationState, NotificationObj } from './types'
 
