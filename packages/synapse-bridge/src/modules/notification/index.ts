@@ -1,7 +1,7 @@
-import { Module, ActionTree, MutationTree, GetterTree } from 'vuex'
+import type { Module, ActionTree, MutationTree, GetterTree } from 'vuex'
 
-import { RootState } from '../'
-import { NotificationState, NotificationObj } from './types'
+import type { RootState } from '../'
+import type { NotificationState, NotificationObj } from './types'
 
 import { notify } from './notify'
 

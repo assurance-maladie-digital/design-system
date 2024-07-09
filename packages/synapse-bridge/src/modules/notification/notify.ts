@@ -1,6 +1,6 @@
-import { Commit } from 'vuex'
+import type { Commit } from 'vuex'
 
-import { NotificationState, NotificationObj } from './types'
+import type { NotificationState, NotificationObj } from './types'
 
 /** Commit mutation to add a notification */
 export function notify(
