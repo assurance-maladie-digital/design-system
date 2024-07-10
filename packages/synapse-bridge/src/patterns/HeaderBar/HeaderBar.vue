@@ -339,6 +339,7 @@ export default defineComponent({
 :deep(.v-toolbar--absolute) {
 	position: fixed;
 	top: 0;
+	left: 0;
 }
 :deep(.v-toolbar--rounded) {
 	border-radius: 20px 0;
