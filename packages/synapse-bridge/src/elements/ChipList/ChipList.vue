@@ -3,7 +3,7 @@
 	import type { PropType } from 'vue'
 
 	import { locales } from './locales'
-	import { ChipItem } from './types'
+	import { type ChipItem } from './types'
 
 	import { mdiChevronUp, mdiWindowClose } from '@mdi/js'
 
@@ -55,21 +55,34 @@
 		}"
 		class="vd-chip-list d-flex flex-wrap max-width-none mx-n1 mt-n1"
 	>
-		<div class="d-flex flex-wrap align-center mr-1">
+		<div class="d-flex flex-wrap align-center">
 			<VChip
 				v-for="item in filteredItems"
 				:key="item.text"
-				:close-icon="deleteIcon"
-				:close-label="locales.closeBtnLabel"
 				color="cyan-darken-40"
 				text-color="white"
-				closable
 				size="small"
 				variant="flat"
 				class="ma-1"
-				@click:close="emitRemoveEvent(item)"
 			>
-				{{ item.text }}
+				<div
+					class="d-flex align-center ga-sm-1 pl-1"
+				>
+					<span>{{ item.text }}</span>
+					<VBtn
+						icon="mdi-close"
+						variant="text"
+						:aria-label="locales.closeBtnLabel"
+						density="compact"
+						size="small"
+						class="vd-remove-chip"
+						@click="emitRemoveEvent(item)"
+					>
+						<VIcon
+							size="default"
+						>{{ deleteIcon }}</VIcon>
+					</VBtn>
+				</div>
 			</VChip>
 		</div>
 

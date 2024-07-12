@@ -65,7 +65,7 @@ describe('ChipList', () => {
 			},
 		})
 
-		await wrapper.find('.v-chip__close').trigger('click')
+		await wrapper.find('.vd-remove-chip').trigger('click')
 
 		expect(wrapper.emitted('remove')).toBeTruthy()
 	})

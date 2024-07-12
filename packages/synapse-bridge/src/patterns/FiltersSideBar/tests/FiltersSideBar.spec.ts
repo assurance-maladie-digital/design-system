@@ -125,7 +125,7 @@ describe("FilterSideBar", () => {
 
 		await wrapper.find('.v-expansion-panel-title').trigger('click');
 
-		await wrapper.find('.v-chip__close').trigger('click');
+		await wrapper.find('.vd-remove-chip').trigger('click');
 
 		await wrapper.find('button:nth-child(3)').trigger('click');
 
