@@ -2,7 +2,7 @@ import { defineComponent } from 'vue'
 
 import { parseDate } from '@/helpers/parseDate'
 
-import { Refs } from '@/types'
+import type { Refs } from '@/types'
 import { VMenu, VTextField } from 'vuetify/components'
 import { WarningRules } from '@/mixins/warningRules'
 import dayjs from 'dayjs'

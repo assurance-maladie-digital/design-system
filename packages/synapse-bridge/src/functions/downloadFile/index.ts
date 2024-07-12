@@ -1,4 +1,4 @@
-import { BufferSource } from './types'
+import type { BufferSource } from './types'
 
 /** Download a file */
 export function downloadFile(

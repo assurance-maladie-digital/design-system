@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 
-import { FileListItem } from '../types'
+import type { FileListItem } from '../types'
 
 type FileList = Partial<FileListItem>
 

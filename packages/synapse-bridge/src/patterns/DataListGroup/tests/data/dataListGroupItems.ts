@@ -1,5 +1,5 @@
-import { DataList } from '@/elements/DataList/types'
-import { DataListGroupItems } from '../../types'
+import type { DataList } from '@/elements/DataList/types'
+import type { DataListGroupItems } from '../../types'
 
 export const dataListItems: DataList = [
 	{

@@ -4,7 +4,7 @@ import { shallowMount } from '@vue/test-utils'
 import { defineComponent } from 'vue'
 
 import ChoiceComponent from '../choiceComponent'
-import { ChoiceFieldValue, FieldOptions, FieldItem } from '../../types'
+import type { ChoiceFieldValue, FieldOptions, FieldItem } from '../../types'
 
 interface TestComponent {
 	modelValue?: ChoiceFieldValue

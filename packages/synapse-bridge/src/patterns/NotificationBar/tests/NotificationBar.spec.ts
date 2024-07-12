@@ -1,5 +1,5 @@
 import { notification } from '@/modules/notification'
-import { NotificationObj } from '@/modules/notification/types'
+import type { NotificationObj } from '@/modules/notification/types'
 import { vuetify } from '@tests/unit/setup'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'

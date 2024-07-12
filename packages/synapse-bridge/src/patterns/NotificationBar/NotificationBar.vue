@@ -11,7 +11,7 @@ import {
 import { config } from './config'
 import { locales } from './locales'
 import { customizable } from '@/mixins/customizable'
-import { IndexedObject } from '@/types'
+import type { IndexedObject } from '@/types'
 
 export default defineComponent({
 	mixins: [customizable(config)],

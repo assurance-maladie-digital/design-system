@@ -1,4 +1,4 @@
-import { Form } from '../../types'
+import type { Form } from '../../types'
 
 const scheduleItems = [
 	{

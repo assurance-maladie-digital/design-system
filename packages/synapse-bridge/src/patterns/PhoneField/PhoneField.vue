@@ -8,7 +8,7 @@ import { Options } from '@/mixins/customizable'
 
 import { required } from '@/rules/required'
 import { exactLength } from '@/rules/exactLength'
-import { ValidationRule } from '@/rules/types'
+import type { ValidationRule } from '@/rules/types'
 
 import { mdiPhone } from '@mdi/js'
 

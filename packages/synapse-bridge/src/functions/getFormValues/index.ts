@@ -1,6 +1,6 @@
-import { FormValues } from './types'
+import type { FormValues } from './types'
 
-import { Form } from '@/form-builder/FormBuilder/types'
+import type { Form } from '@/form-builder/FormBuilder/types'
 
 /** Return an array with field values */
 export function getFormValues(form: Form): FormValues {

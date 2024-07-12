@@ -1,5 +1,5 @@
 import { TypeEnum } from './CookiesInformation/TypeEnum'
-import { CookiesList } from './CookiesTable/types'
+import type { CookiesList } from './CookiesTable/types'
 
 export type CookiesPageItems = {
 	[key in TypeEnum]?: CookiesList[]

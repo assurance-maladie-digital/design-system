@@ -3,12 +3,12 @@ import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
 
 import { locales } from './locales'
-import { CookiesPageItems, Preferences } from './types'
+import type { CookiesPageItems, Preferences } from './types'
 
 import CookiesInformation from './CookiesInformation'
 import PageContainer from '@/elements/PageContainer'
 
-import { VForm } from '@/types'
+import type { VForm } from '@/types'
 import { TypeEnum } from './CookiesInformation/TypeEnum'
 
 export default defineComponent({
