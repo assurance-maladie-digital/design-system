@@ -135,7 +135,8 @@
 		watch: {
 			value: {
 				handler(value: string | null) {
-					if (!value) {
+
+					if (!value && !this.keyValue) {
 						this.numberValue = null;
 						this.keyValue = null;
 						this.numberErrors = [];
@@ -144,14 +145,14 @@
 						return;
 					}
 
-					if (this.value.length >= FieldTypesEnum.SINGLE) {
+					if (this.nirLength === FieldTypesEnum.SINGLE) {
 						this.numberValue = value;
+
+						return;
 					}
 
-					if (this.value.length === FieldTypesEnum.DOUBLE) {
-						this.numberValue = value.slice(0, -KEY_LENGTH);
-						this.keyValue = value.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH);
-					}
+					this.numberValue = value?.slice(0, NUMBER_LENGTH) ?? '';
+					this.keyValue = this.keyValue ?? value?.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH) ?? '';
 				},
 				immediate: true
 			}
@@ -286,6 +287,13 @@
 		get rawInternalValue(): string | null {
 			const numberValue = this.numberValue ?? '';
 			const keyValue = this.keyValue ?? '';
+
+			if (
+				!this.isSingleField
+				&& numberValue.length < NUMBER_LENGTH
+			) {
+				return numberValue;
+			}
 
 			return numberValue + keyValue;
 		}
