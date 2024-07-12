@@ -1,4 +1,4 @@
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export const ErrorProp = defineComponent({
 	props: {
@@ -10,12 +10,12 @@ export const ErrorProp = defineComponent({
 	computed: {
 		internalErrorProp: {
 			get() {
-				return this.error;
+				return this.error
 			},
 			set(value: unknown) {
-				this.$emit("update:error", value);
+				this.$emit('update:error', value)
 			},
 		},
 	},
 	template: `<div></div>`,
-});
+})

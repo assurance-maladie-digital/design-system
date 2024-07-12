@@ -1,3 +1,3 @@
-import FormBuilder from './FormBuilder.vue';
+import FormBuilder from './FormBuilder.vue'
 
-export default FormBuilder;
+export default FormBuilder

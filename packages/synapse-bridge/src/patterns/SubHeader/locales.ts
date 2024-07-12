@@ -1,3 +1,3 @@
 export const locales = {
-	backBtnText: 'Retour'
-};
+	backBtnText: 'Retour',
+}

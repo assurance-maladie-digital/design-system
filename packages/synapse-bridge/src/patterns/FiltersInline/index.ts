@@ -1,3 +1,3 @@
-import FiltersInline from './FiltersInline.vue';
+import FiltersInline from './FiltersInline.vue'
 
-export default FiltersInline;
+export default FiltersInline

@@ -1,32 +1,32 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import dayjs from "dayjs";
-import deepMerge from "deepmerge";
-import { mapActions } from "vuex";
+import dayjs from 'dayjs'
+import deepMerge from 'deepmerge'
+import { mapActions } from 'vuex'
 
-import { AxiosResponse } from "axios";
-import { parse } from "content-disposition-header";
+import { AxiosResponse } from 'axios'
+import { parse } from 'content-disposition-header'
 
-import { mdiDownload } from "@mdi/js";
+import { mdiDownload } from '@mdi/js'
 
-import { downloadFile } from "@/functions/downloadFile";
+import { downloadFile } from '@/functions/downloadFile'
 
-import { customizable, Options } from "@/mixins/customizable";
+import { customizable, Options } from '@/mixins/customizable'
 
-import { StateEnum } from "@/constants/enums/StateEnum";
-import { IndexedObject } from "@/types";
-import { ContentHeadersEnum } from "./ContentHeadersEnum";
-import { FileInfo } from "./types";
+import { StateEnum } from '@/constants/enums/StateEnum'
+import { IndexedObject } from '@/types'
+import { ContentHeadersEnum } from './ContentHeadersEnum'
+import { FileInfo } from './types'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
-	emits: ["error"],
+	emits: ['error'],
 	props: {
 		filePromise: {
 			type: Function as PropType<() => Promise<AxiosResponse<Blob>>>,
@@ -47,65 +47,65 @@ export default defineComponent({
 			StateEnum,
 			downloadIcon: mdiDownload,
 			state: StateEnum.IDLE,
-		};
+		}
 	},
 	computed: {
 		btnOptions(): Options {
-			return deepMerge<Options>(this.options.btn, this.$attrs);
+			return deepMerge<Options>(this.options.btn, this.$attrs)
 		},
 	},
 	methods: {
 		...mapActions('notification', ['addNotification']),
 		getTimestampFilename(): string {
-			return dayjs().format("YYYY-MM-DD - HH[h]mm[m]ss[s]");
+			return dayjs().format('YYYY-MM-DD - HH[h]mm[m]ss[s]')
 		},
 		getFileInfo(headers: IndexedObject): FileInfo {
-			const contentType = headers[ContentHeadersEnum.TYPE];
+			const contentType = headers[ContentHeadersEnum.TYPE]
 			const contentDispositionHeader = headers[
 				ContentHeadersEnum.DISPOSITION
-			] as string;
-			let filename: string | null = null;
+			] as string
+			let filename: string | null = null
 			try {
-				filename = parse(contentDispositionHeader).parameters.filename;
+				filename = parse(contentDispositionHeader).parameters.filename
 			} catch {
-				filename = this.fallbackFilename || this.getTimestampFilename();
+				filename = this.fallbackFilename || this.getTimestampFilename()
 			}
 			return {
 				name: filename as string,
 				type: contentType,
-			};
+			}
 		},
 		notifyUser(): void {
 			const message =
-				typeof this.notification === "boolean"
+				typeof this.notification === 'boolean'
 					? locales.downloadSuccess
-					: (this.notification as string);
+					: (this.notification as string)
 			this.addNotification({
-				type: "success",
+				type: 'success',
 				message,
-			});
+			})
 		},
 		async download(): Promise<void> {
-			this.state = StateEnum.PENDING;
+			this.state = StateEnum.PENDING
 
 			try {
-				const { data, headers } = await this.filePromise();
+				const { data, headers } = await this.filePromise()
 				const { name, type } = this.getFileInfo(
 					headers as IndexedObject
-				);
-				downloadFile(data, name, type);
-				this.state = StateEnum.RESOLVED;
+				)
+				downloadFile(data, name, type)
+				this.state = StateEnum.RESOLVED
 			} catch (error) {
-				this.$emit("error", error);
-				this.state = StateEnum.REJECTED;
-				return;
+				this.$emit('error', error)
+				this.state = StateEnum.REJECTED
+				return
 			}
 			if (this.notification) {
-				this.notifyUser();
+				this.notifyUser()
 			}
 		},
 	},
-});
+})
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { locales } from './locales';
+import { locales } from './locales'
 
-import ErrorPage from "@/templates/ErrorPage";
+import ErrorPage from '@/templates/ErrorPage'
 
 export default defineComponent({
 	components: {
@@ -12,9 +12,9 @@ export default defineComponent({
 	data() {
 		return {
 			locales,
-		};
+		}
 	},
-});
+})
 </script>
 
 <template>
@@ -27,7 +27,7 @@ export default defineComponent({
 			<img
 				src="@/assets/images/maintenance.svg"
 				:alt="locales.pageTitle"
-			>
+			/>
 		</template>
 	</ErrorPage>
 </template>

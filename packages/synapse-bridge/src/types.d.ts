@@ -1,4 +1,4 @@
-import {NavigationGuardNext} from "vue-router";
+import { NavigationGuardNext } from 'vue-router'
 /**
 /**
  * Extend $refs, eg:
@@ -9,14 +9,14 @@ import {NavigationGuardNext} from "vue-router";
 export type Refs<T extends Record<string, unknown>> = Vue['$refs'] & T
 
 export interface IndexedObject<Type = string> {
-	[key: string]: Type;
+	[key: string]: Type
 }
 
-export type Next = NavigationGuardNext<Vue>;
+export type Next = NavigationGuardNext<Vue>
 
 export interface Dimensions {
-	width: string;
-	height: string;
+	width: string
+	height: string
 }
 
 export interface VForm {
@@ -29,9 +29,9 @@ export interface VForm {
 }
 
 interface InputFacadeEventTarget extends EventTarget {
-	unmaskedValue: string;
+	unmaskedValue: string
 }
 
 export interface InputFacadeEvent extends Event {
-	target: InputFacadeEventTarget;
+	target: InputFacadeEventTarget
 }

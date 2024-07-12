@@ -1,4 +1,4 @@
 export const locales = {
 	search: 'Rechercher',
-	checkboxLabel: 'Sélectionner la valeur'
-};
+	checkboxLabel: 'Sélectionner la valeur',
+}

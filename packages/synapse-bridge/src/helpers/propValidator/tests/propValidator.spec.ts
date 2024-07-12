@@ -1,4 +1,12 @@
-import { describe, it, expect, afterEach, vi, SpyInstance, beforeEach } from 'vitest'
+import {
+	describe,
+	it,
+	expect,
+	afterEach,
+	vi,
+	SpyInstance,
+	beforeEach,
+} from 'vitest'
 import { propValidator } from '../'
 
 const PROP_NAME = 'test'
@@ -8,7 +16,9 @@ describe('propValidator', () => {
 	let consoleErrorSpy: SpyInstance
 
 	beforeEach(() => {
-		consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+		consoleErrorSpy = vi
+			.spyOn(console, 'error')
+			.mockImplementation(() => {})
 	})
 
 	it('does not log anything if the prop is valid', () => {

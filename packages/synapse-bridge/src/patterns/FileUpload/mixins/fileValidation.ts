@@ -1,12 +1,12 @@
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { getFileExtension } from "@/functions/getFileExtension";
+import { getFileExtension } from '@/functions/getFileExtension'
 
-import { locales } from "../locales";
+import { locales } from '../locales'
 
-import { ErrorEvent } from "../types";
-import { ErrorCodes } from "../errorCodes";
+import type { ErrorEvent } from '../types'
+import { ErrorCodes } from '../errorCodes'
 
 export default defineComponent({
 	props: {
@@ -24,77 +24,77 @@ export default defineComponent({
 		},
 		allowedExtensions: {
 			type: Array as PropType<string[]>,
-			default: (): string[] => ["pdf", "jpg", "jpeg", "png"],
+			default: (): string[] => ['pdf', 'jpg', 'jpeg', 'png'],
 		},
 		accept: {
 			type: String,
 			default: undefined,
-		}
+		},
 	},
-	emits: ["error"],
+	emits: ['error'],
 	data() {
 		return {
 			files: [] as File[],
 			error: false,
-		};
+		}
 	},
 	computed: {
 		computedAccept(): string {
 			if (this.accept) {
-				return this.accept;
+				return this.accept
 			}
 
-			const accept: string[] = [];
+			const accept: string[] = []
 
 			this.allowedExtensions.forEach((type: string) => {
-				accept.push(`.${type}`);
-			});
+				accept.push(`.${type}`)
+			})
 
-			return accept.join(",");
+			return accept.join(',')
 		},
 	},
 	methods: {
 		validateFile(file: File): boolean {
 			if (file.size >= this.fileSizeMax) {
-				this.error = true;
+				this.error = true
 
-				this.$emit("error", {
+				this.$emit('error', {
 					file,
 					code: ErrorCodes.FILE_TOO_LARGE,
-				});
+				})
 
-				return false;
+				return false
 			}
 
-			const fileExt = getFileExtension(file.name).toLowerCase();
+			const fileExt = getFileExtension(file.name).toLowerCase()
 
 			if (!this.allowedExtensions.includes(fileExt)) {
-				this.error = true;
+				this.error = true
 
-				this.$emit("error", {
+				this.$emit('error', {
 					file,
 					code: ErrorCodes.FILE_EXTENSION_NOT_ALLOWED,
-				});
+				})
 
-				return false;
+				return false
 			}
 
-			this.files.push(file);
+			this.files.push(file)
 
-			return true;
+			return true
 		},
 
 		ifTooManyFiles(files: FileList | DataTransferItemList): boolean {
 			if (!this.multiple && files.length > 1) {
-				this.$emit("error", {
+				this.$emit('error', {
 					file: files,
 					code: ErrorCodes.MULTIPLE_FILES_SELECTED,
-				} as ErrorEvent);
+				} as ErrorEvent)
 
-				return true;
+				return true
 			}
 
-			return false;
+			return false
 		},
 	},
-});
+})

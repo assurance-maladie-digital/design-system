@@ -3,7 +3,7 @@ export const config = {
 		hint: 'Format JJ/MM/AAAA',
 		label: 'Date',
 		persistentHint: true,
-		validateOnBlur: true
+		validateOnBlur: true,
 	},
 	menu: {
 		minWidth: '290px',
@@ -12,7 +12,7 @@ export const config = {
 	},
 	btn: {
 		icon: true,
-		variant: 'text'
+		variant: 'text',
 	},
 	datePicker: {
 		hideHeader: true,
@@ -20,5 +20,5 @@ export const config = {
 	},
 	icon: {
 		color: '#808080',
-	}
-};
+	},
+}

@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import { themeIcon } from "./mixins/themeIcon";
+import { defineComponent } from 'vue'
+import { themeIcon } from './mixins/themeIcon'
 
 export default defineComponent({
 	mixins: [themeIcon],
@@ -11,7 +11,7 @@ export default defineComponent({
 		 */
 		color: {
 			type: String,
-			default: "currentColor",
+			default: 'currentColor',
 		},
 		/** Make the icon small (1em) */
 		small: {
@@ -56,10 +56,10 @@ export default defineComponent({
 				return undefined
 			}
 
-			return this.getThemeIcon();
+			return this.getThemeIcon()
 		},
 	},
-});
+})
 </script>
 
 <template>

@@ -45,54 +45,49 @@ function generateVuetifyGlobals() {
 		'VSlider',
 		'VTextarea',
 		'transitions',
-	];
+	]
 
-	const globals = {};
+	const globals = {}
 
 	for (const component of components) {
-		globals[`vuetify/lib/components/${component}/index.mjs`] = component;
+		globals[`vuetify/lib/components/${component}/index.mjs`] = component
 	}
-	globals['vuetify/components/VSkeletonLoader'] = 'VSkeletonLoader';
-	globals['vuetify/lib/directives/index.mjs'] = 'vuetifyDirectives';
+	globals['vuetify/components/VSkeletonLoader'] = 'VSkeletonLoader'
+	globals['vuetify/lib/directives/index.mjs'] = 'vuetifyDirectives'
 
-	return globals;
+	return globals
 }
 export default defineConfig(({ mode }) => {
 	const config = {
 		plugins: [
 			vue({
-				template: { transformAssetUrls }
+				template: { transformAssetUrls },
 			}),
-			vuetify(
-				{
-					autoImport: true,
-					styles: 'sass'
-				}
-			),
+			vuetify({
+				autoImport: true,
+				styles: 'sass',
+			}),
 			dts({
-				rollupTypes: true
-			})
+				rollupTypes: true,
+			}),
 		],
 		define: {
-			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false
+			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
 		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url)),
-				'@tests': fileURLToPath(new URL('./tests', import.meta.url))
-			}
+				'@tests': fileURLToPath(new URL('./tests', import.meta.url)),
+			},
 		},
 		build: {
 			lib: {
 				entry: resolve(__dirname, 'src/main.ts'),
 				name: 'SynapseBridge',
-				fileName: 'synapse-bridge'
+				fileName: 'synapse-bridge',
 			},
 			rollupOptions: {
-				external: [
-					'vue',
-					/vuetify/,
-				],
+				external: ['vue', /vuetify/],
 				output: {
 					globals: {
 						vue: 'Vue',
@@ -100,24 +95,28 @@ export default defineConfig(({ mode }) => {
 						'vuetify/directives': 'vuetifyDirectives',
 						'vuetify/lib/directives': 'vuetifyDirectives',
 						...generateVuetifyGlobals(),
-					}
-				}
-			}
-		}
+					},
+				},
+			},
+		},
 	}
 
 	if (mode === 'development') {
-		config.plugins.push(vuetify({
-			styles: {
-				configFile: 'src/styles/settings.scss'
-			}
-		}) as unknown as Plugin)
+		config.plugins.push(
+			vuetify({
+				styles: {
+					configFile: 'src/styles/settings.scss',
+				},
+			}) as unknown as Plugin
+		)
 	}
 
 	if (mode === 'analyze') {
-		config.plugins.push(visualizer({
-			filename: 'dist/stats.html'
-		}))
+		config.plugins.push(
+			visualizer({
+				filename: 'dist/stats.html',
+			})
+		)
 	}
 
 	return config

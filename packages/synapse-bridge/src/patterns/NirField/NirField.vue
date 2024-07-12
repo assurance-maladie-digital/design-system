@@ -1,57 +1,57 @@
 <script lang="ts">
-import {defineComponent} from "vue";
-import {config} from "./config";
-import {locales} from "./locales";
-import type {Refs} from "@/types";
-import {customizable} from "@/mixins/customizable";
-import {exactLength} from "@/rules/exactLength";
-import {requiredFn} from '@/rules/required';
-import {vMaska} from "maska";
-import {mdiInformationOutline} from "@mdi/js";
-import deepMerge from "deepmerge";
-import {ValidationRule} from "@/rules/types";
+import { defineComponent } from 'vue'
+import { config } from './config'
+import { locales } from './locales'
+import type { Refs } from '@/types'
+import { customizable } from '@/mixins/customizable'
+import { exactLength } from '@/rules/exactLength'
+import { requiredFn } from '@/rules/required'
+import { vMaska } from 'maska'
+import { mdiInformationOutline } from '@mdi/js'
+import deepMerge from 'deepmerge'
+import { ValidationRule } from '@/rules/types'
 
-const NUMBER_LENGTH = 13;
-const KEY_LENGTH = 2;
+const NUMBER_LENGTH = 13
+const KEY_LENGTH = 2
 
-const SINGLE_FIELD = NUMBER_LENGTH;
-const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH;
+const SINGLE_FIELD = NUMBER_LENGTH
+const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH
 
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
-	directives: {maska: vMaska},
-	emits: ["update:modelValue"],
+	directives: { maska: vMaska },
+	emits: ['update:modelValue'],
 	props: {
 		modelValue: {
 			type: String,
-			default: null
+			default: null,
 		},
 		nirLength: {
 			type: Number,
 			default: DOUBLE_FIELD,
 			validator(value: number): boolean {
-				return [SINGLE_FIELD, DOUBLE_FIELD].includes(value);
-			}
+				return [SINGLE_FIELD, DOUBLE_FIELD].includes(value)
+			},
 		},
 		required: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		outlined: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		tooltip: {
 			type: String,
-			default: undefined
-		}
+			default: undefined,
+		},
 	},
 	data() {
 		return {
 			$refs: {} as Refs<{
-				numberField: HTMLElement;
-				keyField: HTMLElement;
+				numberField: HTMLElement
+				keyField: HTMLElement
 			}>,
 
 			locales,
@@ -59,16 +59,16 @@ export default defineComponent({
 			infoIcon: mdiInformationOutline,
 
 			maskaNumberValue: {
-				masked: "",
-				unmasked: "",
-				completed: false
+				masked: '',
+				unmasked: '',
+				completed: false,
 			},
 
 			numberValue: '',
 			keyValue: '',
 
 			numberMask: {
-				mask: "# ## ## #C ### ###",
+				mask: '# ## ## #C ### ###',
 				preProcess: (value: string) => value.toUpperCase(),
 				tokens: {
 					C: {
@@ -77,56 +77,69 @@ export default defineComponent({
 					},
 				},
 			},
-			keyMask: {mask: "##"},
+			keyMask: { mask: '##' },
 
 			numberErrors: [] as string[],
 			keyErrors: [] as string[],
 			isSingleField: false,
 			isInputFocused: false,
-		};
+		}
 	},
 	watch: {
 		keyValue(newVal: string) {
-			this.$emit("update:modelValue", this.maskaNumberValue.unmasked + newVal);
+			this.$emit(
+				'update:modelValue',
+				this.maskaNumberValue.unmasked + newVal
+			)
 		},
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
 				if (!newValue) {
-					return;
+					return
 				}
 				if (newValue.length === NUMBER_LENGTH) {
 					this.validateNumberValue()
 				}
 				if (newValue.length >= NUMBER_LENGTH) {
-					this.numberValue = newValue.slice(0, NUMBER_LENGTH);
-					this.keyValue = newValue.slice(NUMBER_LENGTH);
+					this.numberValue = newValue.slice(0, NUMBER_LENGTH)
+					this.keyValue = newValue.slice(NUMBER_LENGTH)
 				}
-				if (newValue.length === NUMBER_LENGTH + KEY_LENGTH || !this.isSingleField) {
-					this.validateKeyValue();
+				if (
+					newValue.length === NUMBER_LENGTH + KEY_LENGTH ||
+					!this.isSingleField
+				) {
+					this.validateKeyValue()
 				}
-			}
-		}
+			},
+		},
 	},
 	created(): void {
-		this.isSingleField = this.nirLength === SINGLE_FIELD;
+		this.isSingleField = this.nirLength === SINGLE_FIELD
 	},
 	mounted(): void {
-		const textField = this.$refs.numberField as any;
-		const keyField = this.$refs.keyField as any;
-		if (textField.hint === '13 caractères' || keyField?.hint === '2 chiffres') {
+		const textField = this.$refs.numberField as any
+		const keyField = this.$refs.keyField as any
+		if (
+			textField.hint === '13 caractères' ||
+			keyField?.hint === '2 chiffres'
+		) {
 			// add a class to hint
-			textField.$el.querySelector('.v-messages__message').classList.add('vd-nir-field__hint');
-			keyField?.$el.querySelector('.v-messages__message').classList.add('vd-nir-field__hint');
+			textField.$el
+				.querySelector('.v-messages__message')
+				.classList.add('vd-nir-field__hint')
+			keyField?.$el
+				.querySelector('.v-messages__message')
+				.classList.add('vd-nir-field__hint')
 		}
 	},
 	computed: {
 		numberFilled(): boolean {
-			return this.maskaNumberValue.unmasked?.length === NUMBER_LENGTH;
+			return this.maskaNumberValue.unmasked?.length === NUMBER_LENGTH
 		},
 
 		keyFilled(): boolean {
-			return this.keyValue?.length === KEY_LENGTH;
+			return this.keyValue?.length === KEY_LENGTH
 		},
 
 		/**
@@ -134,14 +147,16 @@ export default defineComponent({
 		 */
 		numberRules(): ValidationRule[] {
 			let rules = [
-				exactLength(NUMBER_LENGTH, true, {default: locales.errorLengthNumber})
-			];
+				exactLength(NUMBER_LENGTH, true, {
+					default: locales.errorLengthNumber,
+				}),
+			]
 
 			if (this.required) {
-				rules.push(requiredFn({default: locales.errorRequiredNumber}));
+				rules.push(requiredFn({ default: locales.errorRequiredNumber }))
 			}
 
-			return rules;
+			return rules
 		},
 
 		/**
@@ -149,65 +164,80 @@ export default defineComponent({
 		 */
 		keyRules(): ValidationRule[] {
 			let rules = [
-				exactLength(KEY_LENGTH, true, {default: locales.errorLengthKey})
-			];
+				exactLength(KEY_LENGTH, true, {
+					default: locales.errorLengthKey,
+				}),
+			]
 
 			if (this.required) {
-				rules.push(requiredFn({default: locales.errorRequiredKey}));
+				rules.push(requiredFn({ default: locales.errorRequiredKey }))
 			}
 
-			return rules;
+			return rules
 		},
 
 		textFieldOptions() {
-			return deepMerge(config, this.$attrs);
+			return deepMerge(config, this.$attrs)
 		},
 
 		errors(): string | never[] {
-			return [...this.numberErrors, ...this.keyErrors].join('\n');
+			return [...this.numberErrors, ...this.keyErrors].join('\n')
 		},
 
 		internalValue(): string | null {
 			if (this.isSingleField && this.numberFilled) {
-				return this.maskaNumberValue.unmasked;
+				return this.maskaNumberValue.unmasked
 			}
 
 			if (!this.numberFilled || !this.keyFilled) {
-				return null;
+				return null
 			}
 
-			return this.maskaNumberValue.unmasked + this.keyValue as string;
-		}
+			return (this.maskaNumberValue.unmasked + this.keyValue) as string
+		},
 	},
 	methods: {
 		changeNumberValue(): void {
-			this.$emit("update:modelValue", this.keyValue ? this.maskaNumberValue.unmasked + this.keyValue : this.maskaNumberValue.unmasked);
-			this.validateNumberValue();
+			this.$emit(
+				'update:modelValue',
+				this.keyValue
+					? this.maskaNumberValue.unmasked + this.keyValue
+					: this.maskaNumberValue.unmasked
+			)
+			this.validateNumberValue()
 		},
 
 		changeKeyValue(): void {
 			if (!this.internalValue || this.errors.length > 0) {
-				return;
+				return
 			}
 
-			this.$emit("update:modelValue", this.keyValue ? this.maskaNumberValue.unmasked + this.keyValue : this.keyValue);
+			this.$emit(
+				'update:modelValue',
+				this.keyValue
+					? this.maskaNumberValue.unmasked + this.keyValue
+					: this.keyValue
+			)
 		},
 
 		/**
 		 * Execute the validation rules for the number field
 		 */
 		validateNumberValue(): void {
-			this.isInputFocused = !this.isInputFocused;
-			this.numberErrors =
-				this.numberRules
-					.map(rule => rule(this.maskaNumberValue.unmasked))
-					.filter((error): error is string => typeof error === 'string');
+			this.isInputFocused = !this.isInputFocused
+			this.numberErrors = this.numberRules
+				.map((rule) => rule(this.maskaNumberValue.unmasked))
+				.filter((error): error is string => typeof error === 'string')
 
 			// Add custom validation for 'A' or 'B' (For the Corsican departments)
-			const seventhChar = this.maskaNumberValue.unmasked.charAt(5);
-			const eighthChar = this.maskaNumberValue.unmasked.charAt(6);
-			if ((eighthChar === 'A' || eighthChar === 'B') && seventhChar !== '1' && seventhChar !== '2') {
-				this.numberErrors.push(this.locales.errorCorsican);
+			const seventhChar = this.maskaNumberValue.unmasked.charAt(5)
+			const eighthChar = this.maskaNumberValue.unmasked.charAt(6)
+			if (
+				(eighthChar === 'A' || eighthChar === 'B') &&
+				seventhChar !== '1' &&
+				seventhChar !== '2'
+			) {
+				this.numberErrors.push(this.locales.errorCorsican)
 			}
 		},
 
@@ -215,53 +245,52 @@ export default defineComponent({
 		 * Execute the validation rules for the key field
 		 */
 		validateKeyValue(): void {
-			this.keyErrors =
-				this.keyRules
-					.map(rule => rule(this.keyValue))
-					.filter((error): error is string => typeof error === 'string');
+			this.keyErrors = this.keyRules
+				.map((rule) => rule(this.keyValue))
+				.filter((error): error is string => typeof error === 'string')
 		},
 
 		focusKeyField({
-						  key,
-						  altKey,
-						  ctrlKey,
-						  metaKey,
-						  shiftKey,
-					  }: KeyboardEvent): void {
-			const isSingleField = this.isSingleField;
-			const notFilled = !this.numberFilled;
+			key,
+			altKey,
+			ctrlKey,
+			metaKey,
+			shiftKey,
+		}: KeyboardEvent): void {
+			const isSingleField = this.isSingleField
+			const notFilled = !this.numberFilled
 			// Don't move focus for combo (eg. Ctrl + A)
-			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey;
+			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey
 			// Don't move focus for other keys (eg. ArrowRight)
-			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key);
+			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key)
 			// Don't move focus is content is selected to allow overwrite
 			const isContentSelected =
 				this.$refs.numberField.selectionStart !==
-				this.$refs.numberField.selectionEnd;
+				this.$refs.numberField.selectionEnd
 
 			const shouldNotFocus =
 				isSingleField ||
 				notFilled ||
 				keyHasModifier ||
 				isNotSingleAlphaNumChar ||
-				isContentSelected;
+				isContentSelected
 
 			if (shouldNotFocus) {
-				return;
+				return
 			}
 
-			this.$refs.keyField.focus();
+			this.$refs.keyField.focus()
 		},
 
 		focusNumberField(): void {
 			if (this.keyValue?.length !== 0) {
-				return;
+				return
 			}
 
-			this.$refs.numberField.focus();
+			this.$refs.numberField.focus()
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -289,7 +318,9 @@ export default defineComponent({
 				:base-color="numberFilled ? 'success' : ''"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
-				:aria-errormessage="numberErrors.length > 0 ? 'number-field-errors' : undefined"
+				:aria-errormessage="
+					numberErrors.length > 0 ? 'number-field-errors' : undefined
+				"
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@maska="changeNumberValue"
@@ -297,10 +328,7 @@ export default defineComponent({
 				@focus="isInputFocused = true"
 			/>
 
-			<div
-				id="number-field-errors"
-				class="d-sr-only"
-			>
+			<div id="number-field-errors" class="d-sr-only">
 				{{ numberErrors.join(' ') }}
 			</div>
 
@@ -319,24 +347,20 @@ export default defineComponent({
 					:base-color="keyFilled ? 'success' : ''"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
-					:aria-errormessage="keyErrors.length > 0 ? 'key-field-errors' : undefined"
+					:aria-errormessage="
+						keyErrors.length > 0 ? 'key-field-errors' : undefined
+					"
 					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
 					@maska="changeKeyValue"
 					@blur="validateKeyValue"
 				/>
-				<div
-					id="key-field-errors"
-					class="d-sr-only"
-				>
+				<div id="key-field-errors" class="d-sr-only">
 					{{ keyErrors.join(' ') }}
 				</div>
 			</template>
 
-			<VTooltip
-				v-if="tooltip"
-				v-bind="options.tooltip"
-			>
+			<VTooltip v-if="tooltip" v-bind="options.tooltip">
 				<template #activator="{ props }">
 					<VIcon v-bind="props" class="vd-tooltip-icon mt-4 ml-2">
 						{{ infoIcon }}
@@ -404,7 +428,7 @@ export default defineComponent({
 }
 
 @mixin responsive-nir-wrapper {
-	.vd-nir-field__fields-wrapper :deep( > .v-input__control) {
+	.vd-nir-field__fields-wrapper :deep(> .v-input__control) {
 		justify-content: start;
 		flex-wrap: wrap;
 		gap: 4px;

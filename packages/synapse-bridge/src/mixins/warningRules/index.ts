@@ -1,7 +1,7 @@
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { ValidationRule } from "@/rules/types";
+import { ValidationRule } from '@/rules/types'
 
 const Props = {
 	props: {
@@ -10,7 +10,7 @@ const Props = {
 			default: () => [],
 		},
 	},
-};
+}
 
 export const WarningRules = defineComponent({
 	props: {
@@ -19,20 +19,20 @@ export const WarningRules = defineComponent({
 	data() {
 		return {
 			messages: [] as string[],
-		};
+		}
 	},
 	methods: {
 		// dd/mm/yyyy
 		validate(date: string): void {
-			this.messages = [];
+			this.messages = []
 			this.warningRules.forEach((rule) => {
-				const result = rule(date);
+				const result = rule(date)
 
 				if (typeof result === 'string') {
-					this.messages.push(result);
+					this.messages.push(result)
 				}
-			});
+			})
 		},
 	},
 	template: `<div></div>`,
-});
+})

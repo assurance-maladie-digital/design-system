@@ -1,23 +1,23 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
-import { RatingMixin } from "../RatingMixin";
-import { locales } from "./locales";
-import { propValidator } from "@/helpers/propValidator";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { RatingMixin } from '../RatingMixin'
+import { locales } from './locales'
+import { propValidator } from '@/helpers/propValidator'
 import {
 	mdiEmoticonHappyOutline,
 	mdiEmoticonSadOutline,
 	mdiEmoticonNeutralOutline,
-} from "@mdi/js";
+} from '@mdi/js'
 export default defineComponent({
 	mixins: [RatingMixin],
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	props: {
 		length: {
 			type: Number,
 			default: 3,
 			validator: (value: number) =>
-				propValidator("length", ["2", "3"], value.toString()),
+				propValidator('length', ['2', '3'], value.toString()),
 		},
 		itemLabels: {
 			type: Array as PropType<string[]>,
@@ -28,56 +28,52 @@ export default defineComponent({
 		return {
 			sadIcon: mdiEmoticonSadOutline,
 			neutralIcon: mdiEmoticonNeutralOutline,
-			happyIcon: mdiEmoticonHappyOutline
+			happyIcon: mdiEmoticonHappyOutline,
 		}
 	},
 	computed: {
 		btnSize(): string {
-			const name = this.$vuetify.display.name;
-			return name === 'xs' ? '70px' : '88px';
+			const name = this.$vuetify.display.name
+			return name === 'xs' ? '70px' : '88px'
 		},
 		hasAnswered(): boolean {
-			return this.modelValue !== -1;
-		}
+			return this.modelValue !== -1
+		},
 	},
 	methods: {
 		isActive(index: number): boolean {
-			return index === this.modelValue - 1;
+			return index === this.modelValue - 1
 		},
 		getIcon(index: number): string {
 			if (index === 0) {
-				return this.sadIcon;
+				return this.sadIcon
 			}
 			if (index === 1 && this.length === 3) {
-				return this.neutralIcon;
+				return this.neutralIcon
 			}
-			return this.happyIcon;
+			return this.happyIcon
 		},
 		getColor(index: number): string {
-			const colors = [
-				'sad',
-				'neutral',
-				'happy'
-			];
+			const colors = ['sad', 'neutral', 'happy']
 			if (this.length === 2) {
 				const filteredColors = colors.filter(
 					(item) => item !== 'neutral'
-				);
-				return filteredColors[index];
+				)
+				return filteredColors[index]
 			}
-			return colors[index];
+			return colors[index]
 		},
 		getEmotionLabel(value: number): string {
 			if (this.length === 2) {
 				const filteredLabels = this.itemLabels.filter(
 					(_, index) => index !== 1
-				);
-				return filteredLabels[value];
+				)
+				return filteredLabels[value]
 			}
-			return this.itemLabels[value];
-		}
-	}
-});
+			return this.itemLabels[value]
+		},
+	},
+})
 </script>
 
 <template>
@@ -126,7 +122,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 .vd-emotion-picker {
 	border: 0;
 }
@@ -176,6 +172,6 @@ export default defineComponent({
 	}
 }
 .v-theme--light.v-btn--disabled :deep(.v-icon) {
-	color: $vd-grey-lighten-20 !important
+	color: $vd-grey-lighten-20 !important;
 }
 </style>

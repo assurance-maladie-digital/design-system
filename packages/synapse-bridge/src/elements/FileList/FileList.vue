@@ -1,16 +1,16 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { FileItem, IconInfo } from "./types";
+import { FileItem, IconInfo } from './types'
 
-import { FileStateEnum } from "./FileStateEnum";
+import { FileStateEnum } from './FileStateEnum'
 
-import { customizable } from "@/mixins/customizable";
-import { Widthable } from "@/mixins/widthable";
+import { customizable } from '@/mixins/customizable'
+import { Widthable } from '@/mixins/widthable'
 
 import {
 	mdiRefresh,
@@ -20,7 +20,7 @@ import {
 	mdiCheckCircle,
 	mdiUpload,
 	mdiFile,
-} from "@mdi/js";
+} from '@mdi/js'
 
 export default defineComponent({
 	mixins: [customizable(config), Widthable],
@@ -31,7 +31,7 @@ export default defineComponent({
 		},
 		hideUploadBtn: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		showViewBtn: {
 			type: Boolean,
@@ -39,7 +39,7 @@ export default defineComponent({
 		},
 		alwaysShowDeleteBtn: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		hideDeleteBtn: {
 			type: Boolean,
@@ -62,65 +62,71 @@ export default defineComponent({
 			eyeIcon: mdiEye,
 			deleteIcon: mdiDelete,
 			uploadIcon: mdiUpload,
-		};
+		}
 	},
 	computed: {
 		iconColor() {
-			return this.$vuetify.theme.current.dark ? "grey-lighten-40" : "grey";
+			return this.$vuetify.theme.current.dark ? 'grey-lighten-40' : 'grey'
 		},
 	},
 	methods: {
 		isFileItem(file: FileItem | File): file is FileItem {
-			return !(file instanceof File);
+			return !(file instanceof File)
 		},
 		shouldDisplayDeleteBtn(file: FileItem | File): boolean {
 			if (this.hideDeleteBtn) {
-				return false;
+				return false
 			}
 
-			return (this.isFileItem(file) && file.state !== FileStateEnum.INITIAL) || this.alwaysShowDeleteBtn;
+			return (
+				(this.isFileItem(file) &&
+					file.state !== FileStateEnum.INITIAL) ||
+				this.alwaysShowDeleteBtn
+			)
 		},
 		getIconInfo(file: FileItem | File): IconInfo {
-			const state = this.isFileItem(file) ? file.state : FileStateEnum.INITIAL;
+			const state = this.isFileItem(file)
+				? file.state
+				: FileStateEnum.INITIAL
 			switch (state) {
 				case FileStateEnum.ERROR: {
 					return {
 						icon: mdiAlertCircle,
-						color: 'error'
-					};
+						color: 'error',
+					}
 				}
 
 				case FileStateEnum.SUCCESS: {
 					return {
 						icon: mdiCheckCircle,
-						color: 'turquoise-darken-60'
-					};
+						color: 'turquoise-darken-60',
+					}
 				}
 
 				default: {
 					return {
 						icon: mdiFile,
-						color: 'grey'
-					};
+						color: 'grey',
+					}
 				}
 			}
 		},
 		getItemColor(state: string): string | undefined {
 			if (state === FileStateEnum.SUCCESS) {
-				return;
+				return
 			}
 
-			return 'text-grey';
+			return 'text-grey'
 		},
 		showDivider(index: number): boolean {
 			if (this.hideLastDivider) {
-				return index + 1 !== this.files.length;
+				return index + 1 !== this.files.length
 			}
 
-			return true;
+			return true
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -164,7 +170,11 @@ export default defineComponent({
 				<template v-slot:append>
 					<VListItemAction v-bind="options.listItemAction">
 						<VBtn
-							v-if="isFileItem(file) && file.state === FileStateEnum.INITIAL && !hideUploadBtn"
+							v-if="
+								isFileItem(file) &&
+								file.state === FileStateEnum.INITIAL &&
+								!hideUploadBtn
+							"
 							v-bind="options.uploadBtn"
 							:aria-label="locales.uploadFile"
 							@click="$emit('upload', file.id)"
@@ -175,7 +185,10 @@ export default defineComponent({
 						</VBtn>
 
 						<VBtn
-							v-if="isFileItem(file) && file.state === FileStateEnum.ERROR"
+							v-if="
+								isFileItem(file) &&
+								file.state === FileStateEnum.ERROR
+							"
 							v-bind="options.retryBtn"
 							:aria-label="locales.uploadFile"
 							@click="$emit('retry', index)"
@@ -186,7 +199,11 @@ export default defineComponent({
 						</VBtn>
 
 						<VBtn
-							v-if="showViewBtn && (!isFileItem(file) || file.state === FileStateEnum.SUCCESS)"
+							v-if="
+								showViewBtn &&
+								(!isFileItem(file) ||
+									file.state === FileStateEnum.SUCCESS)
+							"
 							v-bind="options.viewFileBtn"
 							:aria-label="locales.viewFile"
 							@click="$emit('view-file', file)"

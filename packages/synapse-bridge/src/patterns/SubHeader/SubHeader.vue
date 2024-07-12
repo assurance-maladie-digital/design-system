@@ -1,28 +1,28 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { customizable } from "@/mixins/customizable";
-import { Widthable } from "@/mixins/widthable";
+import { customizable } from '@/mixins/customizable'
+import { Widthable } from '@/mixins/widthable'
 
-import DataListGroup from "@/patterns/DataListGroup";
+import DataListGroup from '@/patterns/DataListGroup'
 import {
 	DataListActionEvent,
 	DataListGroupItems,
-} from "@/patterns/DataListGroup/types";
+} from '@/patterns/DataListGroup/types'
 
-import { mdiKeyboardBackspace } from "@mdi/js";
-import HeaderLoading from '@/elements/HeaderLoading';
-import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
+import { mdiKeyboardBackspace } from '@mdi/js'
+import HeaderLoading from '@/elements/HeaderLoading'
+import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader'
 
 export default defineComponent({
 	components: {
 		DataListGroup,
 		HeaderLoading,
-		VSkeletonLoader
+		VSkeletonLoader,
 	},
 	mixins: [customizable(config), Widthable],
 	props: {
@@ -55,24 +55,24 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	emits: ["click:list-item", "back"],
+	emits: ['click:list-item', 'back'],
 	data() {
 		return {
 			backArrowIcon: mdiKeyboardBackspace,
 			locales,
-		};
+		}
 	},
 	computed: {
 		fadeWhite(): string {
-			return 'rgba(255, 255, 255, .7)';
-		}
+			return 'rgba(255, 255, 255, .7)'
+		},
 	},
 	methods: {
 		emitItemAction(eventValue: DataListActionEvent): void {
-			this.$emit('click:list-item', eventValue);
-		}
-	}
-});
+			this.$emit('click:list-item', eventValue)
+		},
+	},
+})
 </script>
 
 <template>

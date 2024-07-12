@@ -1,7 +1,7 @@
 export const config = {
 	menu: {
 		offsetY: true,
-		closeOnContentClick: false
+		closeOnContentClick: false,
 	},
 	editBtn: {
 		icon: true,
@@ -9,25 +9,25 @@ export const config = {
 		label: 'edit',
 	},
 	editIcon: {
-		color: 'grey darken-1'
+		color: 'grey darken-1',
 	},
 	deleteBtn: {
 		icon: true,
 		variant: 'text',
-		ariaLabel: 'delete'
+		ariaLabel: 'delete',
 	},
 	deleteIcon: {
-		color: 'grey darken-1'
+		color: 'grey darken-1',
 	},
 	closeBtn: {
 		color: 'secondary',
 		rounded: true,
 		variant: 'elevated',
-		class: 'text-lowercase mr-2'
+		class: 'text-lowercase mr-2',
 	},
 	resetFiltersBtn: {
 		color: 'white',
 		class: 'ml-2',
-		ariaLabel: 'reset filters'
-	}
-};
+		ariaLabel: 'reset filters',
+	},
+}

@@ -4,14 +4,14 @@ import type { DefineComponent, ComponentOptionsMixin } from 'vue'
 export type Options = Record<string, any>
 
 type Props = {
-	vuetifyOptions: Options | undefined;
+	vuetifyOptions: Options | undefined
 }
 
 type RawBindings = unknown
 type Data = unknown
 
 type Computed = {
-	options(): Options;
+	options(): Options
 }
 
 type Methods = {}
@@ -22,4 +22,16 @@ type EE = string
 type PublicProps = {}
 type Defaults = {}
 
-export type Customizable = DefineComponent<Props, RawBindings, Data, Computed, Methods, Mixins, Extends, Emits, EE, PublicProps, Defaults>
+export type Customizable = DefineComponent<
+	Props,
+	RawBindings,
+	Data,
+	Computed,
+	Methods,
+	Mixins,
+	Extends,
+	Emits,
+	EE,
+	PublicProps,
+	Defaults
+>

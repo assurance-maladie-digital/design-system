@@ -11,5 +11,5 @@ export const config = {
 		size: 'small',
 		color: 'accent',
 		class: 'text-body-1 pa-0',
-	}
+	},
 }

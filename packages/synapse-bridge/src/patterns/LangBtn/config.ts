@@ -1,13 +1,13 @@
 export const config = {
 	menu: {
-		offsetY: true
+		offsetY: true,
 	},
 	btn: {
 		color: 'primary',
 		variant: 'outlined',
-		ripple: true
+		ripple: true,
 	},
 	icon: {
-		class: 'ml-1'
-	}
-};
+		class: 'ml-1',
+	},
+}

@@ -16,9 +16,9 @@ describe('SkipLink', () => {
 
 	it('focuses the skip link on route change', async () => {
 		const wrapper = shallowMount(SkipLink)
-		const focusSpy = vi.fn();
+		const focusSpy = vi.fn()
 
-		(wrapper.vm.$refs.skipLinkSpan as HTMLLinkElement).focus = focusSpy
+		;(wrapper.vm.$refs.skipLinkSpan as HTMLLinkElement).focus = focusSpy
 
 		// @ts-ignore
 		wrapper.vm.$options.watch.$route.call(wrapper.vm)

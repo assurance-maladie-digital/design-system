@@ -2,10 +2,13 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { DOMWrapper, mount } from '@vue/test-utils'
 import { vuetify, createNotificationStore } from '@tests/unit/setup'
 
-import { filePromise, filePromiseError, filePromiseNoHeaders } from './data/filePromise.ts'
+import {
+	filePromise,
+	filePromiseError,
+	filePromiseNoHeaders,
+} from './data/filePromise.ts'
 import DownloadBtn from '../'
-import { StateEnum } from "@/constants/enums/StateEnum.ts"
-
+import { StateEnum } from '@/constants/enums/StateEnum.ts'
 
 describe('DownloadBtn', () => {
 	let wrapper: any
@@ -13,11 +16,11 @@ describe('DownloadBtn', () => {
 	beforeEach(() => {
 		wrapper = mount(DownloadBtn, {
 			props: {
-				filePromise
+				filePromise,
 			},
 			global: {
-				plugins: [vuetify, createNotificationStore()]
-			}
+				plugins: [vuetify, createNotificationStore()],
+			},
 		})
 
 		vi.spyOn(wrapper.vm, 'getFileInfo')
@@ -53,7 +56,7 @@ describe('DownloadBtn', () => {
 
 	it('emit error event', async () => {
 		await wrapper.setProps({
-			filePromise: filePromiseError
+			filePromise: filePromiseError,
 		})
 
 		expect(wrapper.emitted('error')).toBeFalsy()
@@ -67,10 +70,10 @@ describe('DownloadBtn', () => {
 		const slot = 'Download'
 		wrapper = mount(DownloadBtn, {
 			props: {
-				filePromise
+				filePromise,
 			},
 			slots: {
-				default: slot
+				default: slot,
 			},
 			global: {
 				plugins: [vuetify],
@@ -81,7 +84,7 @@ describe('DownloadBtn', () => {
 	})
 
 	it('with notification', async () => {
-		await wrapper.setProps({notification: true})
+		await wrapper.setProps({ notification: true })
 
 		await element.trigger('click')
 		expect(wrapper.vm.notifyUser).toHaveBeenCalledTimes(1)
@@ -89,15 +92,15 @@ describe('DownloadBtn', () => {
 
 	it('with fallbackFilename', async () => {
 		const filename = 'test'
-		await wrapper.setProps({fallbackFilename: filename})
-		await wrapper.setProps({filePromise: filePromiseNoHeaders})
+		await wrapper.setProps({ fallbackFilename: filename })
+		await wrapper.setProps({ filePromise: filePromiseNoHeaders })
 
 		await element.trigger('click')
 		expect(wrapper.vm.download).toHaveBeenCalledTimes(1)
 	})
 
 	it('without header', async () => {
-		await wrapper.setProps({filePromise: filePromiseNoHeaders})
+		await wrapper.setProps({ filePromise: filePromiseNoHeaders })
 
 		await element.trigger('click')
 		expect(wrapper.vm.download).toHaveBeenCalledTimes(1)

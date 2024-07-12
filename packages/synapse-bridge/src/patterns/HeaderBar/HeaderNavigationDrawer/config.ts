@@ -5,17 +5,17 @@ export const config = {
 	width: '320',
 	class: 'pa-4',
 	closeBtn: {
-		icon: true
+		icon: true,
 	},
 	tabs: {
 		density: 'compact',
 		size: 'small',
 		direction: 'vertical',
-		backgroundColor: 'transparent'
+		backgroundColor: 'transparent',
 	},
 	tab: {
 		exact: true,
 		height: '40px',
-		class: 'justify-start mb-2'
-	}
-};
+		class: 'justify-start mb-2',
+	},
+}

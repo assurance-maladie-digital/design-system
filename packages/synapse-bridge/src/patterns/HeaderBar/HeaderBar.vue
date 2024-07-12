@@ -1,16 +1,16 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import type { PropType } from "vue";
-import LogoBrandSection from "@/elements/LogoBrandSection";
-import HeaderMenuBtn from "./HeaderMenuBtn/HeaderMenuBtn.vue";
-import HeaderNavigationBar from "./HeaderNavigationBar/HeaderNavigationBar.vue";
-import HeaderNavigationDrawer from "./HeaderNavigationDrawer";
-import type { NavigationItem } from "./types";
-import { ThemeEnum } from "../../constants/enums/ThemeEnum";
-import { config } from "./config.ts";
-import { customizable } from "@/mixins/customizable";
-import type { Next } from "@/types";
-import { Scroll } from 'vuetify/directives';
+import { defineComponent, ref } from 'vue'
+import type { PropType } from 'vue'
+import LogoBrandSection from '@/elements/LogoBrandSection'
+import HeaderMenuBtn from './HeaderMenuBtn/HeaderMenuBtn.vue'
+import HeaderNavigationBar from './HeaderNavigationBar/HeaderNavigationBar.vue'
+import HeaderNavigationDrawer from './HeaderNavigationDrawer'
+import type { NavigationItem } from './types'
+import { ThemeEnum } from '../../constants/enums/ThemeEnum'
+import { config } from './config.ts'
+import { customizable } from '@/mixins/customizable'
+import type { Next } from '@/types'
+import { Scroll } from 'vuetify/directives'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -18,10 +18,10 @@ export default defineComponent({
 		LogoBrandSection,
 		HeaderMenuBtn,
 		HeaderNavigationBar,
-		HeaderNavigationDrawer
+		HeaderNavigationDrawer,
 	},
 	directives: {
-		Scroll
+		Scroll,
 	},
 	mixins: [customizable(config)],
 	props: {
@@ -29,60 +29,60 @@ export default defineComponent({
 			type: [String, Number] as any,
 			default: ThemeEnum.DEFAULT,
 			validator: (value: any) => {
-				return Object.values(ThemeEnum).includes(value);
+				return Object.values(ThemeEnum).includes(value)
 			},
 		},
 		serviceTitle: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		serviceSubTitle: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		navigationItems: {
 			type: Array as PropType<NavigationItem[]>,
-			default: undefined
+			default: undefined,
 		},
 		innerWidth: {
 			type: String,
-			default: "100%"
+			default: '100%',
 		},
 		homeLink: {
 			type: [String, Boolean, Object] as PropType<Next>,
-			default: undefined
+			default: undefined,
 		},
 		homeHref: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		homeArialabel: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		showNavBarMenuBtn: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		mobileVersion: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		miniVersion: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		sticky: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		showStickyNavBar: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		target: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 	},
 	data() {
@@ -91,79 +91,110 @@ export default defineComponent({
 			tab: 0,
 			scrolled: false,
 			appBarRef: ref<HTMLElement | null>(null),
-			hideScrollbar: false
-		};
+			hideScrollbar: false,
+		}
 	},
 	watch: {
 		drawer(value: boolean): void {
 			if (value) {
-				document.querySelector('html')?.classList.add('overflow-hidden');
+				document.querySelector('html')?.classList.add('overflow-hidden')
 			} else {
-				document.querySelector('html')?.classList.remove('overflow-hidden');
+				document
+					.querySelector('html')
+					?.classList.remove('overflow-hidden')
 			}
-		}
+		},
 	},
 	computed: {
 		isMobileVersion(): boolean {
-			return this.mobileVersion || this.miniVersion || this.$vuetify.display.name === "xs";
+			return (
+				this.mobileVersion ||
+				this.miniVersion ||
+				this.$vuetify.display.name === 'xs'
+			)
 		},
 		isMiniVersion(): boolean {
-			return this.miniVersion || (this.sticky && this.scrolled);
+			return this.miniVersion || (this.sticky && this.scrolled)
 		},
 		targetSelector(): string | null {
-			return this.target ? `#${this.target}` : null;
+			return this.target ? `#${this.target}` : null
 		},
 		spacingClass(): string {
-			return this.sticky && this.scrolled ? (this.isMobileVersion ? 'px-4 py-1' : 'px-14 py-1') : (this.isMobileVersion ? 'pa-4' : 'px-14 py-7');
+			return this.sticky && this.scrolled
+				? this.isMobileVersion
+					? 'px-4 py-1'
+					: 'px-14 py-1'
+				: this.isMobileVersion
+					? 'pa-4'
+					: 'px-14 py-7'
 		},
 		contentSheetHeight(): number {
-			return this.isMiniVersion ? (this.isMobileVersion ? 52 : 72) : (this.isMobileVersion ? 72 : 120);
+			return this.isMiniVersion
+				? this.isMobileVersion
+					? 52
+					: 72
+				: this.isMobileVersion
+					? 72
+					: 120
 		},
 		fullHeight(): number {
-			const height = this.isMobileVersion ? 72 : 120;
-			return this.showNavigationBar ? (height + 48) : height;
+			const height = this.isMobileVersion ? 72 : 120
+			return this.showNavigationBar ? height + 48 : height
 		},
 		height(): number {
-			return this.showNavigationBar ? (this.contentSheetHeight + 48) : this.contentSheetHeight;
+			return this.showNavigationBar
+				? this.contentSheetHeight + 48
+				: this.contentSheetHeight
 		},
 		mainContentMargin(): string {
-			return this.sticky ? `margin-top: ${this.fullHeight}px` : '';
+			return this.sticky ? `margin-top: ${this.fullHeight}px` : ''
 		},
 		hasNavigationItems(): boolean {
-			return Boolean(this.navigationItems || this.$slots['navigation-drawer-content']);
+			return Boolean(
+				this.navigationItems || this.$slots['navigation-drawer-content']
+			)
 		},
 		showHeaderMenuBtn(): boolean {
-			const hasNavigation = Boolean(this.navigationItems || this.$slots['navigation-drawer']);
-			return !this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation;
+			const hasNavigation = Boolean(
+				this.navigationItems || this.$slots['navigation-drawer']
+			)
+			return (
+				!this.showNavBarMenuBtn && this.isMobileVersion && hasNavigation
+			)
 		},
 		showNavigationBar(): boolean {
-			const isStickyNavBar = !this.scrolled || (this.scrolled && this.showStickyNavBar);
-			return isStickyNavBar && (Boolean(this.$slots['navigation-bar-content']) || (!this.showHeaderMenuBtn && this.hasNavigationItems));
+			const isStickyNavBar =
+				!this.scrolled || (this.scrolled && this.showStickyNavBar)
+			return (
+				isStickyNavBar &&
+				(Boolean(this.$slots['navigation-bar-content']) ||
+					(!this.showHeaderMenuBtn && this.hasNavigationItems))
+			)
 		},
 		showSpacer(): boolean {
-			return Boolean(this.$slots.default) || this.isMobileVersion;
-		}
+			return Boolean(this.$slots.default) || this.isMobileVersion
+		},
 	},
 	methods: {
 		updateDrawer(value: boolean): void {
-			this.drawer = value;
+			this.drawer = value
 		},
 		onScroll(event: MouseEvent): void {
-			if (!this.sticky) return;
-			const target = event.currentTarget as HTMLElement | Window;
-			const scrollPosition = target === window ? window.scrollY : (target as HTMLElement).scrollTop;
-			this.scrolled = this.sticky && scrollPosition > this.height;
-		}
-	}
-});
+			if (!this.sticky) return
+			const target = event.currentTarget as HTMLElement | Window
+			const scrollPosition =
+				target === window
+					? window.scrollY
+					: (target as HTMLElement).scrollTop
+			this.scrolled = this.sticky && scrollPosition > this.height
+		},
+	},
+})
 </script>
 
 <template>
 	<VLayout>
-		<div
-			:style="mainContentMargin"
-			class="vd-header-bar-container w-100"
-		>
+		<div :style="mainContentMargin" class="vd-header-bar-container w-100">
 			<VToolbar
 				v-bind="{ ...options.appBar, ...$attrs }"
 				ref="appBar"
@@ -286,7 +317,7 @@ export default defineComponent({
 }
 .vd-header-bar :deep(.v-tab) {
 	text-transform: uppercase;
-	letter-spacing: .0892857143em;
+	letter-spacing: 0.0892857143em;
 	&.v-tab:hover {
 		background: rgba($color: #fff, $alpha: 0.02);
 	}
@@ -294,7 +325,7 @@ export default defineComponent({
 		background: rgba($color: #fff, $alpha: 0.1);
 	}
 	&.v-tab:not(.v-tab--selected) {
-		color: hsla(0, 0%, 100%, .6);
+		color: hsla(0, 0%, 100%, 0.6);
 	}
 }
 .vd-header-menu-btn :deep() {
@@ -306,23 +337,28 @@ export default defineComponent({
 	}
 }
 :deep(.v-toolbar--absolute) {
-  position: fixed;
-  top: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 :deep(.v-toolbar--rounded) {
-    border-radius: 20px 0;
+	border-radius: 20px 0;
 	.v-toolbar__content {
 		border-radius: 20px 0;
 	}
 }
-:deep(.v-tabs >.v-tabs-bar .v-tab:not(.v-tab--active)) {
-	opacity: .6;
+:deep(.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active)) {
+	opacity: 0.6;
 }
-:deep(.v-navigation-drawer > .v-navigation-drawer__content .v-tab:not(.v-slide-group-item--active)) {
-	opacity: .6;
+:deep(
+		.v-navigation-drawer
+			> .v-navigation-drawer__content
+			.v-tab:not(.v-slide-group-item--active)
+	) {
+	opacity: 0.6;
 }
 :deep(.v-navigation-drawer__scrim) {
 	position: fixed;
-	opacity: 0.46
+	opacity: 0.46;
 }
 </style>

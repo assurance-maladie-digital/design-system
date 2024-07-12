@@ -1,3 +1,3 @@
-import SearchListField from './SearchListField.vue';
+import SearchListField from './SearchListField.vue'
 
-export default SearchListField;
+export default SearchListField

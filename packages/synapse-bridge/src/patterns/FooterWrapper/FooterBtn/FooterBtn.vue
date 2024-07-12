@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
-	import consola from 'consola'
+import consola from 'consola'
 
-	export default defineComponent({
-		inheritAttrs: false,
-		props: {
-			inert: {
-				type: Boolean,
-				default: false,
-			},
+export default defineComponent({
+	inheritAttrs: false,
+	props: {
+		inert: {
+			type: Boolean,
+			default: false,
 		},
-		computed: {
-			tag(): string {
-				return this.inert ? 'div' : 'button'
-			},
+	},
+	computed: {
+		tag(): string {
+			return this.inert ? 'div' : 'button'
 		},
-		mounted() {
-			consola.warn(
-				'FooterBtn is deprecated since v2.2.0, use FooterBar instead.'
-			)
-		},
-	})
+	},
+	mounted() {
+		consola.warn(
+			'FooterBtn is deprecated since v2.2.0, use FooterBar instead.'
+		)
+	},
+})
 </script>
 
 <template>
@@ -41,11 +41,11 @@
 </template>
 
 <style lang="scss" scoped>
-	.vd-footer-btn.v-btn.theme--light {
-		color: #424242 !important;
-	}
+.vd-footer-btn.v-btn.theme--light {
+	color: #424242 !important;
+}
 
-	.vd-footer-btn--inert {
-		opacity: 1;
-	}
+.vd-footer-btn--inert {
+	opacity: 1;
+}
 </style>

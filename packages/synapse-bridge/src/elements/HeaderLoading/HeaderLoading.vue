@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { defineComponent } from 'vue';
-	import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader';
+import { defineComponent } from 'vue'
+import { VSkeletonLoader } from 'vuetify/components/VSkeletonLoader'
 
-	export default defineComponent({
-		components: {
-			VSkeletonLoader
+export default defineComponent({
+	components: {
+		VSkeletonLoader,
+	},
+	props: {
+		width: {
+			type: String,
+			default: '100px',
 		},
-		props: {
-			width: {
-				type: String,
-				default: '100px'
-			},
-			height: {
-				type: String,
-				default: '1rem'
-			}
+		height: {
+			type: String,
+			default: '1rem',
 		},
-	})
+	},
+})
 </script>
 
 <template>
@@ -43,7 +43,7 @@
 }
 
 // Remove border radius when tile option is activated
-.vd-header-loading.v-skeleton-loader--tile :deep()	{
+.vd-header-loading.v-skeleton-loader--tile :deep() {
 	.v-skeleton-loader__heading {
 		border-radius: 0;
 	}

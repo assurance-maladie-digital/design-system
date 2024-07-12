@@ -1,14 +1,14 @@
-import { ErrorCodes } from './errorCodes';
+import { ErrorCodes } from './errorCodes'
 
 export interface ErrorEvent {
-	file: File | DataTransferItemList;
-	code: ErrorCodes;
+	file: File | DataTransferItemList
+	code: ErrorCodes
 }
 
 export type ErrorCodesType = {
-	[key: string]: string;
-};
+	[key: string]: string
+}
 
 export interface HTMLInputEvent extends Event {
-	target: HTMLInputElement & EventTarget;
+	target: HTMLInputElement & EventTarget
 }

@@ -7,6 +7,6 @@ export const router = createRouter({
 			name: 'home',
 			path: '/',
 			component: () => import('./Playground.vue'),
-		}
+		},
 	],
 })

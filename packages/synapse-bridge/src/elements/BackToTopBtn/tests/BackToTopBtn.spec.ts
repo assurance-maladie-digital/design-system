@@ -12,8 +12,8 @@ describe('BackToTopBtn', () => {
 	it('renders correctly', () => {
 		const wrapper = mount(BackToTopBtn, {
 			global: {
-				plugins: [vuetify]
-			}
+				plugins: [vuetify],
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
@@ -23,7 +23,7 @@ describe('BackToTopBtn', () => {
 		const wrapper = mount(BackToTopBtn, {
 			global: {
 				plugins: [vuetify],
-			}
+			},
 		})
 
 		wrapper.vm.$vuetify.display.name = 'sm'
@@ -97,7 +97,9 @@ describe('BackToTopBtn', () => {
 			},
 		})
 
-		const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+		const scrollToSpy = vi
+			.spyOn(window, 'scrollTo')
+			.mockImplementation(() => {})
 
 		await wrapper.find('.v-btn').trigger('click')
 
@@ -135,7 +137,9 @@ describe('BackToTopBtn', () => {
 			},
 		})
 
-		const scrollToSpy = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+		const scrollToSpy = vi
+			.spyOn(window, 'scrollTo')
+			.mockImplementation(() => {})
 
 		vi.spyOn(document, 'getElementById').mockReturnValue(null)
 

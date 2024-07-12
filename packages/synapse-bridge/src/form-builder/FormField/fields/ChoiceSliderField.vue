@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import ChoiceComponent from "../mixins/choiceComponent";
-import type { FieldValue } from "../types";
+import ChoiceComponent from '../mixins/choiceComponent'
+import type { FieldValue } from '../types'
 
-import { convertToUnit } from "@/helpers/convertToUnit";
-import type { IndexedObject } from "@/types";
+import { convertToUnit } from '@/helpers/convertToUnit'
+import type { IndexedObject } from '@/types'
 
-type ThumbLabelValue = boolean | "always" | undefined;
+type ThumbLabelValue = boolean | 'always' | undefined
 
 export default defineComponent({
 	mixins: [ChoiceComponent],
@@ -15,7 +15,7 @@ export default defineComponent({
 		modelValue: {
 			handler(value: FieldValue): void {
 				if (value === null) {
-					this.valueUpdated(0);
+					this.valueUpdated(0)
 				}
 			},
 			immediate: true,
@@ -23,66 +23,67 @@ export default defineComponent({
 	},
 	computed: {
 		thumbLabel(): ThumbLabelValue {
-			return this.options?.thumbLabel as ThumbLabelValue;
+			return this.options?.thumbLabel as ThumbLabelValue
 		},
 
 		thumbSizePlaceholder(): string {
-			let thumbSize = this.options?.thumbSize as number | string;
+			let thumbSize = this.options?.thumbSize as number | string
 
 			if (this.isThumbLabel) {
-				thumbSize = thumbSize || 32;
+				thumbSize = thumbSize || 32
 			}
 
 			if (typeof thumbSize === 'string') {
-				thumbSize = parseInt(thumbSize);
+				thumbSize = parseInt(thumbSize)
 			}
 
-			return convertToUnit(thumbSize) as string;
+			return convertToUnit(thumbSize) as string
 		},
 
 		sliderStyles(): IndexedObject {
 			return {
-				paddingTop: this.thumbSizePlaceholder
-			};
+				paddingTop: this.thumbSizePlaceholder,
+			}
 		},
 
 		tickLabels(): Record<number, string> {
-			return this.isThumbLabel ? {} :
-				Object.assign({}, this.labels);
+			return this.isThumbLabel ? {} : Object.assign({}, this.labels)
 		},
 
 		isThumbLabel(): boolean {
-			return Boolean(this.options?.thumbLabel);
+			return Boolean(this.options?.thumbLabel)
 		},
 
 		labels(): string[] {
 			if (this.items && this.options) {
-				return this.items.map((item) => (item.title || item.text) as string);
+				return this.items.map(
+					(item) => (item.title || item.text) as string
+				)
 			}
 
-			return [];
-		}
+			return []
+		},
 	},
 	methods: {
 		getIndex(value: unknown): number {
 			if (!this.items) {
-				return 0;
+				return 0
 			}
-			const index = this.items.findIndex((item) => item.value === value);
-			return index !== -1 ? index : 0;
+			const index = this.items.findIndex((item) => item.value === value)
+			return index !== -1 ? index : 0
 		},
 
 		valueUpdated(index: number): void {
-			let fieldValue = null;
+			let fieldValue = null
 
 			if (this.items) {
-				fieldValue = this.items[index].value;
+				fieldValue = this.items[index].value
 			}
 
-			this.emitChangeEvent(fieldValue);
-		}
-	}
-});
+			this.emitChangeEvent(fieldValue)
+		},
+	},
+})
 </script>
 
 <template>
@@ -109,7 +110,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 
 // Increase min-height when using tick labels with hide-details
 // to make up for the additional space

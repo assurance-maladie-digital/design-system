@@ -1,21 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type UnknownValue = any;
+type UnknownValue = any
 
 /** Deep remove a list of keys in an object or an array */
-export function deepRemoveKeys<T = any>(collection: UnknownValue, keys: string | string[]): T {
+export function deepRemoveKeys<T = any>(
+	collection: UnknownValue,
+	keys: string | string[]
+): T {
 	if (collection instanceof Array) {
 		collection.forEach((item) => {
-			deepRemoveKeys(item, keys);
-		});
+			deepRemoveKeys(item, keys)
+		})
 	} else if (typeof collection === 'object') {
 		Object.getOwnPropertyNames(collection).forEach((key) => {
 			if (keys.indexOf(key) !== -1) {
-				delete collection[key];
+				delete collection[key]
 			} else {
-				deepRemoveKeys(collection[key], keys);
+				deepRemoveKeys(collection[key], keys)
 			}
-		});
+		})
 	}
 
-	return collection;
+	return collection
 }

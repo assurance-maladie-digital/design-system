@@ -1,19 +1,19 @@
-import { Fields } from '../../types';
+import type { Fields } from '../../types'
 
 const defaultItem = [
 	{
 		text: 'bis',
-		value: 'valueBis'
+		value: 'valueBis',
 	},
 	{
 		text: 'ter',
-		value: 'valueTer'
+		value: 'valueTer',
 	},
 	{
 		text: 'quater',
-		value: 'valueQuater'
-	}
-];
+		value: 'valueQuater',
+	},
+]
 
 export const addressFields: Fields = {
 	streetNumber: {
@@ -22,8 +22,8 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			label: 'Numéro de voie',
 			mask: '#####',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	streetNumberComplement: {
 		type: 'select',
@@ -31,8 +31,8 @@ export const addressFields: Fields = {
 		items: defaultItem,
 		fieldOptions: {
 			label: 'Complément de voie',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	streetType: {
 		type: 'select',
@@ -41,24 +41,24 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			type: 'choiceAutocomplete',
 			label: 'Type de voie',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	streetLabel: {
 		type: 'text',
 		value: null,
 		fieldOptions: {
 			label: 'Libellé de la voie',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	streetComplement: {
 		type: 'text',
 		value: null,
 		fieldOptions: {
 			label: 'Complément d’adresse',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	postalCode: {
 		type: 'number',
@@ -66,15 +66,15 @@ export const addressFields: Fields = {
 		fieldOptions: {
 			mask: '#####',
 			label: 'Code postal',
-			variant: 'outlined'
-		}
+			variant: 'outlined',
+		},
 	},
 	city: {
 		type: 'text',
 		value: null,
 		fieldOptions: {
 			label: 'Ville',
-			variant: 'outlined'
-		}
-	}
-};
+			variant: 'outlined',
+		},
+	},
+}

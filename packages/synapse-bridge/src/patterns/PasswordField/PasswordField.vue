@@ -1,16 +1,16 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { customizable, type Options } from "@/mixins/customizable";
+import { customizable, type Options } from '@/mixins/customizable'
 
-import { required } from "@/rules/required";
-import { type ValidationRule } from "@/rules/types";
+import { required } from '@/rules/required'
+import { type ValidationRule } from '@/rules/types'
 
-import { mdiEye, mdiEyeOff } from "@mdi/js";
-import deepMerge from "deepmerge";
+import { mdiEye, mdiEyeOff } from '@mdi/js'
+import deepMerge from 'deepmerge'
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -23,7 +23,7 @@ export default defineComponent({
 		},
 		outlined: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		required: {
 			type: Boolean,
@@ -36,29 +36,32 @@ export default defineComponent({
 			eyeOffIcon: mdiEyeOff,
 			showEyeIcon: false,
 			error: false,
-		};
+		}
 	},
 	computed: {
 		btnLabel(): string {
-			return this.showEyeIcon ? locales.hidePassword : locales.showPassword;
+			return this.showEyeIcon
+				? locales.hidePassword
+				: locales.showPassword
 		},
 
 		textFieldOptions(): Options {
-			return deepMerge<Options>(config, this.$attrs);
+			return deepMerge<Options>(config, this.$attrs)
 		},
 
 		rules(): ValidationRule[] {
-			const rules = (this.$attrs.rules as unknown as ValidationRule[]) || [];
+			const rules =
+				(this.$attrs.rules as unknown as ValidationRule[]) || []
 
-			return this.required ? [...rules, required] : rules;
-		}
+			return this.required ? [...rules, required] : rules
+		},
 	},
 	methods: {
 		emitChangeEvent(value: string): void {
-			this.$emit('update:modelValue', value);
-		}
-	}
-});
+			this.$emit('update:modelValue', value)
+		},
+	},
+})
 </script>
 
 <template>
@@ -88,7 +91,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-btn--icon {
-	color: rgba(0,0,0,.54);
+	color: rgba(0, 0, 0, 0.54);
 }
 .v-field__append-inner {
 	display: flex;

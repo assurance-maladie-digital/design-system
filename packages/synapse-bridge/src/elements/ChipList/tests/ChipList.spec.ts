@@ -32,7 +32,7 @@ describe('ChipList', () => {
 		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	it ('shows overflow button when chips overflow', () => {
+	it('shows overflow button when chips overflow', () => {
 		const wrapper = mount(ChipList, {
 			global: {
 				plugins: [vuetify],

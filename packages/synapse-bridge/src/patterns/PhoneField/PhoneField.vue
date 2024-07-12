@@ -1,27 +1,27 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import { config } from "./config";
-import { locales } from "./locales";
+import { config } from './config'
+import { locales } from './locales'
 
-import { Options } from "@/mixins/customizable";
+import { Options } from '@/mixins/customizable'
 
-import { required } from "@/rules/required";
-import { exactLength } from "@/rules/exactLength";
-import { ValidationRule } from "@/rules/types";
+import { required } from '@/rules/required'
+import { exactLength } from '@/rules/exactLength'
+import type { ValidationRule } from '@/rules/types'
 
-import { mdiPhone } from "@mdi/js";
+import { mdiPhone } from '@mdi/js'
 
-import { vMaska } from "maska";
+import { vMaska } from 'maska'
 
-import deepMerge from "deepmerge";
+import deepMerge from 'deepmerge'
 
-const PHONE_LENGTH = 10;
+const PHONE_LENGTH = 10
 
 export default defineComponent({
 	inheritAttrs: false,
 	directives: { maska: vMaska },
-	emits: ["change", "update:modelValue"],
+	emits: ['change', 'update:modelValue'],
 	props: {
 		modelValue: {
 			type: String,
@@ -42,40 +42,42 @@ export default defineComponent({
 			phoneIcon: mdiPhone,
 			internalValue: null as string | null,
 			counter: PHONE_LENGTH,
-			phonemask: { mask: "## ## ## ## ##" },
-		};
+			phonemask: { mask: '## ## ## ## ##' },
+		}
 	},
 	computed: {
 		textFieldOptions(): Options {
-			return deepMerge<Options>(config, this.$attrs);
+			return deepMerge<Options>(config, this.$attrs)
 		},
 
 		rules(): ValidationRule[] {
-			return this.required ? [required, exactLength(PHONE_LENGTH, true)] : [exactLength(PHONE_LENGTH, true)];
+			return this.required
+				? [required, exactLength(PHONE_LENGTH, true)]
+				: [exactLength(PHONE_LENGTH, true)]
 		},
 
 		computedValue(): string | null {
-			return this.modelValue ? this.formatPhone(this.modelValue) : null;
+			return this.modelValue ? this.formatPhone(this.modelValue) : null
 		},
 	},
 	methods: {
 		formatPhone(value: string): string {
-			return value.replace(/(.{2})/g, "$1 ").trim();
+			return value.replace(/(.{2})/g, '$1 ').trim()
 		},
 
 		noSpacesCounter(value?: string | undefined): number {
-			return value?.replace(/\s/g, "").length || 0;
+			return value?.replace(/\s/g, '').length || 0
 		},
 
 		setInternalValue(event: any): void {
-			this.internalValue = event.target.value.replace(/\s/g, "");
+			this.internalValue = event.target.value.replace(/\s/g, '')
 		},
 
 		emitChangeEvent(): void {
-			this.$emit("update:modelValue", this.internalValue);
+			this.$emit('update:modelValue', this.internalValue)
 		},
 	},
-});
+})
 </script>
 
 <template>

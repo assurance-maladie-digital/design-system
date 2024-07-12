@@ -1,50 +1,51 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import type { Field } from './types';
+import type { Field } from './types'
 
-import FieldMap from './mixins/fieldMap';
+import FieldMap from './mixins/fieldMap'
 
-import { mdiInformationOutline } from '@mdi/js';
+import { mdiInformationOutline } from '@mdi/js'
 
 export default defineComponent({
 	mixins: [FieldMap],
 	props: {
 		modelValue: {
 			type: Object as PropType<Field>,
-			required: true
-		}
+			required: true,
+		},
 	},
 	emits: ['update:modelValue'],
 	data() {
 		return {
-			informationIcon: mdiInformationOutline
+			informationIcon: mdiInformationOutline,
 		}
 	},
 	computed: {
 		fieldComponent(): string {
-			let fieldType = this.modelValue.type;
+			let fieldType = this.modelValue.type
 
 			// Handle subtypes that are not in type 'select'
 			if (fieldType !== 'select') {
-				const fieldOptionsType = this.modelValue.fieldOptions?.type as string || undefined;
-				fieldType = fieldOptionsType || fieldType;
+				const fieldOptionsType =
+					(this.modelValue.fieldOptions?.type as string) || undefined
+				fieldType = fieldOptionsType || fieldType
 			}
 
-			return this.getField(fieldType);
+			return this.getField(fieldType)
 		},
 
 		isDefinedField(): boolean {
-			return this.fieldExists(this.modelValue.type);
-		}
+			return this.fieldExists(this.modelValue.type)
+		},
 	},
 	methods: {
 		emitChangeEvent(value: Field): void {
-			this.$emit('update:modelValue', value);
-		}
-	}
-});
+			this.$emit('update:modelValue', value)
+		},
+	},
+})
 </script>
 
 <template>
@@ -56,10 +57,7 @@ export default defineComponent({
 		>
 			<span v-html="modelValue.title" />
 
-			<VTooltip
-				v-if="modelValue.tooltip"
-				offset="50px"
-			>
+			<VTooltip v-if="modelValue.tooltip" offset="50px">
 				<template #activator="{ props }">
 					<VBtn
 						v-bind="props"
@@ -81,10 +79,7 @@ export default defineComponent({
 			</VTooltip>
 		</h4>
 
-		<p
-			v-if="modelValue.description"
-			class="text-body-2 text-grey"
-		>
+		<p v-if="modelValue.description" class="text-body-2 text-grey">
 			{{ modelValue.description }}
 		</p>
 
@@ -100,18 +95,18 @@ export default defineComponent({
 			:name="modelValue.type"
 			v-bind="{
 				modelValue,
-				emitChangeEvent
+				emitChangeEvent,
 			}"
 		/>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-	.vd-form-field + .vd-form-field {
-		margin-top: 12px;
-	}
+.vd-form-field + .vd-form-field {
+	margin-top: 12px;
+}
 
-	.vd-form-field-tooltip-text {
-		white-space: pre-wrap;
-	}
+.vd-form-field-tooltip-text {
+	white-space: pre-wrap;
+}
 </style>

@@ -33,16 +33,16 @@ describe('copyToClipboard', () => {
 		mockDocument({
 			rangeCount: 0,
 			getRangeAt: () => null,
-			removeAllRanges: () => null
+			removeAllRanges: () => null,
 		})
 
 		const writeTextMock = vi.fn()
 
 		Object.defineProperty(navigator, 'clipboard', {
 			value: {
-				writeText: writeTextMock
+				writeText: writeTextMock,
 			},
-			writable: true
+			writable: true,
 		})
 
 		copyToClipboard(txt)
@@ -56,16 +56,16 @@ describe('copyToClipboard', () => {
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
 			removeAllRanges: () => null,
-			addRange: () => null
+			addRange: () => null,
 		})
 
 		const writeTextMock = vi.fn()
 
 		Object.defineProperty(navigator, 'clipboard', {
 			value: {
-				writeText: writeTextMock
+				writeText: writeTextMock,
 			},
-			writable: true
+			writable: true,
 		})
 
 		copyToClipboard(txt)
@@ -79,12 +79,12 @@ describe('copyToClipboard', () => {
 			rangeCount: 2,
 			getRangeAt: (index: number) => ['a', 'b'][index],
 			removeAllRanges: () => null,
-			addRange: () => null
+			addRange: () => null,
 		})
 
 		Object.defineProperty(navigator, 'clipboard', {
 			value: null,
-			writable: true
+			writable: true,
 		})
 
 		copyToClipboard(txt)

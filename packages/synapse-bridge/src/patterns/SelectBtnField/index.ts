@@ -1,3 +1,3 @@
-import SelectBtnField from './SelectBtnField.vue';
+import SelectBtnField from './SelectBtnField.vue'
 
-export default SelectBtnField;
+export default SelectBtnField

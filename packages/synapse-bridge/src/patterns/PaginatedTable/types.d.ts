@@ -1,34 +1,34 @@
 import type { VDataTable } from 'vuetify/components'
 
 export type SortOption = {
-	key: string;
-	order: 'desc' | 'asc';
-};
+	key: string
+	order: 'desc' | 'asc'
+}
 
 export type GroupOption = {
-	key: string;
-	order: 'desc' | 'asc';
-};
+	key: string
+	order: 'desc' | 'asc'
+}
 
 export interface DataOptions {
-	page: number;
-	itemsPerPage: number;
-	sortBy: string[];
-	sortDesc: boolean[];
-	groupBy: string[];
-	groupDesc: boolean[];
-	multiSort: boolean;
-	mustSort: boolean;
+	page: number
+	itemsPerPage: number
+	sortBy: string[]
+	sortDesc: boolean[]
+	groupBy: string[]
+	groupDesc: boolean[]
+	multiSort: boolean
+	mustSort: boolean
 }
 
 export interface PaginatedTableProps {
-	items: any[];
-	headers: DataTableHeaders;
-	options: DataOptions;
+	items: any[]
+	headers: DataTableHeaders
+	options: DataOptions
 }
 
 export type DataTableHeaders = {
-	title?: string,
-	value?: string,
+	title?: string
+	value?: string
 	key?: string
 }

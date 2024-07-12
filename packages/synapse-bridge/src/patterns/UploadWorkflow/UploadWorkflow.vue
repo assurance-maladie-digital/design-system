@@ -1,96 +1,98 @@
 <script lang="ts">
-import {defineComponent, VNodeNormalizedChildren} from "vue";
+import { defineComponent, VNodeNormalizedChildren } from 'vue'
 
-import { config } from './config';
-import { locales } from './locales';
+import { config } from './config'
+import { locales } from './locales'
 
-import { required } from '@/rules/required';
+import { required } from '@/rules/required'
 
-import { customizable } from '@/mixins/customizable';
-import { Widthable } from '@/mixins/widthable';
+import { customizable } from '@/mixins/customizable'
+import { Widthable } from '@/mixins/widthable'
 
-import UploadWorkflowCore from './mixins/uploadWorkflowCore';
-import FileList from '@/elements/FileList/FileList.vue';
-import FileUpload from '@/patterns/FileUpload/FileUpload.vue';
-import FilePreview from '@/elements/FilePreview/FilePreview.vue';
-import DialogBox from '@/elements/DialogBox/DialogBox.vue';
+import UploadWorkflowCore from './mixins/uploadWorkflowCore'
+import FileList from '@/elements/FileList/FileList.vue'
+import FileUpload from '@/patterns/FileUpload/FileUpload.vue'
+import FilePreview from '@/elements/FilePreview/FilePreview.vue'
+import DialogBox from '@/elements/DialogBox/DialogBox.vue'
 
 export default defineComponent({
 	components: {
 		FileList,
 		FileUpload,
 		FilePreview,
-		DialogBox
+		DialogBox,
 	},
 	mixins: [customizable(config), UploadWorkflowCore, Widthable],
 	props: {
 		sectionTitle: {
 			type: String,
-			default: undefined
+			default: undefined,
 		},
 		multiple: {
 			type: Boolean,
-			default: false
-		}
+			default: false,
+		},
 	},
 	data() {
 		return {
 			locales,
 			// UploadWorkflowCore mixin
 			inlineSelect: false,
-			selectRules: [
-				required
-			]
-		};
+			selectRules: [required],
+		}
 	},
 	computed: {
 		computedTitle(): string {
 			if (this.sectionTitle) {
-				return this.sectionTitle;
+				return this.sectionTitle
 			}
 
 			if (!this.internalFileListItems.length) {
-				return locales.importTitle;
+				return locales.importTitle
 			}
 
-			return locales.title(this.internalFileListItems.length > 1);
+			return locales.title(this.internalFileListItems.length > 1)
 		},
 		slotTitleContent(): VNodeNormalizedChildren | null {
 			if (this.$slots['modal-title']) {
-				const slotContent = this.$slots['modal-title']();
-				return slotContent[0].children;
+				const slotContent = this.$slots['modal-title']()
+				return slotContent[0].children
 			}
-			return null;
+			return null
 		},
 		showFileList(): boolean {
-			return this.fileList.length > 0;
+			return this.fileList.length > 0
 		},
 		displayShowViewBtn(): boolean {
-			return this.showViewBtn || this.options.fileList?.showViewBtn;
+			return this.showViewBtn || this.options.fileList?.showViewBtn
 		},
 		showFileUpload(): boolean {
-			const hasNonValidatedFiles = Boolean(this.internalFileListItems?.some((item) => item.state !== 'success'));
+			const hasNonValidatedFiles = Boolean(
+				this.internalFileListItems?.some(
+					(item) => item.state !== 'success'
+				)
+			)
 
-			return this.unrestricted || hasNonValidatedFiles;
-		}
+			return this.unrestricted || hasNonValidatedFiles
+		},
 	},
 	methods: {
 		uploadInline(id: string): void {
-			if (this.$refs.fileUpload && typeof this.$refs.fileUpload.retry === 'function') {
-				this.$refs.fileUpload.retry();
-				this.selectedItem = id;
-				this.inlineSelect = true;
+			if (
+				this.$refs.fileUpload &&
+				typeof this.$refs.fileUpload.retry === 'function'
+			) {
+				this.$refs.fileUpload.retry()
+				this.selectedItem = id
+				this.inlineSelect = true
 			}
-		}
-	}
-});
+		},
+	},
+})
 </script>
 
 <template>
-	<div
-		:style="widthStyles"
-		class="vd-upload-workflow white"
-	>
+	<div :style="widthStyles" class="vd-upload-workflow white">
 		<!-- The title slot can be used to change the title level -->
 		<slot name="title">
 			<h4 class="text-h6 mb-2">
@@ -163,10 +165,7 @@ export default defineComponent({
 		>
 			<slot name="preview-description" />
 
-			<FilePreview
-				:options="options.filePreview"
-				:file="fileToPreview"
-			/>
+			<FilePreview :options="options.filePreview" :file="fileToPreview" />
 		</DialogBox>
 	</div>
 </template>

@@ -1,13 +1,13 @@
 export const config = {
 	menu: {
-		offsetY: true
+		offsetY: true,
 	},
 	icon: {
 		color: 'primary',
-		class: 'mr-2'
+		class: 'mr-2',
 	},
 	btn: {
 		color: 'primary',
-		variant: 'text'
+		variant: 'text',
 	},
-};
+}

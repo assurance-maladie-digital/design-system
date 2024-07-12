@@ -1,17 +1,17 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-import PasswordField from "@/patterns/PasswordField";
+import PasswordField from '@/patterns/PasswordField'
 
-import FieldComponent from "../mixins/fieldComponent";
+import FieldComponent from '../mixins/fieldComponent'
 
 export default defineComponent({
 	components: {
 		PasswordField,
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	mixins: [FieldComponent],
-});
+})
 </script>
 
 <template>

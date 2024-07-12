@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent } from "vue";
-import type { PropType } from "vue";
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 
-import { mdiMagnify } from "@mdi/js";
+import { mdiMagnify } from '@mdi/js'
 
-import type { SearchListItem } from "./types";
-import { locales } from "./locales";
+import type { SearchListItem } from './types'
+import { locales } from './locales'
 
 export default defineComponent({
 	props: {
@@ -18,35 +18,37 @@ export default defineComponent({
 			default: () => [],
 		},
 	},
-	emits: ["update:modelValue"],
+	emits: ['update:modelValue'],
 	data() {
 		return {
 			search: null as string | null,
 			internalValue: this.modelValue,
 			searchIcon: mdiMagnify,
 			locales,
-		};
+		}
 	},
 	watch: {
 		modelValue(value: unknown[]): void {
-			this.internalValue = value;
+			this.internalValue = value
 		},
 	},
 	computed: {
 		filteredItems(): SearchListItem[] {
 			if (this.search === null) {
-				return this.items;
+				return this.items
 			}
-			const searchLower = this.search.toLowerCase();
-			return this.items.filter(item => item.label.toLowerCase().includes(searchLower));
+			const searchLower = this.search.toLowerCase()
+			return this.items.filter((item) =>
+				item.label.toLowerCase().includes(searchLower)
+			)
 		},
 	},
 	methods: {
 		emitChangeEvent(value: unknown[]): void {
-			this.$emit("update:modelValue", value);
+			this.$emit('update:modelValue', value)
 		},
 	},
-});
+})
 </script>
 
 <template>
@@ -71,7 +73,6 @@ export default defineComponent({
 			class="pb-0"
 			v-model:selected="internalValue"
 			@update:selected="emitChangeEvent"
-
 		>
 			<VListItem
 				v-for="(item, index) in filteredItems"
@@ -99,7 +100,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@import "@cnamts/design-tokens/dist/tokens";
+@import '@cnamts/design-tokens/dist/tokens';
 
 .vd-search-list .v-list-item--active::before {
 	opacity: 0;

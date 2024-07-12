@@ -1,3 +1,3 @@
-import NotificationBar from './NotificationBar.vue';
+import NotificationBar from './NotificationBar.vue'
 
-export default NotificationBar;
+export default NotificationBar
