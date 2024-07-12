@@ -1,4 +1,4 @@
-import { CookiesPageItems } from '../types'
+import type { CookiesPageItems } from '../types'
 import { TypeEnum } from '../CookiesInformation/TypeEnum'
 
 export const cookies = [

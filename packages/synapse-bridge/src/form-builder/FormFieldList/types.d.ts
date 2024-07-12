@@ -1,4 +1,4 @@
-import { Field } from '../FormField/types'
+import type { Field } from '../FormField/types'
 
 export interface Fields {
 	[fieldName: string]: Field

@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 
 import UploadWorkflowCore from '../uploadWorkflowCore'
 
-import { FileListItem, SelectItem } from '../../types'
+import type { FileListItem, SelectItem } from '../../types'
 
 interface TestComponent {
 	$refs: {

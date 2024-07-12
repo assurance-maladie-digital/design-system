@@ -8,7 +8,7 @@ import { TypeEnum, TYPE_ENUM_VALUES } from './TypeEnum'
 import { RadioValuesEnum } from './RadioValuesEnum'
 
 import CookiesTable from '../CookiesTable'
-import { CookiesList } from '../CookiesTable/types'
+import type { CookiesList } from '../CookiesTable/types'
 
 import { propValidator } from '../../../helpers/propValidator'
 

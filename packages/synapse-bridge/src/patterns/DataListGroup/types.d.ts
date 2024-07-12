@@ -1,4 +1,4 @@
-import { DataList } from '@/elements/DataList/types'
+import type { DataList } from '@/elements/DataList/types'
 
 export interface DataListActionEvent {
 	dataListIndex: number

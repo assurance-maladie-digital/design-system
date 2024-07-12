@@ -1,4 +1,4 @@
-import { Fields } from '../../types'
+import type { Fields } from '../../types'
 
 const defaultItem = [
 	{

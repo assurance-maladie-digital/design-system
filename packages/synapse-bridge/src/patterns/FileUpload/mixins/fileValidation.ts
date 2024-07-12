@@ -5,7 +5,7 @@ import { getFileExtension } from '@/functions/getFileExtension'
 
 import { locales } from '../locales'
 
-import { ErrorEvent } from '../types'
+import type { ErrorEvent } from '../types'
 import { ErrorCodes } from '../errorCodes'
 
 export default defineComponent({

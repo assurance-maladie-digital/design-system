@@ -5,11 +5,11 @@ import consola from 'consola'
 
 import UpdateFileModel from './updateFileModel'
 
-import { Refs } from '../../../types'
-import { FileListItem, SelectedFile, SelectItem } from '../types'
+import type { Refs } from '../../../types'
+import type { FileListItem, SelectedFile, SelectItem } from '../types'
 
 import FileUpload from '../../FileUpload'
-import { ErrorEvent } from '../../FileUpload/types'
+import type { ErrorEvent } from '../../FileUpload/types'
 
 export default defineComponent({
 	mixins: [UpdateFileModel],

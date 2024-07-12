@@ -4,7 +4,7 @@ import type { PropType } from 'vue'
 
 import { headers } from './headers'
 
-import { CookiesList } from './types'
+import type { CookiesList } from './types'
 
 export default defineComponent({
 	props: {

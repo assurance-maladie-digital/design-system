@@ -3,7 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 
 import { defineComponent } from 'vue'
 
-import { Field } from '../../types'
+import type { Field } from '../../types'
 
 import FieldComponent from '../fieldComponent'
 

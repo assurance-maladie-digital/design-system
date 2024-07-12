@@ -5,7 +5,7 @@ import { vuetify } from '@tests/unit/setup'
 import CookiesPage from '../'
 import { TypeEnum } from '../CookiesInformation/TypeEnum'
 import { cookies, cookiesList } from './fixtures'
-import { VForm } from '@/types'
+import type { VForm } from '@/types'
 import CookiesInformation from '../CookiesInformation'
 
 describe('CookiesPage', () => {
