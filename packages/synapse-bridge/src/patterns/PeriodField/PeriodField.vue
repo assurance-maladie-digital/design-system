@@ -178,6 +178,14 @@ export default defineComponent({
 	right: 35px;
 }
 
+:deep(.v-icon__svg) {
+	fill: #797979;
+}
+
+:deep(.v-input__prepend > .v-icon) {
+	opacity: 1;
+}
+
 .warning-style {
 	:deep(.v-icon) {
 		color: #f0b323 !important;
