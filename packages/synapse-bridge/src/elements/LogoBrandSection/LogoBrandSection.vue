@@ -312,6 +312,7 @@ export default defineComponent({
 
 	.vd-title {
 		line-height: 1.45 !important;
+		font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif !important;
 	}
 
 	.vd-compte-entreprise-title {
