@@ -15,11 +15,13 @@ import {
 	mdiClose,
 } from '@mdi/js'
 
+type LowercaseStringLiterals<T> = T extends string ? Lowercase<T> : T;
+type LowercaseKeys<T> = { [K in keyof T as LowercaseStringLiterals<K>]: T[K] };
 export default defineComponent({
 	inheritAttrs: false,
 	props: {
 		type: {
-			type: String as PropType<AlertTypeEnum>,
+			type: String as PropType<keyof LowercaseKeys<typeof AlertTypeEnum>>,
 			default: AlertTypeEnum.INFO,
 			validator: (value: string) =>
 				propValidator('type', ALERT_TYPE_ENUM_VALUES, value),
