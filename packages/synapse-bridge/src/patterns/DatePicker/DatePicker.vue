@@ -666,14 +666,14 @@ export default defineComponent({
 }
 
 :deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-	height: calc(100% - 1px);
+	height: calc(100% - 1px) !important;
 }
 
 :deep(
-		.v-field--variant-outlined.v-field--focused
+		.v-field--variant-outlined.v-field--focused,
 			.v-field__outline__notch::after
 	) {
-	height: calc(100% - 2px);
+	height: calc(100% - 2px) !important;
 }
 
 :deep(.dp__clear_icon) {
@@ -728,7 +728,7 @@ export default defineComponent({
 	}
 
 	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #b33f2e;
+		color: #b33f2e !important;
 	}
 }
 </style>
