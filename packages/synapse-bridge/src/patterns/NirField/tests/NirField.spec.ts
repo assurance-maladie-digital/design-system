@@ -97,12 +97,8 @@ describe('NirField', () => {
 		await numberField.setValue(nir)
 		await keyField.setValue(key)
 
-		const value = wrapper.emitted('update:modelValue')
-
-		expect(wrapper.emitted()).toHaveProperty('change')
-		if (value) {
-			expect(value[2]).toEqual([[nir + key][0]])
-		}
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue')
+		expect(wrapper.emitted('update:modelValue')?.[1][0]).toEqual(nir + key)
 	})
 
 	it('update the value when the nir prop is updated in single field mode', async () => {
