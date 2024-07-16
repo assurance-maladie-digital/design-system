@@ -544,6 +544,30 @@ export default defineComponent({
 				this.$emit('update:model-value', null)
 			}
 		},
+		async handleCut(event?: ClipboardEvent) {
+			if (event && event.clipboardData) {
+				this.inputValue = '';
+				this.date = null;
+				this.$emit('update:model-value', this.date);
+			}
+		},
+		async handlePaste(event?: ClipboardEvent) {
+			if (event && event.clipboardData) {
+				this.inputValue = event.clipboardData.getData('text');;
+				const isValidFormat = this.createDateRegEx(this.dateFormat).test(this.inputValue);
+
+				if (isValidFormat) {
+					this.$emit('update:model-value', this.inputValue);
+					this.date = this.inputValue;
+				} else {
+					this.errorMessages.push(
+						this.customErrorMessages.length > 0
+							? this.customErrorMessages
+							: "La date saisie n'est pas valide"
+					);
+				}
+			}
+		}
 	},
 })
 </script>
@@ -618,6 +642,8 @@ export default defineComponent({
 					@click:clear="onClear"
 					@click:prepend="handleIconClick"
 					@click:prepend-inner="handleIconClick"
+					@paste="handlePaste"
+					@cut="handleCut"
 				></v-text-field>
 			</template>
 		</VueDatePicker>

@@ -673,4 +673,20 @@ describe('Mounted', () => {
 		expect(wrapper.vm.date).toBe(null)
 		expect(wrapper.vm.inputValue).toBe('')
 	})
+
+	it('handleCut method updates state and clipboard correctly', async () => {
+		const wrapper = shallowMount(DatePicker)
+		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+		await wrapper.vm.handleCut(mockEvent as any)
+		expect(wrapper.vm.inputValue).toBe('')
+		expect(wrapper.vm.date).toBeNull()
+	})
+
+	it('handlePaste method updates state and clipboard correctly', async () => {
+		const wrapper = shallowMount(DatePicker)
+		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+		await wrapper.vm.handlePaste(mockEvent as any)
+		expect(wrapper.vm.inputValue).toBe('07/07/1990')
+		expect(wrapper.vm.date).toBe('07/07/1990')
+	})
 })
