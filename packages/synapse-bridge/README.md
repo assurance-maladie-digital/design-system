@@ -4,7 +4,7 @@
 
 ## Changelog
 
-Pour consulter les changements récents, veuillez consulter le [CHANGELOG](https://github.com/assurance-maladie-digital/design-system/blob/v2-bridge/packages/synapse-bridge/CHANGELOG.md)
+Pour consulter les changements récents, veuillez consulter le [CHANGELOG](https://github.com/assurance-maladie-digital/design-system/blob/v2-bridge/packages/synapse-bridge/CHANGELOG.md).
 
 ## Prérequis
 
