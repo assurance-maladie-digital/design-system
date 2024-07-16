@@ -1,6 +1,6 @@
 {
 	"name": "@cnamts/synapse-bridge",
-	"version": "1.4.8-alpha.0",
+	"version": "1.4.7-alpha.0",
 	"description": "Portage of our components to Vue 3 without breaking changes",
 	"license": "MIT",
 	"author": {
@@ -64,7 +64,7 @@
 		"lint:eslint": "eslint . --ignore-pattern 'dist/*'",
 		"lint:prettier": "pnpm exec prettier . --write",
 		"lint:fix": "eslint . --fix && prettier --write --list-different .",
-		"version": "auto-changelog -p --starting-date 2024-07-16 && git add CHANGELOG.md"
+		"generate:changelog": "auto-changelog -p --starting-date 2024-07-16"
 	},
 	"peerDependencies": {
 		"vue": "^3.4.21",
