@@ -9,7 +9,7 @@ import { requiredFn } from '@/rules/required'
 import { vMaska } from 'maska'
 import { mdiInformationOutline } from '@mdi/js'
 import deepMerge from 'deepmerge'
-import { ValidationRule } from '@/rules/types'
+import type { ValidationRule } from '@/rules/types'
 
 const NUMBER_LENGTH = 13
 const KEY_LENGTH = 2
@@ -67,6 +67,12 @@ export default defineComponent({
 			numberValue: '',
 			keyValue: '',
 
+			/**
+			 * Keep trace of the field value when the number field is not filled
+			 * in double field mode in order to not lose the key part.
+			 */
+			fractionalFieldValue: null as string | null,
+
 			numberMask: {
 				mask: '# ## ## #C ### ###',
 				preProcess: (value: string) => value.toUpperCase(),
@@ -86,31 +92,15 @@ export default defineComponent({
 		}
 	},
 	watch: {
-		keyValue(newVal: string) {
-			this.$emit(
-				'update:modelValue',
-				this.maskaNumberValue.unmasked + newVal
-			)
-		},
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
-				if (!newValue) {
+				if (newValue === this.fractionalFieldValue) {
+					this.fractionalFieldValue = null
 					return
 				}
-				if (newValue.length === NUMBER_LENGTH) {
-					this.validateNumberValue()
-				}
-				if (newValue.length >= NUMBER_LENGTH) {
-					this.numberValue = newValue.slice(0, NUMBER_LENGTH)
-					this.keyValue = newValue.slice(NUMBER_LENGTH)
-				}
-				if (
-					newValue.length === NUMBER_LENGTH + KEY_LENGTH ||
-					!this.isSingleField
-				) {
-					this.validateKeyValue()
-				}
+				this.numberValue = newValue.slice(0, NUMBER_LENGTH);
+				this.keyValue = newValue.slice(NUMBER_LENGTH);
 			},
 		},
 	},
@@ -184,40 +174,29 @@ export default defineComponent({
 			return [...this.numberErrors, ...this.keyErrors].join('\n')
 		},
 
-		internalValue(): string | null {
-			if (this.isSingleField && this.numberFilled) {
-				return this.maskaNumberValue.unmasked
-			}
 
-			if (!this.numberFilled || !this.keyFilled) {
-				return null
-			}
-
-			return (this.maskaNumberValue.unmasked + this.keyValue) as string
-		},
 	},
 	methods: {
 		changeNumberValue(): void {
-			this.$emit(
-				'update:modelValue',
-				this.keyValue
-					? this.maskaNumberValue.unmasked + this.keyValue
-					: this.maskaNumberValue.unmasked
-			)
-			this.validateNumberValue()
+			if(this.isSingleField) {
+				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
+				return
+			}
+			this.doubleFieldUpdated()
 		},
 
 		changeKeyValue(): void {
-			if (!this.internalValue || this.errors.length > 0) {
-				return
-			}
+			this.doubleFieldUpdated();
+		},
 
-			this.$emit(
-				'update:modelValue',
-				this.keyValue
-					? this.maskaNumberValue.unmasked + this.keyValue
-					: this.keyValue
-			)
+		doubleFieldUpdated(): void {
+			const internalValue = this.maskaNumberValue.unmasked + this.keyValue
+			if(!this.numberFilled) {
+				this.fractionalFieldValue = internalValue;
+			} else {
+				this.fractionalFieldValue = null;
+			}
+			this.$emit('update:modelValue', internalValue)
 		},
 
 		/**
