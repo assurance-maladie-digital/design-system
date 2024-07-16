@@ -207,17 +207,6 @@ export default defineComponent({
 			this.numberErrors = this.numberRules
 				.map((rule) => rule(this.maskaNumberValue.unmasked))
 				.filter((error): error is string => typeof error === 'string')
-
-			// Add custom validation for 'A' or 'B' (For the Corsican departments)
-			const seventhChar = this.maskaNumberValue.unmasked.charAt(5)
-			const eighthChar = this.maskaNumberValue.unmasked.charAt(6)
-			if (
-				(eighthChar === 'A' || eighthChar === 'B') &&
-				seventhChar !== '1' &&
-				seventhChar !== '2'
-			) {
-				this.numberErrors.push(this.locales.errorCorsican)
-			}
 		},
 
 		/**
