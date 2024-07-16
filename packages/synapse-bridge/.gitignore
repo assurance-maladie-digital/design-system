@@ -1,0 +1,32 @@
+# Vue dev/build outputs
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Coverage
+**/tests/**/coverage
+
+# Change log
+CHANGELOG-TEMP.md
