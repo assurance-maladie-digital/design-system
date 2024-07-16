@@ -15,17 +15,17 @@ Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes
 
 ## Stack Technique
 
-[x] Vue 3
-[x] Vuetify 3
-[x] Vue Router 4
-[x] Vuex 4
+- Vue 3
+- Vuetify 3
+- Vue Router 4
+- Vuex 4
 
 ## Outils Inclus
 
-[x] Typescript
-[x] Axios
-[x] Sass
-[x] Vitest pour les tests unitaires
+- Typescript
+- Axios
+- Sass
+- Vitest pour les tests unitaires
 
 ## Installation et utilisation
 
