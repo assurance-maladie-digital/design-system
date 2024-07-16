@@ -20,6 +20,11 @@ jobs:
             cache: 'pnpm'
         - name: Install pnpm
           run: npm install -g pnpm
-        - run: pnpm install --frozen-lockfile
-        - run: pnpm build --if-present
-        - run: pnpm test:unit
+        - name: Install dependencies
+          run: pnpm install --frozen-lockfile
+        - name: Lint (show only errors)
+          run: pnpm lint --quiet
+        - name: Test
+          run: pnpm test:unit
+        - name: Build
+          run: pnpm build
