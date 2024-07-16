@@ -64,7 +64,7 @@
 		"lint:eslint": "eslint . --ignore-pattern 'dist/*'",
 		"lint:prettier": "pnpm exec prettier . --write",
 		"lint:fix": "eslint . --fix && prettier --write --list-different .",
-		"version": "auto-changelog -c .auto-changelog -p && git add CHANGELOG.md"
+		"version": "auto-changelog -p --starting-date 2024-07-16 && git add CHANGELOG.md"
 	},
 	"peerDependencies": {
 		"vue": "^3.4.21",
