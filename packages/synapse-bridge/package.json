@@ -63,7 +63,8 @@
 		"lint": "pnpm lint:eslint && pnpm lint:prettier",
 		"lint:eslint": "eslint . --ignore-pattern 'dist/*'",
 		"lint:prettier": "pnpm exec prettier . --write",
-		"lint:fix": "eslint . --fix && prettier --write --list-different ."
+		"lint:fix": "eslint . --fix && prettier --write --list-different .",
+		"version": "auto-changelog -c .auto-changelog -p && git add CHANGELOG.md"
 	},
 	"peerDependencies": {
 		"vue": "^3.4.21",
@@ -81,6 +82,7 @@
 		"@vitejs/plugin-vue": "4.3.4",
 		"@vitest/coverage-v8": "0.34.6",
 		"@vue/test-utils": "2.4.1",
+		"auto-changelog": "^2.4.0",
 		"axios": "^1.5.0",
 		"content-disposition-header": "^0.6.0",
 		"dayjs": "^1.8.0",
