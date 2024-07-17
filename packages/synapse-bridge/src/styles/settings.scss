@@ -257,7 +257,10 @@ a {
 			opacity: 1 !important;
 		}
 	}
-	// Field : Custom styles for variant underlined
+}
+
+// Field : Custom styles for password variant underlined
+.vd-password {
 	.v-field.v-field--variant-underlined .v-field__append-inner {
 		padding-top: 0;
 		padding-bottom: 0;
@@ -267,5 +270,4 @@ a {
 	.v-field.v-field--variant-underlined .v-field__input {
 		padding-top: calc(var(--v-field-input-padding-top) - 15px);
 	}
-
 }
