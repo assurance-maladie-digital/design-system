@@ -28,7 +28,7 @@ export default defineComponent({
 		required: {
 			type: Boolean,
 			default: false,
-		},
+		}
 	},
 	data() {
 		return {
@@ -78,6 +78,7 @@ export default defineComponent({
 			<VBtn
 				v-bind="options.btn"
 				:aria-label="btnLabel"
+				class="mx-auto"
 				@click="showEyeIcon = !showEyeIcon"
 			>
 				<VIcon v-bind="options.icon">
@@ -91,21 +92,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-btn--icon {
 	color: rgba(0, 0, 0, 0.54);
-	margin-bottom: -4px !important;
-}
-.v-field__append-inner {
-	display: flex;
-	align-items: center;
-	padding-top: 8px;
-}
-
-:deep(.v-field__field ){
-	align-items: stretch !important;
-	padding-top: 2.5% !important;
 }
 .v-btn--icon.v-btn--density-default {
-	width: calc(var(--v-btn-height) + 5px) !important;
-	height: calc(var(--v-btn-height) + 5px) !important;
+	width: var(--v-btn-height);
+	height: var(--v-btn-height);
 }
-
 </style>
