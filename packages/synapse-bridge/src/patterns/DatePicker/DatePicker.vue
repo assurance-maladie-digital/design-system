@@ -702,6 +702,10 @@ export default defineComponent({
 	height: calc(100% - 2px) !important;
 }
 
+:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
+	height: calc(100%) !important;
+}
+
 :deep(.dp__clear_icon) {
 	top: 35%;
 	right: 4%;
