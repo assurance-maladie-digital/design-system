@@ -59,7 +59,7 @@ export default defineComponent({
 		</h3>
 
 		<slot name="section-description" v-bind="{ description }">
-			<p v-if="description">
+			<p v-if="description" class="mb-4">
 				{{ description }}
 			</p>
 		</slot>
