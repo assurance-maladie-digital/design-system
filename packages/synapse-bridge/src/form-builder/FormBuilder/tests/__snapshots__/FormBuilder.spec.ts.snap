@@ -531,11 +531,11 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-slider--has-labels v-locale--is-ltr vd-choice-slider-field vd-form-input-xl" type="choiceSlider">
+        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-slider--has-labels v-locale--is-ltr pt-3 vd-choice-slider-field vd-form-input-xl" type="choiceSlider">
           <!---->
           <div class="v-input__control">
             <div class="v-slider__container"><input id="input-23" name="input-23" tabindex="-1">
-              <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
+              <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
                 <div class="v-slider-track__ticks v-slider-track__ticks--always-show">
@@ -553,7 +553,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                   </div>
                 </div>
               </div>
-              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 20px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-23-messages" elevation="2">
+              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 12px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-23-messages" elevation="2">
                 <div class="v-slider-thumb__surface text-primary elevation-2"></div>
                 <div class="v-slider-thumb__ripple text-primary"></div>
                 <transition-stub name="scale-transition" appear="false" persisted="false" css="true">
@@ -583,16 +583,16 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label vd-choice-slider-field vd-form-input-xl" style="padding-top: 32px;" type="choiceSlider">
+        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label pt-3 vd-choice-slider-field vd-form-input-xl" type="choiceSlider">
           <!---->
           <div class="v-input__control">
             <div class="v-slider__container"><input id="input-24" name="input-24" tabindex="-1">
-              <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
+              <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
                 <div class="v-slider-track__ticks v-slider-track__ticks--always-show"></div>
               </div>
-              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 20px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-24-messages" elevation="2">
+              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 12px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-24-messages" elevation="2">
                 <div class="v-slider-thumb__surface text-primary elevation-2"></div>
                 <div class="v-slider-thumb__ripple text-primary"></div>
                 <transition-stub name="scale-transition" appear="false" persisted="false" css="true">
@@ -622,16 +622,16 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label vd-choice-slider-field vd-form-input-xl" style="padding-top: 32px;" labelmin="min" labelmax="max" type="choiceSlider">
+        <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label pt-3 vd-choice-slider-field vd-form-input-xl" labelmin="min" labelmax="max" type="choiceSlider">
           <!---->
           <div class="v-input__control">
             <div class="v-slider__container"><input id="input-25" name="input-25" tabindex="-1">
-              <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
+              <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
                 <div class="v-slider-track__ticks v-slider-track__ticks--always-show"></div>
               </div>
-              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 20px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-25-messages" elevation="2">
+              <div class="v-slider-thumb v-locale--is-ltr" style="--v-slider-thumb-position: 0%; --v-slider-thumb-size: 12px;" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" aria-readonly="false" aria-orientation="horizontal" aria-describedby="input-25-messages" elevation="2">
                 <div class="v-slider-thumb__surface text-primary elevation-2"></div>
                 <div class="v-slider-thumb__ripple text-primary"></div>
                 <transition-stub name="scale-transition" appear="false" persisted="false" css="true">
