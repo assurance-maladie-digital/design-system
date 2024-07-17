@@ -107,22 +107,6 @@ export default defineComponent({
 	created(): void {
 		this.isSingleField = this.nirLength === SINGLE_FIELD
 	},
-	mounted(): void {
-		const textField = this.$refs.numberField as any
-		const keyField = this.$refs.keyField as any
-		if (
-			textField.hint === '13 caractères' ||
-			keyField?.hint === '2 chiffres'
-		) {
-			// add a class to hint
-			textField.$el
-				.querySelector('.v-messages__message')
-				.classList.add('vd-nir-field__hint')
-			keyField?.$el
-				.querySelector('.v-messages__message')
-				.classList.add('vd-nir-field__hint')
-		}
-	},
 	computed: {
 		numberFilled(): boolean {
 			return this.maskaNumberValue.unmasked?.length === NUMBER_LENGTH
@@ -354,10 +338,6 @@ export default defineComponent({
 	white-space: pre-line !important;
 }
 
-:deep(.vd-nir-field__hint) {
-	color: rgba(0, 0, 0, 1) !important;
-}
-
 .vd-number-field {
 	width: 296px;
 }
@@ -393,6 +373,10 @@ export default defineComponent({
 :deep(.v-text-field .v-input__details) {
 	padding-inline-start: 0 !important;
 	padding-inline-end: 0 !important;
+}
+
+:deep(.v-text-field .v-input__details .v-messages) {
+	color: rgba(0, 0, 0, 1) !important;
 }
 
 @mixin responsive-nir-wrapper {
