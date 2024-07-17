@@ -2,9 +2,9 @@
 
 exports[`FormBuilder > renders correctly 1`] = `
 <div data-v-8683857d="" class="vd-form-builder w-100">
-  <div data-v-8683857d="" class="vd-field-list w-100">
+  <div data-v-8683857d="" class="vd-field-list w-100 pb-8">
     <h3 class="text-h6 font-weight-bold mb-2">Champs textes</h3>
-    <p>Champs textes, date et périodes et leurs sous-types.</p>
+    <p class="mb-4">Champs textes, date et périodes et leurs sous-types.</p>
     <div data-v-9067cb71="" class="vd-form-field">
       <!--v-if-->
       <!--v-if-->
@@ -217,7 +217,7 @@ exports[`FormBuilder > renders correctly 1`] = `
         <!--teleport start-->
         <!--teleport end-->
       </h4>
-      <p data-v-9067cb71="" class="text-body-2 text-grey">Décrivez les symptômes qui vous affectent et leur ordre d’apparition.</p>
+      <p data-v-9067cb71="" class="text-body-2 text-grey mb-4">Décrivez les symptômes qui vous affectent et leur ordre d’apparition.</p>
       <div data-v-9067cb71="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-textarea v-text-field vd-form-input-xl mt-4">
         <!---->
         <div class="v-input__control">
@@ -401,7 +401,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div data-v-8683857d="" class="vd-field-list w-100">
+  <div data-v-8683857d="" class="vd-field-list w-100 pb-8">
     <h3 class="text-h6 font-weight-bold mb-2">Champs de sélection</h3>
     <!--v-if-->
     <div data-v-9067cb71="" class="vd-form-field">
@@ -725,7 +725,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div data-v-8683857d="" class="vd-field-list w-100">
+  <div data-v-8683857d="" class="vd-field-list w-100 pb-8">
     <h3 class="text-h6 font-weight-bold mb-2">Section 3</h3>
     <!--v-if-->
     <div data-v-9067cb71="" class="vd-form-field">
@@ -886,7 +886,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       <h4 data-v-9067cb71="" class="text-body-1 d-flex align-sm-center mb-2"><span data-v-9067cb71="">Question choix autre conditionnel</span>
         <!--v-if-->
       </h4>
-      <p data-v-9067cb71="" class="text-body-2 text-grey">Visible quand le choix « Autre » est sélectionné</p>
+      <p data-v-9067cb71="" class="text-body-2 text-grey mb-4">Visible quand le choix « Autre » est sélectionné</p>
       <div data-v-60156eea="" data-v-9067cb71="">
         <div data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-select v-select--multiple v-select--selected vd-form-input">
           <!---->
@@ -1123,7 +1123,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div data-v-8683857d="" class="vd-field-list w-100">
+  <div data-v-8683857d="" class="vd-field-list w-100 pb-8">
     <h3 class="text-h6 font-weight-bold mb-2">Champs personnalisés</h3>
     <!--v-if-->
     <div data-v-9067cb71="" class="vd-form-field">

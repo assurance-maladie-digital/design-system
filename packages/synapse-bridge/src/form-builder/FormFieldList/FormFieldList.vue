@@ -51,7 +51,7 @@ export default defineComponent({
 
 <template>
 	<div
-		class="vd-field-list w-100"
+		class="vd-field-list w-100 pb-8"
 		:class="{ 'theme--dark': theme.current.dark }"
 	>
 		<h3 v-if="listTitle" class="text-h6 font-weight-bold mb-2">
