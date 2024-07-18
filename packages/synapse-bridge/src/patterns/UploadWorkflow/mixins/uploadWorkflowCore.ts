@@ -207,7 +207,6 @@ export default defineComponent({
 				this.dialog = false
 				this.setFileInList()
 				this.emitChangeEvent()
-				// this.$refs.form.reset()
 			}
 		},
 
