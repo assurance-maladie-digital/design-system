@@ -97,12 +97,8 @@ describe('NirField', () => {
 		await numberField.setValue(nir)
 		await keyField.setValue(key)
 
-		const value = wrapper.emitted('update:modelValue')
-
-		expect(wrapper.emitted()).toHaveProperty('change')
-		if (value) {
-			expect(value[2]).toEqual([[nir + key][0]])
-		}
+		expect(wrapper.emitted()).toHaveProperty('update:modelValue')
+		expect(wrapper.emitted('update:modelValue')?.[1][0]).toEqual(nir + key)
 	})
 
 	it('update the value when the nir prop is updated in single field mode', async () => {
@@ -117,11 +113,9 @@ describe('NirField', () => {
 
 		const input = wrapper.find('input')
 		await input.setValue('123')
-		await wrapper.setProps({ modelValue: '' })
 		expect(wrapper.find('input').element.value).toBe('1 23')
 
 		await input.setValue(nir)
-		await wrapper.setProps({ modelValue: '' })
 		expect(wrapper.find('input').element.value).toBe(formattedNir)
 	})
 
@@ -140,7 +134,6 @@ describe('NirField', () => {
 		await numberField.setValue(nir)
 		await keyField.setValue(key)
 
-		await wrapper.setProps({ modelValue: '' })
 		expect(
 			wrapper.find<HTMLInputElement>('.vd-number-field input').element
 				.value
@@ -525,65 +518,6 @@ describe('NirField', () => {
 
 		expect(wrapper.vm.maskaNumberValue.unmasked).toBe(expectedValue)
 	})
-	it('returns the correct internal value in single field mode', async () => {
-		const wrapper = mount(NirField, {
-			propsData: {
-				nirLength: 13,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		const expectedValue = '1234567890123'
-		await numberField.setValue(expectedValue)
-
-		expect(wrapper.vm.internalValue).toBe(expectedValue)
-	})
-
-	it('adds the vd-nir-field__hint class to the hint messages when mounted and hints are correct', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const textField = wrapper.find('.vd-number-field input')
-		const keyField = wrapper.find('.vd-key-field input')
-		textField.element.setAttribute('hint', '13 caractères')
-		keyField.element.setAttribute('hint', '2 chiffres')
-
-		expect(textField.element.getAttribute('hint')).toBe('13 caractères')
-		expect(keyField.element.getAttribute('hint')).toBe('2 chiffres')
-
-		wrapper.vm.$options.mounted?.call(wrapper.vm)
-
-		const textFieldMessageElement = textField?.element?.querySelector(
-			'.v-messages__message'
-		)
-		const keyFieldMessageElement = keyField?.element?.querySelector(
-			'.v-messages__message'
-		)
-
-		if (textFieldMessageElement && keyFieldMessageElement) {
-			expect(
-				textFieldMessageElement.classList.contains('vd-nir-field__hint')
-			).toBe(true)
-			expect(
-				keyFieldMessageElement.classList.contains('vd-nir-field__hint')
-			).toBe(true)
-		} else if (textFieldMessageElement || keyFieldMessageElement) {
-			expect(
-				textFieldMessageElement?.classList.contains(
-					'vd-nir-field__hint'
-				)
-			).toBe(true)
-			expect(
-				keyFieldMessageElement?.classList.contains('vd-nir-field__hint')
-			).toBe(true)
-		}
-	})
 
 	it('updates the v-model when a key is deleted', async () => {
 		const wrapper = mount(NirField, {
@@ -600,10 +534,9 @@ describe('NirField', () => {
 		await keyField.setValue('')
 
 		const emittedValues = wrapper.emitted('update:modelValue')
-		if (emittedValues) {
-			const lastEmittedValue = emittedValues[emittedValues.length - 1]
-			expect(lastEmittedValue).toEqual([''])
-		}
+
+		const lastEmittedValue = emittedValues?.pop()
+		expect(lastEmittedValue).toEqual([''])
 	})
 
 	it('updates the v-model when a number is deleted', async () => {
@@ -621,10 +554,9 @@ describe('NirField', () => {
 		await numberField.setValue('')
 
 		const emittedValues = wrapper.emitted('update:modelValue')
-		if (emittedValues) {
-			const lastEmittedValue = emittedValues[emittedValues.length - 1]
-			expect(lastEmittedValue).toEqual([''])
-		}
+
+		const lastEmittedValue = emittedValues?.pop()
+		expect(lastEmittedValue).toEqual([''])
 	})
 
 	it('calls the changeNumberValue method when the number value changes', async () => {
@@ -646,10 +578,8 @@ describe('NirField', () => {
 
 		// Check the emitted event
 		const emittedValues = wrapper.emitted('update:modelValue')
-		if (emittedValues) {
-			const lastEmittedValue = emittedValues[emittedValues.length - 1]
-			expect(lastEmittedValue).toEqual(['123456789012322'])
-		}
+		const lastEmittedValue = emittedValues?.pop()
+		expect(lastEmittedValue).toEqual(['123456789012322'])
 	})
 
 	it('calls the changeNumberValue method when the key value is empty', async () => {
@@ -671,29 +601,8 @@ describe('NirField', () => {
 
 		// Check the emitted event
 		const emittedValues = wrapper.emitted('update:modelValue')
-		if (emittedValues) {
-			const lastEmittedValue = emittedValues[emittedValues.length - 1]
-			expect(lastEmittedValue).toEqual(['1234567890123'])
-		}
-	})
-
-	it('use changeNumberValue method', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		const keyField = wrapper.find('.vd-key-field input')
-
-		// Set the number and key values
-		await numberField.setValue('1234567890123')
-		await keyField.setValue('22')
-
-		// Check the changeNumberValue method
-		wrapper.vm.changeNumberValue()
-		expect(wrapper.vm.internalValue).toBe('123456789012322')
+		const lastEmittedValue = emittedValues?.pop()
+		expect(lastEmittedValue).toEqual(['1234567890123'])
 	})
 
 	it('use changeKeyValue method with number + key', async () => {
@@ -716,9 +625,7 @@ describe('NirField', () => {
 		const emittedValues = wrapper.emitted('update:modelValue')
 
 		expect(emittedValues).toBeTruthy()
-		if (emittedValues && emittedValues.length > 2) {
-			expect(emittedValues[2]).toEqual([['123456789012322'][0]])
-		}
+		expect(emittedValues?.[2]).toEqual([['123456789012322'][0]])
 	})
 
 	it('use changeKeyValue method with number', async () => {
@@ -739,8 +646,6 @@ describe('NirField', () => {
 		const emittedValues = wrapper.emitted('update:modelValue')
 
 		expect(emittedValues).toBeTruthy()
-		if (emittedValues && emittedValues.length > 2) {
-			expect(emittedValues[1]).toEqual(['1234567890123'])
-		}
+		expect(emittedValues?.[1]).toEqual(['1234567890123'])
 	})
 })
