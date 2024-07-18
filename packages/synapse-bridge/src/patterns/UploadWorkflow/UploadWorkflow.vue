@@ -33,12 +33,18 @@ export default defineComponent({
 			default: false,
 		},
 	},
+	emits: ['update:selectedItem', 'change', 'error', 'view-file'],
 	data() {
 		return {
 			locales,
 			// UploadWorkflowCore mixin
 			inlineSelect: false,
 			selectRules: [required],
+		}
+	},
+	watch: {
+		selectedItem(newValue) {
+			this.$emit('update:selectedItem', newValue);
 		}
 	},
 	computed: {
