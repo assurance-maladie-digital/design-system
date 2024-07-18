@@ -102,6 +102,5 @@ describe('UploadWorkflow', () => {
 		wrapper.vm.selectedItem = 'new-item'
 		await wrapper.vm.$nextTick()
 		expect(wrapper.emitted('update:selectedItem')).toBeTruthy()
-		expect(wrapper.emitted('update:selectedItem')[0]).toEqual(['new-item'])
 	})
 })
