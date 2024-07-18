@@ -251,5 +251,9 @@ export default defineComponent({
 	:deep(.v-btn--disabled.v-btn--variant-flat .v-btn__overlay) {
 		opacity: 0;
 	}
+
+	&.flex-column .v-btn:not(:last-child) {
+		border-inline-end: 1px solid;
+	}
 }
 </style>

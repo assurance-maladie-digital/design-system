@@ -4,9 +4,6 @@ import { defineComponent } from 'vue'
 import ChoiceComponent from '../mixins/choiceComponent'
 import type { FieldValue } from '../types'
 
-import { convertToUnit } from '@/helpers/convertToUnit'
-import type { IndexedObject } from '@/types'
-
 type ThumbLabelValue = boolean | 'always' | undefined
 
 export default defineComponent({
@@ -24,26 +21,6 @@ export default defineComponent({
 	computed: {
 		thumbLabel(): ThumbLabelValue {
 			return this.options?.thumbLabel as ThumbLabelValue
-		},
-
-		thumbSizePlaceholder(): string {
-			let thumbSize = this.options?.thumbSize as number | string
-
-			if (this.isThumbLabel) {
-				thumbSize = thumbSize || 32
-			}
-
-			if (typeof thumbSize === 'string') {
-				thumbSize = parseInt(thumbSize)
-			}
-
-			return convertToUnit(thumbSize) as string
-		},
-
-		sliderStyles(): IndexedObject {
-			return {
-				paddingTop: this.thumbSizePlaceholder,
-			}
 		},
 
 		tickLabels(): Record<number, string> {
@@ -95,8 +72,9 @@ export default defineComponent({
 		:ticks="tickLabels"
 		:max="items.length - 1"
 		step="1"
-		:class="{ 'thumb-label': isThumbLabel }"
-		:style="sliderStyles"
+		:class="[{ 'thumb-label': isThumbLabel }, 'pt-3']"
+		:thumb-size="12"
+		:track-size="1"
 		:error-messages="errorMessages"
 		color="primary"
 		track-color="grey"
