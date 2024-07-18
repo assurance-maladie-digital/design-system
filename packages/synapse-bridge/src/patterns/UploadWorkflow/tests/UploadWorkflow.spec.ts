@@ -96,4 +96,11 @@ describe('UploadWorkflow', () => {
 
 		expect(wrapper.vm.slotTitleContent).toEqual(slotContent)
 	})
+
+	it('emits update:selectedItem when selectedItem changes', async () => {
+		const wrapper = createWrapper()
+		wrapper.vm.selectedItem = 'new-item'
+		await wrapper.vm.$nextTick()
+		expect(wrapper.emitted('update:selectedItem')).toBeTruthy()
+	})
 })

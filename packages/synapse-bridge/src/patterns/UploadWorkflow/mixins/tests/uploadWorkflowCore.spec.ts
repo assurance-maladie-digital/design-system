@@ -207,7 +207,6 @@ describe('EventsFileFired', () => {
 
 		// Mock validation functions
 		;(wrapper.vm as any).$refs.form.validate = vi.fn().mockReturnValue(true)
-		;(wrapper.vm as any).$refs.form.reset = vi.fn()
 		;(wrapper.vm as any).selectedItem = 'file1'
 		;(wrapper.vm as any).dialogConfirm()
 
@@ -216,7 +215,6 @@ describe('EventsFileFired', () => {
 		// Wait for form reset
 		await wrapper.vm.$nextTick()
 
-		expect((wrapper.vm as any).$refs.form.reset).toHaveBeenCalled()
 		expect(wrapper.emitted('change')).toBeTruthy()
 	})
 
