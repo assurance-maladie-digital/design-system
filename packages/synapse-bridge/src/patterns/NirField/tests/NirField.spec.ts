@@ -557,7 +557,6 @@ describe('NirField', () => {
 
 		const lastEmittedValue = emittedValues?.pop()
 		expect(lastEmittedValue).toEqual([''])
-
 	})
 
 	it('calls the changeNumberValue method when the number value changes', async () => {
@@ -579,7 +578,7 @@ describe('NirField', () => {
 
 		// Check the emitted event
 		const emittedValues = wrapper.emitted('update:modelValue')
-		const lastEmittedValue = emittedValues?.pop();
+		const lastEmittedValue = emittedValues?.pop()
 		expect(lastEmittedValue).toEqual(['123456789012322'])
 	})
 
@@ -602,7 +601,7 @@ describe('NirField', () => {
 
 		// Check the emitted event
 		const emittedValues = wrapper.emitted('update:modelValue')
-		const lastEmittedValue = emittedValues?.pop();
+		const lastEmittedValue = emittedValues?.pop()
 		expect(lastEmittedValue).toEqual(['1234567890123'])
 	})
 
@@ -648,6 +647,5 @@ describe('NirField', () => {
 
 		expect(emittedValues).toBeTruthy()
 		expect(emittedValues?.[1]).toEqual(['1234567890123'])
-
 	})
 })

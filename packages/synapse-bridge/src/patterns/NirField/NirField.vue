@@ -99,8 +99,8 @@ export default defineComponent({
 					this.fractionalFieldValue = null
 					return
 				}
-				this.numberValue = newValue.slice(0, NUMBER_LENGTH);
-				this.keyValue = newValue.slice(NUMBER_LENGTH);
+				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
+				this.keyValue = newValue.slice(NUMBER_LENGTH)
 			},
 		},
 	},
@@ -157,12 +157,10 @@ export default defineComponent({
 		errors(): string | never[] {
 			return [...this.numberErrors, ...this.keyErrors].join('\n')
 		},
-
-
 	},
 	methods: {
 		changeNumberValue(): void {
-			if(this.isSingleField) {
+			if (this.isSingleField) {
 				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
 				return
 			}
@@ -170,15 +168,15 @@ export default defineComponent({
 		},
 
 		changeKeyValue(): void {
-			this.doubleFieldUpdated();
+			this.doubleFieldUpdated()
 		},
 
 		doubleFieldUpdated(): void {
 			const internalValue = this.maskaNumberValue.unmasked + this.keyValue
-			if(!this.numberFilled) {
-				this.fractionalFieldValue = internalValue;
+			if (!this.numberFilled) {
+				this.fractionalFieldValue = internalValue
 			} else {
-				this.fractionalFieldValue = null;
+				this.fractionalFieldValue = null
 			}
 			this.$emit('update:modelValue', internalValue)
 		},
