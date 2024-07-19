@@ -95,12 +95,26 @@ export default defineComponent({
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
-				if (newValue === this.fractionalFieldValue) {
+				console.log('newValue', newValue);
+
+				if (newValue === null) {
+					this.numberValue = ''
+					this.keyValue = ''
+
+					return
+				}
+				console.log('fractionalFieldValue', this.fractionalFieldValue);
+
+				if (this.fractionalFieldValue && newValue === this.fractionalFieldValue) {
+					console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+
 					this.fractionalFieldValue = null
 					return
 				}
 				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
 				this.keyValue = newValue.slice(NUMBER_LENGTH)
+				this.validateNumberValue()
+				this.validateKeyValue()
 			},
 		},
 	},
@@ -178,6 +192,8 @@ export default defineComponent({
 			} else {
 				this.fractionalFieldValue = null
 			}
+			console.log('emit', internalValue);
+
 			this.$emit('update:modelValue', internalValue)
 		},
 
@@ -187,7 +203,7 @@ export default defineComponent({
 		validateNumberValue(): void {
 			this.isInputFocused = !this.isInputFocused
 			this.numberErrors = this.numberRules
-				.map((rule) => rule(this.maskaNumberValue.unmasked))
+				.map((rule) => rule(this.maskaNumberValue.unmasked || this.numberValue)) // when the numberValue is updated bey the modelValue the maskaNumberValue is not updated
 				.filter((error): error is string => typeof error === 'string')
 		},
 
@@ -257,7 +273,7 @@ export default defineComponent({
 			<VTextField
 				ref="numberField"
 				v-maska:[numberMask]="maskaNumberValue"
-				v-model="numberValue"
+				:model-value="numberValue"
 				v-bind="textFieldOptions"
 				:variant="outlined ? 'outlined' : 'underlined'"
 				:label="locales.numberLabel"
