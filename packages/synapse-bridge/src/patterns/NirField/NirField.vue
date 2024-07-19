@@ -95,25 +95,25 @@ export default defineComponent({
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
-				console.log('newValue', newValue);
-
 				if (newValue === null) {
 					this.numberValue = ''
 					this.keyValue = ''
 
 					return
 				}
-				console.log('fractionalFieldValue', this.fractionalFieldValue);
 
-				if (this.fractionalFieldValue && newValue === this.fractionalFieldValue) {
-					console.log('<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
-
+				if (
+					this.fractionalFieldValue &&
+					newValue === this.fractionalFieldValue
+				) {
 					this.fractionalFieldValue = null
 					return
 				}
+
 				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
 				this.keyValue = newValue.slice(NUMBER_LENGTH)
-				this.validateNumberValue()
+
+				this.validateNumberValue(this.numberValue)
 				this.validateKeyValue()
 			},
 		},
@@ -192,18 +192,22 @@ export default defineComponent({
 			} else {
 				this.fractionalFieldValue = null
 			}
-			console.log('emit', internalValue);
-
 			this.$emit('update:modelValue', internalValue)
+		},
+
+		numberFieldBlur(): void {
+			this.isInputFocused = !this.isInputFocused
+			this.validateNumberValue(this.maskaNumberValue.unmasked)
 		},
 
 		/**
 		 * Execute the validation rules for the number field
 		 */
-		validateNumberValue(): void {
-			this.isInputFocused = !this.isInputFocused
+		validateNumberValue(numberFieldValue: string): void {
 			this.numberErrors = this.numberRules
-				.map((rule) => rule(this.maskaNumberValue.unmasked || this.numberValue)) // when the numberValue is updated bey the modelValue the maskaNumberValue is not updated
+				.map((rule) =>
+					rule(numberFieldValue)
+				) // when the numberValue is updated bey the modelValue the maskaNumberValue is not updated
 				.filter((error): error is string => typeof error === 'string')
 		},
 
@@ -290,7 +294,7 @@ export default defineComponent({
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@maska="changeNumberValue"
-				@blur="validateNumberValue"
+				@blur="numberFieldBlur"
 				@focus="isInputFocused = true"
 			/>
 
