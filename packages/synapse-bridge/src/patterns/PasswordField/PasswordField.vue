@@ -28,7 +28,7 @@ export default defineComponent({
 		required: {
 			type: Boolean,
 			default: false,
-		},
+		}
 	},
 	data() {
 		return {
@@ -72,6 +72,7 @@ export default defineComponent({
 		:variant="outlined ? 'outlined' : 'underlined'"
 		:rules="rules"
 		:type="showEyeIcon ? 'text' : 'password'"
+		class="vd-password"
 		@update:modelValue="emitChangeEvent"
 	>
 		<template #append-inner>
@@ -90,12 +91,13 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-.v-btn--icon {
-	color: rgba(0, 0, 0, 0.54);
-}
-.v-field__append-inner {
-	display: flex;
-	align-items: center;
-	padding-top: 8px;
+.vd-password {
+	.v-btn--icon {
+		color: rgba(0, 0, 0, 0.54);
+	}
+	.v-btn--icon.v-btn--density-default {
+		width: var(--v-btn-height);
+		height: var(--v-btn-height);
+	}
 }
 </style>

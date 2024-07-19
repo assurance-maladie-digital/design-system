@@ -3,7 +3,7 @@
 exports[`FormFieldList > renders correctly 1`] = `
 <div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
   <div class="v-application__wrap">
-    <div class="vd-field-list w-100">
+    <div class="vd-field-list w-100 pb-8">
       <h3 class="text-h6 font-weight-bold mb-2">title</h3>
       <!--v-if-->
       <div data-v-9067cb71="" class="vd-form-field">

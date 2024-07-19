@@ -273,8 +273,6 @@ describe('NirField', () => {
 
 		await wrapper.setProps({ modelValue: '12345' })
 
-		console.log('wrapper.html()', wrapper.vm.numberValue)
-
 		expect(wrapper.find('#number-field-errors').text()).toBe(
 			locales.errorLengthNumber(13)
 		)

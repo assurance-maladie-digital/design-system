@@ -79,7 +79,7 @@ export default defineComponent({
 			</VTooltip>
 		</h4>
 
-		<p v-if="modelValue.description" class="text-body-2 text-grey">
+		<p v-if="modelValue.description" class="text-body-2 text-grey mb-4">
 			{{ modelValue.description }}
 		</p>
 
