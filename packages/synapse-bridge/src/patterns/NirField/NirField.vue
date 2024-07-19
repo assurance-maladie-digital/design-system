@@ -205,9 +205,7 @@ export default defineComponent({
 		 */
 		validateNumberValue(numberFieldValue: string): void {
 			this.numberErrors = this.numberRules
-				.map((rule) =>
-					rule(numberFieldValue)
-				) // when the numberValue is updated bey the modelValue the maskaNumberValue is not updated
+				.map((rule) => rule(numberFieldValue)) // when the numberValue is updated bey the modelValue the maskaNumberValue is not updated
 				.filter((error): error is string => typeof error === 'string')
 		},
 
