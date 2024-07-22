@@ -695,15 +695,8 @@ export default defineComponent({
 	height: calc(100% - 1px) !important;
 }
 
-:deep(
-		.v-field--variant-outlined.v-field--focused,
-			.v-field__outline__notch::after
-	) {
+:deep(.v-field--variant-outlined.v-field--focused .v-field__outline__notch::after) {
 	height: calc(100% - 2px) !important;
-}
-
-:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-	height: calc(99%) !important;
 }
 
 :deep(.dp__clear_icon) {
