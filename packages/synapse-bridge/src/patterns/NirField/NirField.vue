@@ -64,6 +64,12 @@ export default defineComponent({
 				completed: false,
 			},
 
+			maskaKeyValue: {
+				masked: '',
+				unmasked: '',
+				completed: false,
+			},
+
 			numberValue: '',
 			keyValue: '',
 
@@ -111,10 +117,10 @@ export default defineComponent({
 				}
 
 				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
-				this.keyValue = newValue.slice(NUMBER_LENGTH)
+				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD)
 
 				this.validateNumberValue(this.numberValue)
-				this.validateKeyValue()
+				this.validateKeyValue(this.keyValue)
 			},
 		},
 	},
@@ -122,14 +128,6 @@ export default defineComponent({
 		this.isSingleField = this.nirLength === SINGLE_FIELD
 	},
 	computed: {
-		numberFilled(): boolean {
-			return this.maskaNumberValue.unmasked?.length === NUMBER_LENGTH
-		},
-
-		keyFilled(): boolean {
-			return this.keyValue?.length === KEY_LENGTH
-		},
-
 		/**
 		 * Generate the validation rules for the number field
 		 */
@@ -187,7 +185,7 @@ export default defineComponent({
 
 		doubleFieldUpdated(): void {
 			const internalValue = this.maskaNumberValue.unmasked + this.keyValue
-			if (!this.numberFilled) {
+			if (!this.maskaNumberValue.completed) {
 				this.fractionalFieldValue = internalValue
 			} else {
 				this.fractionalFieldValue = null
@@ -212,9 +210,9 @@ export default defineComponent({
 		/**
 		 * Execute the validation rules for the key field
 		 */
-		validateKeyValue(): void {
+		validateKeyValue(keyFieldValue : string): void {
 			this.keyErrors = this.keyRules
-				.map((rule) => rule(this.keyValue))
+				.map((rule) => rule(keyFieldValue))
 				.filter((error): error is string => typeof error === 'string')
 		},
 
@@ -226,7 +224,7 @@ export default defineComponent({
 			shiftKey,
 		}: KeyboardEvent): void {
 			const isSingleField = this.isSingleField
-			const notFilled = !this.numberFilled
+			const notFilled = !this.maskaNumberValue.completed
 			// Don't move focus for combo (eg. Ctrl + A)
 			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey
 			// Don't move focus for other keys (eg. ArrowRight)
@@ -251,7 +249,7 @@ export default defineComponent({
 		},
 
 		focusNumberField(): void {
-			if (this.keyValue?.length !== 0) {
+			if (this.maskaKeyValue.unmasked.length !== 0) {
 				return
 			}
 
@@ -282,8 +280,8 @@ export default defineComponent({
 				:hint="locales.numberHint"
 				persistent-hint
 				:hide-details="false"
-				:color="numberFilled ? 'success' : 'primary'"
-				:base-color="numberFilled ? 'success' : ''"
+				:color="maskaNumberValue.completed ? 'success' : 'primary'"
+				:base-color="maskaNumberValue.completed ? 'success' : ''"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
 				:aria-errormessage="
@@ -303,16 +301,16 @@ export default defineComponent({
 			<template v-if="!isSingleField">
 				<VTextField
 					ref="keyField"
-					v-maska:[keyMask]
-					v-model="keyValue"
+					v-maska:[keyMask]="maskaKeyValue"
+					:modelValue="keyValue"
 					v-bind="textFieldOptions"
 					:variant="outlined ? 'outlined' : 'underlined'"
 					:label="locales.keyLabel"
 					:hint="locales.keyHint"
 					persistent-hint
 					:hide-details="false"
-					:color="keyFilled ? 'success' : 'primary'"
-					:base-color="keyFilled ? 'success' : ''"
+					:color="maskaKeyValue.completed ? 'success' : 'primary'"
+					:base-color="maskaKeyValue.completed ? 'success' : ''"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
 					:aria-errormessage="
@@ -321,7 +319,7 @@ export default defineComponent({
 					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
 					@maska="changeKeyValue"
-					@blur="validateKeyValue"
+					@blur="validateKeyValue(maskaKeyValue.unmasked)"
 				/>
 				<div id="key-field-errors" class="d-sr-only">
 					{{ keyErrors.join(' ') }}
