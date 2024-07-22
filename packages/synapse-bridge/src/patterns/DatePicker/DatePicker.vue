@@ -156,15 +156,7 @@ export default defineComponent({
 				variant: this.getVariant,
 				disabled: this.disabled,
 				hint: this.hint,
-				prependIcon: !this.outlined
-					? this.prependIconValue
-					: 'undefined',
-				appendInnerIcon:
-					this.outlined || this.appendIcon
-						? this.calendarIcon
-						: undefined,
 				persistentHint: true,
-				color: '#0C419A',
 				rules: this.rules,
 				errorMessages: errorMessages || [],
 			}
@@ -603,14 +595,11 @@ export default defineComponent({
 				</div>
 			</template>
 			<template #dp-input="{}">
-				<v-text-field
+				<VTextField
 					:model-value="date"
 					v-bind="textFieldOptions"
-					color="#0C419A"
 					hide-details="auto"
-					:append-inner-icon="
-						outlined || appendIcon ? calendarIcon : undefined
-					"
+					color="#0C419A"
 					:aria-describedby="label"
 					:class="[
 						textFieldClasses,
@@ -625,7 +614,6 @@ export default defineComponent({
 					:error-messages="errorMessages"
 					:hint="hint"
 					:label="label"
-					:prepend-icon="!outlined ? prependIconValue : undefined"
 					:persistent-hint="true"
 					:rules="rules"
 					:readonly="range"
@@ -637,14 +625,30 @@ export default defineComponent({
 					:variant="getVariant"
 					@blur="emitUpdateEvent"
 					@keydown="handleKeyDown"
-					@click:append="handleIconClick"
-					@click:append-inner="handleIconClick"
 					@click:clear="onClear"
-					@click:prepend="handleIconClick"
-					@click:prepend-inner="handleIconClick"
 					@paste="handlePaste"
 					@cut="handleCut"
-				></v-text-field>
+				>
+					<template #append-inner v-if="outlined || (appendIcon && calendarIcon)">
+						<v-icon
+							@click="handleIconClick"
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ calendarIcon }}
+						</v-icon>
+					</template>
+
+					<template #prepend v-if="!outlined && prependIconValue">
+						<v-icon
+							@click="handleIconClick"
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ calendarIcon }}
+						</v-icon>
+					</template>
+				</VTextField>
 			</template>
 		</VueDatePicker>
 	</div>
@@ -699,7 +703,10 @@ export default defineComponent({
 	height: calc(100% - 1px) !important;
 }
 
-:deep(.v-field--variant-outlined.v-field--focused .v-field__outline__notch::after) {
+:deep(
+	.v-field--variant-outlined.v-field--focused,
+	.v-field__outline__notch::after
+) {
 	height: calc(100% - 2px) !important;
 }
 
@@ -713,6 +720,10 @@ export default defineComponent({
 
 :deep(.vd-append-icon ~ .dp__clear_icon) {
 	right: 35px;
+}
+
+:deep(.v-icon) {
+	color: rgba(0,0,0,.54) !important;
 }
 
 .warning-style {
