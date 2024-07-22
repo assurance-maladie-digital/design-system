@@ -64,14 +64,20 @@ export default defineComponent({
 				completed: false,
 			},
 
+			maskaKeyValue: {
+				masked: '',
+				unmasked: '',
+				completed: false,
+			},
+
 			numberValue: '',
 			keyValue: '',
 
 			/**
-			 * Keep trace of the field value when the number field is not filled
-			 * in double field mode in order to not lose the key part.
+			 * Keep trace of the value just emitted in order to do not validate
+			 * the fields when the user is typing.
 			 */
-			fractionalFieldValue: null as string | null,
+			internallyUpdatedValue: null as string | null,
 
 			numberMask: {
 				mask: '# ## ## #C ### ###',
@@ -87,6 +93,7 @@ export default defineComponent({
 
 			numberErrors: [] as string[],
 			keyErrors: [] as string[],
+
 			isSingleField: false,
 			isInputFocused: false,
 		}
@@ -95,12 +102,24 @@ export default defineComponent({
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
-				if (newValue === this.fractionalFieldValue) {
-					this.fractionalFieldValue = null
+				if (newValue === null) {
+					this.numberValue = ''
+					this.keyValue = ''
+
 					return
 				}
+
+				if (this.internallyUpdatedValue === newValue) {
+					this.internallyUpdatedValue = null
+
+					return
+				}
+
 				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
-				this.keyValue = newValue.slice(NUMBER_LENGTH)
+				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD)
+
+				this.validateNumberValue(this.numberValue)
+				this.validateKeyValue(this.keyValue)
 			},
 		},
 	},
@@ -108,14 +127,6 @@ export default defineComponent({
 		this.isSingleField = this.nirLength === SINGLE_FIELD
 	},
 	computed: {
-		numberFilled(): boolean {
-			return this.maskaNumberValue.unmasked?.length === NUMBER_LENGTH
-		},
-
-		keyFilled(): boolean {
-			return this.keyValue?.length === KEY_LENGTH
-		},
-
 		/**
 		 * Generate the validation rules for the number field
 		 */
@@ -161,7 +172,9 @@ export default defineComponent({
 	methods: {
 		changeNumberValue(): void {
 			if (this.isSingleField) {
+				this.internallyUpdatedValue = this.maskaNumberValue.unmasked
 				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
+
 				return
 			}
 			this.doubleFieldUpdated()
@@ -172,31 +185,32 @@ export default defineComponent({
 		},
 
 		doubleFieldUpdated(): void {
-			const internalValue = this.maskaNumberValue.unmasked + this.keyValue
-			if (!this.numberFilled) {
-				this.fractionalFieldValue = internalValue
-			} else {
-				this.fractionalFieldValue = null
-			}
+			const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
+
+			this.internallyUpdatedValue = internalValue
 			this.$emit('update:modelValue', internalValue)
+		},
+
+		numberFieldBlur(): void {
+			this.isInputFocused = !this.isInputFocused
+			this.validateNumberValue(this.maskaNumberValue.unmasked)
 		},
 
 		/**
 		 * Execute the validation rules for the number field
 		 */
-		validateNumberValue(): void {
-			this.isInputFocused = !this.isInputFocused
+		validateNumberValue(numberFieldValue: string): void {
 			this.numberErrors = this.numberRules
-				.map((rule) => rule(this.maskaNumberValue.unmasked))
+				.map((rule) => rule(numberFieldValue))
 				.filter((error): error is string => typeof error === 'string')
 		},
 
 		/**
 		 * Execute the validation rules for the key field
 		 */
-		validateKeyValue(): void {
+		validateKeyValue(keyFieldValue : string): void {
 			this.keyErrors = this.keyRules
-				.map((rule) => rule(this.keyValue))
+				.map((rule) => rule(keyFieldValue))
 				.filter((error): error is string => typeof error === 'string')
 		},
 
@@ -208,7 +222,7 @@ export default defineComponent({
 			shiftKey,
 		}: KeyboardEvent): void {
 			const isSingleField = this.isSingleField
-			const notFilled = !this.numberFilled
+			const notFilled = !this.maskaNumberValue.completed
 			// Don't move focus for combo (eg. Ctrl + A)
 			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey
 			// Don't move focus for other keys (eg. ArrowRight)
@@ -233,7 +247,7 @@ export default defineComponent({
 		},
 
 		focusNumberField(): void {
-			if (this.keyValue?.length !== 0) {
+			if (this.maskaKeyValue.unmasked.length !== 0) {
 				return
 			}
 
@@ -257,15 +271,15 @@ export default defineComponent({
 			<VTextField
 				ref="numberField"
 				v-maska:[numberMask]="maskaNumberValue"
-				v-model="numberValue"
+				:model-value="numberValue"
 				v-bind="textFieldOptions"
 				:variant="outlined ? 'outlined' : 'underlined'"
 				:label="locales.numberLabel"
 				:hint="locales.numberHint"
 				persistent-hint
 				:hide-details="false"
-				:color="numberFilled ? 'success' : 'primary'"
-				:base-color="numberFilled ? 'success' : ''"
+				:color="maskaNumberValue.completed ? 'success' : 'primary'"
+				:base-color="maskaNumberValue.completed ? 'success' : ''"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
 				:aria-errormessage="
@@ -274,7 +288,7 @@ export default defineComponent({
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@maska="changeNumberValue"
-				@blur="validateNumberValue"
+				@blur="numberFieldBlur"
 				@focus="isInputFocused = true"
 			/>
 
@@ -285,16 +299,16 @@ export default defineComponent({
 			<template v-if="!isSingleField">
 				<VTextField
 					ref="keyField"
-					v-maska:[keyMask]
-					v-model="keyValue"
+					v-maska:[keyMask]="maskaKeyValue"
+					:modelValue="keyValue"
 					v-bind="textFieldOptions"
 					:variant="outlined ? 'outlined' : 'underlined'"
 					:label="locales.keyLabel"
 					:hint="locales.keyHint"
 					persistent-hint
 					:hide-details="false"
-					:color="keyFilled ? 'success' : 'primary'"
-					:base-color="keyFilled ? 'success' : ''"
+					:color="maskaKeyValue.completed ? 'success' : 'primary'"
+					:base-color="maskaKeyValue.completed ? 'success' : ''"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
 					:aria-errormessage="
@@ -303,7 +317,7 @@ export default defineComponent({
 					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
 					@maska="changeKeyValue"
-					@blur="validateKeyValue"
+					@blur="validateKeyValue(maskaKeyValue.unmasked)"
 				/>
 				<div id="key-field-errors" class="d-sr-only">
 					{{ keyErrors.join(' ') }}

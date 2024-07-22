@@ -58,7 +58,7 @@ exports[`FormBuilder > renders correctly 1`] = `
     <div data-v-9067cb71="" class="vd-form-field">
       <!--v-if-->
       <!--v-if-->
-      <div data-v-6859b53e="" data-v-9067cb71="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined vd-form-input">
+      <div data-v-6859b53e="" data-v-9067cb71="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-input--dirty v-text-field v-input--plain-underlined vd-form-input vd-password">
         <!---->
         <div class="v-input__control">
           <div class="v-field v-field--active v-field--appended v-field--dirty v-field--variant-underlined v-theme--light v-locale--is-ltr">

@@ -4,6 +4,7 @@ import { mount } from '@vue/test-utils'
 import NirField from '../'
 import { vuetify } from '@tests/unit/setup'
 import { locales } from '../locales'
+import { defineComponent } from 'vue'
 
 describe('NirField', () => {
 	const nir = '195122B120005'
@@ -69,16 +70,11 @@ describe('NirField', () => {
 			},
 		})
 
-		const input = wrapper.find('input')
+		const input = wrapper.find('.vd-number-field input')
 		await input.setValue(nir)
-		await input.trigger('keyup', {
-			key: 'Tab',
-			code: 'Tab',
-			keyCode: 9,
-		})
 
 		expect(wrapper.emitted()).toHaveProperty('update:modelValue')
-		expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([[nir][0]])
+		expect(wrapper.emitted('update:modelValue')?.[0][0]).toEqual(nir)
 	})
 
 	it('emits a change event when a correct NIR is entered in dual field mode', async () => {
@@ -111,12 +107,12 @@ describe('NirField', () => {
 			},
 		})
 
-		const input = wrapper.find('input')
+		const input = wrapper.find<HTMLInputElement>('.vd-number-field input')
 		await input.setValue('123')
-		expect(wrapper.find('input').element.value).toBe('1 23')
+		expect(input.element.value).toBe('1 23')
 
 		await input.setValue(nir)
-		expect(wrapper.find('input').element.value).toBe(formattedNir)
+		expect(input.element.value).toBe(formattedNir)
 	})
 
 	it('update the value when the nir prop is updated in dual field mode', async () => {
@@ -129,18 +125,15 @@ describe('NirField', () => {
 			},
 		})
 
-		const numberField = wrapper.find('.vd-number-field input')
-		const keyField = wrapper.find('.vd-key-field input')
+		const numberField = wrapper.find<HTMLInputElement>(
+			'.vd-number-field input'
+		)
+		const keyField = wrapper.find<HTMLInputElement>('.vd-key-field input')
 		await numberField.setValue(nir)
 		await keyField.setValue(key)
 
-		expect(
-			wrapper.find<HTMLInputElement>('.vd-number-field input').element
-				.value
-		).toBe(formattedNir)
-		expect(
-			wrapper.find<HTMLInputElement>('.vd-key-field input').element.value
-		).toBe(key)
+		expect(numberField.element.value).toBe(formattedNir)
+		expect(keyField.element.value).toBe(key)
 	})
 
 	it('display an error when the fields are required and left empty', async () => {
@@ -171,49 +164,29 @@ describe('NirField', () => {
 		)
 	})
 
-	it('update the value when the modelValue is null', async () => {
+	it('update the value when the modelValue is set to null', async () => {
 		const wrapper = mount(NirField, {
 			propsData: {
 				nirLength: 15,
+				modelValue: nir + key,
 			},
 			global: {
 				plugins: [vuetify],
 			},
 		})
 
-		const numberField = wrapper.find('.vd-number-field input')
-		const keyField = wrapper.find('.vd-key-field input')
-		await numberField.setValue(null)
-		await keyField.setValue(null)
+		const numberField = wrapper.find<HTMLInputElement>(
+			'.vd-number-field input'
+		)
+		const keyField = wrapper.find<HTMLInputElement>('.vd-key-field input')
+
+		expect(numberField.element.value).toBe(formattedNir)
+		expect(keyField.element.value).toBe(key)
 
 		await wrapper.setProps({ modelValue: null })
-		expect(
-			wrapper.find<HTMLInputElement>('.vd-number-field input').element
-				.value
-		).toBe('')
-		expect(
-			wrapper.find<HTMLInputElement>('.vd-key-field input').element.value
-		).toBe('')
-	})
 
-	it('update the value when the modelValue and newValue.length >= NUMBER_LENGTH', async () => {
-		const wrapper = mount(NirField, {
-			propsData: {
-				nirLength: 15,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		await numberField.setValue(nir)
-
-		await wrapper.setProps({ modelValue: nir })
-		expect(
-			wrapper.find<HTMLInputElement>('.vd-number-field input').element
-				.value
-		).toBe(nir)
+		expect(numberField.element.value).toBe('')
+		expect(keyField.element.value).toBe('')
 	})
 
 	it('not display the key field in single key mode', async () => {
@@ -242,13 +215,11 @@ describe('NirField', () => {
 
 		const input = wrapper.find('.vd-number-field input')
 		await input.setValue('12345') // Enter an invalid NIR
-		await input.trigger('keyup', {
-			key: 'Tab',
-			code: 'Tab',
-			keyCode: 9,
-		})
+		await input.trigger('blur')
 
-		expect(wrapper.find('#number-field-errors').exists()).toBe(true)
+		expect(wrapper.find('#number-field-errors').text()).toBe(
+			locales.errorLengthNumber(13)
+		)
 	})
 
 	it('displays an error when an incorrect NIR is entered in dual field mode', async () => {
@@ -263,9 +234,11 @@ describe('NirField', () => {
 
 		const numberField = wrapper.find('.vd-number-field input')
 		await numberField.setValue('12345') // Enter an invalid NIR
+		await numberField.trigger('blur')
 
-		await wrapper.vm.$nextTick()
-		expect(wrapper.find('#number-field-errors').exists()).toBe(true)
+		expect(wrapper.find('#number-field-errors').text()).toBe(
+			locales.errorLengthNumber(13)
+		)
 	})
 
 	it('displays an error when an incorrect key is entered in dual field mode', async () => {
@@ -280,8 +253,29 @@ describe('NirField', () => {
 
 		const keyField = wrapper.find('.vd-key-field input')
 		await keyField.setValue('2') // Enter an invalid key
+		await keyField.trigger('blur')
 
-		expect(wrapper.find('#number-field-errors').exists()).toBe(true)
+		expect(wrapper.find('#key-field-errors').text()).toBe(
+			locales.errorLengthKey(2)
+		)
+	})
+
+	it('displays an error when an incorrect NIR is set when updating the component modelValue', async () => {
+		const wrapper = mount(NirField, {
+			propsData: {
+				nirLength: 15,
+				modelValue: '',
+			},
+			global: {
+				plugins: [vuetify],
+			},
+		})
+
+		await wrapper.setProps({ modelValue: '12345' })
+
+		expect(wrapper.find('#number-field-errors').text()).toBe(
+			locales.errorLengthNumber(13)
+		)
 	})
 
 	it('set the focus on the key field when the number field is filled in dual field mode', async () => {
@@ -430,65 +424,6 @@ describe('NirField', () => {
 		expect(wrapper.find('VTooltip').exists()).toBe(false)
 	})
 
-	it('calls the changeNumberValue method when the number value changes', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		await numberField.setValue('1234567890123')
-
-		expect(wrapper.vm.numberValue).toBe('1 23 45 67 890 123')
-	})
-
-	it('calls the changeKeyValue method when the key value changes', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const keyField = wrapper.find('.vd-key-field input')
-		await keyField.setValue('22')
-
-		expect(wrapper.vm.keyValue).toBe('22')
-	})
-
-	it('validates the number value when the number field loses focus', async () => {
-		const wrapper = mount(NirField, {
-			propsData: {
-				nirLength: 13,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		await numberField.setValue('12345') // Enter an invalid NIR
-		await numberField.trigger('blur')
-
-		expect(wrapper.vm.numberErrors).toContain(locales.errorLengthNumber(13))
-	})
-
-	it('validates the key value when the key field loses focus', async () => {
-		const wrapper = mount(NirField, {
-			propsData: {
-				nirLength: 15,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const keyField = wrapper.find('.vd-key-field input')
-		await keyField.setValue('2') // Enter an invalid key
-		await keyField.trigger('blur')
-
-		expect(wrapper.vm.keyErrors).toContain(locales.errorLengthKey(2))
-	})
 	it('sets isInputFocused to true when the input field is focused', async () => {
 		const wrapper = mount(NirField, {
 			global: {
@@ -500,23 +435,6 @@ describe('NirField', () => {
 		await numberField.trigger('focus')
 
 		expect(wrapper.vm.isInputFocused).toBe(true)
-	})
-
-	it('returns the correct unmasked value', async () => {
-		const wrapper = mount(NirField, {
-			propsData: {
-				nirLength: 15,
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		const expectedValue = '1234567890123' // Enter a valid NIR
-		await numberField.setValue(expectedValue)
-
-		expect(wrapper.vm.maskaNumberValue.unmasked).toBe(expectedValue)
 	})
 
 	it('updates the v-model when a key is deleted', async () => {
@@ -559,7 +477,7 @@ describe('NirField', () => {
 		expect(lastEmittedValue).toEqual([''])
 	})
 
-	it('calls the changeNumberValue method when the number value changes', async () => {
+	it('emit the correct values in dual field mode', async () => {
 		const wrapper = mount(NirField, {
 			propsData: {
 				nirLength: 15,
@@ -582,7 +500,7 @@ describe('NirField', () => {
 		expect(lastEmittedValue).toEqual(['123456789012322'])
 	})
 
-	it('calls the changeNumberValue method when the key value is empty', async () => {
+	it('emit the correct value when the key value is empty', async () => {
 		const wrapper = mount(NirField, {
 			propsData: {
 				nirLength: 15,
@@ -605,47 +523,42 @@ describe('NirField', () => {
 		expect(lastEmittedValue).toEqual(['1234567890123'])
 	})
 
-	it('use changeKeyValue method with number + key', async () => {
-		const wrapper = mount(NirField, {
+	it('do not delete the key when the number is not completed', async () => {
+		const TestComponent = defineComponent({
+			components: { NirField },
+			data() {
+				return {
+					modelValue: '',
+				}
+			},
+			template: `
+				<NirField
+					v-model="modelValue"
+					:nirLength="15"
+				/>
+			`,
+		})
+		const wrapper = mount(TestComponent, {
 			global: {
 				plugins: [vuetify],
 			},
 		})
+		const NirFieldComponent = wrapper.findComponent(NirField)
 
-		const numberField = wrapper.find('.vd-number-field input')
-		const keyField = wrapper.find('.vd-key-field input')
+		const numberField = wrapper.find<HTMLInputElement>(
+			'.vd-number-field input'
+		)
+		const keyField = wrapper.find<HTMLInputElement>('.vd-key-field input')
 
-		// Set the number and key values
-		await numberField.setValue('1234567890123')
-		await keyField.setValue('22')
+		await numberField.setValue(formattedNir)
+		await keyField.setValue(key)
 
-		// Check the changeKeyValue method
-		wrapper.vm.changeKeyValue()
+		await numberField.setValue('1 95 12 2B')
 
-		const emittedValues = wrapper.emitted('update:modelValue')
-
-		expect(emittedValues).toBeTruthy()
-		expect(emittedValues?.[2]).toEqual([['123456789012322'][0]])
-	})
-
-	it('use changeKeyValue method with number', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-
-		// Set the number and key values
-		await numberField.setValue('1234567890123')
-
-		// Check the changeKeyValue method
-		wrapper.vm.changeKeyValue()
-
-		const emittedValues = wrapper.emitted('update:modelValue')
-
-		expect(emittedValues).toBeTruthy()
-		expect(emittedValues?.[1]).toEqual(['1234567890123'])
+		const lastEmittedValue =
+			NirFieldComponent.emitted('update:modelValue')?.pop()
+		expect(lastEmittedValue).toEqual(['195122B' + key])
+		expect(numberField.element.value).toBe('1 95 12 2B')
+		expect(keyField.element.value).toBe(key)
 	})
 })
