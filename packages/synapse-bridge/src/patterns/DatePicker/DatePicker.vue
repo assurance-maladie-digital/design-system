@@ -658,6 +658,10 @@ export default defineComponent({
 	display: none !important;
 }
 
+:deep(.v-input__prepend > .v-icon) {
+	opacity: 1;
+}
+
 .week-ends {
 	background-color: #b3b4b5;
 	border-radius: 57%;
