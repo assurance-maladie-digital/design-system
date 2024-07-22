@@ -74,10 +74,10 @@ export default defineComponent({
 			keyValue: '',
 
 			/**
-			 * Keep trace of the field value when the number field is not filled
-			 * in double field mode in order to not lose the key part.
+			 * Keep trace of the value just emitted in order to do not validate
+			 * the fields when the user is typing.
 			 */
-			fractionalFieldValue: null as string | null,
+			internallyUpdatedValue: null as string | null,
 
 			numberMask: {
 				mask: '# ## ## #C ### ###',
@@ -93,6 +93,7 @@ export default defineComponent({
 
 			numberErrors: [] as string[],
 			keyErrors: [] as string[],
+
 			isSingleField: false,
 			isInputFocused: false,
 		}
@@ -108,11 +109,9 @@ export default defineComponent({
 					return
 				}
 
-				if (
-					this.fractionalFieldValue &&
-					newValue === this.fractionalFieldValue
-				) {
-					this.fractionalFieldValue = null
+				if (this.internallyUpdatedValue === newValue) {
+					this.internallyUpdatedValue = null
+
 					return
 				}
 
@@ -173,7 +172,9 @@ export default defineComponent({
 	methods: {
 		changeNumberValue(): void {
 			if (this.isSingleField) {
+				this.internallyUpdatedValue = this.maskaNumberValue.unmasked
 				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
+
 				return
 			}
 			this.doubleFieldUpdated()
@@ -185,11 +186,8 @@ export default defineComponent({
 
 		doubleFieldUpdated(): void {
 			const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
-			if (!this.maskaNumberValue.completed) {
-				this.fractionalFieldValue = internalValue
-			} else {
-				this.fractionalFieldValue = null
-			}
+
+			this.internallyUpdatedValue = internalValue
 			this.$emit('update:modelValue', internalValue)
 		},
 
@@ -203,7 +201,7 @@ export default defineComponent({
 		 */
 		validateNumberValue(numberFieldValue: string): void {
 			this.numberErrors = this.numberRules
-				.map((rule) => rule(numberFieldValue)) // when the numberValue is updated by the modelValue the maskaNumberValue is not updated
+				.map((rule) => rule(numberFieldValue))
 				.filter((error): error is string => typeof error === 'string')
 		},
 
