@@ -2,7 +2,7 @@
 import '@vuepic/vue-datepicker/dist/main.css'
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import { mdiCalendar } from '@mdi/js'
+import { mdiCalendar, mdiCloseCircle } from '@mdi/js'
 import VueDatePicker from '@vuepic/vue-datepicker'
 import dayjs from 'dayjs'
 import { WarningRules } from '@/mixins/warningRules/index.ts'
@@ -26,6 +26,7 @@ interface DatePickerData {
 	format: string
 	inputValue: string
 	calendarIcon: string
+	closeIcon: string
 	errorMessages: string[] | any
 	birthdateFlow: DatePickerFlow
 	isCalOpen: boolean
@@ -131,6 +132,7 @@ export default defineComponent({
 			format: 'dd/MM/yyyy',
 			inputValue: '',
 			calendarIcon: mdiCalendar,
+			closeIcon: mdiCloseCircle,
 			errorMessages: [] as string[],
 			birthdateFlow: ['year', 'month', 'calendar'],
 			isCalOpen: false,
@@ -594,7 +596,7 @@ export default defineComponent({
 					{{ date.getDate() }}
 				</div>
 			</template>
-			<template #dp-input="{}">
+			<template #dp-input="{onClear}">
 				<VTextField
 					:model-value="date"
 					v-bind="textFieldOptions"
@@ -630,23 +632,33 @@ export default defineComponent({
 					@cut="handleCut"
 				>
 					<template #append-inner v-if="outlined || (appendIcon && calendarIcon)">
-						<v-icon
+						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
 							aria-hidden="true"
 						>
 							{{ calendarIcon }}
-						</v-icon>
+						</VIcon>
 					</template>
 
 					<template #prepend v-if="!outlined && prependIconValue">
-						<v-icon
+						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
 							aria-hidden="true"
 						>
 							{{ calendarIcon }}
-						</v-icon>
+						</VIcon>
+					</template>
+
+					<template v-slot:clear v-if="clearable" >
+						<VIcon
+							@click='onClear'
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ closeIcon }}
+						</VIcon>
 					</template>
 				</VTextField>
 			</template>
