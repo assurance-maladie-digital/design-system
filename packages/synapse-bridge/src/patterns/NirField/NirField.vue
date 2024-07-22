@@ -184,7 +184,7 @@ export default defineComponent({
 		},
 
 		doubleFieldUpdated(): void {
-			const internalValue = this.maskaNumberValue.unmasked + this.keyValue
+			const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
 			if (!this.maskaNumberValue.completed) {
 				this.fractionalFieldValue = internalValue
 			} else {
