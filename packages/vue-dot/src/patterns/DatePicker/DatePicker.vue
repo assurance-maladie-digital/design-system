@@ -29,7 +29,8 @@
 					<VBtn
 						v-show="showPrependIcon"
 						v-bind="options.btn"
-						:aria-label="locales.openCalendar"
+						tabindex="-1"
+						aria-hidden="true"
 						:disabled="disabled"
 						@click="menu = true"
 					>
@@ -45,7 +46,8 @@
 					<VBtn
 						v-show="showAppendIcon"
 						v-bind="options.btn"
-						:aria-label="locales.openCalendar"
+						tabindex="-1"
+						aria-hidden="true"
 						:disabled="disabled"
 						@click="menu = true"
 					>
