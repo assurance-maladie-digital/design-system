@@ -1,3 +1,3 @@
-import DownloadBtn from './DownloadBtn.vue'
+import DownloadBtn from './DownloadBtn.vue';
 
-export default DownloadBtn
+export default DownloadBtn;

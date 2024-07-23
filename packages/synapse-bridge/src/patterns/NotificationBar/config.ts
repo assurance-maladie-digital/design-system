@@ -1,11 +1,11 @@
 export const config = {
-	snackBar: {
-		timeout: -1,
-	},
-	icon: {
-		class: 'mr-2',
-	},
-	btn: {
-		variant: 'text',
-	},
-}
+  snackBar: {
+    timeout: -1,
+  },
+  icon: {
+    class: 'mr-2',
+  },
+  btn: {
+    variant: 'text',
+  },
+};

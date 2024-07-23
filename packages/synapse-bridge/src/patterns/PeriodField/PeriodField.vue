@@ -1,119 +1,119 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import VueDatePicker from '@vuepic/vue-datepicker'
-import '@vuepic/vue-datepicker/dist/main.css'
-import { mdiCalendar } from '@mdi/js'
+import { defineComponent } from 'vue';
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+import { mdiCalendar } from '@mdi/js';
 
 interface PeriodFieldData {
-	date: Date[] | null
-	calendarIcon: string
+  date: Date[] | null
+  calendarIcon: string
 }
 
 export default defineComponent({
-	emits: ['update:modelValue'],
-	name: 'PeriodField',
-	components: {
-		VueDatePicker,
-	},
-	props: {
-		outlined: {
-			type: Boolean,
-			default: false,
-		},
-		noPrependIcon: {
-			type: Boolean,
-			default: false,
-		},
-		appendIcon: {
-			type: Boolean,
-			default: false,
-		},
-		disabled: {
-			type: Boolean,
-			default: false,
-		},
-		hint: {
-			type: String,
-			default: 'DD/MM/YYYY',
-		},
-		label: {
-			type: String,
-			default: '',
-		},
-		dateFormat: {
-			type: String,
-			default: 'dd/MM/yyyy',
-		},
-		dateFormatReturn: {
-			type: String,
-			default: 'dd/MM/yyyy',
-		},
-	},
-	data(): PeriodFieldData {
-		return {
-			date: null,
-			calendarIcon: mdiCalendar,
-		}
-	},
-	computed: {
-		formattedDateFormat() {
-			return this.dateFormat.replace(/D/g, 'd').replace(/Y/g, 'y')
-		},
-		formattedDateFormatReturn() {
-			return this.dateFormatReturn.replace(/D/g, 'd').replace(/Y/g, 'y')
-		},
-		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon) {
-				return this.calendarIcon
-			}
-			return undefined
-		},
-		getVariant() {
-			return this.disabled || this.noPrependIcon || !this.outlined
-				? 'underlined'
-				: 'outlined'
-		},
-	},
-	watch: {
-		date(newVal, oldVal) {
-			if (newVal !== oldVal) {
-				this.$emit('update:modelValue', newVal)
-			}
-		},
-	},
-})
+  name: 'PeriodField',
+  components: {
+    VueDatePicker,
+  },
+  props: {
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
+    noPrependIcon: {
+      type: Boolean,
+      default: false,
+    },
+    appendIcon: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    hint: {
+      type: String,
+      default: 'DD/MM/YYYY',
+    },
+    label: {
+      type: String,
+      default: '',
+    },
+    dateFormat: {
+      type: String,
+      default: 'dd/MM/yyyy',
+    },
+    dateFormatReturn: {
+      type: String,
+      default: 'dd/MM/yyyy',
+    },
+  },
+  emits: ['update:modelValue'],
+  data(): PeriodFieldData {
+    return {
+      date: null,
+      calendarIcon: mdiCalendar,
+    };
+  },
+  computed: {
+    formattedDateFormat() {
+      return this.dateFormat.replace(/D/g, 'd').replace(/Y/g, 'y');
+    },
+    formattedDateFormatReturn() {
+      return this.dateFormatReturn.replace(/D/g, 'd').replace(/Y/g, 'y');
+    },
+    prependIconValue() {
+      if (!this.appendIcon && !this.noPrependIcon) {
+        return this.calendarIcon;
+      }
+      return undefined;
+    },
+    getVariant() {
+      return this.disabled || this.noPrependIcon || !this.outlined
+        ? 'underlined'
+        : 'outlined';
+    },
+  },
+  watch: {
+    date(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.$emit('update:modelValue', newVal);
+      }
+    },
+  },
+});
 </script>
 
 <template>
-	<div class="vd-form-input">
-	<VueDatePicker
-		v-model="date"
-		range
-		:format="formattedDateFormat"
-		:model-type="formattedDateFormatReturn"
-		locale="fr"
-		:clearable="false"
-		:disabled="disabled"
-		auto-apply
-	>
-		<template #dp-input="{ value }">
-			<v-text-field
-				:model-value="value"
-				color="primary"
-				hide-details
-				readonly
-				:variant="getVariant"
-				:disabled="disabled"
-				:aria-describedby="label"
-				:label="label"
-				:prepend-icon="!outlined ? prependIconValue : undefined"
-				:append-inner-icon="
-					outlined || appendIcon ? calendarIcon : undefined
-				"
-			/>
-		</template>
-	</VueDatePicker>
-	</div>
+  <div class="vd-form-input">
+    <VueDatePicker
+      v-model="date"
+      range
+      :format="formattedDateFormat"
+      :model-type="formattedDateFormatReturn"
+      locale="fr"
+      :clearable="false"
+      :disabled="disabled"
+      auto-apply
+    >
+      <template #dp-input="{ value }">
+        <v-text-field
+          :model-value="value"
+          color="primary"
+          hide-details
+          readonly
+          :variant="getVariant"
+          :disabled="disabled"
+          :aria-describedby="label"
+          :label="label"
+          :prepend-icon="!outlined ? prependIconValue : undefined"
+          :append-inner-icon="
+            outlined || appendIcon ? calendarIcon : undefined
+          "
+        />
+      </template>
+    </VueDatePicker>
+  </div>
 </template>
 
 <style lang="scss" scoped>

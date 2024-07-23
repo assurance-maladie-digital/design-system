@@ -1,20 +1,20 @@
-import type { Commit } from 'vuex'
+import type { Commit } from 'vuex';
 
-import type { NotificationState, NotificationObj } from './types'
+import type { NotificationObj, NotificationState } from './types';
 
 /** Commit mutation to add a notification */
 export function notify(
-	commit: Commit,
-	state: NotificationState,
-	notification: NotificationObj
+  commit: Commit,
+  state: NotificationState,
+  notification: NotificationObj,
 ): void {
-	if (state.notification) {
-		commit('CLEAR')
+  if (state.notification) {
+    commit('CLEAR');
 
-		setTimeout(() => commit('ADD', notification), 250)
+    setTimeout(() => commit('ADD', notification), 250);
 
-		return
-	}
+    return;
+  }
 
-	commit('ADD', notification)
+  commit('ADD', notification);
 }

@@ -1,4 +1,4 @@
 export const locales = {
-	minLabel: 'Valeur min',
-	maxLabel: 'Valeur max',
-}
+  minLabel: 'Valeur min',
+  maxLabel: 'Valeur max',
+};

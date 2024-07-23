@@ -1,104 +1,103 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import type { PropType } from 'vue'
-
-import { propValidator } from '@/helpers/propValidator'
-
-import { AlertTypeEnum, ALERT_TYPE_ENUM_VALUES } from './AlertTypeEnum'
-import { locales } from './locales'
+import { defineComponent } from 'vue';
+import type { PropType } from 'vue';
 
 import {
-	mdiAlertOutline,
-	mdiAlertOctagonOutline,
-	mdiCheckCircleOutline,
-	mdiInformationOutline,
-	mdiClose,
-} from '@mdi/js'
+  mdiAlertOctagonOutline,
+  mdiAlertOutline,
+  mdiCheckCircleOutline,
+  mdiClose,
+  mdiInformationOutline,
+} from '@mdi/js';
+import { ALERT_TYPE_ENUM_VALUES, AlertTypeEnum } from './AlertTypeEnum';
+import { locales } from './locales';
+import { propValidator } from '@/helpers/propValidator';
 
 type LowercaseStringLiterals<T> = T extends string ? Lowercase<T> : T;
 type LowercaseKeys<T> = { [K in keyof T as LowercaseStringLiterals<K>]: T[K] };
 export default defineComponent({
-	inheritAttrs: false,
-	props: {
-		type: {
-			type: String as PropType<keyof LowercaseKeys<typeof AlertTypeEnum>>,
-			default: AlertTypeEnum.INFO,
-			validator: (value: string) =>
-				propValidator('type', ALERT_TYPE_ENUM_VALUES, value),
-		},
-		dismissible: {
-			type: Boolean,
-			default: false,
-		},
-		outlined: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	data() {
-		return {
-			locales,
-			closeIcon: mdiClose,
-		}
-	},
-	computed: {
-		alertIcon(): string {
-			const icons: Record<string, string> = {
-				info: mdiInformationOutline,
-				success: mdiCheckCircleOutline,
-				warning: mdiAlertOutline,
-				error: mdiAlertOctagonOutline,
-			}
+  inheritAttrs: false,
+  props: {
+    type: {
+      type: String as PropType<keyof LowercaseKeys<typeof AlertTypeEnum>>,
+      default: AlertTypeEnum.INFO,
+      validator: (value: string) =>
+        propValidator('type', ALERT_TYPE_ENUM_VALUES, value),
+    },
+    dismissible: {
+      type: Boolean,
+      default: false,
+    },
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  emits: ['update:modelValue'],
+  data() {
+    return {
+      locales,
+      closeIcon: mdiClose,
+    };
+  },
+  computed: {
+    alertIcon(): string {
+      const icons: Record<string, string> = {
+        info: mdiInformationOutline,
+        success: mdiCheckCircleOutline,
+        warning: mdiAlertOutline,
+        error: mdiAlertOctagonOutline,
+      };
 
-			return icons[this.type]
-		},
-	},
-	methods: {
-		dismissAlert() {
-			this.$emit('update:modelValue', false)
-		},
-	},
-})
+      return icons[this.type];
+    },
+  },
+  methods: {
+    dismissAlert() {
+      this.$emit('update:modelValue', false);
+    },
+  },
+});
 </script>
 
 <template>
-	<VAlert
-		v-bind="$attrs"
-		:type="type"
-		:class="type"
-		:style="!outlined ? 'border-left: 4px solid' : ''"
-		:variant="outlined ? 'outlined' : 'tonal'"
-		:closable="dismissible"
-		class="vd-alert-wrapper"
-	>
-		<template #prepend>
-			<VIcon class="vd-alert-icon rounded-circle mr-4">
-				<slot name="icon">
-					{{ alertIcon }}
-				</slot>
-			</VIcon>
-		</template>
+  <VAlert
+    v-bind="$attrs"
+    :type="type"
+    :class="type"
+    :style="!outlined ? 'border-left: 4px solid' : ''"
+    :variant="outlined ? 'outlined' : 'tonal'"
+    :closable="dismissible"
+    class="vd-alert-wrapper"
+  >
+    <template #prepend>
+      <VIcon class="vd-alert-icon rounded-circle mr-4">
+        <slot name="icon">
+          {{ alertIcon }}
+        </slot>
+      </VIcon>
+    </template>
 
-		<template #default>
-			<slot />
-		</template>
+    <template #default>
+      <slot />
+    </template>
 
-		<template v-if="dismissible" #close>
-			<VBtn
-				:color="outlined ? undefined : 'primary'"
-				:ripple="false"
-				variant="text"
-				class="vd-close-btn pl-0 pr-1 ml-4"
-				@click="dismissAlert"
-			>
-				<VIcon size="small" class="mr-1">
-					{{ closeIcon }}
-				</VIcon>
+    <template v-if="dismissible" #close>
+      <VBtn
+        :color="outlined ? undefined : 'primary'"
+        :ripple="false"
+        variant="text"
+        class="vd-close-btn pl-0 pr-1 ml-4"
+        @click="dismissAlert"
+      >
+        <VIcon size="small" class="mr-1">
+          {{ closeIcon }}
+        </VIcon>
 
-				{{ locales.close }}
-			</VBtn>
-		</template>
-	</VAlert>
+        {{ locales.close }}
+      </VBtn>
+    </template>
+  </VAlert>
 </template>
 
 <style lang="scss" scoped>

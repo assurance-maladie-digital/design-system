@@ -1,3 +1,3 @@
 export const locales = {
-	defaultEmotionLabels: ['Pas du tout', 'Moyen', 'Parfait !'],
-}
+  defaultEmotionLabels: ['Pas du tout', 'Moyen', 'Parfait !'],
+};

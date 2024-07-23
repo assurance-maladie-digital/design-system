@@ -1,19 +1,19 @@
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import FilterSelector from '../'
-import { vuetify } from '@tests/unit/setup'
+import { describe, expect, it } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
+import FilterSelector from '../';
 
-describe('FilterSelector', () => {
-	it('renders correctly', () => {
-		const wrapper = mount(FilterSelector, {
-			propsData: {
-				filters: [],
-			},
-			global: {
-				plugins: [vuetify],
-			},
-		})
+describe('filterSelector', () => {
+  it('renders correctly', () => {
+    const wrapper = mount(FilterSelector, {
+      propsData: {
+        filters: [],
+      },
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		expect(wrapper).toMatchSnapshot()
-	})
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});

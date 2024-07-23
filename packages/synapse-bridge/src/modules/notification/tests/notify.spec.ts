@@ -1,41 +1,41 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest';
 
-import { NotificationState, NotificationObj } from '../types'
+import type { NotificationObj, NotificationState } from '../types';
 
-import { notify } from '../notify'
+import { notify } from '../notify';
 
 const notificationObj: NotificationObj = {
-	type: 'success',
-	message: 'test',
-	icon: 'icon',
-}
+  type: 'success',
+  message: 'test',
+  icon: 'icon',
+};
 
 describe('notify', () => {
-	it('adds a notification', () => {
-		const commit = vi.fn()
+  it('adds a notification', () => {
+    const commit = vi.fn();
 
-		const state: NotificationState = {
-			notification: null,
-		}
+    const state: NotificationState = {
+      notification: null,
+    };
 
-		notify(commit, state, notificationObj)
+    notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith('ADD', notificationObj)
-	})
+    expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
+  });
 
-	it('removes a previous notification and adds a new one', () => {
-		vi.useFakeTimers()
-		const commit = vi.fn()
+  it('removes a previous notification and adds a new one', () => {
+    vi.useFakeTimers();
+    const commit = vi.fn();
 
-		const state: NotificationState = {
-			notification: notificationObj,
-		}
+    const state: NotificationState = {
+      notification: notificationObj,
+    };
 
-		notify(commit, state, notificationObj)
+    notify(commit, state, notificationObj);
 
-		expect(commit).toHaveBeenCalledWith('CLEAR')
-		vi.runAllTimers()
+    expect(commit).toHaveBeenCalledWith('CLEAR');
+    vi.runAllTimers();
 
-		expect(commit).toHaveBeenCalledWith('ADD', notificationObj)
-	})
-})
+    expect(commit).toHaveBeenCalledWith('ADD', notificationObj);
+  });
+});

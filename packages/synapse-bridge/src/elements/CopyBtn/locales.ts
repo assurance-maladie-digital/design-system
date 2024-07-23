@@ -1,3 +1,3 @@
 export const locales = {
-	tooltip: 'Texte copié !',
-}
+  tooltip: 'Texte copié !',
+};

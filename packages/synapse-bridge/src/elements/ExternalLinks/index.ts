@@ -1,3 +1,3 @@
-import ExternalLinks from './ExternalLinks.vue'
+import ExternalLinks from './ExternalLinks.vue';
 
-export default ExternalLinks
+export default ExternalLinks;

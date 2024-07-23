@@ -1,5 +1,5 @@
-import type { FieldValue } from '@/form-builder/FormField/types'
+import type { FieldValue } from '@/form-builder/FormField/types';
 
 export interface FormValues {
-	[fieldName: string]: FieldValue
+  [fieldName: string]: FieldValue
 }

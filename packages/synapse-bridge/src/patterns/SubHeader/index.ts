@@ -1,3 +1,3 @@
-import SubHeader from './SubHeader.vue'
+import SubHeader from './SubHeader.vue';
 
-export default SubHeader
+export default SubHeader;

@@ -1,42 +1,42 @@
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-import type { FileListItem } from '../types'
+import type { FileListItem } from '../types';
 
-type FileList = Partial<FileListItem>
+type FileList = Partial<FileListItem>;
 
 export default defineComponent({
-	data() {
-		return {
-			fileList: [] as FileList[],
-		}
-	},
-	methods: {
-		initFileList(value: FileListItem[]): void {
-			this.fileList = []
+  data() {
+    return {
+      fileList: [] as FileList[],
+    };
+  },
+  methods: {
+    initFileList(value: FileListItem[]): void {
+      this.fileList = [];
 
-			value.forEach((propFile: FileListItem) => {
-				const file = propFile
+      value.forEach((propFile: FileListItem) => {
+        const file = propFile;
 
-				if (!file.state) {
-					file.state = 'initial'
-				}
+        if (!file.state) {
+          file.state = 'initial';
+        }
 
-				this.fileList.push(file)
-			})
-		},
+        this.fileList.push(file);
+      });
+    },
 
-		updateFileModel<T>(index: number, key: string, value: T): void {
-			if (!this.fileList[index]) {
-				return
-			}
+    updateFileModel<T>(index: number, key: string, value: T): void {
+      if (!this.fileList[index]) {
+        return;
+      }
 
-			if (value === undefined) {
-				delete this.fileList[index][key]
+      if (value === undefined) {
+        delete this.fileList[index][key];
 
-				return
-			}
+        return;
+      }
 
-			this.fileList[index][key] = value
-		},
-	},
-})
+      this.fileList[index][key] = value;
+    },
+  },
+});

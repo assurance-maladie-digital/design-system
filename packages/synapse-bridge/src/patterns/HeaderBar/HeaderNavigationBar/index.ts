@@ -1,3 +1,3 @@
-import HeaderNavigationBar from './HeaderNavigationBar.vue'
+import HeaderNavigationBar from './HeaderNavigationBar.vue';
 
-export default HeaderNavigationBar
+export default HeaderNavigationBar;

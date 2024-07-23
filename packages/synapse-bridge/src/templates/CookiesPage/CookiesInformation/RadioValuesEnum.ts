@@ -1,4 +1,4 @@
 export enum RadioValuesEnum {
-	ACCEPT = 'accept',
-	REJECT = 'reject',
+  ACCEPT = 'accept',
+  REJECT = 'reject',
 }

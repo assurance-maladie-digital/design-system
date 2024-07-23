@@ -1,3 +1,3 @@
-import CopyBtn from './CopyBtn.vue'
+import CopyBtn from './CopyBtn.vue';
 
-export default CopyBtn
+export default CopyBtn;

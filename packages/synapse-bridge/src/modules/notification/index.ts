@@ -1,51 +1,52 @@
-import type { Module, ActionTree, MutationTree, GetterTree } from 'vuex'
+import type { ActionTree, GetterTree, Module, MutationTree } from 'vuex';
 
-import type { RootState } from '../'
-import type { NotificationState, NotificationObj } from './types'
+import type { RootState } from '../';
+import type { NotificationObj, NotificationState } from './types';
 
-import { notify } from './notify'
+import { notify } from './notify';
 
 export const state: NotificationState = {
-	notification: null,
-}
+  notification: null,
+};
 
 export const actions: ActionTree<NotificationState, RootState> = {
-	add(
-		{ commit, state }: { commit: any; state: any },
-		notification: NotificationObj
-	) {
-		notify(commit, state, notification)
-	},
-	addNotification(
-		{ commit, state }: { commit: any; state: any },
-		notification: NotificationObj
-	) {
-		notify(commit, state, notification)
-	},
-	clear({ commit }: { commit: any }) {
-		commit('CLEAR')
-	},
-	clearNotification({ commit }: { commit: any }) {
-		commit('CLEAR')
-	},
-}
+  add(
+    { commit, state: actionState }: { commit: any, state: any },
+    notification: NotificationObj,
+  ) {
+    notify(commit, actionState, notification);
+  },
+  addNotification(
+    { commit, state: actionState }: { commit: any, state: any },
+    notification: NotificationObj,
+  ) {
+    notify(commit, actionState, notification);
+  },
+  clear({ commit }: { commit: any }) {
+    commit('CLEAR');
+  },
+  clearNotification({ commit }: { commit: any }) {
+    commit('CLEAR');
+  },
+};
 
 export const mutations: MutationTree<NotificationState> = {
-	ADD(state: any, notification: NotificationObj) {
-		state.notification = notification
-	},
-	CLEAR(state: any) {
-		state.notification = null
-	},
-}
+  ADD(localState: any, notification: NotificationObj) {
+    localState.notification = notification;
+  },
+  CLEAR(localState: any) {
+    localState.notification = null;
+  },
+};
 
 export const getters: GetterTree<NotificationState, RootState> = {
-	notification: (state: any) => state.notification,
-}
+
+  notification: (state: NotificationState) => state.notification,
+};
 export const notification: Module<NotificationState, RootState> = {
-	namespaced: true,
-	state,
-	actions,
-	mutations,
-	getters,
-}
+  namespaced: true,
+  state,
+  actions,
+  mutations,
+  getters,
+};

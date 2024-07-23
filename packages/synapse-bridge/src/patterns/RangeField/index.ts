@@ -1,3 +1,3 @@
-import RangeField from './RangeField.vue'
+import RangeField from './RangeField.vue';
 
-export default RangeField
+export default RangeField;

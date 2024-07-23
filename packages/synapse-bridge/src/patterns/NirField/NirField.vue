@@ -1,342 +1,343 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { config } from './config'
-import { locales } from './locales'
-import type { Refs } from '@/types'
-import { customizable } from '@/mixins/customizable'
-import { exactLength } from '@/rules/exactLength'
-import { requiredFn } from '@/rules/required'
-import { vMaska } from 'maska'
-import { mdiInformationOutline } from '@mdi/js'
-import deepMerge from 'deepmerge'
-import type { ValidationRule } from '@/rules/types'
+import { defineComponent } from 'vue';
+import { vMaska } from 'maska';
+import { mdiInformationOutline } from '@mdi/js';
+import deepMerge from 'deepmerge';
+import { config } from './config';
+import { locales } from './locales';
+import type { Refs } from '@/types';
+import { customizable } from '@/mixins/customizable';
+import { exactLength } from '@/rules/exactLength';
+import { requiredFn } from '@/rules/required';
+import type { ValidationRule } from '@/rules/types';
 
-const NUMBER_LENGTH = 13
-const KEY_LENGTH = 2
+const NUMBER_LENGTH = 13;
+const KEY_LENGTH = 2;
 
-const SINGLE_FIELD = NUMBER_LENGTH
-const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH
+const SINGLE_FIELD = NUMBER_LENGTH;
+const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH;
 
 export default defineComponent({
-	inheritAttrs: false,
-	mixins: [customizable(config)],
-	directives: { maska: vMaska },
-	emits: ['update:modelValue'],
-	props: {
-		modelValue: {
-			type: String,
-			default: null,
-		},
-		nirLength: {
-			type: Number,
-			default: DOUBLE_FIELD,
-			validator(value: number): boolean {
-				return [SINGLE_FIELD, DOUBLE_FIELD].includes(value)
-			},
-		},
-		required: {
-			type: Boolean,
-			default: false,
-		},
-		outlined: {
-			type: Boolean,
-			default: false,
-		},
-		tooltip: {
-			type: String,
-			default: undefined,
-		},
-	},
-	data() {
-		return {
-			$refs: {} as Refs<{
-				numberField: HTMLElement
-				keyField: HTMLElement
-			}>,
+  directives: { maska: vMaska },
+  mixins: [customizable(config)],
+  inheritAttrs: false,
+  props: {
+    modelValue: {
+      type: String,
+      default: null,
+    },
+    nirLength: {
+      type: Number,
+      default: DOUBLE_FIELD,
+      validator(value: number): boolean {
+        return [SINGLE_FIELD, DOUBLE_FIELD].includes(value);
+      },
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
+    tooltip: {
+      type: String,
+      default: undefined,
+    },
+  },
+  emits: ['update:modelValue'],
+  data() {
+    return {
+      // eslint-disable-next-line vue/no-reserved-keys
+      $refs: {} as Refs<{
+        numberField: HTMLElement
+        keyField: HTMLElement
+      }>,
 
-			locales,
+      locales,
 
-			infoIcon: mdiInformationOutline,
+      infoIcon: mdiInformationOutline,
 
-			maskaNumberValue: {
-				masked: '',
-				unmasked: '',
-				completed: false,
-			},
+      maskaNumberValue: {
+        masked: '',
+        unmasked: '',
+        completed: false,
+      },
 
-			maskaKeyValue: {
-				masked: '',
-				unmasked: '',
-				completed: false,
-			},
+      maskaKeyValue: {
+        masked: '',
+        unmasked: '',
+        completed: false,
+      },
 
-			numberValue: '',
-			keyValue: '',
+      numberValue: '',
+      keyValue: '',
 
-			/**
-			 * Keep trace of the value just emitted in order to do not validate
-			 * the fields when the user is typing.
-			 */
-			internallyUpdatedValue: null as string | null,
+      /**
+       * Keep trace of the value just emitted in order to do not validate
+       * the fields when the user is typing.
+       */
+      internallyUpdatedValue: null as string | null,
 
-			numberMask: {
-				mask: '# ## ## #C ### ###',
-				preProcess: (value: string) => value.toUpperCase(),
-				tokens: {
-					C: {
-						pattern: /[0-9AB]/,
-						transform: (char: string) => char.toUpperCase(),
-					},
-				},
-			},
-			keyMask: { mask: '##' },
+      numberMask: {
+        mask: '# ## ## #C ### ###',
+        preProcess: (value: string) => value.toUpperCase(),
+        tokens: {
+          C: {
+            pattern: /[0-9AB]/,
+            transform: (char: string) => char.toUpperCase(),
+          },
+        },
+      },
+      keyMask: { mask: '##' },
 
-			numberErrors: [] as string[],
-			keyErrors: [] as string[],
+      numberErrors: [] as string[],
+      keyErrors: [] as string[],
 
-			isSingleField: false,
-			isInputFocused: false,
-		}
-	},
-	watch: {
-		modelValue: {
-			immediate: true,
-			handler(newValue) {
-				if (newValue === null) {
-					this.numberValue = ''
-					this.keyValue = ''
+      isSingleField: false,
+      isInputFocused: false,
+    };
+  },
+  computed: {
+    /**
+     * Generate the validation rules for the number field
+     */
+    numberRules(): ValidationRule[] {
+      const rules = [
+        exactLength(NUMBER_LENGTH, true, {
+          default: locales.errorLengthNumber,
+        }),
+      ];
 
-					return
-				}
+      if (this.required) {
+        rules.push(requiredFn({ default: locales.errorRequiredNumber }));
+      }
 
-				if (this.internallyUpdatedValue === newValue) {
-					this.internallyUpdatedValue = null
+      return rules;
+    },
 
-					return
-				}
+    /**
+     * Generate the validation rules for the key field
+     */
+    keyRules(): ValidationRule[] {
+      const rules = [
+        exactLength(KEY_LENGTH, true, {
+          default: locales.errorLengthKey,
+        }),
+      ];
 
-				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
-				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD)
+      if (this.required) {
+        rules.push(requiredFn({ default: locales.errorRequiredKey }));
+      }
 
-				this.validateNumberValue(this.numberValue)
-				this.validateKeyValue(this.keyValue)
-			},
-		},
-	},
-	created(): void {
-		this.isSingleField = this.nirLength === SINGLE_FIELD
-	},
-	computed: {
-		/**
-		 * Generate the validation rules for the number field
-		 */
-		numberRules(): ValidationRule[] {
-			let rules = [
-				exactLength(NUMBER_LENGTH, true, {
-					default: locales.errorLengthNumber,
-				}),
-			]
+      return rules;
+    },
 
-			if (this.required) {
-				rules.push(requiredFn({ default: locales.errorRequiredNumber }))
-			}
+    textFieldOptions() {
+      return deepMerge(config, this.$attrs);
+    },
 
-			return rules
-		},
+    errors(): string | never[] {
+      return [...this.numberErrors, ...this.keyErrors].join('\n');
+    },
+  },
+  watch: {
+    modelValue: {
+      immediate: true,
+      handler(newValue) {
+        if (newValue === null) {
+          this.numberValue = '';
+          this.keyValue = '';
 
-		/**
-		 * Generate the validation rules for the key field
-		 */
-		keyRules(): ValidationRule[] {
-			let rules = [
-				exactLength(KEY_LENGTH, true, {
-					default: locales.errorLengthKey,
-				}),
-			]
+          return;
+        }
 
-			if (this.required) {
-				rules.push(requiredFn({ default: locales.errorRequiredKey }))
-			}
+        if (this.internallyUpdatedValue === newValue) {
+          this.internallyUpdatedValue = null;
 
-			return rules
-		},
+          return;
+        }
 
-		textFieldOptions() {
-			return deepMerge(config, this.$attrs)
-		},
+        this.numberValue = newValue.slice(0, NUMBER_LENGTH);
+        this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD);
 
-		errors(): string | never[] {
-			return [...this.numberErrors, ...this.keyErrors].join('\n')
-		},
-	},
-	methods: {
-		changeNumberValue(): void {
-			if (this.isSingleField) {
-				this.internallyUpdatedValue = this.maskaNumberValue.unmasked
-				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
+        this.validateNumberValue(this.numberValue);
+        this.validateKeyValue(this.keyValue);
+      },
+    },
+  },
+  created(): void {
+    this.isSingleField = this.nirLength === SINGLE_FIELD;
+  },
+  methods: {
+    changeNumberValue(): void {
+      if (this.isSingleField) {
+        this.internallyUpdatedValue = this.maskaNumberValue.unmasked;
+        this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
 
-				return
-			}
-			this.doubleFieldUpdated()
-		},
+        return;
+      }
+      this.doubleFieldUpdated();
+    },
 
-		changeKeyValue(): void {
-			this.doubleFieldUpdated()
-		},
+    changeKeyValue(): void {
+      this.doubleFieldUpdated();
+    },
 
-		doubleFieldUpdated(): void {
-			const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
+    doubleFieldUpdated(): void {
+      const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked;
 
-			this.internallyUpdatedValue = internalValue
-			this.$emit('update:modelValue', internalValue)
-		},
+      this.internallyUpdatedValue = internalValue;
+      this.$emit('update:modelValue', internalValue);
+    },
 
-		numberFieldBlur(): void {
-			this.isInputFocused = !this.isInputFocused
-			this.validateNumberValue(this.maskaNumberValue.unmasked)
-		},
+    numberFieldBlur(): void {
+      this.isInputFocused = !this.isInputFocused;
+      this.validateNumberValue(this.maskaNumberValue.unmasked);
+    },
 
-		/**
-		 * Execute the validation rules for the number field
-		 */
-		validateNumberValue(numberFieldValue: string): void {
-			this.numberErrors = this.numberRules
-				.map((rule) => rule(numberFieldValue))
-				.filter((error): error is string => typeof error === 'string')
-		},
+    /**
+     * Execute the validation rules for the number field
+     */
+    validateNumberValue(numberFieldValue: string): void {
+      this.numberErrors = this.numberRules
+        .map(rule => rule(numberFieldValue))
+        .filter((error): error is string => typeof error === 'string');
+    },
 
-		/**
-		 * Execute the validation rules for the key field
-		 */
-		validateKeyValue(keyFieldValue : string): void {
-			this.keyErrors = this.keyRules
-				.map((rule) => rule(keyFieldValue))
-				.filter((error): error is string => typeof error === 'string')
-		},
+    /**
+     * Execute the validation rules for the key field
+     */
+    validateKeyValue(keyFieldValue: string): void {
+      this.keyErrors = this.keyRules
+        .map(rule => rule(keyFieldValue))
+        .filter((error): error is string => typeof error === 'string');
+    },
 
-		focusKeyField({
-			key,
+    focusKeyField({
+      key,
 			altKey,
 			ctrlKey,
 			metaKey,
 			shiftKey,
-		}: KeyboardEvent): void {
-			const isSingleField = this.isSingleField
-			const notFilled = !this.maskaNumberValue.completed
-			// Don't move focus for combo (eg. Ctrl + A)
-			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey
-			// Don't move focus for other keys (eg. ArrowRight)
-			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key)
-			// Don't move focus is content is selected to allow overwrite
-			const isContentSelected =
-				this.$refs.numberField.selectionStart !==
-				this.$refs.numberField.selectionEnd
+    }: KeyboardEvent): void {
+      const isSingleField = this.isSingleField;
+      const notFilled = !this.maskaNumberValue.completed;
+      // Don't move focus for combo (eg. Ctrl + A)
+      const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey;
+      // Don't move focus for other keys (eg. ArrowRight)
+      const isNotSingleAlphaNumChar = !/^[a-z0-9| ]$/i.test(key);
+      // Don't move focus is content is selected to allow overwrite
+      const isContentSelected
+				= this.$refs.numberField.selectionStart
+				!== this.$refs.numberField.selectionEnd;
 
-			const shouldNotFocus =
-				isSingleField ||
-				notFilled ||
-				keyHasModifier ||
-				isNotSingleAlphaNumChar ||
-				isContentSelected
+      const shouldNotFocus
+				= isSingleField
+				|| notFilled
+				|| keyHasModifier
+				|| isNotSingleAlphaNumChar
+				|| isContentSelected;
 
-			if (shouldNotFocus) {
-				return
-			}
+      if (shouldNotFocus) {
+        return;
+      }
 
-			this.$refs.keyField.focus()
-		},
+      this.$refs.keyField.focus();
+    },
 
-		focusNumberField(): void {
-			if (this.maskaKeyValue.unmasked.length !== 0) {
-				return
-			}
+    focusNumberField(): void {
+      if (this.maskaKeyValue.unmasked.length !== 0) {
+        return;
+      }
 
-			this.$refs.numberField.focus()
-		},
-	},
-})
+      this.$refs.numberField.focus();
+    },
+  },
+});
 </script>
 
 <template>
-	<div
-		class="vd-nir-field d-flex align-start"
-		:class="{ 'vd-nir-field--outlined': 'outlined' in $attrs }"
-	>
-		<VInput
-			:model-value="[numberValue, keyValue]"
-			:max-errors="5"
-			:error-messages="errors"
-			class="vd-nir-field__fields-wrapper multi-line"
-		>
-			<VTextField
-				ref="numberField"
-				v-maska:[numberMask]="maskaNumberValue"
-				:model-value="numberValue"
-				v-bind="textFieldOptions"
-				:variant="outlined ? 'outlined' : 'underlined'"
-				:label="locales.numberLabel"
-				:hint="locales.numberHint"
-				persistent-hint
-				:hide-details="false"
-				:color="maskaNumberValue.completed ? 'success' : 'primary'"
-				:base-color="maskaNumberValue.completed ? 'success' : ''"
-				:error="numberErrors.length > 0"
-				:aria-invalid="numberErrors.length > 0"
-				:aria-errormessage="
-					numberErrors.length > 0 ? 'number-field-errors' : undefined
-				"
-				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
-				@keydown="focusKeyField"
-				@maska="changeNumberValue"
-				@blur="numberFieldBlur"
-				@focus="isInputFocused = true"
-			/>
+  <div
+    class="vd-nir-field d-flex align-start"
+    :class="{ 'vd-nir-field--outlined': 'outlined' in $attrs }"
+  >
+    <VInput
+      :model-value="[numberValue, keyValue]"
+      :max-errors="5"
+      :error-messages="errors"
+      class="vd-nir-field__fields-wrapper multi-line"
+    >
+      <VTextField
+        ref="numberField"
+        v-maska:[numberMask]="maskaNumberValue"
+        :model-value="numberValue"
+        v-bind="textFieldOptions"
+        :variant="outlined ? 'outlined' : 'underlined'"
+        :label="locales.numberLabel"
+        :hint="locales.numberHint"
+        persistent-hint
+        :hide-details="false"
+        :color="maskaNumberValue.completed ? 'success' : 'primary'"
+        :base-color="maskaNumberValue.completed ? 'success' : ''"
+        :error="numberErrors.length > 0"
+        :aria-invalid="numberErrors.length > 0"
+        :aria-errormessage="
+          numberErrors.length > 0 ? 'number-field-errors' : undefined
+        "
+        class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
+        @keydown="focusKeyField"
+        @maska="changeNumberValue"
+        @blur="numberFieldBlur"
+        @focus="isInputFocused = true"
+      />
 
-			<div id="number-field-errors" class="d-sr-only">
-				{{ numberErrors.join(' ') }}
-			</div>
+      <div id="number-field-errors" class="d-sr-only">
+        {{ numberErrors.join(' ') }}
+      </div>
 
-			<template v-if="!isSingleField">
-				<VTextField
-					ref="keyField"
-					v-maska:[keyMask]="maskaKeyValue"
-					:modelValue="keyValue"
-					v-bind="textFieldOptions"
-					:variant="outlined ? 'outlined' : 'underlined'"
-					:label="locales.keyLabel"
-					:hint="locales.keyHint"
-					persistent-hint
-					:hide-details="false"
-					:color="maskaKeyValue.completed ? 'success' : 'primary'"
-					:base-color="maskaKeyValue.completed ? 'success' : ''"
-					:error="keyErrors.length > 0"
-					:aria-invalid="keyErrors.length > 0"
-					:aria-errormessage="
-						keyErrors.length > 0 ? 'key-field-errors' : undefined
-					"
-					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
-					@keyup.delete="focusNumberField"
-					@maska="changeKeyValue"
-					@blur="validateKeyValue(maskaKeyValue.unmasked)"
-				/>
-				<div id="key-field-errors" class="d-sr-only">
-					{{ keyErrors.join(' ') }}
-				</div>
-			</template>
+      <template v-if="!isSingleField">
+        <VTextField
+          ref="keyField"
+          v-maska:[keyMask]="maskaKeyValue"
+          :model-value="keyValue"
+          v-bind="textFieldOptions"
+          :variant="outlined ? 'outlined' : 'underlined'"
+          :label="locales.keyLabel"
+          :hint="locales.keyHint"
+          persistent-hint
+          :hide-details="false"
+          :color="maskaKeyValue.completed ? 'success' : 'primary'"
+          :base-color="maskaKeyValue.completed ? 'success' : ''"
+          :error="keyErrors.length > 0"
+          :aria-invalid="keyErrors.length > 0"
+          :aria-errormessage="
+            keyErrors.length > 0 ? 'key-field-errors' : undefined
+          "
+          class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
+          @keyup.delete="focusNumberField"
+          @maska="changeKeyValue"
+          @blur="validateKeyValue(maskaKeyValue.unmasked)"
+        />
+        <div id="key-field-errors" class="d-sr-only">
+          {{ keyErrors.join(' ') }}
+        </div>
+      </template>
 
-			<VTooltip v-if="tooltip" v-bind="options.tooltip">
-				<template #activator="{ props }">
-					<VIcon v-bind="props" class="vd-tooltip-icon mt-4 ml-2">
-						{{ infoIcon }}
-					</VIcon>
-				</template>
+      <VTooltip v-if="tooltip" v-bind="options.tooltip">
+        <template #activator="{ props }">
+          <VIcon v-bind="props" class="vd-tooltip-icon mt-4 ml-2">
+            {{ infoIcon }}
+          </VIcon>
+        </template>
 
-				<slot name="tooltip">
-					{{ tooltip }}
-				</slot>
-			</VTooltip>
-		</VInput>
-	</div>
+        <slot name="tooltip">
+          {{ tooltip }}
+        </slot>
+      </VTooltip>
+    </VInput>
+  </div>
 </template>
 
 <style lang="scss" scoped>

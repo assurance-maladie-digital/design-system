@@ -1,9 +1,9 @@
 export interface ExternalLink {
-	text: string
-	href: string
+  text: string
+  href: string
 }
 
 export interface Position {
-	x: string
-	y: string
+  x: string
+  y: string
 }

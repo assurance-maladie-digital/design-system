@@ -1,4 +1,4 @@
 export interface SocialMediaLink {
-	icon: string
-	href: string
+  icon: string
+  href: string
 }

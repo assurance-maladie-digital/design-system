@@ -1,25 +1,24 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-import PeriodField from '@/patterns/PeriodField'
-
-import FieldComponent from '../mixins/fieldComponent'
+import FieldComponent from '../mixins/fieldComponent';
+import PeriodField from '@/patterns/PeriodField';
 
 export default defineComponent({
-	components: {
-		PeriodField,
-	},
-	emits: ['update:modelValue'],
-	mixins: [FieldComponent],
-})
+  components: {
+    PeriodField,
+  },
+  mixins: [FieldComponent],
+  emits: ['update:modelValue'],
+});
 </script>
 
 <template>
-	<PeriodField
-		v-bind="field.fieldOptions"
-		:model-value="field.value"
-		:vuetify-options="field.fieldOptions"
-		outlined
-		@update:modelValue="emitChangeEvent"
-	/>
+  <PeriodField
+    v-bind="field.fieldOptions"
+    :model-value="field.value"
+    :vuetify-options="field.fieldOptions"
+    outlined
+    @update:model-value="emitChangeEvent"
+  />
 </template>

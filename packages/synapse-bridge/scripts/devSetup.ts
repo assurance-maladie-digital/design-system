@@ -1,18 +1,18 @@
-import { existsSync, copyFile } from 'node:fs'
+import { copyFile, existsSync } from 'node:fs';
 
 function createPlayground(): void {
-	const devFolder = './dev'
-	const targetFile = `${devFolder}/Playground.vue`
+  const devFolder = './dev';
+  const targetFile = `${devFolder}/Playground.vue`;
 
-	if (existsSync(targetFile)) {
-		return
-	}
+  if (existsSync(targetFile)) {
+    return;
+  }
 
-	copyFile(`${devFolder}/Playground.template.vue`, targetFile, (error) => {
-		if (error) {
-			throw error
-		}
-	})
+  copyFile(`${devFolder}/Playground.template.vue`, targetFile, (error) => {
+    if (error) {
+      throw error;
+    }
+  });
 }
 
-createPlayground()
+createPlayground();

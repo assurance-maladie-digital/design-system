@@ -9,3 +9,13 @@ exports[`FilePreview > renders correctly with a pdf 1`] = `
 exports[`FilePreview > renders correctly with an image 1`] = `<div class="vd-file-preview"><img alt="" style="width: 100%;"></div>`;
 
 exports[`FilePreview > with options 1`] = `<div class="vd-file-preview"><img alt="Photo de paysage montagneux du site Picsum." style="width: 100%;"></div>`;
+
+exports[`filePreview > renders correctly with a pdf 1`] = `
+<div class="vd-file-preview"><object height="556px" width="100%" type="application/pdf">
+    <p class="mb-0">Impossible de prévisualiser le fichier.</p>
+  </object></div>
+`;
+
+exports[`filePreview > renders correctly with an image 1`] = `<div class="vd-file-preview"><img alt="" style="width: 100%;"></div>`;
+
+exports[`filePreview > with options 1`] = `<div class="vd-file-preview"><img alt="Photo de paysage montagneux du site Picsum." style="width: 100%;"></div>`;

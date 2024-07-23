@@ -1,293 +1,275 @@
-import { defineComponent } from 'vue'
-import { describe, it, expect, vi } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
+import { defineComponent } from 'vue';
+import { describe, expect, it, vi } from 'vitest';
+import { mount, shallowMount } from '@vue/test-utils';
 
-import FileUploadCore from '../fileUploadCore'
-import type { HTMLInputEvent } from '../../types'
+import FileUploadCore from '../fileUploadCore';
+import type { HTMLInputEvent } from '../../types';
 
 interface DropEvent {
-	files?: File[] | null
-	items?: {
-		file: File | null
-	}
-	kind?: string
+  files?: File[] | null
+  items?: {
+    file: File | null
+  }
+  kind?: string
 }
 
 const component = defineComponent({
-	name: 'TestComponent',
-	mixins: [FileUploadCore],
-	template: '<input ref="vdInputEl" type="file">',
-})
+  name: 'TestComponent',
+  mixins: [FileUploadCore],
+  template: '<input ref="vdInputEl" type="file">',
+});
 
 const file = {
-	size: 1000,
-	type: 'image/png',
-	name: 'avatar.png',
-} as File
+  size: 1000,
+  type: 'image/png',
+  name: 'avatar.png',
+} as File;
 
 /** Create a DragEvent with files or items */
 function getFileDropEvent({ files, items, kind }: DropEvent): DragEvent {
-	if (files) {
-		return {
-			dataTransfer: {
-				files: files,
-			},
-		} as unknown as DragEvent
-	}
+  if (files) {
+    return {
+      dataTransfer: {
+        files,
+      },
+    } as unknown as DragEvent;
+  }
 
-	if (items) {
-		return {
-			dataTransfer: {
-				items: [
-					{
-						kind,
-						getAsFile: () => items.file,
-					},
-				],
-			},
-		} as unknown as DragEvent
-	}
+  if (items) {
+    return {
+      dataTransfer: {
+        items: [
+          {
+            kind,
+            getAsFile: () => items.file,
+          },
+        ],
+      },
+    } as unknown as DragEvent;
+  }
 
-	return {
-		dataTransfer: {},
-	} as DragEvent
+  return {
+    dataTransfer: {},
+  } as DragEvent;
 }
 
-describe('FileUploadCore', () => {
-	// inputValueChanged
-	it('does not emits update event if there is no event target', () => {
-		const wrapper = mount(component)
+describe('fileUploadCore', () => {
+  // inputValueChanged
+  it('does not emits update event if there is no event target', () => {
+    const wrapper = mount(component);
 
-		const event = {} as HTMLInputEvent
+    const event = {} as HTMLInputEvent;
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.inputValueChanged(event);
 
-		expect(wrapper.emitted('change')).toBeFalsy()
-	})
+    expect(wrapper.emitted('change')).toBeFalsy();
+  });
 
-	it('calls self reset function', () => {
-		const wrapper = shallowMount(component, {
-			mocks: {
-				selfReset: vi.fn(),
-			},
-		})
+  it('calls self reset function', () => {
+    const wrapper = shallowMount(component, {
+      mocks: {
+        selfReset: vi.fn(),
+      },
+    });
 
-		const event = {
-			target: {},
-		} as HTMLInputEvent
+    const event = {
+      target: {},
+    } as HTMLInputEvent;
 
-		const selfReset = vi.spyOn(wrapper.vm, 'selfReset')
+    const selfReset = vi.spyOn(wrapper.vm, 'selfReset');
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.inputValueChanged(event);
 
-		expect(selfReset).toHaveBeenCalled()
-	})
+    expect(selfReset).toHaveBeenCalled();
+  });
 
-	it('does not emits update event if there is no files in event target', () => {
-		const wrapper = shallowMount(component)
+  it('does not emits update event if there is no files in event target', () => {
+    const wrapper = shallowMount(component);
 
-		const event = {
-			target: {},
-		} as HTMLInputEvent
+    const event = {
+      target: {},
+    } as HTMLInputEvent;
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.inputValueChanged(event);
 
-		expect(wrapper.emitted('change')).toBeFalsy()
-	})
+    expect(wrapper.emitted('change')).toBeFalsy();
+  });
 
-	it('does not emits update event if files is an empty array', () => {
-		const wrapper = shallowMount(component)
+  it('does not emits update event if files is an empty array', () => {
+    const wrapper = shallowMount(component);
 
-		const event = {
-			target: {
-				files: [] as unknown,
-			},
-		} as HTMLInputEvent
+    const event = {
+      target: {
+        files: [] as unknown,
+      },
+    } as HTMLInputEvent;
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.inputValueChanged(event);
 
-		expect(wrapper.emitted('change')).toBeFalsy()
-	})
+    expect(wrapper.emitted('change')).toBeFalsy();
+  });
 
-	it('does not emits update event if there are too many files', () => {
-		const wrapper = shallowMount(component, {
-			mocks: {
-				ifTooManyFiles: () => true,
-			},
-		})
+  it('emits update event when the file is valid', () => {
+    const wrapper = shallowMount(component);
 
-		const event = {
-			target: {
-				files: [file, file] as unknown,
-			},
-		} as HTMLInputEvent
+    const event = {
+      target: {
+        files: [file] as unknown,
+      },
+    } as HTMLInputEvent;
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.inputValueChanged(event);
 
-		expect(wrapper.emitted('update:modelValue')).toBeFalsy()
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+  });
 
-	it('emits update event when the file is valid', () => {
-		const wrapper = shallowMount(component)
+  // emitChangeEvent
+  it('emits update event when no there is no error', () => {
+    const wrapper = shallowMount(component);
 
-		const event = {
-			target: {
-				files: [file] as unknown,
-			},
-		} as HTMLInputEvent
+    wrapper.setData({
+      error: false,
+      files: [file],
+    });
 
-		wrapper.vm.inputValueChanged(event)
+    wrapper.vm.emitChangeEvent();
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-	})
+    const event = wrapper.emitted('update:modelValue') || [];
 
-	// emitChangeEvent
-	it('emits update event when no there is no error', () => {
-		const wrapper = shallowMount(component)
+    expect(event[0][0]).toEqual(file);
+  });
 
-		wrapper.setData({
-			error: false,
-			files: [file],
-		})
+  it('emits update event when no there is no error in multiple mode', () => {
+    const wrapper = shallowMount(component, {
+      propsData: {
+        multiple: true,
+      },
+    });
 
-		wrapper.vm.emitChangeEvent()
+    wrapper.setData({
+      error: false,
+      files: [file, file],
+    });
 
-		const event = wrapper.emitted('update:modelValue') || []
+    wrapper.vm.emitChangeEvent();
 
-		expect(event[0][0]).toEqual(file)
-	})
+    const event = wrapper.emitted('update:modelValue');
 
-	it('emits update event when no there is no error in multiple mode', () => {
-		const wrapper = shallowMount(component, {
-			propsData: {
-				multiple: true,
-			},
-		})
+    expect(event?.[0]?.[0]).toEqual([file, file]);
+  });
 
-		wrapper.setData({
-			error: false,
-			files: [file, file],
-		})
+  it('does not emits update event when there is an error', () => {
+    const wrapper = shallowMount(component);
 
-		wrapper.vm.emitChangeEvent()
+    wrapper.setData({
+      error: true,
+    });
 
-		const event = wrapper.emitted('update:modelValue')
+    wrapper.vm.emitChangeEvent();
 
-		expect(event?.[0]?.[0]).toEqual([file, file])
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+    expect(wrapper.vm.$refs.vdInputEl.value).toBe('');
+  });
 
-	it('does not emits update event when there is an error', () => {
-		const wrapper = shallowMount(component)
+  // dropHandler
+  it('does not emits update event when there is no data', async () => {
+    const wrapper = shallowMount(component);
 
-		wrapper.setData({
-			error: true,
-		})
+    const fileDropEvent = {} as DragEvent;
 
-		wrapper.vm.emitChangeEvent()
+    wrapper.vm.dropHandler(fileDropEvent);
 
-		expect(wrapper.emitted('update:modelValue')).toBeFalsy()
-		expect(wrapper.vm.$refs.vdInputEl.value).toBe('')
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+  });
 
-	// dropHandler
-	it('does not emits update event when there is no data', async () => {
-		const wrapper = shallowMount(component)
+  it('validates the files and emits update event if there is files in the event', async () => {
+    const wrapper = shallowMount(component);
 
-		const fileDropEvent = {} as DragEvent
+    const fileDropEvent = getFileDropEvent({
+      files: [file],
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.vm.dropHandler(fileDropEvent);
 
-		expect(wrapper.emitted('update:modelValue')).toBeFalsy()
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+  });
 
-	it('validates the files and emits update event if there is files in the event', async () => {
-		const wrapper = shallowMount(component)
+  it('does not emits update event if there are too many files', async () => {
+    const wrapper = shallowMount(component, {
+      mocks: {
+        ifTooManyFiles: () => true,
+      },
+    });
 
-		const fileDropEvent = getFileDropEvent({
-			files: [file],
-		})
+    const fileDropEvent = getFileDropEvent({
+      files: [file, file],
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.setProps({
+      multiple: false,
+    });
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-	})
+    wrapper.vm.dropHandler(fileDropEvent);
 
-	it('does not emits update event if there are too many files', async () => {
-		const wrapper = shallowMount(component, {
-			mocks: {
-				ifTooManyFiles: () => true,
-			},
-		})
+    expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+  });
 
-		const fileDropEvent = getFileDropEvent({
-			files: [file, file],
-		})
+  it('validates the files and emits update event if there are items in the event', () => {
+    const wrapper = shallowMount(component);
 
-		wrapper.setProps({
-			multiple: false,
-		})
+    const fileDropEvent = getFileDropEvent({
+      items: {
+        file,
+      },
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.vm.dropHandler(fileDropEvent);
 
-		expect(wrapper.emitted('update:modelValue')).toBeFalsy()
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+  });
 
-	it('validates the files and emits update event if there are items in the event', () => {
-		const wrapper = shallowMount(component)
+  it('emits update event if there are items in the event with the kind "file"', () => {
+    const wrapper = shallowMount(component);
 
-		const fileDropEvent = getFileDropEvent({
-			items: {
-				file,
-			},
-		})
+    const fileDropEvent = getFileDropEvent({
+      items: {
+        file,
+      },
+      kind: 'file',
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.vm.dropHandler(fileDropEvent);
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+  });
 
-	it('emits update event if there are items in the event with the kind "file"', () => {
-		const wrapper = shallowMount(component)
+  it('does not emits update event if there are items in the event which are not files', () => {
+    const wrapper = shallowMount(component);
 
-		const fileDropEvent = getFileDropEvent({
-			items: {
-				file,
-			},
-			kind: 'file',
-		})
+    const fileDropEvent = getFileDropEvent({
+      items: {
+        file: null,
+      },
+      kind: 'file',
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.vm.dropHandler(fileDropEvent);
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+  });
 
-	it('does not emits update event if there are items in the event which are not files', () => {
-		const wrapper = shallowMount(component)
+  // selfReset
+  it('resets state properly', () => {
+    const wrapper = shallowMount(component);
 
-		const fileDropEvent = getFileDropEvent({
-			items: {
-				file: null,
-			},
-			kind: 'file',
-		})
+    wrapper.setData({
+      dragover: true,
+    });
 
-		wrapper.vm.dropHandler(fileDropEvent)
+    wrapper.vm.selfReset();
 
-		expect(wrapper.emitted('update:modelValue')).toBeFalsy()
-	})
-
-	// selfReset
-	it('resets state properly', () => {
-		const wrapper = shallowMount(component)
-
-		wrapper.setData({
-			dragover: true,
-		})
-
-		wrapper.vm.selfReset()
-
-		expect(wrapper.vm.dragover).toBe(false)
-		expect(wrapper.vm.files).toStrictEqual([])
-		expect(wrapper.vm.error).toBe(false)
-	})
-})
+    expect(wrapper.vm.dragover).toBe(false);
+    expect(wrapper.vm.files).toStrictEqual([]);
+    expect(wrapper.vm.error).toBe(false);
+  });
+});

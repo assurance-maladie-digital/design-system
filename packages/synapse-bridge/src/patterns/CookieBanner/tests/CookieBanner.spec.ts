@@ -1,65 +1,65 @@
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, expect, it } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import CookieBanner from '../'
+import CookieBanner from '../';
 
-describe('CookieBanner', () => {
-	it('renders correctly', () => {
-		const wrapper = mount(CookieBanner, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
+describe('cookieBanner', () => {
+  it('renders correctly', () => {
+    const wrapper = mount(CookieBanner, {
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
-	it('renders correctly on small screens', () => {
-		const wrapper = mount(CookieBanner, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
+  it('renders correctly on small screens', () => {
+    const wrapper = mount(CookieBanner, {
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		wrapper.vm.$vuetify.display.name = 'sm'
+    wrapper.vm.$vuetify.display.name = 'sm';
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
-	it('rejects cookies', async () => {
-		const wrapper = mount(CookieBanner, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
+  it('rejects cookies', async () => {
+    const wrapper = mount(CookieBanner, {
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		await wrapper.find('[data-test-id="reject"]').trigger('click')
+    await wrapper.find('[data-test-id="reject"]').trigger('click');
 
-		expect(wrapper.emitted()).toHaveProperty('reject')
-	})
+    expect(wrapper.emitted()).toHaveProperty('reject');
+  });
 
-	it('accepts cookies', async () => {
-		const wrapper = mount(CookieBanner, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
+  it('accepts cookies', async () => {
+    const wrapper = mount(CookieBanner, {
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		await wrapper.find('[data-test-id="accept"]').trigger('click')
+    await wrapper.find('[data-test-id="accept"]').trigger('click');
 
-		expect(wrapper.emitted()).toHaveProperty('accept')
-	})
+    expect(wrapper.emitted()).toHaveProperty('accept');
+  });
 
-	it('closes the dialog when the customize button is clicked', async () => {
-		const wrapper = mount(CookieBanner, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
+  it('closes the dialog when the customize button is clicked', async () => {
+    const wrapper = mount(CookieBanner, {
+      global: {
+        plugins: [vuetify],
+      },
+    });
 
-		await wrapper.find('[data-test-id="customize"]').trigger('click')
+    await wrapper.find('[data-test-id="customize"]').trigger('click');
 
-		expect(wrapper.vm.active).toBeFalsy()
-	})
-})
+    expect(wrapper.vm.active).toBeFalsy();
+  });
+});

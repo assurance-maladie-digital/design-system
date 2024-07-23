@@ -1,72 +1,72 @@
-import { describe, it, expect } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, expect, it } from 'vitest';
+import { mount, shallowMount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import FormField from '../FormField.vue'
-import { VTooltip } from 'vuetify/lib/components/index.mjs'
+import { VTooltip } from 'vuetify/lib/components/index.mjs';
+import FormField from '../FormField.vue';
 
 const testField = {
-	type: 'text',
-	value: null,
-	fieldOptions: {
-		label: 'Classic field',
-		variant: 'outlined',
-	},
-}
+  type: 'text',
+  value: null,
+  fieldOptions: {
+    label: 'Classic field',
+    variant: 'outlined',
+  },
+};
 
-describe('FormBuilder', () => {
-	it('renders correctly', () => {
-		const wrapper = shallowMount(FormField, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: testField,
-			},
-		})
+describe('formBuilder', () => {
+  it('renders correctly', () => {
+    const wrapper = shallowMount(FormField, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: testField,
+      },
+    });
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
-	it('emits change event', async () => {
-		const wrapper = mount(FormField, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: testField,
-			},
-		})
+  it('emits change event', async () => {
+    const wrapper = mount(FormField, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: testField,
+      },
+    });
 
-		await wrapper.find('input').setValue('test')
+    await wrapper.find('input').setValue('test');
 
-		expect(wrapper.emitted('update:modelValue')).toEqual([
-			[{ ...testField, value: 'test' }],
-		])
-	})
+    expect(wrapper.emitted('update:modelValue')).toEqual([
+      [{ ...testField, value: 'test' }],
+    ]);
+  });
 
-	it('render with a slot', async () => {
-		const wrapper = mount(FormField, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: {
-					type: 'toto',
-					title: 'Title',
-					tooltip: 'Tooltip',
-					description: 'Description',
-				},
-			},
-			slots: {
-				toto: '<div>Custom slot</div>',
-			},
-		})
+  it('render with a slot', async () => {
+    const wrapper = mount(FormField, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: {
+          type: 'toto',
+          title: 'Title',
+          tooltip: 'Tooltip',
+          description: 'Description',
+        },
+      },
+      slots: {
+        toto: '<div>Custom slot</div>',
+      },
+    });
 
-		expect(wrapper.html()).toContain('Title')
-		expect(wrapper.html()).toContain('Description')
-		expect(wrapper.html()).toContain('Custom slot')
-		const tooltip = wrapper.findComponent(VTooltip)
-		expect(tooltip).toBeTruthy()
-	})
-})
+    expect(wrapper.html()).toContain('Title');
+    expect(wrapper.html()).toContain('Description');
+    expect(wrapper.html()).toContain('Custom slot');
+    const tooltip = wrapper.findComponent(VTooltip);
+    expect(tooltip).toBeTruthy();
+  });
+});

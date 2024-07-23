@@ -1,3 +1,3 @@
-import DataList from './DataList.vue'
+import DataList from './DataList.vue';
 
-export default DataList
+export default DataList;

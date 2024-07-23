@@ -1,3 +1,3 @@
-import DataListGroup from './DataListGroup.vue'
+import DataListGroup from './DataListGroup.vue';
 
-export default DataListGroup
+export default DataListGroup;

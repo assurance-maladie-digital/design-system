@@ -1,41 +1,41 @@
-import { createApp } from 'vue'
-import Playground from './Playground.vue'
-import { router } from './router'
-import { createStore } from 'vuex'
+import { createApp } from 'vue';
+import { createStore } from 'vuex';
 
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 
-import { colorTheme } from '@cnamts/design-tokens/src/colors'
+import { colorTheme } from '@cnamts/design-tokens/src/colors';
+import Playground from './Playground.vue';
+import { router } from './router';
 
-import { notification } from '@/modules/notification'
+import { notification } from '@/modules/notification';
 
 const vuetify = createVuetify({
-	icons: {
-		defaultSet: 'mdi',
-		aliases,
-		sets: {
-			mdi,
-		},
-	},
-	theme: {
-		defaultTheme: 'light',
-		themes: {
-			light: {
-				colors: colorTheme,
-			},
-			dark: {
-				colors: colorTheme,
-			},
-		},
-	},
-})
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
+    },
+  },
+  theme: {
+    defaultTheme: 'light',
+    themes: {
+      light: {
+        colors: colorTheme,
+      },
+      dark: {
+        colors: colorTheme,
+      },
+    },
+  },
+});
 
 const store = createStore({
-	modules: {
-		notification,
-	},
-})
+  modules: {
+    notification,
+  },
+});
 
-createApp(Playground).use(store).use(vuetify).use(router).mount('#app')
+createApp(Playground).use(store).use(vuetify).use(router).mount('#app');

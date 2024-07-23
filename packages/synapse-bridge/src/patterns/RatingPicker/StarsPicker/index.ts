@@ -1,3 +1,3 @@
-import StarsPicker from './StarsPicker.vue'
+import StarsPicker from './StarsPicker.vue';
 
-export default StarsPicker
+export default StarsPicker;

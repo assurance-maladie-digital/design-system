@@ -1,3 +1,3 @@
-import ContextualMenu from './ContextualMenu.vue'
+import ContextualMenu from './ContextualMenu.vue';
 
-export default ContextualMenu
+export default ContextualMenu;

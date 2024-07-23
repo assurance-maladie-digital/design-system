@@ -5,64 +5,64 @@ import FiltersInline from '../'
 import { locales } from '../locales'
 import {type FilterItem} from '@/mixins/filterable/types'
 
-describe('FiltersInline', () => {
-	it('renders correctly', () => {
-		const wrapper = shallowMount(FiltersInline, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: [
-					{
-						name: 'name',
-						label: 'Nom',
-					},
-				],
-			},
-		})
+describe('filtersInline', () => {
+  it('renders correctly', () => {
+    const wrapper = shallowMount(FiltersInline, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: [
+          {
+            name: 'name',
+            label: 'Nom',
+          },
+        ],
+      },
+    });
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
-	it('renders correctly with an active filter', () => {
-		const wrapper = shallowMount(FiltersInline, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: [
-					{
-						name: 'name',
-						label: 'Nom',
-						value: 'John Doe',
-					},
-				],
-			},
-		})
+  it('renders correctly with an active filter', () => {
+    const wrapper = shallowMount(FiltersInline, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: [
+          {
+            name: 'name',
+            label: 'Nom',
+            value: 'John Doe',
+          },
+        ],
+      },
+    });
 
-		expect(wrapper).toMatchSnapshot()
-	})
+    expect(wrapper).toMatchSnapshot();
+  });
 
-	it('renders correctly with multiple active filters', () => {
-		const wrapper = shallowMount(FiltersInline, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: [
-					{
-						name: 'name',
-						label: 'Nom',
-						value: 'John Doe',
-					},
-					{
-						name: 'profession',
-						label: 'Profession',
-						value: ['Infirmer', 'Pharmacien'],
-					},
-				],
-			},
-		})
+  it('renders correctly with multiple active filters', () => {
+    const wrapper = shallowMount(FiltersInline, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: [
+          {
+            name: 'name',
+            label: 'Nom',
+            value: 'John Doe',
+          },
+          {
+            name: 'profession',
+            label: 'Profession',
+            value: ['Infirmer', 'Pharmacien'],
+          },
+        ],
+      },
+    });
 
 		expect(wrapper).toMatchSnapshot()
 	})
@@ -106,10 +106,10 @@ describe('FiltersInline', () => {
 	})
 })
 
-describe('FiltersInline locales', () => {
-	it('should return the correct locale', () => {
-		expect(locales.badgeLabel(0)).toMatchSnapshot()
-		expect(locales.badgeLabel(1)).toMatchSnapshot()
-		expect(locales.badgeLabel(2)).toMatchSnapshot()
-	})
-})
+describe('filtersInline locales', () => {
+  it('should return the correct locale', () => {
+    expect(locales.badgeLabel(0)).toMatchSnapshot();
+    expect(locales.badgeLabel(1)).toMatchSnapshot();
+    expect(locales.badgeLabel(2)).toMatchSnapshot();
+  });
+});

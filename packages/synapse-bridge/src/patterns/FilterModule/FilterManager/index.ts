@@ -1,3 +1,3 @@
-import FilterManager from './FilterManager.vue'
+import FilterManager from './FilterManager.vue';
 
-export default FilterManager
+export default FilterManager;

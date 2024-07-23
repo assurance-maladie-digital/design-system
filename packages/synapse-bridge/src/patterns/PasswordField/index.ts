@@ -1,3 +1,3 @@
-import PasswordField from './PasswordField.vue'
+import PasswordField from './PasswordField.vue';
 
-export default PasswordField
+export default PasswordField;

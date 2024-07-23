@@ -1,669 +1,674 @@
 <script lang="ts">
-import '@vuepic/vue-datepicker/dist/main.css'
-import { defineComponent } from 'vue'
-import type { PropType } from 'vue'
-import { mdiCalendar, mdiCloseCircle } from '@mdi/js'
-import VueDatePicker from '@vuepic/vue-datepicker'
-import dayjs from 'dayjs'
-import { WarningRules } from '@/mixins/warningRules/index.ts'
-import { ErrorProp } from './mixins/errorProp'
-import { customizable } from '@/mixins/customizable/index.ts'
-import { config } from '@/patterns/DatePicker/config.ts'
+import '@vuepic/vue-datepicker/dist/main.css';
+import type { PropType } from 'vue';
+import { defineComponent } from 'vue';
+import { mdiCalendar, mdiCloseCircle } from '@mdi/js';
+import VueDatePicker from '@vuepic/vue-datepicker';
+import dayjs from 'dayjs';
+import { ErrorProp } from './mixins/errorProp';
+import { WarningRules } from '@/mixins/warningRules/index.ts';
+import { customizable } from '@/mixins/customizable/index.ts';
+import { config } from '@/patterns/DatePicker/config.ts';
 
 type DatePickerFlow = (
-	| 'calendar'
-	| 'month'
-	| 'year'
-	| 'time'
-	| 'minutes'
-	| 'hours'
-	| 'seconds'
-)[]
+  | 'calendar'
+  | 'month'
+  | 'year'
+  | 'time'
+  | 'minutes'
+  | 'hours'
+  | 'seconds'
+)[];
 
 interface DatePickerData {
-	date: Date | null | any[] | string
-	dateRangeTemp: any[]
-	format: string
-	inputValue: string
-	calendarIcon: string
-	closeIcon: string
-	errorMessages: string[] | any
-	birthdateFlow: DatePickerFlow
-	isCalOpen: boolean
-	lastTypeAddedDate: string
-	dayNames: string[]
+  date: Date | null | any[] | string
+  dateRangeTemp: any[]
+  format: string
+  inputValue: string
+  calendarIcon: string
+  closeIcon: string
+  errorMessages: string[] | any
+  birthdateFlow: DatePickerFlow
+  isCalOpen: boolean
+  lastTypeAddedDate: string
+  dayNames: string[]
 }
 
 export default defineComponent({
-	emits: [
-		'change',
-		'update:model-value',
-		'update:endDate',
-		'update:startDate',
-		'input',
-	],
-	components: { VueDatePicker },
-	mixins: [ErrorProp, WarningRules, customizable(config)],
-	props: {
-		birthdate: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		appendIcon: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		noCalendar: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		noPrependIcon: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		disabled: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		showWeekends: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		outlined: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		textFieldActivator: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		clearable: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		modelValue: {
-			type: [String, Number, Boolean, Array, Object, null] as PropType<
-				| string
-				| number
-				| boolean
-				| Array<any>
-				| Record<string, any>
-				| null
-			>,
-			default: () => [],
-		},
-		label: {
-			type: String as PropType<string>,
-			default: '',
-		},
-		range: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		rules: {
-			type: Array as PropType<Array<any>>,
-			default: () => [],
-		},
-		textFieldClass: {
-			type: [String, Array] as PropType<string | Array<string>>,
-			default: '',
-		},
-		hint: {
-			type: String as PropType<string>,
-			default: 'Format JJ/MM/AAAA',
-		},
-		dateFormat: {
-			type: String as PropType<string>,
-			default: 'DD/MM/YYYY',
-		},
-		dateFormatReturn: {
-			type: String as PropType<string>,
-			default: 'DD/MM/YYYY',
-		},
-		customErrorMessages: {
-			type: Array as PropType<Array<string>>,
-			default: () => [],
-		},
-	},
-	data(): DatePickerData {
-		return {
-			date: null as Date | null | any[],
-			dateRangeTemp: [] as any[],
-			format: 'dd/MM/yyyy',
-			inputValue: '',
-			calendarIcon: mdiCalendar,
-			closeIcon: mdiCloseCircle,
-			errorMessages: [] as string[],
-			birthdateFlow: ['year', 'month', 'calendar'],
-			isCalOpen: false,
-			lastTypeAddedDate: '',
-			dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
-		}
-	},
-	computed: {
-		indexedThis(): { [key: string]: any } {
-			return this as any
-		},
-		textFieldOptions() {
-			let errorMessages = this.$attrs.errorMessages
-			return {
-				value:
-					this.lastTypeAddedDate === 'date'
-						? this.formatDate(this.date)
-						: this.inputValue,
-				type: 'text',
-				hideDetails: 'auto',
-				label: this.label,
-				'aria-describedby': this.label,
-				variant: this.getVariant,
-				disabled: this.disabled,
-				hint: this.hint,
-				persistentHint: true,
-				rules: this.rules,
-				errorMessages: errorMessages || [],
-			}
-		},
+  components: { VueDatePicker },
+  mixins: [ErrorProp, WarningRules, customizable(config)],
+  props: {
+    birthdate: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    appendIcon: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    noCalendar: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    noPrependIcon: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    disabled: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    showWeekends: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    outlined: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    textFieldActivator: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    clearable: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    modelValue: {
+      type: [String, Number, Boolean, Array, Object, null] as PropType<
+        | string
+        | number
+        | boolean
+        | Array<any>
+        | Record<string, any>
+        | null
+      >,
+      default: () => [],
+    },
+    label: {
+      type: String as PropType<string>,
+      default: '',
+    },
+    range: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+    rules: {
+      type: Array as PropType<Array<any>>,
+      default: () => [],
+    },
+    textFieldClass: {
+      type: [String, Array] as PropType<string | Array<string>>,
+      default: '',
+    },
+    hint: {
+      type: String as PropType<string>,
+      default: 'Format JJ/MM/AAAA',
+    },
+    dateFormat: {
+      type: String as PropType<string>,
+      default: 'DD/MM/YYYY',
+    },
+    dateFormatReturn: {
+      type: String as PropType<string>,
+      default: 'DD/MM/YYYY',
+    },
+    customErrorMessages: {
+      type: Array as PropType<Array<string>>,
+      default: () => [],
+    },
+  },
+  emits: [
+    'change',
+    'update:model-value',
+    'update:endDate',
+    'update:startDate',
+    'input',
+  ],
+  data(): DatePickerData {
+    return {
+      date: null as Date | null | any[],
+      dateRangeTemp: [] as any[],
+      format: 'dd/MM/yyyy',
+      inputValue: '',
+      calendarIcon: mdiCalendar,
+      closeIcon: mdiCloseCircle,
+      errorMessages: [] as string[],
+      birthdateFlow: ['year', 'month', 'calendar'],
+      isCalOpen: false,
+      lastTypeAddedDate: '',
+      dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+    };
+  },
+  computed: {
+    indexedThis(): { [key: string]: any } {
+      return this as any;
+    },
+    textFieldOptions() {
+      const errorMessages = this.$attrs.errorMessages;
+      return {
+        'value': this.lastTypeAddedDate === 'date' ? this.formatDate(this.date) : this.inputValue,
+        'type': 'text',
+        'hideDetails': 'auto',
+        'label': this.label,
+        'aria-describedby': this.label,
+        'variant': this.getVariant,
+        'disabled': this.disabled,
+        'hint': this.hint,
+        'persistentHint': true,
+        'rules': this.rules,
+        'errorMessages': errorMessages || [],
+      };
+    },
 
-		hasError() {
-			return (
-				this.errorMessages.includes(
-					"La date saisie n'est pas valide"
-				) ||
-				this.errorMessages.includes('Une erreur est survenue') ||
-				this.errorMessages.includes(this.customErrorMessages)
-			)
-		},
-		textFieldClasses() {
-			const textFieldClasses = this.buildTextFieldClasses()
+    hasError() {
+      return (
+        this.errorMessages.includes(
+          'La date saisie n\'est pas valide',
+        )
+        || this.errorMessages.includes('Une erreur est survenue')
+        || this.errorMessages.includes(this.customErrorMessages)
+      );
+    },
+    textFieldClasses() {
+      const textFieldClasses = this.buildTextFieldClasses();
 
-			if (this.hasError) {
-				textFieldClasses.push('error-style')
-			}
+      if (this.hasError) {
+        textFieldClasses.push('error-style');
+      }
 
-			return textFieldClasses
-		},
-		getVariant() {
-			return this.determineVariant()
-		},
-		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon) {
-				return this.calendarIcon
-			}
-			return undefined
-		},
-	},
-	mounted() {
-		// Check if the error prop is true
-		if (this.error) {
-			// If it is, add an error message
-			this.errorMessages.push('Une erreur est survenue')
-		}
-		if (this.date) {
-			this.$emit('update:model-value', this.formatDate(this.date))
-		} else {
-			this.$emit('update:model-value', null)
-		}
-	},
-	watch: {
-		date(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
-			if (newVal) {
-				this.lastTypeAddedDate = 'date'
-				this.$emit('change', newVal)
-				if (newVal.length === 10) {
-					this.validate(newVal)
-				}
-				if (typeof newVal === 'string' && newVal.length === 10) {
-					this.$emit('update:model-value', this.formatDate(newVal))
-				}
-				if (Array.isArray(newVal) && newVal.length === 2) {
-					// TODO : add returnFormat for range
-				}
-			}
-		},
-		modelValue(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
-			if (
-				typeof newVal === 'string' &&
-				this.dateFormatReturn === 'DD/MM/YYYY'
-			) {
-				const [day, month, year] = newVal.split(/[-/]/)
-				this.date = new Date(
-					Number(year),
-					Number(month) - 1,
-					Number(day)
-				)
-				if (newVal.length === 10) {
-					this.validate(newVal)
-				}
-			} else if (
-				typeof newVal === 'string' &&
-				this.dateFormatReturn !== 'DD/MM/YYYY'
-			) {
-				const dateToFormat = dayjs(newVal, 'DD/MM/YYYY')
-				const formatedDate = dateToFormat.toDate()
-				if (formatedDate.toString() !== 'Invalid Date') {
-					this.date = formatedDate
-				}
-			} else if (
-				Array.isArray(newVal) &&
-				this.dateFormatReturn === 'DD/MM/YYYY'
-			) {
-				this.date = newVal.map((date: any) => {
-					const [day, month, year] = date.split(/[-/]/)
+      return textFieldClasses;
+    },
+    getVariant() {
+      return this.determineVariant();
+    },
+    prependIconValue() {
+      if (!this.appendIcon && !this.noPrependIcon) {
+        return this.calendarIcon;
+      }
+      return undefined;
+    },
+  },
+  watch: {
+    date(newVal, oldVal) {
+      if (newVal === oldVal) {
+        return;
+      }
+      if (newVal) {
+        this.lastTypeAddedDate = 'date';
+        this.$emit('change', newVal);
+        if (newVal.length === 10) {
+          this.validate(newVal);
+        }
+        if (typeof newVal === 'string' && newVal.length === 10) {
+          this.$emit('update:model-value', this.formatDate(newVal));
+        }
+        if (Array.isArray(newVal) && newVal.length === 2) {
+          // TODO : add returnFormat for range
+        }
+      }
+    },
+    modelValue(newVal, oldVal) {
+      if (newVal === oldVal) {
+        return;
+      }
+      if (
+        typeof newVal === 'string'
+        && this.dateFormatReturn === 'DD/MM/YYYY'
+      ) {
+        const [day, month, year] = newVal.split(/[-/]/);
+        this.date = new Date(
+          Number(year),
+          Number(month) - 1,
+          Number(day),
+        );
+        if (newVal.length === 10) {
+          this.validate(newVal);
+        }
+      }
+ else if (
+        typeof newVal === 'string'
+        && this.dateFormatReturn !== 'DD/MM/YYYY'
+      ) {
+        const dateToFormat = dayjs(newVal, 'DD/MM/YYYY');
+        const formatedDate = dateToFormat.toDate();
+        if (formatedDate.toString() !== 'Invalid Date') {
+          this.date = formatedDate;
+        }
+      }
+ else if (
+        Array.isArray(newVal)
+        && this.dateFormatReturn === 'DD/MM/YYYY'
+      ) {
+        this.date = newVal.map((date: any) => {
+          const [day, month, year] = date.split(/[-/]/);
 
-					return new Date(
-						Number(year),
-						Number(month) - 1,
-						Number(day)
-					)
-				})
-			} else if (
-				Array.isArray(newVal) &&
-				this.dateFormatReturn !== 'DD/MM/YYYY'
-			) {
-				this.date = newVal.map((date: any) => {
-					const dateToFormat = dayjs(date, 'DD/MM/YYYY').format(
-						this.dateFormatReturn
-					)
-					if (dateToFormat.toString() !== 'Invalid Date') {
-						return dateToFormat
-					}
-				})
-			}
-		},
-		inputValue(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
-			if (!/^[\d/-]+$/.test(newVal)) {
-				this.inputValue = newVal.slice(0, -1)
-			}
-			if (newVal.length > 10) {
-				this.inputValue = newVal.slice(0, 10)
-			}
-			// if (newVal.length === 0) {
-			// 	this.$emit('update:model-value', null);
-			// }
-			this.lastTypeAddedDate = 'inputValue'
-		},
-	},
-	created() {
-		if (typeof this.modelValue === 'string') {
-			const [day, month, year] = this.modelValue.split(/[-/]/)
-			this.date = new Date(Number(year), Number(month) - 1, Number(day))
-		}
-	},
-	methods: {
-		emitUpdateEvent() {
-			if (this.date) {
-				this.$emit('update:model-value', this.formatDate(this.date))
-			}
-		},
-		isWeekend(date: any) {
-			const dayOfWeek = date.getDay()
-			return dayOfWeek === 0 || dayOfWeek === 6
-		},
-		handleIconClickGeneric(event: any, datePickerRef: any) {
-			const datePicker = this.$refs[datePickerRef]
-			event.stopPropagation()
-			this.isCalOpen = !this.isCalOpen
-			if (!this.noCalendar && datePicker && !this.textFieldActivator) {
-				// from https://vue3datepicker.com/methods-and-events/methods/#openmenu
-				// @ts-ignore
-				this.isCalOpen ? datePicker.openMenu() : datePicker.closeMenu()
-			}
-		},
-		handleIconClick(event: any) {
-			this.handleIconClickGeneric(event, 'datePicker')
-		},
-		rangeHandleIconClick(event: any) {
-			this.handleIconClickGeneric(event, 'rangeDatePicker')
-		},
-		blockOpenOnclickGeneric(datePickerRef: any) {
-			const datePicker = this.$refs[datePickerRef] as InstanceType<
+          return new Date(
+            Number(year),
+            Number(month) - 1,
+            Number(day),
+          );
+        });
+      }
+ else if (
+        Array.isArray(newVal)
+        && this.dateFormatReturn !== 'DD/MM/YYYY'
+      ) {
+        this.date = newVal.map((date: any) => {
+          const dateToFormat = dayjs(date, 'DD/MM/YYYY').format(
+            this.dateFormatReturn,
+          );
+          if (dateToFormat.toString() !== 'Invalid Date') {
+            return dateToFormat;
+          }
+ else {
+            return null;
+          }
+        });
+      }
+    },
+    inputValue(newVal, oldVal) {
+      if (newVal === oldVal) {
+        return;
+      }
+      if (!/^[\d/-]+$/.test(newVal)) {
+        this.inputValue = newVal.slice(0, -1);
+      }
+      if (newVal.length > 10) {
+        this.inputValue = newVal.slice(0, 10);
+      }
+      // if (newVal.length === 0) {
+      // 	this.$emit('update:model-value', null);
+      // }
+      this.lastTypeAddedDate = 'inputValue';
+    },
+  },
+  mounted() {
+    // Check if the error prop is true
+    if (this.error) {
+      // If it is, add an error message
+      this.errorMessages.push('Une erreur est survenue');
+    }
+    if (this.date) {
+      this.$emit('update:model-value', this.formatDate(this.date));
+    }
+ else {
+      this.$emit('update:model-value', null);
+    }
+  },
+  created() {
+    if (typeof this.modelValue === 'string') {
+      const [day, month, year] = this.modelValue.split(/[-/]/);
+      this.date = new Date(Number(year), Number(month) - 1, Number(day));
+    }
+  },
+  methods: {
+    emitUpdateEvent() {
+      if (this.date) {
+        this.$emit('update:model-value', this.formatDate(this.date));
+      }
+    },
+    isWeekend(date: any) {
+      const dayOfWeek = date.getDay();
+      return dayOfWeek === 0 || dayOfWeek === 6;
+    },
+    handleIconClickGeneric(event: any, datePickerRef: any) {
+      const datePicker = this.$refs[datePickerRef];
+      event.stopPropagation();
+      this.isCalOpen = !this.isCalOpen;
+      if (!this.noCalendar && datePicker && !this.textFieldActivator) {
+        // from https://vue3datepicker.com/methods-and-events/methods/#openmenu
+        // @ts-expect-error datePicker is not defined
+        // eslint-disable-next-line ts/no-unused-expressions
+        this.isCalOpen ? datePicker.openMenu() : datePicker.closeMenu();
+      }
+    },
+    handleIconClick(event: any) {
+      this.handleIconClickGeneric(event, 'datePicker');
+    },
+    rangeHandleIconClick(event: any) {
+      this.handleIconClickGeneric(event, 'rangeDatePicker');
+    },
+    blockOpenOnclickGeneric(datePickerRef: any) {
+      const datePicker = this.$refs[datePickerRef] as InstanceType<
 				typeof VueDatePicker
-			>
-			if (
-				(!this.isCalOpen &&
-					!this.noPrependIcon &&
-					!this.textFieldActivator) ||
-				this.noCalendar
-			) {
-				datePicker.closeMenu()
-			} else {
-				this.isCalOpen = !this.isCalOpen
-			}
-		},
-		blockOpenOnclick() {
-			this.blockOpenOnclickGeneric('datePicker')
-		},
-		blockOpenOnclickRangePicker() {
-			this.blockOpenOnclickGeneric('rangeDatePicker')
-		},
-		handleClose() {
-			this.isCalOpen = false
-		},
-		formatDate(date: any): any {
-			if (!date) {
-				return
-			}
-			if (Array.isArray(date)) {
-				return date.map((d) => this.formatDate(d))
-			}
-			if (!dayjs(date).isValid()) {
-				return this.inputValue || null
-			}
-			if (this.range) {
-				return dayjs(date).format(this.dateFormat)
-			}
-			if (this.dateFormatReturn) {
-				this.$emit(
-					'update:model-value',
-					dayjs(date).format(this.dateFormatReturn)
-				)
-			}
-			return dayjs(date).format(this.dateFormat)
-		},
-		createDateRegEx(format: string) {
-			const day = '(0[1-9]|[12][0-9]|3[01])'
-			const month = '(0[1-9]|1[012])'
-			const year = '(19|20)\\d\\d'
+      >;
+      if (
+        (!this.isCalOpen
+        && !this.noPrependIcon
+        && !this.textFieldActivator)
+        || this.noCalendar
+      ) {
+        datePicker.closeMenu();
+      }
+ else {
+        this.isCalOpen = !this.isCalOpen;
+      }
+    },
+    blockOpenOnclick() {
+      this.blockOpenOnclickGeneric('datePicker');
+    },
+    blockOpenOnclickRangePicker() {
+      this.blockOpenOnclickGeneric('rangeDatePicker');
+    },
+    handleClose() {
+      this.isCalOpen = false;
+    },
+    formatDate(date: any): any {
+      if (!date) {
+        return;
+      }
+      if (Array.isArray(date)) {
+        return date.map(d => this.formatDate(d));
+      }
+      if (!dayjs(date).isValid()) {
+        return this.inputValue || null;
+      }
+      if (this.range) {
+        return dayjs(date).format(this.dateFormat);
+      }
+      if (this.dateFormatReturn) {
+        this.$emit(
+          'update:model-value',
+          dayjs(date).format(this.dateFormatReturn),
+        );
+      }
+      return dayjs(date).format(this.dateFormat);
+    },
+    createDateRegEx(format: string) {
+      const day = '(0[1-9]|[12][0-9]|3[01])';
+      const month = '(0[1-9]|1[012])';
+      const year = '(19|20)\\d\\d';
 
-			const formatMapping: { [key: string]: string } = {
-				DD: day,
-				MM: month,
-				YYYY: year,
-			}
+      const formatMapping: { [key: string]: string } = {
+        DD: day,
+        MM: month,
+        YYYY: year,
+      };
 
-			// Determine the position of the separator based on the date format
-			const separatorPosition =
-				format.indexOf('/') !== -1
-					? format.indexOf('/')
-					: format.indexOf('-')
-			const separator = format[separatorPosition]
+      // Determine the position of the separator based on the date format
+      const separatorPosition = format.includes('/') ? format.indexOf('/') : format.indexOf('-');
 
-			const parts = format.split(separator)
+      const separator = format[separatorPosition];
 
-			const regexParts = parts.map((part) => formatMapping[part])
+      const parts = format.split(separator);
 
-			// Check if all parts are supported
-			for (const part of parts) {
-				if (!formatMapping.hasOwnProperty(part)) {
-					throw new Error(`Unsupported date format part: ${part}`)
-				}
-			}
+      const regexParts = parts.map(part => formatMapping[part]);
 
-			const regexString = `^${regexParts.join('[- /.]')}$`
+      // Check if all parts are supported
+      for (const part of parts) {
+        if (!Object.prototype.hasOwnProperty.call(formatMapping, part)) {
+          throw new Error(`Unsupported date format part: ${part}`);
+        }
+      }
 
-			return new RegExp(regexString)
-		},
-		updateInputValue(
-			value: { data: string | null },
-			historyKey: string
-		): void {
-			// If the input is cleared, remove the last character from the current value
-			if (value.data === null) {
-				this.indexedThis[historyKey] = this.indexedThis[
-					historyKey
-				].slice(0, -1)
-				return
-			}
+      const regexString = `^${regexParts.join('[- /.]')}$`;
 
-			// If the current value is already 10 characters long, don't add more
-			if (this.indexedThis[historyKey].length >= 10) {
-				return
-			}
+      return new RegExp(regexString);
+    },
+    updateInputValue(
+      value: { data: string | null },
+      historyKey: string,
+    ): void {
+      // If the input is cleared, remove the last character from the current value
+      if (value.data === null) {
+        this.indexedThis[historyKey] = this.indexedThis[
+          historyKey
+        ].slice(0, -1);
+        return;
+      }
 
-			// If the current value is at 2 or 5 characters, add a separator (slash or dash)
-			if (
-				this.indexedThis[historyKey].length === 2 ||
-				this.indexedThis[historyKey].length === 5
-			) {
-				const separator = this.dateFormat.includes('/') ? '/' : '-'
-				this.indexedThis[historyKey] += separator
-			}
+      // If the current value is already 10 characters long, don't add more
+      if (this.indexedThis[historyKey].length >= 10) {
+        return;
+      }
 
-			// If the input is a slash or dash, don't add it to the current value
-			if (value.data !== '/' && value.data !== '-') {
-				this.indexedThis[historyKey] += value.data
-			}
+      // If the current value is at 2 or 5 characters, add a separator (slash or dash)
+      if (
+        this.indexedThis[historyKey].length === 2
+        || this.indexedThis[historyKey].length === 5
+      ) {
+        const separator = this.dateFormat.includes('/') ? '/' : '-';
+        this.indexedThis[historyKey] += separator;
+      }
 
-			// If the current value is 10 characters long, validate and format the date
-			if (this.indexedThis[historyKey].length === 10) {
-				const date = dayjs(
-					this.indexedThis[historyKey],
-					this.dateFormat
-				)
-				const formattedDateReturn = dayjs(date).format(
-					this.dateFormatReturn
-				)
+      // If the input is a slash or dash, don't add it to the current value
+      if (value.data !== '/' && value.data !== '-') {
+        this.indexedThis[historyKey] += value.data;
+      }
 
-				// If the date format is not 'DD/MM/YY', validate the date format and the date itself
-				if (this.dateFormatReturn !== 'DD/MM/YY') {
-					let dateRegEx = this.createDateRegEx(this.dateFormat)
-					const isValidFormat = dateRegEx.test(this.inputValue)
+      // If the current value is 10 characters long, validate and format the date
+      if (this.indexedThis[historyKey].length === 10) {
+        const date = dayjs(
+          this.indexedThis[historyKey],
+          this.dateFormat,
+        );
+        const formattedDateReturn = dayjs(date).format(
+          this.dateFormatReturn,
+        );
 
-					// If the date format and the date are valid, update the date and emit an update event
-					if (isValidFormat) {
-						this.date = this.inputValue
-						this.$emit(
-							'update:model-value',
-							this.indexedThis[historyKey]
-						)
-					} else {
-						// If the date format or the date is not valid, add an error message
-						this.errorMessages.push(
-							this.customErrorMessages.length > 0
-								? this.customErrorMessages
-								: "La date saisie n'est pas valide"
-						)
-					}
-				} else {
-					// If the date format is 'DD/MM/YY', emit an update event with the formatted date
-					this.$emit('update:model-value', formattedDateReturn)
-					this.$emit('input', formattedDateReturn)
-				}
-			}
-		},
-		getInput(value: any) {
-			this.updateInputValue(value, 'inputValue')
-		},
+        // If the date format is not 'DD/MM/YY', validate the date format and the date itself
+        if (this.dateFormatReturn !== 'DD/MM/YY') {
+          const dateRegEx = this.createDateRegEx(this.dateFormat);
+          const isValidFormat = dateRegEx.test(this.inputValue);
 
-		stopInput() {
-			this.indexedThis.inputValue = this.indexedThis.inputValue.slice(
-				0,
-				10
-			)
-		},
+          // If the date format and the date are valid, update the date and emit an update event
+          if (isValidFormat) {
+            this.date = this.inputValue;
+            this.$emit(
+              'update:model-value',
+              this.indexedThis[historyKey],
+            );
+          }
+ else {
+            // If the date format or the date is not valid, add an error message
+            this.errorMessages.push(
+              this.customErrorMessages.length > 0
+                ? this.customErrorMessages
+                : 'La date saisie n\'est pas valide',
+            );
+          }
+        }
+ else {
+          // If the date format is 'DD/MM/YY', emit an update event with the formatted date
+          this.$emit('update:model-value', formattedDateReturn);
+          this.$emit('input', formattedDateReturn);
+        }
+      }
+    },
+    getInput(value: any) {
+      this.updateInputValue(value, 'inputValue');
+    },
 
-		validate(value: any) {
-			const allRules = [
-				...(this.warningRules || []),
-				...(this.rules || []),
-			]
-			const ruleErrors = allRules
-				.map((rule: any) => rule(value))
-				.filter((result) => result !== true)
-			this.errorMessages = ruleErrors.length > 0 ? ruleErrors : []
-			// Check if the error prop is true
-			if (this.error) {
-				// If it is, add an error message
-				this.errorMessages.push('Une erreur est survenue')
-			}
-		},
-		buildTextFieldClasses() {
-			const textFieldClasses = []
+    stopInput() {
+      this.indexedThis.inputValue = this.indexedThis.inputValue.slice(
+        0,
+        10,
+      );
+    },
 
-			if (this.warningRules && this.warningRules.length) {
-				textFieldClasses.push('vd-warning-rules')
-			}
+    validate(value: any) {
+      const allRules = [
+        ...(this.warningRules || []),
+        ...(this.rules || []),
+      ];
+      const ruleErrors = allRules
+        .map((rule: any) => rule(value))
+        .filter(result => result !== true);
+      this.errorMessages = ruleErrors.length > 0 ? ruleErrors : [];
+      // Check if the error prop is true
+      if (this.error) {
+        // If it is, add an error message
+        this.errorMessages.push('Une erreur est survenue');
+      }
+    },
+    buildTextFieldClasses() {
+      const textFieldClasses = [];
 
-			if (this.noPrependIcon) {
-				textFieldClasses.push('vd-no-prepend-icon')
-			}
+      if (this.warningRules && this.warningRules.length) {
+        textFieldClasses.push('vd-warning-rules');
+      }
 
-			if (this.appendIcon) {
-				textFieldClasses.push('vd-append-icon')
-			}
+      if (this.noPrependIcon) {
+        textFieldClasses.push('vd-no-prepend-icon');
+      }
 
-			if (this.textFieldClass) {
-				if (Array.isArray(this.textFieldClass)) {
-					textFieldClasses.push(...this.textFieldClass)
-				} else {
-					textFieldClasses.push(this.textFieldClass)
-				}
-			}
+      if (this.appendIcon) {
+        textFieldClasses.push('vd-append-icon');
+      }
 
-			return textFieldClasses
-		},
-		determineVariant() {
-			return this.disabled || this.noPrependIcon || !this.outlined
-				? 'underlined'
-				: 'outlined'
-		},
-		onClear() {
-			this.date = null
-			this.inputValue = ''
-			this.$emit('update:model-value', null)
-		},
-		handleKeyDown(event: KeyboardEvent) {
-			if (event.key === 'Backspace' || event.key === 'Delete') {
-				this.inputValue = ''
-				this.date = null
-				this.$emit('update:model-value', null)
-			}
-		},
-		async handleCut(event?: ClipboardEvent) {
-			if (event && event.clipboardData) {
-				this.inputValue = '';
-				this.date = null;
-				this.$emit('update:model-value', this.date);
-			}
-		},
-		async handlePaste(event?: ClipboardEvent) {
-			if (event && event.clipboardData) {
-				this.inputValue = event.clipboardData.getData('text');;
-				const isValidFormat = this.createDateRegEx(this.dateFormat).test(this.inputValue);
+      if (this.textFieldClass) {
+        if (Array.isArray(this.textFieldClass)) {
+          textFieldClasses.push(...this.textFieldClass);
+        }
+ else {
+          textFieldClasses.push(this.textFieldClass);
+        }
+      }
 
-				if (isValidFormat) {
-					this.$emit('update:model-value', this.inputValue);
-					this.date = this.inputValue;
-				} else {
-					this.errorMessages.push(
-						this.customErrorMessages.length > 0
-							? this.customErrorMessages
-							: "La date saisie n'est pas valide"
-					);
-				}
-			}
-		}
-	},
-})
+      return textFieldClasses;
+    },
+    determineVariant() {
+      return this.disabled || this.noPrependIcon || !this.outlined
+        ? 'underlined'
+        : 'outlined';
+    },
+    onClear() {
+      this.date = null;
+      this.inputValue = '';
+      this.$emit('update:model-value', null);
+    },
+    handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Backspace' || event.key === 'Delete') {
+        this.inputValue = '';
+        this.date = null;
+        this.$emit('update:model-value', null);
+      }
+    },
+    async handleCut(event?: ClipboardEvent) {
+      if (event && event.clipboardData) {
+        this.inputValue = '';
+        this.date = null;
+        this.$emit('update:model-value', this.date);
+      }
+    },
+    async handlePaste(event?: ClipboardEvent) {
+      if (event && event.clipboardData) {
+        this.inputValue = event.clipboardData.getData('text');
+
+        const isValidFormat = this.createDateRegEx(this.dateFormat).test(this.inputValue);
+
+        if (isValidFormat) {
+          this.$emit('update:model-value', this.inputValue);
+          this.date = this.inputValue;
+        }
+ else {
+          this.errorMessages.push(
+            this.customErrorMessages.length > 0
+              ? this.customErrorMessages
+              : 'La date saisie n\'est pas valide',
+          );
+        }
+      }
+    },
+  },
+});
 </script>
 
 <template>
-	<div class="vd-date-picker">
-		<!--	doc:	https://vue3datepicker.com-->
-		<VueDatePicker
-			v-model="date"
-			ref="datePicker"
-			auto-apply
-			calendar-cell-class-name="dp-custom-cell"
-			hide-offset-dates
-			input-class-name="dp-custom-input"
-			locale="fr"
-			:clearable="false"
-			:day-names="dayNames"
-			:enable-time-picker="false"
-			:flow="birthdate ? birthdateFlow : undefined"
-			:format="format"
-			:range="range"
-			@close="handleClose"
-			@input="getInput"
-			@blur="stopInput"
-			@open="blockOpenOnclick"
-			@update:model-value="emitUpdateEvent"
-		>
-			<template #day="{ date }">
-				<div
-					:class="showWeekends && isWeekend(date) ? 'week-ends' : ''"
-				>
-					{{ date.getDate() }}
-				</div>
-			</template>
-			<template #dp-input="{onClear}">
-				<VTextField
-					:model-value="date"
-					v-bind="textFieldOptions"
-					hide-details="auto"
-					color="#0C419A"
-					:aria-describedby="label"
-					:class="[
-						textFieldClasses,
-						{
-							'warning-style': errorMessages.length > 0,
-							'error-style': hasError,
-							range: range,
-						},
-					]"
-					:clearable="clearable"
-					:disabled="disabled"
-					:error-messages="errorMessages"
-					:hint="hint"
-					:label="label"
-					:persistent-hint="true"
-					:rules="rules"
-					:readonly="range"
-					:value="
-						lastTypeAddedDate === 'date'
-							? formatDate(date)
-							: inputValue
-					"
-					:variant="getVariant"
-					@blur="emitUpdateEvent"
-					@keydown="handleKeyDown"
-					@click:clear="onClear"
-					@paste="handlePaste"
-					@cut="handleCut"
-				>
-					<template #append-inner v-if="outlined || (appendIcon && calendarIcon)">
-						<VIcon
-							@click="handleIconClick"
-							tabindex="-1"
-							aria-hidden="true"
-						>
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
+  <div class="vd-date-picker">
+    <!--	doc:	https://vue3datepicker.com -->
+    <VueDatePicker
+      ref="datePicker"
+      v-model="date"
+      :clearable="false"
+      :day-names="dayNames"
+      :enable-time-picker="false"
+      :flow="birthdate ? birthdateFlow : undefined"
+      :format="format"
+      :range="range"
+      auto-apply
+      calendar-cell-class-name="dp-custom-cell"
+      hide-offset-dates
+      input-class-name="dp-custom-input"
+      locale="fr"
+      @blur="stopInput"
+      @close="handleClose"
+      @input="getInput"
+      @open="blockOpenOnclick"
+      @update:model-value="emitUpdateEvent"
+    >
+      <template #day="{ date }">
+        <div
+          :class="showWeekends && isWeekend(date) ? 'week-ends' : ''"
+        >
+          {{ date.getDate() }}
+        </div>
+      </template>
+      <template #dp-input="{ onClear }">
+        <VTextField
+          :aria-describedby="label"
+          :class="[
+            textFieldClasses,
+            {
+              'warning-style': errorMessages.length > 0,
+              'error-style': hasError,
+              'range': range,
+            },
+          ]"
+          :clearable="clearable"
+          :disabled="disabled"
+          :error-messages="errorMessages"
+          :hint="hint"
+          :label="label"
+          :model-value="date"
+          :persistent-hint="true"
+          :readonly="range"
+          :rules="rules"
+          :value="lastTypeAddedDate === 'date' ? formatDate(date) : inputValue "
+          :variant="getVariant"
+          color="#0C419A"
+          hide-details="auto"
+          v-bind="textFieldOptions"
+          @blur="emitUpdateEvent"
+          @cut="handleCut"
+          @keydown="handleKeyDown"
+          @paste="handlePaste"
+          @click:clear="onClear"
+        >
+          <template v-if="outlined || (appendIcon && calendarIcon)" #append-inner>
+            <VIcon
+              aria-hidden="true"
+              tabindex="-1"
+              @click="handleIconClick"
+            >
+              {{ calendarIcon }}
+            </VIcon>
+          </template>
 
-					<template #prepend v-if="!outlined && prependIconValue">
-						<VIcon
-							@click="handleIconClick"
-							tabindex="-1"
-							aria-hidden="true"
-						>
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
+          <template v-if="!outlined && prependIconValue" #prepend>
+            <VIcon
+              aria-hidden="true"
+              tabindex="-1"
+              @click="handleIconClick"
+            >
+              {{ calendarIcon }}
+            </VIcon>
+          </template>
 
-					<template v-slot:clear v-if="clearable" >
-						<VIcon
-							@click='onClear'
-							tabindex="-1"
-							aria-hidden="true"
-						>
-							{{ closeIcon }}
-						</VIcon>
-					</template>
-				</VTextField>
-			</template>
-		</VueDatePicker>
-	</div>
+          <template v-if="clearable" #clear>
+            <VIcon
+              aria-hidden="true"
+              tabindex="-1"
+              @click="onClear"
+            >
+              {{ closeIcon }}
+            </VIcon>
+          </template>
+        </VTextField>
+      </template>
+    </VueDatePicker>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -735,7 +740,7 @@ export default defineComponent({
 }
 
 :deep(.v-icon) {
-	color: rgba(0,0,0,.54) !important;
+	color: rgba(0, 0, 0, .54) !important;
 }
 
 .warning-style {

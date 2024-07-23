@@ -1,4 +1,4 @@
 export const locales = {
-	label: 'Menu utilisateur',
-	logout: 'Déconnexion',
-}
+  label: 'Menu utilisateur',
+  logout: 'Déconnexion',
+};

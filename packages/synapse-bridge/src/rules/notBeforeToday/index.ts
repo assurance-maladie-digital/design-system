@@ -1,28 +1,27 @@
-import { ruleMessage } from '../../helpers/ruleMessage'
-import {
-	ValidationRule,
-	ValidationResult,
-	ErrorMessages,
-	Value,
-} from '../types'
+import { ruleMessage } from '../../helpers/ruleMessage';
+import type {
+  ErrorMessages,
+  ValidationResult,
+  ValidationRule,
+  Value,
+} from '../types';
 
-import { defaultErrorMessages } from './locales'
-
-import { isDateBefore } from '../../functions/validation/isDateBefore'
-import { TODAY } from '../../constants'
+import { isDateBefore } from '../../functions/validation/isDateBefore';
+import { TODAY } from '../../constants';
+import { defaultErrorMessages } from './locales';
 
 /** Check that the value is not before today (DD/MM/YYYY format) */
 export function notBeforeTodayFn(
-	errorMessages: ErrorMessages = defaultErrorMessages
+  errorMessages: ErrorMessages = defaultErrorMessages,
 ): ValidationRule {
-	return (value: Value): ValidationResult => {
-		if (!value) {
-			return true
-		}
-		return (
-			!isDateBefore(TODAY, value) || ruleMessage(errorMessages, 'default')
-		)
-	}
+  return (value: Value): ValidationResult => {
+    if (!value) {
+      return true;
+    }
+    return (
+      !isDateBefore(TODAY, value) || ruleMessage(errorMessages, 'default')
+    );
+  };
 }
 
-export const notBeforeToday = notBeforeTodayFn()
+export const notBeforeToday = notBeforeTodayFn();

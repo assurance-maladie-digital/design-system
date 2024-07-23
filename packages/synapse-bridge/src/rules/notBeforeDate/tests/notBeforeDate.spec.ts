@@ -1,25 +1,25 @@
-import { notBeforeDate } from '../'
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest';
 
-import dayjs from 'dayjs'
-import { formatDate } from '../../../functions/formatDate'
+import dayjs from 'dayjs';
+import { notBeforeDate } from '../';
+import { formatDate } from '../../../functions/formatDate';
 
 describe('notBeforeDate', () => {
-	const currentDate = formatDate(dayjs())
-	const pastDate = formatDate(dayjs().subtract(1, 'year'))
-	const futureDate = formatDate(dayjs().add(1, 'year'))
+  const currentDate = formatDate(dayjs());
+  const pastDate = formatDate(dayjs().subtract(1, 'year'));
+  const futureDate = formatDate(dayjs().add(1, 'year'));
 
-	const rule = notBeforeDate(currentDate)
+  const rule = notBeforeDate(currentDate);
 
-	it('returns true with a future date', () => {
-		expect(rule(futureDate)).toBe(true)
-	})
+  it('returns true with a future date', () => {
+    expect(rule(futureDate)).toBe(true);
+  });
 
-	it('returns an error with a past date', () => {
-		expect(typeof rule(pastDate)).toBe('string')
-	})
+  it('returns an error with a past date', () => {
+    expect(typeof rule(pastDate)).toBe('string');
+  });
 
-	it('returns true if the value is falsy', () => {
-		expect(rule('')).toBe(true)
-	})
-})
+  it('returns true if the value is falsy', () => {
+    expect(rule('')).toBe(true);
+  });
+});

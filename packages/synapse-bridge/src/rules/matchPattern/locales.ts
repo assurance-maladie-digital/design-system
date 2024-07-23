@@ -1,5 +1,5 @@
-import { ErrorMessages } from '../types'
+import type { ErrorMessages } from '../types';
 
 export const defaultErrorMessages: ErrorMessages<number> = {
-	default: 'Le format saisi ne correspond pas au format attendu.',
-}
+  default: 'Le format saisi ne correspond pas au format attendu.',
+};

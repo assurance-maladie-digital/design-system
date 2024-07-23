@@ -1,3 +1,3 @@
-import FileList from './FileList.vue'
+import FileList from './FileList.vue';
 
-export default FileList
+export default FileList;

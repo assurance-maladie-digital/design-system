@@ -1,57 +1,57 @@
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import { vuetify } from '@tests/unit/setup'
+import { describe, expect, it } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { vuetify } from '@tests/unit/setup';
 
-import FormBuilder from '../'
-import { questionForm } from './data/questionForm'
+import FormBuilder from '../';
+import { questionForm } from './data/questionForm';
 
-describe('FormBuilder', () => {
-	it('renders correctly', () => {
-		const wrapper = mount(FormBuilder, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: questionForm,
-			},
-		})
+describe('formBuilder', () => {
+  it('renders correctly', () => {
+    const wrapper = mount(FormBuilder, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: questionForm,
+      },
+    });
 
-		expect(wrapper.html()).toMatchSnapshot()
-	})
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 
-	it('handles update:modelValue event', async () => {
-		const wrapper = mount(FormBuilder, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: questionForm,
-			},
-		})
+  it('handles update:modelValue event', async () => {
+    const wrapper = mount(FormBuilder, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: questionForm,
+      },
+    });
 
-		await wrapper.find('input').setValue('test')
-		await wrapper.find('input').trigger('blur')
+    await wrapper.find('input').setValue('test');
+    await wrapper.find('input').trigger('blur');
 
-		expect(wrapper.emitted('update:modelValue')).toBeTruthy()
-		expect(
-			(wrapper.emitted('update:modelValue')![0][0] as any).section1
-				.questions.questionString.value
-		).toBe('test')
-	})
+    expect(wrapper.emitted('update:modelValue')).toBeTruthy();
+    expect(
+      (wrapper.emitted('update:modelValue')![0][0] as any).section1
+        .questions.questionString.value,
+    ).toBe('test');
+  });
 
-	it('emit refresh event', async () => {
-		const wrapper = mount(FormBuilder, {
-			global: {
-				plugins: [vuetify],
-			},
-			propsData: {
-				modelValue: questionForm,
-			},
-		})
+  it('emit refresh event', async () => {
+    const wrapper = mount(FormBuilder, {
+      global: {
+        plugins: [vuetify],
+      },
+      propsData: {
+        modelValue: questionForm,
+      },
+    });
 
-		await wrapper.find('input[type="password"]').setValue('test')
-		await wrapper.find('input[type="password"]').trigger('blur')
+    await wrapper.find('input[type="password"]').setValue('test');
+    await wrapper.find('input[type="password"]').trigger('blur');
 
-		expect(wrapper.emitted('refresh')).toBeTruthy()
-	})
-})
+    expect(wrapper.emitted('refresh')).toBeTruthy();
+  });
+});

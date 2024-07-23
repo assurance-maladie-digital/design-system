@@ -1,37 +1,36 @@
-import type { DefineComponent, ComponentOptionsMixin } from 'vue'
+import type { ComponentOptionsMixin, DefineComponent } from 'vue';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export type Options = Record<string, any>
+export type Options = Record<string, any>;
 
-type Props = {
-	vuetifyOptions: Options | undefined
+interface Props {
+  vuetifyOptions: Options | undefined
 }
 
-type RawBindings = unknown
-type Data = unknown
+type RawBindings = unknown;
+type Data = unknown;
 
-type Computed = {
-	options(): Options
+interface Computed {
+  options: () => Options
 }
 
-type Methods = {}
-type Mixins = ComponentOptionsMixin
-type Extends = ComponentOptionsMixin
-type Emits = {}
-type EE = string
-type PublicProps = {}
-type Defaults = {}
+interface Methods {}
+type Mixins = ComponentOptionsMixin;
+type Extends = ComponentOptionsMixin;
+interface Emits {}
+type EE = string;
+interface PublicProps {}
+interface Defaults {}
 
 export type Customizable = DefineComponent<
-	Props,
-	RawBindings,
-	Data,
-	Computed,
-	Methods,
-	Mixins,
-	Extends,
-	Emits,
-	EE,
-	PublicProps,
-	Defaults
->
+  Props,
+  RawBindings,
+  Data,
+  Computed,
+  Methods,
+  Mixins,
+  Extends,
+  Emits,
+  EE,
+  PublicProps,
+  Defaults
+>;

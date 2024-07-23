@@ -1,12 +1,12 @@
-import { TypeEnum } from './CookiesInformation/TypeEnum'
-import type { CookiesList } from './CookiesTable/types'
+import type { TypeEnum } from './CookiesInformation/TypeEnum';
+import type { CookiesList } from './CookiesTable/types';
 
 export type CookiesPageItems = {
-	[key in TypeEnum]?: CookiesList[]
-}
+  [key in TypeEnum]?: CookiesList[]
+};
 
-export type Preferences = {
-	[key: string]: boolean | null
-	[TypeEnum.FUNCTIONAL]: boolean | null
-	[TypeEnum.ANALYTICS]: boolean | null
+export interface Preferences {
+  [key: string]: boolean | null
+  [TypeEnum.FUNCTIONAL]: boolean | null
+  [TypeEnum.ANALYTICS]: boolean | null
 }

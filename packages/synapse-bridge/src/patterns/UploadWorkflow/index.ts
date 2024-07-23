@@ -1,3 +1,3 @@
-import UploadWorkflow from './UploadWorkflow.vue'
+import UploadWorkflow from './UploadWorkflow.vue';
 
-export default UploadWorkflow
+export default UploadWorkflow;

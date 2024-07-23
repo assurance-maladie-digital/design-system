@@ -1,7 +1,7 @@
 export const locales = {
-	rowText: (text: string, plural: boolean): string =>
+  rowText: (text: string, plural: boolean): string =>
 		`${text}${plural ? 's' : ''}`,
-	search: 'Rechercher',
-	defaultRowText: 'ligne',
-	addBtnLabel: 'Ajouter',
-}
+  search: 'Rechercher',
+  defaultRowText: 'ligne',
+  addBtnLabel: 'Ajouter',
+};

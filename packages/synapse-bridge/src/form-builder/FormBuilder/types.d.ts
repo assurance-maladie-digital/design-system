@@ -1,5 +1,5 @@
-import type { FieldList } from '../FormFieldList/types'
+import type { FieldList } from '../FormFieldList/types';
 
 export interface Form {
-	[sectionName: string]: FieldList
+  [sectionName: string]: FieldList
 }

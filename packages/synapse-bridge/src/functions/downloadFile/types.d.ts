@@ -1,1 +1,1 @@
-export type BufferSource = ArrayBufferView | ArrayBuffer
+export type BufferSource = ArrayBufferView | ArrayBuffer;

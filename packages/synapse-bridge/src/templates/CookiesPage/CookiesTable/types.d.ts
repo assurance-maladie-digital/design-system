@@ -1,5 +1,5 @@
 export interface CookiesList {
-	name: string
-	description: string
-	conservation: string
+  name: string
+  description: string
+  conservation: string
 }

@@ -1,3 +1,3 @@
-import FiltersSideBar from './FiltersSideBar.vue'
+import FiltersSideBar from './FiltersSideBar.vue';
 
-export default FiltersSideBar
+export default FiltersSideBar;

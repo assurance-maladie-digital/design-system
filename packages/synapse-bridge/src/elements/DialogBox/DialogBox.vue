@@ -1,210 +1,212 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-import { config } from './config'
-import { locales } from './locales'
+import { mdiClose } from '@mdi/js';
+import type { VDialog } from 'vuetify/components';
+import { config } from './config';
+import { locales } from './locales';
 
-import { customizable } from '@/mixins/customizable'
-import { Refs } from '@/types'
-
-import { mdiClose } from '@mdi/js'
-import type { VDialog } from 'vuetify/components'
+import { customizable } from '@/mixins/customizable';
+import type { Refs } from '@/types';
 
 export default defineComponent({
-	inheritAttrs: false,
+  mixins: [customizable(config)],
+  inheritAttrs: false,
+  props: {
+    modelValue: {
+      type: Boolean,
+      default: false,
+    },
+    title: {
+      type: String,
+      default: undefined,
+    },
+    width: {
+      type: String,
+      default: '800px',
+    },
+    cancelBtnText: {
+      type: String,
+      default: locales.cancelBtn,
+    },
+    confirmBtnText: {
+      type: String,
+      default: locales.confirmBtn,
+    },
+    hideActions: {
+      type: Boolean,
+      default: false,
+    },
+    persistent: {
+      type: Boolean,
+      default: false,
+    },
+  },
 
-	mixins: [customizable(config)],
+  emits: ['cancel', 'confirm', 'update:modelValue'],
 
-	emits: ['cancel', 'confirm', 'update:modelValue'],
+  data() {
+    return {
+      // eslint-disable-next-line vue/no-reserved-keys
+      $refs: {} as Refs<{
+        dialogContent: VDialog
+      }>,
+      closeIcon: mdiClose,
+      locales,
+      dialog: this.modelValue,
+    };
+  },
 
-	props: {
-		modelValue: {
-			type: Boolean,
-			default: false,
-		},
-		title: {
-			type: String,
-			default: undefined,
-		},
-		width: {
-			type: String,
-			default: '800px',
-		},
-		cancelBtnText: {
-			type: String,
-			default: locales.cancelBtn,
-		},
-		confirmBtnText: {
-			type: String,
-			default: locales.confirmBtn,
-		},
-		hideActions: {
-			type: Boolean,
-			default: false,
-		},
-		persistent: {
-			type: Boolean,
-			default: false,
-		},
-	},
+  watch: {
+    dialog() {
+      this.setEventListeners();
+    },
+    modelValue(newValue) {
+      this.dialog = newValue;
+    },
+  },
 
-	data() {
-		return {
-			$refs: {} as Refs<{
-				dialogContent: VDialog
-			}>,
-			closeIcon: mdiClose,
-			locales,
-			dialog: this.modelValue,
-		}
-	},
+  mounted() {
+    this.setEventListeners();
+  },
 
-	watch: {
-		dialog() {
-			this.setEventListeners()
-		},
-		modelValue(newValue) {
-			this.dialog = newValue
-		},
-	},
+  methods: {
+    async getSelectableElements(): Promise<HTMLElement[]> {
+      await this.$nextTick();
 
-	methods: {
-		async getSelectableElements(): Promise<HTMLElement[]> {
-			await this.$nextTick()
+      const parentNode = this.$refs.dialogContent?.$el; // Is undefined when dialog is closed
 
-			const parentNode = this.$refs.dialogContent?.$el // Is undefined when dialog is closed
+      if (!parentNode) {
+        return [];
+      }
 
-			if (!parentNode) {
-				return []
-			}
+      const elements = Array.from(
+        parentNode.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      ) as HTMLElement[];
 
-			const elements = Array.from(
-				parentNode.querySelectorAll(
-					'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-				)
-			) as HTMLElement[]
+      const filteredElements: HTMLElement[] = [];
 
-			const filteredElements: HTMLElement[] = []
+      elements.forEach((element) => {
+        if (
+          element.hasAttribute('disabled')
+          || element.getAttribute('aria-hidden')
+        ) {
+          return;
+        }
 
-			elements.forEach((element) => {
-				if (
-					element.hasAttribute('disabled') ||
-					element.getAttribute('aria-hidden')
-				) {
-					return
-				}
+        filteredElements.push(element);
+      });
 
-				filteredElements.push(element)
-			})
+      return filteredElements;
+    },
 
-			return filteredElements
-		},
+    async setEventListeners(): Promise<void> {
+      const elements = await this.getSelectableElements();
 
-		async setEventListeners(): Promise<void> {
-			const elements = await this.getSelectableElements()
+      if (!elements.length) {
+        return;
+      }
 
-			if (!elements.length) {
-				return
-			}
+      for (let i = 0; i < elements.length; i++) {
+        const setFocus = (e: KeyboardEvent) => {
+          if (e.key !== 'Tab') {
+            return;
+          }
 
-			for (let i = 0; i < elements.length; i++) {
-				const setFocus = (e: KeyboardEvent) => {
-					if (e.key !== 'Tab') {
-						return
-					}
+          e.preventDefault();
 
-					e.preventDefault()
+          if (!e.shiftKey) {
+            if (i === elements.length - 1) {
+              elements[0].focus();
+            }
+ else {
+              elements[i + 1].focus();
+            }
+          }
+ else {
+            if (i === 0) {
+              elements[elements.length - 1].focus();
+            }
+ else {
+              elements[i - 1].focus();
+            }
+          }
+        };
+        if (!this.dialog) {
+          removeEventListener('keydown', setFocus);
+          return;
+        }
+ else {
+          elements[0].focus();
+        }
 
-					if (!e.shiftKey) {
-						if (i === elements.length - 1) {
-							elements[0].focus()
-						} else {
-							elements[i + 1].focus()
-						}
-					} else {
-						if (i === 0) {
-							elements[elements.length - 1].focus()
-						} else {
-							elements[i - 1].focus()
-						}
-					}
-				}
-				if (!this.dialog) {
-					removeEventListener('keydown', setFocus)
-					return
-				} else {
-					elements[0].focus()
-				}
-
-				elements[i].addEventListener('keydown', setFocus)
-			}
-		},
-	},
-
-	mounted() {
-		this.setEventListeners()
-	},
-})
+        elements[i].addEventListener('keydown', setFocus);
+      }
+    },
+  },
+});
 </script>
 
 <template>
-	<VDialog
-		v-model="dialog"
-		v-bind="$attrs"
-		:width="width"
-		:persistent="persistent"
-		:retain-focus="false"
-		aria-modal="true"
-		class="vd-dialog-box"
-		@update:model-value="$emit('update:modelValue', false)"
-	>
-		<VCard v-bind="options.card" ref="dialogContent">
-			<VCardTitle v-bind="options.cardTitle">
-				<slot name="title">
-					<h2 v-if="title" class="text-h6 font-weight-bold">
-						{{ title }}
-					</h2>
-				</slot>
+  <VDialog
+    v-model="dialog"
+    v-bind="$attrs"
+    :width="width"
+    :persistent="persistent"
+    :retain-focus="false"
+    aria-modal="true"
+    class="vd-dialog-box"
+    @update:model-value="$emit('update:modelValue', false)"
+  >
+    <VCard v-bind="$options.card" ref="dialogContent">
+      <VCardTitle v-bind="$options.cardTitle">
+        <slot name="title">
+          <h2 v-if="title" class="text-h6 font-weight-bold">
+            {{ title }}
+          </h2>
+        </slot>
 
-				<VSpacer v-bind="options.spacer" />
+        <VSpacer v-bind="$options.spacer" />
 
-				<VBtn
-					v-if="!persistent"
-					v-bind="options.closeBtn"
-					:aria-label="locales.closeBtn"
-					@click="$emit('update:modelValue', false)"
-				>
-					<VIcon v-bind="options.icon">
-						{{ closeIcon }}
-					</VIcon>
-				</VBtn>
-			</VCardTitle>
+        <VBtn
+          v-if="!persistent"
+          v-bind="$options.closeBtn"
+          :aria-label="locales.closeBtn"
+          @click="$emit('update:modelValue', false)"
+        >
+          <VIcon v-bind="$options.icon">
+            {{ closeIcon }}
+          </VIcon>
+        </VBtn>
+      </VCardTitle>
 
-			<slot />
+      <slot />
 
-			<div
-				v-if="!hideActions"
-				v-bind="options.actionsCtn"
-				class="vd-dialog-box-actions-ctn"
-			>
-				<VSpacer v-bind="options.actionsSpacer" />
+      <div
+        v-if="!hideActions"
+        v-bind="$options.actionsCtn"
+        class="vd-dialog-box-actions-ctn"
+      >
+        <VSpacer v-bind="$options.actionsSpacer" />
 
-				<slot name="actions">
-					<VBtn v-bind="options.cancelBtn" @click="$emit('cancel')">
-						{{ cancelBtnText }}
-					</VBtn>
+        <slot name="actions">
+          <VBtn v-bind="$options.cancelBtn" @click="$emit('cancel')">
+            {{ cancelBtnText }}
+          </VBtn>
 
-					<VBtn
-						v-bind="options.confirmBtn"
-						data-test-id="confirm-btn"
-						@click="$emit('confirm')"
-					>
-						{{ confirmBtnText }}
-					</VBtn>
-				</slot>
-			</div>
-		</VCard>
-	</VDialog>
+          <VBtn
+            v-bind="$options.confirmBtn"
+            data-test-id="confirm-btn"
+            @click="$emit('confirm')"
+          >
+            {{ confirmBtnText }}
+          </VBtn>
+        </slot>
+      </div>
+    </VCard>
+  </VDialog>
 </template>
 
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 declare module 'languages' {
-	import type { Language } from './types.d.ts'
+  import type { Language } from './types.d.ts';
 
-	export function getLanguageInfo(langCode: string): Language
-	export function getAllLanguageCode(): string[]
+  export function getLanguageInfo(langCode: string): Language;
+  export function getAllLanguageCode(): string[];
 }

@@ -1,91 +1,91 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { themeIcon } from './mixins/themeIcon'
+import { defineComponent } from 'vue';
+import { themeIcon } from './mixins/themeIcon';
 
 export default defineComponent({
-	mixins: [themeIcon],
-	props: {
-		/**
-		 * The color of the icon (any CSS value)
-		 * By default it's inherited from the text color
-		 */
-		color: {
-			type: String,
-			default: 'currentColor',
-		},
-		/** Make the icon small (1em) */
-		small: {
-			type: Boolean,
-			default: false,
-		},
-		/** Make the icon medium (1.5em) */
-		medium: {
-			type: Boolean,
-			default: false,
-		},
-		/** Make the icon large (1.85em) */
-		large: {
-			type: Boolean,
-			default: false,
-		},
-		/** Make the icon extra large (2.25em) */
-		xLarge: {
-			type: Boolean,
-			default: false,
-		},
-		/**
-		 * The CSS size of the icon (width/height)
-		 * By default, the size is 1.35em (between small & medium)
-		 */
-		size: {
-			type: String,
-			default: undefined,
-		},
-		/**
-		 * The accessible label of the icon
-		 * By default, the icon is hidden from screen readers
-		 */
-		label: {
-			type: String,
-			default: undefined,
-		},
-	},
-	methods: {
-		getIcon() {
-			if (!this.icon) {
-				return undefined
-			}
+  mixins: [themeIcon],
+  props: {
+    /**
+     * The color of the icon (any CSS value)
+     * By default it's inherited from the text color
+     */
+    color: {
+      type: String,
+      default: 'currentColor',
+    },
+    /** Make the icon small (1em) */
+    small: {
+      type: Boolean,
+      default: false,
+    },
+    /** Make the icon medium (1.5em) */
+    medium: {
+      type: Boolean,
+      default: false,
+    },
+    /** Make the icon large (1.85em) */
+    large: {
+      type: Boolean,
+      default: false,
+    },
+    /** Make the icon extra large (2.25em) */
+    xLarge: {
+      type: Boolean,
+      default: false,
+    },
+    /**
+     * The CSS size of the icon (width/height)
+     * By default, the size is 1.35em (between small & medium)
+     */
+    size: {
+      type: String,
+      default: undefined,
+    },
+    /**
+     * The accessible label of the icon
+     * By default, the icon is hidden from screen readers
+     */
+    label: {
+      type: String,
+      default: undefined,
+    },
+  },
+  methods: {
+    getIcon() {
+      if (!this.icon) {
+        return undefined;
+      }
 
-			return this.getThemeIcon()
-		},
-	},
-})
+      return this.getThemeIcon();
+    },
+  },
+});
 </script>
 
 <template>
-	<VIcon
-		:class="{
-			'vd-small': small,
-			'vd-medium': medium,
-			'vd-large': large,
-			'vd-x-large': xLarge,
-			'vd-custom-color': Boolean(color),
-		}"
-		:style="{
-			color,
-			width: size,
-			height: size,
-		}"
-		:aria-hidden="!label"
-		:aria-label="label"
-		role="img"
-		focusable="false"
-		class="vd-custom-icon"
-	>
-		<slot>
-			<span v-html="getIcon()" />
-		</slot>
-	</VIcon>
+  <VIcon
+    :class="{
+      'vd-small': small,
+      'vd-medium': medium,
+      'vd-large': large,
+      'vd-x-large': xLarge,
+      'vd-custom-color': Boolean(color),
+    }"
+    :style="{
+      color,
+      width: size,
+      height: size,
+    }"
+    :aria-hidden="!label"
+    :aria-label="label"
+    role="img"
+    focusable="false"
+    class="vd-custom-icon"
+  >
+    <slot>
+      <span v-html="getIcon()" />
+    </slot>
+  </VIcon>
 </template>
 
 <style lang="scss" scoped>
