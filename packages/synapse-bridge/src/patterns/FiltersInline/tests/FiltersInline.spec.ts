@@ -3,6 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 import FiltersInline from '../'
 import { locales } from '../locales'
+import {type FilterItem} from '@/mixins/filterable/types'
 
 describe('FiltersInline', () => {
 	it('renders correctly', () => {
@@ -64,6 +65,44 @@ describe('FiltersInline', () => {
 		})
 
 		expect(wrapper).toMatchSnapshot()
+	})
+
+	it('should emit an update:modelValue event when a filter is added', () => {
+		const wrapper = shallowMount(FiltersInline, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				modelValue: [
+					{
+						name: 'name',
+						label: 'Nom',
+					},
+				],
+			},
+		})
+
+		const filter: FilterItem = {
+			name: 'New Filter',
+			value: 'new-filter',
+		}
+
+		// Simulate adding a new filter
+		wrapper.vm.filters.push(filter)
+
+		wrapper.vm.updateValue()
+
+		expect(wrapper.emitted('update:modelValue')).toEqual([
+			[
+				[
+					{
+						name: 'name',
+						label: 'Nom',
+					},
+					filter,
+				],
+			],
+		])
 	})
 })
 

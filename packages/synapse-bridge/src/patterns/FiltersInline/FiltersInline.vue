@@ -65,12 +65,13 @@ export default defineComponent({
 					@remove="removeChip(filter, $event)"
 					@reset="resetFilter(filter)"
 				/>
-
 				<slot
 					:attrs="{
 						modelValue: filter.value,
-						'onUpdate:modelValue': (value: ChipItem) =>
-							(filter['value'] = value),
+						'onUpdate:modelValue': (value: ChipItem) => {
+							filter.value = value
+							updateValue()
+						}
 					}"
 					:name="`${formatFilterName(filter.name)}`"
 				/>
