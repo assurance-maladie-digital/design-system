@@ -2,7 +2,7 @@
 import '@vuepic/vue-datepicker/dist/main.css'
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
-import { mdiCalendar } from '@mdi/js'
+import { mdiCalendar, mdiCloseCircle } from '@mdi/js'
 import VueDatePicker from '@vuepic/vue-datepicker'
 import dayjs from 'dayjs'
 import { WarningRules } from '@/mixins/warningRules/index.ts'
@@ -26,6 +26,7 @@ interface DatePickerData {
 	format: string
 	inputValue: string
 	calendarIcon: string
+	closeIcon: string
 	errorMessages: string[] | any
 	birthdateFlow: DatePickerFlow
 	isCalOpen: boolean
@@ -131,6 +132,7 @@ export default defineComponent({
 			format: 'dd/MM/yyyy',
 			inputValue: '',
 			calendarIcon: mdiCalendar,
+			closeIcon: mdiCloseCircle,
 			errorMessages: [] as string[],
 			birthdateFlow: ['year', 'month', 'calendar'],
 			isCalOpen: false,
@@ -156,15 +158,7 @@ export default defineComponent({
 				variant: this.getVariant,
 				disabled: this.disabled,
 				hint: this.hint,
-				prependIcon: !this.outlined
-					? this.prependIconValue
-					: 'undefined',
-				appendInnerIcon:
-					this.outlined || this.appendIcon
-						? this.calendarIcon
-						: undefined,
 				persistentHint: true,
-				color: '#0C419A',
 				rules: this.rules,
 				errorMessages: errorMessages || [],
 			}
@@ -602,15 +596,12 @@ export default defineComponent({
 					{{ date.getDate() }}
 				</div>
 			</template>
-			<template #dp-input="{}">
-				<v-text-field
+			<template #dp-input="{onClear}">
+				<VTextField
 					:model-value="date"
 					v-bind="textFieldOptions"
-					color="#0C419A"
 					hide-details="auto"
-					:append-inner-icon="
-						outlined || appendIcon ? calendarIcon : undefined
-					"
+					color="#0C419A"
 					:aria-describedby="label"
 					:class="[
 						textFieldClasses,
@@ -625,7 +616,6 @@ export default defineComponent({
 					:error-messages="errorMessages"
 					:hint="hint"
 					:label="label"
-					:prepend-icon="!outlined ? prependIconValue : undefined"
 					:persistent-hint="true"
 					:rules="rules"
 					:readonly="range"
@@ -637,14 +627,40 @@ export default defineComponent({
 					:variant="getVariant"
 					@blur="emitUpdateEvent"
 					@keydown="handleKeyDown"
-					@click:append="handleIconClick"
-					@click:append-inner="handleIconClick"
 					@click:clear="onClear"
-					@click:prepend="handleIconClick"
-					@click:prepend-inner="handleIconClick"
 					@paste="handlePaste"
 					@cut="handleCut"
-				></v-text-field>
+				>
+					<template #append-inner v-if="outlined || (appendIcon && calendarIcon)">
+						<VIcon
+							@click="handleIconClick"
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ calendarIcon }}
+						</VIcon>
+					</template>
+
+					<template #prepend v-if="!outlined && prependIconValue">
+						<VIcon
+							@click="handleIconClick"
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ calendarIcon }}
+						</VIcon>
+					</template>
+
+					<template v-slot:clear v-if="clearable" >
+						<VIcon
+							@click='onClear'
+							tabindex="-1"
+							aria-hidden="true"
+						>
+							{{ closeIcon }}
+						</VIcon>
+					</template>
+				</VTextField>
 			</template>
 		</VueDatePicker>
 	</div>
@@ -699,7 +715,10 @@ export default defineComponent({
 	height: calc(100% - 1px) !important;
 }
 
-:deep(.v-field--variant-outlined.v-field--focused .v-field__outline__notch::after) {
+:deep(
+	.v-field--variant-outlined.v-field--focused,
+	.v-field__outline__notch::after
+) {
 	height: calc(100% - 2px) !important;
 }
 
@@ -713,6 +732,10 @@ export default defineComponent({
 
 :deep(.vd-append-icon ~ .dp__clear_icon) {
 	right: 35px;
+}
+
+:deep(.v-icon) {
+	color: rgba(0,0,0,.54) !important;
 }
 
 .warning-style {

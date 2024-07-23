@@ -156,10 +156,7 @@ describe('Computed', () => {
 			variant: wrapper.vm.getVariant,
 			disabled: false,
 			hint: wrapper.vm.hint,
-			prependIcon: wrapper.vm.calendarIcon,
-			appendInnerIcon: undefined,
 			persistentHint: true,
-			color: '#0C419A',
 			rules: [],
 			errorMessages: [],
 		}
