@@ -1,3 +1,19 @@
+## v2.16.7
+
+**Version publiée le 23/07/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **NirField:** Correction des données retournées (number + key) lorsque l'utilisateur modifie le champ number ([#3575](https://github.com/assurance-maladie-digital/design-system/pull/3575))
+  - **DatePicker:** Amélioration de l'accessibilité du composant ([#3628](https://github.com/assurance-maladie-digital/design-system/pull/3628))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3534](https://github.com/assurance-maladie-digital/design-system/pull/3534))
+  - Mise à jour de la liste des composants disponibles dans la version Bridge ([#3633](https://github.com/assurance-maladie-digital/design-system/pull/3633))
+
 ## v2.16.6
 
 **Version publiée le 07/06/2024.**
