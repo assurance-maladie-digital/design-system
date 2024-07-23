@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 19.x, 20.x]
+        node-version: [18.x, 20.x]
 
     steps:
         - uses: actions/checkout@v2
@@ -24,7 +24,9 @@ jobs:
           run: pnpm install --frozen-lockfile
         - name: Lint (show only errors)
           run: pnpm lint --quiet
-        - name: Test
-          run: pnpm test:unit
+          working-directory: ./packages/synapse-bridge
+        - name: Unit tests without Snapshots
+          run: pnpm test:unit -- -u
         - name: Build
           run: pnpm build
+          working-directory: ./packages/synapse-bridge

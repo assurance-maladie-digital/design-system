@@ -1,0 +1,25 @@
+name: Synpase - Package and Publish
+
+env:
+  NODE_VERSION: 20.11.0
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  validate:
+    uses: ./actions/ci.yml
+
+  publish-npm:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: https://registry.npmjs.org/
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
