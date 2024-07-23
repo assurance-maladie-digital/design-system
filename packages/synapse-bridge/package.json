@@ -30,7 +30,8 @@
 	"scripts": {
 		"dev:setup": "tsx scripts/devSetup.ts",
 		"dev": "vite",
-		"test:unit": "vitest run",
+		"test": "vitest run",
+		"lint": "echo 1",
 		"preview": "vite preview",
 		"analyze": "vite build --mode analyze",
 		"build": "vue-tsc && vite build",
