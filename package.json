@@ -5,7 +5,8 @@
 		"prepare": "lerna run dev:setup",
 		"dev": "lerna run dev",
 		"test:unit": "lerna run test:unit",
-		"build": "lerna run build"
+		"build": "lerna run build",
+		"lint": "pnpm eslint --ignore-pattern 'dist/*'"
 	},
 	"devDependencies": {
 		"lerna": "7.3.0",
