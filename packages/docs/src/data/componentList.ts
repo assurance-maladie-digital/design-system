@@ -243,7 +243,7 @@ export const componentList: ComponentSection[] = [
 				description: 'Utilisé pour permettre à l’utilisateur de sélectionner des filtres.',
 				href: '/composants/filtres/filter-module',
 				image: 'components/filter-module.svg',
-				status: ComponentStatusEnum.DEPRECATED
+				status: ComponentStatusEnum.BRIDGE
 			}
 		]
 	},

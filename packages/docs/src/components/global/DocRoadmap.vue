@@ -48,27 +48,11 @@
 					</VListItemTitle>
 
 					<VListItemSubtitle>
-						La version Bridge du Design System est en cours de développement et permettra de migrer sur Vue 3 sans changements sur les composants.
+						La version Bridge du Design System permet de migrer sur Vue 3 sans changements sur les composants.
 					</VListItemSubtitle>
 				</VListItemContent>
 			</VListItem>
 		</VSheet>
-
-		<div class="d-flex justify-center">
-			<img src="@/assets/images/bridge.png" alt="Roadmap Bridge" class="w-75 mb-8" />
-		</div>
-
-		<div class="d-flex justify-center mb-8">
-			<v-progress-linear
-				:value="progress"
-				color="primary"
-				height="25"
-			>
-				<template v-slot:default="{ value }">
-					<span class="white--text font-weight-bold">{{ Math.ceil(value) }}%</span>
-				</template>
-			</v-progress-linear>
-		</div>
 
 		<VSheet
 			outlined
@@ -118,7 +102,6 @@
 		newTabIcon = mdiOpenInNew;
 		tagIcon = mdiTagOutline;
 		tagHiddenIcon = mdiTagHidden;
-		progress = 95;
 	}
 </script>
 
