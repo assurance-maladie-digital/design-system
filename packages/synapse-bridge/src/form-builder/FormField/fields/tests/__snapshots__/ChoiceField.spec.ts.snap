@@ -31,7 +31,7 @@ exports[`ChoiceField > renders correctly 1`] = `
               <div class="v-field__input" data-no-activator="">
                 <!---->
                 <!---->
-                <div class="v-select__selection"><span class="v-select__selection-text">0<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+                <div class="v-select__selection"><span class="v-select__selection-text">0<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open" value="0">
               </div>
               <!---->
             </div>
@@ -95,7 +95,7 @@ exports[`ChoiceField > renders the other field 1`] = `
               <div class="v-field__input" data-no-activator="">
                 <!---->
                 <!---->
-                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open" value="autre">
               </div>
               <!---->
             </div>
@@ -206,7 +206,7 @@ exports[`ChoiceField > renders the other field when the corresponding choice is 
               <div class="v-field__input" data-no-activator="">
                 <!---->
                 <!---->
-                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open">
+                <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-0" aria-describedby="input-0-messages" inputmode="none" aria-label="Open" title="Open" value="autre">
               </div>
               <!---->
             </div>

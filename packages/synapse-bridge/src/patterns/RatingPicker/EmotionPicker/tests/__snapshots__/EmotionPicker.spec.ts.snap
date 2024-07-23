@@ -5,7 +5,7 @@ exports[`EmotionPicker > renders correctly 1`] = `
   <legend data-v-62a645b1="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
   <div data-v-62a645b1="" class="v-rating v-theme--light max-width-none mx-n1 mx-sm-n2"><label for="v-rating-0-0" class=""><span class="v-rating__hidden">Rating 0 of 3</span>
       <!---->
-    </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" tabindex="-1" value="0">
+    </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" checked="" tabindex="-1" value="0">
     <div class="v-rating__wrapper">
       <!---->
       <div class="v-rating__item"><label for="v-rating-0-1" class=""><span class="v-rating__hidden">Rating 1 of 3</span><button data-v-62a645b1="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text sad rounded-lg px-1 px-sm-4 mx-1 mx-sm-2" style="min-height: 88px; min-width: 88px;" aria-pressed="false"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
@@ -42,7 +42,7 @@ exports[`EmotionPicker > renders correctly with only 2 items 1`] = `
   <legend data-v-62a645b1="" class="text-h6 mb-6">Pourriez-vous donner une note ?</legend>
   <div data-v-62a645b1="" class="v-rating v-theme--light max-width-none mx-n1 mx-sm-n2"><label for="v-rating-0-0" class=""><span class="v-rating__hidden">Rating 0 of 2</span>
       <!---->
-    </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" tabindex="-1" value="0">
+    </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" checked="" tabindex="-1" value="0">
     <div class="v-rating__wrapper">
       <!---->
       <div class="v-rating__item"><label for="v-rating-0-1" class=""><span class="v-rating__hidden">Rating 1 of 2</span><button data-v-62a645b1="" type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-text sad rounded-lg px-1 px-sm-4 mx-1 mx-sm-2" style="min-height: 88px; min-width: 88px;" aria-pressed="false"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>

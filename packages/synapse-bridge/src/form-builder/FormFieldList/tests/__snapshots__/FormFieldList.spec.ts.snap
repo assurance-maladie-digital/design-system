@@ -86,7 +86,7 @@ exports[`FormFieldList > renders correctly 1`] = `
                   <!---->
                   <div class="v-field__input" data-no-activator="">
                     <!---->
-                    <!----><input size="1" type="text" id="input-2" aria-describedby="input-2-messages" inputmode="none" aria-label="Open" title="Open">
+                    <!----><input size="1" type="text" id="input-2" aria-describedby="input-2-messages" inputmode="none" aria-label="Open" title="Open" value="">
                   </div>
                   <!---->
                 </div>
@@ -146,7 +146,7 @@ exports[`FormFieldList > renders correctly 1`] = `
                   <!---->
                   <div class="v-field__input" data-no-activator="">
                     <!---->
-                    <!----><input size="1" type="text" id="input-5" aria-describedby="input-5-messages">
+                    <!----><input size="1" type="text" id="input-5" aria-describedby="input-5-messages" value="">
                   </div>
                   <!---->
                 </div>

@@ -81,7 +81,7 @@ exports[`FormBuilder > renders correctly 1`] = `
               <!----><label class="v-label v-field-label" for="input-2">
                 <!---->Votre mot de passe
               </label>
-              <!----><input size="1" type="password" id="input-2" aria-describedby="input-2-messages" validateonblur="true" btn="[object Object]" class="v-field__input">
+              <!----><input size="1" type="password" id="input-2" aria-describedby="input-2-messages" validateonblur="true" btn="[object Object]" class="v-field__input" value="null">
               <!---->
             </div>
             <!---->
@@ -300,7 +300,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                       <!----><label class="v-label v-field-label" for="input-13">
                         <!---->
                       </label>
-                      <!----><input size="1" type="text" id="input-13" aria-describedby="" class="v-field__input">
+                      <!----><input size="1" type="text" id="input-13" aria-describedby="" class="v-field__input" value="">
                       <!---->
                     </div>
                     <!---->
@@ -367,7 +367,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                       <!----><label class="v-label v-field-label" for="input-15">
                         <!---->
                       </label>
-                      <!----><input readonly="" size="1" type="text" id="input-15" aria-describedby="" class="v-field__input">
+                      <!----><input readonly="" size="1" type="text" id="input-15" aria-describedby="" class="v-field__input" value="">
                       <!---->
                     </div>
                     <!---->
@@ -437,7 +437,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                 <div class="v-field__input" data-no-activator="">
                   <!---->
                   <!---->
-                  <div class="v-select__selection"><span class="v-select__selection-text">9h<!----></span></div><input size="1" type="text" id="input-17" aria-describedby="input-17-messages" inputmode="none" aria-label="Open" title="Open">
+                  <div class="v-select__selection"><span class="v-select__selection-text">9h<!----></span></div><input size="1" type="text" id="input-17" aria-describedby="input-17-messages" inputmode="none" aria-label="Open" title="Open" value="">
                 </div>
                 <!---->
               </div>
@@ -497,7 +497,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                 <!---->
                 <div class="v-field__input" data-no-activator="">
                   <!---->
-                  <!----><input size="1" type="text" id="input-20" aria-describedby="input-20-messages" inputmode="none" aria-label="Open" title="Open">
+                  <!----><input size="1" type="text" id="input-20" aria-describedby="input-20-messages" inputmode="none" aria-label="Open" title="Open" value="">
                 </div>
                 <!---->
               </div>
@@ -536,7 +536,7 @@ exports[`FormBuilder > renders correctly 1`] = `
         <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-slider--has-labels v-locale--is-ltr pt-3 vd-choice-slider-field vd-form-input-xl" type="choiceSlider">
           <!---->
           <div class="v-input__control">
-            <div class="v-slider__container"><input id="input-23" name="input-23" tabindex="-1">
+            <div class="v-slider__container"><input id="input-23" name="input-23" tabindex="-1" value="0">
               <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
@@ -588,7 +588,7 @@ exports[`FormBuilder > renders correctly 1`] = `
         <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label pt-3 vd-choice-slider-field vd-form-input-xl" type="choiceSlider">
           <!---->
           <div class="v-input__control">
-            <div class="v-slider__container"><input id="input-24" name="input-24" tabindex="-1">
+            <div class="v-slider__container"><input id="input-24" name="input-24" tabindex="-1" value="0">
               <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
@@ -627,7 +627,7 @@ exports[`FormBuilder > renders correctly 1`] = `
         <div data-v-3091391c="" data-v-60156eea="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr thumb-label pt-3 vd-choice-slider-field vd-form-input-xl" labelmin="min" labelmax="max" type="choiceSlider">
           <!---->
           <div class="v-input__control">
-            <div class="v-slider__container"><input id="input-25" name="input-25" tabindex="-1">
+            <div class="v-slider__container"><input id="input-25" name="input-25" tabindex="-1" value="0">
               <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
@@ -696,7 +696,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                     <div class="v-chip__content" data-no-activator="">9h</div>
                     <!---->
                     <!----></span>
-                  </div><input size="1" type="text" id="input-26" aria-describedby="input-26-messages">
+                  </div><input size="1" type="text" id="input-26" aria-describedby="input-26-messages" value="">
                 </div>
                 <!---->
               </div>
@@ -861,7 +861,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                   <!---->
                   <!---->
                 </label>
-                <!----><input placeholder="Autre" size="1" type="text" id="input-42" aria-describedby="input-42-messages" class="v-field__input">
+                <!----><input placeholder="Autre" size="1" type="text" id="input-42" aria-describedby="input-42-messages" class="v-field__input" value="Autre valeur">
                 <!---->
               </div>
               <!---->
@@ -917,7 +917,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                 <div class="v-field__input" data-no-activator="">
                   <!---->
                   <!---->
-                  <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-44" aria-describedby="input-44-messages" inputmode="none" aria-label="Open" title="Open">
+                  <div class="v-select__selection"><span class="v-select__selection-text">Autre<!----></span></div><input size="1" type="text" id="input-44" aria-describedby="input-44-messages" inputmode="none" aria-label="Open" title="Open" value="0">
                 </div>
                 <!---->
               </div>
@@ -971,7 +971,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                       <!---->
                       <!---->
                     </label>
-                    <!----><textarea class="v-field__input" placeholder="Entrez votre taille" rows="1" id="input-47" aria-describedby="input-47-messages"></textarea><textarea class="v-field__input v-textarea__sizer" id="input-47-sizer" readonly="" aria-hidden="true"></textarea>
+                    <!----><textarea class="v-field__input" placeholder="Entrez votre taille" rows="1" id="input-47" aria-describedby="input-47-messages" value="XXL"></textarea><textarea class="v-field__input v-textarea__sizer" id="input-47-sizer" readonly="" aria-hidden="true"></textarea>
                     <!---->
                   </div>
                   <!---->
@@ -1028,7 +1028,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                   </label><label class="v-label v-field-label" for="input-49">
                     <!---->Valeur min
                   </label>
-                  <!----><input size="1" type="number" id="input-49" aria-describedby="input-49-messages" inputmode="numeric" class="v-field__input">
+                  <!----><input size="1" type="number" id="input-49" aria-describedby="input-49-messages" inputmode="numeric" class="v-field__input" value="0">
                   <!---->
                 </div>
                 <!---->
@@ -1066,7 +1066,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                   </label><label class="v-label v-field-label" for="input-51">
                     <!---->Valeur max
                   </label>
-                  <!----><input size="1" type="number" id="input-51" aria-describedby="input-51-messages" ripple="false" inputmode="numeric" class="v-field__input">
+                  <!----><input size="1" type="number" id="input-51" aria-describedby="input-51-messages" ripple="false" inputmode="numeric" class="v-field__input" value="6">
                   <!---->
                 </div>
                 <!---->
@@ -1087,7 +1087,7 @@ exports[`FormBuilder > renders correctly 1`] = `
             <!---->
           </div>
           <div class="v-input__control">
-            <div class="v-slider__container"><input id="input-53_start" name="input-53" tabindex="-1"><input id="input-53_stop" name="input-53" tabindex="-1">
+            <div class="v-slider__container"><input id="input-53_start" name="input-53" tabindex="-1" value="0"><input id="input-53_stop" name="input-53" tabindex="-1" value="6">
               <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
                 <div class="v-slider-track__background bg-primary v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
                 <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 100%;"></div>

@@ -28,7 +28,7 @@ exports[`NirField > renders correctly 1`] = `
               <!----><label class="v-label v-field-label" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
-              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -72,7 +72,7 @@ exports[`NirField > renders correctly 1`] = `
               <!----><label class="v-label v-field-label" for="input-3">
                 <!---->Clé
               </label>
-              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -134,7 +134,7 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
               <!----><label class="v-label v-field-label" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
-              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -197,7 +197,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
               <!----><label class="v-label v-field-label" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
-              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -241,7 +241,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
               <!----><label class="v-label v-field-label" for="input-3">
                 <!---->Clé
               </label>
-              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -304,7 +304,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
               <!----><label class="v-label v-field-label" for="input-1">
                 <!---->Numéro de sécurité sociale
               </label>
-              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-1" aria-describedby="input-1-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->
@@ -351,7 +351,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
               <!----><label class="v-label v-field-label" for="input-3">
                 <!---->Clé
               </label>
-              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input">
+              <!----><input size="1" type="text" id="input-3" aria-describedby="input-3-messages" icon="[object Object]" tooltip="[object Object]" aria-invalid="false" class="v-field__input" value="">
               <!---->
             </div>
             <!---->

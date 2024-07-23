@@ -31,7 +31,7 @@ exports[`PeriodField > should render the component 1`] = `
                 <!----><label class="v-label v-field-label" for="input-0">
                   <!---->
                 </label>
-                <!----><input readonly="" size="1" type="text" id="input-0" aria-describedby="" class="v-field__input">
+                <!----><input readonly="" size="1" type="text" id="input-0" aria-describedby="" class="v-field__input" value="">
                 <!---->
               </div>
               <!---->

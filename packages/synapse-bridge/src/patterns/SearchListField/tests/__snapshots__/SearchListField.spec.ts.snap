@@ -57,7 +57,7 @@ exports[`SearchListField > renders correctly 1`] = `
           <div data-v-4d322540="" class="v-selection-control v-selection-control--dirty v-selection-control--density-default v-checkbox-btn">
             <div class="v-selection-control__wrapper">
               <!---->
-              <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-3" aria-disabled="false" type="checkbox" value="true"></div>
+              <div class="v-selection-control__input"><i class="mdi-checkbox-marked mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input checked="" id="input-3" aria-disabled="false" type="checkbox" value="true"></div>
             </div><label class="v-label v-label--clickable" for="input-3">
               <!----><span data-v-4d322540="" class="d-sr-only">Sélectionner la valeur</span>
             </label>

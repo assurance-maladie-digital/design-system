@@ -32,7 +32,7 @@ exports[`ChoiceSliderField > render correctly in multiple mode 1`] = `
               </label><label class="v-label v-field-label" for="input-0">
                 <!---->Valeur min
               </label>
-              <!----><input size="1" type="number" id="input-0" aria-describedby="input-0-messages" inputmode="numeric" class="v-field__input">
+              <!----><input size="1" type="number" id="input-0" aria-describedby="input-0-messages" inputmode="numeric" class="v-field__input" value="0">
               <!---->
             </div>
             <!---->
@@ -70,7 +70,7 @@ exports[`ChoiceSliderField > render correctly in multiple mode 1`] = `
               </label><label class="v-label v-field-label" for="input-2">
                 <!---->Valeur max
               </label>
-              <!----><input size="1" type="number" id="input-2" aria-describedby="input-2-messages" ripple="false" inputmode="numeric" class="v-field__input">
+              <!----><input size="1" type="number" id="input-2" aria-describedby="input-2-messages" ripple="false" inputmode="numeric" class="v-field__input" value="6">
               <!---->
             </div>
             <!---->
@@ -91,7 +91,7 @@ exports[`ChoiceSliderField > render correctly in multiple mode 1`] = `
         <!---->
       </div>
       <div class="v-input__control">
-        <div class="v-slider__container"><input id="input-4_start" name="input-4" tabindex="-1"><input id="input-4_stop" name="input-4" tabindex="-1">
+        <div class="v-slider__container"><input id="input-4_start" name="input-4" tabindex="-1" value="0"><input id="input-4_stop" name="input-4" tabindex="-1" value="6">
           <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
             <div class="v-slider-track__background bg-primary v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
             <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 100%;"></div>
@@ -162,7 +162,7 @@ exports[`ChoiceSliderField > should render correctly 1`] = `
               </label><label class="v-label v-field-label" for="input-0">
                 <!---->Valeur min
               </label>
-              <!----><input size="1" type="number" id="input-0" aria-describedby="input-0-messages" inputmode="numeric" class="v-field__input">
+              <!----><input size="1" type="number" id="input-0" aria-describedby="input-0-messages" inputmode="numeric" class="v-field__input" value="0">
               <!---->
             </div>
             <!---->
@@ -200,7 +200,7 @@ exports[`ChoiceSliderField > should render correctly 1`] = `
               </label><label class="v-label v-field-label" for="input-2">
                 <!---->Valeur max
               </label>
-              <!----><input size="1" type="number" id="input-2" aria-describedby="input-2-messages" ripple="false" inputmode="numeric" class="v-field__input">
+              <!----><input size="1" type="number" id="input-2" aria-describedby="input-2-messages" ripple="false" inputmode="numeric" class="v-field__input" value="6">
               <!---->
             </div>
             <!---->
@@ -221,7 +221,7 @@ exports[`ChoiceSliderField > should render correctly 1`] = `
         <!---->
       </div>
       <div class="v-input__control">
-        <div class="v-slider__container"><input id="input-4_start" name="input-4" tabindex="-1"><input id="input-4_stop" name="input-4" tabindex="-1">
+        <div class="v-slider__container"><input id="input-4_start" name="input-4" tabindex="-1" value="0"><input id="input-4_stop" name="input-4" tabindex="-1" value="6">
           <div class="v-slider-track" style="--v-slider-track-size: 4px; --v-slider-tick-size: 2px;">
             <div class="v-slider-track__background bg-primary v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
             <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 100%;"></div>

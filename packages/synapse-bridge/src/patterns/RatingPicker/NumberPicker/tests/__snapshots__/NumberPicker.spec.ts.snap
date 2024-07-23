@@ -6,7 +6,7 @@ exports[`NumberPicker > renders correctly 1`] = `
   <div data-v-1cb226ec="" class="d-inline-block">
     <div data-v-1cb226ec="" class="v-rating v-theme--light d-flex flex-wrap max-width-none"><label for="v-rating-0-0" class=""><span class="v-rating__hidden">Rating 0 of 10</span>
         <!---->
-      </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" tabindex="-1" value="0">
+      </label><input class="v-rating__hidden" name="v-rating-0" id="v-rating-0-0" type="radio" checked="" tabindex="-1" value="0">
       <div class="v-rating__wrapper">
         <!---->
         <div class="v-rating__item"><label for="v-rating-0-1" class=""><span class="v-rating__hidden">Rating 1 of 10</span><button data-v-1cb226ec="" type="button" class="v-btn v-theme--light text-primary v-btn--density-default v-btn--size-x-small v-btn--variant-outlined text-body-2 pa-0 mr-2" style="height: 36px;" aria-label="Note de 1 sur 10."><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
@@ -132,7 +132,7 @@ exports[`NumberPicker > renders correctly in xs window 1`] = `
           <div class="v-field__input" data-no-activator="">
             <!---->
             <!---->
-            <div class="v-select__selection"><span class="v-select__selection-text">5<!----></span></div><input size="1" type="text" id="input-20" aria-describedby="input-20-messages" inputmode="none" aria-label="Open" title="Open" disabled="">
+            <div class="v-select__selection"><span class="v-select__selection-text">5<!----></span></div><input size="1" type="text" id="input-20" aria-describedby="input-20-messages" inputmode="none" aria-label="Open" title="Open" value="5" disabled="">
           </div>
           <!---->
         </div>

@@ -4,7 +4,7 @@ exports[`ChoiceSliderField > render correctly in multiple mode 1`] = `
 <div data-v-3091391c="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr pt-3 vd-choice-slider-field vd-form-input-xl">
   <!---->
   <div class="v-input__control">
-    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1">
+    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1" value="0">
       <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
         <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
         <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
@@ -37,7 +37,7 @@ exports[`ChoiceSliderField > should render correctly 1`] = `
 <div data-v-3091391c="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-input--dirty v-slider v-locale--is-ltr pt-3 vd-choice-slider-field vd-form-input-xl">
   <!---->
   <div class="v-input__control">
-    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1">
+    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1" value="0">
       <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
         <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
         <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
@@ -75,7 +75,7 @@ exports[`ChoiceSliderField > should toggle the item 1`] = `
     <!---->
   </div>
   <div class="v-input__control">
-    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1">
+    <div class="v-slider__container"><input id="input-0" name="input-0" tabindex="-1" value="0">
       <div class="v-slider-track" style="--v-slider-track-size: 1px; --v-slider-tick-size: 2px;">
         <div class="v-slider-track__background bg-grey v-slider-track__background--opacity" style="inset-inline-start: 0%; width: 100%;"></div>
         <div class="v-slider-track__fill bg-primary" style="inset-inline-start: 0%; width: 0%;"></div>
