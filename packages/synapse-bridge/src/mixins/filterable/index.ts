@@ -2,11 +2,11 @@
 import { defineComponent } from 'vue'
 import type { PropType } from 'vue'
 
-import { FilterItem } from './types.ts'
+import type { FilterItem } from './types.ts'
 
 import { deepCopy } from '../../helpers/deepCopy'
 
-import { ChipItem } from '../../elements/ChipList/types'
+import type { ChipItem } from '../../elements/ChipList/types'
 
 import slugify from 'slugify'
 
@@ -148,6 +148,7 @@ export const Filterable = defineComponent({
 					: undefined
 
 				filter.value = newValue
+				this.updateValue();
 
 				return
 			}
@@ -160,6 +161,7 @@ export const Filterable = defineComponent({
 
 				if (isPeriodField) {
 					filter.value = undefined
+					this.updateValue();
 
 					return
 				}
@@ -167,10 +169,12 @@ export const Filterable = defineComponent({
 				delete typedValue[chipValue]
 				filter.value = typedValue
 			}
+			this.updateValue();
 		},
 
 		resetFilter(filter: FilterItem): void {
 			filter.value = undefined
+			this.updateValue();
 		},
 
 		resetAllFilters(): void {
