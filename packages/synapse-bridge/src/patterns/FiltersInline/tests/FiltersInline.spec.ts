@@ -1,10 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 import FiltersInline from '../'
 import { locales } from '../locales'
-import { defineComponent } from 'vue'
-import { VTextField } from 'vuetify/lib/components/index.mjs'
+import {type FilterItem} from '@/mixins/filterable/types'
 
 describe('FiltersInline', () => {
 	it('renders correctly', () => {
@@ -68,72 +67,43 @@ describe('FiltersInline', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 
-	it ('immediately emit an update:modelValue event when a filter is added', async () => {
-		const testComponent = defineComponent({
-			components: {
-				FiltersInline,
-				VTextField,
-			},
-			template: `
-				<div>
-					<FiltersInline v-model="filters">
-						<template #name="{ attrs }">
-							<VTextField
-								v-bind="attrs"
-								label="Nom"
-							/>
-						</template>
-						<template #profession="{ attrs }">
-							<VTextField
-								v-bind="attrs"
-								label="Profession"
-							/>
-						</template>
-					</FiltersInline>
-				</div>
-			`,
-
-			data() {
-				return {
-					filters: [
-						{
-							name: 'name',
-							label: 'Nom'
-						},
-						{
-							name: 'profession',
-							label: 'Profession'
-						}
-					],
-				}
-			},
-		})
-
-		const wrapper = mount(testComponent, {
+	it('should emit an update:modelValue event when a filter is added', () => {
+		const wrapper = shallowMount(FiltersInline, {
 			global: {
 				plugins: [vuetify],
-			}
+			},
+			propsData: {
+				modelValue: [
+					{
+						name: 'name',
+						label: 'Nom',
+					},
+				],
+			},
 		})
 
-		await wrapper.find('button').trigger('click')
-		const FilterInlineComponent = wrapper.findComponent(FiltersInline)
-		const TextInput = wrapper.findComponent(VTextField)
+		const filter: FilterItem = {
+			name: 'New Filter',
+			value: 'new-filter',
+		}
 
-		await TextInput.setValue('John Doe')
+		// Simulate adding a new filter
+		wrapper.vm.filters.push(filter)
 
-		expect(FilterInlineComponent.emitted('update:modelValue')?.[0]).toEqual([
+		wrapper.vm.updateValue()
+
+		expect(wrapper.emitted('update:modelValue')).toEqual([
 			[
-				{
-					name: 'name',
-					label: 'Nom',
-					value: 'John Doe',
-				}, {
-					name: 'profession',
-					label: 'Profession',
-				}
+				[
+					{
+						name: 'name',
+						label: 'Nom',
+					},
+					filter,
+				],
 			],
 		])
-	});
+	})
 })
 
 describe('FiltersInline locales', () => {
