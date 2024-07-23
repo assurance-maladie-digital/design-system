@@ -11,7 +11,7 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3534](https://github.com/assurance-maladie-digital/design-system/pull/3534))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3634](https://github.com/assurance-maladie-digital/design-system/pull/3634))
   - Mise à jour de la liste des composants disponibles dans la version Bridge ([#3633](https://github.com/assurance-maladie-digital/design-system/pull/3633))
 
 ## v2.16.6
