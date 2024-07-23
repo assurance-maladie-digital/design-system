@@ -261,7 +261,8 @@ export const drawerItems: DrawerItem[] = [
 					},
 					{
 						title: 'FilterModule',
-						to: '/composants/filtres/filter-module'
+						to: '/composants/filtres/filter-module',
+						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -384,15 +385,18 @@ export const drawerItems: DrawerItem[] = [
 				items: [
 					{
 						title: 'FormBuilder',
-						to: '/composants-techniques/formulaires/form-builder'
+						to: '/composants-techniques/formulaires/form-builder',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FormField',
-						to: '/composants-techniques/formulaires/form-field'
+						to: '/composants-techniques/formulaires/form-field',
+						appendIcon: mdiBridge
 					},
 					{
 						title: 'FormFieldList',
-						to: '/composants-techniques/formulaires/form-field-list'
+						to: '/composants-techniques/formulaires/form-field-list',
+						appendIcon: mdiBridge
 					}
 				]
 			},
