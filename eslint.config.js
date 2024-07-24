@@ -29,9 +29,6 @@ export default antfu({
 		'style/indent': 'off',
 		'style/quotes': ['error', 'single'],
 		'style/no-tabs': 'off',
-		'vuejs-accessibility/no-aria-hidden-on-focusable':'error',
-		'vuejs-accessibility/no-onchange': 'error',
-		'vuejs-accessibility/no-role-presentation-on-focusable': 'error',
 	},
 }, {
 	ignores: ['public/**/*'],
