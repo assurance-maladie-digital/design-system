@@ -29,10 +29,6 @@ export default antfu({
 		'style/indent': 'off',
 		'style/quotes': ['error', 'single'],
 		'style/no-tabs': 'off',
-		// regles de l'extension vuejs-accessibility non comprises dans la version recommanded
-		'vuejs-accessibility/no-aria-hidden-on-focusable':'error',
-		'vuejs-accessibility/no-onchange': 'error',
-		'vuejs-accessibility/no-role-presentation-on-focusable': 'error',
 	},
 }, {
 	// ignore les fichiers dans public
