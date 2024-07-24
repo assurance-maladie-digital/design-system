@@ -7,7 +7,7 @@ Les librairies du Design System sont publiées en suivant la [gestion sémantiqu
 
 ## Version Bridge
 
-Le changelog de la librairie Bridge est disponible <a href="https://github.com/assurance-maladie-digital/design-system/blob/v2-bridge/packages/synapse-bridge/CHANGELOG.md" target="_blank">ici</a>.
+Les notes de version de la librairie Bridge sont disponibles <a href="https://github.com/assurance-maladie-digital/design-system/blob/v2-bridge/packages/synapse-bridge/CHANGELOG.md" target="_blank">ici</a>.
 
 ## Version 2.x
 
