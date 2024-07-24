@@ -1,9 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 import FiltersInline from '../'
 import { locales } from '../locales'
 import {type FilterItem} from '@/mixins/filterable/types'
+import { VTextField } from 'vuetify/lib/components/index.mjs'
+import { defineComponent } from 'vue'
 
 describe('FiltersInline', () => {
 	it('renders correctly', () => {
@@ -104,6 +106,74 @@ describe('FiltersInline', () => {
 			],
 		])
 	})
+
+	it ('immediately emit an update:modelValue event when a filter is added', async () => {
+		const testComponent = defineComponent({
+			components: {
+				FiltersInline,
+				VTextField,
+			},
+			template: `
+				<FiltersInline v-model="filters">
+					<template #name="{ attrs }">
+						<VTextField
+							v-bind="attrs"
+							label="Nom"
+						/>
+					</template>
+					<template #profession="{ attrs }">
+						<VTextField
+							v-bind="attrs"
+							label="Profession"
+						/>
+					</template>
+				</FiltersInline>
+			`,
+
+			data() {
+				return {
+					filters: [
+						{
+							name: 'name',
+							label: 'Nom'
+						},
+						{
+							name: 'profession',
+							label: 'Profession'
+						}
+					],
+				}
+			},
+		})
+
+		const wrapper = mount(testComponent, {
+			global: {
+				plugins: [vuetify],
+				stubs: {
+					VMenu: { template: '<div class="vmenu"><slot></slot></div>' },
+					SlideYTransition: { template: '<div class="slide-y-transition"><slot></slot></div>'}
+				},
+			}
+		})
+
+		const FilterInlineComponent = wrapper.findComponent(FiltersInline)
+		const TextInput = wrapper.findComponent(VTextField)
+
+		await TextInput.setValue('John Doe')
+
+		expect(FilterInlineComponent.emitted('update:modelValue')?.[0]).toEqual([
+			[
+				{
+					name: 'name',
+					label: 'Nom',
+					value: 'John Doe',
+				}, {
+					name: 'profession',
+					label: 'Profession',
+				}
+			],
+		])
+	});
 })
 
 describe('FiltersInline locales', () => {
