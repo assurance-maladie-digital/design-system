@@ -11,7 +11,7 @@
 					class="order-last order-sm-first text-center text-sm-left"
 				>
 					<div
-						class="vd-code font-weight-thin primary--text mb-4"
+						class="vd-code primary--text mb-4"
 					>
 						<span class="d-sr-only">{{ codeErrorText }}</span>
 						{{ code }}
@@ -122,5 +122,6 @@
 	.vd-code {
 		font-size: 6rem;
 		line-height: 6rem;
+		font-weight: 200;
 	}
 </style>
