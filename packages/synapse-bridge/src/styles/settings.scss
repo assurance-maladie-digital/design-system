@@ -271,3 +271,8 @@ a {
 		padding-top: calc(var(--v-field-input-padding-top) - 15px);
 	}
 }
+
+.v-tooltip > .v-overlay__content {
+	background: rgba(0, 0, 0, 0.54) !important;
+}
+
