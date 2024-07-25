@@ -669,123 +669,125 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@cnamts/design-tokens/dist/tokens';
 
-//surcharge du style du composant VueDatePicker
-:deep(.dp__button) {
-	display: none !important;
-}
+.vd-date-picker {
+	//surcharge du style du composant VueDatePicker
+	:deep(.dp__button) {
+		display: none !important;
+	}
 
-:deep(.v-input__prepend > .v-icon) {
-	opacity: 1;
-}
+	:deep(.v-input__prepend > .v-icon) {
+		opacity: 1;
+	}
 
-.week-ends {
-	background-color: #b3b4b5;
-	border-radius: 57%;
-	width: 39px;
-	height: 25px;
-	display: inline-block;
-	padding-bottom: 1px;
-}
+	.week-ends {
+		background-color: #b3b4b5;
+		border-radius: 57%;
+		width: 39px;
+		height: 25px;
+		display: inline-block;
+		padding-bottom: 1px;
+	}
 
-:deep(.dp__today) {
-	border: 1px solid #2eb5e4 !important;
-	color: #2eb5e4;
-	border-radius: 50%;
-}
+	:deep(.dp__today) {
+		border: 1px solid #2eb5e4 !important;
+		color: #2eb5e4;
+		border-radius: 50%;
+	}
 
-:deep(.dp__active_date) {
-	background: #2eb5e4;
-	color: var(--dp-primary-text-color);
-	border-radius: 50%;
-}
+	:deep(.dp__active_date) {
+		background: #2eb5e4;
+		color: var(--dp-primary-text-color);
+		border-radius: 50%;
+	}
 
-:deep(.dp__date_hover:hover) {
-	border-radius: 50%;
-}
+	:deep(.dp__date_hover:hover) {
+		border-radius: 50%;
+	}
 
-:deep(.v-field__input) {
-	min-height: 0;
-}
+	:deep(.v-field__input) {
+		min-height: 0;
+	}
 
-:deep(.v-input__details) {
-	padding-top: 0;
-}
+	:deep(.v-input__details) {
+		padding-top: 0;
+	}
 
-:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-	height: calc(100% - 1px) !important;
-}
+	:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
+		height: calc(100% - 1px) !important;
+	}
 
-:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
-:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
-	height: calc(100% - 2px) !important;
-}
+	:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
+	:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
+		height: calc(100% - 2px) !important;
+	}
 
-:deep(.dp__clear_icon) {
-	top: 35%;
-	right: 4%;
-	border-radius: 50%;
-	height: 20px;
-	min-width: 16px;
-}
+	:deep(.dp__clear_icon) {
+		top: 35%;
+		right: 4%;
+		border-radius: 50%;
+		height: 20px;
+		min-width: 16px;
+	}
 
-:deep(.vd-append-icon ~ .dp__clear_icon) {
-	right: 35px;
-}
+	:deep(.vd-append-icon ~ .dp__clear_icon) {
+		right: 35px;
+	}
 
-:deep(.v-icon) {
-	color: rgba(0,0,0,.54) !important;
-}
-
-.v-text-field .v-field__clearable .v-icon {
-	color: rgba(0,0,0,.54) !important;
-	opacity: 1 !important;
-}
-
-.v-text-field .v-field--focused .v-field__clearable .v-icon {
-	color: $vd-primary !important;
-}
-
-.warning-style {
 	:deep(.v-icon) {
-		color: #f0b323 !important;
+		color: rgba(0, 0, 0, .54) !important;
 	}
 
-	:deep(.v-label) {
-		color: #f0b323 !important;
+	.v-text-field .v-field__clearable .v-icon {
+		color: rgba(0, 0, 0, .54) !important;
+		opacity: 1 !important;
 	}
 
-	:deep(.v-messages) {
-		color: #f0b323 !important;
+	.v-text-field .v-field--focused .v-field__clearable .v-icon {
+		color: $vd-primary !important;
 	}
 
-	:deep(.v-text-field) {
-		border-color: #f0b323 !important;
+	.warning-style {
+		:deep(.v-icon) {
+			color: #f0b323 !important;
+		}
+
+		:deep(.v-label) {
+			color: #f0b323 !important;
+		}
+
+		:deep(.v-messages) {
+			color: #f0b323 !important;
+		}
+
+		:deep(.v-text-field) {
+			border-color: #f0b323 !important;
+		}
+
+		:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
+			color: #f0b323;
+		}
 	}
 
-	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #f0b323;
-	}
-}
+	.error-style {
+		:deep(.v-icon) {
+			color: #b33f2e !important;
+		}
 
-.error-style {
-	:deep(.v-icon) {
-		color: #b33f2e !important;
-	}
+		:deep(.v-label) {
+			color: #b33f2e !important;
+		}
 
-	:deep(.v-label) {
-		color: #b33f2e !important;
-	}
+		:deep(.v-messages) {
+			color: #b33f2e !important;
+		}
 
-	:deep(.v-messages) {
-		color: #b33f2e !important;
-	}
+		:deep(.v-text-field) {
+			border-color: #b33f2e !important;
+		}
 
-	:deep(.v-text-field) {
-		border-color: #b33f2e !important;
-	}
-
-	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #b33f2e !important;
+		:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
+			color: #b33f2e !important;
+		}
 	}
 }
 </style>
