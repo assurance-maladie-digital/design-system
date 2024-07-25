@@ -715,10 +715,8 @@ export default defineComponent({
 	height: calc(100% - 1px) !important;
 }
 
-:deep(
-	.v-field--variant-outlined.v-field--focused,
-	.v-field__outline__notch::after
-) {
+:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
+:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
 	height: calc(100% - 2px) !important;
 }
 
@@ -736,6 +734,11 @@ export default defineComponent({
 
 :deep(.v-icon) {
 	color: rgba(0,0,0,.54) !important;
+}
+
+.v-text-field .v-field__clearable .v-icon {
+	color: rgba(0,0,0,.54) !important;
+	opacity: 1 !important;
 }
 
 .warning-style {
