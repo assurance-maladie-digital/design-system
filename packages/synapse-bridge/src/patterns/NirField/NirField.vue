@@ -358,7 +358,6 @@ export default defineComponent({
 	width: 84px;
 }
 
-// Don't allow resize for these elements
 .vd-nir-field :deep(.v-input__append-inner),
 .vd-tooltip-icon {
 	flex: none;
