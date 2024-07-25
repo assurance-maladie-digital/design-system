@@ -75,7 +75,7 @@ export default defineComponent({
 					cols="12"
 					class="order-last order-sm-first text-center text-sm-left"
 				>
-					<div class="vd-code font-weight-thin text-primary mb-4">
+					<div class="vd-code text-primary mb-4">
 						<span class="d-sr-only">{{ codeErrorText }}</span>
 						{{ code }}
 					</div>
@@ -121,5 +121,6 @@ export default defineComponent({
 .vd-code {
 	font-size: 6rem;
 	line-height: 6rem;
+	font-weight: 200;
 }
 </style>
