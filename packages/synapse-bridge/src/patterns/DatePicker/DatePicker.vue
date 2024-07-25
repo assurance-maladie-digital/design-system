@@ -741,6 +741,10 @@ export default defineComponent({
 	opacity: 1 !important;
 }
 
+.v-text-field .v-field--focused .v-field__clearable .v-icon {
+	color: $vd-primary !important;
+}
+
 .warning-style {
 	:deep(.v-icon) {
 		color: #f0b323 !important;
