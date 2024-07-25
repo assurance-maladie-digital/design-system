@@ -69,8 +69,10 @@ export default defineComponent({
 					:attrs="{
 						modelValue: filter.value,
 						'onUpdate:modelValue': (value: ChipItem) => {
-							filter.value = value
-							updateValue()
+							if (value !== filter.value) {
+								filter.value = value
+								updateValue()
+							}
 						}
 					}"
 					:name="`${formatFilterName(filter.name)}`"

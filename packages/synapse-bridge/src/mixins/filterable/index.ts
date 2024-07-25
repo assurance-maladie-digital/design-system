@@ -48,7 +48,7 @@ export const Filterable = defineComponent({
 
 			const isString = typeof value === 'string'
 			const isNumber = typeof value === 'number'
-			const isObject = typeof value === 'object'
+			const isObject = typeof value === 'object' && value !== null
 			const isArray = Array.isArray(value)
 
 			if (isString || isNumber) {
@@ -120,7 +120,7 @@ export const Filterable = defineComponent({
 			const value = filter.value
 			const isString = typeof value === 'string'
 			const isNumber = typeof value === 'number'
-			const isObject = typeof value === 'object'
+			const isObject = typeof value === 'object' && value !== null
 			const isArray = Array.isArray(value)
 
 			if (isString || isNumber) {
