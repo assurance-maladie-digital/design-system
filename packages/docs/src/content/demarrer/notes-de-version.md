@@ -9,7 +9,7 @@ Les librairies du Design System sont publiées en suivant la [gestion sémantiqu
 
 Les notes de version de la librairie Bridge sont disponibles <a href="https://github.com/assurance-maladie-digital/design-system/blob/v2-bridge/packages/synapse-bridge/CHANGELOG.md" target="_blank">ici</a>.
 
-## Version 2.x
+## Version Vue Dot
 
 <doc-release-notes class="mt-2 mt-mb-4 mb-4"></doc-release-notes>
 
