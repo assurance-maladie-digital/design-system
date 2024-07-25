@@ -15,8 +15,8 @@ import { downloadFile } from '@/functions/downloadFile'
 
 import { customizable, Options } from '@/mixins/customizable'
 
-import { StateEnum } from '@/constants/enums/StateEnum'
-import { IndexedObject } from '@/types'
+import { StateEnum } from '../../constants/enums/StateEnum'
+import { IndexedObject } from '../../types'
 import { ContentHeadersEnum } from './ContentHeadersEnum'
 import { FileInfo } from './types'
 

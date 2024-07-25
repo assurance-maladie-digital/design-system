@@ -8,7 +8,7 @@ import {
 	filePromiseNoHeaders,
 } from './data/filePromise.ts'
 import DownloadBtn from '../'
-import { StateEnum } from '@/constants/enums/StateEnum.ts'
+import { StateEnum } from '../../../constants/enums/StateEnum.ts'
 
 describe('DownloadBtn', () => {
 	let wrapper: any
