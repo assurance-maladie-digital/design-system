@@ -124,6 +124,10 @@ export default defineComponent({
 	display: none !important;
 }
 
+:deep(.v-input__prepend > .v-icon) {
+	opacity: 1;
+}
+
 .week-ends {
 	background-color: #b3b4b5;
 	border-radius: 57%;
@@ -158,14 +162,12 @@ export default defineComponent({
 }
 
 :deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-	height: calc(100% - 1px);
+	height: calc(100% - 1px) !important;
 }
 
-:deep(
-		.v-field--variant-outlined.v-field--focused
-			.v-field__outline__notch::after
-	) {
-	height: calc(100% - 2px);
+:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
+:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
+	height: calc(100% - 2px) !important;
 }
 
 :deep(.dp__clear_icon) {
@@ -177,11 +179,11 @@ export default defineComponent({
 }
 
 :deep(.vd-append-icon ~ .dp__clear_icon) {
-	right: 35px !important;
+	right: 35px;
 }
 
-:deep(.v-input__prepend > .v-icon) {
-	opacity: 1 !important;
+:deep(.v-icon) {
+	color: rgba(0,0,0,.54) !important;
 }
 
 .warning-style {
@@ -224,7 +226,7 @@ export default defineComponent({
 	}
 
 	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #b33f2e;
+		color: #b33f2e !important;
 	}
 }
 </style>
