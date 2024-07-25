@@ -7,7 +7,7 @@ hideTitle: true
 
 <doc-alert-bridge>
 
-Une version de la librairie compatible avec vue3 est disponible sous le nom Bridge.<br/>Elle comprend tous les composants et templates indiqués par un icône pont.<br/>Elle est configurée en options API et est disponible sur deux starter kits (SK). Le SK Bridge est à destination de la migration (plugins Axios, Vuex et tests Jest liés aux stacks v2) et le SK V3 est à destination des nouveaux produits (plugins FetchAPI, Pinia et tests Vitest).<br/>Vous trouverez un guide de migration <a href="/migration-bridge">ici</a>.
+Une version de la librairie compatible avec vue3 est disponible sous le nom <a href="https://www.npmjs.com/package/@cnamts/synapse-bridge" target="_blank">Bridge</a>.<br/>Elle comprend tous les composants et templates indiqués par un icône pont.<br/>Elle est configurée en options API et est disponible sur deux starter kits (SK). Le SK Bridge est à destination de la migration (plugins Axios, Vuex et tests Jest liés aux stacks v2) et le SK V3 est à destination des nouveaux produits (plugins FetchAPI, Pinia et tests Vitest).<br/>Vous trouverez un guide de migration <a href="/migration-bridge">ici</a>.
 
 </doc-alert-bridge>
 
