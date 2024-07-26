@@ -31,8 +31,6 @@
 		"./templates/*": "./src/templates/*/index.ts",
 		"./patterns/*": "./src/patterns/*/index.ts",
 		"./elements/*": "./src/elements/*/index.ts"
-
-
 	},
 	"types": "./dist/index.d.ts",
 	"scripts": {
