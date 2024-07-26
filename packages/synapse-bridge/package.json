@@ -23,7 +23,7 @@
 		"./constants/*": "./src/constants/*/index.ts",
 		"./constants/enums/StateEnum": "./src/constants/enums/StateEnum.ts",
 		"./constants/enums/ThemeEnum": "./src/constants/enums/ThemeEnum.ts",
-		"./templates/CookiesPage/CookiesInformation/TypeEnum.ts": "./src/templates/CookiesPage/CookiesInformation/TypeEnum.ts",
+		"./templates/CookiesPage/CookiesInformation/TypeEnum": "./src/templates/CookiesPage/CookiesInformation/TypeEnum.ts",
 		"./functions/*": "./src/functions/*/index.ts",
 		"./modules/*": "./src/modules/*/index.ts",
 		"./helpers/*": "./src/helpers/*/index.ts",
