@@ -92,12 +92,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .vd-password {
-	.v-btn--icon {
-		color: rgba(0, 0, 0, 0.54);
-	}
 	.v-btn--icon.v-btn--density-default {
 		width: var(--v-btn-height);
 		height: var(--v-btn-height);
+	}
+	:deep(.v-field.v-field--variant-underlined .v-field__append-inner) {
+		padding-top: 0;
+		padding-bottom: 0;
+		display: flex;
+		align-items: center;
+	}
+	:deep(.v-field.v-field--variant-underlined .v-field__input) {
+		padding-top: calc(var(--v-field-input-padding-top) - 15px);
 	}
 }
 </style>
