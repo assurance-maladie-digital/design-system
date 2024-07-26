@@ -46,18 +46,18 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@use '@cnamts/design-tokens/dist/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
 li {
 	list-style: none;
 }
 
 .vd-social-media-links-label.text--primary {
-	color: tokens.$vd-primary;
+	color: $vd-primary;
 }
 
 .vd-social-media-links-icon {
-	color: tokens.$vd-grey-base;
+	color: $vd-grey-base;
 }
 
 .v-btn--icon {

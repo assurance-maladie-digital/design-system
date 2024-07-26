@@ -168,7 +168,7 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@use '@cnamts/design-tokens/dist/tokens';
+@import '@cnamts/design-tokens/dist/tokens';
 
 .vd-sub-header {
 	overflow-x: auto;

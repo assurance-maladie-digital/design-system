@@ -99,6 +99,13 @@ export default defineConfig(({ mode }) => {
 				},
 			},
 		},
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@import "./src/styles/settings.scss";`,
+				},
+			},
+		},
 	}
 
 	if (mode === 'development') {
