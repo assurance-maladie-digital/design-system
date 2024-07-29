@@ -1,3 +1,12 @@
+#### v1.4.10-alpha.0
+
+- Fix display password [`#3662`](https://github.com/assurance-maladie-digital/design-system/pull/3662)
+- Export cookies enum and constant enum [`#3648`](https://github.com/assurance-maladie-digital/design-system/pull/3648)
+- Fix filtersInline with datePicker [`#3658`](https://github.com/assurance-maladie-digital/design-system/pull/3658)
+- Fix notchs and icons color on datePicker and PeriodField [`#3655`](https://github.com/assurance-maladie-digital/design-system/pull/3655)
+- Set the font-weight of the error code to 200 [`#3653`](https://github.com/assurance-maladie-digital/design-system/pull/3653)
+- Fix tooltip color [`#3647`](https://github.com/assurance-maladie-digital/design-system/pull/3647)
+
 #### v1.4.9-alpha.0
 
 - Fix filterable mixin and FiltersInline component [`#3636`](https://github.com/assurance-maladie-digital/design-system/pull/3636)
