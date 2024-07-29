@@ -252,8 +252,8 @@ export default defineComponent({
 		opacity: 0;
 	}
 
-	&.flex-column .v-btn:not(:last-child) {
-		border-inline-end: 1px solid;
+	&.flex-column .v-btn {
+		border: 1px solid;
 	}
 }
 </style>

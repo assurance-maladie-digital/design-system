@@ -297,6 +297,9 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+:deep(.v-btn) {
+	text-transform: uppercase !important;
+}
 .v-layout {
 	display: contents !important;
 }

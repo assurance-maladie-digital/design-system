@@ -263,3 +263,17 @@ a {
 	background: rgba(0, 0, 0, 0.54) !important;
 }
 
+// Btn : lowercase text-transform and padding
+
+.v-btn {
+	text-transform: none !important;
+	padding: 0 0.5rem;
+	font-weight: 600 !important;
+	letter-spacing: .005em !important;
+}
+
+.v-btn--size-default {
+	--v-btn-size: 1rem !important;
+	padding: 0 16px !important;
+}
+
