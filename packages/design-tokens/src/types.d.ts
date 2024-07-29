@@ -11,10 +11,16 @@ export interface Theme {
 	error: string;
 	success: string;
 	risquePro: string;
+	brand?: string;
+	brandSecondary?: string;
+	brandMuted?: string;
+	brandMutedLite?: string;
+	hilitePrimary?: string;
+	hiliteSecondary?: string;
 }
 
 export interface VuetifyTheme extends Theme {
-	[key: string]: string;
+	[key: string]: string | undefined;
 }
 
 export interface Color {

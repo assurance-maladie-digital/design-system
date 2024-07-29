@@ -181,7 +181,13 @@ export const bootstrapTheme: VuetifyTheme = {
 	warning: paletteBootstrap.yellow.lighten90,
 	risquePro: palette.brick.base,
 	light: palette.grey.lighten60,
-	dark: palette.grey.darken80
+	dark: palette.grey.darken80,
+	brand: '#4a3f59',
+	brandSecondary: '#ac1c81',
+	brandMuted: '#b7cbd6',
+	brandMutedLite: '#E7F3F9',
+	hilitePrimary: '#0062ac',
+	hiliteSecondary: '#e6bebf'
 };
 export const colorClasses: IndexedObject = {};
 const palettes = { ...palette };
