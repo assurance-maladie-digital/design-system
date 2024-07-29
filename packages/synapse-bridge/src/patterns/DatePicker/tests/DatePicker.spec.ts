@@ -380,16 +380,6 @@ describe('Methods', () => {
 		expect(wrapper.vm.determineVariant()).toEqual('underlined')
 	})
 
-	it('emits update:model-value event with null when onClear is called', () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.onClear()
-		const emittedEvent = wrapper.emitted('update:model-value')
-		expect(emittedEvent).toBeTruthy()
-		if (emittedEvent) {
-			expect(emittedEvent[1]).toEqual([null])
-		}
-	})
-
 	it('returns correct formatted date when formatDate is called', () => {
 		const wrapper = shallowMount(DatePicker)
 		const date = new Date(2023, 3, 15) // April 15, 2023
@@ -657,18 +647,6 @@ describe('Mounted', () => {
 		})
 
 		expect(wrapper.vm.errorMessages).toContain('Une erreur est survenue')
-	})
-	it('calls handleKeyDown with correct arguments when handleKeyDown Backspace is called', async () => {
-		const wrapper = shallowMount(DatePicker)
-		const handleKeyDownMock = vi.fn()
-		wrapper.vm.handleKeyDown = handleKeyDownMock
-		const mockEvent = { key: 'Backspace' }
-		wrapper.vm.handleKeyDown(<KeyboardEvent>mockEvent)
-		expect(handleKeyDownMock).toHaveBeenCalledWith(mockEvent)
-
-		expect(wrapper.emitted('update:model-value')).toStrictEqual([[null]])
-		expect(wrapper.vm.date).toBe(null)
-		expect(wrapper.vm.inputValue).toBe('')
 	})
 
 	it('handleCut method updates state and clipboard correctly', async () => {

@@ -212,9 +212,6 @@ export default defineComponent({
 			if (newVal) {
 				this.lastTypeAddedDate = 'date'
 				this.$emit('change', newVal)
-				if (newVal.length === 10) {
-					this.validate(newVal)
-				}
 				if (typeof newVal === 'string' && newVal.length === 10) {
 					this.$emit('update:model-value', this.formatDate(newVal))
 				}
@@ -239,6 +236,7 @@ export default defineComponent({
 				)
 				if (newVal.length === 10) {
 					this.validate(newVal)
+					this.inputValue = newVal
 				}
 			} else if (
 				typeof newVal === 'string' &&
@@ -296,6 +294,7 @@ export default defineComponent({
 		if (typeof this.modelValue === 'string') {
 			const [day, month, year] = this.modelValue.split(/[-/]/)
 			this.date = new Date(Number(year), Number(month) - 1, Number(day))
+			this.inputValue = this.modelValue
 		}
 	},
 	methods: {
@@ -475,6 +474,7 @@ export default defineComponent({
 		},
 
 		stopInput() {
+			console.log(this.indexedThis.inputValue)
 			this.indexedThis.inputValue = this.indexedThis.inputValue.slice(
 				0,
 				10
@@ -526,17 +526,10 @@ export default defineComponent({
 				? 'underlined'
 				: 'outlined'
 		},
-		onClear() {
+		onClearInput() {
 			this.date = null
 			this.inputValue = ''
 			this.$emit('update:model-value', null)
-		},
-		handleKeyDown(event: KeyboardEvent) {
-			if (event.key === 'Backspace' || event.key === 'Delete') {
-				this.inputValue = ''
-				this.date = null
-				this.$emit('update:model-value', null)
-			}
 		},
 		async handleCut(event?: ClipboardEvent) {
 			if (event && event.clipboardData) {
@@ -567,6 +560,7 @@ export default defineComponent({
 </script>
 
 <template>
+	Date: {{ date }} - inputValue: {{ inputValue }}
 	<div class="vd-date-picker">
 		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
@@ -596,7 +590,7 @@ export default defineComponent({
 					{{ date.getDate() }}
 				</div>
 			</template>
-			<template #dp-input="{onClear}">
+			<template #dp-input="{}">
 				<VTextField
 					:model-value="date"
 					v-bind="textFieldOptions"
@@ -626,8 +620,6 @@ export default defineComponent({
 					"
 					:variant="getVariant"
 					@blur="emitUpdateEvent"
-					@keydown="handleKeyDown"
-					@click:clear="onClear"
 					@paste="handlePaste"
 					@cut="handleCut"
 				>
@@ -653,7 +645,7 @@ export default defineComponent({
 
 					<template v-slot:clear v-if="clearable" >
 						<VIcon
-							@click='onClear'
+							@click='onClearInput'
 							tabindex="-1"
 							aria-hidden="true"
 						>
