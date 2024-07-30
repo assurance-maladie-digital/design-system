@@ -474,7 +474,6 @@ export default defineComponent({
 		},
 
 		stopInput() {
-			console.log(this.indexedThis.inputValue)
 			this.indexedThis.inputValue = this.indexedThis.inputValue.slice(
 				0,
 				10
@@ -560,7 +559,6 @@ export default defineComponent({
 </script>
 
 <template>
-	Date: {{ date }} - inputValue: {{ inputValue }}
 	<div class="vd-date-picker">
 		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
