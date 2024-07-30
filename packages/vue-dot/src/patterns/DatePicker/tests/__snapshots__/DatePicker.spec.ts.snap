@@ -12,7 +12,13 @@ exports[`DatePicker renders correctly 1`] = `
       <div class="v-text-field__details">
         <div class="v-messages theme--light">
           <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
-            <div class="v-messages__message">Format JJ/MM/AAAA</div>
+            <div class="v-messages__message">
+              <!---->
+              <!---->
+              <div class="messages">
+                Format JJ/MM/AAAA
+              </div>
+            </div>
           </transition-group-stub>
         </div>
       </div>

@@ -25,6 +25,17 @@
 				@change="dateFormatted = $event"
 				v-on="listeners"
 			>
+				<template #message>
+					<div v-if="successMessages.length">
+						{{ successMessages[0] }}
+					</div>
+					<div v-if="errorMessages">
+						{{ errorMessages[0] }}
+					</div>
+					<div class="messages">
+						{{ textFieldOptions.hint }}
+					</div>
+				</template>
 				<template #prepend>
 					<VBtn
 						v-show="showPrependIcon"
@@ -286,5 +297,9 @@
 	// @see https://github.com/assurance-maladie-digital/design-system/issues/907
 	.vd-no-prepend-icon :deep() .v-input__prepend-outer {
 		margin: 0 !important;
+	}
+	.messages {
+		color: rgba(0, 0, 0, 0.6);
+		margin-top: 5px;
 	}
 </style>
