@@ -56,7 +56,7 @@ Vous pouvez modifier le style des boutons en utilisant les classes générées �
 
 ### Utilisation avec VueJs 3 et la librairie Bridge.
 
-Dans la version bridge, la prop value a été remplacée par modelValue. L'événement update a été remplacé par update:modelValue. Dans le slot, les événements auparavant passés via la variable on sont maintenant intégrés dans la variable attrs.
+Dans la version bridge, la prop value a été remplacée par modelValue. L'événement update a été remplacé par update:modelValue. Dans les slots, les événements auparavant passés via la variable on sont maintenant intégrés dans la variable attrs.
 
 ```vue
 <template>
