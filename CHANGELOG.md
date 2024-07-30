@@ -1,3 +1,17 @@
+## v2.16.8
+
+**Version publiée le 30/07/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DatePicker:** Amélioration de l'accessibilité du composant (hint) ([#3671](https://github.com/assurance-maladie-digital/design-system/pull/3671))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3674](https://github.com/assurance-maladie-digital/design-system/pull/3674))
+
 ## v2.16.7
 
 **Version publiée le 23/07/2024.**
