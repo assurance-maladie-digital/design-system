@@ -124,7 +124,7 @@ export default defineComponent({
 				</span>
 
 				<span
-					class="vd-file-upload-btn bg-primary text-white text-uppercase py-2 px-4 elevation-2"
+					class="vd-file-upload-btn bg-primary text-white py-2 px-4 elevation-2"
 				>
 					<slot name="button-text">
 						{{ locales.chooseFile }}
@@ -190,6 +190,7 @@ export default defineComponent({
 .vd-file-upload-btn {
 	border-radius: 4px;
 	transition: background 0.25s;
+	font-weight: 600 !important;
 }
 input[disabled] ~ .vd-file-upload-placeholder {
 	opacity: 0.2;

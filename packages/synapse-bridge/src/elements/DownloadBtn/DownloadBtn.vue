@@ -112,6 +112,7 @@ export default defineComponent({
 	<VBtn
 		v-bind="btnOptions"
 		:loading="state === StateEnum.PENDING"
+		:class="btnOptions.variant === 'outlined' ? 'outlined-style' : ''"
 		class="vd-download-btn"
 		data-testid="download-btn"
 		@click="download"
@@ -134,5 +135,9 @@ export default defineComponent({
 	.v-icon {
 		flex: none;
 	}
+}
+
+.outlined-style {
+	border: 1px solid currentColor;
 }
 </style>

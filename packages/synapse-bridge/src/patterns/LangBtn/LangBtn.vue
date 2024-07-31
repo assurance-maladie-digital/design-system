@@ -117,6 +117,7 @@ export default defineComponent({
 					...props,
 					...options.btn,
 				}"
+				:class="options.btn.variant === 'outlined' ? 'outlined-style' : ''"
 				id="lang-menu-btn"
 			>
 				<span :class="currentLangClass">
@@ -157,5 +158,9 @@ export default defineComponent({
 		width: 100%;
 		height: 100%;
 	}
+}
+
+.outlined-style {
+	border: 1px solid currentColor;
 }
 </style>
