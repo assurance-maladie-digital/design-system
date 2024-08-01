@@ -28,6 +28,7 @@ interface DatePickerData {
 	calendarIcon: string
 	closeIcon: string
 	errorMessages: string[] | any
+	warningErrorMessages: string[] | any
 	birthdateFlow: DatePickerFlow
 	isCalOpen: boolean
 	lastTypeAddedDate: string
@@ -134,6 +135,7 @@ export default defineComponent({
 			calendarIcon: mdiCalendar,
 			closeIcon: mdiCloseCircle,
 			errorMessages: [] as string[],
+			warningErrorMessages: [] as string[],
 			birthdateFlow: ['year', 'month', 'calendar'],
 			isCalOpen: false,
 			lastTypeAddedDate: '',
@@ -166,9 +168,7 @@ export default defineComponent({
 
 		hasError() {
 			return (
-				this.errorMessages.includes(
-					"La date saisie n'est pas valide"
-				) ||
+				this.errorMessages.includes("La date saisie n'est pas valide") ||
 				this.errorMessages.includes('Une erreur est survenue') ||
 				this.errorMessages.includes(this.customErrorMessages)
 			)
@@ -481,18 +481,14 @@ export default defineComponent({
 		},
 
 		validate(value: any) {
-			const allRules = [
-				...(this.warningRules || []),
-				...(this.rules || []),
-			]
-			const ruleErrors = allRules
-				.map((rule: any) => rule(value))
-				.filter((result) => result !== true)
-			this.errorMessages = ruleErrors.length > 0 ? ruleErrors : []
-			// Check if the error prop is true
+			const applyRules = (rules: any[]) =>
+				rules.map(rule => rule(value)).filter(result => result !== true);
+
+			this.errorMessages = applyRules(this.rules || []);
+			this.warningErrorMessages = applyRules(this.warningRules || []);
+
 			if (this.error) {
-				// If it is, add an error message
-				this.errorMessages.push('Une erreur est survenue')
+				this.errorMessages.push('Une erreur est survenue');
 			}
 		},
 		buildTextFieldClasses() {
@@ -598,14 +594,14 @@ export default defineComponent({
 					:class="[
 						textFieldClasses,
 						{
-							'warning-style': errorMessages.length > 0,
+							'warning-style': warningErrorMessages.length > 0,
 							'error-style': hasError,
 							range: range,
 						},
 					]"
 					:clearable="clearable"
 					:disabled="disabled"
-					:error-messages="errorMessages"
+					:error-messages="[...errorMessages, ...warningErrorMessages]"
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
