@@ -2,7 +2,7 @@ import { notAfterTodayFn } from '@/rules/notAfterToday/index.ts'
 import dayjs from 'dayjs'
 import { defaultErrorMessages } from '@/rules/notAfterToday/locales'
 import { it, describe, expect } from 'vitest'
-import {formatDateToDDMMYYYY} from "@/rules/notBeforeToday";
+import {formatDateToDDMMYYYY} from '../'
 
 const DATE_FORMAT = 'DD/MM/YYYY'
 
