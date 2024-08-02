@@ -9,6 +9,8 @@ import { WarningRules } from '@/mixins/warningRules/index.ts'
 import { ErrorProp } from './mixins/errorProp'
 import { customizable } from '@/mixins/customizable/index.ts'
 import { config } from '@/patterns/DatePicker/config.ts'
+import { ruleMessage } from '../../helpers/ruleMessage'
+
 
 type DatePickerFlow = (
 	| 'calendar'
@@ -18,7 +20,7 @@ type DatePickerFlow = (
 	| 'minutes'
 	| 'hours'
 	| 'seconds'
-)[]
+	)[]
 
 interface DatePickerData {
 	date: Date | null | any[] | string
@@ -33,6 +35,7 @@ interface DatePickerData {
 	isCalOpen: boolean
 	lastTypeAddedDate: string
 	dayNames: string[]
+	isNotValid: boolean
 }
 
 export default defineComponent({
@@ -140,6 +143,7 @@ export default defineComponent({
 			isCalOpen: false,
 			lastTypeAddedDate: '',
 			dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+			isNotValid: false
 		}
 	},
 	computed: {
@@ -161,7 +165,7 @@ export default defineComponent({
 				disabled: this.disabled,
 				hint: this.hint,
 				persistentHint: true,
-				rules: this.rules,
+				rules: [this.validateDateFormat, ...this.rules],
 				errorMessages: errorMessages || [],
 			}
 		},
@@ -170,7 +174,7 @@ export default defineComponent({
 			return (
 				this.errorMessages.includes("La date saisie n'est pas valide") ||
 				this.errorMessages.includes('Une erreur est survenue') ||
-				this.errorMessages.includes(this.customErrorMessages)
+				this.customErrorMessages.some(msg => this.errorMessages.includes(msg))
 			)
 		},
 		textFieldClasses() {
@@ -287,6 +291,10 @@ export default defineComponent({
 			// if (newVal.length === 0) {
 			// 	this.$emit('update:model-value', null);
 			// }
+			if (newVal.length === 0) {
+				this.warningErrorMessages = [];
+				this.errorMessages = [];
+			}
 			this.lastTypeAddedDate = 'inputValue'
 		},
 	},
@@ -409,7 +417,7 @@ export default defineComponent({
 			if (value.data === null) {
 				this.indexedThis[historyKey] = this.indexedThis[
 					historyKey
-				].slice(0, -1)
+					].slice(0, -1)
 				return
 			}
 
@@ -448,17 +456,19 @@ export default defineComponent({
 					const isValidFormat = dateRegEx.test(this.inputValue)
 
 					// If the date format and the date are valid, update the date and emit an update event
-					if (isValidFormat) {
+					if (isValidFormat && dayjs(this.inputValue, this.dateFormat, true).isValid()) {
 						this.date = this.inputValue
+						this.isNotValid = false
 						this.$emit(
 							'update:model-value',
 							this.indexedThis[historyKey]
 						)
 					} else {
+						this.isNotValid = true
 						// If the date format or the date is not valid, add an error message
 						this.errorMessages.push(
 							this.customErrorMessages.length > 0
-								? this.customErrorMessages
+								? this.customErrorMessages[0]
 								: "La date saisie n'est pas valide"
 						)
 					}
@@ -468,6 +478,12 @@ export default defineComponent({
 					this.$emit('input', formattedDateReturn)
 				}
 			}
+		},
+		validateDateFormat(): boolean | string {
+			if (this.isNotValid) {
+				return ruleMessage(this.errorMessages, 'default') || "La date saisie n'est pas valide";
+			}
+			return true;
 		},
 		getInput(value: any) {
 			this.updateInputValue(value, 'inputValue')
@@ -538,13 +554,15 @@ export default defineComponent({
 				this.inputValue = event.clipboardData.getData('text');;
 				const isValidFormat = this.createDateRegEx(this.dateFormat).test(this.inputValue);
 
-				if (isValidFormat) {
+				if (isValidFormat && dayjs(this.inputValue, this.dateFormat, true).isValid()) {
 					this.$emit('update:model-value', this.inputValue);
 					this.date = this.inputValue;
+					this.isNotValid = false
 				} else {
+					this.isNotValid = true
 					this.errorMessages.push(
 						this.customErrorMessages.length > 0
-							? this.customErrorMessages
+							? this.customErrorMessages[0]
 							: "La date saisie n'est pas valide"
 					);
 				}
@@ -605,7 +623,7 @@ export default defineComponent({
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
-					:rules="rules"
+					:rules="[validateDateFormat, ...rules]"
 					:readonly="range"
 					:value="
 						lastTypeAddedDate === 'date'
