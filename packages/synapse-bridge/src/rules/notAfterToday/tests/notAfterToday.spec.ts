@@ -2,7 +2,7 @@ import { notAfterTodayFn } from '@/rules/notAfterToday/index.ts'
 import dayjs from 'dayjs'
 import { defaultErrorMessages } from '@/rules/notAfterToday/locales'
 import { it, describe, expect } from 'vitest'
-import {formatDateToDDMMYYYY} from '../'
+import {formatDateToDDMMYYYYFn} from '../'
 
 const DATE_FORMAT = 'DD/MM/YYYY'
 
@@ -31,6 +31,6 @@ describe('notAfterTodayFn', () => {
 
 	it('returns date in DD/MM/YYYY format', () => {
 		const date = new Date('2021-01-01')
-		expect(formatDateToDDMMYYYY(date)).toBe('01/01/2021')
+		expect(formatDateToDDMMYYYYFn(date)).toBe('01/01/2021')
 	})
 })
