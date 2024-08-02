@@ -157,7 +157,7 @@ describe('Computed', () => {
 			disabled: false,
 			hint: wrapper.vm.hint,
 			persistentHint: true,
-			rules: [],
+			rules: [wrapper.vm.validateDateFormat, ...wrapper.vm.rules],
 			errorMessages: [],
 		}
 
