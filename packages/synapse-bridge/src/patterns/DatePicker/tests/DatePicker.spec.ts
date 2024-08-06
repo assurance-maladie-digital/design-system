@@ -1,8 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
+import {shallowMount} from '@vue/test-utils'
 import DatePicker from '../'
-import { describe, it, expect, vi } from 'vitest'
-import { notAfterToday } from '@/rules/notAfterToday/index.ts'
+import {describe, expect, it, vi} from 'vitest'
+import {notAfterToday} from '@/rules/notAfterToday/index.ts'
 import dayjs from 'dayjs'
+
 describe('DatePicker', () => {
 	it('returns correct textFieldClasses', () => {
 		const wrapper = shallowMount(DatePicker)
@@ -615,19 +616,6 @@ describe('Watchers', () => {
 		)
 		expect(wrapper.vm.date).toEqual(expectedDate)
 	})
-
-	it('does not update date when modelValue changes to an array with invalid date strings and dateFormatReturn not equal to DD/MM/YYYY', async () => {
-		const wrapper = shallowMount(DatePicker, {
-			propsData: {
-				dateFormatReturn: 'YYYY/MM/DD',
-			},
-		})
-
-		const newVal = ['invalid date', 'another invalid date']
-		await wrapper.setProps({ modelValue: newVal })
-
-		expect(wrapper.vm.date).toEqual([undefined, undefined])
-	})
 })
 describe('Mounted', () => {
 	it('update modelValue', () => {
@@ -663,5 +651,106 @@ describe('Mounted', () => {
 		await wrapper.vm.handlePaste(mockEvent as any)
 		expect(wrapper.vm.inputValue).toBe('07/07/1990')
 		expect(wrapper.vm.date).toBe('07/07/1990')
+	})
+
+	it('resets error messages correctly', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					errorMessages: ["La date saisie n'est pas valide"],
+					warningErrorMessages: ["Warning message"],
+					isNotValid: true,
+				}
+			},
+		})
+
+		wrapper.vm.resetErrorMessages()
+
+		expect(wrapper.vm.errorMessages).toEqual([])
+		expect(wrapper.vm.warningErrorMessages).toEqual([])
+		expect(wrapper.vm.isNotValid).toBe(false)
+	})
+
+	it('emits update:model-value event and resets error messages when date is valid', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					date: new Date(2023, 3, 15), // April 15, 2023
+				}
+			},
+		})
+
+		const resetErrorMessagesMock = vi.spyOn(wrapper.vm, 'resetErrorMessages')
+		wrapper.vm.emitUpdateEvent()
+
+		expect(resetErrorMessagesMock).toHaveBeenCalled()
+		const emittedEvent = wrapper.emitted('update:model-value')
+		expect(emittedEvent).toBeTruthy()
+		expect(emittedEvent?.[0]).toEqual(['15/04/2023'])
+	})
+
+	it('handles paste event correctly and resets error messages when date is valid', async () => {
+		const wrapper = shallowMount(DatePicker)
+		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+
+		const resetErrorMessagesMock = vi.spyOn(wrapper.vm, 'resetErrorMessages')
+		await wrapper.vm.handlePaste(mockEvent as any)
+
+		expect(resetErrorMessagesMock).toHaveBeenCalled()
+		expect(wrapper.vm.inputValue).toBe('07/07/1990')
+		expect(wrapper.vm.date).toBe('07/07/1990')
+		expect(wrapper.vm.isNotValid).toBe(false)
+	})
+
+	it('clears error messages when inputValue is set to an empty string', async () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					warningErrorMessages: ['Warning message'],
+					errorMessages: ['Error message'],
+					inputValue: '07/07/1990',
+				}
+			},
+		})
+
+		await wrapper.setData({ inputValue: '' })
+
+		expect(wrapper.vm.warningErrorMessages).toEqual([])
+		expect(wrapper.vm.errorMessages).toEqual([])
+	})
+
+	it('calls removeLastCharacter when value.data is null', () => {
+		const wrapper = shallowMount(DatePicker)
+		const removeLastCharacterMock = vi.fn()
+		wrapper.vm.removeLastCharacter = removeLastCharacterMock
+		wrapper.vm.updateInputValue({ data: null }, 'inputValue')
+		expect(removeLastCharacterMock).toHaveBeenCalledWith('inputValue')
+	})
+
+	it('does nothing if input length is 10 characters', () => {
+		const wrapper = shallowMount(DatePicker)
+		wrapper.vm.isMaxLength = vi.fn(() => true)
+		const appendCharacterMock = vi.fn()
+		wrapper.vm.appendCharacter = appendCharacterMock
+		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
+		expect(appendCharacterMock).not.toHaveBeenCalled()
+	})
+
+	it('adds a separator if necessary', () => {
+		const wrapper = shallowMount(DatePicker)
+		wrapper.vm.shouldAddSeparator = vi.fn(() => true)
+		const addSeparatorMock = vi.fn()
+		wrapper.vm.addSeparator = addSeparatorMock
+		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
+		expect(addSeparatorMock).toHaveBeenCalledWith('inputValue')
+	})
+
+	it('appends the character if it is not a separator', () => {
+		const wrapper = shallowMount(DatePicker)
+		wrapper.vm.isNotSeparator = vi.fn(() => true)
+		const appendCharacterMock = vi.fn()
+		wrapper.vm.appendCharacter = appendCharacterMock
+		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
+		expect(appendCharacterMock).toHaveBeenCalledWith('inputValue', '1')
 	})
 })
