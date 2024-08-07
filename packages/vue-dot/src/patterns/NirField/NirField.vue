@@ -18,7 +18,7 @@
 				v-facade="numberMask"
 				v-bind="textFieldOptions"
 				:value="computedNumberValue"
-				:label="locales.numberLabel"
+				:label="numberLabel"
 				:hint="locales.numberHint"
 				:success="numberFilled"
 				:error="numberErrors.length > 0"
@@ -36,7 +36,7 @@
 					v-facade="keyMask"
 					v-bind="textFieldOptions"
 					:value="keyValue"
-					:label="locales.keyLabel"
+					:label="keyLabel"
 					:hint="locales.keyHint"
 					:success="keyFilled"
 					:error="keyErrors.length > 0"
@@ -120,6 +120,14 @@
 			tooltip: {
 				type: String,
 				default: undefined
+			},
+			numberLabel: {
+				type: String,
+				default: locales.numberLabel
+			},
+			keyLabel: {
+				type: String,
+				default: locales.keyLabel
 			}
 		}
 	});
