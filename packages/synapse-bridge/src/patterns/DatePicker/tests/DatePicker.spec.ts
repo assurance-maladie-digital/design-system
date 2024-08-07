@@ -1,7 +1,7 @@
-import {shallowMount} from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import DatePicker from '../'
-import {describe, expect, it, vi} from 'vitest'
-import {notAfterToday} from '@/rules/notAfterToday/index.ts'
+import { describe, expect, it, vi } from 'vitest'
+import { notAfterToday } from '@/rules/notAfterToday/index.ts'
 import dayjs from 'dayjs'
 
 describe('DatePicker', () => {
@@ -639,7 +639,9 @@ describe('Mounted', () => {
 
 	it('handleCut method updates state and clipboard correctly', async () => {
 		const wrapper = shallowMount(DatePicker)
-		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+		const mockEvent = {
+			clipboardData: { getData: vi.fn(() => '07/07/1990') },
+		}
 		await wrapper.vm.handleCut(mockEvent as any)
 		expect(wrapper.vm.inputValue).toBe('')
 		expect(wrapper.vm.date).toBeNull()
@@ -647,7 +649,9 @@ describe('Mounted', () => {
 
 	it('handlePaste method updates state and clipboard correctly', async () => {
 		const wrapper = shallowMount(DatePicker)
-		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+		const mockEvent = {
+			clipboardData: { getData: vi.fn(() => '07/07/1990') },
+		}
 		await wrapper.vm.handlePaste(mockEvent as any)
 		expect(wrapper.vm.inputValue).toBe('07/07/1990')
 		expect(wrapper.vm.date).toBe('07/07/1990')
@@ -658,7 +662,7 @@ describe('Mounted', () => {
 			data() {
 				return {
 					errorMessages: ["La date saisie n'est pas valide"],
-					warningErrorMessages: ["Warning message"],
+					warningErrorMessages: ['Warning message'],
 					isNotValid: true,
 				}
 			},
@@ -680,7 +684,10 @@ describe('Mounted', () => {
 			},
 		})
 
-		const resetErrorMessagesMock = vi.spyOn(wrapper.vm, 'resetErrorMessages')
+		const resetErrorMessagesMock = vi.spyOn(
+			wrapper.vm,
+			'resetErrorMessages'
+		)
 		wrapper.vm.emitUpdateEvent()
 
 		expect(resetErrorMessagesMock).toHaveBeenCalled()
@@ -691,9 +698,14 @@ describe('Mounted', () => {
 
 	it('handles paste event correctly and resets error messages when date is valid', async () => {
 		const wrapper = shallowMount(DatePicker)
-		const mockEvent = { clipboardData: { getData: vi.fn(() => '07/07/1990') } }
+		const mockEvent = {
+			clipboardData: { getData: vi.fn(() => '07/07/1990') },
+		}
 
-		const resetErrorMessagesMock = vi.spyOn(wrapper.vm, 'resetErrorMessages')
+		const resetErrorMessagesMock = vi.spyOn(
+			wrapper.vm,
+			'resetErrorMessages'
+		)
 		await wrapper.vm.handlePaste(mockEvent as any)
 
 		expect(resetErrorMessagesMock).toHaveBeenCalled()

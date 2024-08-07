@@ -86,33 +86,33 @@ export default defineComponent({
 
 <template>
 	<div class="vd-form-input">
-	<VueDatePicker
-		v-model="date"
-		range
-		:format="formattedDateFormat"
-		:model-type="formattedDateFormatReturn"
-		locale="fr"
-		:clearable="false"
-		:disabled="disabled"
-		auto-apply
-	>
-		<template #dp-input="{ value }">
-			<v-text-field
-				:model-value="value"
-				color="primary"
-				hide-details
-				readonly
-				:variant="getVariant"
-				:disabled="disabled"
-				:aria-describedby="label"
-				:label="label"
-				:prepend-icon="!outlined ? prependIconValue : undefined"
-				:append-inner-icon="
-					outlined || appendIcon ? calendarIcon : undefined
-				"
-			/>
-		</template>
-	</VueDatePicker>
+		<VueDatePicker
+			v-model="date"
+			range
+			:format="formattedDateFormat"
+			:model-type="formattedDateFormatReturn"
+			locale="fr"
+			:clearable="false"
+			:disabled="disabled"
+			auto-apply
+		>
+			<template #dp-input="{ value }">
+				<v-text-field
+					:model-value="value"
+					color="primary"
+					hide-details
+					readonly
+					:variant="getVariant"
+					:disabled="disabled"
+					:aria-describedby="label"
+					:label="label"
+					:prepend-icon="!outlined ? prependIconValue : undefined"
+					:append-inner-icon="
+						outlined || appendIcon ? calendarIcon : undefined
+					"
+				/>
+			</template>
+		</VueDatePicker>
 	</div>
 </template>
 
@@ -183,7 +183,7 @@ export default defineComponent({
 }
 
 :deep(.v-icon) {
-	color: rgba(0,0,0,.54) !important;
+	color: rgba(0, 0, 0, 0.54) !important;
 }
 
 .warning-style {

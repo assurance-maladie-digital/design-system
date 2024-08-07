@@ -185,7 +185,8 @@ export default defineComponent({
 		},
 
 		doubleFieldUpdated(): void {
-			const internalValue = this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
+			const internalValue =
+				this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
 
 			this.internallyUpdatedValue = internalValue
 			this.$emit('update:modelValue', internalValue)
@@ -208,7 +209,7 @@ export default defineComponent({
 		/**
 		 * Execute the validation rules for the key field
 		 */
-		validateKeyValue(keyFieldValue : string): void {
+		validateKeyValue(keyFieldValue: string): void {
 			this.keyErrors = this.keyRules
 				.map((rule) => rule(keyFieldValue))
 				.filter((error): error is string => typeof error === 'string')

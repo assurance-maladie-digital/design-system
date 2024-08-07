@@ -148,7 +148,7 @@ export const Filterable = defineComponent({
 					: undefined
 
 				filter.value = newValue
-				this.updateValue();
+				this.updateValue()
 
 				return
 			}
@@ -161,7 +161,7 @@ export const Filterable = defineComponent({
 
 				if (isPeriodField) {
 					filter.value = undefined
-					this.updateValue();
+					this.updateValue()
 
 					return
 				}
@@ -169,12 +169,12 @@ export const Filterable = defineComponent({
 				delete typedValue[chipValue]
 				filter.value = typedValue
 			}
-			this.updateValue();
+			this.updateValue()
 		},
 
 		resetFilter(filter: FilterItem): void {
 			filter.value = undefined
-			this.updateValue();
+			this.updateValue()
 		},
 
 		resetAllFilters(): void {

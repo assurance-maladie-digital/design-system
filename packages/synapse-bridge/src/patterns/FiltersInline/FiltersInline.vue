@@ -73,7 +73,7 @@ export default defineComponent({
 								filter.value = value
 								updateValue()
 							}
-						}
+						},
 					}"
 					:name="`${formatFilterName(filter.name)}`"
 				/>

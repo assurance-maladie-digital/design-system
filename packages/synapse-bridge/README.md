@@ -15,35 +15,35 @@ Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes
 
 ## Stack Technique
 
-- Vue 3
-- Vuetify 3
-- Vue Router 4
-- Vuex 4
+-   Vue 3
+-   Vuetify 3
+-   Vue Router 4
+-   Vuex 4
 
 ## Outils Inclus
 
-- Typescript
-- Axios
-- Sass
-- Vitest pour les tests unitaires
+-   Typescript
+-   Axios
+-   Sass
+-   Vitest pour les tests unitaires
 
 ## Installation et utilisation
 
 ### Starter kits
 
 Pour utiliser ce package, vous pouvez installer un des starter kits suivants :
-- [Starter Kit Bridge](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (projets en migration)
-- [Starter Kit Synapse](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (nouveaux projets)
 
+-   [Starter Kit Bridge](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (projets en migration)
+-   [Starter Kit Synapse](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (nouveaux projets)
 
 ### Librairie uniquement
 
 Vous pouvez également utiliser ce package en tant que librairie de composants dans votre projet.
 Pour cela, vous pouvez l'installer via npm ou un autre gestionnaire de paquets :
+
 ```bash
 npm i @cnamts/synapse-bridge
 ```
-
 
 ## Commandes disponibles
 
@@ -53,7 +53,7 @@ npm i @cnamts/synapse-bridge
 		"pnpm preview": Lancement du serveur de prévisualisation,
 		"pnpm test:unit": Lancement des tests unitaires,
 		"pnpm lint": Lancement de l\'analyseur de code,
-```  
+```
 
 ## Contribution
 
