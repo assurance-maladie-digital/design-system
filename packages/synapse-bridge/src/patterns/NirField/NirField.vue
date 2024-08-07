@@ -46,6 +46,14 @@ export default defineComponent({
 			type: String,
 			default: undefined,
 		},
+		numberLabel: {
+			type: String,
+			default: locales.numberLabel,
+		},
+		keyLabel: {
+			type: String,
+			default: locales.keyLabel,
+		},
 	},
 	data() {
 		return {
@@ -274,7 +282,7 @@ export default defineComponent({
 				:model-value="numberValue"
 				v-bind="textFieldOptions"
 				:variant="outlined ? 'outlined' : 'underlined'"
-				:label="locales.numberLabel"
+				:label="numberLabel"
 				:hint="locales.numberHint"
 				persistent-hint
 				:hide-details="false"
@@ -303,7 +311,7 @@ export default defineComponent({
 					:modelValue="keyValue"
 					v-bind="textFieldOptions"
 					:variant="outlined ? 'outlined' : 'underlined'"
-					:label="locales.keyLabel"
+					:label="keyLabel"
 					:hint="locales.keyHint"
 					persistent-hint
 					:hide-details="false"
