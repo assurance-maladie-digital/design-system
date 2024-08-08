@@ -797,18 +797,6 @@ export default defineComponent({
 		padding-top: 0;
 	}
 
-	:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-		height: calc(100% - 1px) !important;
-	}
-
-	:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
-	:deep(
-			.v-field--variant-outlined:focus-within
-				.v-field__outline__notch::after
-		) {
-		height: calc(100% - 2px) !important;
-	}
-
 	:deep(.dp__clear_icon) {
 		top: 35%;
 		right: 4%;
