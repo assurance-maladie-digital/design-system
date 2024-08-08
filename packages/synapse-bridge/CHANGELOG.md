@@ -1,4 +1,4 @@
-#### v1.0.0
+#### v3.0.0
 
 - Fix AlertWrapper background [`#3692`](https://github.com/assurance-maladie-digital/design-system/pull/3692)
 - Fix DatePicker's issues with validation  [`#3688`](https://github.com/assurance-maladie-digital/design-system/pull/3688)
