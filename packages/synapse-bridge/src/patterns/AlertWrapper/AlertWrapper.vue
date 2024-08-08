@@ -122,6 +122,10 @@ export default defineComponent({
 	}
 }
 
+:deep(.v-alert__underlay) {
+	display: none !important;
+}
+
 .v-alert__prepend {
 	.v-icon {
 		width: 56px !important;
