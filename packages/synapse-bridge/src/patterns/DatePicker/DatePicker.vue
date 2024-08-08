@@ -11,7 +11,6 @@ import { customizable } from '@/mixins/customizable/index.ts'
 import { config } from '@/patterns/DatePicker/config.ts'
 import { ruleMessage } from '../../helpers/ruleMessage'
 
-
 type DatePickerFlow = (
 	| 'calendar'
 	| 'month'
@@ -20,7 +19,7 @@ type DatePickerFlow = (
 	| 'minutes'
 	| 'hours'
 	| 'seconds'
-	)[]
+)[]
 
 interface DatePickerData {
 	date: Date | null | any[] | string
@@ -86,7 +85,7 @@ export default defineComponent({
 			default: false,
 		},
 		modelValue: {
-			type: [String, Number, Boolean, Array, Object, null] as PropType<
+			type: [String, Number, Boolean, Array, Object] as PropType<
 				| string
 				| number
 				| boolean
@@ -143,7 +142,7 @@ export default defineComponent({
 			isCalOpen: false,
 			lastTypeAddedDate: '',
 			dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
-			isNotValid: false
+			isNotValid: false,
 		}
 	},
 	computed: {
@@ -172,9 +171,13 @@ export default defineComponent({
 
 		hasError() {
 			return (
-				this.errorMessages.includes("La date saisie n'est pas valide") ||
+				this.errorMessages.includes(
+					"La date saisie n'est pas valide"
+				) ||
 				this.errorMessages.includes('Une erreur est survenue') ||
-				this.customErrorMessages.some(msg => this.errorMessages.includes(msg))
+				this.customErrorMessages.some((msg) =>
+					this.errorMessages.includes(msg)
+				)
 			)
 		},
 		textFieldClasses() {
@@ -218,9 +221,7 @@ export default defineComponent({
 				this.$emit('change', newVal)
 				if (typeof newVal === 'string' && newVal.length === 10) {
 					this.$emit('update:model-value', this.formatDate(newVal))
-				}
-				if (Array.isArray(newVal) && newVal.length === 2) {
-					// TODO : add returnFormat for range
+					this.validate(newVal) // Add validate call
 				}
 			}
 		},
@@ -228,73 +229,73 @@ export default defineComponent({
 			if (newVal === oldVal) {
 				return
 			}
-			if (
-				typeof newVal === 'string' &&
-				this.dateFormatReturn === 'DD/MM/YYYY'
-			) {
-				const [day, month, year] = newVal.split(/[-/]/)
-				this.date = new Date(
-					Number(year),
-					Number(month) - 1,
-					Number(day)
-				)
-				if (newVal.length === 10) {
-					this.validate(newVal)
-					this.inputValue = newVal
-				}
-			} else if (
-				typeof newVal === 'string' &&
-				this.dateFormatReturn !== 'DD/MM/YYYY'
-			) {
-				const dateToFormat = dayjs(newVal, 'DD/MM/YYYY')
-				const formatedDate = dateToFormat.toDate()
-				if (formatedDate.toString() !== 'Invalid Date') {
-					this.date = formatedDate
-				}
-			} else if (
-				Array.isArray(newVal) &&
-				this.dateFormatReturn === 'DD/MM/YYYY'
-			) {
-				this.date = newVal.map((date: any) => {
-					const [day, month, year] = date.split(/[-/]/)
 
-					return new Date(
-						Number(year),
-						Number(month) - 1,
-						Number(day)
-					)
-				})
-			} else if (
-				Array.isArray(newVal) &&
-				this.dateFormatReturn !== 'DD/MM/YYYY'
-			) {
-				this.date = newVal.map((date: any) => {
-					const dateToFormat = dayjs(date, 'DD/MM/YYYY').format(
-						this.dateFormatReturn
-					)
-					if (dateToFormat.toString() !== 'Invalid Date') {
-						return dateToFormat
+			const parseDate = (dateStr: string) => {
+				const [day, month, year] = dateStr.split(/[-/]/)
+				return new Date(Number(year), Number(month) - 1, Number(day))
+			}
+
+			const formatAndValidateDate = (dateStr: string) => {
+				const dateToFormat = dayjs(dateStr, 'DD/MM/YYYY')
+				const formattedDate = dateToFormat.toDate()
+				if (formattedDate.toString() !== 'Invalid Date') {
+					this.date = formattedDate
+					this.validate(dateStr)
+				}
+			}
+
+			if (typeof newVal === 'string') {
+				if (this.dateFormatReturn === 'DD/MM/YYYY') {
+					this.date = parseDate(newVal)
+					if (newVal.length === 10) {
+						this.validate(newVal)
+						this.inputValue = newVal
 					}
-				})
+				} else {
+					formatAndValidateDate(newVal)
+				}
+			} else if (Array.isArray(newVal)) {
+				if (this.dateFormatReturn === 'DD/MM/YYYY') {
+					this.date = newVal.map((date) => parseDate(date))
+				} else {
+					this.date = newVal
+						.map((date) => {
+							const formattedDate = dayjs(
+								date,
+								'DD/MM/YYYY'
+							).format(this.dateFormatReturn)
+							return formattedDate.toString() !== 'Invalid Date'
+								? formattedDate
+								: null
+						})
+						.filter((date) => date !== null)
+				}
+				this.validate(newVal)
 			}
 		},
 		inputValue(newVal, oldVal) {
 			if (newVal === oldVal) {
 				return
 			}
-			if (!/^[\d/-]+$/.test(newVal)) {
-				this.inputValue = newVal.slice(0, -1)
+
+			const isValidInput = (value: string) => /^[\d/-]+$/.test(value)
+			const truncateInput = (value: string, maxLength: number) =>
+				value.slice(0, maxLength)
+
+			if (!isValidInput(newVal)) {
+				this.inputValue = truncateInput(newVal, newVal.length - 1)
 			}
+
 			if (newVal.length > 10) {
-				this.inputValue = newVal.slice(0, 10)
+				this.inputValue = truncateInput(newVal, 10)
 			}
-			// if (newVal.length === 0) {
-			// 	this.$emit('update:model-value', null);
-			// }
+
 			if (newVal.length === 0) {
-				this.warningErrorMessages = [];
-				this.errorMessages = [];
+				this.clearErrors()
+				this.date = null
+				this.$emit('update:model-value', null)
 			}
+
 			this.lastTypeAddedDate = 'inputValue'
 		},
 	},
@@ -306,9 +307,24 @@ export default defineComponent({
 		}
 	},
 	methods: {
+		clearErrors() {
+			this.errorMessages = []
+			this.warningErrorMessages = []
+		},
+		resetErrorMessages() {
+			this.clearErrors()
+			this.isNotValid = false
+		},
 		emitUpdateEvent() {
 			if (this.date) {
-				this.$emit('update:model-value', this.formatDate(this.date))
+				this.resetErrorMessages()
+				const formattedDate = this.formatDate(this.date)
+				this.$emit('update:model-value', formattedDate)
+
+				// Mise à jour explicite de indexedThis[historyKey] si le format de retour est différent de DD/MM/YYYY
+				if (this.dateFormatReturn !== 'DD/MM/YYYY') {
+					this.indexedThis['inputValue'] = formattedDate
+				}
 			}
 		},
 		isWeekend(date: any) {
@@ -413,77 +429,115 @@ export default defineComponent({
 			value: { data: string | null },
 			historyKey: string
 		): void {
-			// If the input is cleared, remove the last character from the current value
+			// Gérer la suppression de caractères
 			if (value.data === null) {
-				this.indexedThis[historyKey] = this.indexedThis[
-					historyKey
-					].slice(0, -1)
+				this.removeLastCharacter(historyKey)
 				return
 			}
 
-			// If the current value is already 10 characters long, don't add more
-			if (this.indexedThis[historyKey].length >= 10) {
+			// Limiter la longueur de l'input à 10 caractères
+			if (this.isMaxLength(historyKey, 10)) {
 				return
 			}
 
-			// If the current value is at 2 or 5 characters, add a separator (slash or dash)
+			// Ajouter un séparateur après le deuxième et cinquième caractère
+			if (this.shouldAddSeparator(historyKey)) {
+				this.addSeparator(historyKey)
+			}
+
+			// Ajouter le caractère saisi si ce n'est pas un séparateur
+			if (this.isNotSeparator(value.data)) {
+				this.appendCharacter(historyKey, value.data)
+			}
+
+			// Valider et formater la date lorsque la longueur atteint 10 caractères
+			if (this.isMaxLength(historyKey, 10)) {
+				this.validateAndFormatDate(historyKey)
+			}
+		},
+
+		removeLastCharacter(historyKey: string) {
+			this.indexedThis[historyKey] = this.indexedThis[historyKey].slice(
+				0,
+				-1
+			)
+		},
+
+		isMaxLength(historyKey: string, maxLength: number) {
+			return this.indexedThis[historyKey].length >= maxLength
+		},
+
+		shouldAddSeparator(historyKey: string) {
+			const length = this.indexedThis[historyKey].length
+			return length === 2 || length === 5
+		},
+
+		addSeparator(historyKey: string) {
+			const separator = this.dateFormat.includes('/') ? '/' : '-'
+			this.indexedThis[historyKey] += separator
+		},
+
+		isNotSeparator(char: string | null) {
+			return char !== '/' && char !== '-'
+		},
+
+		appendCharacter(historyKey: string, char: string) {
+			this.indexedThis[historyKey] += char
+		},
+
+		validateAndFormatDate(historyKey: string) {
+			const date = dayjs(this.indexedThis[historyKey], this.dateFormat)
+			const formattedDateReturn = dayjs(date).format(
+				this.dateFormatReturn
+			)
+
+			if (!this.isShortDateFormat()) {
+				this.validateFullDate(historyKey)
+			} else {
+				this.validateShortDate(historyKey, formattedDateReturn)
+			}
+		},
+
+		isShortDateFormat() {
+			return (
+				this.dateFormatReturn === 'DD/MM/YY' ||
+				this.dateFormatReturn === 'DD-MM-YY'
+			)
+		},
+
+		validateFullDate(historyKey: string) {
+			const dateRegEx = this.createDateRegEx(this.dateFormat)
+			const isValidFormat = dateRegEx.test(this.inputValue)
+
 			if (
-				this.indexedThis[historyKey].length === 2 ||
-				this.indexedThis[historyKey].length === 5
+				isValidFormat &&
+				dayjs(this.inputValue, this.dateFormat, true).isValid()
 			) {
-				const separator = this.dateFormat.includes('/') ? '/' : '-'
-				this.indexedThis[historyKey] += separator
-			}
-
-			// If the input is a slash or dash, don't add it to the current value
-			if (value.data !== '/' && value.data !== '-') {
-				this.indexedThis[historyKey] += value.data
-			}
-
-			// If the current value is 10 characters long, validate and format the date
-			if (this.indexedThis[historyKey].length === 10) {
-				const date = dayjs(
-					this.indexedThis[historyKey],
-					this.dateFormat
+				this.date = this.inputValue
+				this.isNotValid = false
+				this.$emit('update:model-value', this.indexedThis[historyKey])
+			} else {
+				this.isNotValid = true
+				this.errorMessages.push(
+					this.customErrorMessages.length > 0
+						? this.customErrorMessages[0]
+						: "La date saisie n'est pas valide"
 				)
-				const formattedDateReturn = dayjs(date).format(
-					this.dateFormatReturn
-				)
-
-				// If the date format is not 'DD/MM/YY', validate the date format and the date itself
-				if (this.dateFormatReturn !== 'DD/MM/YY') {
-					let dateRegEx = this.createDateRegEx(this.dateFormat)
-					const isValidFormat = dateRegEx.test(this.inputValue)
-
-					// If the date format and the date are valid, update the date and emit an update event
-					if (isValidFormat && dayjs(this.inputValue, this.dateFormat, true).isValid()) {
-						this.date = this.inputValue
-						this.isNotValid = false
-						this.$emit(
-							'update:model-value',
-							this.indexedThis[historyKey]
-						)
-					} else {
-						this.isNotValid = true
-						// If the date format or the date is not valid, add an error message
-						this.errorMessages.push(
-							this.customErrorMessages.length > 0
-								? this.customErrorMessages[0]
-								: "La date saisie n'est pas valide"
-						)
-					}
-				} else {
-					// If the date format is 'DD/MM/YY', emit an update event with the formatted date
-					this.$emit('update:model-value', formattedDateReturn)
-					this.$emit('input', formattedDateReturn)
-				}
 			}
+		},
+
+		validateShortDate(historyKey: string, formattedDateReturn: string) {
+			this.validate(this.indexedThis[historyKey])
+			this.$emit('update:model-value', formattedDateReturn)
 		},
 		validateDateFormat(): boolean | string {
 			if (this.isNotValid) {
-				return ruleMessage(this.errorMessages, 'default') || "La date saisie n'est pas valide";
+				return (
+					ruleMessage(this.errorMessages, 'default') ||
+					"La date saisie n'est pas valide"
+				)
 			}
-			return true;
+			return true
 		},
 		getInput(value: any) {
 			this.updateInputValue(value, 'inputValue')
@@ -498,13 +552,29 @@ export default defineComponent({
 
 		validate(value: any) {
 			const applyRules = (rules: any[]) =>
-				rules.map(rule => rule(value)).filter(result => result !== true);
+				rules
+					.map((rule) => rule(value))
+					.filter((result) => result !== true)
 
-			this.errorMessages = applyRules(this.rules || []);
-			this.warningErrorMessages = applyRules(this.warningRules || []);
+			this.errorMessages = this.rules ? applyRules(this.rules) : []
+			this.warningErrorMessages = this.warningRules
+				? applyRules(this.warningRules)
+				: []
 
 			if (this.error) {
-				this.errorMessages.push('Une erreur est survenue');
+				this.errorMessages.push('Une erreur est survenue')
+			}
+
+			if (this.dateFormatReturn !== 'DD/MM/YYYY') {
+				const dateToFormat = dayjs(value, 'DD/MM/YYYY')
+				const formattedDate = dateToFormat.toDate()
+				if (formattedDate.toString() !== 'Invalid Date') {
+					this.date = formattedDate
+					this.$emit(
+						'update:model-value',
+						dayjs(formattedDate).format(this.dateFormatReturn)
+					)
+				}
 			}
 		},
 		buildTextFieldClasses() {
@@ -544,19 +614,25 @@ export default defineComponent({
 		},
 		async handleCut(event?: ClipboardEvent) {
 			if (event && event.clipboardData) {
-				this.inputValue = '';
-				this.date = null;
-				this.$emit('update:model-value', this.date);
+				this.inputValue = ''
+				this.date = null
+				this.$emit('update:model-value', this.date)
 			}
 		},
 		async handlePaste(event?: ClipboardEvent) {
 			if (event && event.clipboardData) {
-				this.inputValue = event.clipboardData.getData('text');;
-				const isValidFormat = this.createDateRegEx(this.dateFormat).test(this.inputValue);
+				this.inputValue = event.clipboardData.getData('text')
+				const isValidFormat = this.createDateRegEx(
+					this.dateFormat
+				).test(this.inputValue)
 
-				if (isValidFormat && dayjs(this.inputValue, this.dateFormat, true).isValid()) {
-					this.$emit('update:model-value', this.inputValue);
-					this.date = this.inputValue;
+				if (
+					isValidFormat &&
+					dayjs(this.inputValue, this.dateFormat, true).isValid()
+				) {
+					this.resetErrorMessages()
+					this.$emit('update:model-value', this.inputValue)
+					this.date = this.inputValue
 					this.isNotValid = false
 				} else {
 					this.isNotValid = true
@@ -564,14 +640,13 @@ export default defineComponent({
 						this.customErrorMessages.length > 0
 							? this.customErrorMessages[0]
 							: "La date saisie n'est pas valide"
-					);
+					)
 				}
 			}
-		}
+		},
 	},
 })
 </script>
-
 <template>
 	<div class="vd-date-picker">
 		<!--	doc:	https://vue3datepicker.com-->
@@ -619,7 +694,10 @@ export default defineComponent({
 					]"
 					:clearable="clearable"
 					:disabled="disabled"
-					:error-messages="[...errorMessages, ...warningErrorMessages]"
+					:error-messages="[
+						...errorMessages,
+						...warningErrorMessages,
+					]"
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
@@ -635,7 +713,10 @@ export default defineComponent({
 					@paste="handlePaste"
 					@cut="handleCut"
 				>
-					<template #append-inner v-if="outlined || (appendIcon && calendarIcon)">
+					<template
+						#append-inner
+						v-if="outlined || (appendIcon && calendarIcon)"
+					>
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
@@ -655,9 +736,9 @@ export default defineComponent({
 						</VIcon>
 					</template>
 
-					<template v-slot:clear v-if="clearable" >
+					<template v-slot:clear v-if="clearable">
 						<VIcon
-							@click='onClearInput'
+							@click="onClearInput"
 							tabindex="-1"
 							aria-hidden="true"
 						>
@@ -716,15 +797,6 @@ export default defineComponent({
 		padding-top: 0;
 	}
 
-	:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-		height: calc(100% - 1px) !important;
-	}
-
-	:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
-	:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
-		height: calc(100% - 2px) !important;
-	}
-
 	:deep(.dp__clear_icon) {
 		top: 35%;
 		right: 4%;
@@ -738,11 +810,11 @@ export default defineComponent({
 	}
 
 	:deep(.v-icon) {
-		color: rgba(0, 0, 0, .54) !important;
+		color: rgba(0, 0, 0, 0.54) !important;
 	}
 
 	.v-text-field .v-field__clearable .v-icon {
-		color: rgba(0, 0, 0, .54) !important;
+		color: rgba(0, 0, 0, 0.54) !important;
 		opacity: 1 !important;
 	}
 

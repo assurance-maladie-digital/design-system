@@ -1,4 +1,4 @@
-import {tokens} from "@cnamts/design-tokens";
+import { tokens } from '@cnamts/design-tokens'
 
 export const config = {
 	validateOnBlur: true,

@@ -44,8 +44,8 @@ export default defineComponent({
 	},
 	watch: {
 		selectedItem(newValue) {
-			this.$emit('update:selectedItem', newValue);
-		}
+			this.$emit('update:selectedItem', newValue)
+		},
 	},
 	computed: {
 		computedTitle(): string {
@@ -175,4 +175,3 @@ export default defineComponent({
 		</DialogBox>
 	</div>
 </template>
-

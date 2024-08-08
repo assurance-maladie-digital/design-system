@@ -3,7 +3,7 @@ import { shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 import FiltersInline from '../'
 import { locales } from '../locales'
-import {type FilterItem} from '@/mixins/filterable/types'
+import { type FilterItem } from '@/mixins/filterable/types'
 
 describe('FiltersInline', () => {
 	it('renders correctly', () => {

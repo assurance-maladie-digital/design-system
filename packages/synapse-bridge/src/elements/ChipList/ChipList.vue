@@ -65,9 +65,7 @@ export default defineComponent({
 				variant="flat"
 				class="ma-1"
 			>
-				<div
-					class="d-flex align-center ga-sm-1 pl-1"
-				>
+				<div class="d-flex align-center ga-sm-1 pl-1">
 					<span>{{ item.text }}</span>
 					<VBtn
 						icon="mdi-close"
@@ -78,9 +76,7 @@ export default defineComponent({
 						class="vd-remove-chip"
 						@click="emitRemoveEvent(item)"
 					>
-						<VIcon
-							size="default"
-						>{{ deleteIcon }}</VIcon>
+						<VIcon size="default">{{ deleteIcon }}</VIcon>
 					</VBtn>
 				</div>
 			</VChip>

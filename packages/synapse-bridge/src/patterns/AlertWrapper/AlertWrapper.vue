@@ -15,8 +15,8 @@ import {
 	mdiClose,
 } from '@mdi/js'
 
-type LowercaseStringLiterals<T> = T extends string ? Lowercase<T> : T;
-type LowercaseKeys<T> = { [K in keyof T as LowercaseStringLiterals<K>]: T[K] };
+type LowercaseStringLiterals<T> = T extends string ? Lowercase<T> : T
+type LowercaseKeys<T> = { [K in keyof T as LowercaseStringLiterals<K>]: T[K] }
 export default defineComponent({
 	inheritAttrs: false,
 	props: {
