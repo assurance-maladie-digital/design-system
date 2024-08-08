@@ -167,6 +167,8 @@ export default defineComponent({
 }
 .vd-user-menu-btn {
 	outline: none;
+	padding: 12px !important;
+
 	&:hover:before {
 		background: #000;
 		opacity: 0.05;
@@ -179,6 +181,7 @@ export default defineComponent({
 		background: rgba($vd-primary, 0.08) !important;
 	}
 }
+
 :deep(.vd-user-menu-btn:focus > .v-btn__overlay) {
 	opacity: 0 !important;
 }
