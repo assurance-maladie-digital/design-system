@@ -167,6 +167,7 @@ export default defineComponent({
 }
 .vd-user-menu-btn {
 	outline: none;
+	padding: 12px !important;
 	&:hover:before {
 		background: #000;
 		opacity: 0.05;
