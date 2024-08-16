@@ -30,6 +30,8 @@ about: Créez un rapport de bug pour nous aider à améliorer notre Design Syste
 
 ## Environnement
 
+- Librairie : <!-- @cnamts/vue-dot, @cnamts/synapse-bridge, … -->
+- Version : <!-- 1.0.0, 2.0.0, … -->
 - OS : <!-- Android, … -->
 - Navigateur : <!-- IE 11, Firefox, Safari, … -->
 
