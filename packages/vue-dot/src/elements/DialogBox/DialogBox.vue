@@ -149,18 +149,18 @@
 		async handleFocus(e: KeyboardEvent): Promise<void> {
 			const selectableElements = await this.getSelectableElements();
 
-			const index = selectableElements.findIndex(
+			const focused = selectableElements.findIndex(
 				(el: HTMLElement) => el === e.target
 			);
+			const isOutside = focused === -1;
+			const lastElement = selectableElements.length - 1;
 
-			if (selectableElements.length - 1 === index && !e.shiftKey) {
+			if (!e.shiftKey && (isOutside || focused === lastElement)) {
 				e.preventDefault();
 				selectableElements[0].focus();
-			} else if (index === 0 && e.shiftKey) {
+			} else if (e.shiftKey && (isOutside || focused === 0)) {
 				e.preventDefault();
-				selectableElements[
-					selectableElements.length - 1
-				].focus();
+				selectableElements[lastElement].focus();
 			}
 		}
 
@@ -175,9 +175,9 @@
 </script>
 
 <style lang="scss" scoped>
-	.v-card__title > * {
-		line-height: 1em;
-		word-break: break-word;
-		text-wrap: balance;
-	}
+.v-card__title>* {
+	line-height: 1em;
+	word-break: break-word;
+	text-wrap: balance;
+}
 </style>
