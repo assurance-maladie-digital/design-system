@@ -6,6 +6,7 @@
 		:persistent="persistent"
 		aria-modal="true"
 		class="vd-dialog-box"
+		@keydown.tab="handleFocus"
 	>
 		<VCard
 			v-bind="options.card"
@@ -116,11 +117,6 @@
 		model: {
 			prop: 'value',
 			event: 'change'
-		},
-		watch: {
-			dialog() {
-				this.setEventListeners();
-			}
 		}
 	})
 	export default class DialogBox extends MixinsDeclaration {
@@ -132,17 +128,7 @@
 
 		closeIcon = mdiClose;
 
-		get dialog(): boolean {
-			return this.value;
-		}
-
-		set dialog(value: boolean) {
-			this.$emit('change', value);
-		}
-
 		async getSelectableElements(): Promise<HTMLElement[]> {
-			await this.$nextTick();
-
 			const elements = this.$refs.dialogContent.$el.querySelectorAll<HTMLElement>(
 				'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
 			);
@@ -160,44 +146,30 @@
 			return filteredElements;
 		}
 
-		async setEventListeners(): Promise<void> {
-			const elements = await this.getSelectableElements();
+		async handleFocus(e: KeyboardEvent): Promise<void> {
+			const selectableElements = await this.getSelectableElements();
 
-			if (!elements.length) {
-				return;
+			const index = selectableElements.findIndex(
+				(el: HTMLElement) => el === e.target
+			);
+
+			if (selectableElements.length - 1 === index && !e.shiftKey) {
+				e.preventDefault();
+				selectableElements[0].focus();
+			} else if (index === 0 && e.shiftKey) {
+				e.preventDefault();
+				selectableElements[
+					selectableElements.length - 1
+				].focus();
 			}
+		}
 
-			for (let i = 0; i < elements.length; i++) {
-				const setFocus = (e: KeyboardEvent) => {
-					if (e.key !== 'Tab') {
-						return;
-					}
+		get dialog(): boolean {
+			return this.value;
+		}
 
-					e.preventDefault();
-
-					if (!e.shiftKey) {
-						if (i === elements.length - 1) {
-							elements[0].focus();
-						} else {
-							elements[i + 1].focus();
-						}
-					} else {
-						if (i === 0) {
-							elements[elements.length - 1].focus();
-						} else {
-							elements[i - 1].focus();
-						}
-					}
-				};
-
-				if (!this.dialog) {
-					removeEventListener('keydown', setFocus);
-
-					return;
-				}
-
-				elements[i].addEventListener('keydown', setFocus);
-			}
+		set dialog(value: boolean) {
+			this.$emit('change', value);
 		}
 	}
 </script>
