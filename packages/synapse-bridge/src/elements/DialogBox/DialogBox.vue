@@ -60,17 +60,17 @@ export default defineComponent({
 	},
 
 	watch: {
-		dialog() {
-			this.setEventListeners()
-		},
-		modelValue(newValue) {
+		async modelValue(newValue) {
 			this.dialog = newValue
+			if( this.dialog ) {
+				await this.$nextTick();
+				(await this.getSelectableElements())[0].focus();
+			}
 		},
 	},
 
 	methods: {
 		async getSelectableElements(): Promise<HTMLElement[]> {
-			await this.$nextTick()
 
 			const parentNode = this.$refs.dialogContent?.$el // Is undefined when dialog is closed
 
@@ -100,50 +100,25 @@ export default defineComponent({
 			return filteredElements
 		},
 
-		async setEventListeners(): Promise<void> {
-			const elements = await this.getSelectableElements()
+		async handleFocus(e: KeyboardEvent): Promise<void> {
+			const selectableElements = await this.getSelectableElements();
 
-			if (!elements.length) {
-				return
+			const focused = selectableElements.findIndex(
+				(el: HTMLElement) => el === e.target
+			);
+
+			const isOutside = focused === -1;
+			const lastElement = selectableElements.length - 1;
+
+			if (!e.shiftKey && (isOutside || focused === lastElement)) {
+				e.preventDefault();
+				selectableElements[0].focus();
+			} else if (e.shiftKey && (isOutside || focused === 0)) {
+				e.preventDefault();
+				selectableElements[lastElement].focus();
 			}
-
-			for (let i = 0; i < elements.length; i++) {
-				const setFocus = (e: KeyboardEvent) => {
-					if (e.key !== 'Tab') {
-						return
-					}
-
-					e.preventDefault()
-
-					if (!e.shiftKey) {
-						if (i === elements.length - 1) {
-							elements[0].focus()
-						} else {
-							elements[i + 1].focus()
-						}
-					} else {
-						if (i === 0) {
-							elements[elements.length - 1].focus()
-						} else {
-							elements[i - 1].focus()
-						}
-					}
-				}
-				if (!this.dialog) {
-					removeEventListener('keydown', setFocus)
-					return
-				} else {
-					elements[0].focus()
-				}
-
-				elements[i].addEventListener('keydown', setFocus)
-			}
-		},
-	},
-
-	mounted() {
-		this.setEventListeners()
-	},
+		}
+	}
 })
 </script>
 
@@ -158,6 +133,7 @@ export default defineComponent({
 		aria-describedby="dialogContent"
 		class="vd-dialog-box"
 		@update:model-value="$emit('update:modelValue', false)"
+		@keydown.tab="handleFocus"
 	>
 		<VCard
 			v-bind="options.card"
@@ -184,7 +160,6 @@ export default defineComponent({
 					</VIcon>
 				</VBtn>
 			</VCardTitle>
-
 			<slot />
 
 			<div
