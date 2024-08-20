@@ -1,11 +1,10 @@
 import vueSnapshotSerializer from 'jest-serializer-vue';
-import { expect, beforeEach, afterEach } from 'vitest';
-import { createVuetify } from 'vuetify';
+import {afterEach, beforeEach, expect, vitest} from 'vitest';
+import {createVuetify} from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
 import Vuex from 'vuex';
-import { state, actions, mutations } from '@/modules/notification';
-import { vitest } from 'vitest'
+import {actions, mutations, state} from '@/modules/notification';
 
 // Configuration de Vuetify
 export const vuetify = createVuetify({
