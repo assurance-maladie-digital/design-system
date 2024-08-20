@@ -62,16 +62,15 @@ export default defineComponent({
 	watch: {
 		async modelValue(newValue) {
 			this.dialog = newValue
-			if( this.dialog ) {
-				await this.$nextTick();
-				(await this.getSelectableElements())[0].focus();
+			if (this.dialog) {
+				await this.$nextTick()
+				;(await this.getSelectableElements())[0].focus()
 			}
 		},
 	},
 
 	methods: {
 		async getSelectableElements(): Promise<HTMLElement[]> {
-
 			const parentNode = this.$refs.dialogContent?.$el // Is undefined when dialog is closed
 
 			if (!parentNode) {
@@ -101,24 +100,24 @@ export default defineComponent({
 		},
 
 		async handleFocus(e: KeyboardEvent): Promise<void> {
-			const selectableElements = await this.getSelectableElements();
+			const selectableElements = await this.getSelectableElements()
 
 			const focused = selectableElements.findIndex(
 				(el: HTMLElement) => el === e.target
-			);
+			)
 
-			const isOutside = focused === -1;
-			const lastElement = selectableElements.length - 1;
+			const isOutside = focused === -1
+			const lastElement = selectableElements.length - 1
 
 			if (!e.shiftKey && (isOutside || focused === lastElement)) {
-				e.preventDefault();
-				selectableElements[0].focus();
+				e.preventDefault()
+				selectableElements[0].focus()
 			} else if (e.shiftKey && (isOutside || focused === 0)) {
-				e.preventDefault();
-				selectableElements[lastElement].focus();
+				e.preventDefault()
+				selectableElements[lastElement].focus()
 			}
-		}
-	}
+		},
+	},
 })
 </script>
 
