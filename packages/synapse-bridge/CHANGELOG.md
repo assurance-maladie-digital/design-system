@@ -1,12 +1,12 @@
 #### v3.0.0
 
-- Fix AlertWrapper background [`#3692`](https://github.com/assurance-maladie-digital/design-system/pull/3692)
-- Fix DatePicker's issues with validation  [`#3688`](https://github.com/assurance-maladie-digital/design-system/pull/3688)
-- NirField: add labels props [`#3689`](https://github.com/assurance-maladie-digital/design-system/pull/3689)
-- improve validDate rule ans set it by default to DatePicker [`#3681`](https://github.com/assurance-maladie-digital/design-system/pull/3681)
-- DatePicker: block submit based on rules [`#3677`](https://github.com/assurance-maladie-digital/design-system/pull/3677)
-- Fix buttons style [`#3667`](https://github.com/assurance-maladie-digital/design-system/pull/3667)
-- DatePicker refactor delete [`#3670`](https://github.com/assurance-maladie-digital/design-system/pull/3670)
+-   Fix AlertWrapper background [`#3692`](https://github.com/assurance-maladie-digital/design-system/pull/3692)
+-   Fix DatePicker's issues with validation [`#3688`](https://github.com/assurance-maladie-digital/design-system/pull/3688)
+-   NirField: add labels props [`#3689`](https://github.com/assurance-maladie-digital/design-system/pull/3689)
+-   improve validDate rule ans set it by default to DatePicker [`#3681`](https://github.com/assurance-maladie-digital/design-system/pull/3681)
+-   DatePicker: block submit based on rules [`#3677`](https://github.com/assurance-maladie-digital/design-system/pull/3677)
+-   Fix buttons style [`#3667`](https://github.com/assurance-maladie-digital/design-system/pull/3667)
+-   DatePicker refactor delete [`#3670`](https://github.com/assurance-maladie-digital/design-system/pull/3670)
 
 #### v1.4.10-alpha.0
 
