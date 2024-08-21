@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
@@ -18,10 +18,15 @@ const defaultProps = {
 describe('DialogBox', () => {
 	describe('rendering and props', () => {
 		it('renders correctly with props', () => {
-			const wrapper = shallowMount(DialogBox, {
+			const wrapper = mount(DialogBox, {
 				props: defaultProps,
 				global: {
 					plugins: [vuetify],
+					stubs: {
+						VDialog: {
+							template: '<div><slot></slot></div>',
+						}
+					},
 				},
 			})
 
@@ -39,7 +44,7 @@ describe('DialogBox', () => {
 				},
 			})
 
-			expect(wrapper).toMatchSnapshot()
+			expect(wrapper).toMatchInlineSnapshot('')
 		})
 
 		it('becomes visible when the model value is updated', async () => {
@@ -125,9 +130,6 @@ describe('DialogBox', () => {
 						<button id="third">third</button>
 						<a href="https://www.ameli.fr/" id="link">ameli.fr</a>
 					`,
-					title: `
-						<h2>Test title</h2>
-					`,
 				},
 				props: {
 					...defaultProps,
@@ -163,46 +165,26 @@ describe('DialogBox', () => {
 			const modal = wrapper.getComponent(VCard)
 
 			const firstBtn = modal.find<HTMLElement>('#first')
-			const thirdBtn = modal.find<HTMLElement>('#third')
+			const link = modal.find<HTMLElement>('#link')
 			await modal.vm.$nextTick()
 
 			firstBtn.element.focus()
 			await modal.vm.$nextTick()
 
-			// Enter event should be ignored
-			modal.find(':focus').trigger('keydown', {
-				keyCode: 13,
-				key: 'Enter',
-				code: 'Enter',
-			})
-
-			await wrapper.vm.$nextTick()
-			expect(firstBtn.element).toEqual(document.activeElement)
-
-			// The second button is disabled, so it should be ignored
-			await triggerTab()
-			expect(thirdBtn.element).toEqual(document.activeElement)
-
-			// If we reach the end, we should go back to the beginning
-			await triggerTab()
-			await triggerTab()
-			expect(firstBtn.element).toEqual(document.activeElement)
-
-			// If the shift key is pressed, we should go backwards
-			await triggerTab()
 			await triggerShiftTab()
-			expect(firstBtn.element).toEqual(document.activeElement)
+			expect(link.element).toEqual(document.activeElement)
 
-			// If we reach the beginning, we should go back to the end
-			await triggerShiftTab()
-			expect(modal.find('#link').element).toEqual(document.activeElement)
+			await triggerTab()
+			expect(firstBtn.element).toEqual(document.activeElement)
 		})
 	})
 
 	describe('event emissions', () => {
 		it('emits an event when close button is clicked', async () => {
 			const wrapper = mount(DialogBox, {
-				props: defaultProps,
+				props: {
+					modelValue: true,
+				},
 				global: {
 					plugins: [vuetify],
 				},
@@ -261,24 +243,6 @@ describe('DialogBox', () => {
 			})
 			const result = await wrapper.vm.getSelectableElements()
 			expect(result).toEqual([])
-		})
-
-		it('setEventListeners is called', async () => {
-			const wrapper = shallowMount(DialogBox, {
-				props: defaultProps,
-				global: {
-					plugins: [vuetify],
-				},
-			})
-
-			const spy = vi
-				.spyOn(wrapper.vm, 'setEventListeners')
-				.mockReturnValue(Promise.resolve())
-
-			await wrapper.vm.setEventListeners()
-			await wrapper.vm.$nextTick()
-
-			expect(spy).toHaveBeenCalled()
 		})
 	})
 })

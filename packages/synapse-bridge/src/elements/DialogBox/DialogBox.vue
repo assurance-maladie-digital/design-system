@@ -123,7 +123,7 @@ export default defineComponent({
 
 <template>
 	<VDialog
-		v-model="dialog"
+		:model-value="dialog"
 		v-bind="$attrs"
 		:width="width"
 		:persistent="persistent"
