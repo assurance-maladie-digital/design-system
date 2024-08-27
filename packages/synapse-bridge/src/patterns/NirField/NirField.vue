@@ -103,7 +103,6 @@ export default defineComponent({
 			keyErrors: [] as string[],
 
 			isSingleField: false,
-			isInputFocused: false,
 		}
 	},
 	watch: {
@@ -135,6 +134,10 @@ export default defineComponent({
 		this.isSingleField = this.nirLength === SINGLE_FIELD
 	},
 	computed: {
+		textFieldOptions() {
+			return deepMerge(config, this.$attrs)
+		},
+
 		/**
 		 * Generate the validation rules for the number field
 		 */
@@ -169,12 +172,32 @@ export default defineComponent({
 			return rules
 		},
 
-		textFieldOptions() {
-			return deepMerge(config, this.$attrs)
+		/**
+		 * The rules to be fire when the form is submitted
+		 */
+		rules() {
+			const numberRules = () => {
+				this.validateNumberValue(this.maskaNumberValue.unmasked)
+				console.log('ttgggghg')
+
+				return this.numberErrors.length === 0
+			}
+
+			return this.isSingleField
+				? [numberRules]
+				: [
+						numberRules,
+						() => {
+							this.validateKeyValue(this.maskaKeyValue.unmasked)
+							console.log('toto')
+
+							return this.keyErrors.length === 0
+						},
+					]
 		},
 
-		errors(): string | never[] {
-			return [...this.numberErrors, ...this.keyErrors].join('\n')
+		errors(): string[] | never[] {
+			return [...this.numberErrors, ...this.keyErrors]
 		},
 	},
 	methods: {
@@ -198,11 +221,6 @@ export default defineComponent({
 
 			this.internallyUpdatedValue = internalValue
 			this.$emit('update:modelValue', internalValue)
-		},
-
-		numberFieldBlur(): void {
-			this.isInputFocused = !this.isInputFocused
-			this.validateNumberValue(this.maskaNumberValue.unmasked)
 		},
 
 		/**
@@ -273,8 +291,14 @@ export default defineComponent({
 	>
 		<VInput
 			:model-value="[numberValue, keyValue]"
-			:max-errors="5"
+			:validation-value="[
+				maskaNumberValue.unmasked,
+				maskaKeyValue.unmasked,
+			]"
+			validate-on="blur lazy"
 			:error-messages="errors"
+			:max-errors="5"
+			:rules="rules"
 			class="vd-nir-field__fields-wrapper multi-line"
 		>
 			<VTextField
@@ -297,14 +321,17 @@ export default defineComponent({
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@maska="changeNumberValue"
-				@blur="numberFieldBlur"
-				@focus="isInputFocused = true"
+				@blur="validateNumberValue(maskaNumberValue.unmasked)"
+				@focus="
+					() => {
+						numberErrors = []
+					}
+				"
 			/>
 
 			<div id="number-field-errors" class="d-sr-only">
 				{{ numberErrors.join(' ') }}
 			</div>
-
 			<template v-if="!isSingleField">
 				<VTextField
 					ref="keyField"
@@ -327,6 +354,11 @@ export default defineComponent({
 					@keyup.delete="focusNumberField"
 					@maska="changeKeyValue"
 					@blur="validateKeyValue(maskaKeyValue.unmasked)"
+					@focus="
+						() => {
+							keyErrors = []
+						}
+					"
 				/>
 				<div id="key-field-errors" class="d-sr-only">
 					{{ keyErrors.join(' ') }}
