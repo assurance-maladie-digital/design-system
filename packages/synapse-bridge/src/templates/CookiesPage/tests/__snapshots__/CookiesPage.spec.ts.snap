@@ -110,7 +110,7 @@ exports[`CookiesPage > renders correctly 1`] = `
                 <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
                   <div class="v-selection-control__wrapper">
                     <!---->
-                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" type="radio" name="radio-group-2" value="reject"></div>
+                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-5" aria-disabled="false" aria-label="Refuser" type="radio" name="radio-group-2" value="reject"></div>
                   </div><label class="v-label v-label--clickable" for="input-5">
                     <!---->Refuser
                   </label>
@@ -118,7 +118,7 @@ exports[`CookiesPage > renders correctly 1`] = `
                 <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default mr-0 v-radio mr-0">
                   <div class="v-selection-control__wrapper">
                     <!---->
-                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" type="radio" name="radio-group-2" value="accept"></div>
+                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-6" aria-disabled="false" aria-label="Accepter" type="radio" name="radio-group-2" value="accept"></div>
                   </div><label class="v-label v-label--clickable" for="input-6">
                     <!---->Accepter
                   </label>
@@ -171,7 +171,7 @@ exports[`CookiesPage > renders correctly 1`] = `
                 <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default v-radio">
                   <div class="v-selection-control__wrapper">
                     <!---->
-                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-10" aria-disabled="false" type="radio" name="radio-group-7" value="reject"></div>
+                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-10" aria-disabled="false" aria-label="Refuser" type="radio" name="radio-group-7" value="reject"></div>
                   </div><label class="v-label v-label--clickable" for="input-10">
                     <!---->Refuser
                   </label>
@@ -179,7 +179,7 @@ exports[`CookiesPage > renders correctly 1`] = `
                 <div data-v-7eab3eb5="" class="v-selection-control v-selection-control--inline v-selection-control--density-default mr-0 v-radio mr-0">
                   <div class="v-selection-control__wrapper">
                     <!---->
-                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-11" aria-disabled="false" type="radio" name="radio-group-7" value="accept"></div>
+                    <div class="v-selection-control__input"><i class="mdi-radiobox-blank mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i><input id="input-11" aria-disabled="false" aria-label="Accepter" type="radio" name="radio-group-7" value="accept"></div>
                   </div><label class="v-label v-label--clickable" for="input-11">
                     <!---->Accepter
                   </label>
