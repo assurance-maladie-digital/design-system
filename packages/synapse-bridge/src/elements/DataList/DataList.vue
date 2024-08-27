@@ -9,7 +9,7 @@ import {
 	ItemClass,
 } from './types'
 
-import DataListItem from './DataListItem'
+import DataListItem from '../DataListItem'
 import DataListLoading from './DataListLoading'
 
 import { Widthable } from '@/mixins/widthable'
