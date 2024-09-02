@@ -149,11 +149,6 @@ describe('Computed', () => {
 		expect(wrapper.vm.textFieldClasses).not.toContain('error-style')
 	})
 
-	it('returns correct indexedThis', () => {
-		const wrapper = shallowMount(DatePicker)
-		const expectedIndexedThis = wrapper.vm.indexedThis
-		expect(wrapper.vm.indexedThis).toEqual(expectedIndexedThis)
-	})
 	it('returns correct textFieldOptions', () => {
 		const wrapper = shallowMount(DatePicker, {
 			propsData: {
@@ -246,6 +241,73 @@ describe('Computed', () => {
 })
 
 describe('Methods', () => {
+	it('clears input on full selection and backspace/delete key press', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12/12/2023',
+					date: new Date(2023, 11, 12),
+				}
+			},
+		})
+
+		const event = {
+			key: 'Backspace',
+			preventDefault: vi.fn(),
+			target: {
+				selectionStart: 0,
+				selectionEnd: 10,
+				value: '12/12/2023',
+			},
+		}
+
+		wrapper.vm.clearInputOnFullSelection(event as unknown as KeyboardEvent)
+
+		expect(event.preventDefault).toHaveBeenCalled()
+		expect(wrapper.vm.inputValue).toBe('')
+		expect(wrapper.vm.date).toBeNull()
+		expect(wrapper.emitted('update:model-value')).toBeTruthy()
+		expect(wrapper.emitted('update:model-value')?.[0]).toEqual([null])
+	})
+
+	it('does not clear input if key is not backspace/delete or not all text is selected', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12/12/2023',
+					date: new Date(2023, 11, 12),
+				}
+			},
+		})
+
+		const event = {
+			key: 'Enter',
+			preventDefault: vi.fn(),
+			target: {
+				selectionStart: 0,
+				selectionEnd: 10,
+				value: '12/12/2023',
+			},
+		}
+
+		wrapper.vm.clearInputOnFullSelection(event as unknown as KeyboardEvent)
+
+		expect(event.preventDefault).not.toHaveBeenCalled()
+		expect(wrapper.vm.inputValue).toBe('12/12/2023')
+		expect(wrapper.vm.date).toEqual(new Date(2023, 11, 12))
+		expect(wrapper.emitted('update:model-value')).toBeFalsy()
+	})
+
+	it('calls updateInputValue with correct arguments when getInput is called', () => {
+		const wrapper = shallowMount(DatePicker)
+		const updateInputValueMock = vi.spyOn(wrapper.vm, 'updateInputValue')
+		const testValue = 'test value'
+
+		wrapper.vm.getInput(testValue)
+
+		expect(updateInputValueMock).toHaveBeenCalledWith(testValue)
+	})
+
 	it('emits update:model-value event when date is not an array', () => {
 		const wrapper = shallowMount(DatePicker, {
 			data() {
@@ -307,26 +369,6 @@ describe('Methods', () => {
 		expect(wrapper.vm.isWeekend(saturday)).toBe(true)
 	})
 
-	it('calls blockOpenOnclickGeneric with correct argument when blockOpenOnclickRangePicker is called', () => {
-		const wrapper = shallowMount(DatePicker)
-		const blockOpenOnclickGenericMock = vi.fn()
-		wrapper.vm.blockOpenOnclickGeneric = blockOpenOnclickGenericMock
-
-		wrapper.vm.blockOpenOnclickRangePicker()
-
-		expect(blockOpenOnclickGenericMock).toHaveBeenCalledWith(
-			'rangeDatePicker'
-		)
-	})
-
-	it('calls blockOpenOnclickGeneric with correct argument when blockOpenOnclick is called', () => {
-		const wrapper = shallowMount(DatePicker)
-		const blockOpenOnclickGenericMock = vi.fn()
-		wrapper.vm.blockOpenOnclickGeneric = blockOpenOnclickGenericMock
-		wrapper.vm.blockOpenOnclick()
-		expect(blockOpenOnclickGenericMock).toHaveBeenCalledWith('datePicker')
-	})
-
 	it('sets isCalOpen to false when handleClose is called', () => {
 		const wrapper = shallowMount(DatePicker, {
 			data() {
@@ -339,30 +381,6 @@ describe('Methods', () => {
 		wrapper.vm.handleClose()
 
 		expect(wrapper.vm.isCalOpen).toBe(false)
-	})
-
-	it('calls handleIconClickGeneric with correct arguments when rangeHandleIconClick is called', () => {
-		const wrapper = shallowMount(DatePicker)
-		const handleIconClickGenericMock = vi.fn()
-		wrapper.vm.handleIconClickGeneric = handleIconClickGenericMock
-		const mockEvent = { preventDefault: vi.fn() }
-		wrapper.vm.rangeHandleIconClick(mockEvent)
-		expect(handleIconClickGenericMock).toHaveBeenCalledWith(
-			mockEvent,
-			'rangeDatePicker'
-		)
-	})
-
-	it('calls handleIconClick with correct arguments', () => {
-		const wrapper = shallowMount(DatePicker)
-		const handleIconClickGenericMock = vi.fn()
-		wrapper.vm.handleIconClickGeneric = handleIconClickGenericMock
-		const mockEvent = { preventDefault: vi.fn() }
-		wrapper.vm.handleIconClick(mockEvent)
-		expect(handleIconClickGenericMock).toHaveBeenCalledWith(
-			mockEvent,
-			'datePicker'
-		)
 	})
 
 	it('returns correct variant', () => {
@@ -446,66 +464,6 @@ describe('Methods', () => {
 		expect(formattedDate).toStrictEqual(['15/04/2023', '20/04/2023'])
 	})
 
-	it('trims the last character of indexedThis[historyKey] if value.data is null', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.updateInputValue({ data: null }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('trims indexedThis[historyKey] to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		await wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-	it('calls updateInputValue with correct arguments when getInput is called', async () => {
-		const wrapper = shallowMount(DatePicker)
-		const updateInputValueMock = vi.fn()
-		wrapper.vm.updateInputValue = updateInputValueMock
-		const mockValue = { data: '1' }
-		wrapper.vm.getInput(mockValue)
-		expect(updateInputValueMock).toHaveBeenCalledWith(
-			mockValue,
-			'inputValue'
-		)
-	})
-
-	it('trims indexedThis.inputValue to 10 characters when stopInput is called', async () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.indexedThis.inputValue = '12345678901'
-		wrapper.vm.stopInput()
-		expect(wrapper.vm.indexedThis.inputValue).toBe('1234567890')
-	})
-
 	it('createDateRegEx should create a correct regex for DD/MM/YYYY format', () => {
 		const wrapper = shallowMount(DatePicker)
 		const regex = wrapper.vm.createDateRegEx('DD/MM/YYYY')
@@ -522,14 +480,121 @@ describe('Methods', () => {
 		)
 	})
 
-	it('should throw an error for unsupported date format', () => {
+	it('should create a correct regex for YYYY-MM-DD format', () => {
 		const wrapper = shallowMount(DatePicker)
-		expect(() => wrapper.vm.createDateRegEx('DD-YY-MM')).toThrow(
-			'Unsupported date format part: YY'
+		const regex = wrapper.vm.createDateRegEx('YYYY-MM-DD')
+		expect(regex).toEqual(
+			/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/
 		)
+	})
+
+	it('validates short date correctly in validateShortDate', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '15/04/2023',
+				}
+			},
+		})
+
+		const validateMock = vi.spyOn(wrapper.vm, 'validate')
+
+		wrapper.vm.validateShortDate('15/04/2023')
+
+		expect(validateMock).toHaveBeenCalledWith('15/04/2023')
+		expect(wrapper.emitted('update:model-value')).toBeTruthy()
+		expect(wrapper.emitted('update:model-value')?.[0]).toEqual([
+			'15/04/2023',
+		])
+	})
+
+	it('returns correct error message in validateDateFormat', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					isNotValid: true,
+					errorMessages: ["La date saisie n'est pas valide"],
+				}
+			},
+		})
+
+		const result = wrapper.vm.validateDateFormat()
+
+		expect(result).toBe("La date saisie n'est pas valide")
+	})
+
+	it('updateInputValue removes the last character when value.data is null', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12/12/2023',
+				}
+			},
+		})
+
+		wrapper.vm.updateInputValue({ data: null })
+
+		expect(wrapper.vm.inputValue).toBe('12/12/202')
+	})
+
+	it('does nothing when inputValue length is greater than or equal to 10', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12/12/2023',
+				}
+			},
+		})
+
+		wrapper.vm.updateInputValue({ data: '4' })
+
+		expect(wrapper.vm.inputValue).toBe('12/12/2023')
+	})
+
+	it('adds a separator when inputValue length is 2 or 5 and dateFormat includes "/"', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12',
+				}
+			},
+		})
+
+		wrapper.vm.updateInputValue({ data: '3' })
+
+		expect(wrapper.vm.inputValue).toBe('12/3')
+	})
+
+	it('adds a separator when inputValue length is 2 or 5 and dateFormat includes "/"', () => {
+		const wrapper = shallowMount(DatePicker, {
+			data() {
+				return {
+					inputValue: '12',
+				}
+			},
+		})
+
+		wrapper.vm.updateInputValue({ data: '3' })
+
+		expect(wrapper.vm.inputValue).toBe('12/3')
 	})
 })
 describe('Watchers', () => {
+	it('calls validate and validateAllDates when rules prop changes', async () => {
+		const wrapper = shallowMount(DatePicker, {
+			propsData: {
+				rules: [],
+			},
+		})
+
+		const validateMock = vi.spyOn(wrapper.vm, 'validate')
+		const validateAllDatesMock = vi.spyOn(wrapper.vm, 'validateAllDates')
+
+		await wrapper.setProps({ rules: [() => true] })
+
+		expect(validateMock).toHaveBeenCalledWith(wrapper.vm.date)
+		expect(validateAllDatesMock).toHaveBeenCalled()
+	})
 	it('emits value event when date changes', () => {
 		const wrapper = shallowMount(DatePicker)
 
@@ -585,22 +650,6 @@ describe('Watchers', () => {
 		expect(wrapper.vm.modelValue).toEqual(newVal)
 	})
 
-	it('trims the last character of inputValue if it is not a digit or a slash', async () => {
-		const wrapper = shallowMount(DatePicker)
-		await wrapper.setData({ inputValue: '12/34/567a' })
-		expect(wrapper.vm.inputValue).toBe('12/34/567')
-	})
-
-	it('trims inputValue to 10 characters if its length is more than 10', async () => {
-		const wrapper = shallowMount(DatePicker)
-		await wrapper.setData({ inputValue: '12/34/56789/123' })
-		expect(wrapper.vm.inputValue).toBe('12/34/5678')
-	})
-	it('sets lastTypeAddedDate to inputValue', async () => {
-		const wrapper = shallowMount(DatePicker)
-		await wrapper.setData({ inputValue: '12/34/5678' })
-		expect(wrapper.vm.lastTypeAddedDate).toBe('inputValue')
-	})
 	it('updates date correctly when modelValue changes and is a string with dateFormatReturn not equal to DD/MM/YYYY', async () => {
 		const wrapper = shallowMount(DatePicker, {
 			propsData: {
@@ -756,39 +805,29 @@ describe('Mounted', () => {
 		expect(wrapper.vm.warningErrorMessages).toEqual([])
 		expect(wrapper.vm.errorMessages).toEqual([])
 	})
+})
 
-	it('calls removeLastCharacter when value.data is null', () => {
-		const wrapper = shallowMount(DatePicker)
-		const removeLastCharacterMock = vi.fn()
-		wrapper.vm.removeLastCharacter = removeLastCharacterMock
-		wrapper.vm.updateInputValue({ data: null }, 'inputValue')
-		expect(removeLastCharacterMock).toHaveBeenCalledWith('inputValue')
-	})
+describe('BeforeUnmount', () => {
+	it('removes keydown event listener from input element', () => {
+		const wrapper = shallowMount(DatePicker, {
+			attachTo: document.body,
+			stubs: ['VueDatePicker'],
+		})
 
-	it('does nothing if input length is 10 characters', () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.isMaxLength = vi.fn(() => true)
-		const appendCharacterMock = vi.fn()
-		wrapper.vm.appendCharacter = appendCharacterMock
-		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(appendCharacterMock).not.toHaveBeenCalled()
-	})
+		const datePicker = wrapper.vm.$refs.datePicker as any
+		const inputElement = document.createElement('input')
+		datePicker.$el = document.createElement('div')
+		datePicker.$el.appendChild(inputElement)
 
-	it('adds a separator if necessary', () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.shouldAddSeparator = vi.fn(() => true)
-		const addSeparatorMock = vi.fn()
-		wrapper.vm.addSeparator = addSeparatorMock
-		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(addSeparatorMock).toHaveBeenCalledWith('inputValue')
-	})
+		const clearInputOnFullSelectionMock = vi.fn()
+		wrapper.vm.clearInputOnFullSelection = clearInputOnFullSelectionMock
+		inputElement.addEventListener('keydown', clearInputOnFullSelectionMock)
 
-	it('appends the character if it is not a separator', () => {
-		const wrapper = shallowMount(DatePicker)
-		wrapper.vm.isNotSeparator = vi.fn(() => true)
-		const appendCharacterMock = vi.fn()
-		wrapper.vm.appendCharacter = appendCharacterMock
-		wrapper.vm.updateInputValue({ data: '1' }, 'inputValue')
-		expect(appendCharacterMock).toHaveBeenCalledWith('inputValue', '1')
+		wrapper.vm.$options.beforeUnmount?.call(wrapper.vm)
+
+		const event = new Event('keydown')
+		inputElement.dispatchEvent(event)
+
+		expect(clearInputOnFullSelectionMock).not.toHaveBeenCalled()
 	})
 })

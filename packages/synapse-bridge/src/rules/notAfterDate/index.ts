@@ -1,11 +1,8 @@
 import { ruleMessage } from '../../helpers/ruleMessage'
 import { ValidationRule, ValidationResult, Value } from '@/rules/types'
-
 import { defaultErrorMessages } from './locales'
-
-import { parseDate } from '../../helpers/parseDate'
-import { formatDate } from '../../functions/formatDate'
 import { isDateAfter } from '../../functions/validation/isDateAfter'
+import { formatDateToDDMMYYYYFn } from '@/rules/notAfterToday'
 
 /** Check that the value is not after the specified date (DD/MM/YYYY format) */
 export function notAfterDate(
@@ -17,11 +14,12 @@ export function notAfterDate(
 			return true
 		}
 
-		const formattedValue = formatDate(parseDate(date))
+		const formattedValue =
+			typeof value === 'object' ? formatDateToDDMMYYYYFn(value) : value
 
-		return (
-			!isDateAfter(date, value) ||
-			ruleMessage(errorMessages, 'default', [formattedValue])
-		)
+		if (isDateAfter(date, formattedValue)) {
+			return ruleMessage(errorMessages, 'default', [formattedValue])
+		}
+		return true
 	}
 }

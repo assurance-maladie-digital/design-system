@@ -270,7 +270,6 @@ exports[`FormBuilder > renders correctly 1`] = `
       <!--v-if-->
       <!--v-if-->
       <div data-v-2a54188f="" data-v-9067cb71="" class="vd-date-picker vd-form-input mt-4" variant="outlined" textfield="[object Object]">
-        <!--	doc:	https://vue3datepicker.com-->
         <div data-v-2a54188f="" class="dp__main dp__theme_light" data-datepicker-instance="">
           <div>
             <!---->

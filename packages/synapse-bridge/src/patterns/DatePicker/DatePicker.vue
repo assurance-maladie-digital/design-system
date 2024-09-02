@@ -1,7 +1,7 @@
 <script lang="ts">
 import '@vuepic/vue-datepicker/dist/main.css'
 import { defineComponent } from 'vue'
-import type { PropType } from 'vue'
+import { ComponentPublicInstance } from 'vue'
 import { mdiCalendar, mdiCloseCircle } from '@mdi/js'
 import VueDatePicker from '@vuepic/vue-datepicker'
 import dayjs from 'dayjs'
@@ -28,8 +28,8 @@ interface DatePickerData {
 	inputValue: string
 	calendarIcon: string
 	closeIcon: string
-	errorMessages: string[] | any
-	warningErrorMessages: string[] | any
+	errorMessages: string[]
+	warningErrorMessages: string[]
 	birthdateFlow: DatePickerFlow
 	isCalOpen: boolean
 	lastTypeAddedDate: string
@@ -48,94 +48,29 @@ export default defineComponent({
 	components: { VueDatePicker },
 	mixins: [ErrorProp, WarningRules, customizable(config)],
 	props: {
-		birthdate: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		appendIcon: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		noCalendar: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		noPrependIcon: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		noIcon: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		disabled: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		showWeekends: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		outlined: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		textFieldActivator: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		clearable: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		modelValue: {
-			type: [String, Number, Boolean, Array, Object] as PropType<
-				| string
-				| number
-				| boolean
-				| Array<any>
-				| Record<string, any>
-				| null
-			>,
-			default: () => [],
-		},
-		label: {
-			type: String as PropType<string>,
-			default: '',
-		},
-		range: {
-			type: Boolean as PropType<boolean>,
-			default: false,
-		},
-		rules: {
-			type: Array as PropType<Array<any>>,
-			default: () => [],
-		},
-		textFieldClass: {
-			type: [String, Array] as PropType<string | Array<string>>,
-			default: '',
-		},
-		hint: {
-			type: String as PropType<string>,
-			default: 'Format JJ/MM/AAAA',
-		},
-		dateFormat: {
-			type: String as PropType<string>,
-			default: 'DD/MM/YYYY',
-		},
-		dateFormatReturn: {
-			type: String as PropType<string>,
-			default: 'DD/MM/YYYY',
-		},
-		customErrorMessages: {
-			type: Array as PropType<Array<string>>,
-			default: () => [],
-		},
+		birthdate: { type: Boolean, default: false },
+		appendIcon: { type: Boolean, default: false },
+		noCalendar: { type: Boolean, default: false },
+		noPrependIcon: { type: Boolean, default: false },
+		disabled: { type: Boolean, default: false },
+		showWeekends: { type: Boolean, default: false },
+		outlined: { type: Boolean, default: false },
+		textFieldActivator: { type: Boolean, default: false },
+		clearable: { type: Boolean, default: false },
+		modelValue: { type: [String, Date, Array], default: null },
+		label: { type: String, default: '' },
+		range: { type: Boolean, default: false },
+		rules: { type: Array, default: () => [] },
+		textFieldClass: { type: [String, Array], default: '' },
+		hint: { type: String, default: 'Format JJ/MM/AAAA' },
+		dateFormat: { type: String, default: 'DD/MM/YYYY' },
+		dateFormatReturn: { type: String, default: 'DD/MM/YYYY' },
+		customErrorMessages: { type: Array, default: () => [] },
 	},
 	data(): DatePickerData {
 		return {
-			date: null as Date | null | any[],
-			dateRangeTemp: [] as any[],
+			date: null,
+			dateRangeTemp: [],
 			format: 'dd/MM/yyyy',
 			inputValue: '',
 			calendarIcon: mdiCalendar,
@@ -150,11 +85,42 @@ export default defineComponent({
 		}
 	},
 	computed: {
-		indexedThis(): { [key: string]: any } {
-			return this as any
+		filteredErrorMessages(): string[] {
+			// todo: trouver pourquoi les messages d'erreur s'affichent en double (presents dans errorMessages + @/rules)
+			return this.errorMessages
+				.filter(
+					(message: string) =>
+						!message.includes(
+							'La date doit être antérieure ou égale'
+						)
+				)
+				.filter(
+					(message: string) =>
+						!message.includes(
+							'La date doit être postérieure ou égale'
+						)
+				)
+				.filter(
+					(message: string) =>
+						message !==
+						'La date doit être antérieure ou égale à aujourd’hui.'
+				)
+				.filter(
+					(message: string) =>
+						message !==
+						'La date doit être postérieure à aujourd’hui.'
+				)
+				.filter((message: string) => message !== 'Le champ est requis.')
 		},
-		textFieldOptions() {
-			let errorMessages = this.$attrs.errorMessages
+		combinedErrorMessages(): string[] {
+			return Array.from(
+				new Set([
+					...this.filteredErrorMessages,
+					...this.warningErrorMessages,
+				])
+			)
+		},
+		textFieldOptions(): any {
 			return {
 				value:
 					this.lastTypeAddedDate === 'date'
@@ -169,197 +135,133 @@ export default defineComponent({
 				hint: this.hint,
 				persistentHint: true,
 				rules: [this.validateDateFormat, ...this.rules],
-				errorMessages: errorMessages || [],
+				errorMessages: this.$attrs.errorMessages || [],
 			}
 		},
-
-		hasError() {
+		hasError(): boolean {
 			return (
 				this.errorMessages.includes(
 					"La date saisie n'est pas valide"
 				) ||
 				this.errorMessages.includes('Une erreur est survenue') ||
-				this.customErrorMessages.some((msg) =>
+				this.customErrorMessages.some((msg: any) =>
 					this.errorMessages.includes(msg)
 				)
 			)
 		},
-		textFieldClasses() {
-			const textFieldClasses = this.buildTextFieldClasses()
-
-			if (this.hasError) {
-				textFieldClasses.push('error-style')
-			}
-
-			return textFieldClasses
+		textFieldClasses(): string[] {
+			const classes = this.buildTextFieldClasses()
+			if (this.hasError) classes.push('error-style')
+			return classes
 		},
-		getVariant() {
+		getVariant(): string {
 			return this.determineVariant()
 		},
-		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon && !this.noIcon) {
-				return this.calendarIcon
-			}
-			return undefined
+		prependIconValue(): string | undefined {
+			return !this.appendIcon && !this.noPrependIcon
+				? this.calendarIcon
+				: undefined
 		},
 	},
 	mounted() {
-		// Check if the error prop is true
-		if (this.error) {
-			// If it is, add an error message
-			this.errorMessages.push('Une erreur est survenue')
+		const datePicker = this.$refs.datePicker as ComponentPublicInstance<
+			typeof VueDatePicker
+		>
+		if (datePicker && datePicker.$el) {
+			const inputElement = datePicker.$el.querySelector(
+				'input'
+			) as HTMLInputElement
+			if (inputElement) {
+				inputElement.addEventListener(
+					'keydown',
+					this.clearInputOnFullSelection
+				)
+			}
 		}
-		if (this.date) {
-			this.$emit('update:model-value', this.formatDate(this.date))
-		} else {
-			this.$emit('update:model-value', null)
-		}
+		if (this.error) this.errorMessages.push('Une erreur est survenue')
+		this.initializeDate()
+		this.validateAllDates()
 	},
 	watch: {
-		date(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
-			if (newVal) {
-				this.lastTypeAddedDate = 'date'
-				this.$emit('change', newVal)
-				if (typeof newVal === 'string' && newVal.length === 10) {
-					this.$emit('update:model-value', this.formatDate(newVal))
-					this.validate(newVal) // Add validate call
-				}
-			}
+		modelValue: {
+			immediate: true,
+			handler(newVal) {
+				this.handleModelValueChange(newVal)
+			},
 		},
-		modelValue(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
-
-			const parseDate = (dateStr: string) => {
-				const [day, month, year] = dateStr.split(/[-/]/)
-				return new Date(Number(year), Number(month) - 1, Number(day))
-			}
-
-			const formatAndValidateDate = (dateStr: string) => {
-				const dateToFormat = dayjs(dateStr, 'DD/MM/YYYY')
-				const formattedDate = dateToFormat.toDate()
-				if (formattedDate.toString() !== 'Invalid Date') {
-					this.date = formattedDate
-					this.validate(dateStr)
-				}
-			}
-
-			if (typeof newVal === 'string') {
-				if (this.dateFormatReturn === 'DD/MM/YYYY') {
-					this.date = parseDate(newVal)
-					if (newVal.length === 10) {
-						this.validate(newVal)
-						this.inputValue = newVal
-					}
-				} else {
-					formatAndValidateDate(newVal)
-				}
-			} else if (Array.isArray(newVal)) {
-				if (this.dateFormatReturn === 'DD/MM/YYYY') {
-					this.date = newVal.map((date) => parseDate(date))
-				} else {
-					this.date = newVal
-						.map((date) => {
-							const formattedDate = dayjs(
-								date,
-								'DD/MM/YYYY'
-							).format(this.dateFormatReturn)
-							return formattedDate.toString() !== 'Invalid Date'
-								? formattedDate
-								: null
-						})
-						.filter((date) => date !== null)
-				}
-				this.validate(newVal)
-			}
+		rules() {
+			this.validate(this.date)
+			this.validateAllDates()
 		},
-		inputValue(newVal, oldVal) {
-			if (newVal === oldVal) {
-				return
-			}
+		inputValue(newVal) {
+			this.validate(newVal)
+		},
+	},
+	methods: {
+		clearInputOnFullSelection(event: KeyboardEvent): void {
+			const input = event.target as HTMLInputElement
+			const isBackspaceOrDelete =
+				event.key === 'Backspace' || event.key === 'Delete'
+			const isAllSelected =
+				input.selectionStart === 0 &&
+				input.selectionEnd === input.value.length
 
-			const isValidInput = (value: string) => /^[\d/-]+$/.test(value)
-			const truncateInput = (value: string, maxLength: number) =>
-				value.slice(0, maxLength)
-
-			if (!isValidInput(newVal)) {
-				this.inputValue = truncateInput(newVal, newVal.length - 1)
-			}
-
-			if (newVal.length > 10) {
-				this.inputValue = truncateInput(newVal, 10)
-			}
-
-			if (newVal.length === 0) {
-				this.clearErrors()
+			if (isBackspaceOrDelete && isAllSelected) {
+				event.preventDefault()
+				this.inputValue = ''
 				this.date = null
 				this.$emit('update:model-value', null)
 			}
-
-			this.lastTypeAddedDate = 'inputValue'
 		},
-	},
-	created() {
-		if (typeof this.modelValue === 'string') {
-			const [day, month, year] = this.modelValue.split(/[-/]/)
-			this.date = new Date(Number(year), Number(month) - 1, Number(day))
-			this.inputValue = this.modelValue
-		}
-	},
-	methods: {
-		clearErrors() {
+		getInput(value: any): void {
+			this.updateInputValue(value)
+		},
+		clearErrors(): void {
 			this.errorMessages = []
 			this.warningErrorMessages = []
 		},
-		resetErrorMessages() {
+		resetErrorMessages(): void {
 			this.clearErrors()
 			this.isNotValid = false
 		},
-		emitUpdateEvent() {
+		emitUpdateEvent(): void {
 			if (this.date) {
 				this.resetErrorMessages()
 				const formattedDate = this.formatDate(this.date)
 				this.$emit('update:model-value', formattedDate)
-
-				// Mise à jour explicite de indexedThis[historyKey] si le format de retour est différent de DD/MM/YYYY
 				if (this.dateFormatReturn !== 'DD/MM/YYYY') {
-					this.indexedThis['inputValue'] = formattedDate
+					this.inputValue = formattedDate
 				}
 			}
 		},
-		isWeekend(date: any) {
+		isWeekend(date: any): boolean {
 			const dayOfWeek = date.getDay()
 			return dayOfWeek === 0 || dayOfWeek === 6
 		},
-		handleIconClickGeneric(event: any, datePickerRef: any) {
-			const datePicker = this.$refs[datePickerRef]
+		handleIconClick(event: any): void {
 			event.stopPropagation()
 			this.isCalOpen = !this.isCalOpen
-			if (!this.noCalendar && datePicker && !this.textFieldActivator) {
-				// from https://vue3datepicker.com/methods-and-events/methods/#openmenu
-				// @ts-ignore
-				this.isCalOpen ? datePicker.openMenu() : datePicker.closeMenu()
-			}
-		},
-		handleIconClick(event: any) {
-			this.handleIconClickGeneric(event, 'datePicker')
-		},
-		rangeHandleIconClick(event: any) {
-			this.handleIconClickGeneric(event, 'rangeDatePicker')
-		},
-		blockOpenOnclickGeneric(datePickerRef: any) {
-			const datePicker = this.$refs[datePickerRef] as InstanceType<
+			const datePicker = this.$refs.datePicker as ComponentPublicInstance<
 				typeof VueDatePicker
 			>
 			if (
-				(!this.isCalOpen &&
+				datePicker &&
+				!this.noCalendar &&
+				datePicker &&
+				!this.textFieldActivator
+			) {
+				this.isCalOpen ? datePicker.openMenu() : datePicker.closeMenu()
+			}
+		},
+		blockOpenOnclick(): void {
+			const datePicker = this.$refs.datePicker as ComponentPublicInstance<
+				typeof VueDatePicker
+			>
+			if (
+				(datePicker &&
+					!this.isCalOpen &&
 					!this.noPrependIcon &&
-					!this.textFieldActivator &&
-					!this.noIcon) ||
+					!this.textFieldActivator) ||
 				this.noCalendar
 			) {
 				datePicker.closeMenu()
@@ -367,28 +269,14 @@ export default defineComponent({
 				this.isCalOpen = !this.isCalOpen
 			}
 		},
-		blockOpenOnclick() {
-			this.blockOpenOnclickGeneric('datePicker')
-		},
-		blockOpenOnclickRangePicker() {
-			this.blockOpenOnclickGeneric('rangeDatePicker')
-		},
-		handleClose() {
+		handleClose(): void {
 			this.isCalOpen = false
 		},
 		formatDate(date: any): any {
-			if (!date) {
-				return
-			}
-			if (Array.isArray(date)) {
-				return date.map((d) => this.formatDate(d))
-			}
-			if (!dayjs(date).isValid()) {
-				return this.inputValue || null
-			}
-			if (this.range) {
-				return dayjs(date).format(this.dateFormat)
-			}
+			if (!date) return
+			if (Array.isArray(date)) return date.map((d) => this.formatDate(d))
+			if (!dayjs(date).isValid()) return this.inputValue || null
+			if (this.range) return dayjs(date).format(this.dateFormat)
 			if (this.dateFormatReturn) {
 				this.$emit(
 					'update:model-value',
@@ -397,179 +285,109 @@ export default defineComponent({
 			}
 			return dayjs(date).format(this.dateFormat)
 		},
-		createDateRegEx(format: string) {
+		createDateRegEx(format: string): RegExp {
 			const day = '(0[1-9]|[12][0-9]|3[01])'
 			const month = '(0[1-9]|1[012])'
 			const year = '(19|20)\\d\\d'
-
 			const formatMapping: { [key: string]: string } = {
 				DD: day,
 				MM: month,
 				YYYY: year,
 			}
-
-			// Determine the position of the separator based on the date format
-			const separatorPosition =
-				format.indexOf('/') !== -1
-					? format.indexOf('/')
-					: format.indexOf('-')
-			const separator = format[separatorPosition]
-
+			const separator = format.includes('/') ? '/' : '-'
 			const parts = format.split(separator)
-
 			const regexParts = parts.map((part) => formatMapping[part])
-
-			// Check if all parts are supported
-			for (const part of parts) {
-				if (!formatMapping.hasOwnProperty(part)) {
-					throw new Error(`Unsupported date format part: ${part}`)
+			const part = parts.join(separator)
+			if (parts.some((part) => !formatMapping[part]))
+				throw new Error(`Unsupported date format part: ${part}`)
+			return new RegExp(`^${regexParts.join('[- /.]')}$`)
+		},
+		updateInputValue(value: { data: string | null }): void {
+			if (value.data === null) {
+				this.inputValue = this.inputValue.slice(0, -1)
+				return
+			}
+			if (this.inputValue.length >= 10) return
+			if (this.inputValue.length === 2 || this.inputValue.length === 5) {
+				this.inputValue += this.dateFormat.includes('/') ? '/' : '-'
+			}
+			if (value.data !== '/' && value.data !== '-') {
+				this.inputValue += value.data
+			}
+			if (this.inputValue.length === 10) {
+				const date = dayjs(this.inputValue, this.dateFormat)
+				if (date.isValid()) {
+					const formattedDateReturn = date.format(
+						this.dateFormatReturn
+					)
+					if (!this.isShortDateFormat()) {
+						this.validateFullDate()
+					} else {
+						this.validateShortDate(formattedDateReturn)
+					}
 				}
 			}
-
-			const regexString = `^${regexParts.join('[- /.]')}$`
-
-			return new RegExp(regexString)
 		},
-		updateInputValue(
-			value: { data: string | null },
-			historyKey: string
-		): void {
-			// Gérer la suppression de caractères
-			if (value.data === null) {
-				this.removeLastCharacter(historyKey)
-				return
-			}
-
-			// Limiter la longueur de l'input à 10 caractères
-			if (this.isMaxLength(historyKey, 10)) {
-				return
-			}
-
-			// Ajouter un séparateur après le deuxième et cinquième caractère
-			if (this.shouldAddSeparator(historyKey)) {
-				this.addSeparator(historyKey)
-			}
-
-			// Ajouter le caractère saisi si ce n'est pas un séparateur
-			if (this.isNotSeparator(value.data)) {
-				this.appendCharacter(historyKey, value.data)
-			}
-
-			// Valider et formater la date lorsque la longueur atteint 10 caractères
-			if (this.isMaxLength(historyKey, 10)) {
-				this.validateAndFormatDate(historyKey)
-			}
-		},
-
-		removeLastCharacter(historyKey: string) {
-			this.indexedThis[historyKey] = this.indexedThis[historyKey].slice(
-				0,
-				-1
-			)
-		},
-
-		isMaxLength(historyKey: string, maxLength: number) {
-			return this.indexedThis[historyKey].length >= maxLength
-		},
-
-		shouldAddSeparator(historyKey: string) {
-			const length = this.indexedThis[historyKey].length
-			return length === 2 || length === 5
-		},
-
-		addSeparator(historyKey: string) {
-			const separator = this.dateFormat.includes('/') ? '/' : '-'
-			this.indexedThis[historyKey] += separator
-		},
-
-		isNotSeparator(char: string | null) {
-			return char !== '/' && char !== '-'
-		},
-
-		appendCharacter(historyKey: string, char: string) {
-			this.indexedThis[historyKey] += char
-		},
-
-		validateAndFormatDate(historyKey: string) {
-			const date = dayjs(this.indexedThis[historyKey], this.dateFormat)
-			const formattedDateReturn = dayjs(date).format(
-				this.dateFormatReturn
-			)
-
-			if (!this.isShortDateFormat()) {
-				this.validateFullDate(historyKey)
-			} else {
-				this.validateShortDate(historyKey, formattedDateReturn)
-			}
-		},
-
-		isShortDateFormat() {
+		isShortDateFormat(): boolean {
 			return (
 				this.dateFormatReturn === 'DD/MM/YY' ||
 				this.dateFormatReturn === 'DD-MM-YY'
 			)
 		},
-
-		validateFullDate(historyKey: string) {
+		validateFullDate(): void {
 			const dateRegEx = this.createDateRegEx(this.dateFormat)
 			const isValidFormat = dateRegEx.test(this.inputValue)
-
 			if (
 				isValidFormat &&
 				dayjs(this.inputValue, this.dateFormat, true).isValid()
 			) {
 				this.date = this.inputValue
 				this.isNotValid = false
-				this.$emit('update:model-value', this.indexedThis[historyKey])
+				this.$emit('update:model-value', this.inputValue)
 			} else {
 				this.isNotValid = true
+				const customErrorMessage = this.customErrorMessages[0]
 				this.errorMessages.push(
-					this.customErrorMessages.length > 0
-						? this.customErrorMessages[0]
+					typeof customErrorMessage === 'string'
+						? customErrorMessage
 						: "La date saisie n'est pas valide"
 				)
 			}
 		},
-
-		validateShortDate(historyKey: string, formattedDateReturn: string) {
-			this.validate(this.indexedThis[historyKey])
+		validateShortDate(formattedDateReturn: string): void {
+			this.validate(this.inputValue)
 			this.$emit('update:model-value', formattedDateReturn)
 		},
 		validateDateFormat(): boolean | string {
 			if (this.isNotValid) {
+				const errorMessagesObject = this.errorMessages.reduce(
+					(acc, message, index) => {
+						acc[`error${index}`] = message
+						return acc
+					},
+					{} as Record<string, string>
+				)
+
 				return (
-					ruleMessage(this.errorMessages, 'default') ||
+					ruleMessage(errorMessagesObject, 'default') ||
 					"La date saisie n'est pas valide"
 				)
 			}
 			return true
 		},
-		getInput(value: any) {
-			this.updateInputValue(value, 'inputValue')
+		stopInput(): void {
+			this.inputValue = this.inputValue.slice(0, 10)
 		},
-
-		stopInput() {
-			this.indexedThis.inputValue = this.indexedThis.inputValue.slice(
-				0,
-				10
-			)
-		},
-
-		validate(value: any) {
+		validate(value: any): void {
 			const applyRules = (rules: any[]) =>
 				rules
 					.map((rule) => rule(value))
 					.filter((result) => result !== true)
-
 			this.errorMessages = this.rules ? applyRules(this.rules) : []
 			this.warningErrorMessages = this.warningRules
 				? applyRules(this.warningRules)
 				: []
-
-			if (this.error) {
-				this.errorMessages.push('Une erreur est survenue')
-			}
-
+			if (this.error) this.errorMessages.push('Une erreur est survenue')
 			if (this.dateFormatReturn !== 'DD/MM/YYYY') {
 				const dateToFormat = dayjs(value, 'DD/MM/YYYY')
 				const formattedDate = dateToFormat.toDate()
@@ -582,59 +400,59 @@ export default defineComponent({
 				}
 			}
 		},
-		buildTextFieldClasses() {
-			const textFieldClasses = []
-
-			if (this.warningRules && this.warningRules.length) {
-				textFieldClasses.push('vd-warning-rules')
-			}
-
-			if (this.noPrependIcon) {
-				textFieldClasses.push('vd-no-prepend-icon')
-			}
-
-			if (this.noIcon) {
-				textFieldClasses.push('vd-no-prepend-icon')
-			}
-
-			if (this.appendIcon) {
-				textFieldClasses.push('vd-append-icon')
-			}
-
+		validateAllDates(): void {
+			document
+				.querySelectorAll('.vd-date-picker input')
+				.forEach((input) => {
+					const inputElement = input as HTMLInputElement
+					const value = inputElement.value
+					if (value) {
+						this.validate(value)
+					}
+				})
+		},
+		buildTextFieldClasses(): string[] {
+			const classes: string[] = []
+			if (this.warningRules && this.warningRules.length)
+				classes.push('vd-warning-rules')
+			if (this.noPrependIcon) classes.push('vd-no-prepend-icon')
+			if (this.appendIcon) classes.push('vd-append-icon')
 			if (this.textFieldClass) {
 				if (Array.isArray(this.textFieldClass)) {
-					textFieldClasses.push(...this.textFieldClass)
+					this.textFieldClass.forEach((cls) => {
+						if (typeof cls === 'string') {
+							classes.push(cls)
+						}
+					})
 				} else {
-					textFieldClasses.push(this.textFieldClass)
+					classes.push(this.textFieldClass)
 				}
 			}
-
-			return textFieldClasses
+			return classes
 		},
-		determineVariant() {
+		determineVariant(): string {
 			return this.disabled || this.noPrependIcon || !this.outlined
 				? 'underlined'
 				: 'outlined'
 		},
-		onClearInput() {
+		onClearInput(): void {
 			this.date = null
 			this.inputValue = ''
 			this.$emit('update:model-value', null)
 		},
-		async handleCut(event?: ClipboardEvent) {
+		async handleCut(event?: ClipboardEvent): Promise<void> {
 			if (event && event.clipboardData) {
 				this.inputValue = ''
 				this.date = null
 				this.$emit('update:model-value', this.date)
 			}
 		},
-		async handlePaste(event?: ClipboardEvent) {
+		async handlePaste(event?: ClipboardEvent): Promise<void> {
 			if (event && event.clipboardData) {
 				this.inputValue = event.clipboardData.getData('text')
 				const isValidFormat = this.createDateRegEx(
 					this.dateFormat
 				).test(this.inputValue)
-
 				if (
 					isValidFormat &&
 					dayjs(this.inputValue, this.dateFormat, true).isValid()
@@ -645,20 +463,94 @@ export default defineComponent({
 					this.isNotValid = false
 				} else {
 					this.isNotValid = true
-					this.errorMessages.push(
-						this.customErrorMessages.length > 0
+					const customErrorMessage =
+						typeof this.customErrorMessages[0] === 'string'
 							? this.customErrorMessages[0]
 							: "La date saisie n'est pas valide"
+					this.errorMessages.push(customErrorMessage)
+				}
+			}
+		},
+		initializeDate(): void {
+			if (typeof this.modelValue === 'string') {
+				const date = dayjs(this.modelValue, this.dateFormat)
+				if (date.isValid()) {
+					this.date = date.toDate()
+					this.inputValue = this.modelValue
+				} else {
+					this.date = this.modelValue
+					this.inputValue = dayjs(this.modelValue).format(
+						this.dateFormat
 					)
 				}
 			}
 		},
+		handleModelValueChange(newVal: any): void {
+			if (typeof newVal === 'string') {
+				if (this.dateFormatReturn === 'DD/MM/YYYY') {
+					this.date = this.parseDate(newVal)
+					if (newVal.length === 10) {
+						this.validate(newVal)
+						this.inputValue = newVal
+					}
+				} else {
+					this.formatAndValidateDate(newVal)
+				}
+			} else if (Array.isArray(newVal)) {
+				if (this.dateFormatReturn === 'DD/MM/YYYY') {
+					this.date = newVal.map((date) => this.parseDate(date))
+					this.inputValue = newVal.join(', ')
+				} else {
+					this.date = newVal
+						.map((date) => {
+							const formattedDate = dayjs(
+								date,
+								this.dateFormat
+							).format(this.dateFormatReturn)
+							return formattedDate.toString() !== 'Invalid Date'
+								? formattedDate
+								: null
+						})
+						.filter((date) => date !== null)
+				}
+				this.validate(newVal)
+			}
+		},
+		parseDate(dateStr: string): Date {
+			const [day, month, year] = dateStr.split(/[-/]/)
+			return new Date(Number(year), Number(month) - 1, Number(day))
+		},
+		formatAndValidateDate(dateStr: string): void {
+			const dateToFormat = dayjs(dateStr, 'DD/MM/YYYY')
+			const formattedDate = dateToFormat.toDate()
+			if (formattedDate.toString() !== 'Invalid Date') {
+				this.date = formattedDate
+				this.inputValue = dateStr
+				this.validate(dateStr)
+			}
+		},
+	},
+	beforeUnmount() {
+		const datePicker = this.$refs.datePicker as ComponentPublicInstance<
+			typeof VueDatePicker
+		>
+		if (datePicker && datePicker.$el) {
+			const inputElement = datePicker.$el.querySelector(
+				'input'
+			) as HTMLInputElement
+			if (inputElement) {
+				inputElement.removeEventListener(
+					'keydown',
+					this.clearInputOnFullSelection
+				)
+			}
+		}
 	},
 })
 </script>
+
 <template>
 	<div class="vd-date-picker">
-		<!--	doc:	https://vue3datepicker.com-->
 		<VueDatePicker
 			v-model="date"
 			ref="datePicker"
@@ -703,14 +595,12 @@ export default defineComponent({
 					]"
 					:clearable="clearable"
 					:disabled="disabled"
-					:error-messages="[
-						...errorMessages,
-						...warningErrorMessages,
-					]"
+					:error-messages="combinedErrorMessages"
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
 					:rules="[validateDateFormat, ...rules]"
+					:max-errors="5"
 					:readonly="range"
 					:value="
 						lastTypeAddedDate === 'date'
@@ -727,7 +617,6 @@ export default defineComponent({
 						v-if="outlined || (appendIcon && calendarIcon)"
 					>
 						<VIcon
-							v-if="!noIcon"
 							@click="handleIconClick"
 							tabindex="-1"
 							aria-hidden="true"
@@ -735,8 +624,7 @@ export default defineComponent({
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
-
-					<template #prepend v-if="!outlined && prependIconValue && !noIcon">
+					<template #prepend v-if="!outlined && prependIconValue">
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
@@ -745,7 +633,6 @@ export default defineComponent({
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
-
 					<template v-slot:clear v-if="clearable">
 						<VIcon
 							@click="onClearInput"
