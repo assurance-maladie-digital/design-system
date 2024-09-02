@@ -178,7 +178,6 @@ export default defineComponent({
 		rules() {
 			const numberRules = () => {
 				this.validateNumberValue(this.maskaNumberValue.unmasked)
-				console.log('ttgggghg')
 
 				return this.numberErrors.length === 0
 			}
@@ -189,7 +188,6 @@ export default defineComponent({
 						numberRules,
 						() => {
 							this.validateKeyValue(this.maskaKeyValue.unmasked)
-							console.log('toto')
 
 							return this.keyErrors.length === 0
 						},
