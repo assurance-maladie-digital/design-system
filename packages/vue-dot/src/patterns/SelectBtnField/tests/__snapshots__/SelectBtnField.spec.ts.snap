@@ -2,7 +2,7 @@
 
 exports[`SelectBtnField renders correctly 1`] = `
 <div class="vd-select-btn-field vd-form-input">
-  <vbtntoggle-stub valuecomparator="[Function]" activeclass="v-item--active" tag="div" role="listbox" class="vd-select-btn-field-toggle d-flex overflow-y-auto primary--text flex-column"></vbtntoggle-stub>
+  <vbtntoggle-stub valuecomparator="[Function]" activeclass="v-item--active" tag="ul" class="vd-select-btn-field-toggle d-flex overflow-y-auto primary--text flex-column"></vbtntoggle-stub>
   <!---->
 </div>
 `;

@@ -5,40 +5,51 @@
 	>
 		<VBtnToggle
 			v-bind="options.btnToggle"
+			tag="ul"
 			:value="internalValue"
 			:multiple="multiple"
-			:class="{ 'flex-column': !inline }"
 			:aria-label="label"
-			role="listbox"
 			class="vd-select-btn-field-toggle d-flex overflow-y-auto primary--text"
+			:class="{ 'flex-column': !inline }"
 		>
-			<VBtn
+			<li
 				v-for="(item, index) in filteredItems"
-				v-bind="options.btn"
 				:key="index"
-				:value="item.value"
-				:outlined="!isSelected(item.value)"
-				:elevation="0"
-				:color="error ? 'error' : 'primary'"
-				:class="{ 'error--text': error }"
-				:aria-selected="isSelected(item.value)"
-				role="option"
-				:aria-readonly="readonly"
-				@click="toggleItem(item)"
+				class="vd-select-list-item"
 			>
-				<span class="text-body-1">
-					{{ item.text }}
-				</span>
-
-				<VSpacer v-bind="options.spacer" />
-
-				<VIcon
-					v-bind="options.icon"
-					:style="getIconStyles(item)"
+				<VBtn
+					v-bind="options.btn"
+					:value="item.value"
+					:outlined="!isSelected(item.value)"
+					:elevation="0"
+					:color="error ? 'error' : 'primary'"
+					:class="{ 'error--text': error }"
+					:aria-selected="isSelected(item.value)"
+					:aria-label="isSelected(item.value)? 'Sélectionné' : ''"
+					:aria-readonly="readonly"
+					@click="toggleItem(item)"
 				>
-					{{ checkIcon }}
-				</VIcon>
-			</VBtn>
+					<span class="text-body-1">
+						{{ item.text }}
+					</span>
+
+					<VSpacer
+						v-bind="options.spacer"
+						tag="span"
+					/>
+
+					<VIcon
+						v-bind="options.icon"
+						:style="getIconStyles(item)"
+						role="img"
+						:hidden="!isSelected(item.value)"
+						:aria-hidden="!isSelected(item.value)"
+						aria-label="Sélectionné"
+					>
+						{{ checkIcon }}
+					</VIcon>
+				</VBtn>
+			</li>
 		</VBtnToggle>
 
 		<template v-if="errorMessages">
@@ -227,15 +238,6 @@
 	.vd-select-btn-field-toggle {
 		background: none !important;
 
-		&.flex-column .v-btn {
-			border-radius: 4px !important;
-			border-width: 1px !important;
-
-			+ .v-btn {
-				margin-top: 8px;
-			}
-		}
-
 		.v-btn {
 			background: #fff;
 
@@ -246,6 +248,27 @@
 			:deep(.v-btn__content) {
 				flex-shrink: 1 !important;
 			}
+
+			:deep(.v-icon__svg) {
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+		}
+
+		&.flex-column {
+			.v-btn {
+				border-radius: 4px !important;
+				border-width: 1px !important;
+			}
+
+			.vd-select-list-item + .vd-select-list-item .v-btn {
+				margin-top: 8px;
+			}
+		}
+
+		.vd-select-list-item {
+			all: unset;
+			display: contents;
 		}
 
 		&.theme--dark {
