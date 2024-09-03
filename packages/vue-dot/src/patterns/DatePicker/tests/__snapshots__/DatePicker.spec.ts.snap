@@ -14,7 +14,6 @@ exports[`DatePicker renders correctly 1`] = `
           <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper">
             <div class="v-messages__message">
               <!---->
-              <!---->
               <div class="messages">
                 Format JJ/MM/AAAA
               </div>
