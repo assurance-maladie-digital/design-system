@@ -29,7 +29,7 @@
 					<div v-if="successMessages.length">
 						{{ successMessages[0] }}
 					</div>
-					<div v-if="message && message !== textFieldOptions.hint">
+					<div v-else-if="message && message !== textFieldOptions.hint">
 						{{ message }}
 					</div>
 					<div v-else-if="errorMessages">
