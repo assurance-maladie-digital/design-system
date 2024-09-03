@@ -25,11 +25,14 @@
 				@change="dateFormatted = $event"
 				v-on="listeners"
 			>
-				<template #message>
+				<template #message="{message}">
 					<div v-if="successMessages.length">
 						{{ successMessages[0] }}
 					</div>
-					<div v-if="errorMessages">
+					<div v-else-if="message && message !== textFieldOptions.hint">
+						{{ message }}
+					</div>
+					<div v-else-if="errorMessages">
 						{{ errorMessages[0] }}
 					</div>
 					<div class="messages">
