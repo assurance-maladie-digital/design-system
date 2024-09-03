@@ -155,6 +155,7 @@ export default defineComponent({
 		:persistent="persistent"
 		:retain-focus="false"
 		aria-modal="true"
+		aria-describedby="dialogContent"
 		class="vd-dialog-box"
 		@update:model-value="$emit('update:modelValue', false)"
 	>
