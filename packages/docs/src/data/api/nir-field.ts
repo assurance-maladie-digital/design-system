@@ -27,7 +27,19 @@ export const api: Api = {
 				type: 'string',
 				default: null,
 				description: 'Affiche un tooltip à côté du champ.'
-			}
+			},
+			{
+				name: 'number-label',
+				type: 'string',
+				default: 'Numéro de sécurité sociale',
+				description: 'Label de l\'input numberField.'
+			},
+			{
+				name: 'key-label',
+				type: 'string',
+				default: 'Clé',
+				description: 'Label de l\'input keyField.'
+			},
 		],
 		slots: [
 			{
