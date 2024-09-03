@@ -159,7 +159,11 @@ export default defineComponent({
 		class="vd-dialog-box"
 		@update:model-value="$emit('update:modelValue', false)"
 	>
-		<VCard v-bind="options.card" ref="dialogContent">
+		<VCard
+			v-bind="options.card"
+			ref="dialogContent"
+			id="dialogContent"
+		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2 v-if="title" class="text-h6 font-weight-bold">
