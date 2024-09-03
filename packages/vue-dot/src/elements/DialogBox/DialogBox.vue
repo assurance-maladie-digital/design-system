@@ -1,8 +1,7 @@
 <template>
 	<VDialog
-		v-bind="$attrs"
-		ref="dialog"
 		v-model="dialog"
+		v-bind="$attrs"
 		:width="width"
 		:persistent="persistent"
 		aria-modal="true"
