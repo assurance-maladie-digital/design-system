@@ -124,9 +124,9 @@ describe('SelectBtnField', () => {
 			},
 		})
 
-		await wrapper.find('.v-btn:nth-child(2)').trigger('click')
-		await wrapper.find('.v-btn:nth-child(3)').trigger('click')
-		await wrapper.find('.v-btn:nth-child(2)').trigger('click')
+		await wrapper.find('li:nth-child(2) .v-btn').trigger('click')
+		await wrapper.find('li:nth-child(3) .v-btn').trigger('click')
+		await wrapper.find('li:nth-child(2) .v-btn').trigger('click')
 
 		expect(wrapper.emitted('update:modelValue')).toEqual([
 			[['test2']],
@@ -191,10 +191,10 @@ describe('SelectBtnField', () => {
 			},
 		})
 
-		await wrapper.find('.v-btn:nth-child(1)').trigger('click')
-		await wrapper.find('.v-btn:nth-child(2)').trigger('click')
-		await wrapper.find('.v-btn:nth-child(3)').trigger('click')
-		await wrapper.find('.v-btn:nth-child(2)').trigger('click')
+		await wrapper.find('li:nth-child(1) .v-btn').trigger('click')
+		await wrapper.find('li:nth-child(2) .v-btn').trigger('click')
+		await wrapper.find('li:nth-child(3) .v-btn').trigger('click')
+		await wrapper.find('li:nth-child(2) .v-btn').trigger('click')
 
 		expect(wrapper.emitted('update:modelValue')).toEqual([
 			[['test1']],
@@ -248,8 +248,8 @@ describe('SelectBtnField', () => {
 			},
 		})
 
-		wrapper.find('.v-btn:nth-child(1)').trigger('click')
-		wrapper.find('.v-btn:nth-child(2)').trigger('click')
+		wrapper.find('li:nth-child(1) .v-btn').trigger('click')
+		wrapper.find('li:nth-child(2) .v-btn').trigger('click')
 
 		expect(wrapper.html()).toMatchSnapshot()
 	})
