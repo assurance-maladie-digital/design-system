@@ -1,7 +1,8 @@
 <template>
 	<VDialog
-		v-model="dialog"
 		v-bind="$attrs"
+		ref="dialog"
+		v-model="dialog"
 		:width="width"
 		:persistent="persistent"
 		aria-modal="true"
@@ -11,6 +12,7 @@
 		<VCard
 			v-bind="options.card"
 			ref="dialogContent"
+			aria-describedby="dialogContent"
 		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
