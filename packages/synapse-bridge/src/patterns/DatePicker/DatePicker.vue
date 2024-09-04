@@ -197,7 +197,7 @@ export default defineComponent({
 			return this.determineVariant()
 		},
 		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon) {
+			if (!this.appendIcon && !this.noPrependIcon && !this.noIcon) {
 				return this.calendarIcon
 			}
 			return undefined
@@ -736,7 +736,7 @@ export default defineComponent({
 						</VIcon>
 					</template>
 
-					<template #prepend v-if="!outlined && prependIconValue">
+					<template #prepend v-if="!outlined && prependIconValue && !noIcon">
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"

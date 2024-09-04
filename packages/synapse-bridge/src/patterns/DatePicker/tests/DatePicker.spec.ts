@@ -66,6 +66,32 @@ describe('DatePicker', () => {
 		expect(wrapper.vm.prependIconValue).toBeUndefined()
 	})
 
+	it('returns undefined when appendIcon or noIcon is false', () => {
+		const wrapper = shallowMount(DatePicker, {
+			propsData: {
+				noPrependIcon: true,
+				noIcon: false,
+			},
+		})
+
+		expect(wrapper.vm.prependIconValue).toBeUndefined()
+		wrapper.setProps({ noPrependIcon: false, noIcon: true })
+		expect(wrapper.vm.prependIconValue).toBeUndefined()
+	})
+
+	it('returns undefined when appendIcon or noIcon is true', () => {
+		const wrapper = shallowMount(DatePicker, {
+			propsData: {
+				noPrependIcon: false,
+				noIcon: true,
+			},
+		})
+
+		expect(wrapper.vm.prependIconValue).toBeUndefined()
+		wrapper.setProps({ noPrependIcon: true, noIcon: true })
+		expect(wrapper.vm.prependIconValue).toBeUndefined()
+	})
+
 	it('returns correct date when day slot is called', () => {
 		const wrapper = shallowMount(DatePicker, {
 			propsData: {
