@@ -49,9 +49,9 @@ exports[`FormFieldList > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -107,9 +107,9 @@ exports[`FormFieldList > renders correctly 1`] = `
             </div>
             <!---->
             <div class="v-input__details">
-              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-2-messages">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-2-messages">
                 <!---->
-              </transition-stub>
+              </transition-group-stub>
               <!---->
             </div>
           </div>
@@ -167,9 +167,9 @@ exports[`FormFieldList > renders correctly 1`] = `
             </div>
             <!---->
             <div class="v-input__details">
-              <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-5-messages">
+              <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-5-messages">
                 <!---->
-              </transition-stub>
+              </transition-group-stub>
               <!---->
             </div>
           </div>
@@ -219,9 +219,9 @@ exports[`FormFieldList > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-8-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-8-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -269,9 +269,9 @@ exports[`FormFieldList > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-10-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-10-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -319,9 +319,9 @@ exports[`FormFieldList > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-12-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-12-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -369,9 +369,9 @@ exports[`FormFieldList > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-14-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-14-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>

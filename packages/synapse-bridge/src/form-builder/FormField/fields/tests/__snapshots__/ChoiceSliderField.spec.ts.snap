@@ -25,9 +25,9 @@ exports[`ChoiceSliderField > render correctly in multiple mode 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!---->
   </div>
 </div>
@@ -58,9 +58,9 @@ exports[`ChoiceSliderField > should render correctly 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!---->
   </div>
 </div>
@@ -96,9 +96,9 @@ exports[`ChoiceSliderField > should toggle the item 1`] = `
   </div>
   <!---->
   <div class="v-input__details">
-    <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+    <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
       <!---->
-    </transition-stub>
+    </transition-group-stub>
     <!---->
   </div>
 </div>

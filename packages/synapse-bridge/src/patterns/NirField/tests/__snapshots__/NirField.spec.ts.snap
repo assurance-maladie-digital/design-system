@@ -42,9 +42,9 @@ exports[`NirField > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
             <div class="v-messages__message">13 caractères</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -86,9 +86,9 @@ exports[`NirField > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
             <div class="v-messages__message">2 chiffres</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -97,9 +97,9 @@ exports[`NirField > renders correctly 1`] = `
     </div>
     <!---->
     <div class="v-input__details">
-      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
         <!---->
-      </transition-stub>
+      </transition-group-stub>
       <!---->
     </div>
   </div>
@@ -148,9 +148,9 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
             <div class="v-messages__message">13 caractères</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -160,9 +160,9 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
     </div>
     <!---->
     <div class="v-input__details">
-      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
         <!---->
-      </transition-stub>
+      </transition-group-stub>
       <!---->
     </div>
   </div>
@@ -211,9 +211,9 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
             <div class="v-messages__message">13 caractères</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -255,9 +255,9 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
             <div class="v-messages__message">2 chiffres</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -267,9 +267,9 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
     </div>
     <!---->
     <div class="v-input__details">
-      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
         <!---->
-      </transition-stub>
+      </transition-group-stub>
       <!---->
     </div>
   </div>
@@ -321,9 +321,9 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-1-messages">
             <div class="v-messages__message">13 caractères</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -368,9 +368,9 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-3-messages">
             <div class="v-messages__message">2 chiffres</div>
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -379,9 +379,9 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
     </div>
     <!---->
     <div class="v-input__details">
-      <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+      <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
         <!---->
-      </transition-stub>
+      </transition-group-stub>
       <!---->
     </div>
   </div>

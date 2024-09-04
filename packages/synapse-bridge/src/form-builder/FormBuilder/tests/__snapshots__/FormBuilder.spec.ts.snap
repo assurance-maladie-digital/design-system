@@ -48,9 +48,9 @@ exports[`FormBuilder > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -101,9 +101,9 @@ exports[`FormBuilder > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-2-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-2-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -151,9 +151,9 @@ exports[`FormBuilder > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-5-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-5-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -201,9 +201,9 @@ exports[`FormBuilder > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-7-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-7-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -259,9 +259,9 @@ exports[`FormBuilder > renders correctly 1`] = `
         </div>
         <!---->
         <div class="v-input__details">
-          <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-11-messages">
+          <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-11-messages">
             <!---->
-          </transition-stub>
+          </transition-group-stub>
           <!---->
         </div>
       </div>
@@ -313,9 +313,9 @@ exports[`FormBuilder > renders correctly 1`] = `
                 </div>
                 <!---->
                 <div class="v-input__details">
-                  <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-13-messages">
+                  <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-13-messages">
                     <div class="v-messages__message">Format JJ/MM/AAAA</div>
-                  </transition-stub>
+                  </transition-group-stub>
                   <!---->
                 </div>
               </div>
@@ -458,9 +458,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-17-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-17-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -518,9 +518,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-20-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-20-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -570,9 +570,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-23-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-23-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -609,9 +609,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-24-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-24-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -648,9 +648,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-25-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-25-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -717,9 +717,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-26-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -876,9 +876,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-42-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-42-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -938,9 +938,9 @@ exports[`FormBuilder > renders correctly 1`] = `
           </div>
           <!---->
           <div class="v-input__details">
-            <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-44-messages">
+            <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-44-messages">
               <!---->
-            </transition-stub>
+            </transition-group-stub>
             <!---->
           </div>
         </div>
@@ -986,9 +986,9 @@ exports[`FormBuilder > renders correctly 1`] = `
               </div>
               <!---->
               <div class="v-input__details">
-                <transition-stub name="slide-y-transition" appear="false" persisted="false" css="true" tag="div" class="v-messages" role="alert" aria-live="polite" id="input-47-messages">
+                <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-47-messages">
                   <!---->
-                </transition-stub>
+                </transition-group-stub>
                 <!---->
               </div>
             </div>

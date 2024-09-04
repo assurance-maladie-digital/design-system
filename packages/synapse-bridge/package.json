@@ -48,7 +48,7 @@
 	},
 	"peerDependencies": {
 		"vue": "^3.4.21",
-		"vuetify": "3.5.10",
+		"vuetify": "3.5.12",
 		"vuex": "^4.1.0"
 	},
 	"dependencies": {

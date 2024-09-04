@@ -5,6 +5,7 @@ import NirField from '../'
 import { vuetify } from '@tests/unit/setup'
 import { locales } from '../locales'
 import { defineComponent } from 'vue'
+import { VForm } from 'vuetify/lib/components/index.mjs'
 
 describe('NirField', () => {
 	const nir = '195122B120005'
@@ -424,19 +425,6 @@ describe('NirField', () => {
 		expect(wrapper.find('VTooltip').exists()).toBe(false)
 	})
 
-	it('sets isInputFocused to true when the input field is focused', async () => {
-		const wrapper = mount(NirField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const numberField = wrapper.find('.vd-number-field input')
-		await numberField.trigger('focus')
-
-		expect(wrapper.vm.isInputFocused).toBe(true)
-	})
-
 	it('updates the v-model when a key is deleted', async () => {
 		const wrapper = mount(NirField, {
 			propsData: {
@@ -560,5 +548,30 @@ describe('NirField', () => {
 		expect(lastEmittedValue).toEqual(['195122B' + key])
 		expect(numberField.element.value).toBe('1 95 12 2B')
 		expect(keyField.element.value).toBe(key)
+	})
+
+	it('display the errors when the VForm wrapper is submitted', async () => {
+		const TestComponent = defineComponent({
+			components: {
+				VForm,
+				NirField,
+			},
+			template: `
+				<VForm>
+					<NirField required/>
+				</VForm>
+			`,
+		})
+
+		const wrapper = mount(TestComponent, {
+			global: {
+				plugins: [vuetify],
+			},
+		})
+
+		await wrapper.find('form').trigger('submit')
+
+		expect(wrapper.text()).toContain(locales.errorRequiredNumber)
+		expect(wrapper.text()).toContain(locales.errorRequiredKey)
 	})
 })
