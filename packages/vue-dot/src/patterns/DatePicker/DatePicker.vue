@@ -131,6 +131,10 @@
 				type: Boolean,
 				default: false
 			},
+			noIcon: {
+				type: Boolean,
+				default: false
+			},
 			outlined: {
 				type: Boolean,
 				default: false
@@ -181,11 +185,11 @@
 		menu = false;
 
 		get showPrependIcon(): boolean {
-			return !this.noPrependIcon && !this.showAppendIcon;
+			return !this.noPrependIcon && !this.showAppendIcon && !this.noIcon;
 		}
 
 		get showAppendIcon(): boolean {
-			return this.appendIcon || this.outlined;
+			return this.appendIcon || this.outlined && !this.noIcon;
 		}
 
 		get menuOptions(): Options {
@@ -209,6 +213,10 @@
 			}
 
 			if (!this.showPrependIcon) {
+				textFieldClasses.push('vd-no-prepend-icon');
+			}
+
+			if (this.noIcon) {
 				textFieldClasses.push('vd-no-prepend-icon');
 			}
 

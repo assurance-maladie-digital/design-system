@@ -28,6 +28,12 @@ export const api: Api = {
 				description: 'Masque l’icône avant le `VTextField`.'
 			},
 			{
+				name: 'no-icon',
+				type: 'boolean',
+				default: false,
+				description: 'Masque l’icône avant et après le `VTextField`.'
+			},
+			{
 				name: 'append-icon',
 				type: 'boolean',
 				default: false,

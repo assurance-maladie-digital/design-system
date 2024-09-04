@@ -20,6 +20,7 @@
 			booleans: [
 				'noCalendar',
 				'noPrependIcon',
+				'noIcon',
 				'appendIcon',
 				'textFieldActivator',
 				'showWeekends',
