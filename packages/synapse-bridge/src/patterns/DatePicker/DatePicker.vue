@@ -64,6 +64,10 @@ export default defineComponent({
 			type: Boolean as PropType<boolean>,
 			default: false,
 		},
+		noIcon: {
+			type: Boolean as PropType<boolean>,
+			default: false,
+		},
 		disabled: {
 			type: Boolean as PropType<boolean>,
 			default: false,
@@ -193,7 +197,7 @@ export default defineComponent({
 			return this.determineVariant()
 		},
 		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon) {
+			if (!this.appendIcon && !this.noPrependIcon && !this.noIcon) {
 				return this.calendarIcon
 			}
 			return undefined
@@ -354,7 +358,8 @@ export default defineComponent({
 			if (
 				(!this.isCalOpen &&
 					!this.noPrependIcon &&
-					!this.textFieldActivator) ||
+					!this.textFieldActivator &&
+					!this.noIcon) ||
 				this.noCalendar
 			) {
 				datePicker.closeMenu()
@@ -588,6 +593,10 @@ export default defineComponent({
 				textFieldClasses.push('vd-no-prepend-icon')
 			}
 
+			if (this.noIcon) {
+				textFieldClasses.push('vd-no-prepend-icon')
+			}
+
 			if (this.appendIcon) {
 				textFieldClasses.push('vd-append-icon')
 			}
@@ -718,6 +727,7 @@ export default defineComponent({
 						v-if="outlined || (appendIcon && calendarIcon)"
 					>
 						<VIcon
+							v-if="!noIcon"
 							@click="handleIconClick"
 							tabindex="-1"
 							aria-hidden="true"
@@ -726,7 +736,7 @@ export default defineComponent({
 						</VIcon>
 					</template>
 
-					<template #prepend v-if="!outlined && prependIconValue">
+					<template #prepend v-if="!outlined && prependIconValue && !noIcon">
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
