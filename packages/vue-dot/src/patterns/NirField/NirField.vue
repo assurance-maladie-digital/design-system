@@ -10,7 +10,8 @@
 		<VInput
 			:value="[computedNumberValue, keyValue]"
 			:error-count="5"
-			:rules="errors"
+			:rules="rules"
+			:error-messages="errors"
 			class="vd-nir-field__fields-wrapper"
 		>
 			<VTextField
@@ -26,8 +27,8 @@
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
-				@change="validateNumberValue"
-				@blur="validateNumberValue"
+				@change="triggerNumberValidation"
+				@blur="triggerNumberValidation"
 			/>
 
 			<template v-if="!isSingleField">
@@ -44,8 +45,8 @@
 					class="vd-key-field flex-grow-0"
 					@keyup.delete="focusNumberField"
 					@input.native="setKeyValue"
-					@change="validateKeyValue"
-					@blur="validateKeyValue"
+					@change="triggerNumberValidation"
+					@blur="triggerNumberValidation"
 				/>
 			</template>
 
@@ -195,7 +196,7 @@
 		}
 
 		get numberRules(): ValidationRule[] {
-			const rulesNumber = [];
+			const rulesNumber: ValidationRule[] = [];
 
 			if (this.required) {
 				rulesNumber.push(
@@ -235,7 +236,19 @@
 			return rulesKey;
 		}
 
-		validateNumberValue(): void {
+		triggerNumberValidation(): void {
+			this.numberErrors = this.validateNumberValue();
+
+			this.emitChangeEvent();
+		}
+
+		triggerKeyValidation(): void {
+			this.keyErrors = this.validateKeyValue();
+
+			this.emitChangeEvent();
+		}
+
+		validateNumberValue(): string[] {
 			const newNumberErrors = [];
 
 			for (const rule of this.numberRules) {
@@ -246,12 +259,10 @@
 				}
 			}
 
-			this.numberErrors = newNumberErrors as string[];
-
-			this.emitChangeEvent();
+			return newNumberErrors;
 		}
 
-		validateKeyValue(): void {
+		validateKeyValue(): string[] {
 			const newKeyErrors = [];
 
 			for (const rule of this.keyRules) {
@@ -262,9 +273,22 @@
 				}
 			}
 
-			this.keyErrors = newKeyErrors as string[];
+			return this.keyErrors;
+		}
 
-			this.emitChangeEvent();
+		get rules(): ValidationRule[] {
+			const numberRules = () => {
+				return this.validateNumberValue().length === 0;
+			};
+
+			return this.isSingleField ?
+				[numberRules] :
+				[
+					numberRules,
+					()=>{
+						return this.validateKeyValue().length === 0;
+					}
+				];
 		}
 
 		get errors(): string[] {
