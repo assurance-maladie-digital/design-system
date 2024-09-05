@@ -60,18 +60,17 @@ export default defineComponent({
 	},
 
 	watch: {
-		dialog() {
-			this.setEventListeners()
-		},
-		modelValue(newValue) {
+		async modelValue(newValue) {
 			this.dialog = newValue
+			if (this.dialog) {
+				if ((await this.getSelectableElements())[0])
+					(await this.getSelectableElements())[0].focus()
+			}
 		},
 	},
 
 	methods: {
 		async getSelectableElements(): Promise<HTMLElement[]> {
-			await this.$nextTick()
-
 			const parentNode = this.$refs.dialogContent?.$el // Is undefined when dialog is closed
 
 			if (!parentNode) {
@@ -100,56 +99,31 @@ export default defineComponent({
 			return filteredElements
 		},
 
-		async setEventListeners(): Promise<void> {
-			const elements = await this.getSelectableElements()
+		async handleFocus(e: KeyboardEvent): Promise<void> {
+			const selectableElements = await this.getSelectableElements()
 
-			if (!elements.length) {
-				return
-			}
+			const focused = selectableElements.findIndex(
+				(el: HTMLElement) => el === e.target
+			)
 
-			for (let i = 0; i < elements.length; i++) {
-				const setFocus = (e: KeyboardEvent) => {
-					if (e.key !== 'Tab') {
-						return
-					}
+			const isOutside = focused === -1
+			const lastElement = selectableElements.length - 1
 
-					e.preventDefault()
-
-					if (!e.shiftKey) {
-						if (i === elements.length - 1) {
-							elements[0].focus()
-						} else {
-							elements[i + 1].focus()
-						}
-					} else {
-						if (i === 0) {
-							elements[elements.length - 1].focus()
-						} else {
-							elements[i - 1].focus()
-						}
-					}
-				}
-				if (!this.dialog) {
-					removeEventListener('keydown', setFocus)
-					return
-				} else {
-					elements[0].focus()
-				}
-
-				elements[i].addEventListener('keydown', setFocus)
+			if (!e.shiftKey && (isOutside || focused === lastElement)) {
+				e.preventDefault()
+				selectableElements[0].focus()
+			} else if (e.shiftKey && (isOutside || focused === 0)) {
+				e.preventDefault()
+				selectableElements[lastElement].focus()
 			}
 		},
-	},
-
-	mounted() {
-		this.setEventListeners()
 	},
 })
 </script>
 
 <template>
 	<VDialog
-		v-model="dialog"
+		:model-value="dialog"
 		v-bind="$attrs"
 		:width="width"
 		:persistent="persistent"
@@ -158,6 +132,7 @@ export default defineComponent({
 		aria-describedby="dialogContent"
 		class="vd-dialog-box"
 		@update:model-value="$emit('update:modelValue', false)"
+		@keydown.tab="handleFocus"
 	>
 		<VCard
 			v-bind="options.card"
@@ -184,7 +159,6 @@ export default defineComponent({
 					</VIcon>
 				</VBtn>
 			</VCardTitle>
-
 			<slot />
 
 			<div
