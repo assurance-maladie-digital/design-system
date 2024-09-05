@@ -64,7 +64,7 @@ export default defineComponent({
 			this.dialog = newValue
 			if (this.dialog) {
 				await this.$nextTick()
-				;(await this.getSelectableElements())[0].focus()
+				(await this.getSelectableElements())[0].focus()
 			}
 		},
 	},
