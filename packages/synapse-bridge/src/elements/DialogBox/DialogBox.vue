@@ -63,8 +63,8 @@ export default defineComponent({
 		async modelValue(newValue) {
 			this.dialog = newValue
 			if (this.dialog) {
-				await this.$nextTick()
-				(await this.getSelectableElements())[0].focus()
+				if ((await this.getSelectableElements())[0])
+					(await this.getSelectableElements())[0].focus()
 			}
 		},
 	},
