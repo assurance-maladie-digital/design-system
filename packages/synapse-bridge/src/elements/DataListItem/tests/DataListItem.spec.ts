@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
-import DataListItem from '..'
+import DataListItem from '../'
 import { defineComponent } from 'vue'
 
 describe('DataListItem', () => {
