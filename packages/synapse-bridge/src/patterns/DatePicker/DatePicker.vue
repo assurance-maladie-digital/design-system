@@ -89,18 +89,18 @@ export default defineComponent({
 		filteredErrorMessages(): string[] {
 			// todo: trouver pourquoi les messages d'erreur s'affichent en double (presents dans errorMessages + @/rules)
 			return this.errorMessages
-				.filter(
-					(message: string) =>
-						!message.includes(
-							'La date doit être antérieure ou égale'
-						)
-				)
-				.filter(
-					(message: string) =>
-						!message.includes(
-							'La date doit être postérieure ou égale'
-						)
-				)
+				// .filter(
+				// 	(message: string) =>
+				// 		message.includes(
+				// 			'La date doit être antérieure ou égale'
+				// 		)
+				// )
+				// .filter(
+				// 	(message: string) =>
+				// 		message.includes(
+				// 			'La date doit être postérieure ou égale'
+				// 		)
+				// )
 				.filter(
 					(message: string) =>
 						message !==
@@ -187,8 +187,14 @@ export default defineComponent({
 		modelValue: {
 			immediate: true,
 			handler(newVal) {
-				this.handleModelValueChange(newVal)
-				this.$emit('change', newVal)
+				if (newVal === null) {
+					this.inputValue = ''
+					this.date = null
+				}
+				else {
+					this.handleModelValueChange(newVal)
+					this.$emit('change', newVal)
+				}
 			},
 		},
 		rules() {
@@ -197,6 +203,9 @@ export default defineComponent({
 		},
 		inputValue(newVal) {
 			this.validate(newVal)
+			if (newVal.length === 10) {
+				this.date = newVal
+			}
 		},
 	},
 	methods: {
@@ -379,7 +388,9 @@ export default defineComponent({
 			return true
 		},
 		stopInput(): void {
-			this.inputValue = this.inputValue.slice(0, 10)
+			if (!this.range) {
+				this.inputValue = this.inputValue.slice(0, 10)
+			}
 		},
 		validate(value: any): void {
 			const applyRules = (rules: any[]) =>

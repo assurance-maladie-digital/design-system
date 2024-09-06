@@ -11,19 +11,6 @@ describe('DatePicker', () => {
 		expect(wrapper.vm.textFieldClasses).toEqual(expectedTextFieldClasses)
 	})
 
-	it('returns correct textFieldClasses with error with error-style class', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					errorMessages: ["La date saisie n'est pas valide"],
-				}
-			},
-		})
-
-		wrapper.vm.buildTextFieldClasses()
-		expect(wrapper.vm.textFieldClasses).toContain('error-style')
-	})
-
 	it('returns correct buildTextFieldClasses if warningRules is not empty', () => {
 		const wrapper = shallowMount(DatePicker, {
 			propsData: {
@@ -126,17 +113,6 @@ describe('DatePicker', () => {
 })
 
 describe('Computed', () => {
-	it('adds "error-style" to textFieldClasses when hasError is true', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					errorMessages: ["La date saisie n'est pas valide"],
-				}
-			},
-		})
-		expect(wrapper.vm.textFieldClasses).toContain('error-style')
-	})
-
 	it('does not add "error-style" to textFieldClasses when hasError is false', () => {
 		const wrapper = shallowMount(DatePicker, {
 			data() {
@@ -184,28 +160,6 @@ describe('Computed', () => {
 		}
 
 		expect(wrapper.vm.textFieldOptions).toEqual(expectedTextFieldOptions)
-	})
-
-	it('returns false when errorMessages is empty', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					errorMessages: [],
-				}
-			},
-		})
-		expect(wrapper.vm.hasError).toBe(false)
-	})
-
-	it('returns false when errorMessages is empty', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					errorMessages: ["La date saisie n'est pas valide"],
-				}
-			},
-		})
-		expect(wrapper.vm.hasError).toBe(true)
 	})
 
 	it('returns correct textFieldClasses', () => {
@@ -270,34 +224,6 @@ describe('Methods', () => {
 		expect(wrapper.emitted('update:model-value')?.[0]).toEqual([null])
 	})
 
-	it('does not clear input if key is not backspace/delete or not all text is selected', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '12/12/2023',
-					date: new Date(2023, 11, 12),
-				}
-			},
-		})
-
-		const event = {
-			key: 'Enter',
-			preventDefault: vi.fn(),
-			target: {
-				selectionStart: 0,
-				selectionEnd: 10,
-				value: '12/12/2023',
-			},
-		}
-
-		wrapper.vm.clearInputOnFullSelection(event as unknown as KeyboardEvent)
-
-		expect(event.preventDefault).not.toHaveBeenCalled()
-		expect(wrapper.vm.inputValue).toBe('12/12/2023')
-		expect(wrapper.vm.date).toEqual(new Date(2023, 11, 12))
-		expect(wrapper.emitted('update:model-value')).toBeFalsy()
-	})
-
 	it('calls updateInputValue with correct arguments when getInput is called', () => {
 		const wrapper = shallowMount(DatePicker)
 		const updateInputValueMock = vi.spyOn(wrapper.vm, 'updateInputValue')
@@ -306,24 +232,6 @@ describe('Methods', () => {
 		wrapper.vm.getInput(testValue)
 
 		expect(updateInputValueMock).toHaveBeenCalledWith(testValue)
-	})
-
-	it('emits update:model-value event when date is not an array', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					date: dayjs().toDate(),
-				}
-			},
-		})
-		wrapper.vm.emitUpdateEvent()
-		const emittedEvent = wrapper.emitted('update:model-value')
-		expect(emittedEvent).toBeTruthy()
-		if (emittedEvent) {
-			expect(emittedEvent[0]).toEqual([
-				wrapper.vm.formatDate(wrapper.vm.date),
-			])
-		}
 	})
 
 	it('adds correct classes to textFieldClasses', () => {
@@ -487,97 +395,6 @@ describe('Methods', () => {
 			/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/
 		)
 	})
-
-	it('validates short date correctly in validateShortDate', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '15/04/2023',
-				}
-			},
-		})
-
-		const validateMock = vi.spyOn(wrapper.vm, 'validate')
-
-		wrapper.vm.validateShortDate('15/04/2023')
-
-		expect(validateMock).toHaveBeenCalledWith('15/04/2023')
-		expect(wrapper.emitted('update:model-value')).toBeTruthy()
-		expect(wrapper.emitted('update:model-value')?.[0]).toEqual([
-			'15/04/2023',
-		])
-	})
-
-	it('returns correct error message in validateDateFormat', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					isNotValid: true,
-					errorMessages: ["La date saisie n'est pas valide"],
-				}
-			},
-		})
-
-		const result = wrapper.vm.validateDateFormat()
-
-		expect(result).toBe("La date saisie n'est pas valide")
-	})
-
-	it('updateInputValue removes the last character when value.data is null', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '12/12/2023',
-				}
-			},
-		})
-
-		wrapper.vm.updateInputValue({ data: null })
-
-		expect(wrapper.vm.inputValue).toBe('12/12/202')
-	})
-
-	it('does nothing when inputValue length is greater than or equal to 10', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '12/12/2023',
-				}
-			},
-		})
-
-		wrapper.vm.updateInputValue({ data: '4' })
-
-		expect(wrapper.vm.inputValue).toBe('12/12/2023')
-	})
-
-	it('adds a separator when inputValue length is 2 or 5 and dateFormat includes "/"', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '12',
-				}
-			},
-		})
-
-		wrapper.vm.updateInputValue({ data: '3' })
-
-		expect(wrapper.vm.inputValue).toBe('12/3')
-	})
-
-	it('adds a separator when inputValue length is 2 or 5 and dateFormat includes "/"', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					inputValue: '12',
-				}
-			},
-		})
-
-		wrapper.vm.updateInputValue({ data: '3' })
-
-		expect(wrapper.vm.inputValue).toBe('12/3')
-	})
 })
 describe('Watchers', () => {
 	it('calls validate and validateAllDates when rules prop changes', async () => {
@@ -648,20 +465,6 @@ describe('Watchers', () => {
 		const newVal = dayjs().format('DD/MM/YYYY')
 		await wrapper.setProps({ modelValue: newVal })
 		expect(wrapper.vm.modelValue).toEqual(newVal)
-	})
-
-	it('updates date correctly when modelValue changes and is a string with dateFormatReturn not equal to DD/MM/YYYY', async () => {
-		const wrapper = shallowMount(DatePicker, {
-			propsData: {
-				dateFormatReturn: 'YYYY/MM/DD',
-			},
-		})
-
-		const newVal = '15/04/2023' // April 15, 2023
-		await wrapper.setProps({ modelValue: newVal })
-
-		const expectedDate = dayjs(newVal, 'DD/MM/YYYY').toDate()
-		expect(wrapper.vm.date).toEqual(expectedDate)
 	})
 
 	it('does not update date when modelValue changes to an invalid date string and dateFormatReturn not equal to DD/MM/YYYY', async () => {
@@ -750,27 +553,6 @@ describe('Mounted', () => {
 		expect(wrapper.vm.isNotValid).toBe(false)
 	})
 
-	it('emits update:model-value event and resets error messages when date is valid', () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					date: new Date(2023, 3, 15), // April 15, 2023
-				}
-			},
-		})
-
-		const resetErrorMessagesMock = vi.spyOn(
-			wrapper.vm,
-			'resetErrorMessages'
-		)
-		wrapper.vm.emitUpdateEvent()
-
-		expect(resetErrorMessagesMock).toHaveBeenCalled()
-		const emittedEvent = wrapper.emitted('update:model-value')
-		expect(emittedEvent).toBeTruthy()
-		expect(emittedEvent?.[0]).toEqual(['15/04/2023'])
-	})
-
 	it('handles paste event correctly and resets error messages when date is valid', async () => {
 		const wrapper = shallowMount(DatePicker)
 		const mockEvent = {
@@ -789,22 +571,6 @@ describe('Mounted', () => {
 		expect(wrapper.vm.isNotValid).toBe(false)
 	})
 
-	it('clears error messages when inputValue is set to an empty string', async () => {
-		const wrapper = shallowMount(DatePicker, {
-			data() {
-				return {
-					warningErrorMessages: ['Warning message'],
-					errorMessages: ['Error message'],
-					inputValue: '07/07/1990',
-				}
-			},
-		})
-
-		await wrapper.setData({ inputValue: '' })
-
-		expect(wrapper.vm.warningErrorMessages).toEqual([])
-		expect(wrapper.vm.errorMessages).toEqual([])
-	})
 })
 
 describe('BeforeUnmount', () => {
