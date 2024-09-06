@@ -622,7 +622,6 @@ export default defineComponent({
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
-							aria-hidden="true"
 						>
 							{{ calendarIcon }}
 						</VIcon>
@@ -631,7 +630,6 @@ export default defineComponent({
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
-							aria-hidden="true"
 						>
 							{{ calendarIcon }}
 						</VIcon>
@@ -640,7 +638,6 @@ export default defineComponent({
 						<VIcon
 							@click="onClearInput"
 							tabindex="-1"
-							aria-hidden="true"
 						>
 							{{ closeIcon }}
 						</VIcon>
