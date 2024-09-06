@@ -28,7 +28,6 @@
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="triggerNumberValidation"
-				@blur="triggerNumberValidation"
 			/>
 
 			<template v-if="!isSingleField">
@@ -45,8 +44,7 @@
 					class="vd-key-field flex-grow-0"
 					@keyup.delete="focusNumberField"
 					@input.native="setKeyValue"
-					@change="triggerNumberValidation"
-					@blur="triggerNumberValidation"
+					@change="triggerKeyValidation"
 				/>
 			</template>
 
@@ -143,25 +141,29 @@
 		},
 		watch: {
 			value: {
-				handler(value: string | null) {
-
-					if (!value && !this.keyValue) {
-						this.numberValue = null;
-						this.keyValue = null;
-						this.numberErrors = [];
-						this.keyErrors = [];
-
+				handler(value: string | null, oldValue?: string) {
+					if (value === this.internalValue) {
+						// prevent unnecessary computes and ths key override
 						return;
 					}
 
 					if (this.nirLength === FieldTypesEnum.SINGLE) {
 						this.numberValue = value;
 
+						if (oldValue !== undefined) {
+							this.numberErrors = this.validateNumberValue();
+						}
+
 						return;
 					}
 
 					this.numberValue = value?.slice(0, NUMBER_LENGTH) ?? '';
-					this.keyValue = this.keyValue ?? value?.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH) ?? '';
+					this.keyValue = value?.slice(NUMBER_LENGTH, NUMBER_LENGTH + KEY_LENGTH) ?? '';
+
+					if (oldValue !== undefined) {
+						this.numberErrors = this.validateNumberValue();
+						this.keyErrors = this.validateKeyValue();
+					}
 				},
 				immediate: true
 			}
@@ -248,6 +250,11 @@
 			this.emitChangeEvent();
 		}
 
+		/**
+		 * As VInput gathers the error messages and as is value is a tuple,
+		 * we run the rules ourself at the level of the internal fields
+		 * in order to provide the fields value to the rules.
+		 */
 		validateNumberValue(): string[] {
 			const newNumberErrors = [];
 
@@ -273,9 +280,12 @@
 				}
 			}
 
-			return this.keyErrors;
+			return newKeyErrors;
 		}
 
+		/**
+		 * The rules used by the VForm component to test the validity of the form
+		 */
 		get rules(): ValidationRule[] {
 			const numberRules = () => {
 				return this.validateNumberValue().length === 0;
@@ -285,12 +295,15 @@
 				[numberRules] :
 				[
 					numberRules,
-					()=>{
+					() => {
 						return this.validateKeyValue().length === 0;
 					}
 				];
 		}
 
+		/**
+		 * The errors displayed by the VInput wrapper to group the errors messages
+		 */
 		get errors(): string[] {
 			return [...this.numberErrors, ...this.keyErrors];
 		}
@@ -305,29 +318,11 @@
 		}
 
 		get internalValue(): string | null {
-			if (this.isSingleField && this.numberFilled) {
-				return this.numberValue;
+			if (this.isSingleField) {
+				return this.numberValue ?? '';
 			}
 
-			if (!this.numberFilled || !this.keyFilled) {
-				return null;
-			}
-
-			return this.numberValue as string + this.keyValue as string;
-		}
-
-		get rawInternalValue(): string | null {
-			const numberValue = this.numberValue ?? '';
-			const keyValue = this.keyValue ?? '';
-
-			if (
-				!this.isSingleField
-				&& numberValue.length < NUMBER_LENGTH
-			) {
-				return numberValue;
-			}
-
-			return numberValue + keyValue;
+			return (this.numberValue ?? '') + (this.keyValue ?? '');
 		}
 
 		get isSingleField(): boolean {
@@ -362,15 +357,15 @@
 		}
 
 		emitChangeEvent(): void {
-			if (!this.internalValue) {
-				return;
+			if (this.value !== this.internalValue) {
+				this.$emit('change', this.internalValue);
 			}
-
-			this.$emit('change', this.internalValue);
 		}
 
-		emitInputEvent(): void {
-			this.$emit('input', this.rawInternalValue);
+		async emitInputEvent(): Promise<void> {
+			if (this.value !== this.internalValue) {
+				this.$emit('input', this.internalValue);
+			}
 		}
 	}
 </script>
