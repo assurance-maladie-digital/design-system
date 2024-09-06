@@ -52,6 +52,7 @@ export default defineComponent({
 		appendIcon: { type: Boolean, default: false },
 		noCalendar: { type: Boolean, default: false },
 		noPrependIcon: { type: Boolean, default: false },
+		noIcon: { type: Boolean, default: false },
 		disabled: { type: Boolean, default: false },
 		showWeekends: { type: Boolean, default: false },
 		outlined: { type: Boolean, default: false },
@@ -158,7 +159,7 @@ export default defineComponent({
 			return this.determineVariant()
 		},
 		prependIconValue(): string | undefined {
-			return !this.appendIcon && !this.noPrependIcon
+			return !this.appendIcon && !this.noPrependIcon && !this.noIcon
 				? this.calendarIcon
 				: undefined
 		},
@@ -262,6 +263,7 @@ export default defineComponent({
 				(datePicker &&
 					!this.isCalOpen &&
 					!this.noPrependIcon &&
+					!this.noIcon &&
 					!this.textFieldActivator) ||
 				this.noCalendar
 			) {
@@ -615,7 +617,7 @@ export default defineComponent({
 				>
 					<template
 						#append-inner
-						v-if="outlined || (appendIcon && calendarIcon)"
+						v-if="outlined && !noIcon || (appendIcon && calendarIcon)"
 					>
 						<VIcon
 							@click="handleIconClick"
@@ -625,7 +627,7 @@ export default defineComponent({
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
-					<template #prepend v-if="!outlined && prependIconValue">
+					<template #prepend v-if="!outlined && prependIconValue && !noIcon">
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"
