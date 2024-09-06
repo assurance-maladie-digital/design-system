@@ -10,7 +10,7 @@ interface PeriodFieldData {
 }
 
 export default defineComponent({
-	emits: ['update:modelValue'],
+	emits: ['update:modelValue', 'change'],
 	name: 'PeriodField',
 	components: {
 		VueDatePicker,
@@ -78,6 +78,7 @@ export default defineComponent({
 		date(newVal, oldVal) {
 			if (newVal !== oldVal) {
 				this.$emit('update:modelValue', newVal)
+				this.$emit('change', newVal)
 			}
 		},
 	},

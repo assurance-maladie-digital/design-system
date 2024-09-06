@@ -187,6 +187,7 @@ export default defineComponent({
 			immediate: true,
 			handler(newVal) {
 				this.handleModelValueChange(newVal)
+				this.$emit('change', newVal)
 			},
 		},
 		rules() {
