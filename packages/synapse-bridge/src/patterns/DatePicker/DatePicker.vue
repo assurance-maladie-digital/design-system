@@ -327,7 +327,7 @@ export default defineComponent({
 				this.inputValue += value.data
 			}
 			if (this.inputValue.length === 10) {
-				const date = dayjs(this.inputValue, this.dateFormat)
+				const date = dayjs(this.inputValue, this.dateFormat, true)
 				if (date.isValid()) {
 					const formattedDateReturn = date.format(
 						this.dateFormatReturn
