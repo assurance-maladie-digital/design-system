@@ -15,7 +15,7 @@
 ### Documentation
 
 - 📝 **Documentation**
-  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3674](https://github.com/assurance-maladie-digital/design-system/pull/3674))
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3747](https://github.com/assurance-maladie-digital/design-system/pull/3747))
 
 ## v2.16.8
 
