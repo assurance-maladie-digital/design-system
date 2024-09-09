@@ -28,6 +28,7 @@
 				@keydown="focusKeyField"
 				@input.native="setNumberValue"
 				@change="triggerNumberValidation"
+				@blur="triggerNumberValidation"
 			/>
 
 			<template v-if="!isSingleField">
@@ -45,6 +46,7 @@
 					@keyup.delete="focusNumberField"
 					@input.native="setKeyValue"
 					@change="triggerKeyValidation"
+					@blur="triggerKeyValidation"
 				/>
 			</template>
 
