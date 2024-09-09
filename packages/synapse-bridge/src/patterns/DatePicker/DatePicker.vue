@@ -87,31 +87,22 @@ export default defineComponent({
 	},
 	computed: {
 		filteredErrorMessages(): string[] {
-			// todo: trouver pourquoi les messages d'erreur s'affichent en double (presents dans errorMessages + @/rules)
+			// filter the messages already present in the rules
+			/**
+			 * ! TODO refactor
+			 */
 			return this.errorMessages
-				// .filter(
-				// 	(message: string) =>
-				// 		message.includes(
-				// 			'La date doit être antérieure ou égale'
-				// 		)
-				// )
-				// .filter(
-				// 	(message: string) =>
-				// 		message.includes(
-				// 			'La date doit être postérieure ou égale'
-				// 		)
-				// )
 				.filter(
 					(message: string) =>
-						message !==
+						message ===
 						'La date doit être antérieure ou égale à aujourd’hui.'
 				)
 				.filter(
 					(message: string) =>
-						message !==
+						message ===
 						'La date doit être postérieure à aujourd’hui.'
 				)
-				.filter((message: string) => message !== 'Le champ est requis.')
+				.filter((message: string) => message === 'Le champ est requis.')
 		},
 		combinedErrorMessages(): string[] {
 			return Array.from(
