@@ -1,3 +1,22 @@
+## v2.16.9
+
+**Version publiée le 09/08/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **DatePicker:** Ajout d'une props `no-icon` permettant de masquer l'icône par défault notamment en mode outlined ([#3737](https://github.com/assurance-maladie-digital/design-system/pull/3737))
+  - **DatePicker:** Correction d'un bug d'affichage du hint lorsqu'une erreur est affichée ([#3671](https://github.com/assurance-maladie-digital/design-system/pull/3671))
+  - **NirField:** Possibilité de customiser le label des champs avec les props `number-label` et `key-label` ([#3690](https://github.com/assurance-maladie-digital/design-system/pull/3690))
+  - **DialoxBox:** Amélioration de l'accessibilité ([#3732](https://github.com/assurance-maladie-digital/design-system/pull/3732))
+  - **DialoxBox:** Optimisation de la gestion du focus ([#3712](https://github.com/assurance-maladie-digital/design-system/pull/3712))
+  - **SelectBtnField:** Amélioration de l'accessibilité ([#3724](https://github.com/assurance-maladie-digital/design-system/pull/3724))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3747](https://github.com/assurance-maladie-digital/design-system/pull/3747))
+
 ## v2.16.8
 
 **Version publiée le 30/07/2024.**
