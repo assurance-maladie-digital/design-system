@@ -87,28 +87,15 @@ export default defineComponent({
 	},
 	computed: {
 		filteredErrorMessages(): string[] {
-			// filter the messages already present in the rules
-			/**
-			 * ! TODO refactor
-			 */
-			return this.errorMessages
-				.filter(
-					(message: string) =>
-						message ===
-						'La date doit être antérieure ou égale à aujourd’hui.'
-				)
-				.filter(
-					(message: string) =>
-						message ===
-						'La date doit être postérieure à aujourd’hui.'
-				)
-				.filter((message: string) => message === 'Le champ est requis.')
+			// if message already in errorMessages, don't add it again
+			return this.warningErrorMessages.filter(
+				(msg) => !this.errorMessages.includes(msg)
+			)
 		},
 		combinedErrorMessages(): string[] {
 			return Array.from(
 				new Set([
-					...this.filteredErrorMessages,
-					...this.warningErrorMessages,
+					...this.filteredErrorMessages
 				])
 			)
 		},
