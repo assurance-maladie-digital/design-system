@@ -25,7 +25,7 @@ describe('DialogBox', () => {
 					stubs: {
 						VDialog: {
 							template: '<div><slot></slot></div>',
-						}
+						},
 					},
 				},
 			})

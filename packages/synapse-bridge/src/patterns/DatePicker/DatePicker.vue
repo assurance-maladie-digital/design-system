@@ -736,7 +736,10 @@ export default defineComponent({
 						</VIcon>
 					</template>
 
-					<template #prepend v-if="!outlined && prependIconValue && !noIcon">
+					<template
+						#prepend
+						v-if="!outlined && prependIconValue && !noIcon"
+					>
 						<VIcon
 							@click="handleIconClick"
 							tabindex="-1"

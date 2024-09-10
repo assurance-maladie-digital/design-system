@@ -149,43 +149,43 @@ export default defineComponent({
 			:class="{ 'flex-column': !inline }"
 			class="vd-select-btn-field-toggle d-flex flex-wrap text-primary"
 		>
-		<li
-			v-for="(item, index) in filteredItems"
-			:key="`${index} + ${item.value}`"
-			class="vd-select-list-item"
-		>
-			<VBtn
-				v-bind="options.btn"
-				:value="item.value"
-				:disabled="readonly"
-				:variant="isSelected(item.value) ? 'flat' : 'outlined'"
-				:elevation="0"
-				:color="error ? 'error' : 'primary'"
-				:class="{
-					'text-error': error && !isSelected(item.value),
-					'justify-start': !isSelected(item.value),
-					'justify-space-between': isSelected(item.value),
-				}"
-				:aria-selected="isSelected(item.value)"
-				:aria-label="isSelected(item.value) ? 'Sélectionné' : ''"
-				@click="toggleItem(item)"
+			<li
+				v-for="(item, index) in filteredItems"
+				:key="`${index} + ${item.value}`"
+				class="vd-select-list-item"
 			>
-				<span class="text-body-1">
-					{{ item.text }}
-				</span>
-
-				<VIcon
-					v-bind="options.icon"
-					:style="getIconStyles(item)"
-					role="img"
-					:hidden="!isSelected(item.value)"
-					:aria-hidden="!isSelected(item.value)"
-					aria-label="Sélectionné"
+				<VBtn
+					v-bind="options.btn"
+					:value="item.value"
+					:disabled="readonly"
+					:variant="isSelected(item.value) ? 'flat' : 'outlined'"
+					:elevation="0"
+					:color="error ? 'error' : 'primary'"
+					:class="{
+						'text-error': error && !isSelected(item.value),
+						'justify-start': !isSelected(item.value),
+						'justify-space-between': isSelected(item.value),
+					}"
+					:aria-selected="isSelected(item.value)"
+					:aria-label="isSelected(item.value) ? 'Sélectionné' : ''"
+					@click="toggleItem(item)"
 				>
-					{{ checkIcon }}
-				</VIcon>
-			</VBtn>
-		</li>
+					<span class="text-body-1">
+						{{ item.text }}
+					</span>
+
+					<VIcon
+						v-bind="options.icon"
+						:style="getIconStyles(item)"
+						role="img"
+						:hidden="!isSelected(item.value)"
+						:aria-hidden="!isSelected(item.value)"
+						aria-label="Sélectionné"
+					>
+						{{ checkIcon }}
+					</VIcon>
+				</VBtn>
+			</li>
 		</VBtnToggle>
 
 		<template v-if="errorMessages">
