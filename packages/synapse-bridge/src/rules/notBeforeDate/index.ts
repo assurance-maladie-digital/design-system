@@ -20,7 +20,7 @@ export function notBeforeDate(
 			typeof value === 'object' ? formatDateToDDMMYYYYFn(value) : value
 
 		if (isDateBefore(date, formattedValue)) {
-			return ruleMessage(errorMessages, 'default', [formattedValue])
+			return ruleMessage(errorMessages, 'default', [date])
 		}
 		return true
 	}
