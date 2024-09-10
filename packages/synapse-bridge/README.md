@@ -11,7 +11,7 @@ Pour consulter les changements récents, veuillez consulter le [CHANGELOG](https
 Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes de Node et PNPM :
 
 -   Node : 20.11.0
--   PNPM : 8.11.0
+-   PNPM : 9.0.0
 
 ## Stack Technique
 
