@@ -216,8 +216,8 @@ export default defineComponent({
 		emitUpdateEvent(): void {
 			if (this.date) {
 				this.resetErrorMessages()
-				const formattedDate = this.formatDate(this.date)
-				this.$emit('update:model-value', formattedDate)
+				this.$emit('update:model-value', this.date)
+				this.inputValue = this.formatDate(this.date)
 				if (this.dateFormatReturn !== 'DD/MM/YYYY') {
 					this.inputValue = formattedDate
 				}
