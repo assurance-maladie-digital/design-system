@@ -181,7 +181,7 @@ export default defineComponent({
 		},
 		inputValue(newVal) {
 			this.validate(newVal)
-			if (newVal.length === 10) {
+			if (newVal && newVal.length === 10) {
 				this.date = newVal
 			}
 		},

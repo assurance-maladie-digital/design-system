@@ -18,7 +18,7 @@ export function notAfterDate(
 			typeof value === 'object' ? formatDateToDDMMYYYYFn(value) : value
 
 		if (isDateAfter(date, formattedValue)) {
-			return ruleMessage(errorMessages, 'default', [formattedValue])
+			return ruleMessage(errorMessages, 'default', [date])
 		}
 		return true
 	}
