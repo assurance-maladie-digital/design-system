@@ -134,11 +134,7 @@ export default defineComponent({
 		@update:model-value="$emit('update:modelValue', false)"
 		@keydown.tab="handleFocus"
 	>
-		<VCard
-			v-bind="options.card"
-			ref="dialogContent"
-			id="dialogContent"
-		>
+		<VCard v-bind="options.card" ref="dialogContent" id="dialogContent">
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2 v-if="title" class="text-h6 font-weight-bold">

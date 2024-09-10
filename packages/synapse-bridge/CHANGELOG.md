@@ -1,12 +1,12 @@
 #### v3.0.1
 
-- SelectBtnField: improve accessibility [`#3736`](https://github.com/assurance-maladie-digital/design-system/pull/3736)
-- DialogBox: allow focus with dynamic elements [`#3713`](https://github.com/assurance-maladie-digital/design-system/pull/3713)
-- DataList: export component [`#3720`](https://github.com/assurance-maladie-digital/design-system/pull/3720)
-- Tests: Clear globally mocks and timers after tests [`#3709`](https://github.com/assurance-maladie-digital/design-system/pull/3709)
-- DatePicker: add noIcon prop [`#3715`](https://github.com/assurance-maladie-digital/design-system/pull/3715)
-- NirField: fix validation when VForm submitted [`#3718`](https://github.com/assurance-maladie-digital/design-system/pull/3718)
-- DialogBox : improve accessibility [`#3735`](https://github.com/assurance-maladie-digital/design-system/pull/3735)
+-   SelectBtnField: improve accessibility [`#3736`](https://github.com/assurance-maladie-digital/design-system/pull/3736)
+-   DialogBox: allow focus with dynamic elements [`#3713`](https://github.com/assurance-maladie-digital/design-system/pull/3713)
+-   DataList: export component [`#3720`](https://github.com/assurance-maladie-digital/design-system/pull/3720)
+-   Tests: Clear globally mocks and timers after tests [`#3709`](https://github.com/assurance-maladie-digital/design-system/pull/3709)
+-   DatePicker: add noIcon prop [`#3715`](https://github.com/assurance-maladie-digital/design-system/pull/3715)
+-   NirField: fix validation when VForm submitted [`#3718`](https://github.com/assurance-maladie-digital/design-system/pull/3718)
+-   DialogBox : improve accessibility [`#3735`](https://github.com/assurance-maladie-digital/design-system/pull/3735)
 
 #### v3.0.0
 
