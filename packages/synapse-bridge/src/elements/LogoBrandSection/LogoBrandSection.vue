@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, getCurrentInstance } from 'vue'
+import { defineComponent } from 'vue'
 import { dividerDimensionsMapping } from './dividerDimensionsMapping'
 import { locales } from './locales'
 import { LogoSizeEnum } from '@/elements/Logo/LogoSizeEnum'
@@ -119,11 +119,6 @@ export default defineComponent({
 			)
 		},
 
-		isNuxt(): boolean {
-			return !!getCurrentInstance()?.appContext.config.globalProperties
-				.$nuxt
-		},
-
 		logoContainerComponent(): string {
 			if (this.homeHref) {
 				return 'a'
@@ -133,7 +128,7 @@ export default defineComponent({
 				return 'div'
 			}
 
-			return this.isNuxt ? 'nuxt-link' : 'router-link'
+			return 'router-link'
 		},
 
 		secondaryLogoCtnComponent(): string {
