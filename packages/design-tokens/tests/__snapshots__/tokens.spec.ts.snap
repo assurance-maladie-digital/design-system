@@ -271,7 +271,7 @@ Object {
   "primary": "#0c419a",
   "risquePro": "#cd545b",
   "secondary": "#006386",
-  "success": "#56c271",
+  "success": "#004439",
   "turquoise": "#00ab8e",
   "turquoise-darken-20": "#008972",
   "turquoise-darken-40": "#006755",
@@ -437,7 +437,7 @@ Object {
     "primary": "#0c419a",
     "risquePro": "#cd545b",
     "secondary": "#006386",
-    "success": "#56c271",
+    "success": "#004439",
     "turquoise": Object {
       "base": "#00ab8e",
       "darken20": "#008972",
