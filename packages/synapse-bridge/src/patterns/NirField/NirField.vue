@@ -326,9 +326,9 @@ export default defineComponent({
 					}
 				"
 			>
-				<template #append>
+				<template #append-inner>
 					<slot
-						v-if="numberFilled"
+						v-if="maskaNumberValue.completed"
 						name="number-append-icon"
 					/>
 				</template>
@@ -365,9 +365,9 @@ export default defineComponent({
 						}
 					"
 				>
-					<template #append>
+					<template #append-inner>
 						<slot
-							v-if="keyFilled"
+							v-if="maskaKeyValue.completed"
 							name="key-append-icon"
 						/>
 					</template>
@@ -465,11 +465,6 @@ export default defineComponent({
 	@include responsive-nir-wrapper;
 }
 
-.icon {
-	position: absolute;
-	right: 0;
-	top: 50%;
-}
 .v-text-field .v-input__append-inner {
 	padding-left: 0 !important;
 }
