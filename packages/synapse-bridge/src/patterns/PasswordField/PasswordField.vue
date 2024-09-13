@@ -15,7 +15,7 @@ import deepMerge from 'deepmerge'
 export default defineComponent({
 	inheritAttrs: false,
 	mixins: [customizable(config)],
-	emits: ['update:modelValue'],
+	emits: ['update:modelValue', 'submit'],
 	props: {
 		modelValue: {
 			type: String as () => string | null,
@@ -60,6 +60,11 @@ export default defineComponent({
 		emitChangeEvent(value: string): void {
 			this.$emit('update:modelValue', value)
 		},
+		handleKeydown(event: KeyboardEvent): void {
+			if (event.key === 'Enter') {
+				this.$emit('submit')
+			}
+		},
 	},
 })
 </script>
@@ -73,6 +78,7 @@ export default defineComponent({
 		:rules="rules"
 		:type="showEyeIcon ? 'text' : 'password'"
 		class="vd-password"
+		@keydown="handleKeydown"
 		@update:modelValue="emitChangeEvent"
 	>
 		<template #append-inner>

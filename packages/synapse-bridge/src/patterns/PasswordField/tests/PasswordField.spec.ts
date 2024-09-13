@@ -89,4 +89,16 @@ describe('PasswordField', () => {
 
 		expect(wrapper.html()).toMatchSnapshot()
 	})
+	it('emits submit event on Enter keydown', async () => {
+		const wrapper = mount(PasswordField, {
+			global: {
+				plugins: [vuetify],
+			},
+		})
+
+		const input = wrapper.find('input')
+		await input.trigger('keydown', { key: 'Enter' })
+
+		expect(wrapper.emitted('submit')).toBeTruthy()
+	})
 })
