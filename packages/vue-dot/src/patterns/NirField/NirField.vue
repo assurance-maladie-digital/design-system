@@ -419,11 +419,6 @@
 	.vd-nir-field--simple .vd-number-field {
 		margin-right: 0 !important;
 	}
-	.icon {
-		position: absolute;
-		right: 0;
-		top: 50%;
-	}
 	.v-text-field .v-input__append-inner {
 		padding-left: 0 !important;
 	}
