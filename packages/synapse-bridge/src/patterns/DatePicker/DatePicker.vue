@@ -86,19 +86,6 @@ export default defineComponent({
 		}
 	},
 	computed: {
-		filteredErrorMessages(): string[] {
-			// if message already in errorMessages, don't add it again
-			return this.warningErrorMessages.filter(
-				(msg) => !this.errorMessages.includes(msg)
-			)
-		},
-		combinedErrorMessages(): string[] {
-			return Array.from(
-				new Set([
-					...this.filteredErrorMessages
-				])
-			)
-		},
 		textFieldOptions(): any {
 			return {
 				value:
@@ -160,6 +147,15 @@ export default defineComponent({
 		if (this.error) this.errorMessages.push('Une erreur est survenue')
 		this.initializeDate()
 		this.validateAllDates()
+		this.removeDuplicateErrorMessages();
+		const inputs = document.querySelectorAll('input');
+		inputs.forEach(input => {
+			input.addEventListener('input', this.removeDuplicateErrorMessages);
+		});
+		const forms = document.querySelectorAll('form');
+		forms.forEach(form => {
+			form.addEventListener('submit', this.removeDuplicateErrorMessages);
+		});
 	},
 	watch: {
 		modelValue: {
@@ -187,6 +183,20 @@ export default defineComponent({
 		},
 	},
 	methods: {
+		removeDuplicateErrorMessages() {
+			const errorMessages = document.querySelectorAll('.v-messages__message');
+			const errorTexts = Array.from(errorMessages).map(message => message.textContent);
+			const uniqueErrorTexts = new Set();
+
+			errorMessages.forEach((message, index) => {
+				const text = errorTexts[index];
+				if (uniqueErrorTexts.has(text)) {
+					this.errorMessages = [];
+				} else {
+					uniqueErrorTexts.add(text);
+				}
+			});
+		},
 		clearInputOnFullSelection(event: KeyboardEvent): void {
 			const input = event.target as HTMLInputElement
 			const isBackspaceOrDelete =
@@ -587,11 +597,11 @@ export default defineComponent({
 					]"
 					:clearable="clearable"
 					:disabled="disabled"
-					:error-messages="combinedErrorMessages"
+					:error-messages="errorMessages"
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
-					:rules="[validateDateFormat, ...rules]"
+					:rules
 					:max-errors="5"
 					:readonly="range"
 					:value="
