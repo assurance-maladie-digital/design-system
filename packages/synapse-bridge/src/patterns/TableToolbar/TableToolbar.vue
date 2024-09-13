@@ -84,6 +84,10 @@ export default defineComponent({
 		isXs(): boolean {
 			return this.$vuetify.display.name === 'xs'
 		},
+
+		isDarkTheme(): boolean {
+			return this.$vuetify.theme.name === 'dark'
+		},
 	},
 })
 </script>
@@ -91,12 +95,12 @@ export default defineComponent({
 <template>
 	<VToolbar
 		v-bind="options.toolbar"
+		:class="['vd-table-toolbar', { 'v-theme-dark': isDarkTheme }]"
 		class="vd-table-toolbar px-4 d-flex flex-wrap align-center justify-space-between"
 	>
 		<p v-if="showRowsNumber" class="mb-0 font-weight-bold mr-4 my-3">
 			{{ computedNbRows }} {{ computedRowsText }}
 		</p>
-
 		<div class="d-flex align-end justify-end flex-grow-1">
 			<slot name="search-left" />
 			<VTextField
@@ -131,6 +135,10 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+@import '@cnamts/design-tokens/dist/tokens';
+
+$white: #fff;
+
 .loading :deep(.v-field__append-inner) {
 	opacity: 0.6 !important;
 }
@@ -145,5 +153,31 @@ export default defineComponent({
 		width: 100%;
 		flex-wrap: wrap;
 	}
+}
+
+.vd-table-toolbar.v-theme--dark :deep() {
+	background-color: $vd-grey-darken-20 !important;
+
+	p,
+	.text-primary {
+		color: rgba($white, 0.6) !important;
+	}
+
+	svg {
+		fill: $white !important;
+	}
+
+	.v-label {
+		color: rgba($white, 0.6) !important;
+	}
+
+	.v-field__input {
+		color: $white !important;
+	}
+}
+
+
+.v-theme--dark button.v-btn:hover :deep() {
+	background: rgba(white, 0.1);
 }
 </style>
