@@ -45,6 +45,14 @@ export const api: Api = {
 			{
 				name: 'tooltip',
 				description: 'Slot pour remplacer le contenu du tooltip.'
+			},
+			{
+				name: 'number-append-icon',
+				description: 'Slot pour ajouter une icône de validation pour l\'input numberField.'
+			},
+			{
+				name: 'key-append-icon',
+				description: 'Slot pour remplacer une icône de validation pour l\'input keyField.'
 			}
 		],
 		events: [
