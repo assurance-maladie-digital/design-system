@@ -56,6 +56,10 @@ li {
 	color: $vd-primary;
 }
 
+.v-theme--dark .vd-social-media-links-label.text--primary {
+	color: white
+}
+
 .vd-social-media-links-icon {
 	color: $vd-grey-base;
 }
@@ -66,7 +70,7 @@ li {
 	border: 0;
 }
 
-.theme--dark .v-btn--variant-text:hover :deep() {
+.v-theme--dark .v-btn--variant-text:hover :deep() {
 	background: rgba(white, 0.1);
 }
 </style>
