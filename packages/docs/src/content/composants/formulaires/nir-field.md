@@ -38,4 +38,14 @@ Les propriétés non définies dans la section API seront reportées directement
 <doc-api name="nir-field"></doc-api>
 </doc-tab-item>
 
+<doc-tab-item label="Personnalisation">
+
+### Utilisation des slots
+
+Vous pouvez utiliser les slots `number-append-icon` et `key-append-icon` pour ajouter une icône pour la validation du champ.
+
+<doc-example file="nir-field/slots"></doc-example>
+
+</doc-tab-item>
+
 </doc-tabs>

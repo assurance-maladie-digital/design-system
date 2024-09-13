@@ -29,7 +29,14 @@
 				@input.native="setNumberValue"
 				@change="triggerNumberValidation"
 				@blur="triggerNumberValidation"
-			/>
+			>
+				<template #append>
+					<slot
+						v-if="numberFilled"
+						name="number-append-icon"
+					/>
+				</template>
+			</VTextField>
 
 			<template v-if="!isSingleField">
 				<VTextField
@@ -47,7 +54,14 @@
 					@input.native="setKeyValue"
 					@change="triggerKeyValidation"
 					@blur="triggerKeyValidation"
-				/>
+				>
+					<template #append>
+						<slot
+							v-if="keyFilled"
+							name="key-append-icon"
+						/>
+					</template>
+				</VTextField>
 			</template>
 
 			<VTooltip
@@ -89,7 +103,7 @@
 
 	import { formatNir } from '../../functions/formatNir';
 
-	import { mdiCheck, mdiInformationOutline } from '@mdi/js';
+	import { mdiInformationOutline } from '@mdi/js';
 
 	import deepMerge from 'deepmerge';
 
@@ -179,7 +193,6 @@
 
 		locales = locales;
 
-		checkIcon = mdiCheck;
 		infoIcon = mdiInformationOutline;
 
 		numberValue: string | null = null;
@@ -405,5 +418,16 @@
 
 	.vd-nir-field--simple .vd-number-field {
 		margin-right: 0 !important;
+	}
+	.icon {
+		position: absolute;
+		right: 0;
+		top: 50%;
+	}
+	.v-text-field .v-input__append-inner {
+		padding-left: 0 !important;
+	}
+	:deep(.v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot) {
+		width: min-content !important;
 	}
 </style>
