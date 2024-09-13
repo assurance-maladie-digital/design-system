@@ -403,6 +403,14 @@ export default defineComponent({
 			}
 		},
 		validateAllDates(): void {
+			const inputs = document.querySelectorAll('input');
+			inputs.forEach(input => {
+				input.addEventListener('input', this.removeDuplicateErrorMessages);
+			});
+			const forms = document.querySelectorAll('form');
+			forms.forEach(form => {
+				form.addEventListener('submit', this.removeDuplicateErrorMessages);
+			});
 			document
 				.querySelectorAll('.vd-date-picker input')
 				.forEach((input) => {
