@@ -325,7 +325,14 @@ export default defineComponent({
 						numberErrors = []
 					}
 				"
-			/>
+			>
+				<template #append>
+					<slot
+						v-if="numberFilled"
+						name="number-append-icon"
+					/>
+				</template>
+			</VTextField>
 
 			<div id="number-field-errors" class="d-sr-only">
 				{{ numberErrors.join(' ') }}
@@ -357,7 +364,14 @@ export default defineComponent({
 							keyErrors = []
 						}
 					"
-				/>
+				>
+					<template #append>
+						<slot
+							v-if="keyFilled"
+							name="key-append-icon"
+						/>
+					</template>
+				</VTextField>
 				<div id="key-field-errors" class="d-sr-only">
 					{{ keyErrors.join(' ') }}
 				</div>
@@ -449,5 +463,17 @@ export default defineComponent({
 /* fallback for IE11 */
 @media screen and (max-width: 360px) {
 	@include responsive-nir-wrapper;
+}
+
+.icon {
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+.v-text-field .v-input__append-inner {
+	padding-left: 0 !important;
+}
+:deep(.v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot) {
+	width: min-content !important;
 }
 </style>
