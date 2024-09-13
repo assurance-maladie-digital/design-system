@@ -49,8 +49,8 @@ importers:
         specifier: 0.34.6
         version: 0.34.6(vitest@0.34.6(jsdom@22.1.0)(sass@1.67.0)(terser@5.31.3))
       '@vue/test-utils':
-        specifier: 2.4.6
-        version: 2.4.6
+        specifier: 2.4.1
+        version: 2.4.1(@vue/server-renderer@3.4.33(vue@3.4.33(typescript@5.0.4)))(vue@3.4.33(typescript@5.0.4))
       auto-changelog:
         specifier: ^2.4.0
         version: 2.4.0(encoding@0.1.13)
@@ -996,8 +996,14 @@ packages:
   '@vue/shared@3.4.33':
     resolution: {integrity: sha512-aoRY0jQk3A/cuvdkodTrM4NMfxco8n55eG4H7ML/CRy7OryHfiqvug4xrCBBMbbN+dvXAetDDwZW9DXWWjBntA==}
 
-  '@vue/test-utils@2.4.6':
-    resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
+  '@vue/test-utils@2.4.1':
+    resolution: {integrity: sha512-VO8nragneNzUZUah6kOjiFmD/gwRjUauG9DROh6oaOeFwX1cZRUNHhdeogE8635cISigXFTtGLUQWx5KCb0xeg==}
+    peerDependencies:
+      '@vue/server-renderer': ^3.0.1
+      vue: ^3.0.1
+    peerDependenciesMeta:
+      '@vue/server-renderer':
+        optional: true
 
   '@vue/typescript@1.8.11':
     resolution: {integrity: sha512-skUmMDiPUUtu1flPmf2YybF+PX8IzBtMioQOaNn6Ck/RhdrPJGj1AX/7s3Buf9G6ln+/KHR1XQuti/FFxw5XVA==}
@@ -2279,6 +2285,11 @@ packages:
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
+
+  js-beautify@1.14.9:
+    resolution: {integrity: sha512-coM7xq1syLcMyuVGyToxcj2AlzhkDjmfklL8r0JgJ7A76wyGMpJ1oA35mr4APdYNO/o/4YY8H54NQIJzhMbhBg==}
+    engines: {node: '>=12'}
+    hasBin: true
 
   js-beautify@1.15.1:
     resolution: {integrity: sha512-ESjNzSlt/sWE8sciZH8kBF8BPlwXPwhR6pWKAw8bw4Bwj+iZcnKW6ONWUutJ7eObuBZQpiIb8S7OYspWrKt7rA==}
@@ -3740,8 +3751,8 @@ packages:
       webdriverio:
         optional: true
 
-  vue-component-type-helpers@2.1.6:
-    resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
+  vue-component-type-helpers@1.8.4:
+    resolution: {integrity: sha512-6bnLkn8O0JJyiFSIF0EfCogzeqNXpnjJ0vW/SZzNHfe6sPx30lTtTXlE5TFs2qhJlAtDFybStVNpL73cPe3OMQ==}
 
   vue-router@4.2.5:
     resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
@@ -4832,10 +4843,13 @@ snapshots:
 
   '@vue/shared@3.4.33': {}
 
-  '@vue/test-utils@2.4.6':
+  '@vue/test-utils@2.4.1(@vue/server-renderer@3.4.33(vue@3.4.33(typescript@5.0.4)))(vue@3.4.33(typescript@5.0.4))':
     dependencies:
-      js-beautify: 1.15.1
-      vue-component-type-helpers: 2.1.6
+      js-beautify: 1.14.9
+      vue: 3.4.33(typescript@5.0.4)
+      vue-component-type-helpers: 1.8.4
+    optionalDependencies:
+      '@vue/server-renderer': 3.4.33(vue@3.4.33(typescript@5.0.4))
 
   '@vue/typescript@1.8.11(typescript@5.0.4)':
     dependencies:
@@ -6220,6 +6234,13 @@ snapshots:
       supports-color: 8.1.1
 
   jju@1.4.0: {}
+
+  js-beautify@1.14.9:
+    dependencies:
+      config-chain: 1.1.13
+      editorconfig: 1.0.4
+      glob: 8.1.0
+      nopt: 6.0.0
 
   js-beautify@1.15.1:
     dependencies:
@@ -7831,7 +7852,7 @@ snapshots:
       - supports-color
       - terser
 
-  vue-component-type-helpers@2.1.6: {}
+  vue-component-type-helpers@1.8.4: {}
 
   vue-router@4.2.5(vue@3.4.33(typescript@5.0.4)):
     dependencies:
