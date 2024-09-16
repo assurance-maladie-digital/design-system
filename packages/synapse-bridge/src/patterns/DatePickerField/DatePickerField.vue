@@ -13,6 +13,8 @@ import {
 } from 'vue'
 import { VTextField } from 'vuetify/lib/components/index.mjs'
 import WarningMixin from './WarningMixin'
+import { customizable } from '@/mixins/customizable'
+import { config } from './config'
 
 
 dayjs.extend(customParseFormat);
@@ -29,7 +31,7 @@ type DateFormat =
 	| 'MM-dd-yy'
 
 export default defineComponent({
-	mixins: [WarningMixin],
+	mixins: [WarningMixin, customizable(config)],
 	directives: { maska: vMaska },
 	emits: ['update:modelValue'],
 	components: {
@@ -73,11 +75,10 @@ export default defineComponent({
 		},
 		textFieldOptions() {
 			return {
+				...this.options.textField,
 				type: 'text',
-				hideDetails: 'auto',
 				label: this.label,
 				hint: this.hint,
-				persistentHint: true,
 				variant: this.variant,
 				class: {
 					'warning-style': this.warningMessages.length,
@@ -194,6 +195,7 @@ export default defineComponent({
 		<VueDatePicker
 			v-model="calendarValue"
 			ref="calendar"
+			v-bind="options.datePicker"
 			@update:model-value="handleCalendarUpdate"
 			:enable-time-picker="false"
 			auto-apply
@@ -207,7 +209,6 @@ export default defineComponent({
 					ref="text-field"
 					:rules
 					:validation-value="internalValue"
-					validate-on="blur"
 					v-bind="textFieldOptions"
 					v-maska:[textFieldFormat]
 					@update:modelValue="textToCalendar($event, onInput)"
@@ -219,12 +220,12 @@ export default defineComponent({
 					"
 				>
 					<template #append-inner v-if="showAppendIcon">
-						<VIcon @click="toggleCalendar" tabindex="-1">
+						<VIcon @click="toggleCalendar" v-bind="options.icon" tabindex="-1">
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
 					<template #prepend v-if="showPrependIcon">
-						<VIcon @click="toggleCalendar" tabindex="-1">
+						<VIcon @click="toggleCalendar" v-bind="options.icon" tabindex="-1">
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
