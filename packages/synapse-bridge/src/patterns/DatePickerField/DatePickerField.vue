@@ -207,7 +207,7 @@ export default defineComponent({
 					ref="text-field"
 					:rules
 					:validation-value="internalValue"
-					validate-on="input"
+					validate-on="blur"
 					v-bind="textFieldOptions"
 					v-maska:[textFieldFormat]
 					@update:modelValue="textToCalendar($event, onInput)"
