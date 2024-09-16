@@ -62,6 +62,7 @@ export default defineComponent({
 			type: String as PropType<'outlined' | 'underlined'>,
 			default: 'underlined',
 		},
+		clearable: { type: Boolean, default: false },
 		noIcon: { type: Boolean, default: false },
 		appendIcon: { type: Boolean, default: false },
 		/** YYYY-MM-DD */
@@ -190,11 +191,16 @@ export default defineComponent({
 		 * Handle the conversion between the text field and the calendar
 		 * in the case of the range mode is enabled by the use of the startDate prop
 		 */
-		textToCalendar(endDate: string, updateCalendar: (s: string) => void) {
+		textToCalendar(date: string, updateCalendar: (s: string) => void) {
+
+			if (date === '' && !this.startDateFormatted) {
+				updateCalendar('')
+				this.$emit('update:modelValue', '')
+				return
+			}
+
 			const format = this.dateFormat.toUpperCase()
-
-			const newDate = dayjs(endDate, format, true)
-
+			const newDate = dayjs(date, format, true)
 			if (newDate.isValid()) {
 				if (this.startDateFormatted) {
 					const calendarFormat =
@@ -203,7 +209,7 @@ export default defineComponent({
 						newDate.format(format)
 					updateCalendar(calendarFormat)
 				} else {
-					updateCalendar(endDate)
+					updateCalendar(date)
 				}
 			}
 		},
@@ -228,11 +234,13 @@ export default defineComponent({
 			:format="dateFormat"
 			:range="startDate ? { fixedStart: true } : false"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
+			:clearable="false"
 		>
-			<template #dp-input="{ onInput, onFocus, onBlur }">
+			<template #dp-input="{ onInput, onFocus, onBlur, onClear }">
 				<VTextField
 					v-model="textFieldValue"
 					ref="text-field"
+					:clearable
 					:rules
 					:validation-value="internalValue"
 					v-bind="textFieldOptions"
@@ -244,6 +252,7 @@ export default defineComponent({
 							e ? onFocus() : onBlur()
 						}
 					"
+					@click:clear="onClear"
 				>
 					<template #append-inner v-if="showAppendIcon">
 						<VIcon
