@@ -19,9 +19,14 @@ export function notBeforeDate(
 
 		const formattedValue = formatDate(parseDate(date))
 
-		return (
-			!isDateBefore(date, value) ||
-			ruleMessage(errorMessages, 'default', [formattedValue])
-		)
+		console.log('formattedValue', formattedValue)
+		console.log('date', date)
+
+		if (isDateBefore(date, formattedValue)) {
+			console.log('error')
+
+			return ruleMessage(errorMessages, 'default', [date])
+		}
+		return true
 	}
 }
