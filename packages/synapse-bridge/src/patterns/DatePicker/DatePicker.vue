@@ -707,6 +707,7 @@ export default defineComponent({
 						...errorMessages,
 						...warningErrorMessages,
 					]"
+					:max-errors="4"
 					:hint="hint"
 					:label="label"
 					:persistent-hint="true"
