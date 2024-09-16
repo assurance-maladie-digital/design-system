@@ -1,3 +1,18 @@
+## v2.16.10
+
+**Version publiée le 16/09/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **NirField:** Ajout des slots `number-append-icon` et `key-append-icon` permettant d'afficher ou non une icône pour l'état validé et fix de la couleur success ([#3757](https://github.com/assurance-maladie-digital/design-system/pull/3757))
+  - **NirField:** Refactorisation du composant pour améliorer la gestion des erreurs ([#3745](https://github.com/assurance-maladie-digital/design-system/pull/3745))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3764](https://github.com/assurance-maladie-digital/design-system/pull/3764))
+
 ## v2.16.9
 
 **Version publiée le 09/08/2024.**
