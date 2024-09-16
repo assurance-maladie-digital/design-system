@@ -2,8 +2,8 @@ export const config = {
 	textField: {
 		hideDetails: 'auto',
 		persistentHint: true,
-		validateOn: "blur",
-		color: "#0C419A"
+		validateOn: 'blur',
+		color: '#0C419A',
 	},
 	datePicker: {
 		hideOffsetDates: true,

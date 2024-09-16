@@ -16,7 +16,7 @@ import WarningMixin from './WarningMixin'
 import { customizable } from '@/mixins/customizable'
 import { config } from './config'
 
-dayjs.extend(customParseFormat);
+dayjs.extend(customParseFormat)
 
 type DateFormat =
 	| 'dd/MM/yyyy'
@@ -67,7 +67,7 @@ export default defineComponent({
 		/** YYYY-MM-DD */
 		startDate: { type: String, default: null },
 		birthdate: { type: Boolean, default: false },
-		textFieldClass : { type: String, default: '' },
+		textFieldClass: { type: String, default: '' },
 		showWeekends: { type: Boolean, default: false },
 	},
 	computed: {
@@ -82,19 +82,24 @@ export default defineComponent({
 				label: this.label,
 				hint: this.hint,
 				variant: this.variant,
-				class: [{
+				class: [
+					{
 						'warning-style': this.warningMessages.length,
 						'error-style': this.errorMessages?.length,
 					},
-					this.textFieldClass
-				]
+					this.textFieldClass,
+				],
 			}
 		},
 		internalValue() {
 			// value to be used for validation
-			if(!this.textFieldValue) return '';
-			const date = dayjs(this.textFieldValue, this.dateFormat.toUpperCase(), true)
-			return date.format('DD/MM/YYYY');
+			if (!this.textFieldValue) return ''
+			const date = dayjs(
+				this.textFieldValue,
+				this.dateFormat.toUpperCase(),
+				true
+			)
+			return date.format('DD/MM/YYYY')
 		},
 		showAppendIcon() {
 			return (
@@ -105,7 +110,11 @@ export default defineComponent({
 			return !this.noIcon && this.variant !== 'outlined'
 		},
 		startDateFormatted() {
-			return this.startDate ? dayjs(this.startDate, 'YYYY-MM-DD').format(this.dateFormatReturn) : null
+			return this.startDate
+				? dayjs(this.startDate, 'YYYY-MM-DD').format(
+						this.dateFormatReturn
+					)
+				: null
 		},
 	},
 	watch: {
@@ -114,14 +123,19 @@ export default defineComponent({
 				const date = dayjs(
 					newValue,
 					this.dateFormatReturn.toUpperCase()
-				);
+				)
 
-				const newDate = date.isValid() ? date.toDate() : undefined;
+				const newDate = date.isValid() ? date.toDate() : undefined
 
 				if (this.startDateFormatted) {
-					const startDate = dayjs(this.startDate, 'YYYY-MM-DD').toDate()
+					const startDate = dayjs(
+						this.startDate,
+						'YYYY-MM-DD'
+					).toDate()
 
-					this.calendarValue = newDate ? [startDate, newDate] : [startDate]
+					this.calendarValue = newDate
+						? [startDate, newDate]
+						: [startDate]
 				} else {
 					this.calendarValue = newDate
 				}
@@ -166,7 +180,7 @@ export default defineComponent({
 			if (!textField) return
 
 			this.validateWarning(this.internalValue)
-			await nextTick();
+			await nextTick()
 			this.errorMessages = await textField.validate()
 		},
 		/**
@@ -179,7 +193,7 @@ export default defineComponent({
 			const newDate = dayjs(endDate, format, true)
 
 			if (newDate.isValid()) {
-				if(this.startDateFormatted) {
+				if (this.startDateFormatted) {
 					const calendarFormat =
 						dayjs(new Date()).format(format) +
 						' - ' +
@@ -229,12 +243,20 @@ export default defineComponent({
 					"
 				>
 					<template #append-inner v-if="showAppendIcon">
-						<VIcon @click="toggleCalendar" v-bind="options.icon" tabindex="-1">
+						<VIcon
+							@click="toggleCalendar"
+							v-bind="options.icon"
+							tabindex="-1"
+						>
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
 					<template #prepend v-if="showPrependIcon">
-						<VIcon @click="toggleCalendar" v-bind="options.icon" tabindex="-1">
+						<VIcon
+							@click="toggleCalendar"
+							v-bind="options.icon"
+							tabindex="-1"
+						>
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
@@ -278,7 +300,6 @@ export default defineComponent({
 </style>
 
 <style lang="scss" scoped>
-
 .vd-date-picker {
 	:deep(.dp__button) {
 		display: none !important;
