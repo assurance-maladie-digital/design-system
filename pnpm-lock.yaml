@@ -18,8 +18,8 @@ importers:
   packages/synapse-bridge:
     dependencies:
       '@cnamts/design-tokens':
-        specifier: 2.12.0
-        version: 2.12.0
+        specifier: 2.16.8
+        version: 2.16.8
       '@vuepic/vue-datepicker':
         specifier: ^8.6.0
         version: 8.8.1(vue@3.4.33(typescript@5.0.4))
@@ -164,8 +164,8 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@cnamts/design-tokens@2.12.0':
-    resolution: {integrity: sha512-ea8LBxb4SfUdxwMzkqR+AwFdVoSuzwZUjPBEib/GXg3tEFctlvAZDoHpC8F8zan4SPtcaKK4rSfwwf89X31UZg==}
+  '@cnamts/design-tokens@2.16.8':
+    resolution: {integrity: sha512-kfB6/w36usiHbudDoBa8PdLgPlHhk0f8/dnZf539OdN9Hm58lmW6/vgKqp8d9Rikf60nhlE0LCX46CKl/ztu1A==}
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -3991,7 +3991,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@cnamts/design-tokens@2.12.0': {}
+  '@cnamts/design-tokens@2.16.8': {}
 
   '@esbuild/aix-ppc64@0.20.2':
     optional: true
@@ -5919,7 +5919,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -6714,7 +6714,7 @@ snapshots:
       array-differ: 3.0.0
       array-union: 2.1.0
       arrify: 2.0.1
-      minimatch: 3.0.5
+      minimatch: 3.1.2
 
   mute-stream@0.0.8: {}
 

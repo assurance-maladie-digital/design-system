@@ -186,8 +186,8 @@ a {
 		white-space: nowrap;
 	}
 
-	table thead th {
-		color: rgba(0, 0, 0, 0.6);
+	 table thead th {
+		opacity: 0.6;
 		font-size: 0.875rem;
 	}
 
@@ -275,4 +275,12 @@ a {
 .v-btn--size-default {
 	--v-btn-size: 1rem !important;
 	padding: 0 16px !important;
+}
+
+.v-data-table-header__th {
+	color: black;
+
+	.v-dark-theme & {
+		color: white !important;
+	}
 }

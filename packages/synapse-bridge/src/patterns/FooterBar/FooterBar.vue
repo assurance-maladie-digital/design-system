@@ -184,7 +184,7 @@ export default defineComponent({
 		}"
 		:class="{
 			'py-4 py-sm-7 px-4 px-md-14': extendedMode,
-			'theme--dark': dark,
+			'v-theme--dark': dark,
 		}"
 		role="contentinfo"
 		class="vd-footer-bar flex-column align-stretch pa-3 w-100"
@@ -291,7 +291,7 @@ a {
 }
 
 // Use deep selector to style user content as well
-.vd-footer-bar.theme--dark :deep() {
+.vd-footer-bar.v-theme--dark :deep() {
 	background-color: $vd-grey-darken-20 !important;
 
 	.vd-footer-bar-links a {
@@ -338,7 +338,7 @@ a {
 		padding: 1px 0;
 	}
 }
-.theme--dark button.v-btn:hover :deep() {
+.v-theme--dark button.v-btn:hover :deep() {
 	background: rgba(white, 0.1);
 }
 </style>

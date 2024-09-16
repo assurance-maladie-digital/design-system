@@ -8,7 +8,7 @@ exports[`NirField > renders correctly 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -32,7 +32,10 @@ exports[`NirField > renders correctly 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
@@ -52,7 +55,7 @@ exports[`NirField > renders correctly 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -76,7 +79,10 @@ exports[`NirField > renders correctly 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
                 <!---->Clé
@@ -114,7 +120,7 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -138,7 +144,10 @@ exports[`NirField > renders correctly with 13 characters 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
@@ -177,7 +186,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-number-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -201,7 +210,10 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
                 <!---->Numéro de sécurité sociale
@@ -221,7 +233,7 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--density-default v-locale--is-ltr v-text-field v-input--plain-underlined vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--variant-underlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--variant-underlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -245,7 +257,10 @@ exports[`NirField > renders correctly with a tooltip 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <!----><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
                 <!---->Clé
@@ -284,7 +299,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-number-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -308,7 +323,10 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <div class="v-field__outline__start"></div>
               <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-1">
@@ -331,7 +349,7 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
       <div data-v-f9b525c5="" class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-locale--is-ltr v-text-field vd-key-field flex-grow-0 mr-2 mr-sm-4">
         <!---->
         <div class="v-input__control">
-          <div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
+          <div class="v-field v-field--appended v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr">
             <div class="v-field__overlay"></div>
             <div class="v-field__loader">
               <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -355,7 +373,10 @@ exports[`NirField > renders correctly with outlined prop 1`] = `
               <!---->
             </div>
             <!---->
-            <!---->
+            <div class="v-field__append-inner">
+              <!--v-if-->
+              <!---->
+            </div>
             <div class="v-field__outline">
               <div class="v-field__outline__start"></div>
               <div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" aria-hidden="true" for="input-3">
