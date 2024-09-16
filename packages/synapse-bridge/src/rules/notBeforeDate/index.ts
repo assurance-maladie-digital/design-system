@@ -3,8 +3,9 @@ import { ValidationRule, ValidationResult, Value } from '@/rules/types'
 
 import { defaultErrorMessages } from './locales'
 
+import { parseDate } from '../../helpers/parseDate'
+import { formatDate } from '../../functions/formatDate'
 import { isDateBefore } from '../../functions/validation/isDateBefore'
-import { formatDateToDDMMYYYYFn } from '@/rules/notAfterToday'
 
 /** Check that the value is not after the specified date (DD/MM/YYYY format) */
 export function notBeforeDate(
@@ -16,18 +17,11 @@ export function notBeforeDate(
 			return true
 		}
 
-		const formattedValue =
-			typeof value === 'object' ? formatDateToDDMMYYYYFn(value) : value
+		const formattedValue = formatDate(parseDate(date))
 
-		console.log('formattedValue', formattedValue);
-		console.log('date', date);
-
-
-		if (isDateBefore(date, formattedValue)) {
-			console.log('error');
-
-			return ruleMessage(errorMessages, 'default', [date])
-		}
-		return true
+		return (
+			!isDateBefore(date, value) ||
+			ruleMessage(errorMessages, 'default', [formattedValue])
+		)
 	}
 }
