@@ -19,15 +19,15 @@ import { config } from './config'
 dayjs.extend(customParseFormat)
 
 type DateFormat =
-	| 'dd/MM/yyyy'
-	| 'MM/dd/yyyy'
-	| 'dd-MM-yyyy'
-	| 'MM-dd-yyyy'
-	| 'yyyy-MM-dd'
-	| 'dd/MM/yy'
-	| 'MM/dd/yy'
-	| 'dd-MM-yy'
-	| 'MM-dd-yy'
+	| 'DD/MM/YYYY'
+	| 'MM/DD/YYYY'
+	| 'DD-MM-YYYY'
+	| 'MM-DD-YYYY'
+	| 'YYYY-MM-DD'
+	| 'DD/MM/YY'
+	| 'MM/DD/YY'
+	| 'DD-MM-YY'
+	| 'MM-DD-YY'
 
 export default defineComponent({
 	mixins: [WarningMixin, customizable(config)],
@@ -46,11 +46,11 @@ export default defineComponent({
 		modelValue: String,
 		dateFormat: {
 			type: String as PropType<DateFormat>,
-			default: 'dd/MM/yyyy',
+			default: 'DD/MM/YYYY',
 		},
 		dateFormatReturn: {
 			type: String as PropType<DateFormat>,
-			default: 'dd/MM/yyyy',
+			default: 'DD/MM/YYYY',
 		},
 		rules: {
 			type: Array as PropType<Array<ValidationRule>>,
@@ -72,6 +72,13 @@ export default defineComponent({
 		showWeekends: { type: Boolean, default: false },
 	},
 	computed: {
+		calendarDateFormat() {
+			// convert the date format to the one used by the calendar
+			return this.dateFormat
+				.split('')
+				.map((char: string) => char === 'M' ? 'M' : char.toLowerCase())
+				.join('')
+		},
 		textFieldFormat() {
 			const mask = this.dateFormat.replace(/[a-zA-Z]/g, '#')
 			return { mask: mask }
@@ -97,7 +104,7 @@ export default defineComponent({
 			if (!this.textFieldValue) return ''
 			const date = dayjs(
 				this.textFieldValue,
-				this.dateFormat.toUpperCase(),
+				this.dateFormat,
 				true
 			)
 			return date.format('DD/MM/YYYY')
@@ -123,7 +130,7 @@ export default defineComponent({
 			handler(newValue) {
 				const date = dayjs(
 					newValue,
-					this.dateFormatReturn.toUpperCase()
+					this.dateFormatReturn
 				)
 
 				const newCalendarDate = date.isValid() ? date.toDate() : undefined
@@ -141,7 +148,7 @@ export default defineComponent({
 					this.calendarValue = newCalendarDate
 				}
 				this.textFieldValue = newCalendarDate
-					? dayjs(newCalendarDate).format(this.dateFormat.toUpperCase())
+					? dayjs(newCalendarDate).format(this.dateFormat)
 					: ''
 			},
 			immediate: true,
@@ -161,10 +168,10 @@ export default defineComponent({
 			const selectedValue = Array.isArray(date) ? date[1] : date
 
 			this.textFieldValue = dayjs(selectedValue).format(
-				this.dateFormat.toUpperCase()
+				this.dateFormat
 			)
 			const emitDate = dayjs(selectedValue).format(
-				this.dateFormatReturn.toUpperCase()
+				this.dateFormatReturn
 			)
 			this.$emit('update:modelValue', emitDate)
 			this.updateMessages()
@@ -199,14 +206,13 @@ export default defineComponent({
 				return
 			}
 
-			const format = this.dateFormat.toUpperCase()
-			const newDate = dayjs(date, format, true)
+			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
 				if (this.startDateFormatted) {
 					const calendarFormat =
-						dayjs(new Date()).format(format) +
+						dayjs(new Date()).format(this.dateFormat) +
 						' - ' +
-						newDate.format(format)
+						newDate.format(this.dateFormat)
 					updateCalendar(calendarFormat)
 				} else {
 					updateCalendar(date)
@@ -231,7 +237,7 @@ export default defineComponent({
 			:enable-time-picker="false"
 			auto-apply
 			:text-input="{ openMenu: false }"
-			:format="dateFormat"
+			:format="calendarDateFormat"
 			:range="startDate ? { fixedStart: true } : false"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
 			:clearable="false"
