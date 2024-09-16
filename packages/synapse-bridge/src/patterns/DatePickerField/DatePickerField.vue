@@ -125,7 +125,7 @@ export default defineComponent({
 					this.dateFormatReturn.toUpperCase()
 				)
 
-				const newDate = date.isValid() ? date.toDate() : undefined
+				const newCalendarDate = date.isValid() ? date.toDate() : undefined
 
 				if (this.startDateFormatted) {
 					const startDate = dayjs(
@@ -133,12 +133,15 @@ export default defineComponent({
 						'YYYY-MM-DD'
 					).toDate()
 
-					this.calendarValue = newDate
-						? [startDate, newDate]
+					this.calendarValue = newCalendarDate
+						? [startDate, newCalendarDate]
 						: [startDate]
 				} else {
-					this.calendarValue = newDate
+					this.calendarValue = newCalendarDate
 				}
+				this.textFieldValue = newCalendarDate
+					? dayjs(newCalendarDate).format(this.dateFormat.toUpperCase())
+					: ''
 			},
 			immediate: true,
 		},
