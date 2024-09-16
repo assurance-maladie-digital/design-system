@@ -67,6 +67,8 @@ export default defineComponent({
 		/** YYYY-MM-DD */
 		startDate: { type: String, default: null },
 		birthdate: { type: Boolean, default: false },
+		textFieldClass : { type: String, default: '' },
+		showWeekends: { type: Boolean, default: false },
 	},
 	computed: {
 		textFieldFormat() {
@@ -80,10 +82,12 @@ export default defineComponent({
 				label: this.label,
 				hint: this.hint,
 				variant: this.variant,
-				class: {
-					'warning-style': this.warningMessages.length,
-					'error-style': this.errorMessages?.length,
-				}
+				class: [{
+						'warning-style': this.warningMessages.length,
+						'error-style': this.errorMessages?.length,
+					},
+					this.textFieldClass
+				]
 			}
 		},
 		internalValue() {
@@ -186,12 +190,16 @@ export default defineComponent({
 				}
 			}
 		},
+		isWeekend(date: any) {
+			const dayOfWeek = date.getDay()
+			return dayOfWeek === 0 || dayOfWeek === 6
+		},
 	},
 })
 </script>
 
 <template>
-	<div>
+	<div class="vd-date-picker">
 		<VueDatePicker
 			v-model="calendarValue"
 			ref="calendar"
@@ -254,6 +262,13 @@ export default defineComponent({
 					</template>
 				</VTextField>
 			</template>
+			<template #day="{ date }">
+				<div
+					:class="showWeekends && isWeekend(date) ? 'week-ends' : ''"
+				>
+					{{ date.getDate() }}
+				</div>
+			</template>
 		</VueDatePicker>
 	</div>
 </template>
@@ -263,6 +278,26 @@ export default defineComponent({
 </style>
 
 <style lang="scss" scoped>
+
+.vd-date-picker {
+	:deep(.dp__button) {
+		display: none !important;
+	}
+
+	:deep(.v-input__prepend > .v-icon) {
+		opacity: 1;
+	}
+
+	.week-ends {
+		background-color: #b3b4b5;
+		border-radius: 57%;
+		width: 39px;
+		height: 25px;
+		display: inline-block;
+		padding-bottom: 1px;
+	}
+}
+
 :deep(.v-field--variant-outlined .v-field__outline__notch::after) {
 	box-sizing: border-box;
 }
