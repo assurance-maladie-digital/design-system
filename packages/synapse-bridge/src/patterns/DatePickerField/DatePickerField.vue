@@ -16,7 +16,6 @@ import WarningMixin from './WarningMixin'
 import { customizable } from '@/mixins/customizable'
 import { config } from './config'
 
-
 dayjs.extend(customParseFormat);
 
 type DateFormat =
@@ -67,6 +66,7 @@ export default defineComponent({
 		appendIcon: { type: Boolean, default: false },
 		/** YYYY-MM-DD */
 		startDate: { type: String, default: null },
+		birthdate: { type: Boolean, default: false },
 	},
 	computed: {
 		textFieldFormat() {
@@ -202,6 +202,7 @@ export default defineComponent({
 			:text-input="{ openMenu: false }"
 			:format="dateFormat"
 			:range="startDate ? { fixedStart: true } : false"
+			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
 		>
 			<template #dp-input="{ onInput, onFocus, onBlur }">
 				<VTextField

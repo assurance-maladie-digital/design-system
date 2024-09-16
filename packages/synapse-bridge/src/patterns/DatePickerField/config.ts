@@ -5,7 +5,7 @@ export const config = {
 		validateOn: "blur"
 	},
 	datePicker: {
-
+		dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
 	},
 	icon: {
 		color: '#808080',
