@@ -152,7 +152,7 @@ export default defineComponent({
 			const calendar = this.$refs.calendar as ComponentPublicInstance<
 				typeof VueDatePicker
 			>
-			if(!this.noCalendar) {
+			if(!this.noCalendar && !this.textFieldActivator) {
 				calendar.toggleMenu()
 			}
 		},
@@ -173,6 +173,14 @@ export default defineComponent({
 		handleFocusChange(focus: boolean) {
 			if (!focus) {
 				this.updateMessages()
+			} else {
+				if (this.textFieldActivator) {
+					if (!this.$refs.calendar) return
+					const calendar = this.$refs.calendar as ComponentPublicInstance<
+						typeof VueDatePicker
+					>
+						calendar.toggleMenu()
+				}
 			}
 		},
 		/**
