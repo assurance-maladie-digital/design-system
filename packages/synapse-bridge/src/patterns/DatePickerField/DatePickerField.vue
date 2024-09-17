@@ -1,4 +1,5 @@
 <script lang="ts">
+import { customizable } from '@/mixins/customizable'
 import type { ValidationRule } from '@/rules/types'
 import { mdiCalendar } from '@mdi/js'
 import VueDatePicker from '@vuepic/vue-datepicker'
@@ -12,22 +13,10 @@ import {
 	type PropType,
 } from 'vue'
 import { VTextField } from 'vuetify/lib/components/index.mjs'
-import WarningMixin from './WarningMixin'
-import { customizable } from '@/mixins/customizable'
 import { config } from './config'
+import WarningMixin from './WarningMixin'
 
 dayjs.extend(customParseFormat)
-
-type DateFormat =
-	| 'DD/MM/YYYY'
-	| 'MM/DD/YYYY'
-	| 'DD-MM-YYYY'
-	| 'MM-DD-YYYY'
-	| 'YYYY-MM-DD'
-	| 'DD/MM/YY'
-	| 'MM/DD/YY'
-	| 'DD-MM-YY'
-	| 'MM-DD-YY'
 
 export default defineComponent({
 	mixins: [WarningMixin, customizable(config)],
@@ -45,11 +34,11 @@ export default defineComponent({
 	props: {
 		modelValue: String,
 		dateFormat: {
-			type: String as PropType<DateFormat>,
+			type: String as PropType<string>,
 			default: 'DD/MM/YYYY',
 		},
 		dateFormatReturn: {
-			type: String as PropType<DateFormat>,
+			type: String as PropType<string>,
 			default: 'DD/MM/YYYY',
 		},
 		rules: {
@@ -147,8 +136,6 @@ export default defineComponent({
 					this.calendarValue = newCalendarDate
 						? [startDate, newCalendarDate]
 						: [startDate]
-					console.log('set', this.calendarValue);
-
 				} else {
 					this.calendarValue = newCalendarDate
 				}
@@ -168,8 +155,6 @@ export default defineComponent({
 			calendar.toggleMenu()
 		},
 		handleCalendarUpdate(date: Date | [Date, Date]) {
-			console.log('calendar internalValue updated', date);
-
 			if (!date) return
 
 			const selectedValue = Array.isArray(date) ? date[1] : date
@@ -216,18 +201,15 @@ export default defineComponent({
 			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
 				if (this.startDateFormatted) {
-
-					const calendarFormat =
-					dayjs(this.startDate, 'YYYY-MM-DD').format(this.dateFormat) +
-					' - ' +
-					newDate.format(this.dateFormat)
-					updateCalendar(calendarFormat)
+					const startDate = dayjs(this.startDate, 'YYYY-MM-DD').format(this.dateFormat)
+					const endDate = newDate.format(this.dateFormat)
+					updateCalendar(`${startDate} - ${endDate}`)
 				} else {
 					updateCalendar(date)
 				}
 			}
 		},
-		isWeekend(date: any) {
+		isWeekend(date: Date) {
 			const dayOfWeek = date.getDay()
 			return dayOfWeek === 0 || dayOfWeek === 6
 		},
