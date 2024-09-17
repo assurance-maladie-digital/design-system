@@ -179,7 +179,7 @@ export default defineComponent({
 			if (!focus) {
 				this.updateMessages()
 			} else {
-				if (this.textFieldActivator) {
+				if (this.textFieldActivator || this.noIcon) {
 					if (!this.$refs.calendar) return
 					const calendar = this.$refs.calendar as ComponentPublicInstance<
 						typeof VueDatePicker
