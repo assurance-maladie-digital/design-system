@@ -212,14 +212,12 @@ export default defineComponent({
 
 			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
-				console.log('date is valid', date);
 				if (this.startDateFormatted) {
 
 					const calendarFormat =
-					dayjs(new Date()).format(this.dateFormat) +
+					dayjs(this.startDate, 'YYYY-MM-DD').format(this.dateFormat) +
 					' - ' +
 					newDate.format(this.dateFormat)
-					console.log('should be here', calendarFormat);
 					updateCalendar(calendarFormat)
 				} else {
 					updateCalendar(date)

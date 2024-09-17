@@ -99,8 +99,6 @@ describe('DatePickerField', () => {
 		await wrapper.vm.$nextTick()
 		await wrapper.vm.$nextTick()
 
-		console.log('emitted', wrapper.emitted());
-
-		expect(wrapper.emitted('update:modelValue')?.[0]).toEqual(['17/06/1995'])
+		expect(wrapper.emitted()['update:modelValue'][0]).toEqual(['17/06/1995'])
 	})
 })
