@@ -106,12 +106,10 @@ export default defineComponent({
 				: null
 		},
 		showAppendIcon() {
-			return (
-				!this.noIcon && (this.variant === 'outlined' || this.appendIcon)
-			)
+			return this.outlined || (!this.noIcon && (this.variant === 'outlined' || this.appendIcon));
 		},
 		showPrependIcon() {
-			return !this.noIcon && !this.showAppendIcon && this.variant !== 'outlined'
+			return !this.noIcon && !this.showAppendIcon && this.variant !== 'outlined';
 		},
 		iconSlotName() {
 			if (this.showAppendIcon) {
