@@ -47,10 +47,6 @@ export default defineComponent({
 		},
 		label: { type: String, default: '' },
 		hint: { type: String, default: 'Format JJ/MM/AAAA' },
-		variant: {
-			type: String as PropType<'outlined' | 'underlined'>,
-			default: 'underlined',
-		},
 		clearable: { type: Boolean, default: false },
 		noIcon: { type: Boolean, default: false },
 		appendIcon: { type: Boolean, default: false },
@@ -62,6 +58,7 @@ export default defineComponent({
 		disabled: { type: Boolean, default: false },
 		textFieldActivator: { type: Boolean, default: false },
 		noCalendar: { type: Boolean, default: false },
+		outlined: { type: Boolean, default: false },
 	},
 	computed: {
 		calendarDateFormat() {
@@ -81,7 +78,7 @@ export default defineComponent({
 				type: 'text',
 				label: this.label,
 				hint: this.hint,
-				variant: this.variant,
+				variant: this.outlined ? 'outlined' : 'underlined',
 				class: [
 					{
 						'warning-style': this.warningMessages.length,
@@ -101,20 +98,28 @@ export default defineComponent({
 			)
 			return date.format('DD/MM/YYYY')
 		},
-		showAppendIcon() {
-			return (
-				!this.noIcon && (this.variant === 'outlined' || this.appendIcon)
-			)
-		},
-		showPrependIcon() {
-			return !this.noIcon && this.variant !== 'outlined'
-		},
 		startDateFormatted() {
 			return this.startDate
 				? dayjs(this.startDate, 'YYYY-MM-DD').format(
 						this.dateFormatReturn
 					)
 				: null
+		},
+		showAppendIcon() {
+			return (
+				!this.noIcon && (this.variant === 'outlined' || this.appendIcon)
+			)
+		},
+		showPrependIcon() {
+			return !this.noIcon && !this.showAppendIcon && this.variant !== 'outlined'
+		},
+		iconSlotName() {
+			if (this.showAppendIcon) {
+				return 'append-inner';
+			} else if (this.showPrependIcon) {
+				return 'prepend';
+			}
+			return null;
 		},
 	},
 	watch: {
@@ -261,16 +266,7 @@ export default defineComponent({
 					"
 					@click:clear="onClear"
 				>
-					<template #append-inner v-if="showAppendIcon">
-						<VIcon
-							@click="toggleCalendar"
-							v-bind="options.icon"
-							tabindex="-1"
-						>
-							{{ calendarIcon }}
-						</VIcon>
-					</template>
-					<template #prepend v-if="showPrependIcon && !showAppendIcon">
+					<template v-if="iconSlotName" #[iconSlotName]>
 						<VIcon
 							@click="toggleCalendar"
 							v-bind="options.icon"
