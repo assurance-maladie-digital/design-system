@@ -96,8 +96,6 @@ describe('DatePickerField', () => {
 		await input.trigger('blur')
 
 		await wrapper.vm.$nextTick()
-		await wrapper.vm.$nextTick()
-		await wrapper.vm.$nextTick()
 
 		expect(wrapper.emitted()['update:modelValue'][0]).toEqual(['17/06/1995'])
 	})
