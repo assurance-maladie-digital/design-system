@@ -2,8 +2,7 @@
 	"name": "@cnamts/synapse-bridge",
 	"version": "3.0.1",
 	"engines": {
-		"node": ">=20.11.0",
-		"pnpm": ">=9.0.0"
+		"node": ">=18.0.0"
 	},
 	"description": "Portage of our components to Vue 3 without breaking changes",
 	"license": "MIT",
