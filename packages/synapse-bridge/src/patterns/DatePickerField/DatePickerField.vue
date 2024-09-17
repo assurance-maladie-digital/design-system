@@ -70,6 +70,7 @@ export default defineComponent({
 		birthdate: { type: Boolean, default: false },
 		textFieldClass: { type: String, default: '' },
 		showWeekends: { type: Boolean, default: false },
+		disabled: { type: Boolean, default: false },
 	},
 	computed: {
 		calendarDateFormat() {
@@ -240,6 +241,7 @@ export default defineComponent({
 			v-bind="options.datePicker"
 			@update:model-value="handleCalendarUpdate"
 			:enable-time-picker="false"
+			:disabled="disabled"
 			auto-apply
 			:text-input="{ openMenu: false }"
 			:format="calendarDateFormat"
