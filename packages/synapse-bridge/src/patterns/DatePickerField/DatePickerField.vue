@@ -152,7 +152,9 @@ export default defineComponent({
 			const calendar = this.$refs.calendar as ComponentPublicInstance<
 				typeof VueDatePicker
 			>
-			calendar.toggleMenu()
+			if(!this.noCalendar) {
+				calendar.toggleMenu()
+			}
 		},
 		handleCalendarUpdate(date: Date | [Date, Date]) {
 			if (!date) return
@@ -226,7 +228,7 @@ export default defineComponent({
 			@update:model-value="handleCalendarUpdate"
 			:enable-time-picker="false"
 			auto-apply
-			:text-input="textFieldActivator ? { openMenu: true } : { openMenu: false }"
+			:text-input="{ openMenu: false }"
 			:format="calendarDateFormat"
 			:range="startDate ? { fixedStart: true } : false"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
