@@ -276,7 +276,7 @@ export default defineComponent({
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
-					<template #prepend v-if="showPrependIcon">
+					<template #prepend v-if="showPrependIcon && !showAppendIcon">
 						<VIcon
 							@click="toggleCalendar"
 							v-bind="options.icon"
