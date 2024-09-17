@@ -241,7 +241,6 @@ export default defineComponent({
 			v-bind="options.datePicker"
 			@update:model-value="handleCalendarUpdate"
 			:enable-time-picker="false"
-			:disabled="disabled"
 			auto-apply
 			:text-input="{ openMenu: false }"
 			:format="calendarDateFormat"
@@ -255,6 +254,7 @@ export default defineComponent({
 					ref="text-field"
 					:clearable
 					:rules
+					:disabled="disabled"
 					:validation-value="internalValue"
 					v-bind="textFieldOptions"
 					v-maska:[textFieldFormat]
