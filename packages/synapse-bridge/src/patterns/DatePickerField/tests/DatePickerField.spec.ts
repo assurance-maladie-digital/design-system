@@ -11,8 +11,8 @@ describe('DatePickerField', () => {
 			},
 			props: {
 				modelValue: '2021-01-01',
-				dateFormat: 'dd/MM/yyyy',
-				dateFormatReturn: 'yyyy-MM-dd',
+				dateFormat: 'DD/MM/YYYY',
+				dateFormatReturn: 'YYYY-MM-DD',
 				label: 'User birthday',
 			},
 		})
@@ -33,8 +33,8 @@ describe('DatePickerField', () => {
 			},
 			props: {
 				modelValue: '2021-01-01',
-				dateFormat: 'dd/MM/yyyy',
-				dateFormatReturn: 'yyyy-MM-dd',
+				dateFormat: 'DD/MM/YYYY',
+				dateFormatReturn: 'YYYY-MM-DD',
 			},
 		})
 
@@ -59,8 +59,8 @@ describe('DatePickerField', () => {
 			},
 			props: {
 				modelValue: '21/12/20',
-				dateFormat: 'dd/MM/yyyy',
-				dateFormatReturn: 'dd/MM/yy',
+				dateFormat: 'DD/MM/YYYY',
+				dateFormatReturn: 'DD/MM/YY',
 			},
 		})
 
@@ -72,4 +72,35 @@ describe('DatePickerField', () => {
 		await wrapper.setProps({ modelValue: '01/01/01' })
 		expect(wrapper.find('input').element.value).toBe('01/01/2001')
 	});
+
+	it('should emit the end date when the startDate prop is set', async () => {
+		const wrapper = mount(DatePickerField, {
+			global: {
+				plugins: [vuetify],
+				stubs: ['slide-y-transition'],
+			},
+			props: {
+				modelValue: '19/05/1995',
+				startDate: '1995-05-19',
+				dateFormat: 'DD/MM/YYYY',
+				dateFormatReturn: 'DD/MM/YYYY',
+			}
+		})
+
+		const input = wrapper.find('input')
+
+		expect(input.element.value).toBe('19/05/1995')
+
+		await input.trigger('focus')
+		await input.setValue('17/06/1995')
+		await input.trigger('blur')
+
+		await wrapper.vm.$nextTick()
+		await wrapper.vm.$nextTick()
+		await wrapper.vm.$nextTick()
+
+		console.log('emitted', wrapper.emitted());
+
+		expect(wrapper.emitted('update:modelValue')?.[0]).toEqual(['17/06/1995'])
+	})
 })

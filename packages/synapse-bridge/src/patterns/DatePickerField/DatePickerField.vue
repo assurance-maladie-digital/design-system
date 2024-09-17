@@ -73,7 +73,7 @@ export default defineComponent({
 	},
 	computed: {
 		calendarDateFormat() {
-			// convert the date format to the one used by the calendar
+			// cf : https://vue3datepicker.com/props/formatting/#format
 			return this.dateFormat
 				.split('')
 				.map((char: string) => char === 'M' ? 'M' : char.toLowerCase())
@@ -144,6 +144,8 @@ export default defineComponent({
 					this.calendarValue = newCalendarDate
 						? [startDate, newCalendarDate]
 						: [startDate]
+					console.log('set', this.calendarValue);
+
 				} else {
 					this.calendarValue = newCalendarDate
 				}
@@ -163,6 +165,8 @@ export default defineComponent({
 			calendar.toggleMenu()
 		},
 		handleCalendarUpdate(date: Date | [Date, Date]) {
+			console.log('calendar internalValue updated', date);
+
 			if (!date) return
 
 			const selectedValue = Array.isArray(date) ? date[1] : date
@@ -208,11 +212,14 @@ export default defineComponent({
 
 			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
+				console.log('date is valid', date);
 				if (this.startDateFormatted) {
+
 					const calendarFormat =
-						dayjs(new Date()).format(this.dateFormat) +
-						' - ' +
-						newDate.format(this.dateFormat)
+					dayjs(new Date()).format(this.dateFormat) +
+					' - ' +
+					newDate.format(this.dateFormat)
+					console.log('should be here', calendarFormat);
 					updateCalendar(calendarFormat)
 				} else {
 					updateCalendar(date)
