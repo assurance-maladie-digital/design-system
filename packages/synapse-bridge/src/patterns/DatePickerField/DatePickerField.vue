@@ -71,6 +71,8 @@ export default defineComponent({
 		textFieldClass: { type: String, default: '' },
 		showWeekends: { type: Boolean, default: false },
 		disabled: { type: Boolean, default: false },
+		textFieldActivator: { type: Boolean, default: false },
+		noCalendar: { type: Boolean, default: false },
 	},
 	computed: {
 		calendarDateFormat() {
@@ -242,7 +244,7 @@ export default defineComponent({
 			@update:model-value="handleCalendarUpdate"
 			:enable-time-picker="false"
 			auto-apply
-			:text-input="{ openMenu: false }"
+			:text-input="textFieldActivator ? { openMenu: true } : { openMenu: false }"
 			:format="calendarDateFormat"
 			:range="startDate ? { fixedStart: true } : false"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
