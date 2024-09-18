@@ -12,10 +12,10 @@ Pour réaliser la migration d'un produit VueJS 2 vers VueJS 3, vous pouvez suivr
 
 1.1 - Téléchargez la stack de migration [Starter Kit Vue Bridge](https://gitlab.cnqd.cnamts.fr/human/developpement/SKVB_X)
 
-1.2 - Copier le contenu dossier `src` de votre projet VueJS 2 dans le dossier `src` du projet `starter-kit-vue-bridge`
+1.2 - Copier le contenu dossier `src` de votre projet VueJS 2 dans le dossier `src` du projet du Starter Kit
 
 1.3 - Identifier les dépendances à conserver dans la nouvelle version, il faut choisir la version vue3 de la librairie et la version Nuxt si elle existe.
-Ajouter ces dépendances dans le nouveau projet `starter-kit-vue-bridge`.
+Ajouter ces dépendances dans le nouveau projet.
 Le package `@cnamts/vue-dot` à été remplacé par `@cnamts/synapse-bridge`,
 le package `vue-i18n` à été remplacé par `@nuxtjs/i18n`.
 
