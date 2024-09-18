@@ -43,12 +43,16 @@ describe('DatePickerField', () => {
 		await input.trigger('focus')
 		await input.setValue('21/01/2021')
 		await input.trigger('blur')
-		expect(wrapper.emitted()['update:modelValue'][0]).toEqual(['2021-01-21'])
+		expect(wrapper.emitted()['update:modelValue'][0]).toEqual([
+			'2021-01-21',
+		])
 
 		await input.trigger('focus')
 		await input.setValue('12/04/2030')
 		await input.trigger('blur')
-		expect(wrapper.emitted()['update:modelValue'][1]).toEqual(['2030-04-12'])
+		expect(wrapper.emitted()['update:modelValue'][1]).toEqual([
+			'2030-04-12',
+		])
 	})
 
 	it('should update the value when the modelValue prop changes', async () => {
@@ -71,7 +75,7 @@ describe('DatePickerField', () => {
 
 		await wrapper.setProps({ modelValue: '01/01/01' })
 		expect(wrapper.find('input').element.value).toBe('01/01/2001')
-	});
+	})
 
 	it('should emit the end date when the startDate prop is set', async () => {
 		const wrapper = mount(DatePickerField, {
@@ -84,7 +88,7 @@ describe('DatePickerField', () => {
 				startDate: '1995-05-19',
 				dateFormat: 'DD/MM/YYYY',
 				dateFormatReturn: 'DD/MM/YYYY',
-			}
+			},
 		})
 
 		const input = wrapper.find('input')
@@ -95,8 +99,8 @@ describe('DatePickerField', () => {
 		await input.setValue('17/06/1995')
 		await input.trigger('blur')
 
-		await wrapper.vm.$nextTick()
-
-		expect(wrapper.emitted()['update:modelValue'][0]).toEqual(['17/06/1995'])
+		expect(wrapper.emitted()['update:modelValue'][0]).toEqual([
+			'17/06/1995',
+		])
 	})
 })

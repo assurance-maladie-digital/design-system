@@ -52,7 +52,10 @@ export default defineComponent({
 		noIcon: { type: Boolean, default: false },
 		appendIcon: { type: Boolean, default: false },
 		/** YYYY-MM-DD */
-		startDate: { type: [String, Boolean] as PropType<string | false>, default: false},
+		startDate: {
+			type: [String, Boolean] as PropType<string | false>,
+			default: false,
+		},
 		birthdate: { type: Boolean, default: false },
 		textFieldClass: { type: String, default: '' },
 		showWeekends: { type: Boolean, default: false },
@@ -66,7 +69,9 @@ export default defineComponent({
 			// cf : https://vue3datepicker.com/props/formatting/#format
 			return this.dateFormat
 				.split('')
-				.map((char: string) => char === 'M' ? 'M' : char.toLowerCase())
+				.map((char: string) =>
+					char === 'M' ? 'M' : char.toLowerCase()
+				)
 				.join('')
 		},
 		textFieldFormat() {
@@ -92,47 +97,42 @@ export default defineComponent({
 		internalValue() {
 			// value to be used for validation
 			if (!this.textFieldValue) return ''
-			const date = dayjs(
-				this.textFieldValue,
-				this.dateFormat,
-				true
-			)
+			const date = dayjs(this.textFieldValue, this.dateFormat, true)
 			return date.format('DD/MM/YYYY')
 		},
 		startDateFormatted() {
 			return this.startDate
 				? dayjs(this.startDate, 'YYYY-MM-DD').format(
-					this.dateFormatReturn
-				)
+						this.dateFormatReturn
+					)
 				: null
 		},
 		inputRules() {
 			return [isDateValid, ...this.rules]
 		},
 		showAppendIcon() {
-			return this.outlined || (!this.noIcon && this.appendIcon);
+			return this.outlined || (!this.noIcon && this.appendIcon)
 		},
 		showPrependIcon() {
-			return !this.noIcon && !this.showAppendIcon;
+			return !this.noIcon && !this.showAppendIcon
 		},
 		iconSlotName() {
 			if (this.showAppendIcon) {
-				return 'append-inner';
+				return 'append-inner'
 			} else if (this.showPrependIcon) {
-				return 'prepend';
+				return 'prepend'
 			}
-			return null;
+			return null
 		},
 	},
 	watch: {
 		modelValue: {
 			handler(newValue) {
-				const date = dayjs(
-					newValue,
-					this.dateFormatReturn
-				)
+				const date = dayjs(newValue, this.dateFormatReturn)
 
-				const newCalendarDate = date.isValid() ? date.toDate() : undefined
+				const newCalendarDate = date.isValid()
+					? date.toDate()
+					: undefined
 
 				if (this.startDateFormatted) {
 					const startDate = dayjs(
@@ -141,8 +141,8 @@ export default defineComponent({
 					).toDate()
 
 					this.calendarValue = newCalendarDate
-					? [startDate, newCalendarDate]
-					: [startDate]
+						? [startDate, newCalendarDate]
+						: [startDate]
 				} else {
 					this.calendarValue = newCalendarDate
 				}
@@ -156,16 +156,18 @@ export default defineComponent({
 			const start = dayjs(newValue, 'YYYY-MM-DD')
 			const end = dayjs(this.textFieldValue, this.dateFormat, true)
 
-			if(!start.isValid()) {
-				this.textFieldValue = ''
-				this.calendarValue = [new Date("Invalid Date"), end.toDate()]
+			if (!start.isValid()) {
+				this.calendarValue = end.toDate()
 			} else if (!end.isValid()) {
 				this.textFieldValue = ''
 				this.calendarValue = [start.toDate()]
 			} else if (start > end) {
 				this.calendarValue = [start.toDate(), start.toDate()]
 				this.textFieldValue = start.format(this.dateFormat)
-				this.$emit('update:modelValue', start.format(this.dateFormatReturn))
+				this.$emit(
+					'update:modelValue',
+					start.format(this.dateFormatReturn)
+				)
 			} else {
 				this.calendarValue = [start.toDate(), end.toDate()]
 			}
@@ -177,7 +179,7 @@ export default defineComponent({
 			const calendar = this.$refs.calendar as ComponentPublicInstance<
 				typeof VueDatePicker
 			>
-			if(!this.noCalendar && !this.textFieldActivator) {
+			if (!this.noCalendar && !this.textFieldActivator) {
 				calendar.toggleMenu()
 			}
 		},
@@ -186,12 +188,8 @@ export default defineComponent({
 
 			const selectedValue = Array.isArray(date) ? date[1] : date
 
-			this.textFieldValue = dayjs(selectedValue).format(
-				this.dateFormat
-			)
-			const emitDate = dayjs(selectedValue).format(
-				this.dateFormatReturn
-			)
+			this.textFieldValue = dayjs(selectedValue).format(this.dateFormat)
+			const emitDate = dayjs(selectedValue).format(this.dateFormatReturn)
 			this.$emit('update:modelValue', emitDate)
 			this.updateMessages()
 		},
@@ -201,10 +199,11 @@ export default defineComponent({
 			} else {
 				if (this.textFieldActivator || this.noIcon) {
 					if (!this.$refs.calendar) return
-					const calendar = this.$refs.calendar as ComponentPublicInstance<
+					const calendar = this.$refs
+						.calendar as ComponentPublicInstance<
 						typeof VueDatePicker
 					>
-						calendar.toggleMenu()
+					calendar.toggleMenu()
 				}
 			}
 		},
@@ -221,12 +220,8 @@ export default defineComponent({
 			await nextTick()
 			this.errorMessages = await textField.validate()
 		},
-		/**
-		 * Handle the conversion between the text field and the calendar
-		 * in the case of the range mode is enabled by the use of the startDate prop
-		 */
-		textToCalendar(date: string, updateCalendar: (s: string) => void) {
-			if (date === '' && !this.startDateFormatted) {
+		handleTextInput(date: string, updateCalendar: (s: string) => void) {
+			if (date === '') {
 				updateCalendar('Invalid Date')
 				this.$emit('update:modelValue', '')
 				return
@@ -235,12 +230,20 @@ export default defineComponent({
 			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
 				if (this.startDateFormatted) {
-					const startDate = dayjs(this.startDate as string, 'YYYY-MM-DD').format(this.dateFormat)
+					// range mode
+					const startDate = dayjs(
+						this.startDate as string,
+						'YYYY-MM-DD'
+					).format(this.dateFormat)
 					const endDate = newDate.format(this.dateFormat)
 					updateCalendar(`${startDate} - ${endDate}`)
 				} else {
 					updateCalendar(date)
 				}
+			}
+
+			if (date.length === this.dateFormat.length) {
+				this.updateMessages()
 			}
 		},
 		isWeekend(date: Date) {
@@ -262,7 +265,7 @@ export default defineComponent({
 			auto-apply
 			:text-input="{ openMenu: false }"
 			:format="calendarDateFormat"
-			:range="(startDate === false) ? false : { fixedStart: true }"
+			:range="startDate === false ? false : { fixedStart: true }"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
 			:clearable="false"
 		>
@@ -276,7 +279,7 @@ export default defineComponent({
 					:validation-value="internalValue"
 					v-bind="textFieldOptions"
 					v-maska:[textFieldFormat]
-					@update:modelValue="textToCalendar($event, onInput)"
+					@update:modelValue="handleTextInput($event, onInput)"
 					@update:focused="
 						(e: boolean) => {
 							handleFocusChange(e)
@@ -296,17 +299,24 @@ export default defineComponent({
 					</template>
 					<template #message></template>
 					<template #details>
-						<div v-if="errorMessages?.length" role="alert" aria-live="polite" class="error-message">
+						<div
+							v-if="errorMessages?.length"
+							role="alert"
+							aria-live="polite"
+							class="error-message"
+						>
 							<ul>
-								<li
-									v-for="error in errorMessages"
-									:key="error"
-								>
+								<li v-for="error in errorMessages" :key="error">
 									{{ error }}
 								</li>
 							</ul>
 						</div>
-						<div v-else-if="warningMessages.length" role="alert" aria-live="polite" class="warning-message">
+						<div
+							v-else-if="warningMessages.length"
+							role="alert"
+							aria-live="polite"
+							class="warning-message"
+						>
 							<ul>
 								<li
 									v-for="warning in warningMessages"

@@ -4,11 +4,12 @@ export const config = {
 		persistentHint: true,
 		validateOn: 'blur',
 		color: '#0C419A',
-		maxErrors: 5
+		maxErrors: 5,
 	},
 	datePicker: {
 		hideOffsetDates: true,
 		dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+		locale: 'fr',
 	},
 	icon: {
 		color: '#808080',
