@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-import { notBeforeToday, notBeforeTodayFn, formatDateToDDMMYYYY } from '../'
+import { notBeforeToday, notBeforeTodayFn } from '../'
 import { describe, it, expect } from 'vitest'
 
 const DATE_FORMAT = 'DD/MM/YYYY'
@@ -32,10 +32,5 @@ describe('notBeforeToday', () => {
 
 	it('returns true when value is today', () => {
 		expect(notBeforeToday(today)).toBe(true)
-	})
-
-	it('returns date in DD/MM/YYYY format', () => {
-		const date = new Date('2021-01-01')
-		expect(formatDateToDDMMYYYY(date)).toBe('01/01/2021')
 	})
 })

@@ -33,7 +33,7 @@ export default defineComponent({
 
 			this.warningMessages = this.warningRules
 				.map((rule) => rule(value))
-				.filter((result) => typeof result === 'string')
+				.filter((result) => typeof result === 'string') as string[]
 		},
 	},
 })
