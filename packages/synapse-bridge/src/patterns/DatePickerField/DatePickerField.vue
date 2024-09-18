@@ -158,13 +158,14 @@ export default defineComponent({
 
 			if(!start.isValid()) {
 				this.textFieldValue = ''
-				this.calendarValue = [null, end.toDate()]
+				this.calendarValue = [new Date("Invalid Date"), end.toDate()]
 			} else if (!end.isValid()) {
 				this.textFieldValue = ''
 				this.calendarValue = [start.toDate()]
 			} else if (start > end) {
 				this.calendarValue = [start.toDate(), start.toDate()]
 				this.textFieldValue = start.format(this.dateFormat)
+				this.$emit('update:modelValue', start.format(this.dateFormatReturn))
 			} else {
 				this.calendarValue = [start.toDate(), end.toDate()]
 			}
@@ -226,7 +227,7 @@ export default defineComponent({
 		 */
 		textToCalendar(date: string, updateCalendar: (s: string) => void) {
 			if (date === '' && !this.startDateFormatted) {
-				updateCalendar(String(new Date(NaN)))
+				updateCalendar('Invalid Date')
 				this.$emit('update:modelValue', '')
 				return
 			}
