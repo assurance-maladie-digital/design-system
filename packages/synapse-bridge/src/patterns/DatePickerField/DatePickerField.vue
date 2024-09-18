@@ -15,6 +15,7 @@ import {
 import { VTextField } from 'vuetify/lib/components/index.mjs'
 import { config } from './config'
 import WarningMixin from './WarningMixin'
+import { isDateValid } from '@/rules/isDateValid'
 
 dayjs.extend(customParseFormat)
 
@@ -55,7 +56,7 @@ export default defineComponent({
 		noIcon: { type: Boolean, default: false },
 		appendIcon: { type: Boolean, default: false },
 		/** YYYY-MM-DD */
-		startDate: { type: String, default: null },
+		startDate: { type: [String, Boolean] as PropType<string | false>, default: false},
 		birthdate: { type: Boolean, default: false },
 		textFieldClass: { type: String, default: '' },
 		showWeekends: { type: Boolean, default: false },
@@ -112,9 +113,12 @@ export default defineComponent({
 		startDateFormatted() {
 			return this.startDate
 				? dayjs(this.startDate, 'YYYY-MM-DD').format(
-						this.dateFormatReturn
-					)
+					this.dateFormatReturn
+				)
 				: null
+		},
+		inputRules() {
+			return [isDateValid, ...this.rules]
 		},
 	},
 	watch: {
@@ -129,13 +133,13 @@ export default defineComponent({
 
 				if (this.startDateFormatted) {
 					const startDate = dayjs(
-						this.startDate,
+						this.startDate as string,
 						'YYYY-MM-DD'
 					).toDate()
 
 					this.calendarValue = newCalendarDate
-						? [startDate, newCalendarDate]
-						: [startDate]
+					? [startDate, newCalendarDate]
+					: [startDate]
 				} else {
 					this.calendarValue = newCalendarDate
 				}
@@ -144,6 +148,23 @@ export default defineComponent({
 					: ''
 			},
 			immediate: true,
+		},
+		startDate(newValue: string) {
+			const start = dayjs(newValue, 'YYYY-MM-DD')
+			const end = dayjs(this.textFieldValue, this.dateFormat, true)
+
+			if(!start.isValid()) {
+				this.textFieldValue = ''
+				this.calendarValue = [null, end.toDate()]
+			} else if (!end.isValid()) {
+				this.textFieldValue = ''
+				this.calendarValue = [start.toDate()]
+			} else if (start > end) {
+				this.calendarValue = [start.toDate(), start.toDate()]
+				this.textFieldValue = start.format(this.dateFormat)
+			} else {
+				this.calendarValue = [start.toDate(), end.toDate()]
+			}
 		},
 	},
 	methods: {
@@ -191,9 +212,8 @@ export default defineComponent({
 		 * in the case of the range mode is enabled by the use of the startDate prop
 		 */
 		textToCalendar(date: string, updateCalendar: (s: string) => void) {
-
 			if (date === '' && !this.startDateFormatted) {
-				updateCalendar('')
+				updateCalendar(String(new Date(NaN)))
 				this.$emit('update:modelValue', '')
 				return
 			}
@@ -201,7 +221,7 @@ export default defineComponent({
 			const newDate = dayjs(date, this.dateFormat, true)
 			if (newDate.isValid()) {
 				if (this.startDateFormatted) {
-					const startDate = dayjs(this.startDate, 'YYYY-MM-DD').format(this.dateFormat)
+					const startDate = dayjs(this.startDate as string, 'YYYY-MM-DD').format(this.dateFormat)
 					const endDate = newDate.format(this.dateFormat)
 					updateCalendar(`${startDate} - ${endDate}`)
 				} else {
@@ -228,7 +248,7 @@ export default defineComponent({
 			auto-apply
 			:text-input="textFieldActivator ? { openMenu: true } : { openMenu: false }"
 			:format="calendarDateFormat"
-			:range="startDate ? { fixedStart: true } : false"
+			:range="(startDate === false) ? false : { fixedStart: true }"
 			:flow="birthdate ? ['year', 'month', 'calendar'] : undefined"
 			:clearable="false"
 		>
@@ -237,7 +257,7 @@ export default defineComponent({
 					v-model="textFieldValue"
 					ref="text-field"
 					:clearable
-					:rules
+					:rules="inputRules"
 					:disabled="disabled"
 					:validation-value="internalValue"
 					v-bind="textFieldOptions"
@@ -269,15 +289,19 @@ export default defineComponent({
 							{{ calendarIcon }}
 						</VIcon>
 					</template>
-					<template #message>
-						<div v-if="errorMessages">
+					<template #message></template>
+					<template #details>
+						<div v-if="errorMessages?.length" role="alert" aria-live="polite" class="error-message">
 							<ul>
-								<li v-for="error in errorMessages" :key="error">
+								<li
+									v-for="error in errorMessages"
+									:key="error"
+								>
 									{{ error }}
 								</li>
 							</ul>
 						</div>
-						<div v-if="warningMessages.length">
+						<div v-else-if="warningMessages.length" role="alert" aria-live="polite" class="warning-message">
 							<ul>
 								<li
 									v-for="warning in warningMessages"
@@ -287,7 +311,7 @@ export default defineComponent({
 								</li>
 							</ul>
 						</div>
-						<div v-if="hint">
+						<div v-if="hint" class="hint-message">
 							{{ hint }}
 						</div>
 					</template>
@@ -332,6 +356,22 @@ export default defineComponent({
 	box-sizing: border-box;
 }
 
+:deep(.v-input__details) {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	color: rgba(0, 0, 0, 0.6);
+
+	li {
+		list-style-type: none;
+		line-height: 1.3;
+	}
+}
+
+:deep(.v-messages) {
+	display: none;
+}
+
 .warning-style {
 	:deep(.v-icon) {
 		color: #f0b323 !important;
@@ -341,7 +381,7 @@ export default defineComponent({
 		color: #f0b323 !important;
 	}
 
-	:deep(.v-messages) {
+	:deep(.warning-message) {
 		color: #f0b323 !important;
 	}
 
@@ -363,7 +403,7 @@ export default defineComponent({
 		color: #b33f2e !important;
 	}
 
-	:deep(.v-messages) {
+	:deep(.error-message) {
 		color: #b33f2e !important;
 	}
 

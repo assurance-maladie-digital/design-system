@@ -4,6 +4,7 @@ export const config = {
 		persistentHint: true,
 		validateOn: 'blur',
 		color: '#0C419A',
+		maxErrors: 5
 	},
 	datePicker: {
 		hideOffsetDates: true,
