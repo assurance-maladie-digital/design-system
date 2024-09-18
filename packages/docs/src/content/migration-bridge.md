@@ -10,7 +10,7 @@ description: Guide de migration pour les développeurs.
 
 Pour réaliser la migration d'un produit VueJS 2 vers VueJS 3, vous pouvez suivre les étapes suivantes :
 
-1.1 - Téléchargez la stack de migration [starter-kit-vue-bridge](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev)
+1.1 - Téléchargez la stack de migration [Starter Kit Vue Bridge](https://gitlab.cnqd.cnamts.fr/human/developpement/SKVB_X)
 
 1.2 - Copier le contenu dossier `src` de votre projet VueJS 2 dans le dossier `src` du projet `starter-kit-vue-bridge`
 
