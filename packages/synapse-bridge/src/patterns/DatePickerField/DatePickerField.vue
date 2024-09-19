@@ -344,10 +344,26 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
+
 @import '@vuepic/vue-datepicker/dist/main.css';
+:root {
+    --dp-cell-border-radius: 99px; /*Specific border radius for the calendar cell*/
+    --dp-cell-size: 31px; /*Width and height of calendar cell*/
+    --dp-cell-padding: 5px; /*Padding in the cell*/
+}
 </style>
 
 <style lang="scss" scoped>
+@import '@cnamts/design-tokens/dist/tokens';
+
+:deep(.dp__theme_light) {
+
+    --dp-primary-color: #2eb5e4;
+	--dp-range-between-dates-background-color: #98daf2;
+	--dp-range-between-dates-text-color: rgba(0, 0, 0, 0.87);
+
+}
+
 .vd-date-picker {
 	:deep(.dp__button) {
 		display: none !important;
@@ -357,6 +373,7 @@ export default defineComponent({
 		opacity: 1;
 	}
 
+
 	.week-ends {
 		background-color: #b3b4b5;
 		border-radius: 57%;
@@ -364,6 +381,32 @@ export default defineComponent({
 		height: 25px;
 		display: inline-block;
 		padding-bottom: 1px;
+	}
+
+	:deep(.dp__cell_inner) {
+		border-radius: 99px !important;
+	}
+
+	:deep(.dp__today) {
+		border: 1px solid #2eb5e4 !important;
+	}
+
+	:deep(.dp__active_date) {
+		background: #2eb5e4;
+		color: var(--dp-primary-text-color);
+	}
+
+	:deep(.dp__range_start) {
+		background: var(--dp-range-between-dates-background-color);
+		color: var(--dp-range-between-dates-text-color);
+	}
+
+	:deep(.v-field__input) {
+		min-height: 0;
+	}
+
+	:deep(.v-input__details) {
+		padding-top: 0;
 	}
 }
 
@@ -430,4 +473,5 @@ export default defineComponent({
 		color: #b33f2e !important;
 	}
 }
+
 </style>
