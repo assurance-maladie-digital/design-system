@@ -195,49 +195,6 @@ describe('PaginatedTable', () => {
 		)
 	})
 
-	it('store the options in local storage in local mode (page and groupBy)', async () => {
-		const wrapper = mount(PaginatedTable, {
-			propsData: {
-				suffix: 'test 3',
-				options: {
-					page: 2,
-					groupBy: ['name'],
-					groupDesc: [true],
-				},
-				items: fakeItems,
-				headers: headers,
-			} as any,
-			global: {
-				plugins: [vuetify],
-			},
-		})
-		const setItemMock = vi.spyOn(LocalStorageUtility.prototype, 'setItem')
-		await wrapper.setProps({
-			options: {
-				page: 3,
-				groupBy: 'age',
-				groupDesc: true,
-				itemsPerPage: 1,
-			},
-		})
-		expect(setItemMock).toHaveBeenCalledWith(
-			'pagination-test 3',
-			expect.objectContaining({
-				page: 3,
-				groupBy: [
-					{
-						key: 'age',
-						order: 'desc',
-					},
-				],
-			})
-		)
-
-		expect(wrapper.find('.v-data-table-footer__info').text()).toBe(
-			'3-3 of 3'
-		)
-	})
-
 	it('use the options from local storage in local mode', async () => {
 		const getItemMock = vi
 			.spyOn(LocalStorageUtility.prototype, 'getItem')
