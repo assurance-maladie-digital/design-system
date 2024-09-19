@@ -63,7 +63,7 @@ export default defineComponent({
 	},
 	computed: {
 		startDate() {
-			if (!this.periodValue.from) {
+			if (!this.periodValue?.from) {
 				return undefined
 			}
 			return dayjs(this.periodValue.from, this.dateFormatReturn).format(
@@ -95,7 +95,7 @@ export default defineComponent({
 <template>
 	<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
 		<DatePicker
-			:modelValue="periodValue.from || undefined"
+			:modelValue="periodValue?.from || undefined"
 			:outlined="outlined"
 			:disabled="disabled"
 			:vuetify-options="options.from"
@@ -106,7 +106,7 @@ export default defineComponent({
 		/>
 
 		<DatePicker
-			:modelValue="periodValue.to"
+			:modelValue="periodValue?.to || undefined"
 			:outlined="outlined"
 			:disabled="disabled"
 			:vuetify-options="options.to"
