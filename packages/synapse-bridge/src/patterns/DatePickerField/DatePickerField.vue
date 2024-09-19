@@ -161,7 +161,7 @@ export default defineComponent({
 			} else if (!end.isValid()) {
 				this.textFieldValue = ''
 				this.calendarValue = [start.toDate()]
-			} else if (start > end) {
+			} else if (start.isAfter(end)) {
 				this.calendarValue = [start.toDate(), start.toDate()]
 				this.textFieldValue = start.format(this.dateFormat)
 				this.$emit(
