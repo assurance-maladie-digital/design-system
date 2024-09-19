@@ -2,8 +2,6 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import PeriodField from '../PeriodField.vue'
 import { vuetify } from '@tests/unit/setup'
-import dayjs from 'dayjs'
-import { mdiCalendar } from '@mdi/js'
 
 describe('PeriodField', () => {
 	it('should render the component', () => {
@@ -11,174 +9,108 @@ describe('PeriodField', () => {
 			global: {
 				plugins: [vuetify],
 			},
+			props: {
+				modelValue: {
+					from: '14/11/2005',
+					to: '23/12/2005'
+				}
+			}
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
-	})
-	it('emits change event when date range is selected', async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-		await wrapper.setData({
-			date: [
-				dayjs().format('DD/MM/YYYY'),
-				dayjs().add(4, 'day').format('DD/MM/YYYY'),
-			],
-		})
-
-		expect(wrapper.emitted()['update:modelValue']).toBeTruthy()
-	})
-	it('emits change event when date is updated', async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		await wrapper.setData({
-			date: [
-				dayjs().format('DD/MM/YYYY'),
-				dayjs().add(4, 'day').format('DD/MM/YYYY'),
-			],
-		})
-		await wrapper.setData({
-			date: [
-				dayjs().add(2, 'day').format('DD/MM/YYYY'),
-				dayjs().add(6, 'day').format('DD/MM/YYYY'),
-			],
-		})
-
-		expect(wrapper.emitted()['update:modelValue']).toBeTruthy()
-		expect(wrapper.emitted()['update:modelValue'].length).toBe(2)
-		expect(wrapper.emitted()['update:modelValue'][1]).toEqual([
-			[
-				dayjs().add(2, 'day').format('DD/MM/YYYY'),
-				dayjs().add(6, 'day').format('DD/MM/YYYY'),
-			],
-		])
-	})
-	it('updates date when v-model changes', async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-		})
-
-		const newDate = [
-			dayjs().format('DD/MM/YYYY'),
-			dayjs().add(4, 'day').format('DD/MM/YYYY'),
-		]
-		await wrapper.setData({ date: newDate })
-		expect(wrapper.vm.date).toEqual(newDate)
+		expect(wrapper.findAll('input')[0].element.value).toBe('14/11/2005')
+		expect(wrapper.findAll('input')[1].element.value).toBe('23/12/2005')
 	})
 
-	it('should set prependIconValue to calendarIcon when outlined is false and noPrependIcon is false', async () => {
+	it('should update the text field value when the modelValue is updated', async ()=>{
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
 			},
 			props: {
-				outlined: false,
-				noPrependIcon: false,
-			},
+				modelValue: {
+					from: null,
+					to: null
+				}
+			}
 		})
 
-		expect(wrapper.vm.prependIconValue).toEqual(mdiCalendar)
+		expect(wrapper.findAll('input')[0].element.value).toBe('')
+		expect(wrapper.findAll('input')[1].element.value).toBe('')
+
+		await wrapper.setProps({
+			modelValue:{
+				from: '12/12/1995',
+				to: '05/01/1996'
+			}
+		})
+
+		expect(wrapper.findAll('input')[0].element.value).toBe('12/12/1995')
+		expect(wrapper.findAll('input')[1].element.value).toBe('05/01/1996')
 	})
 
-	it('should set prependIconValue to undefined when noPrependIcon is true', async () => {
+	it('emit a event when the fields are updated', async ()=>{
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
 			},
 			props: {
-				outlined: false,
-				noPrependIcon: true,
-			},
+				modelValue: {
+					from: null,
+					to: null
+				}
+			}
 		})
 
-		expect(wrapper.vm.prependIconValue).toBeUndefined()
+		const startField = wrapper.findAll('input')[0]
+		await startField.trigger('focus')
+		await startField.setValue('12/12/1995')
+		await startField.trigger('blur')
+
+		expect(wrapper.emitted('update:modelValue')).toEqual([[{
+			from: '12/12/1995',
+			to: null
+		}]])
+
+		const endField = wrapper.findAll('input')[1]
+		await endField.trigger('focus')
+		await endField.setValue('20/12/1995')
+		await endField.trigger('blur')
+
+		expect(wrapper.emitted('update:modelValue')?.[1]).toEqual([{
+			from: '12/12/1995',
+			to: '20/12/1995'
+		}])
 	})
-	it('should set prependIconValue to undefined when noPrependIcon is true', async () => {
+
+	it('do not set a `from` older that `true`', async ()=>{
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
 			},
 			props: {
-				appendIcon: false,
-				noPrependIcon: true,
-			},
+				modelValue: {
+					from: null,
+					to: null
+				}
+			}
 		})
 
-		expect(wrapper.vm.prependIconValue).toBeUndefined()
-	})
+		const endField = wrapper.findAll('input')[1]
+		await endField.trigger('focus')
+		await endField.setValue('20/12/1995')
+		await endField.trigger('blur')
 
-	it('should set prependIconValue to undefined when appendIcon is true', async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-			props: {
-				appendIcon: true,
-				noPrependIcon: false,
-			},
-		})
+		const startField = wrapper.findAll('input')[0]
+		await startField.trigger('focus')
+		await startField.setValue('21/12/1995')
+		await startField.trigger('blur')
 
-		expect(wrapper.vm.prependIconValue).toBeUndefined()
-	})
-	it("should return 'underlined' when disabled is true", async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-			props: {
-				disabled: true,
-			},
-		})
+		await wrapper.vm.$nextTick()
 
-		expect(wrapper.vm.getVariant).toEqual('underlined')
-	})
-
-	it("should return 'underlined' when noPrependIcon is true", async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-			props: {
-				noPrependIcon: true,
-			},
-		})
-
-		expect(wrapper.vm.getVariant).toEqual('underlined')
-	})
-
-	it("should return 'underlined' when outlined is false", async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-			props: {
-				outlined: false,
-			},
-		})
-
-		expect(wrapper.vm.getVariant).toEqual('underlined')
-	})
-
-	it("should return 'outlined' when disabled, noPrependIcon are false and outlined is true", async () => {
-		const wrapper = mount(PeriodField, {
-			global: {
-				plugins: [vuetify],
-			},
-			props: {
-				disabled: false,
-				noPrependIcon: false,
-				outlined: true,
-			},
-		})
-
-		expect(wrapper.vm.getVariant).toEqual('outlined')
+		expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual([{
+			from: '21/12/1995',
+			to: '21/12/1995'
+		}])
 	})
 })

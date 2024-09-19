@@ -1,232 +1,121 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import VueDatePicker from '@vuepic/vue-datepicker'
+import { defineComponent, PropType } from 'vue'
 import '@vuepic/vue-datepicker/dist/main.css'
-import { mdiCalendar } from '@mdi/js'
+import DatePicker from '../DatePicker/DatePicker.vue'
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import { customizable } from '@/mixins/customizable';
+import { config } from './config';
 
-interface PeriodFieldData {
-	date: Date[] | null
-	calendarIcon: string
+dayjs.extend(customParseFormat)
+
+export interface PeriodValue {
+	from: string | null;
+	to: string | null;
 }
 
 export default defineComponent({
+	mixins: [customizable(config)],
 	emits: ['update:modelValue'],
 	name: 'PeriodField',
 	components: {
-		VueDatePicker,
+		DatePicker,
 	},
 	props: {
+		modelValue: {
+			type: Object as PropType<PeriodValue>,
+			default: () => ({
+				from: null,
+				to: null
+			}),
+			required: true
+		},
 		outlined: {
-			type: Boolean,
-			default: false,
-		},
-		noPrependIcon: {
-			type: Boolean,
-			default: false,
-		},
-		appendIcon: {
 			type: Boolean,
 			default: false,
 		},
 		disabled: {
 			type: Boolean,
-			default: false,
-		},
-		hint: {
-			type: String,
-			default: 'DD/MM/YYYY',
-		},
-		label: {
-			type: String,
-			default: '',
+			default: false
 		},
 		dateFormat: {
 			type: String,
-			default: 'dd/MM/yyyy',
+			default: 'DD/MM/YYYY'
 		},
 		dateFormatReturn: {
 			type: String,
-			default: 'dd/MM/yyyy',
-		},
+			default: 'DD/MM/YYYY'
+		}
 	},
-	data(): PeriodFieldData {
+	data(){
 		return {
-			date: null,
-			calendarIcon: mdiCalendar,
+			periodValue: {} as PeriodValue,
+		}
+	},
+	watch: {
+		modelValue: {
+			handler(newValue) {
+				this.periodValue = newValue
+			},
+			immediate: true,
+			deep: true
 		}
 	},
 	computed: {
-		formattedDateFormat() {
-			return this.dateFormat.replace(/D/g, 'd').replace(/Y/g, 'y')
-		},
-		formattedDateFormatReturn() {
-			return this.dateFormatReturn.replace(/D/g, 'd').replace(/Y/g, 'y')
-		},
-		prependIconValue() {
-			if (!this.appendIcon && !this.noPrependIcon) {
-				return this.calendarIcon
+		startDate(){
+			if(!this.periodValue.from) {
+				return undefined;
 			}
-			return undefined
-		},
-		getVariant() {
-			return this.disabled || this.noPrependIcon || !this.outlined
-				? 'underlined'
-				: 'outlined'
-		},
+			return dayjs(
+				this.periodValue.from,
+				this.dateFormatReturn
+			).format('YYYY-MM-DD')
+		}
 	},
-	watch: {
-		date(newVal, oldVal) {
-			if (newVal !== oldVal) {
-				this.$emit('update:modelValue', newVal)
+	methods: {
+		updateFrom(e: string) {
+			this.periodValue = {
+				from: e,
+				to: this.periodValue.to
 			}
+			this.$emit('update:modelValue', this.periodValue)
 		},
-	},
+		updateTo(e: string) {
+			console.log('to', e);
+
+			this.periodValue = {
+				from: this.periodValue.from,
+				to: e
+			}
+			this.$emit('update:modelValue', this.periodValue)
+		}
+	}
 })
 </script>
 
 <template>
-	<div class="vd-form-input">
-		<VueDatePicker
-			v-model="date"
-			range
-			:format="formattedDateFormat"
-			:model-type="formattedDateFormatReturn"
-			locale="fr"
-			:clearable="false"
-			:disabled="disabled"
-			auto-apply
-		>
-			<template #dp-input="{ value }">
-				<v-text-field
-					:model-value="value"
-					color="primary"
-					hide-details
-					readonly
-					:variant="getVariant"
-					:disabled="disabled"
-					:aria-describedby="label"
-					:label="label"
-					:prepend-icon="!outlined ? prependIconValue : undefined"
-					:append-inner-icon="
-						outlined || appendIcon ? calendarIcon : undefined
-					"
-				/>
-			</template>
-		</VueDatePicker>
-	</div>
+<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
+	<DatePicker
+		:modelValue="periodValue.from || undefined"
+		:outlined="outlined"
+		:disabled="disabled"
+		:vuetify-options="options.from"
+		text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+		:date-format
+		:date-format-return
+		@update:modelValue="updateFrom"
+	/>
+
+	<DatePicker
+		:modelValue="periodValue.to"
+		:outlined="outlined"
+		:disabled="disabled"
+		:vuetify-options="options.to"
+		:start-date
+		text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+		:date-format
+		:date-format-return
+		@update:modelValue="updateTo"
+	/>
+</div>
 </template>
-
-<style lang="scss" scoped>
-@import '@cnamts/design-tokens/dist/tokens';
-
-//surcharge du style du composant VueDatePicker
-:deep(.dp__button) {
-	display: none !important;
-}
-
-:deep(.v-input__prepend > .v-icon) {
-	opacity: 1;
-}
-
-.week-ends {
-	background-color: #b3b4b5;
-	border-radius: 57%;
-	width: 39px;
-	height: 25px;
-	display: inline-block;
-	padding-bottom: 1px;
-}
-
-:deep(.dp__today) {
-	border: 1px solid #2eb5e4 !important;
-	color: #2eb5e4;
-	border-radius: 50%;
-}
-
-:deep(.dp__active_date) {
-	background: #2eb5e4;
-	color: var(--dp-primary-text-color);
-	border-radius: 50%;
-}
-
-:deep(.dp__date_hover:hover) {
-	border-radius: 50%;
-}
-
-:deep(.v-field__input) {
-	min-height: 0;
-}
-
-:deep(.v-input__details) {
-	padding-top: 0;
-}
-
-:deep(.v-field--variant-outlined .v-field__outline__notch::after) {
-	height: calc(100% - 1px) !important;
-}
-
-:deep(.v-field--variant-outlined:focus .v-field__outline__notch::after),
-:deep(.v-field--variant-outlined:focus-within .v-field__outline__notch::after) {
-	height: calc(100% - 2px) !important;
-}
-
-:deep(.dp__clear_icon) {
-	top: 35%;
-	right: 4%;
-	border-radius: 50%;
-	height: 20px;
-	min-width: 16px;
-}
-
-:deep(.vd-append-icon ~ .dp__clear_icon) {
-	right: 35px;
-}
-
-:deep(.v-icon) {
-	color: rgba(0, 0, 0, 0.54) !important;
-}
-
-.warning-style {
-	:deep(.v-icon) {
-		color: #f0b323 !important;
-	}
-
-	:deep(.v-label) {
-		color: #f0b323 !important;
-	}
-
-	:deep(.v-messages) {
-		color: #f0b323 !important;
-	}
-
-	:deep(.v-text-field) {
-		border-color: #f0b323 !important;
-	}
-
-	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #f0b323;
-	}
-}
-
-.error-style {
-	:deep(.v-icon) {
-		color: #b33f2e !important;
-	}
-
-	:deep(.v-label) {
-		color: #b33f2e !important;
-	}
-
-	:deep(.v-messages) {
-		color: #b33f2e !important;
-	}
-
-	:deep(.v-text-field) {
-		border-color: #b33f2e !important;
-	}
-
-	:deep(.v-field--error:not(.v-field--disabled) .v-field__outline) {
-		color: #b33f2e !important;
-	}
-}
-</style>

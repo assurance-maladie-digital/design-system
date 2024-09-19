@@ -33,7 +33,7 @@ export default defineComponent({
 		errorMessages: null as string[] | null,
 	}),
 	props: {
-		modelValue: String,
+		modelValue: String as PropType<string | null>,
 		dateFormat: {
 			type: String as PropType<string>,
 			default: 'DD/MM/YYYY',
