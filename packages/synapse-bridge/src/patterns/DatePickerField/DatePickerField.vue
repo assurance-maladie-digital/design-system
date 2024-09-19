@@ -344,12 +344,11 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
-
 @import '@vuepic/vue-datepicker/dist/main.css';
 :root {
-    --dp-cell-border-radius: 99px; /*Specific border radius for the calendar cell*/
-    --dp-cell-size: 31px; /*Width and height of calendar cell*/
-    --dp-cell-padding: 5px; /*Padding in the cell*/
+	--dp-cell-border-radius: 99px; /*Specific border radius for the calendar cell*/
+	--dp-cell-size: 31px; /*Width and height of calendar cell*/
+	--dp-cell-padding: 5px; /*Padding in the cell*/
 }
 </style>
 
@@ -357,11 +356,9 @@ export default defineComponent({
 @import '@cnamts/design-tokens/dist/tokens';
 
 :deep(.dp__theme_light) {
-
-    --dp-primary-color: #2eb5e4;
+	--dp-primary-color: #2eb5e4;
 	--dp-range-between-dates-background-color: #98daf2;
 	--dp-range-between-dates-text-color: rgba(0, 0, 0, 0.87);
-
 }
 
 .vd-date-picker {
@@ -372,7 +369,6 @@ export default defineComponent({
 	:deep(.v-input__prepend > .v-icon) {
 		opacity: 1;
 	}
-
 
 	.week-ends {
 		background-color: #b3b4b5;
@@ -473,5 +469,4 @@ export default defineComponent({
 		color: #b33f2e !important;
 	}
 }
-
 </style>

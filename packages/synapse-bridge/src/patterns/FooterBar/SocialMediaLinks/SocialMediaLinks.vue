@@ -57,7 +57,7 @@ li {
 }
 
 .v-theme--dark .vd-social-media-links-label.text--primary {
-	color: white
+	color: white;
 }
 
 .vd-social-media-links-icon {

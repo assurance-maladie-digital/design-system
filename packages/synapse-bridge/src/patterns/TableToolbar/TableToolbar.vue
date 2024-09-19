@@ -176,7 +176,6 @@ $white: #fff;
 	}
 }
 
-
 .v-theme--dark button.v-btn:hover :deep() {
 	background: rgba(white, 0.1);
 }
