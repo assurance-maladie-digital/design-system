@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import DatePickerField from '../DatePickerField.vue'
+import DatePickerField from '../DatePicker.vue'
 import { vuetify } from '@tests/unit/setup'
 
 describe('DatePickerField', () => {
