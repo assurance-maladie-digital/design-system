@@ -8,10 +8,9 @@ Pour consulter les changements récents, veuillez consulter le [CHANGELOG](https
 
 ## Prérequis
 
-Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes de Node et PNPM :
+Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes de Node :
 
--   Node : 20.11.0
--   PNPM : 9.0.0
+-   Node : 18.0.0
 
 ## Stack Technique
 
@@ -33,8 +32,8 @@ Pour utiliser ce Design System, vous devez avoir au moins les versions suivantes
 
 Pour utiliser ce package, vous pouvez installer un des starter kits suivants :
 
--   [Starter Kit Bridge](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (projets en migration)
--   [Starter Kit Synapse](https://github.com/assurance-maladie-digital/starter-kit-vue-bridge/tree/dev) (nouveaux projets)
+-   [Starter Kit Bridge](https://gitlab.cnqd.cnamts.fr/human/developpement/SKVB_X) (projets en migration)
+-   [Starter Kit Synapse](https://gitlab.cnqd.cnamts.fr/human/developpement/SKV3_X) (nouveaux projets)
 
 ### Librairie uniquement
 
