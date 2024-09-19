@@ -2,16 +2,16 @@
 import { defineComponent, PropType } from 'vue'
 import '@vuepic/vue-datepicker/dist/main.css'
 import DatePicker from '../DatePicker/DatePicker.vue'
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
-import { customizable } from '@/mixins/customizable';
-import { config } from './config';
+import { customizable } from '@/mixins/customizable'
+import { config } from './config'
 
 dayjs.extend(customParseFormat)
 
 export interface PeriodValue {
-	from: string | null;
-	to: string | null;
+	from: string | null
+	to: string | null
 }
 
 export default defineComponent({
@@ -26,9 +26,9 @@ export default defineComponent({
 			type: Object as PropType<PeriodValue>,
 			default: () => ({
 				from: null,
-				to: null
+				to: null,
 			}),
-			required: true
+			required: true,
 		},
 		outlined: {
 			type: Boolean,
@@ -36,18 +36,18 @@ export default defineComponent({
 		},
 		disabled: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
 		dateFormat: {
 			type: String,
-			default: 'DD/MM/YYYY'
+			default: 'DD/MM/YYYY',
 		},
 		dateFormatReturn: {
 			type: String,
-			default: 'DD/MM/YYYY'
-		}
+			default: 'DD/MM/YYYY',
+		},
 	},
-	data(){
+	data() {
 		return {
 			periodValue: {} as PeriodValue,
 		}
@@ -58,64 +58,63 @@ export default defineComponent({
 				this.periodValue = newValue
 			},
 			immediate: true,
-			deep: true
-		}
+			deep: true,
+		},
 	},
 	computed: {
-		startDate(){
-			if(!this.periodValue.from) {
-				return undefined;
+		startDate() {
+			if (!this.periodValue.from) {
+				return undefined
 			}
-			return dayjs(
-				this.periodValue.from,
-				this.dateFormatReturn
-			).format('YYYY-MM-DD')
-		}
+			return dayjs(this.periodValue.from, this.dateFormatReturn).format(
+				'YYYY-MM-DD'
+			)
+		},
 	},
 	methods: {
 		updateFrom(e: string) {
 			this.periodValue = {
 				from: e,
-				to: this.periodValue.to
+				to: this.periodValue.to,
 			}
 			this.$emit('update:modelValue', this.periodValue)
 		},
 		updateTo(e: string) {
-			console.log('to', e);
+			console.log('to', e)
 
 			this.periodValue = {
 				from: this.periodValue.from,
-				to: e
+				to: e,
 			}
 			this.$emit('update:modelValue', this.periodValue)
-		}
-	}
+		},
+	},
 })
 </script>
 
 <template>
-<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
-	<DatePicker
-		:modelValue="periodValue.from || undefined"
-		:outlined="outlined"
-		:disabled="disabled"
-		:vuetify-options="options.from"
-		text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-		:date-format
-		:date-format-return
-		@update:modelValue="updateFrom"
-	/>
+	<div class="vd-period-field d-flex flex-wrap max-width-none ma-n2">
+		<DatePicker
+			:modelValue="periodValue.from || undefined"
+			:outlined="outlined"
+			:disabled="disabled"
+			:vuetify-options="options.from"
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+			:date-format
+			:date-format-return
+			@update:modelValue="updateFrom"
+		/>
 
-	<DatePicker
-		:modelValue="periodValue.to"
-		:outlined="outlined"
-		:disabled="disabled"
-		:vuetify-options="options.to"
-		:start-date
-		text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-		:date-format
-		:date-format-return
-		@update:modelValue="updateTo"
-	/>
-</div>
+		<DatePicker
+			:modelValue="periodValue.to"
+			:outlined="outlined"
+			:disabled="disabled"
+			:vuetify-options="options.to"
+			:start-date
+			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
+			:date-format
+			:date-format-return
+			@update:modelValue="updateTo"
+		/>
+	</div>
 </template>

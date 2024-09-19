@@ -12,9 +12,9 @@ describe('PeriodField', () => {
 			props: {
 				modelValue: {
 					from: '14/11/2005',
-					to: '23/12/2005'
-				}
-			}
+					to: '23/12/2005',
+				},
+			},
 		})
 
 		expect(wrapper.html()).toMatchSnapshot()
@@ -22,7 +22,7 @@ describe('PeriodField', () => {
 		expect(wrapper.findAll('input')[1].element.value).toBe('23/12/2005')
 	})
 
-	it('should update the text field value when the modelValue is updated', async ()=>{
+	it('should update the text field value when the modelValue is updated', async () => {
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
@@ -30,26 +30,26 @@ describe('PeriodField', () => {
 			props: {
 				modelValue: {
 					from: null,
-					to: null
-				}
-			}
+					to: null,
+				},
+			},
 		})
 
 		expect(wrapper.findAll('input')[0].element.value).toBe('')
 		expect(wrapper.findAll('input')[1].element.value).toBe('')
 
 		await wrapper.setProps({
-			modelValue:{
+			modelValue: {
 				from: '12/12/1995',
-				to: '05/01/1996'
-			}
+				to: '05/01/1996',
+			},
 		})
 
 		expect(wrapper.findAll('input')[0].element.value).toBe('12/12/1995')
 		expect(wrapper.findAll('input')[1].element.value).toBe('05/01/1996')
 	})
 
-	it('emit a event when the fields are updated', async ()=>{
+	it('emit a event when the fields are updated', async () => {
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
@@ -57,9 +57,9 @@ describe('PeriodField', () => {
 			props: {
 				modelValue: {
 					from: null,
-					to: null
-				}
-			}
+					to: null,
+				},
+			},
 		})
 
 		const startField = wrapper.findAll('input')[0]
@@ -67,23 +67,29 @@ describe('PeriodField', () => {
 		await startField.setValue('12/12/1995')
 		await startField.trigger('blur')
 
-		expect(wrapper.emitted('update:modelValue')).toEqual([[{
-			from: '12/12/1995',
-			to: null
-		}]])
+		expect(wrapper.emitted('update:modelValue')).toEqual([
+			[
+				{
+					from: '12/12/1995',
+					to: null,
+				},
+			],
+		])
 
 		const endField = wrapper.findAll('input')[1]
 		await endField.trigger('focus')
 		await endField.setValue('20/12/1995')
 		await endField.trigger('blur')
 
-		expect(wrapper.emitted('update:modelValue')?.[1]).toEqual([{
-			from: '12/12/1995',
-			to: '20/12/1995'
-		}])
+		expect(wrapper.emitted('update:modelValue')?.[1]).toEqual([
+			{
+				from: '12/12/1995',
+				to: '20/12/1995',
+			},
+		])
 	})
 
-	it('do not set a `from` older that `true`', async ()=>{
+	it('do not set a `from` older that `true`', async () => {
 		const wrapper = mount(PeriodField, {
 			global: {
 				plugins: [vuetify],
@@ -91,9 +97,9 @@ describe('PeriodField', () => {
 			props: {
 				modelValue: {
 					from: null,
-					to: null
-				}
-			}
+					to: null,
+				},
+			},
 		})
 
 		const endField = wrapper.findAll('input')[1]
@@ -108,9 +114,11 @@ describe('PeriodField', () => {
 
 		await wrapper.vm.$nextTick()
 
-		expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual([{
-			from: '21/12/1995',
-			to: '21/12/1995'
-		}])
+		expect(wrapper.emitted('update:modelValue')?.at(-1)).toEqual([
+			{
+				from: '21/12/1995',
+				to: '21/12/1995',
+			},
+		])
 	})
 })
