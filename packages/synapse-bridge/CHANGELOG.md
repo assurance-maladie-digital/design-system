@@ -1,3 +1,11 @@
+#### v3.0.2
+
+- remove pnpm from package.json engines [`#3766`](https://github.com/assurance-maladie-digital/design-system/pull/3766)
+- Dark theme improvement for some components [`#3762`](https://github.com/assurance-maladie-digital/design-system/pull/3762)
+- PasswordField: add enter key submit management [`#3760`](https://github.com/assurance-maladie-digital/design-system/pull/3760)
+- NirField: add success icon slots [`#3761`](https://github.com/assurance-maladie-digital/design-system/pull/3761)
+- LogoBrandSection: fix nuxt link [`#3752`](https://github.com/assurance-maladie-digital/design-system/pull/3752)
+
 #### v3.0.1
 
 -   SelectBtnField: improve accessibility [`#3736`](https://github.com/assurance-maladie-digital/design-system/pull/3736)
