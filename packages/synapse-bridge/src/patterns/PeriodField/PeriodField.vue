@@ -100,8 +100,8 @@ export default defineComponent({
 			:disabled="disabled"
 			:vuetify-options="options.from"
 			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-			:date-format
-			:date-format-return
+			:date-format="dateFormat"
+			:date-format-return="dateFormatReturn"
 			@update:modelValue="updateFrom"
 		/>
 
@@ -110,10 +110,10 @@ export default defineComponent({
 			:outlined="outlined"
 			:disabled="disabled"
 			:vuetify-options="options.to"
-			:start-date
+			:start-date="startDate"
 			text-field-class="vd-period-field-picker flex-grow-1 ma-2"
-			:date-format
-			:date-format-return
+			:date-format="dateFormat"
+			:date-format-return="dateFormatReturn"
 			@update:modelValue="updateTo"
 		/>
 	</div>
