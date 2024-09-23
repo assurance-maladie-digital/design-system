@@ -120,12 +120,10 @@
 				// Compute snackbar color only when it's being displayed
 				// to avoid seeing the default color on hide transition
 				if (this.notification) {
-					if (this.notification) {
-						if (this.notification.type === 'success') {
-							this.snackbarColor = '#56C271';
-						} else {
-							this.snackbarColor = this.options.snackBar.color as string || this.notification.type;
-						}
+					if (this.notification.type === 'success') {
+						this.snackbarColor = '#56C271';
+					} else {
+						this.snackbarColor = this.options.snackBar.color as string || this.notification.type;
 					}
 				}
 			}
