@@ -80,8 +80,6 @@ export default defineComponent({
 			this.$emit('update:modelValue', this.periodValue)
 		},
 		updateTo(e: string) {
-			console.log('to', e)
-
 			this.periodValue = {
 				from: this.periodValue.from,
 				to: e,
