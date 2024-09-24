@@ -16,11 +16,11 @@ export default defineComponent({
 	emits: ['change', 'view-file', 'error'],
 	props: {
 		value: {
-			type: Array as PropType<File[] | SelectedFile[]>,
+			type: Array as PropType<File[] | SelectedFile[] | null>,
 			default: () => [],
 		},
 		fileListItems: {
-			type: Array as PropType<FileListItem[]>,
+			type: Array as PropType<FileListItem[] | null>,
 			default: () => [],
 		},
 		showFilePreview: {
@@ -95,7 +95,9 @@ export default defineComponent({
 	},
 	methods: {
 		setInternalModel(): void {
-			this.internalFileListItems = this.fileListItems ?? this.value
+			this.internalFileListItems = (this.fileListItems ??
+				this.value ??
+				[]) as FileListItem[]
 
 			if (this.fileListItems === null && !this.value) {
 				this.resetInternalModel()

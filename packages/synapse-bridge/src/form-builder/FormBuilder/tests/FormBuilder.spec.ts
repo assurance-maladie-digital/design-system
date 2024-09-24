@@ -11,7 +11,7 @@ describe('FormBuilder', () => {
 			global: {
 				plugins: [vuetify],
 			},
-			propsData: {
+			props: {
 				modelValue: questionForm,
 			},
 		})
@@ -24,7 +24,7 @@ describe('FormBuilder', () => {
 			global: {
 				plugins: [vuetify],
 			},
-			propsData: {
+			props: {
 				modelValue: questionForm,
 			},
 		})
@@ -44,7 +44,7 @@ describe('FormBuilder', () => {
 			global: {
 				plugins: [vuetify],
 			},
-			propsData: {
+			props: {
 				modelValue: questionForm,
 			},
 		})

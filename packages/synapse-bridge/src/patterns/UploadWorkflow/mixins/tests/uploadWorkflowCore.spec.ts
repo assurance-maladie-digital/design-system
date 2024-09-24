@@ -82,7 +82,7 @@ describe('EventsFileFired', () => {
 		await wrapper.setProps({
 			fileListItems: null,
 			value: [],
-		})
+		} as any)
 
 		await wrapper.vm.$nextTick()
 
@@ -192,7 +192,7 @@ describe('EventsFileFired', () => {
 		await wrapper.setProps({
 			value: null,
 			fileListItems: null,
-		})
+		} as any)
 		;(wrapper.vm as any).setInternalModel()
 
 		await wrapper.vm.$nextTick()

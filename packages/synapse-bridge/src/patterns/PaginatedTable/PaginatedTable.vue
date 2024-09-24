@@ -71,14 +71,12 @@ export default defineComponent({
 								key,
 								order: this.options?.sortDesc?.[index]
 									? 'desc'
-									: ('asc' as 'desc' | 'asc'),
+									: 'asc',
 							}))
 					: [
 							{
 								key: this.options.sortBy,
-								order: this.options.sortDesc
-									? 'desc'
-									: ('asc' as 'desc' | 'asc'),
+								order: this.options.sortDesc ? 'desc' : 'asc',
 							},
 						]
 			const groupBy = !this.options.groupBy
@@ -90,14 +88,12 @@ export default defineComponent({
 								key,
 								order: this.options?.groupDesc?.[index]
 									? 'desc'
-									: ('asc' as 'desc' | 'asc'),
+									: 'asc',
 							}))
 					: [
 							{
 								key: this.options.groupBy,
-								order: this.options.groupDesc
-									? 'desc'
-									: ('asc' as 'desc' | 'asc'),
+								order: this.options.groupDesc ? 'desc' : 'asc',
 							},
 						]
 

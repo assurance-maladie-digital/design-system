@@ -24,7 +24,7 @@ const fakeItems = [
 		name: 'John Smith',
 		age: 35,
 	},
-]
+] as const
 
 const headers = [
 	{
@@ -178,8 +178,8 @@ describe('PaginatedTable', () => {
 		)
 		await wrapper.setProps({
 			options: {
-				sortBy: 'age',
-				sortDesc: true,
+				sortBy: ['age'],
+				sortDesc: [true],
 			},
 		})
 		expect(setItemMock).toHaveBeenCalledWith(
@@ -245,7 +245,7 @@ describe('PaginatedTable', () => {
 		await wrapper.setProps({
 			items: fakeItems,
 			serverItemsLength: 20,
-		})
+		} as any)
 
 		expect(wrapper.find('.v-data-table-footer__info').text()).toBe(
 			'1-10 of 20'
@@ -302,7 +302,7 @@ describe('PaginatedTable', () => {
 		const wrapper = mount(PaginatedTable, {
 			propsData: {
 				options: {
-					sortBy: 'id',
+					sortBy: ['id'],
 					groupBy: 'name',
 				},
 				items: [],
