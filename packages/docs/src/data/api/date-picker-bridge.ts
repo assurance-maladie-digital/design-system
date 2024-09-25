@@ -4,10 +4,10 @@ export const api: Api = {
 	DatePicker: {
 		props: [
 			{
-				name: 'value',
+				name: 'model-value',
 				type: 'string',
 				default: `''`,
-				description: 'La date sélectionnée.'
+				description: 'La date sélectionnée au format spécifié par la prop `date-format-return`'
 			},
 			{
 				name: 'outlined',
@@ -75,7 +75,7 @@ export const api: Api = {
 			{
 				name: 'date-format-return',
 				type: 'string',
-				default: `'DD-MM-YYYY'`,
+				default: `'YYYY-MM-DD'`,
 				description: 'Le format de la date utilisée avec le `v-model`.'
 			},
 			{
@@ -121,13 +121,8 @@ export const api: Api = {
 		],
 		events: [
 			{
-				name: 'change',
-				description: 'Événement émis lorsque la valeur est mise à jour.',
-				value: 'string'
-			},
-			{
-				name: 'input',
-				description: 'Événement émis dès que l’utilisateur écrit dans le champ.',
+				name: 'update:model-value',
+				description: 'Évènement émis lorsque la valeur est mise à jour.',
 				value: 'string'
 			}
 		]

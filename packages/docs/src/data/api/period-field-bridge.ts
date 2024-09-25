@@ -6,10 +6,16 @@ export const api: Api = {
 	PeriodField: {
 		props: [
 			{
-				name: 'value',
-				type: 'Date[]',
+				name: 'model-value',
+				type: `{
+					from: string | null,
+					to: string | null
+				}`,
 				description: 'Valeur du champ.',
-				default: `{string[]}`
+				default: `{
+	from: null,
+	to: null
+}`
 			},
 			{
 				name: 'outlined',
@@ -18,34 +24,10 @@ export const api: Api = {
 				default: false
 			},
 			{
-				name:  'no-prepend-icon',
-				type: 'boolean',
-				description: 'Masque l’icône avant le `VTextField`.',
-				default: false,
-			},
-			{
-				name:  'append-icon',
-				type: 'boolean',
-				description: 'Affiche le bouton du calendrier dans le `VTextField`.',
-				default: false,
-			},
-			{
 				name: 'disabled',
 				type: 'boolean',
 				description: 'Désactive le champ.',
 				default: false
-			},
-			{
-				name: 'label',
-				type: 'string',
-				description: 'Libellé du champ.',
-				default: `''`
-			},
-			{
-				name: 'hint',
-				type: 'string',
-				description: 'Texte d’aide affiché sous le champ.',
-				default: `'DD/MM/YYYY'`
 			},
 			{
 				name: 'date-format',
@@ -59,12 +41,31 @@ export const api: Api = {
 				default: `'DD-MM-YYYY'`,
 				description: 'Le format de la date utilisée avec le `v-model`.'
 			},
+			{
+				name: `vuetify-options`,
+				type: `{
+	from: Record<string, any>,
+	to: Record<string, any>
+}`,
+				description: 'Configration des composants internes.',
+				example: `{
+	from: {
+		label: 'Début de validité',
+	},
+	to: {
+		label: 'Fin de validité'
+	}
+}`
+			}
 		],
 		events: [
 			{
-				name: 'change',
+				name: 'update:model-value',
 				description: 'Événement émis lorsque la valeur du champ est mise à jour.',
-				value: 'Date[]'
+				value: `{
+	from: string | null,
+	to: string | null
+}`
 			}
 		]
 	}
