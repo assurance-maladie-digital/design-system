@@ -27,7 +27,7 @@ importers:
         specifier: 2.15.3
         version: 2.15.3
       vue:
-        specifier: ^3.4.21
+        specifier: ^3.4.22
         version: 3.5.6(typescript@5.0.4)
       vuetify:
         specifier: 3.5.12
@@ -49,8 +49,8 @@ importers:
         specifier: 0.34.6
         version: 0.34.6(vitest@0.34.6)
       '@vue/test-utils':
-        specifier: 2.4.1
-        version: 2.4.1(vue@3.5.6)
+        specifier: 2.4.6
+        version: 2.4.6
       auto-changelog:
         specifier: ^2.4.0
         version: 2.5.0
@@ -1699,18 +1699,11 @@ packages:
   /@vue/shared@3.5.6:
     resolution: {integrity: sha512-eidH0HInnL39z6wAt6SFIwBrvGOpDWsDxlw3rCgo1B+CQ1781WzQUSU3YjxgdkcJo9Q8S6LmXTkvI+cLHGkQfA==}
 
-  /@vue/test-utils@2.4.1(vue@3.5.6):
-    resolution: {integrity: sha512-VO8nragneNzUZUah6kOjiFmD/gwRjUauG9DROh6oaOeFwX1cZRUNHhdeogE8635cISigXFTtGLUQWx5KCb0xeg==}
-    peerDependencies:
-      '@vue/server-renderer': ^3.0.1
-      vue: ^3.0.1
-    peerDependenciesMeta:
-      '@vue/server-renderer':
-        optional: true
+  /@vue/test-utils@2.4.6:
+    resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
     dependencies:
-      js-beautify: 1.14.9
-      vue: 3.5.6(typescript@5.0.4)
-      vue-component-type-helpers: 1.8.4
+      js-beautify: 1.15.1
+      vue-component-type-helpers: 2.1.6
     dev: true
 
   /@vue/typescript@1.8.11(typescript@5.0.4):
@@ -3491,7 +3484,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -4045,17 +4038,6 @@ packages:
 
   /jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
-    dev: true
-
-  /js-beautify@1.14.9:
-    resolution: {integrity: sha512-coM7xq1syLcMyuVGyToxcj2AlzhkDjmfklL8r0JgJ7A76wyGMpJ1oA35mr4APdYNO/o/4YY8H54NQIJzhMbhBg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    dependencies:
-      config-chain: 1.1.13
-      editorconfig: 1.0.4
-      glob: 8.1.0
-      nopt: 6.0.0
     dev: true
 
   /js-beautify@1.15.1:
@@ -6748,8 +6730,8 @@ packages:
       - terser
     dev: true
 
-  /vue-component-type-helpers@1.8.4:
-    resolution: {integrity: sha512-6bnLkn8O0JJyiFSIF0EfCogzeqNXpnjJ0vW/SZzNHfe6sPx30lTtTXlE5TFs2qhJlAtDFybStVNpL73cPe3OMQ==}
+  /vue-component-type-helpers@2.1.6:
+    resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
     dev: true
 
   /vue-router@4.2.5(vue@3.5.6):
