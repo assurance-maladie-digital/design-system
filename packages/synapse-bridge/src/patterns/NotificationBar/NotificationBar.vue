@@ -159,7 +159,8 @@ export default defineComponent({
 					v-if="!mobileVersion && hasLongContent"
 					:color="contentColor"
 					:style="{ borderColor: dividerColor }"
-					:vertical="true"
+					:thickness="1"
+					vertical
 					class="mx-4"
 				/>
 				<slot :attrs="actionSlotAttrs" name="action"></slot>
@@ -240,5 +241,10 @@ $breakpoint-xs: 600px;
 
 .vd-notification-icon {
 	min-width: 24px;
+}
+
+:deep(.v-divider--vertical) {
+	height: 35px;
+	opacity: 0.50;
 }
 </style>
