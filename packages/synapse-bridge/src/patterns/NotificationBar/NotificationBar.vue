@@ -1,17 +1,17 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { mapActions, mapGetters } from 'vuex'
+import {defineComponent} from 'vue'
+import {mapActions, mapGetters} from 'vuex'
 import {
-	mdiClose,
-	mdiCheckCircleOutline,
 	mdiAlertCircleOutline,
-	mdiInformationOutline,
 	mdiAlertOctagonOutline,
+	mdiCheckCircleOutline,
+	mdiClose,
+	mdiInformationOutline,
 } from '@mdi/js'
-import { config } from './config'
-import { locales } from './locales'
-import { customizable } from '@/mixins/customizable'
-import type { IndexedObject } from '@/types'
+import {config} from './config'
+import {locales} from './locales'
+import {customizable} from '@/mixins/customizable'
+import type {IndexedObject} from '@/types'
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -89,14 +89,18 @@ export default defineComponent({
 	},
 	watch: {
 		notification(): void {
-			if (this.notification) {
-				this.snackbar = true
-				this.snackbarColor =
-					this.options.snackBar.color || this.notification.type
-			} else {
-				this.snackbar = false
+			if (!this.notification) {
+				this.snackbar = false;
+				return;
 			}
-		},
+
+			this.snackbar = true;
+			if (this.notification.type === 'success') {
+				this.snackbarColor = '#56C271';
+			} else {
+				this.snackbarColor = this.options.snackBar.color || this.notification.type;
+			}
+		}
 	},
 	methods: {
 		...mapActions('notification', {
@@ -119,29 +123,29 @@ export default defineComponent({
 
 <template>
 	<VSnackbar
-		v-bind="options.snackBar"
-		:modelValue="snackbar"
 		:color="snackbarColor"
-		:vertical="mobileVersion && hasLongContent"
-		:multi-line="hasLongContent"
-		:width="mobileVersion ? 'auto' : '960px'"
-		role="status"
 		:location="bottom ? 'bottom' : 'top'"
+		:modelValue="snackbar"
+		:multi-line="hasLongContent"
+		:vertical="mobileVersion && hasLongContent"
+		:width="mobileVersion ? 'auto' : '960px'"
 		class="vd-notification-bar"
+		role="status"
+		v-bind="options.snackBar"
 	>
 		<div :class="'text-' + contentColor" class="vd-notification-content">
 			<VIcon
 				v-if="!mobileVersion"
-				v-bind="options.icon"
 				:color="contentColor"
 				class="vd-notification-icon"
+				v-bind="options.icon"
 			>
 				{{ icon }}
 			</VIcon>
 
 			{{ notification?.message }}
 
-			<VSpacer />
+			<VSpacer/>
 
 			<VDivider
 				v-if="mobileVersion && hasLongContent"
@@ -155,19 +159,19 @@ export default defineComponent({
 					v-if="!mobileVersion && hasLongContent"
 					:color="contentColor"
 					:style="{ borderColor: dividerColor }"
-					class="mx-4"
 					:vertical="true"
+					class="mx-4"
 				/>
-				<slot name="action" :attrs="actionSlotAttrs"></slot>
-				<slot name="default" />
+				<slot :attrs="actionSlotAttrs" name="action"></slot>
+				<slot name="default"/>
 				<VBtn
+					:class="{ 'ma-0': smallCloseBtn }"
+					:color="contentColor"
+					:icon="smallCloseBtn"
+					class="ml-4"
 					v-bind="{
 						...options.btn,
 					}"
-					:color="contentColor"
-					:icon="smallCloseBtn"
-					:class="{ 'ma-0': smallCloseBtn }"
-					class="ml-4"
 					@click="clearNotification"
 				>
 					<span :class="{ 'd-sr-only': smallCloseBtn }">
