@@ -18,8 +18,8 @@ importers:
   packages/synapse-bridge:
     dependencies:
       '@cnamts/design-tokens':
-        specifier: 2.16.8
-        version: 2.16.8
+        specifier: 2.16.10
+        version: 2.16.10
       '@vuepic/vue-datepicker':
         specifier: ^8.6.0
         version: 8.8.1(vue@3.5.6)
@@ -185,8 +185,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@cnamts/design-tokens@2.16.8:
-    resolution: {integrity: sha512-kfB6/w36usiHbudDoBa8PdLgPlHhk0f8/dnZf539OdN9Hm58lmW6/vgKqp8d9Rikf60nhlE0LCX46CKl/ztu1A==}
+  /@cnamts/design-tokens@2.16.10:
+    resolution: {integrity: sha512-joRhjKbcOk9t1TmxH06+hfFtwuTFq3OmYz8DK/+ld8KjA8IOZylSUeASuRKOv9mQWvexoZbHjhPSnszvuo6ipg==}
     dev: false
 
   /@esbuild/aix-ppc64@0.20.2:

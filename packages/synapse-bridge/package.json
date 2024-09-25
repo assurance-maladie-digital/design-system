@@ -55,7 +55,7 @@
 		"vuex": "^4.1.0"
 	},
 	"dependencies": {
-		"@cnamts/design-tokens": "2.16.8",
+		"@cnamts/design-tokens": "2.16.10",
 		"@vuepic/vue-datepicker": "^8.6.0",
 		"consola": "2.15.3"
 	},
