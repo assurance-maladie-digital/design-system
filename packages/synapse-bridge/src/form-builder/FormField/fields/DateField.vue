@@ -29,7 +29,7 @@ export default defineComponent({
 <template>
 	<DatePicker
 		v-bind="field.fieldOptions"
-		:model-value="field.value"
+		:model-value="field.value as string | null | undefined"
 		class="vd-form-input mt-4"
 		@update:modelValue="dateUpdated"
 		:vuetify-options="{

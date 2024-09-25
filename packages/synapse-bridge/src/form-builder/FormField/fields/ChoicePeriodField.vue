@@ -4,6 +4,7 @@ import { defineComponent } from 'vue'
 import PeriodField from '@/patterns/PeriodField'
 
 import FieldComponent from '../mixins/fieldComponent'
+import { type PeriodValue } from '../types'
 
 export default defineComponent({
 	components: {
@@ -17,7 +18,7 @@ export default defineComponent({
 <template>
 	<PeriodField
 		v-bind="field.fieldOptions"
-		:model-value="field.value"
+		:model-value="(field.value ?? { from: null, to: null }) as PeriodValue"
 		:vuetify-options="field.fieldOptions"
 		outlined
 		@update:modelValue="emitChangeEvent"

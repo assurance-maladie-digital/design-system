@@ -1,22 +1,17 @@
 import { ruleMessage } from '../../helpers/ruleMessage'
-import { isDateAfter } from '../../functions/validation/isDateAfter/index.ts'
 import {
 	ValidationRule,
 	ValidationResult,
 	ErrorMessages,
 	Value,
 } from '../types'
+
 import { defaultErrorMessages } from './locales'
+
+import { isDateAfter } from '../../functions/validation/isDateAfter'
 import { TODAY } from '../../constants'
 
-export function formatDateToDDMMYYYYFn(date: Date): string {
-	const day = String(date.getDate()).padStart(2, '0')
-	const month = String(date.getMonth() + 1).padStart(2, '0')
-	const year = date.getFullYear()
-	return `${day}/${month}/${year}`
-}
-
-/** Vérifie que la valeur n'est pas après aujourd'hui (format DD/MM/YYYY) */
+/** Check that the value is not after today (DD/MM/YYYY format) */
 export function notAfterTodayFn(
 	errorMessages: ErrorMessages = defaultErrorMessages
 ): ValidationRule {
@@ -24,12 +19,10 @@ export function notAfterTodayFn(
 		if (!value) {
 			return true
 		}
-		const formattedValue =
-			typeof value === 'object' ? formatDateToDDMMYYYYFn(value) : value
-		if (isDateAfter(TODAY, formattedValue)) {
-			return ruleMessage(errorMessages, 'default')
-		}
-		return true
+
+		return (
+			!isDateAfter(TODAY, value) || ruleMessage(errorMessages, 'default')
+		)
 	}
 }
 

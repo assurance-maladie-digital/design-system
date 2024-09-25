@@ -17,7 +17,7 @@ export default defineConfig((configEnv) =>
 						inline: ['vuetify'],
 					},
 				},
-				silent: true,
+				//silent: true,
 				setupFiles: ['./tests/unit/setup.ts'],
 			},
 		})

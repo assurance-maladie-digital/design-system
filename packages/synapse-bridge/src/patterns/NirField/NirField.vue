@@ -468,7 +468,9 @@ export default defineComponent({
 .v-text-field .v-input__append-inner {
 	padding-left: 0 !important;
 }
-:deep(.v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot) {
+:deep(
+		.v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot
+	) {
 	width: min-content !important;
 }
 </style>

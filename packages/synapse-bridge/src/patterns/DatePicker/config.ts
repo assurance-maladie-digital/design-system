@@ -1,22 +1,15 @@
 export const config = {
 	textField: {
-		hint: 'Format JJ/MM/AAAA',
-		label: 'Date',
+		hideDetails: 'auto',
 		persistentHint: true,
-		validateOnBlur: true,
-	},
-	menu: {
-		minWidth: '290px',
-		closeOnContentClick: false,
-		contentClass: 'vd-date-picker-menu',
-	},
-	btn: {
-		icon: true,
-		variant: 'text',
+		validateOn: 'blur',
+		color: '#0C419A',
+		maxErrors: 5,
 	},
 	datePicker: {
-		hideHeader: true,
-		location: 'bottom end',
+		hideOffsetDates: true,
+		dayNames: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
+		locale: 'fr',
 	},
 	icon: {
 		color: '#808080',

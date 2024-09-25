@@ -184,7 +184,7 @@ describe('NirField', () => {
 		expect(numberField.element.value).toBe(formattedNir)
 		expect(keyField.element.value).toBe(key)
 
-		await wrapper.setProps({ modelValue: null })
+		await wrapper.setProps({ modelValue: undefined })
 
 		expect(numberField.element.value).toBe('')
 		expect(keyField.element.value).toBe('')
