@@ -48,8 +48,10 @@ exports[`DatePickerField > should render correctly 1`] = `
             <transition-group-stub name="slide-y-transition" tag="div" appear="false" persisted="false" css="true" class="v-messages" role="alert" aria-live="polite" id="input-0-messages">
               <div class="v-messages__message"></div>
             </transition-group-stub>
-            <!--v-if-->
-            <div data-v-2a54188f="" class="hint-message">Format JJ/MM/AAAA</div>
+            <div data-v-2a54188f="" class="mt-2">
+              <!--v-if-->
+              <div data-v-2a54188f="" class="hint-message">Format JJ/MM/AAAA</div>
+            </div>
             <!---->
           </div>
         </div>
