@@ -38,7 +38,7 @@ export const api: Api = {
 			{
 				name: 'date-format-return',
 				type: 'string',
-				default: `'DD-MM-YYYY'`,
+				default: `'DD/MM/YYYY'`,
 				description: 'Le format de la date utilisée avec le `v-model`.'
 			},
 			{
