@@ -1,3 +1,8 @@
+#### v3.0.3
+
+- NotificationBar: fix success color [`#3777`](https://github.com/assurance-maladie-digital/design-system/pull/3777)
+- DatePicker: refacto and fix bugs [`#3763`](https://github.com/assurance-maladie-digital/design-system/pull/3763)
+
 #### v3.0.2
 
 -   Remove pnpm from package.json engines [`#3766`](https://github.com/assurance-maladie-digital/design-system/pull/3766)
