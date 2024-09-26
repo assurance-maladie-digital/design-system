@@ -299,35 +299,37 @@ export default defineComponent({
 					</template>
 					<template #message></template>
 					<template #details>
-						<div
-							v-if="errorMessages?.length"
-							role="alert"
-							aria-live="polite"
-							class="error-message"
-						>
-							<ul>
-								<li v-for="error in errorMessages" :key="error">
-									{{ error }}
-								</li>
-							</ul>
-						</div>
-						<div
-							v-else-if="warningMessages.length"
-							role="alert"
-							aria-live="polite"
-							class="warning-message"
-						>
-							<ul>
-								<li
-									v-for="warning in warningMessages"
-									:key="warning"
-								>
-									{{ warning }}
-								</li>
-							</ul>
-						</div>
-						<div v-if="hint" class="hint-message">
-							{{ hint }}
+						<div class="mt-2">
+							<div
+								v-if="errorMessages?.length"
+								role="alert"
+								aria-live="polite"
+								class="error-message"
+							>
+								<ul>
+									<li v-for="error in errorMessages" :key="error">
+										{{ error }}
+									</li>
+								</ul>
+							</div>
+							<div
+								v-else-if="warningMessages.length"
+								role="alert"
+								aria-live="polite"
+								class="warning-message"
+							>
+								<ul>
+									<li
+										v-for="warning in warningMessages"
+										:key="warning"
+									>
+										{{ warning }}
+									</li>
+								</ul>
+							</div>
+							<div v-if="hint" class="hint-message">
+								{{ hint }}
+							</div>
 						</div>
 					</template>
 				</VTextField>
