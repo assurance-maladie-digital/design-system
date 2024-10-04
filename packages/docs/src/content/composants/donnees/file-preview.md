@@ -3,12 +3,6 @@ title: FilePreview
 description: L’élément `FilePreview` est utilisé pour afficher une image ou un fichier PDF.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

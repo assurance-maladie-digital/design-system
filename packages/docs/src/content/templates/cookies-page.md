@@ -3,12 +3,6 @@ title: CookiesPage
 description: Le template `CookiesPage` est utilisé pour permettre à l’utilisateur de gérer ses préférences de cookies.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

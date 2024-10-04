@@ -3,12 +3,6 @@ title: BackToTopBtn
 description: L’élément `BackToTopBtn` est utilisé pour afficher un bouton permettant à l’utilisateur de remonter en haut de la page.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

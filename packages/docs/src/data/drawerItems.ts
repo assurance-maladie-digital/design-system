@@ -87,22 +87,18 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'HeaderBar',
 						to: '/composants/structure/header-bar',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'SubHeader',
 						to: '/composants/structure/sub-header',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FooterBar',
 						to: '/composants/structure/footer-bar',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FooterWrapper',
 						to: '/composants/structure/footer-wrapper',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -112,7 +108,6 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'PageContainer',
 						to: '/composants/layout/page-container',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -122,17 +117,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ExternalLinks',
 						to: '/composants/navigation/external-links',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'ContextualMenu',
 						to: '/composants/navigation/contextual-menu',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'SkipLink',
 						to: '/composants/navigation/skip-link',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -142,37 +134,30 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'BackBtn',
 						to: '/composants/boutons/back-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'BackToTopBtn',
 						to: '/composants/boutons/back-to-top-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'CopyBtn',
 						to: '/composants/boutons/copy-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'LangBtn',
 						to: '/composants/boutons/lang-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'DownloadBtn',
 						to: '/composants/boutons/download-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FranceConnectBtn',
 						to: '/composants/boutons/france-connect-btn',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'UserMenuBtn',
 						to: '/composants/boutons/user-menu-btn',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -182,52 +167,42 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'DatePicker',
 						to: '/composants/formulaires/date-picker',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FileUpload',
 						to: '/composants/formulaires/file-upload',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'NirField',
 						to: '/composants/formulaires/nir-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'PasswordField',
 						to: '/composants/formulaires/password-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'PeriodField',
 						to: '/composants/formulaires/period-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'PhoneField',
 						to: '/composants/formulaires/phone-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'RangeField',
 						to: '/composants/formulaires/range-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'SearchListField',
 						to: '/composants/formulaires/search-list-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'SelectBtnField',
 						to: '/composants/formulaires/select-btn-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'UploadWorkflow',
 						to: '/composants/formulaires/upload-workflow',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -237,12 +212,10 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'PaginatedTable',
 						to: '/composants/tableaux/paginated-table',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'TableToolbar',
 						to: '/composants/tableaux/table-toolbar',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -252,17 +225,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'FiltersInline',
 						to: '/composants/filtres/filters-inline',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FiltersSideBar',
 						to: '/composants/filtres/filters-side-bar',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FilterModule',
 						to: '/composants/filtres/filter-module',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -272,27 +242,22 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'ChipList',
 						to: '/composants/donnees/chip-list',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'DataList',
 						to: '/composants/donnees/data-list',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'DataListGroup',
 						to: '/composants/donnees/data-list-group',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FilePreview',
 						to: '/composants/donnees/file-preview',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FileList',
 						to: '/composants/donnees/file-list',
-						appendIcon: mdiBridge
 					}
 				]
 			},
@@ -302,32 +267,26 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'AlertWrapper',
 						to: '/composants/feedback/alert-wrapper',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'DialogBox',
 						to: '/composants/feedback/dialog-box',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'NotificationBar',
 						to: '/composants/feedback/notification-bar',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'CookieBanner',
 						to: '/composants/feedback/cookie-banner',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'HeaderLoading',
 						to: '/composants/feedback/header-loading',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'RatingPicker',
 						to: '/composants/feedback/rating-picker',
-						appendIcon: mdiBridge
 					}
 				]
 			}
@@ -347,22 +306,18 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'CookiesPage',
 				to: '/templates/cookies-page',
-				appendIcon: mdiBridge
 			},
 			{
 				title: 'ErrorPage',
 				to: '/templates/error-page',
-				appendIcon: mdiBridge
 			},
 			{
 				title: 'NotFoundPage',
 				to: '/templates/not-found-page',
-				appendIcon: mdiBridge
 			},
 			{
 				title: 'MaintenancePage',
 				to: '/templates/maintenance-page',
-				appendIcon: mdiBridge
 			}
 		]
 	},
@@ -373,12 +328,10 @@ export const drawerItems: DrawerItem[] = [
 			{
 				title: 'CustomIcon',
 				to: '/composants-techniques/custom-icon',
-				appendIcon: mdiBridge
 			},
 			{
 				title: 'Module de notification',
 				to: '/composants-techniques/module-notification',
-				appendIcon: mdiBridge
 			},
 			{
 				title: 'Questionnaires',
@@ -386,17 +339,14 @@ export const drawerItems: DrawerItem[] = [
 					{
 						title: 'FormBuilder',
 						to: '/composants-techniques/formulaires/form-builder',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FormField',
 						to: '/composants-techniques/formulaires/form-field',
-						appendIcon: mdiBridge
 					},
 					{
 						title: 'FormFieldList',
 						to: '/composants-techniques/formulaires/form-field-list',
-						appendIcon: mdiBridge
 					}
 				]
 			},

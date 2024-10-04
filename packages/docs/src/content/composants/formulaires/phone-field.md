@@ -3,12 +3,6 @@ title: PhoneField
 description: Le pattern `PhoneField` est utilisé pour permettre à l’utilisateur de saisir un numéro de téléphone.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -3,12 +3,6 @@ title: UploadWorkflow
 description: Le pattern `UploadWorkflow` est utilisé pour permettre à l’utilisateur de sélectionner une liste de fichiers.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">
