@@ -3,12 +3,6 @@ title: Module de notification
 description: Module Vuex pour afficher des notifications en utilisant le composant [NotificationBar](/composants/feedback/notification-bar).
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce module est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

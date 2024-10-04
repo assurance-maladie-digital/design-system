@@ -3,12 +3,6 @@ title: CopyBtn
 description: L’élément `CopyBtn` est utilisé pour afficher un bouton permettant à l’utilisateur de copier du texte.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

@@ -3,13 +3,6 @@ title: PaginatedTable
 description: Le pattern `PaginatedTable` est utilisé pour afficher une [`VDataTable`](https://vuetifyjs.com/en/components/data-tables/) de Vuetify avec une pagination persistante.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

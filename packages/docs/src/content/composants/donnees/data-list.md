@@ -3,12 +3,6 @@ title: DataList
 description: L’élément `DataList` est utilisé pour afficher une liste d’informations.
 ---
 
-<doc-alert-bridge class="mb-8">
-
-Ce composant est disponible sur la version Bridge.
-
-</doc-alert-bridge>
-
 <doc-tabs>
 
 <doc-tab-item label="Utilisation">

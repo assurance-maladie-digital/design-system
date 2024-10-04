@@ -5,7 +5,7 @@ description: Le pattern `PeriodField` est utilisé pour permettre à l’utilisa
 
 <doc-alert-bridge class="mb-8">
 
-Ce composant est disponible sur la version Bridge.
+Ce composant comporte des différences entre la version VueDot et la version Bridge, veuillez consulter l'onglet `Bridge` pour plus d'informations.
 
 </doc-alert-bridge>
 
