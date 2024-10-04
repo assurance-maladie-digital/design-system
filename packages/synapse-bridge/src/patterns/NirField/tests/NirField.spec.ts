@@ -574,4 +574,22 @@ describe('NirField', () => {
 		expect(wrapper.text()).toContain(locales.errorRequiredNumber)
 		expect(wrapper.text()).toContain(locales.errorRequiredKey)
 	})
+
+	it('do not validate the key field in single field mode', async () => {
+		const wrapper = mount(NirField, {
+			global: {
+				plugins: [vuetify],
+			},
+			propsData: {
+				modelValue: '1234567890123',
+				nirLength: 13,
+				required: true,
+			},
+		})
+
+		await wrapper.setProps({ modelValue: '' })
+
+		expect(wrapper.text()).toContain(locales.errorRequiredNumber)
+		expect(wrapper.text()).not.toContain(locales.errorRequiredKey)
+	});
 })

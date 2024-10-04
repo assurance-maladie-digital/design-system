@@ -101,8 +101,6 @@ export default defineComponent({
 
 			numberErrors: [] as string[],
 			keyErrors: [] as string[],
-
-			isSingleField: false,
 		}
 	},
 	watch: {
@@ -126,14 +124,16 @@ export default defineComponent({
 				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD)
 
 				this.validateNumberValue(this.numberValue)
-				this.validateKeyValue(this.keyValue)
+				if (!this.isSingleField) {
+					this.validateKeyValue(this.keyValue)
+				}
 			},
 		},
 	},
-	created(): void {
-		this.isSingleField = this.nirLength === SINGLE_FIELD
-	},
 	computed: {
+		isSingleField(): boolean {
+			return this.nirLength === SINGLE_FIELD
+		},
 		textFieldOptions() {
 			return deepMerge(config, this.$attrs)
 		},
@@ -159,6 +159,9 @@ export default defineComponent({
 		 * Generate the validation rules for the key field
 		 */
 		keyRules(): ValidationRule[] {
+			if (this.isSingleField) {
+				return []
+			}
 			let rules = [
 				exactLength(KEY_LENGTH, true, {
 					default: locales.errorLengthKey,
