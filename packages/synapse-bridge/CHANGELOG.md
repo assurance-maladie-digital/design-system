@@ -1,3 +1,8 @@
+#### v3.0.4
+
+- NirField: delete validation key in simple mode [`#3786`](https://github.com/assurance-maladie-digital/design-system/pull/3786)
+- DatePicker: fix hint padding [`#3781`](https://github.com/assurance-maladie-digital/design-system/pull/3781)
+
 #### v3.0.3
 
 - NotificationBar: fix success color [`#3777`](https://github.com/assurance-maladie-digital/design-system/pull/3777)
