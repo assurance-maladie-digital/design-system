@@ -11,7 +11,7 @@
 		<VCard
 			v-bind="options.card"
 			ref="dialogContent"
-			aria-describedby="dialogContent"
+			aria-labelledby="dialogContent"
 		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
