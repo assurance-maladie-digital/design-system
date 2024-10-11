@@ -237,6 +237,7 @@
 
 	.vd-select-btn-field-toggle {
 		background: none !important;
+		padding-left: 0 !important;
 
 		.v-btn {
 			background: #fff;
