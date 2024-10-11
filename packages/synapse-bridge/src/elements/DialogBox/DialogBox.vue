@@ -129,12 +129,16 @@ export default defineComponent({
 		:persistent="persistent"
 		:retain-focus="false"
 		aria-modal="true"
-		aria-describedby="dialogContent"
 		class="vd-dialog-box"
 		@update:model-value="$emit('update:modelValue', false)"
 		@keydown.tab="handleFocus"
 	>
-		<VCard v-bind="options.card" ref="dialogContent" id="dialogContent">
+		<VCard
+			v-bind="options.card"
+			ref="dialogContent"
+			id="dialogContent"
+			aria-labelledby="dialogContent"
+		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2 v-if="title" class="text-h6 font-weight-bold">
