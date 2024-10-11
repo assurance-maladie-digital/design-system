@@ -139,7 +139,10 @@ export default defineComponent({
 </script>
 
 <template>
-	<div :class="{ 'vd-form-input': !inline }" class="vd-select-btn-field">
+	<div
+		:class="{ 'vd-form-input': !inline }"
+		class="vd-select-btn-field bg-secondary"
+	>
 		<VBtnToggle
 			v-bind="options.btnToggle"
 			tag="ul"
@@ -178,7 +181,6 @@ export default defineComponent({
 						v-bind="options.icon"
 						:style="getIconStyles(item)"
 						role="img"
-						:hidden="!isSelected(item.value)"
 						:aria-hidden="!isSelected(item.value)"
 						aria-label="Sélectionné"
 					>
@@ -214,10 +216,12 @@ export default defineComponent({
 
 .vd-select-btn-field-toggle {
 	background: none !important;
+	padding-left: 0 !important;
 
 	.v-btn {
 		background: #fff;
 		border-width: 1px !important;
+		min-width: 48px !important;
 
 		&.v-btn--active::before {
 			opacity: 0 !important;
@@ -226,11 +230,11 @@ export default defineComponent({
 		:deep(.v-btn__content) {
 			flex-shrink: 1 !important;
 		}
+	}
 
-		:deep(.v-icon__svg) {
-			height: 1.5rem;
-			width: 1.5rem;
-		}
+	.v-icon {
+		height: 1.5rem;
+		width: 1.5rem;
 	}
 
 	&.flex-column {

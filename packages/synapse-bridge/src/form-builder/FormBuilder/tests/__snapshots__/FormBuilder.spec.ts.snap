@@ -821,15 +821,15 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-044548c4="" data-v-60156eea="" class="vd-select-btn-field" type="choiceButton" color="primary">
+        <div data-v-044548c4="" data-v-60156eea="" class="vd-select-btn-field bg-secondary" type="choiceButton" color="primary">
           <ul data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle vd-select-btn-field-toggle d-flex flex-wrap text-primary">
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Oui</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Oui</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Non</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Non</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
@@ -845,25 +845,25 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field" type="choiceButton" color="primary">
+        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field bg-secondary" type="choiceButton" color="primary">
           <ul data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary">
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="test1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Multiple 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Multiple 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="22"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Multiple 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Multiple 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="33"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Seul 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Seul 1</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="44"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Seul 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Seul 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
@@ -879,7 +879,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field" type="choiceButton" color="primary">
+        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field bg-secondary" type="choiceButton" color="primary">
           <ul data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary">
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--active v-btn--flat v-theme--light bg-primary v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-flat py-2 d-flex align-items-center justify-space-between" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="true" aria-label="Sélectionné" value="1"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
                 <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Texte qui permet de tester sur plusieurs lignes</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: visible;" role="img" aria-hidden="false" aria-label="Sélectionné"></i></span>
@@ -887,7 +887,7 @@ exports[`FormBuilder > renders correctly 1`] = `
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Texte 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">Texte 2</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
@@ -903,7 +903,7 @@ exports[`FormBuilder > renders correctly 1`] = `
       </h4>
       <!--v-if-->
       <div data-v-60156eea="" data-v-9067cb71="">
-        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field" type="choiceButton" variant="outlined" color="primary">
+        <div data-v-044548c4="" data-v-60156eea="" class="vd-form-input vd-select-btn-field bg-secondary" type="choiceButton" variant="outlined" color="primary">
           <ul data-v-044548c4="" class="v-btn-group v-theme--light v-btn-group--density-default v-btn-toggle flex-column vd-select-btn-field-toggle d-flex flex-wrap text-primary" aria-label="Classic field">
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--active v-btn--flat v-theme--light bg-primary v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-flat py-2 d-flex align-items-center justify-space-between" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="true" aria-label="Sélectionné" value="0"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
                 <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">S</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: visible;" role="img" aria-hidden="false" aria-label="Sélectionné"></i></span>
@@ -916,12 +916,12 @@ exports[`FormBuilder > renders correctly 1`] = `
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="2"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">L</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">L</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
             <li data-v-044548c4="" class="vd-select-list-item"><button data-v-044548c4="" type="button" class="v-btn v-btn--flat v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-outlined py-2 d-flex align-items-center justify-start" style="height: auto; min-height: 40px;" activeclass="text-white" aria-selected="false" aria-label="" value="3"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
-                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">XL</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" hidden="" aria-label="Sélectionné"></i></span>
+                <!----><span class="v-btn__content" data-no-activator=""><span data-v-044548c4="" class="text-body-1">XL</span><i data-v-044548c4="" class="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z mdi v-icon notranslate v-theme--light v-icon--size-default text-white flex-shrink-0 ml-1" style="visibility: hidden;" role="img" aria-hidden="true" aria-label="Sélectionné"></i></span>
                 <!---->
                 <!---->
               </button></li>
