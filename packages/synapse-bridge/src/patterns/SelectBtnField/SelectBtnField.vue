@@ -139,7 +139,10 @@ export default defineComponent({
 </script>
 
 <template>
-	<div :class="{ 'vd-form-input': !inline }" class="vd-select-btn-field bg-secondary">
+	<div
+		:class="{ 'vd-form-input': !inline }"
+		class="vd-select-btn-field bg-secondary"
+	>
 		<VBtnToggle
 			v-bind="options.btnToggle"
 			tag="ul"

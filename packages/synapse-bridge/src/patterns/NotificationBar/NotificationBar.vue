@@ -1,6 +1,6 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
-import {mapActions, mapGetters} from 'vuex'
+import { defineComponent } from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 import {
 	mdiAlertCircleOutline,
 	mdiAlertOctagonOutline,
@@ -8,10 +8,10 @@ import {
 	mdiClose,
 	mdiInformationOutline,
 } from '@mdi/js'
-import {config} from './config'
-import {locales} from './locales'
-import {customizable} from '@/mixins/customizable'
-import type {IndexedObject} from '@/types'
+import { config } from './config'
+import { locales } from './locales'
+import { customizable } from '@/mixins/customizable'
+import type { IndexedObject } from '@/types'
 
 export default defineComponent({
 	mixins: [customizable(config)],
@@ -90,17 +90,18 @@ export default defineComponent({
 	watch: {
 		notification(): void {
 			if (!this.notification) {
-				this.snackbar = false;
-				return;
+				this.snackbar = false
+				return
 			}
 
-			this.snackbar = true;
+			this.snackbar = true
 			if (this.notification.type === 'success') {
-				this.snackbarColor = '#56C271';
+				this.snackbarColor = '#56C271'
 			} else {
-				this.snackbarColor = this.options.snackBar.color || this.notification.type;
+				this.snackbarColor =
+					this.options.snackBar.color || this.notification.type
 			}
-		}
+		},
 	},
 	methods: {
 		...mapActions('notification', {
@@ -145,7 +146,7 @@ export default defineComponent({
 
 			{{ notification?.message }}
 
-			<VSpacer/>
+			<VSpacer />
 
 			<VDivider
 				v-if="mobileVersion && hasLongContent"
@@ -164,7 +165,7 @@ export default defineComponent({
 					class="mx-4"
 				/>
 				<slot :attrs="actionSlotAttrs" name="action"></slot>
-				<slot name="default"/>
+				<slot name="default" />
 				<VBtn
 					:class="{ 'ma-0': smallCloseBtn }"
 					:color="contentColor"
@@ -245,6 +246,6 @@ $breakpoint-xs: 600px;
 
 :deep(.v-divider--vertical) {
 	height: 35px;
-	opacity: 0.50;
+	opacity: 0.5;
 }
 </style>

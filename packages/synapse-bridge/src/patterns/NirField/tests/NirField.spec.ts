@@ -591,5 +591,5 @@ describe('NirField', () => {
 
 		expect(wrapper.text()).toContain(locales.errorRequiredNumber)
 		expect(wrapper.text()).not.toContain(locales.errorRequiredKey)
-	});
+	})
 })

@@ -307,7 +307,10 @@ export default defineComponent({
 								class="error-message"
 							>
 								<ul>
-									<li v-for="error in errorMessages" :key="error">
+									<li
+										v-for="error in errorMessages"
+										:key="error"
+									>
 										{{ error }}
 									</li>
 								</ul>
