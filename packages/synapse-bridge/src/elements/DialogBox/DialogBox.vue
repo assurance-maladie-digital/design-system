@@ -137,7 +137,7 @@ export default defineComponent({
 			v-bind="options.card"
 			ref="dialogContent"
 			id="dialogContent"
-			aria-labelledby="dialogContent"
+			:aria-labelledby="title ? title : 'dialogContent'"
 		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">

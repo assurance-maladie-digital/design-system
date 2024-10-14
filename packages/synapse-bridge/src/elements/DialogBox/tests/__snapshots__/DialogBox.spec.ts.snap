@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DialogBox > rendering and props > renders correctly with props 1`] = `
-<div data-v-ee61b14d="" model-value="true" width="600px" persistent="false" retain-focus="false" aria-modal="true" aria-describedby="dialogContent" class="vd-dialog-box">
-  <div data-v-ee61b14d="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-6" id="dialogContent">
+<div data-v-ee61b14d="" model-value="true" width="600px" persistent="false" retain-focus="false" aria-modal="true" class="vd-dialog-box">
+  <div data-v-ee61b14d="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-6" id="dialogContent" aria-labelledby="Test title">
     <!---->
     <div class="v-card__loader">
       <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
