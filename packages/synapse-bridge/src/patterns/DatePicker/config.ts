@@ -2,7 +2,7 @@ export const config = {
 	textField: {
 		hideDetails: 'auto',
 		persistentHint: true,
-		validateOn: 'blur',
+		validateOn: 'submit',
 		color: '#0C419A',
 		maxErrors: 5,
 	},

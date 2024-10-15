@@ -9,7 +9,6 @@ import { vMaska } from 'maska'
 import {
 	type ComponentPublicInstance,
 	defineComponent,
-	nextTick,
 	type PropType,
 } from 'vue'
 import { VTextField } from 'vuetify/lib/components/index.mjs'
@@ -172,6 +171,13 @@ export default defineComponent({
 				this.calendarValue = [start.toDate(), end.toDate()]
 			}
 		},
+		rules() {
+			if (this.calendarValue) {
+				this.$nextTick(() => {
+					this.updateMessages()
+				})
+			}
+		},
 	},
 	methods: {
 		toggleCalendar() {
@@ -195,7 +201,9 @@ export default defineComponent({
 		},
 		handleFocusChange(focus: boolean) {
 			if (!focus) {
-				this.updateMessages()
+				setTimeout(() => {
+					this.updateMessages()
+				}, 200) // avoid graphical glitch when the calendar is closed
 			} else {
 				if (this.textFieldActivator || this.noIcon) {
 					if (!this.$refs.calendar) return
@@ -217,7 +225,7 @@ export default defineComponent({
 			if (!textField) return
 
 			this.validateWarning(this.internalValue)
-			await nextTick()
+			await this.$nextTick()
 			this.errorMessages = await textField.validate()
 		},
 		handleTextInput(date: string, updateCalendar: (s: string) => void) {
