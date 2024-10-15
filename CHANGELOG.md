@@ -1,3 +1,19 @@
+## v2.16.11
+
+**Version publiée le 15/10/2024.**
+
+### Vue Dot
+
+- 🐛 **Corrections de bugs**
+  - **SelectBtnField:** Correction du padding ([#3795](https://github.com/assurance-maladie-digital/design-system/pull/3795))
+  - **DialogBox:** Amélioration de l'accessibilité ([#3800](https://github.com/assurance-maladie-digital/design-system/pull/3800))
+
+### Documentation
+
+- 📝 **Documentation**
+  - **CHANGELOG:** Mise à jour du fichier CHANGELOG ([#3764](https://github.com/assurance-maladie-digital/design-system/pull/3764))
+
+
 ## v2.16.10
 
 **Version publiée le 16/09/2024.**
