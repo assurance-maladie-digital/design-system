@@ -102,8 +102,8 @@ export default defineComponent({
 		startDateFormatted() {
 			return this.startDate
 				? dayjs(this.startDate, 'YYYY-MM-DD').format(
-						this.dateFormatReturn
-					)
+					this.dateFormatReturn
+				)
 				: null
 		},
 		inputRules() {
@@ -122,6 +122,9 @@ export default defineComponent({
 				return 'prepend'
 			}
 			return null
+		},
+		computedTextFieldValue() {
+			return dayjs(this.textFieldValue, this.dateFormat, true)
 		},
 	},
 	watch: {
@@ -221,7 +224,7 @@ export default defineComponent({
 		async updateMessages() {
 			const textField = this.$refs[
 				'text-field'
-			] as ComponentPublicInstance<typeof VTextField>
+				] as ComponentPublicInstance<typeof VTextField>
 			if (!textField) return
 
 			this.validateWarning(this.internalValue)
@@ -291,7 +294,7 @@ export default defineComponent({
 					@update:focused="
 						(e: boolean) => {
 							handleFocusChange(e)
-							e ? onFocus() : onBlur()
+							e ? onFocus() : computedTextFieldValue.isValid() ?  onBlur() : null
 						}
 					"
 					@click:clear="onClear"
