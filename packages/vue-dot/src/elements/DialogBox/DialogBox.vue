@@ -11,13 +11,16 @@
 		<VCard
 			v-bind="options.card"
 			ref="dialogContent"
-			:aria-labelledby="title ? title : 'dialogContent'"
+			:aria-labelledby="titleId ? titleId : 'dialogContent'"
 		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
 					<h2
 						v-if="title"
-						class="text-h6 font-weight-bold"
+						:id="titleId"
+						class="
+						text-h6
+						font-weight-bold"
 					>
 						{{ title }}
 					</h2>
@@ -128,6 +131,8 @@
 		locales = locales;
 
 		closeIcon = mdiClose;
+
+		titleId = `title-${Math.random().toString(36).substring(7)}`;
 
 		async getSelectableElements(): Promise<HTMLElement[]> {
 			const elements = this.$refs.dialogContent.$el.querySelectorAll<HTMLElement>(
