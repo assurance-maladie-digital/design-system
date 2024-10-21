@@ -1,21 +1,19 @@
+// packages/synapse-bridge/src/patterns/NirField/NirField.vue
+
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { config } from './config'
-import { locales } from './locales'
-import type { Refs } from '@/types'
-import { customizable } from '@/mixins/customizable'
-import { exactLength } from '@/rules/exactLength'
-import { requiredFn } from '@/rules/required'
-import { vMaska } from 'maska'
-import { mdiInformationOutline } from '@mdi/js'
-import deepMerge from 'deepmerge'
-import type { ValidationRule } from '@/rules/types'
+import { defineComponent } from 'vue';
+import { config } from './config';
+import { locales } from './locales';
+import type { Refs } from '@/types';
+import { customizable } from '@/mixins/customizable';
+import { vMaska } from 'maska';
+import { mdiInformationOutline } from '@mdi/js';
+import deepMerge from 'deepmerge';
+import type { ValidationRule } from '@/rules/types';
+import { NUMBER_LENGTH, KEY_LENGTH, checkNIR, isNIRKeyValid } from './nirValidations';
 
-const NUMBER_LENGTH = 13
-const KEY_LENGTH = 2
-
-const SINGLE_FIELD = NUMBER_LENGTH
-const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH
+const SINGLE_FIELD = NUMBER_LENGTH;
+const DOUBLE_FIELD = NUMBER_LENGTH + KEY_LENGTH;
 
 export default defineComponent({
 	inheritAttrs: false,
@@ -31,7 +29,7 @@ export default defineComponent({
 			type: Number,
 			default: DOUBLE_FIELD,
 			validator(value: number): boolean {
-				return [SINGLE_FIELD, DOUBLE_FIELD].includes(value)
+				return [SINGLE_FIELD, DOUBLE_FIELD].includes(value);
 			},
 		},
 		required: {
@@ -58,8 +56,8 @@ export default defineComponent({
 	data() {
 		return {
 			$refs: {} as Refs<{
-				numberField: HTMLElement
-				keyField: HTMLElement
+				numberField: HTMLElement;
+				keyField: HTMLElement;
 			}>,
 
 			locales,
@@ -81,10 +79,6 @@ export default defineComponent({
 			numberValue: '',
 			keyValue: '',
 
-			/**
-			 * Keep trace of the value just emitted in order to do not validate
-			 * the fields when the user is typing.
-			 */
 			internallyUpdatedValue: null as string | null,
 
 			numberMask: {
@@ -101,190 +95,197 @@ export default defineComponent({
 
 			numberErrors: [] as string[],
 			keyErrors: [] as string[],
-		}
+		};
 	},
 	watch: {
 		modelValue: {
 			immediate: true,
 			handler(newValue) {
 				if (newValue === null) {
-					this.numberValue = ''
-					this.keyValue = ''
+					this.numberValue = '';
+					this.keyValue = '';
 
-					return
+					return;
 				}
 
 				if (this.internallyUpdatedValue === newValue) {
-					this.internallyUpdatedValue = null
+					this.internallyUpdatedValue = null;
 
-					return
+					return;
 				}
 
-				this.numberValue = newValue.slice(0, NUMBER_LENGTH)
-				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD)
+				this.numberValue = newValue.slice(0, NUMBER_LENGTH);
+				this.keyValue = newValue.slice(NUMBER_LENGTH, DOUBLE_FIELD);
 
-				this.validateNumberValue(this.numberValue)
+				this.validateNumberValue(this.numberValue);
 				if (!this.isSingleField) {
-					this.validateKeyValue(this.keyValue)
+					this.validateKeyValue(this.keyValue);
 				}
 			},
 		},
 	},
 	computed: {
 		isSingleField(): boolean {
-			return this.nirLength === SINGLE_FIELD
+			return this.nirLength === SINGLE_FIELD;
 		},
 		textFieldOptions() {
-			return deepMerge(config, this.$attrs)
+			return deepMerge(config, this.$attrs);
 		},
 
-		/**
-		 * Generate the validation rules for the number field
-		 */
 		numberRules(): ValidationRule[] {
-			let rules = [
-				exactLength(NUMBER_LENGTH, true, {
-					default: locales.errorLengthNumber,
-				}),
-			]
-
-			if (this.required) {
-				rules.push(requiredFn({ default: locales.errorRequiredNumber }))
-			}
-
-			return rules
+			return [
+				(value: string | null) => {
+					if (this.required && !value) {
+						return this.locales.errorRequiredNumber;
+					}
+					return true;
+				},
+				(value: string | null) => {
+					if (value && value.length !== NUMBER_LENGTH && value.length > 0) {
+						return this.locales.errorLengthNumber(NUMBER_LENGTH);
+					}
+					return true;
+				},
+				(value: string | null) => {
+					if (value && !checkNIR(value) && value.length > 0) {
+						return this.locales.errorInvalidFormat;
+					}
+					return true;
+				},
+			];
 		},
 
-		/**
-		 * Generate the validation rules for the key field
-		 */
 		keyRules(): ValidationRule[] {
 			if (this.isSingleField) {
-				return []
+				return [];
 			}
-			let rules = [
-				exactLength(KEY_LENGTH, true, {
-					default: locales.errorLengthKey,
-				}),
-			]
-
-			if (this.required) {
-				rules.push(requiredFn({ default: locales.errorRequiredKey }))
-			}
-
-			return rules
+			return [
+				(value: string | null) => {
+					if (this.required && !value) {
+						return this.locales.errorRequiredKey;
+					}
+					return true;
+				},
+				(value: string | null) => {
+					if (value && value.length > 0 && value.length !== KEY_LENGTH) {
+						return this.locales.errorLengthKey(KEY_LENGTH);
+					}
+					return true;
+				},
+				(value: string | null) => {
+					if (value) {
+						const fullNIR = this.numberValue + value;
+						if (!isNIRKeyValid(fullNIR)) {
+							return this.locales.errorInvalidKey;
+						}
+					}
+					return true;
+				},
+			];
 		},
-
-		/**
-		 * The rules to be fire when the form is submitted
-		 */
 		rules() {
 			const numberRules = () => {
 				this.validateNumberValue(this.maskaNumberValue.unmasked)
+				return this.numberErrors.length === 0;
 
-				return this.numberErrors.length === 0
-			}
+			};
 
 			return this.isSingleField
 				? [numberRules]
 				: [
-						numberRules,
-						() => {
-							this.validateKeyValue(this.maskaKeyValue.unmasked)
+					numberRules,
+					() => {
+						this.validateKeyValue(this.maskaKeyValue.unmasked);
 
-							return this.keyErrors.length === 0
-						},
-					]
+						return this.keyErrors.length === 0;
+					},
+				];
 		},
 
 		errors(): string[] | never[] {
-			return [...this.numberErrors, ...this.keyErrors]
+			return [...this.numberErrors ?? null, ...this.keyErrors ?? null];
 		},
 	},
 	methods: {
 		changeNumberValue(): void {
 			if (this.isSingleField) {
-				this.internallyUpdatedValue = this.maskaNumberValue.unmasked
-				this.$emit('update:modelValue', this.maskaNumberValue.unmasked)
+				this.internallyUpdatedValue = this.maskaNumberValue.unmasked;
+				this.$emit('update:modelValue', this.maskaNumberValue.unmasked);
 
-				return
+				return;
 			}
-			this.doubleFieldUpdated()
+			this.doubleFieldUpdated();
 		},
 
 		changeKeyValue(): void {
-			this.doubleFieldUpdated()
+			this.doubleFieldUpdated();
 		},
 
 		doubleFieldUpdated(): void {
 			const internalValue =
-				this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked
+				this.maskaNumberValue.unmasked + this.maskaKeyValue.unmasked;
 
-			this.internallyUpdatedValue = internalValue
-			this.$emit('update:modelValue', internalValue)
+			this.internallyUpdatedValue = internalValue;
+			this.$emit('update:modelValue', internalValue);
 		},
 
-		/**
-		 * Execute the validation rules for the number field
-		 */
 		validateNumberValue(numberFieldValue: string): void {
 			this.numberErrors = this.numberRules
-				.map((rule) => rule(numberFieldValue))
-				.filter((error): error is string => typeof error === 'string')
+				.map((rule) => {
+					const result = rule(numberFieldValue);
+					return result === true ? null : result;
+				})
+				.filter((error): error is string => error !== null);
 		},
 
-		/**
-		 * Execute the validation rules for the key field
-		 */
 		validateKeyValue(keyFieldValue: string): void {
 			this.keyErrors = this.keyRules
-				.map((rule) => rule(keyFieldValue))
-				.filter((error): error is string => typeof error === 'string')
+				.map((rule) => {
+					const result = rule(keyFieldValue);
+					return result === true ? null : result;
+				})
+				.filter((error): error is string => error !== null);
 		},
 
 		focusKeyField({
-			key,
-			altKey,
-			ctrlKey,
-			metaKey,
-			shiftKey,
-		}: KeyboardEvent): void {
-			const isSingleField = this.isSingleField
-			const notFilled = !this.maskaNumberValue.completed
-			// Don't move focus for combo (eg. Ctrl + A)
-			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey
-			// Don't move focus for other keys (eg. ArrowRight)
-			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key)
-			// Don't move focus is content is selected to allow overwrite
+						  key,
+						  altKey,
+						  ctrlKey,
+						  metaKey,
+						  shiftKey,
+					  }: KeyboardEvent): void {
+			const isSingleField = this.isSingleField;
+			const notFilled = !this.maskaNumberValue.completed;
+			const keyHasModifier = altKey || ctrlKey || metaKey || shiftKey;
+			const isNotSingleAlphaNumChar = !/^[a-zA-Z0-9| ]$/.test(key);
 			const isContentSelected =
 				this.$refs.numberField.selectionStart !==
-				this.$refs.numberField.selectionEnd
+				this.$refs.numberField.selectionEnd;
 
 			const shouldNotFocus =
 				isSingleField ||
 				notFilled ||
 				keyHasModifier ||
 				isNotSingleAlphaNumChar ||
-				isContentSelected
+				isContentSelected;
 
 			if (shouldNotFocus) {
-				return
+				return;
 			}
 
-			this.$refs.keyField.focus()
+			this.$refs.keyField.focus();
 		},
 
 		focusNumberField(): void {
 			if (this.maskaKeyValue.unmasked.length !== 0) {
-				return
+				return;
 			}
 
-			this.$refs.numberField.focus()
+			this.$refs.numberField.focus();
 		},
 	},
-})
+});
 </script>
-
 <template>
 	<div
 		class="vd-nir-field d-flex align-start"
@@ -293,9 +294,9 @@ export default defineComponent({
 		<VInput
 			:model-value="[numberValue, keyValue]"
 			:validation-value="[
-				maskaNumberValue.unmasked,
-				maskaKeyValue.unmasked,
-			]"
+        maskaNumberValue.unmasked,
+        maskaKeyValue.unmasked,
+      ]"
 			validate-on="blur lazy"
 			:error-messages="errors"
 			:max-errors="5"
@@ -311,23 +312,23 @@ export default defineComponent({
 				:label="numberLabel"
 				:hint="locales.numberHint"
 				persistent-hint
-				:hide-details="false"
+				hide-details
 				:color="maskaNumberValue.completed ? 'success' : 'primary'"
 				:base-color="maskaNumberValue.completed ? 'success' : ''"
 				:error="numberErrors.length > 0"
 				:aria-invalid="numberErrors.length > 0"
 				:aria-errormessage="
-					numberErrors.length > 0 ? 'number-field-errors' : undefined
-				"
+          numberErrors.length > 0 ? 'number-field-errors' : undefined
+        "
 				class="vd-number-field flex-grow-0 mr-2 mr-sm-4"
 				@keydown="focusKeyField"
 				@maska="changeNumberValue"
 				@blur="validateNumberValue(maskaNumberValue.unmasked)"
 				@focus="
-					() => {
-						numberErrors = []
-					}
-				"
+          () => {
+            numberErrors = [];
+          }
+        "
 			>
 				<template #append-inner>
 					<slot
@@ -336,7 +337,6 @@ export default defineComponent({
 					/>
 				</template>
 			</VTextField>
-
 			<div id="number-field-errors" class="d-sr-only">
 				{{ numberErrors.join(' ') }}
 			</div>
@@ -350,23 +350,23 @@ export default defineComponent({
 					:label="keyLabel"
 					:hint="locales.keyHint"
 					persistent-hint
-					:hide-details="false"
+					hide-details
 					:color="maskaKeyValue.completed ? 'success' : 'primary'"
 					:base-color="maskaKeyValue.completed ? 'success' : ''"
 					:error="keyErrors.length > 0"
 					:aria-invalid="keyErrors.length > 0"
 					:aria-errormessage="
-						keyErrors.length > 0 ? 'key-field-errors' : undefined
-					"
+            keyErrors.length > 0 ? 'key-field-errors' : undefined
+          "
 					class="vd-key-field flex-grow-0 mr-2 mr-sm-4"
 					@keyup.delete="focusNumberField"
 					@maska="changeKeyValue"
 					@blur="validateKeyValue(maskaKeyValue.unmasked)"
 					@focus="
-						() => {
-							keyErrors = []
-						}
-					"
+            () => {
+              keyErrors = [];
+            }
+          "
 				>
 					<template #append-inner>
 						<slot
@@ -432,7 +432,6 @@ export default defineComponent({
 	container-name: nirFieldwrapper;
 }
 
-// Fix input spacing
 :deep(.v-input__append) {
 	margin-inline-start: 0 !important;
 }
@@ -463,7 +462,6 @@ export default defineComponent({
 	@include responsive-nir-wrapper;
 }
 
-/* fallback for IE11 */
 @media screen and (max-width: 360px) {
 	@include responsive-nir-wrapper;
 }
@@ -472,8 +470,8 @@ export default defineComponent({
 	padding-left: 0 !important;
 }
 :deep(
-		.v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot
-	) {
+    .v-text-field > .v-input__control > .v-input__slot > .v-text-field__slot
+  ) {
 	width: min-content !important;
 }
 </style>

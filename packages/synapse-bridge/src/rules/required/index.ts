@@ -16,7 +16,6 @@ export function requiredFn(
 		} else {
 			valid = Boolean(typeof value === 'string' ? value.trim() : value)
 		}
-
 		return valid || ruleMessage(errorMessages, 'default')
 	}
 }

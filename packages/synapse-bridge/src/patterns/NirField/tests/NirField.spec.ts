@@ -8,9 +8,9 @@ import { defineComponent } from 'vue'
 import { VForm } from 'vuetify/lib/components/index.mjs'
 
 describe('NirField', () => {
-	const nir = '195122B120005'
-	const key = '29'
-	const formattedNir = '1 95 12 2B 120 005'
+	const nir = '2940375120005'
+	const key = '91'
+	const formattedNir = '2 94 03 75 120 005'
 
 	it('renders correctly', () => {
 		const wrapper = mount(NirField, {
@@ -219,7 +219,7 @@ describe('NirField', () => {
 		await input.trigger('blur')
 
 		expect(wrapper.find('#number-field-errors').text()).toBe(
-			locales.errorLengthNumber(13)
+			locales.errorLengthNumber(13) + ' ' + locales.errorInvalidFormat
 		)
 	})
 
@@ -238,7 +238,7 @@ describe('NirField', () => {
 		await numberField.trigger('blur')
 
 		expect(wrapper.find('#number-field-errors').text()).toBe(
-			locales.errorLengthNumber(13)
+			locales.errorLengthNumber(13) + ' ' + locales.errorInvalidFormat
 		)
 	})
 
@@ -275,7 +275,7 @@ describe('NirField', () => {
 		await wrapper.setProps({ modelValue: '12345' })
 
 		expect(wrapper.find('#number-field-errors').text()).toBe(
-			locales.errorLengthNumber(13)
+			locales.errorLengthNumber(13) + ' ' + locales.errorInvalidFormat
 		)
 	})
 
