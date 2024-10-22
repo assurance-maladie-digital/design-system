@@ -56,6 +56,7 @@ export default defineComponent({
 			closeIcon: mdiClose,
 			locales,
 			dialog: this.modelValue,
+			titleId: `title-${Math.random().toString(36).substring(7)}`
 		}
 	},
 
@@ -137,11 +138,11 @@ export default defineComponent({
 			v-bind="options.card"
 			ref="dialogContent"
 			id="dialogContent"
-			:aria-labelledby="title ? title : 'dialogContent'"
+			:aria-labelledby="titleId ? titleId : 'dialogContent'"
 		>
 			<VCardTitle v-bind="options.cardTitle">
 				<slot name="title">
-					<h2 v-if="title" class="text-h6 font-weight-bold">
+					<h2 v-if="title" :id="titleId" class="text-h6 font-weight-bold">
 						{{ title }}
 					</h2>
 				</slot>
