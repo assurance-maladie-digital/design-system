@@ -1,13 +1,12 @@
 export const locales = {
-	numberLabel: 'Numéro de sécurité sociale',
-	numberHint: '13 caractères',
+	errorRequiredNumber: "Le numéro de sécurité sociale est requis.",
+	errorLengthNumber: (length: number) => `Le numéro de sécurité sociale doit contenir ${length} caractères.`,
+	errorInvalidFormat: "Le format du numéro de sécurité sociale est invalide.",
+	errorRequiredKey: "La clé du numéro de sécurité sociale est requise.",
+	errorLengthKey: (length: number) => `La clé du numéro de sécurité sociale doit contenir ${length} caractères.`,
+	errorInvalidKey: "La clé du numéro de sécurité sociale est invalide.",
+	numberLabel: "Numéro de sécurité sociale",
+	numberHint: "13 caractères",
 	keyLabel: 'Clé',
-	keyHint: '2 chiffres',
-	errorRequiredNumber: 'Le numéro de sécurité sociale est obligatoire',
-	errorRequiredKey: 'La clé de validation est obligatoire',
-	errorLengthNumber: (length: number): string =>
-		`La longueur du numéro de sécurité sociale doit être de ${length} caractères.`,
-	errorLengthKey: (length: number): string =>
-		`La longueur de la clé doit être de ${length} caractères.`,
-	errorCorsican: 'Le chiffre précédant A ou B doit être 1 ou 2.',
-} as const
+	keyHint: '2 chiffres'
+} as const ;
