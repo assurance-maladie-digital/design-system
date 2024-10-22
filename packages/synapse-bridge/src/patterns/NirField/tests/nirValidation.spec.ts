@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 
 describe('NIR Validations', () => {
 	it('returns true for valid NIR', () => {
-		expect(checkNIR('1234567890123')).toBe(true);
+		expect(checkNIR('175039720123594')).toBe(true);
 	});
 
 	it('returns false for invalid NIR', () => {

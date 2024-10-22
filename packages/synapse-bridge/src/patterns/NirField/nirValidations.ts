@@ -6,17 +6,16 @@ export function checkNIR(nir: string): boolean {
 
 	const nirRegex = new RegExp(
 		'^' +
-		'(?<sexe>[12])' +
+		'(?<sexe>[1-4]|7|8)' +
 		'(?<anneeNaissance>\\d{2})' +
-		'(?<moisNaissance>0[1-9]|1[0-2]|[2-9][0-9])' +
-		'(?<departementNaissance>\\d{2}|2A|2B)' +
+		'(?<moisNaissance>0[1-9]|1[0-2]|2[0-9]|3[0-9]|4[0-2])' +
+		'(?<departementNaissance>\\d{2}|2A|2B|96|97\\d|98\\d)' +
 		'(?<communeNaissance>\\d{3})' +
 		'(?<rangInscription>\\d{3})' +
-		'(?<cle>9[0-7]|[0-8]\\d)?' +
+		'(?<cle>[0-9]{2})?' +
 		'$',
 		'i'
 	);
-
 	return nirRegex.test(nir);
 }
 
