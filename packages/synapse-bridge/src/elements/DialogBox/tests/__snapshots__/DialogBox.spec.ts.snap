@@ -2,7 +2,7 @@
 
 exports[`DialogBox > rendering and props > renders correctly with props 1`] = `
 <div data-v-ee61b14d="" model-value="true" width="600px" persistent="false" retain-focus="false" aria-modal="true" class="vd-dialog-box">
-  <div data-v-ee61b14d="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-6" id="dialogContent" aria-labelledby="Test title">
+  <div data-v-ee61b14d="" class="v-card v-theme--light v-card--density-default v-card--variant-elevated pa-6" id="dialogContent" aria-labelledby="title-wjsnj9">
     <!---->
     <div class="v-card__loader">
       <div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top: 0px; height: 0px; --v-progress-linear-height: 2px; left: 50%; transform: translateX(-50%);" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100">
@@ -20,7 +20,7 @@ exports[`DialogBox > rendering and props > renders correctly with props 1`] = `
     <!---->
     <!---->
     <div data-v-ee61b14d="" class="v-card-title d-flex align-start flex-nowrap pa-0 mb-6 mr-6">
-      <h2 data-v-ee61b14d="" class="text-h6 font-weight-bold">Test title</h2>
+      <h2 data-v-ee61b14d="" id="title-wjsnj9" class="text-h6 font-weight-bold">Test title</h2>
       <div data-v-ee61b14d="" class="v-spacer"></div><button data-v-ee61b14d="" type="button" class="v-btn v-btn--elevated v-btn--icon v-theme--light v-btn--density-default elevation-0 v-btn--size-default v-btn--variant-elevated mt-n2 mr-n2 ml-4" style="height: 32px; width: 32px;" aria-label="Fermer la boîte de dialogue"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span>
         <!----><span class="v-btn__content" data-no-activator=""><i data-v-ee61b14d="" class="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z mdi v-icon notranslate v-theme--light v-icon--size-default" aria-hidden="true"></i></span>
         <!---->
