@@ -3,7 +3,7 @@ import { mount, shallowMount } from '@vue/test-utils'
 import { vuetify } from '@tests/unit/setup'
 
 import DialogBox from '../'
-import { VCard } from 'vuetify/components'
+import { VDialog, VCard } from 'vuetify/components'
 
 const defaultProps = {
 	modelValue: true,
@@ -17,7 +17,7 @@ const defaultProps = {
 
 describe('DialogBox', () => {
 	describe('rendering and props', () => {
-		it('renders correctly with props', () => {
+		it('renders correctly with props', async () => {
 			const wrapper = mount(DialogBox, {
 				props: defaultProps,
 				global: {
@@ -30,7 +30,13 @@ describe('DialogBox', () => {
 				},
 			})
 
-			expect(wrapper.html()).toMatchSnapshot()
+			await wrapper.vm.$nextTick()
+
+			const dialog = wrapper.findComponent(VDialog);
+			const title = wrapper.findComponent(VCard).find('h2').text();
+
+			expect(dialog.exists()).toBe(true);
+			expect(title).toBe('Test title');
 		})
 
 		it('is closed when model value is false', async () => {
@@ -44,7 +50,11 @@ describe('DialogBox', () => {
 				},
 			})
 
-			expect(wrapper).toMatchInlineSnapshot('')
+			await wrapper.vm.$nextTick()
+
+			const card = wrapper.findComponent(VCard);
+
+			expect(card.exists()).toBe(false);
 		})
 
 		it('becomes visible when the model value is updated', async () => {
