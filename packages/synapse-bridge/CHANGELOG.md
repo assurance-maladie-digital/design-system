@@ -1,3 +1,11 @@
+#### v3.0.5
+
+-   NirField: improve validation [`#3818`](https://github.com/assurance-maladie-digital/design-system/pull/3818), [`#3816`](https://github.com/assurance-maladie-digital/design-system/pull/3816)
+-   DialogBox: improve accessibility [`#3817`](https://github.com/assurance-maladie-digital/design-system/pull/3817)
+-   DatePicker: fix value edition [`#3811`](https://github.com/assurance-maladie-digital/design-system/pull/3811)
+-   DatePicker: improve validation behavior [`#3806`](https://github.com/assurance-maladie-digital/design-system/pull/3806)
+-   SelectBtnField: fix padding + inline display [`#3796`](https://github.com/assurance-maladie-digital/design-system/pull/3796)
+
 #### v3.0.4
 
 -   NirField: delete validation key in simple mode [`#3786`](https://github.com/assurance-maladie-digital/design-system/pull/3786)
